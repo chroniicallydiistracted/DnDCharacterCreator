@@ -831,7 +831,9 @@
         "bard-dance",
         "bard-glamour",
         "bard-lore",
-        "bard-valor"
+        "bard-valor",
+        "bard-college of the moon",
+        "bard-moon"
       ]
     ],
     "attacks": [
@@ -1687,7 +1689,10 @@
         "cleric-life",
         "cleric-light",
         "cleric-trickery",
-        "cleric-war"
+        "cleric-war",
+        "cleric-knowledge",
+        "cleric-arcana",
+        "cleric-arcana_2014"
       ]
     ],
     "attacks": [
@@ -2680,7 +2685,9 @@
         "fighter-battle master_2014",
         "fighter-champion_2014",
         "fighter-eldritch knight_2014",
-        "fighter-psi warrior_2014"
+        "fighter-psi warrior_2014",
+        "fighter-banneret",
+        "fighter-arcane archer_2014"
       ]
     ],
     "attacks": [
@@ -3405,7 +3412,8 @@
         "monk-mercy",
         "monk-shadow",
         "monk-elements",
-        "monk-open hand"
+        "monk-open hand",
+        "monk-tattooed warrior"
       ]
     ],
     "attacks": [
@@ -4057,7 +4065,9 @@
         "paladin-devotion",
         "paladin-glory",
         "paladin-ancients",
-        "paladin-Vengeance"
+        "paladin-Vengeance",
+        "paladin-oath of the genie",
+        "paladin-oath of the noble genies"
       ]
     ],
     "attacks": [
@@ -5158,7 +5168,8 @@
         "ranger-beast master_2014",
         "ranger-fey wanderer_2014",
         "ranger-gloom stalker_2014",
-        "ranger-hunter_2014"
+        "ranger-hunter_2014",
+        "ranger-winter walker"
       ]
     ],
     "attacks": [
@@ -6629,7 +6640,8 @@
         "rogue-arcane trickster_2014",
         "rogue-assassin_2014",
         "rogue-soulknife_2014",
-        "rogue-thief_2014"
+        "rogue-thief_2014",
+        "rogue-scion of the three"
       ]
     ],
     "attacks": [
@@ -7555,7 +7567,10 @@
         "sorcerer-aberrant",
         "sorcerer-clockwork",
         "sorcerer-draconic",
-        "sorcerer-wild magic_2014"
+        "sorcerer-wild magic_2014",
+        "sorcerer-spellfire",
+        "sorcerer-spellfire sorcery",
+        "sorcerer-ancestral"
       ]
     ],
     "attacks": [
@@ -7987,7 +8002,8 @@
         "warlock-the archfey_2014",
         "warlock-the celestial_2014",
         "warlock-the fiend_2014",
-        "warlock-the great old one_2014"
+        "warlock-the great old one_2014",
+        "warlock-the hexblade_2014"
       ]
     ],
     "attacks": [
@@ -9268,7 +9284,12 @@
         "wizard-abjurer",
         "wizard-diviner",
         "wizard-evoker",
-        "wizard-illusionist"
+        "wizard-illusionist",
+        "wizard-bladesinger",
+        "wizard-conjuration_2014",
+        "wizard-enchantment_2014",
+        "wizard-necromancy_2014",
+        "wizard-transmutation_2014"
       ]
     ],
     "attacks": [
@@ -9710,15 +9731,13 @@
     "name": "Artificer",
     "source": [
       [
-        "E:RLW",
-        54
-      ],
-      [
-        "T",
-        9
+        "E:FA",
+        0
       ]
     ],
-    "primaryAbility": "Intelligence",
+    "primaryAbility": [
+      "Intelligence"
+    ],
     "abilitySave": 4,
     "prereqs": "Intelligence 13",
     "improvements": [
@@ -9749,26 +9768,24 @@
       "Int"
     ],
     "skillstxt": {
-      "primary": "Choose two from Arcana, History, Investigation, Medicine, Nature, Perception, and Sleight of Hand"
+      "primary": "Choose 2: Arcana, History, Investigation, Medicine, Nature, Perception, and Sleight of Hand",
+      "secondary": "Choose 1: Arcana, History, Investigation, Medicine, Nature, Perception, and Sleight of Hand"
     },
     "toolProfs": {
       "primary": [
         [
-          "Thieves' tools",
-          "Dex"
+          "Thieves' Tools"
         ],
-        "Tinker's tools",
+        [
+          "Tinker's Tools"
+        ],
         [
           "Artisan's tools",
           1
         ]
       ],
       "secondary": [
-        [
-          "Thieves' tools",
-          "Dex"
-        ],
-        "Tinker's tools"
+        "Tinker's Tools"
       ]
     },
     "armorProfs": {
@@ -9788,13 +9805,10 @@
     "weaponProfs": {
       "primary": [
         true,
-        false,
-        [
-          "Firearms"
-        ]
+        false
       ]
     },
-    "equipment": "Artificer starting equipment:\n • Any two simple weapons;\n • A light crossbow and 20 bolts;\n • Studded leather armor -or- scale mail;\n • Thieves' tools and a dungeoneer's pack;\n\nAlternatively, choose 5d4 × 10 gp worth of starting equipment instead of both the class' and the background's starting equipment.",
+    "equipment": "Artificer starting equipment:\n • Studded Leather;\n • Dagger;\n • Thieves' Tools;\n • Tinker's Tools;\n • A Dungeoneer's Pack, and 16 gp.\n\nAlternatively, choose 150 gp worth of starting equipment instead of the class' starting equipment.",
     "subclasses": [
       "Artificer Specialist",
       [
@@ -9802,7 +9816,12 @@
         "artificer-artillerist",
         "artificer-battle smith",
         "artificer-armorer",
-        "artificer-armorer-ua"
+        "artificer-armorer-ua",
+        "artificer-alchemist_2014",
+        "artificer-artillerist_2014",
+        "artificer-battle smith_2014",
+        "artificer-armorer_2014",
+        "artificer-cartographer"
       ]
     ],
     "attacks": [
@@ -9827,6 +9846,7 @@
       1,
       1
     ],
+    "spellcastingAbility": 4,
     "spellcastingFactor": 2,
     "spellcastingFactorRoundupMulti": true,
     "spellcastingTable": [
@@ -10089,112 +10109,53 @@
       "prepared": true
     },
     "features": {
-      "magical tinkering": {
-        "name": "Magical Tinkering",
-        "source": [
-          [
-            "E:RLW",
-            55
-          ],
-          [
-            "T",
-            11
-          ]
-        ],
-        "minlevel": 1,
-        "description": "As an action, I use thieves/artisan's tools to give 1 property to a nonmagical tiny object:\n    • Emit light (5-ft radius bright light, equal dim), an odor, or a nonverbal sound\n    • Static visual effect on one surface, or emit a 6-second recorded message when tapped\n   If I instill a property in more objects than I can have active, the oldest loses its property",
-        "additional": "Intelligence modifier of active objects",
-        "action": [
-          [
-            "action",
-            " (add/remove)"
-          ]
-        ],
-        "infuse item": {
-          "name": "Infuse Item",
-          "extraname": "Artificer 2",
-          "source": [
-            [
-              "E:RLW",
-              57
-            ]
-          ],
-          "description": "When I finish a long rest, I can turn nonmagical objects into magic items using my infusions\n   I can attune to it immediately; If I infuse too many items, the oldest loses its magic\n   The infusion lasts until my death + my Int mod in days, but ends if I unlearn the infusion\n   Each infusion can only be used in one item at a time and only in appropriate items\n   Whenever I gain an artificer level, I can replace an infusion I know with another\n   I can use an infused item as a spellcasting focus",
-          "additional": [
-            "",
-            "4 infusions known; max 2 infused items",
-            "4 infusions known; max 2 infused items",
-            "4 infusions known; max 2 infused items",
-            "4 infusions known; max 2 infused items",
-            "6 infusions known; max 3 infused items",
-            "6 infusions known; max 3 infused items",
-            "6 infusions known; max 3 infused items",
-            "6 infusions known; max 3 infused items",
-            "8 infusions known; max 4 infused items",
-            "8 infusions known; max 4 infused items",
-            "8 infusions known; max 4 infused items",
-            "8 infusions known; max 4 infused items",
-            "10 infusions known; max 5 infused items",
-            "10 infusions known; max 5 infused items",
-            "10 infusions known; max 5 infused items",
-            "10 infusions known; max 5 infused items",
-            "12 infusions known; max 6 infused items",
-            "12 infusions known; max 6 infused items",
-            "12 infusions known; max 6 infused items"
-          ]
-        },
-        "autoSelectExtrachoices": [
-          {
-            "extrachoice": "infuse item",
-            "minlevel": 2
-          }
-        ]
-      },
       "spellcasting": {
         "name": "Spellcasting",
         "source": [
           [
-            "E:RLW",
-            55
-          ],
-          [
-            "T",
-            11
+            "E:FA",
+            0
           ]
         ],
         "minlevel": 1,
-        "description": "I can cast prepared artificer cantrips/spells, using Intelligence as my spellcasting ability\n   To cast, I must use thieves' or artisan's tools I'm proficient with as a spellcasting focus\n   I can cast my prepared artificer spells as rituals if they have the ritual tag\n   Whenever I gain an artificer level, I can swap one artificer cantrip I know for another",
         "additional": [
-          "2 cantrips known",
-          "2 cantrips known",
-          "2 cantrips known",
-          "2 cantrips known",
-          "2 cantrips known",
-          "2 cantrips known",
-          "2 cantrips known",
-          "2 cantrips known",
-          "2 cantrips known",
-          "3 cantrips known",
-          "3 cantrips known",
-          "3 cantrips known",
-          "3 cantrips known",
-          "4 cantrips known",
-          "4 cantrips known",
-          "4 cantrips known",
-          "4 cantrips known",
-          "4 cantrips known",
-          "4 cantrips known",
-          "4 cantrips known"
+          "2 cantrips & 2 spells prepared",
+          "2 cantrips & 3 spells prepared",
+          "2 cantrips & 4 spells prepared",
+          "2 cantrips & 5 spells prepared",
+          "2 cantrips & 6 spells prepared",
+          "2 cantrips & 6 spells prepared",
+          "2 cantrips & 7 spells prepared",
+          "2 cantrips & 7 spells prepared",
+          "2 cantrips & 9 spells prepared",
+          "3 cantrips & 9 spells prepared",
+          "3 cantrips & 10 spells prepared",
+          "3 cantrips & 10 spells prepared",
+          "3 cantrips & 11 spells prepared",
+          "4 cantrips & 11 spells prepared",
+          "4 cantrips & 12 spells prepared",
+          "4 cantrips & 12 spells prepared",
+          "4 cantrips & 14 spells prepared",
+          "4 cantrips & 14 spells prepared",
+          "4 cantrips & 15 spells prepared",
+          "4 cantrips & 15 spells prepared"
         ],
         "calcChanges": {
           "spellAdd": [
             {
               "_type": "function",
-              "body": "function(e,a,t){return!a.psionic&&\"artificer\"==t&&a.compMaterial===SpellsList[e].compMaterial&&(t=-1!==classes.known.artificer.subclass.indexOf(\"artillerist\")&&4<classes.known.artificer.level?\"my arcane firearm, \":-1!==classes.known.artificer.subclass.indexOf(\"armorer\")&&2<classes.known.artificer.level?\"my arcane armor, \":\"\",a.compMaterial=(a.compMaterial?a.compMaterial+\".\\n\\nAlso a\":\"A\")+\"lways requires my artificer spellcasting focus: thieves' tools, any set of artisan's tools I'm proficient with, \"+t+\"or an item infused by me.\",-1==GetFeatureChoice(\"classes\",\"artificer\",\"spellcasting\",!0).indexOf(\"don't change component column on spell sheet\")&&(a.components?-1==a.components.indexOf(\"M\")?a.components+=\",Mƒ\":/M([^\\u0192\\u2020]|$)/.test(a.components)&&(a.components=a.components.replace(\"M\",\"Mƒ\")):a.components=\"Mƒ\"),!0)}"
+              "body": "function(spellKey, spellObj, spName) {\n                        if (!spellObj.psionic && spName == \"artificer\" && spellObj.compMaterial === SpellsList[spellKey].compMaterial) {\n                            var extraFocus = classes.known.artificer.subclass.indexOf(\"artillerist\") !== -1 && classes.known.artificer.level > 4 ? \"my arcane firearm, \" : classes.known.artificer.subclass.indexOf(\"armorer\") !== -1 && classes.known.artificer.level > 2 ? \"my arcane armor, \" : \"\";\n                            spellObj.compMaterial = (spellObj.compMaterial ? spellObj.compMaterial + \".\\n\\nAlso a\" : \"A\") + \"lways requires my artificer spellcasting focus: thieves' tools, any set of artisan's tools I'm proficient with, \" + extraFocus + \".\";\n                            if (GetFeatureChoice(\"classes\", \"artificer\", \"spellcasting\", true).indexOf(\"don't change component column on spell sheet\") != -1) {\n                                // do nothing if set to do so\n                            } else if (!spellObj.components) {\n                                spellObj.components = \"M\\u0192\";\n                            } else if (spellObj.components.indexOf(\"M\") == -1) {\n                                spellObj.components += \",M\\u0192\";\n                            } else if ((/M([^\\u0192\\u2020]|$)/).test(spellObj.components)) {\n                                spellObj.components = spellObj.components.replace(\"M\", \"M\\u0192\");\n                            }\n                            return true;\n                        }\n                        return false;\n                    }"
             },
-            "My artificer spells always require me to use a spellcasting focus: thieves' tools, artisan's tools I'm proficient with, or an item infused by me."
+            "My Artificer spells always require me to use a Spellcasting Focus: Thieves' Tools, or Artisan's Tools I'm proficient with"
+          ],
+          "spellCalc": [
+            {
+              "_type": "function",
+              "body": "function(type, spellcasters, ability) {\n                        if (type === \"prepare\" && spellcasters.indexOf(\"artificer\") !== -1) {\n                            var lvl = classes.known.artificer.level;\n                            var sArr = [0, 2, 3, 5, 5, 7, 6, 8, 7, 10, 9, 11, 10, 12, 11, 13, 12, 15, 14, 16, 15];\n                            return sArr[lvl] - Math.ceil(lvl / 2) - Number(What(\"Int Mod\"));\n                        }\n                    }"
+            }
           ]
         },
+        "description": "I can cast Artificer spells using Int as my spellcasting ability. I can use Thieves' Tools,\n   Tinker's Tools, or another kind of Artisan's Tools I am proficient with as a Spellcasting Focus\n   I must have one of those foci in hand when I cast an Artificer spell\n   I can replace one cantrip with another when I finish a Long Rest",
         "extrachoices": [
           "Don't change component column on spell sheet"
         ],
@@ -10203,1938 +10164,214 @@
           "name": "[Meta] Don't alter spell sheets",
           "source": [
             [
-              "E:RLW",
-              55
-            ],
-            [
-              "T",
-              11
+              "E:FA",
+              3
             ]
           ],
           "description": "\n   The automation will not add Mƒ to each artificer spell on the generated spell sheets"
+        }
+      },
+      "tinker's magic": {
+        "name": "Tinker's Magic",
+        "source": [
+          [
+            "E:FA",
+            0
+          ]
+        ],
+        "minlevel": 1,
+        "description": "As a Magic action, I use Tinker's Tools to create one item per 2024 PHB in an unoccupied space within 5ft.\n   I can only make one of the following, which will last until I finish a Long Rest:\n    • Ball Bearings • Basket • Bedroll • Bell • Blanket • Block & Tackle • Bucket • Caltrops • Candle\n    • Crowbar • Flask • Jug • Lamp • Net • Oil • Paper • Parchment • Pole • Pouch • Rope • Sack\n    • Shovel • String • Tinderbox • Torch • Vial",
+        "usages": "Intelligence modifier per ",
+        "usagescalc": "event.value = Math.max(1, What('Int Mod'));",
+        "recovery": "long rest",
+        "action": [
+          [
+            "action",
+            " (add/remove)"
+          ]
+        ],
+        "spellcastingBonus": [
+          {
+            "name": "Tinker's Magic: Mending",
+            "spells": [
+              "mending"
+            ],
+            "selection": [
+              "mending"
+            ],
+            "times": 1
+          }
+        ],
+        "infuse item": {
+          "name": "Replicate Magic Item",
+          "extraname": "Artificer 2",
+          "source": [
+            [
+              "E:FA",
+              0
+            ]
+          ],
+          "description": "When I finish a Long Rest, I can create 1 or 2 different magic items from arcane plans using\n   Tinker's Tools. I can attune to it immediately; If I replicate too many items, the oldest item\n   vanishes. The infusion lasts until I unlearn it or my death + my 1d4 days. Infused containers, like\n   a Bag of Holding, spread their contents harmlessly in & around its space when it vanishes.\n   Whenever I gain an Artificer level, I can replace an arcane plan I know with another.\n   I can use a replicated Wand or Weapon as a Spellcasting Focus.",
+          "additional": [
+            "",
+            "4 plans known; max 2 replicated items",
+            "4 plans known; max 2 replicated items",
+            "4 plans known; max 2 replicated items",
+            "4 plans known; max 2 replicated items",
+            "5 plans known; max 3 replicated items",
+            "5 plans known; max 3 replicated items",
+            "5 plans known; max 3 replicated items",
+            "5 plans known; max 3 replicated items",
+            "6 plans known; max 4 replicated items",
+            "6 plans known; max 4 replicated items",
+            "6 plans known; max 4 replicated items",
+            "6 plans known; max 4 replicated items",
+            "7 plans known; max 5 replicated items",
+            "7 plans known; max 5 replicated items",
+            "7 plans known; max 5 replicated items",
+            "7 plans known; max 5 replicated items",
+            "8 plans known; max 6 replicated items",
+            "8 plans known; max 6 replicated items",
+            "8 plans known; max 6 replicated items"
+          ]
         },
+        "autoSelectExtrachoices": [
+          {
+            "extrachoice": "infuse item",
+            "minlevel": 2
+          }
+        ],
         "_optionalChoices": [
           {
-            "_choiceName": "Access to Dunamancy Spells",
+            "_choiceName": "Tinker's Magic: 2019/2020 Functions Added",
             "_optional": true,
-            "_optionalCategory": "Optional 1st-level artificer features",
-            "name": "Dunamancy Spells",
-            "extraname": "Optional Artificer 1",
+            "_optionalCategory": "1st-level Artificer Tinker's Magic choice",
+            "name": "Tinker's Magic: 2019/2020 Functions Added",
+            "extraname": "Artificer 1",
             "source": [
               [
-                "W",
-                186
-              ]
-            ],
-            "description": "All dunamancy spells are added to the artificer spell list, each still pending DM's approval",
-            "calcChanges": {
-              "spellList": [
-                {
-                  "_type": "function",
-                  "body": "function(e,a,t){\"artificer\"===a&&-1===t.indexOf(\"bonus\")&&(e.extraspells=e.extraspells.concat([\"sapping sting\",\"gift of alacrity\",\"magnify gravity\",\"fortune's favor\",\"immovable object\",\"wristpocket\",\"pulse wave\",\"gravity sinkhole\",\"temporal shunt\"]))}"
-                },
-                "This optional class feature expands the spell list of the artificer class with all dunamancy spells (spell level in brackets): Sapping Sting (cantrip), Gift of Alacrity (1), Magnify Gravity (1), Fortune's Favor (2), Immovable Object (2), Wristpocket (2), Pulse Wave (3), Gravity Sinkhole (4), Temporal Shunt (5)."
-              ]
-            }
-          },
-          {
-            "_choiceName": "Access to Dunamancy Spells",
-            "_optional": true,
-            "_optionalCategory": "Optional 1st-level artificer features",
-            "name": "Dunamancy Spells",
-            "extraname": "Optional Artificer 1",
-            "source": [
+                "MJ:HB",
+                0
+              ],
               [
-                "W",
-                186
+                "E:RLW",
+                55
+              ],
+              [
+                "T",
+                9
               ]
             ],
-            "description": "All dunamancy spells are added to the artificer spell list, each still pending DM's approval",
-            "calcChanges": {
-              "spellList": [
-                {
-                  "_type": "function",
-                  "body": "function(spList, spName, spType) {\r\n\t\t\t\t\tif (spName !== \"artificer\" || spType.indexOf(\"bonus\") !== -1) return;\r\n\t\t\t\t\tspList.extraspells = spList.extraspells.concat([\"sapping sting\", \"gift of alacrity\", \"magnify gravity\", \"fortune's favor\", \"immovable object\", \"wristpocket\", \"pulse wave\", \"gravity sinkhole\", \"temporal shunt\"]);\r\n\t\t\t\t}"
-                },
-                "This optional class feature expands the spell list of the artificer class with all dunamancy spells (spell level in brackets): Sapping Sting (cantrip), Gift of Alacrity (1), Magnify Gravity (1), Fortune's Favor (2), Immovable Object (2), Wristpocket (2), Pulse Wave (3), Gravity Sinkhole (4), Temporal Shunt (5)."
-              ]
+            "description": "As a Magic action, I can alternatively use my Tinker's Magic to give 1 property to a nonmagical Tiny object:\n    • Emit light (5-ft radius bright light, equal dim), an odor, or a nonverbal sound\n    • Static visual effect on one surface, or emit a 6-second recorded message when tapped\n   If I instill a property in more objects than I can have active, the oldest loses its property\n   Each Tiny object I infuse with semi-permanent magic removes a usage from the maximum number of\n     items I can temporarily produce via the alternate Magical Tinkering rules.",
+            "prereqeval": {
+              "_type": "function",
+              "body": "function(v) {\n        return classes.known.artificer.level >= 1 ? true : \"skip\";\n    }"
             }
           }
         ]
       },
-      "infuse item": {
-        "name": "Infuse Item",
+      "replicate magic item": {
+        "name": "Replicate Magic Item",
         "source": [
           [
-            "E:RLW",
-            57
-          ],
-          [
-            "T",
-            12
+            "E:FA",
+            0
           ]
         ],
         "minlevel": 2,
-        "description": "\n   Use the \"Choose Feature\" button above to add Artificer Infusions to the third page",
+        "description": "\n   Use the \"Choose Feature\" button above to add Magic Items Replicated to the third page",
         "additional": [
           "",
-          "4 infusions known; max 2 infused items",
-          "4 infusions known; max 2 infused items",
-          "4 infusions known; max 2 infused items",
-          "4 infusions known; max 2 infused items",
-          "6 infusions known; max 3 infused items",
-          "6 infusions known; max 3 infused items",
-          "6 infusions known; max 3 infused items",
-          "6 infusions known; max 3 infused items",
-          "8 infusions known; max 4 infused items",
-          "8 infusions known; max 4 infused items",
-          "8 infusions known; max 4 infused items",
-          "8 infusions known; max 4 infused items",
-          "10 infusions known; max 5 infused items",
-          "10 infusions known; max 5 infused items",
-          "10 infusions known; max 5 infused items",
-          "10 infusions known; max 5 infused items",
-          "12 infusions known; max 6 infused items",
-          "12 infusions known; max 6 infused items",
-          "12 infusions known; max 6 infused items"
+          "4 plans known; max 2 replicated items",
+          "4 plans known; max 2 replicated items",
+          "4 plans known; max 2 replicated items",
+          "4 plans known; max 2 replicated items",
+          "5 plans known; max 3 replicated items",
+          "5 plans known; max 3 replicated items",
+          "5 plans known; max 3 replicated items",
+          "5 plans known; max 3 replicated items",
+          "6 plans known; max 4 replicated items",
+          "6 plans known; max 4 replicated items",
+          "6 plans known; max 4 replicated items",
+          "6 plans known; max 4 replicated items",
+          "7 plans known; max 5 replicated items",
+          "7 plans known; max 5 replicated items",
+          "7 plans known; max 5 replicated items",
+          "7 plans known; max 5 replicated items",
+          "8 plans known; max 6 replicated items",
+          "8 plans known; max 6 replicated items",
+          "8 plans known; max 6 replicated items"
         ],
-        "extraname": "Artificer Infusion",
-        "extrachoices": [
-          "Boots of the Winding Path (prereq: level 6 artificer)",
-          "Enhanced Arcane Focus",
-          "Enhanced Defense (armor)",
-          "Enhanced Defense (shield)",
-          "Enhanced Weapon",
-          "Homunculus Servant",
-          "Radiant Weapon (prereq: level 6 artificer)",
-          "Repeating Shot",
-          "Repulsion Shield (prereq: level 6 artificer)",
-          "Resistant Armor (prereq: level 6 artificer)",
-          "Returning Weapon",
-          "Alchemy Jug (prereq: level 2 artificer)",
-          "Bag of Holding (prereq: level 2 artificer)",
-          "Cap of Water Breathing (prereq: level 2 artificer)",
-          "Goggles of Night (prereq: level 2 artificer)",
-          "Rope of Climbing (prereq: level 2 artificer)",
-          "Sending Stones (prereq: level 2 artificer)",
-          "Wand of Magic Detection (prereq: level 2 artificer)",
-          "Wand of Secrets (prereq: level 2 artificer)",
-          "Boots of Elvenkind (prereq: level 6 artificer)",
-          "Cloak of Elvenkind (prereq: level 6 artificer)",
-          "Cloak of the Manta Ray (prereq: level 6 artificer)",
-          "Eyes of Charming (prereq: level 6 artificer)",
-          "Gloves of Thievery (prereq: level 6 artificer)",
-          "Lantern of Revealing (prereq: level 6 artificer)",
-          "Pipes of Haunting (prereq: level 6 artificer)",
-          "Ring of Water Walking (prereq: level 6 artificer)",
-          "Boots of Striding and Springing (prereq: level 10 artificer)",
-          "Boots of the Winterlands (prereq: level 10 artificer)",
-          "Bracers of Archery (prereq: level 10 artificer)",
-          "Brooch of Shielding (prereq: level 10 artificer)",
-          "Cloak of Protection (prereq: level 10 artificer)",
-          "Eyes of the Eagle (prereq: level 10 artificer)",
-          "Gauntlets of Ogre Power (prereq: level 10 artificer)",
-          "Gloves of Missile Snaring (prereq: level 10 artificer)",
-          "Gloves of Swimming and Climbing (prereq: level 10 artificer)",
-          "Hat of Disguise (prereq: level 10 artificer)",
-          "Headband of Intellect (prereq: level 10 artificer)",
-          "Helm of Telepathy (prereq: level 10 artificer)",
-          "Medallion of Thoughts (prereq: level 10 artificer)",
-          "Necklace of Adaptation (prereq: level 10 artificer)",
-          "Periapt of Wound Closure (prereq: level 10 artificer)",
-          "Pipes of the Sewers (prereq: level 10 artificer)",
-          "Quiver of Ehlonna (prereq: level 10 artificer)",
-          "Ring of Jumping (prereq: level 10 artificer)",
-          "Ring of Mind Shielding (prereq: level 10 artificer)",
-          "Slippers of Spider Climbing (prereq: level 10 artificer)",
-          "Winged Boots (prereq: level 10 artificer)",
-          "Amulet of Health (prereq: level 14 artificer)",
-          "Belt of Hill Giant Strength (prereq: level 14 artificer)",
-          "Boots of Levitation (prereq: level 14 artificer)",
-          "Boots of Speed (prereq: level 14 artificer)",
-          "Bracers of Defense (prereq: level 14 artificer)",
-          "Cloak of the Bat (prereq: level 14 artificer)",
-          "Dimensional Shackles (prereq: level 14 artificer)",
-          "Gem of Seeing (prereq: level 14 artificer)",
-          "Horn of Blasting (prereq: level 14 artificer)",
-          "Ring of Free Action (prereq: level 14 artificer)",
-          "Ring of Protection (prereq: level 14 artificer)",
-          "Ring of the Ram (prereq: level 14 artificer)"
-        ],
+        "extraname": "Replicate Magic Item",
         "extraTimes": [
           0,
           4,
           4,
           4,
           4,
+          5,
+          5,
+          5,
+          5,
           6,
           6,
           6,
           6,
+          7,
+          7,
+          7,
+          7,
           8,
           8,
-          8,
-          8,
-          10,
-          10,
-          10,
-          10,
-          12,
-          12,
-          12
+          8
         ],
-        "boots of the winding path (prereq: level 6 artificer)": {
-          "name": "Boots of the Winding Path",
-          "source": [
-            [
-              "E:RLW",
-              62
-            ],
-            [
-              "T",
-              21
-            ]
-          ],
-          "description": "The wearer can use a bonus action to teleport up to 15 ft to an unoccupied space it can see\n   It must be a space that the wearer had occupied some time during the current turn",
-          "additional": "pair of boots; requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "magicitemsAdd": [
-            "Boots of the Winding Path"
-          ]
-        },
-        "enhanced arcane focus": {
-          "name": "Enhanced Arcane Focus",
-          "source": [
-            [
-              "E:RLW",
-              62
-            ],
-            [
-              "T",
-              21
-            ]
-          ],
-          "description": "\n   The holder has a bonus to spell attack rolls and ignores half cover with spell attacks",
-          "additional": [
-            "rod/staff/wand; attunement; +1",
-            "rod/staff/wand; attunement; +1",
-            "rod/staff/wand; attunement; +1",
-            "rod/staff/wand; attunement; +1",
-            "rod/staff/wand; attunement; +1",
-            "rod/staff/wand; attunement; +1",
-            "rod/staff/wand; attunement; +1",
-            "rod/staff/wand; attunement; +1",
-            "rod/staff/wand; attunement; +1",
-            "rod/staff/wand; attunement; +2",
-            "rod/staff/wand; attunement; +2",
-            "rod/staff/wand; attunement; +2",
-            "rod/staff/wand; attunement; +2",
-            "rod/staff/wand; attunement; +2",
-            "rod/staff/wand; attunement; +2",
-            "rod/staff/wand; attunement; +2",
-            "rod/staff/wand; attunement; +2",
-            "rod/staff/wand; attunement; +2",
-            "rod/staff/wand; attunement; +2",
-            "rod/staff/wand; attunement; +2"
-          ],
-          "eval": {
-            "_type": "function",
-            "body": "function(e,a){AddMagicItem(\"Enhanced Arcane Focus +\"+(classes.known.artificer.level<10?1:2))}"
-          },
-          "removeeval": {
-            "_type": "function",
-            "body": "function(e,a){RemoveMagicItem(\"enhanced arcane focus, +1 or +2\")}"
-          }
-        },
-        "enhanced defense (armor)": {
-          "name": "Enhanced Defense",
-          "source": [
-            [
-              "E:RLW",
-              62
-            ],
-            [
-              "T",
-              21
-            ]
-          ],
-          "description": "",
-          "additional": [
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return-1==GetFeatureChoice(\"classes\",\"artificer\",\"infuse item\",!0).indexOf(\"enhanced defense (shield)\")}"
-          },
-          "eval": {
-            "_type": "function",
-            "body": "function(e,a){AddMagicItem(\"Armor +\"+(classes.known.artificer.level<10?1:2))}"
-          },
-          "removeeval": {
-            "_type": "function",
-            "body": "function(e,a){RemoveMagicItem(\"armor, +1, +2, or +3\")}"
-          }
-        },
-        "enhanced defense (shield)": {
-          "name": "Enhanced Defense",
-          "source": [
-            [
-              "E:RLW",
-              62
-            ],
-            [
-              "T",
-              21
-            ]
-          ],
-          "description": "",
-          "additional": [
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +1 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical",
-            "armor/shield; +2 magical"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return-1==GetFeatureChoice(\"classes\",\"artificer\",\"infuse item\",!0).indexOf(\"enhanced defense (armor)\")}"
-          },
-          "eval": {
-            "_type": "function",
-            "body": "function(e,a){AddMagicItem(\"Shield +\"+(classes.known.artificer.level<10?1:2))}"
-          },
-          "removeeval": {
-            "_type": "function",
-            "body": "function(e,a){RemoveMagicItem(\"shield, +1, +2, or +3\")}"
-          }
-        },
-        "enhanced weapon": {
-          "name": "Enhanced Weapon",
-          "source": [
-            [
-              "E:RLW",
-              62
-            ],
-            [
-              "T",
-              21
-            ]
-          ],
-          "description": "",
-          "additional": [
-            "simple/martial weapon; +1 magical",
-            "simple/martial weapon; +1 magical",
-            "simple/martial weapon; +1 magical",
-            "simple/martial weapon; +1 magical",
-            "simple/martial weapon; +1 magical",
-            "simple/martial weapon; +1 magical",
-            "simple/martial weapon; +1 magical",
-            "simple/martial weapon; +1 magical",
-            "simple/martial weapon; +1 magical",
-            "simple/martial weapon; +2 magical",
-            "simple/martial weapon; +2 magical",
-            "simple/martial weapon; +2 magical",
-            "simple/martial weapon; +2 magical",
-            "simple/martial weapon; +2 magical",
-            "simple/martial weapon; +2 magical",
-            "simple/martial weapon; +2 magical",
-            "simple/martial weapon; +2 magical",
-            "simple/martial weapon; +2 magical",
-            "simple/martial weapon; +2 magical",
-            "simple/martial weapon; +2 magical"
-          ],
-          "eval": {
-            "_type": "function",
-            "body": "function(e,a){AddMagicItem(\"Weapon +\"+(classes.known.artificer.level<10?1:2))}"
-          },
-          "removeeval": {
-            "_type": "function",
-            "body": "function(e,a){RemoveMagicItem(\"weapon, +1, +2, or +3\")}"
-          }
-        },
-        "homunculus servant": {
-          "name": "Homunculus Servant",
-          "source": [
-            [
-              "E:RLW",
-              62
-            ],
-            [
-              "T",
-              21
-            ]
-          ],
-          "description": "The item I infuse becomes the heart of a homunculus that immediately forms around it\n   I determine its appearance; It is friendly to me and my allies and obeys my commands\n   See \"Homunculus Servant\" on a companion page to see its game statistics",
-          "additional": "gem or crystal of 100+ gp",
-          "action": [
-            [
-              "bonus action",
-              " (command)"
-            ]
-          ],
-          "creaturesAdd": [
-            [
-              "Homunculus Servant"
-            ]
-          ],
-          "creatureOptions": [
-            {
-              "name": "Homunculus Servant",
-              "source": [
-                [
-                  "E:RLW",
-                  62
-                ],
-                [
-                  "T",
-                  22
-                ]
-              ],
-              "size": 5,
-              "type": "Construct",
-              "alignment": "Neutral",
-              "ac": 13,
-              "hp": 3,
-              "hd": [
-                2,
-                4
-              ],
-              "hdLinked": [
-                "artificer"
-              ],
-              "speed": "20 ft, fly 30 ft",
-              "scores": [
-                4,
-                15,
-                12,
-                10,
-                10,
-                7
-              ],
-              "saves": [
-                "",
-                4,
-                "",
-                "",
-                "",
-                ""
-              ],
-              "skills": {
-                "perception": 4,
-                "stealth": 4
-              },
-              "damage_immunities": "poison",
-              "condition_immunities": "exhaustion, poisoned",
-              "senses": "Darkvision 60 ft",
-              "passivePerception": 14,
-              "languages": "understands the languages of its creator but can't speak",
-              "challengeRating": "0",
-              "proficiencyBonus": 2,
-              "proficiencyBonusLinked": true,
-              "attacksAction": 1,
-              "attacks": [
-                {
-                  "name": "Force Strike",
-                  "ability": 4,
-                  "damage": [
-                    1,
-                    4,
-                    "force"
-                  ],
-                  "range": "30 ft",
-                  "description": "",
-                  "modifiers": [
-                    "",
-                    "Prof"
-                  ],
-                  "abilitytodamage": false,
-                  "useSpellMod": "artificer"
-                }
-              ],
-              "features": [
-                {
-                  "name": "Creator",
-                  "description": "The homunculus obeys the commands of its creator and has the same proficiency bonus. It takes its turn immediately after its creator, on the same initiative count. It can move and take reactions on its own, but only takes the Dodge action on its turn unless its creator takes a bonus action to command it to take another action. If its creator is incapacitated, it can take any action, not just Dodge."
-                }
-              ],
-              "traits": [
-                {
-                  "name": "Healing",
-                  "description": "The homunculus regains 2d6 hit points whenever the Mending spell is cast on it. Its HP total is equal to 1 + its creator's artificer level + its creator's Intelligence modifier. If it or its creator dies, the homunculus vanishes, leaving its heart in its space."
-                },
-                {
-                  "name": "Evasion",
-                  "description": "If the homunculus is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails. It can't use this trait if it's incapacitated."
-                }
-              ],
-              "actions": [
-                {
-                  "name": "Channel Magic",
-                  "description": "As a reaction, the homunculus delivers a spell cast by its creator that has a range of touch. The homunculus must be within 120 ft of its creator to do so."
-                }
-              ],
-              "header": "Construct",
-              "calcChanges": {
-                "hp": {
-                  "_type": "function",
-                  "body": "function(e,a,t){var n,i;classes.known.artificer&&(n=Number(What(\"Int Mod\")),i=classes.known.artificer.level,a.alt.push(1+n+i),a.altStr.push(\" = 1 as a base\\n + \"+n+\" from its creator's Intelligence modifier\\n + \"+i+\" from its creator's artificer level\"))}"
-                },
-                "setAltHp": true,
-                "hpForceRecalc": true
-              }
-            }
-          ]
-        },
-        "radiant weapon (prereq: level 6 artificer)": {
-          "name": "Radiant Weapon",
-          "source": [
-            [
-              "E:RLW",
-              62
-            ],
-            [
-              "T",
-              22
-            ]
-          ],
-          "description": "The weapon has a +1 bonus to attack and damage rolls made with it and it sheds light\n   As a bonus action, its wielder can start/stop the light, 30-ft radius bright + 30 ft dim light\n   The weapon has 4 charges, regaining 1d4 expended charges daily at dawn\n   As a reaction when hit by an attack, the wielder can expend 1 charge to blind its attacker\n   The attacker makes a Con save (my spell save DC) or is blinded until its next turn ends",
-          "additional": "simple/martial weapon; requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "magicitemsAdd": [
-            "Radiant Weapon"
-          ]
-        },
-        "repeating shot": {
-          "name": "Repeating Shot",
-          "source": [
-            [
-              "E:RLW",
-              62
-            ],
-            [
-              "T",
-              22
-            ]
-          ],
-          "description": "The weapon requiring ammunition has a +1 bonus to attack and damage rolls made with it\n   It magically produces one piece of ammunition whenever it is used to make a ranged attack\n   Thus, it doesn't require ammunition and ignores the loading property if it has it",
-          "additional": "weapon with ammo; requires attunement",
-          "magicitemsAdd": [
-            "Repeating Shot"
-          ]
-        },
-        "repulsion shield (prereq: level 6 artificer)": {
-          "name": "Repulsion Shield",
-          "source": [
-            [
-              "E:RLW",
-              63
-            ],
-            [
-              "T",
-              23
-            ]
-          ],
-          "description": "The shield gives its wearer an extra +1 bonus to AC; It has 4 charges, regaining 1d4 daily\n   As a reaction when hit in melee, the wearer can use 1 charge to push the attacker 15 ft",
-          "additional": "shield; requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "magicitemsAdd": [
-            "Repulsion Shield"
-          ]
-        },
-        "resistant armor (prereq: level 6 artificer)": {
-          "name": "Resistant Armor",
-          "source": [
-            [
-              "E:RLW",
-              63
-            ],
-            [
-              "T",
-              23
-            ]
-          ],
-          "description": "The armor gives its wearer resistance to one type of damage, chosen at the time of infusion\n   Choose from: acid,\tcold, fire, force, lightning, necrotic, poison, psychic, radiant, or thunder",
-          "additional": "suit of armor; requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "magicitemsAdd": [
-            "Armor of Resistance"
-          ]
-        },
-        "returning weapon": {
-          "name": "Returning Weapon",
-          "source": [
-            [
-              "E:RLW",
-              63
-            ],
-            [
-              "T",
-              23
-            ]
-          ],
-          "description": "After being used for a ranged attack, the weapon returns immediately; +1 magical bonus",
-          "additional": "weapon with the thrown property",
-          "magicitemsAdd": [
-            "Returning Weapon"
-          ]
-        },
-        "alchemy jug (prereq: level 2 artificer)": {
-          "name": "Alchemy Jug",
-          "description": "",
-          "source": [
-            [
-              "D",
-              150
-            ]
-          ],
-          "magicitemsAdd": [
-            "Alchemy Jug"
-          ],
-          "submenu": "Replicate Magic Item (prereq: level  2 artificer)"
-        },
-        "bag of holding (prereq: level 2 artificer)": {
-          "name": "Bag of Holding",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              210
-            ],
-            [
-              "D",
-              153
-            ]
-          ],
-          "magicitemsAdd": [
-            "Bag of Holding"
-          ],
-          "submenu": "Replicate Magic Item (prereq: level  2 artificer)"
-        },
-        "cap of water breathing (prereq: level 2 artificer)": {
-          "name": "Cap of Water Breathing",
-          "description": "",
-          "source": [
-            [
-              "D",
-              157
-            ]
-          ],
-          "magicitemsAdd": [
-            "Cap of Water Breathing"
-          ],
-          "submenu": "Replicate Magic Item (prereq: level  2 artificer)"
-        },
-        "goggles of night (prereq: level 2 artificer)": {
-          "name": "Goggles of Night",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              224
-            ],
-            [
-              "D",
-              172
-            ]
-          ],
-          "magicitemsAdd": [
-            "Goggles of Night"
-          ],
-          "submenu": "Replicate Magic Item (prereq: level  2 artificer)"
-        },
-        "rope of climbing (prereq: level 2 artificer)": {
-          "name": "Rope of Climbing",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              241
-            ],
-            [
-              "D",
-              197
-            ]
-          ],
-          "magicitemsAdd": [
-            "Rope of Climbing"
-          ],
-          "submenu": "Replicate Magic Item (prereq: level  2 artificer)"
-        },
-        "sending stones (prereq: level 2 artificer)": {
-          "name": "Sending Stones",
-          "description": "",
-          "source": [
-            [
-              "D",
-              199
-            ]
-          ],
-          "magicitemsAdd": [
-            "Sending Stones"
-          ],
-          "submenu": "Replicate Magic Item (prereq: level  2 artificer)"
-        },
-        "wand of magic detection (prereq: level 2 artificer)": {
-          "name": "Wand of Magic Detection",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              249
-            ],
-            [
-              "D",
-              211
-            ]
-          ],
-          "magicitemsAdd": [
-            "Wand of Magic Detection"
-          ],
-          "submenu": "Replicate Magic Item (prereq: level  2 artificer)"
-        },
-        "wand of secrets (prereq: level 2 artificer)": {
-          "name": "Wand of Secrets",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              249
-            ],
-            [
-              "D",
-              211
-            ]
-          ],
-          "magicitemsAdd": [
-            "Wand of Secrets"
-          ],
-          "submenu": "Replicate Magic Item (prereq: level  2 artificer)"
-        },
-        "boots of elvenkind (prereq: level 6 artificer)": {
-          "name": "Boots of Elvenkind",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              212
-            ],
-            [
-              "D",
-              155
-            ]
-          ],
-          "magicitemsAdd": [
-            "Boots of Elvenkind"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level  6 artificer)"
-        },
-        "cloak of elvenkind (prereq: level 6 artificer)": {
-          "name": "Cloak of Elvenkind",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              214
-            ],
-            [
-              "D",
-              158
-            ]
-          ],
-          "magicitemsAdd": [
-            "Cloak of Elvenkind"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level  6 artificer)"
-        },
-        "cloak of the manta ray (prereq: level 6 artificer)": {
-          "name": "Cloak of the Manta Ray",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              214
-            ],
-            [
-              "D",
-              159
-            ]
-          ],
-          "magicitemsAdd": [
-            "Cloak of the Manta Ray"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level  6 artificer)"
-        },
-        "eyes of charming (prereq: level 6 artificer)": {
-          "name": "Eyes of Charming",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              220
-            ],
-            [
-              "D",
-              168
-            ]
-          ],
-          "magicitemsAdd": [
-            "Eyes of Charming"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level  6 artificer)"
-        },
-        "gloves of thievery (prereq: level 6 artificer)": {
-          "name": "Gloves of Thievery",
-          "description": "",
-          "source": [
-            [
-              "D",
-              172
-            ]
-          ],
-          "magicitemsAdd": [
-            "Gloves of Thievery"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level  6 artificer)"
-        },
-        "lantern of revealing (prereq: level 6 artificer)": {
-          "name": "Lantern of Revealing",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              228
-            ],
-            [
-              "D",
-              179
-            ]
-          ],
-          "magicitemsAdd": [
-            "Lantern of Revealing"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level  6 artificer)"
-        },
-        "pipes of haunting (prereq: level 6 artificer)": {
-          "name": "Pipes of Haunting",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              232
-            ],
-            [
-              "D",
-              185
-            ]
-          ],
-          "magicitemsAdd": [
-            "Pipes of Haunting"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level  6 artificer)"
-        },
-        "ring of water walking (prereq: level 6 artificer)": {
-          "name": "Ring of Water Walking",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              238
-            ],
-            [
-              "D",
-              193
-            ]
-          ],
-          "magicitemsAdd": [
-            "Ring of Water Walking"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 6<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level  6 artificer)"
-        },
-        "boots of striding and springing (prereq: level 10 artificer)": {
-          "name": "Boots of Striding and Springing",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              212
-            ],
-            [
-              "D",
-              156
-            ]
-          ],
-          "magicitemsAdd": [
-            "Boots of Striding and Springing"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "boots of the winterlands (prereq: level 10 artificer)": {
-          "name": "Boots of the Winterlands",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              212
-            ],
-            [
-              "D",
-              156
-            ]
-          ],
-          "magicitemsAdd": [
-            "Boots of the Winterlands"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "bracers of archery (prereq: level 10 artificer)": {
-          "name": "Bracers of Archery",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              212
-            ],
-            [
-              "D",
-              156
-            ]
-          ],
-          "magicitemsAdd": [
-            "Bracers of Archery"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "brooch of shielding (prereq: level 10 artificer)": {
-          "name": "Brooch of Shielding",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              212
-            ],
-            [
-              "D",
-              156
-            ]
-          ],
-          "magicitemsAdd": [
-            "Brooch of Shielding"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "cloak of protection (prereq: level 10 artificer)": {
-          "name": "Cloak of Protection",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              214
-            ],
-            [
-              "D",
-              159
-            ]
-          ],
-          "magicitemsAdd": [
-            "Cloak of Protection"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "eyes of the eagle (prereq: level 10 artificer)": {
-          "name": "Eyes of the Eagle",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              221
-            ],
-            [
-              "D",
-              168
-            ]
-          ],
-          "magicitemsAdd": [
-            "Eyes of the Eagle"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "gauntlets of ogre power (prereq: level 10 artificer)": {
-          "name": "Gauntlets of Ogre Power",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              223
-            ],
-            [
-              "D",
-              171
-            ]
-          ],
-          "magicitemsAdd": [
-            "Gauntlets of Ogre Power"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "gloves of missile snaring (prereq: level 10 artificer)": {
-          "name": "Gloves of Missile Snaring",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              224
-            ],
-            [
-              "D",
-              172
-            ]
-          ],
-          "magicitemsAdd": [
-            "Gloves of Missile Snaring"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "gloves of swimming and climbing (prereq: level 10 artificer)": {
-          "name": "Gloves of Swimming and Climbing",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              224
-            ],
-            [
-              "D",
-              172
-            ]
-          ],
-          "magicitemsAdd": [
-            "Gloves of Swimming and Climbing"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "hat of disguise (prereq: level 10 artificer)": {
-          "name": "Hat of Disguise",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              225
-            ],
-            [
-              "D",
-              173
-            ]
-          ],
-          "magicitemsAdd": [
-            "Hat of Disguise"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "headband of intellect (prereq: level 10 artificer)": {
-          "name": "Headband of Intellect",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              225
-            ],
-            [
-              "D",
-              173
-            ]
-          ],
-          "magicitemsAdd": [
-            "Headband of Intellect"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "helm of telepathy (prereq: level 10 artificer)": {
-          "name": "Helm of Telepathy",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              225
-            ],
-            [
-              "D",
-              174
-            ]
-          ],
-          "magicitemsAdd": [
-            "Helm of Telepathy"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "medallion of thoughts (prereq: level 10 artificer)": {
-          "name": "Medallion of Thoughts",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              230
-            ],
-            [
-              "D",
-              181
-            ]
-          ],
-          "magicitemsAdd": [
-            "Medallion of Thoughts"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "necklace of adaptation (prereq: level 10 artificer)": {
-          "name": "Necklace of Adaptation",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              231
-            ],
-            [
-              "D",
-              182
-            ]
-          ],
-          "magicitemsAdd": [
-            "Necklace of Adaptation"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "periapt of wound closure (prereq: level 10 artificer)": {
-          "name": "Periapt of Wound Closure",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              232
-            ],
-            [
-              "D",
-              184
-            ]
-          ],
-          "magicitemsAdd": [
-            "Periapt of Wound Closure"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "pipes of the sewers (prereq: level 10 artificer)": {
-          "name": "Pipes of the Sewers",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              232
-            ],
-            [
-              "D",
-              185
-            ]
-          ],
-          "magicitemsAdd": [
-            "Pipes of the Sewers"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "quiver of ehlonna (prereq: level 10 artificer)": {
-          "name": "Quiver of Ehlonna",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              220
-            ],
-            [
-              "D",
-              189
-            ]
-          ],
-          "magicitemsAdd": [
-            "Quiver of Ehlonna"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "ring of jumping (prereq: level 10 artificer)": {
-          "name": "Ring of Jumping",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              236
-            ],
-            [
-              "D",
-              191
-            ]
-          ],
-          "magicitemsAdd": [
-            "Ring of Jumping"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "ring of mind shielding (prereq: level 10 artificer)": {
-          "name": "Ring of Mind Shielding",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              236
-            ],
-            [
-              "D",
-              191
-            ]
-          ],
-          "magicitemsAdd": [
-            "Ring of Mind Shielding"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "slippers of spider climbing (prereq: level 10 artificer)": {
-          "name": "Slippers of Spider Climbing",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              242
-            ],
-            [
-              "D",
-              200
-            ]
-          ],
-          "magicitemsAdd": [
-            "Slippers of Spider Climbing"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "winged boots (prereq: level 10 artificer)": {
-          "name": "Winged Boots",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              250
-            ],
-            [
-              "D",
-              214
-            ]
-          ],
-          "magicitemsAdd": [
-            "Winged Boots"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 10<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 10 artificer)"
-        },
-        "amulet of health (prereq: level 14 artificer)": {
-          "name": "Amulet of Health",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              207
-            ],
-            [
-              "D",
-              150
-            ]
-          ],
-          "magicitemsAdd": [
-            "Amulet of Health"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "belt of hill giant strength (prereq: level 14 artificer)": {
-          "name": "Belt of Hill Giant Strength",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              211
-            ],
-            [
-              "D",
-              155
-            ]
-          ],
-          "magicitemsAdd": [
-            "Belt of Hill Giant Strength"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "boots of levitation (prereq: level 14 artificer)": {
-          "name": "Boots of Levitation",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              212
-            ],
-            [
-              "D",
-              155
-            ]
-          ],
-          "magicitemsAdd": [
-            "Boots of Levitation"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "boots of speed (prereq: level 14 artificer)": {
-          "name": "Boots of Speed",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              212
-            ],
-            [
-              "D",
-              155
-            ]
-          ],
-          "magicitemsAdd": [
-            "Boots of Speed"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "bracers of defense (prereq: level 14 artificer)": {
-          "name": "Bracers of Defense",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              212
-            ],
-            [
-              "D",
-              156
-            ]
-          ],
-          "magicitemsAdd": [
-            "Bracers of Defense"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "cloak of the bat (prereq: level 14 artificer)": {
-          "name": "Cloak of the Bat",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              214
-            ],
-            [
-              "D",
-              159
-            ]
-          ],
-          "magicitemsAdd": [
-            "Cloak of the Bat"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "dimensional shackles (prereq: level 14 artificer)": {
-          "name": "Dimensional Shackles",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              219
-            ],
-            [
-              "D",
-              165
-            ]
-          ],
-          "magicitemsAdd": [
-            "Dimensional Shackles"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "gem of seeing (prereq: level 14 artificer)": {
-          "name": "Gem of Seeing",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              223
-            ],
-            [
-              "D",
-              172
-            ]
-          ],
-          "magicitemsAdd": [
-            "Gem of Seeing"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "horn of blasting (prereq: level 14 artificer)": {
-          "name": "Horn of Blasting",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              226
-            ],
-            [
-              "D",
-              174
-            ]
-          ],
-          "magicitemsAdd": [
-            "Horn of Blasting"
-          ],
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "ring of free action (prereq: level 14 artificer)": {
-          "name": "Ring of Free Action",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              236
-            ],
-            [
-              "D",
-              191
-            ]
-          ],
-          "magicitemsAdd": [
-            "Ring of Free Action"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "ring of protection (prereq: level 14 artificer)": {
-          "name": "Ring of Protection",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              237
-            ],
-            [
-              "D",
-              191
-            ]
-          ],
-          "magicitemsAdd": [
-            "Ring of Protection"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "ring of the ram (prereq: level 14 artificer)": {
-          "name": "Ring of the Ram",
-          "description": "",
-          "source": [
-            [
-              "SRD",
-              238
-            ],
-            [
-              "D",
-              193
-            ]
-          ],
-          "magicitemsAdd": [
-            "Ring of the Ram"
-          ],
-          "additional": "requires attunement",
-          "prereqeval": {
-            "_type": "function",
-            "body": "function(e){return 14<=classes.known.artificer.level}"
-          },
-          "submenu": "Replicate Magic Item (prereq: level 14 artificer)"
-        },
-        "_optionalChoices": [
-          {
-            "_choiceName": "Arcane Propulsion Armor (prereq: level 14 artificer)",
-            "_optional": true,
-            "_optionalCategory": "",
-            "name": "Arcane Propulsion Armor",
-            "source": [
-              [
-                "T",
-                20
-              ]
-            ],
-            "description": "The armor replaces any missing limbs of the wearer and can't be removed against its will\n   It increases the wearer's walking speed by 5 ft; Its gauntlet can be used as melee weapons",
-            "additional": "suit of armor; requires attunement",
-            "prereqeval": {
-              "_type": "function",
-              "body": "function(e){return 14<=classes.known.artificer.level}"
-            },
-            "magicitemsAdd": [
-              "Arcane Propulsion Armor"
-            ]
-          },
-          {
-            "_choiceName": "Armor of Magical Strength",
-            "_optional": true,
-            "_optionalCategory": "",
-            "name": "Armor of Magical Strength",
-            "source": [
-              [
-                "T",
-                20
-              ]
-            ],
-            "description": "The armor has 6 charges, regaining 1d6 expended charges daily at dawn\n   As a reaction when being knocked prone, the wearer can use 1 charge to not be prone\n   When making a Str check/save, the wearer can use 1 charge to add its Int mod to the roll",
-            "additional": "suit of armor; requires attunement",
-            "magicitemsAdd": [
-              "Armor of Magical Strength"
-            ]
-          },
-          {
-            "_choiceName": "Helm of Awareness (prereq: level 10 artificer)",
-            "_optional": true,
-            "_optionalCategory": "",
-            "name": "Helm of Awareness",
-            "source": [
-              [
-                "T",
-                21
-              ],
-              [
-                "UA:SP3",
-                3
-              ]
-            ],
-            "description": "\n   The wearer has advantage on Initiative rolls and can't be surprised while not incapacitated",
-            "additional": "helmet; requires attunement",
-            "prereqeval": {
-              "_type": "function",
-              "body": "function(e){return 10<=classes.known.artificer.level}"
-            },
-            "magicitemsAdd": [
-              "Helm of Awareness"
-            ]
-          },
-          {
-            "_choiceName": "Mind Sharpener",
-            "_optional": true,
-            "_optionalCategory": "",
-            "name": "Mind Sharpener",
-            "source": [
-              [
-                "T",
-                22
-              ]
-            ],
-            "description": "\n   The wearer can use its reaction to ignore a failed Con save to maintain concentration",
-            "additional": "suit of armor or robes",
-            "magicitemsAdd": [
-              "Mind Sharpener"
-            ]
-          },
-          {
-            "_choiceName": "Spell-Refueling Ring (prereq: level 6 artificer)",
-            "_optional": true,
-            "_optionalCategory": "",
-            "name": "Spell-Refueling Ring",
-            "source": [
-              [
-                "T",
-                23
-              ]
-            ],
-            "description": "\n   As an action once per dawn, this ring's wearer can recover one 3rd-level or lower spell slot",
-            "additional": "ring; requires attunement",
-            "prereqeval": {
-              "_type": "function",
-              "body": "function(e){return 6<=classes.known.artificer.level}"
-            },
-            "magicitemsAdd": [
-              "Spell-Refueling Ring"
-            ]
-          },
-          {
-            "_choiceName": "Armor of Magical Strength (ua) (prereq: level 10 artificer)",
-            "_optional": true,
-            "_optionalCategory": "",
-            "name": "Armor of Magical Strength",
-            "source": [
-              [
-                "UA:SP3",
-                3
-              ]
-            ],
-            "description": "The wearer of the armor can use its Int mod instead of its Str mod for Str checks/saves\n   The armor has 4 charges, regaining 1d4 expended charges daily at dawn\n   As a reaction when being knocked prone, the wearer can use 1 charge to not be prone",
-            "additional": "suit of armor; requires attunement",
-            "prereqeval": {
-              "_type": "function",
-              "body": "function(e){return 10<=classes.known.artificer.level}"
-            },
-            "magicitemsAdd": [
-              "Armor of Magical Strength (UA)"
-            ]
-          },
-          {
-            "_choiceName": "Armor of Tools",
-            "_optional": true,
-            "_optionalCategory": "",
-            "name": "Armor of Tools",
-            "source": [
-              [
-                "UA:SP3",
-                3
-              ]
-            ],
-            "description": "The armor can have a set of artisan's or thieves' tools integrated into it as an action\n   The tools remain integrated for 8 hours, or until removed as an action\n   The wearer can add its Intelligence modifier to checks made with the integrated tools",
-            "additional": "suit of armor",
-            "magicitemsAdd": [
-              "Armor of Tools"
-            ]
-          },
-          {
-            "_choiceName": "Mind Sharpener (ua)",
-            "_optional": true,
-            "_optionalCategory": "",
-            "name": "Mind Sharpener",
-            "source": [
-              [
-                "UA:SP3",
-                3
-              ]
-            ],
-            "description": "\n   The wearer can use its reaction to ignore a failed Con save to maintain concentration",
-            "additional": "suit of armor or robes",
-            "magicitemsAdd": [
-              "Mind Sharpener (UA)"
-            ]
-          },
-          {
-            "_choiceName": "Spell-Refueling Ring (ua) (prereq: level 6 artificer)",
-            "_optional": true,
-            "_optionalCategory": "",
-            "name": "Spell-Refueling Ring",
-            "source": [
-              [
-                "UA:SP3",
-                3
-              ]
-            ],
-            "description": "As an action once per dawn, the wearer of this ring can recover one expended spell slot\n   The maximum level of the spell slot is equal to the number of magic items it is attuned to",
-            "additional": "ring; requires attunement",
-            "prereqeval": {
-              "_type": "function",
-              "body": "function(e){return 6<=classes.known.artificer.level}"
-            },
-            "magicitemsAdd": [
-              "Spell-Refueling Ring (UA)"
-            ]
-          }
-        ]
-      },
-      "the right tool for the job": {
-        "name": "The Right Tool for the Job",
-        "source": [
-          [
-            "E:RLW",
-            57
-          ],
-          [
-            "T",
-            13
-          ]
-        ],
-        "minlevel": 3,
-        "description": "\n   In 1 hour (during a rest) I can create a set of artisan's tools that last until I do so again",
-        "additional": "using thieves' or artisan's tools"
+        "eval": {
+          "_type": "function",
+          "body": "function() {\n                AddArtificerMI();\n            }"
+        }
       },
       "subclassfeature3": {
         "name": "Artificer Specialist",
         "source": [
           [
-            "E:RLW",
-            57
-          ],
-          [
-            "T",
-            13
+            "E:FA",
+            4
           ]
         ],
         "minlevel": 3,
-        "description": "Choose a specialism and put it in the \"Class\" field on the first page\n   Choose either alchemist, artillerist, or battle smith"
+        "description": "Choose a specialism and put it in the \"Class\" field on the first page\n   Choose either Alchemist, Armorer, Artillerist, Battle Smith, or Cartographer"
       },
-      "tool expertise": {
-        "name": "Tool Expertise",
+      "magic item tinker": {
+        "name": "Magic Item Tinker",
         "source": [
           [
-            "E:RLW",
-            57
-          ],
-          [
-            "T",
-            13
+            "E:FA",
+            0
           ]
         ],
         "minlevel": 6,
-        "description": " [expertise with all tools I'm proficient with]",
-        "skillstxt": "Expertise with all tools I'm proficient with",
-        "eval": {
-          "_type": "function",
-          "body": "function(){Checkbox(\"Too Exp\",!0)}"
-        },
-        "removeeval": {
-          "_type": "function",
-          "body": "function(){Checkbox(\"Too Exp\",!1)}"
-        }
+        "description": "My Replicate Magic Item feature improves as follows:\n    • Charge Magic Item. As a Bonus Action, I can touch one of my replicated magic items that uses charges & that is within 5 ft of myself. I can recharge the item at the cost of a level 1+ spell slot, with the number of charges restored equal to the spell slot level expended.\n    • Drain Magic Item. Once per Long Rest as a Bonus Action, I can cause one of my replicated magic items to vanish, converting the energy into a spell slot. The slot is level 1 if the item is Common or level 2 if the item is Uncommon or Rare. Any spell slot I create with this feature vanishes after a Long Rest.\n    • Transmute Magic Item. Once per Long Rest as a Magic Action, I can touch one of my replicated magic items that is within 5 ft of myself & transform it into another magic item for which I know the arcane plans to.",
+        "action": [
+          [
+            "bonus action",
+            "Charge/Drain Magic Item"
+          ],
+          [
+            "action",
+            "Transmute Magic Item"
+          ]
+        ]
       },
       "flash of genius": {
         "name": "Flash of Genius",
         "source": [
           [
-            "E:RLW",
-            57
-          ],
-          [
-            "T",
-            13
+            "E:FA",
+            0
           ]
         ],
         "minlevel": 7,
-        "description": "\n   As a reaction when I or another in 30 ft make a check/save, I can add my Int mod to it",
+        "description": "\n   As a Reaction when I or another creature I can see in 30 ft fail a check/save, I can add my Int mod to it",
         "action": [
           [
             "reaction",
@@ -12149,16 +10386,12 @@
         "name": "Magic Item Adept",
         "source": [
           [
-            "E:RLW",
-            57
-          ],
-          [
-            "T",
-            13
+            "E:FA",
+            0
           ]
         ],
         "minlevel": 10,
-        "description": "\n   It takes me half the normal time and gold to craft common and uncommon magic items",
+        "description": "\n   I can attune to more magic items than others can.",
         "additional": [
           "",
           "",
@@ -12186,16 +10419,12 @@
         "name": "Spell-Storing Item",
         "source": [
           [
-            "E:RLW",
-            58
-          ],
-          [
-            "T",
-            13
+            "E:FA",
+            0
           ]
         ],
         "minlevel": 11,
-        "description": "When I finish a long rest, I can infuse a 1st-/2nd-level artificer spell into an item I touch\n   It has to be a weapon or spellcasting focus for me; Stored spells are lost if I do this again\n   The spell must have a casting time of 1 action, but I need not have it prepared\n   A creature holding an infused item can use an action to cast the spell, using my abilities",
+        "description": "When I finish a Long Rest, I can infuse a 1st-/2nd-/3rd-level Artificer spell into an item I touch\n   It has to be a weapon or Spellcasting Focus for me; Stored spells are lost if I do this again\n   The spell must have a casting time of 1 action & mustn't have a consumed Material component, but I needn't have it prepared\n   A creature holding an infused item can use a Magic action to cast the spell, using my abilities",
         "additional": "cast stored spell",
         "usages": "2× Int mod per ",
         "usagescalc": "event.value = Math.max(2, Number(What('Int Mod')) * 2);",
@@ -12205,55 +10434,81 @@
         "name": "Magic Item Savant",
         "source": [
           [
-            "E:RLW",
-            58
-          ],
-          [
-            "T",
-            14
+            "E:FA",
+            5
           ]
         ],
         "minlevel": 14,
-        "description": " [ignore class/race/spell/level attune require.]"
+        "description": "\n   I can attune to even more magic items than others can. Additionally, I regain 1 use of Flash of Genius when I finish a Short Rest.",
+        "_optionalChoices": [
+          {
+            "_choiceName": "Magic Item Savant: 2019/2020 Functions Added",
+            "_optional": true,
+            "_optionalCategory": "14th-level Artificer Magic Item Savant choice",
+            "name": "Magic Item Savant: 2019/2020 Functions Added",
+            "extraname": "Artificer 14",
+            "source": [
+              [
+                "MJ:HB",
+                0
+              ],
+              [
+                "E:RLW",
+                58
+              ],
+              [
+                "T",
+                9
+              ]
+            ],
+            "description": "I additionally ignore all Class, Species, Spell, and Level requirements on attuning to or using a magic item",
+            "prereqeval": {
+              "_type": "function",
+              "body": "function(v) {\n        return classes.known.artificer.level >= 14 ? true : \"skip\";\n    }"
+            }
+          }
+        ]
+      },
+      "epic boon": {
+        "name": "Epic Boon",
+        "source": [
+          [
+            "E:FA",
+            5
+          ]
+        ],
+        "minlevel": 19,
+        "description": "I gain an Epic Boon feat, or another feat of my choice for which I qualify."
       },
       "soul of artifice": {
         "name": "Soul of Artifice",
         "source": [
           [
-            "E:RLW",
-            58
-          ],
-          [
-            "T",
-            14
+            "E:FA",
+            5
           ]
         ],
         "minlevel": 20,
-        "description": " [+1 on all saves per attuned magic item]\n   As a reaction when I'm reduced to 0 HP, I can end one infusion to drop to 1 HP instead",
+        "description": "Cheat Death. As a free action when I'm reduced to 0 HP, I can disintegrate any number of Uncommon or Rare Replicated Magic Items to instead drop to a number of HP equal to 20 times the number of disintegrate magic items.\n   Magical Guidance. When I finish a Long Rest, I regain all expended uses of my Flash of Genius, if I have Attunement to at least one magic item.",
         "action": [
           [
             "reaction",
-            ""
+            " (Free Action)"
           ]
-        ],
-        "savetxt": {
-          "text": [
-            "+1 to all saves per attuned magic item"
-          ]
-        }
+        ]
       }
     },
     "prereqLvl6": {
       "_type": "function",
-      "body": "function(e){return 6<=classes.known.artificer.level}"
+      "body": "function(v) {\n        return classes.known.artificer.level >= 6;\n    }"
     },
     "prereqLvl10": {
       "_type": "function",
-      "body": "function(e){return 10<=classes.known.artificer.level}"
+      "body": "function(v) {\n        return classes.known.artificer.level >= 10;\n    }"
     },
     "prereqLvl14": {
       "_type": "function",
-      "body": "function(e){return 14<=classes.known.artificer.level}"
+      "body": "function(v) {\n        return classes.known.artificer.level >= 14;\n    }"
     }
   },
   {
@@ -18344,6 +16599,501 @@
           "Piercing",
           "Slashing"
         ]
+      }
+    }
+  },
+  {
+    "_key": "psion",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "psion",
+      "flags": "i"
+    },
+    "name": "Psion",
+    "source": [
+      "UA25P",
+      1
+    ],
+    "primaryAbility": "Intelligence",
+    "abilitySave": 4,
+    "prereqs": "Intelligence 13",
+    "die": 6,
+    "saves": [
+      "Int",
+      "Wis"
+    ],
+    "skillstxt": {
+      "primary": "Choose 2 from Arcana, Insight, Intimidation, Investigation, Medicine, Perception, Persuasion"
+    },
+    "armorProfs": {
+      "primary": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "weaponProfs": {
+      "primary": [
+        true,
+        false
+      ]
+    },
+    "equipment": "Psion starting equipment:\n • Spear, 2 daggers, light crossbow, 20 bolts, case, dungeoneer's pack, and 6 GP;\n • Or 50 GP to buy your equipment.",
+    "subclasses": [
+      "Psion Subclass",
+      [
+        "psion-metamorph",
+        "psion-psykinetic",
+        "psion-telepath",
+        "psion-psi warper"
+      ]
+    ],
+    "attacks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "spellcastingFactor": 1,
+    "spellcastingKnown": {
+      "cantrips": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "spells": [
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        16,
+        17,
+        17,
+        18,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    "features": {
+      "spellcasting": {
+        "name": "Spellcasting",
+        "source": [
+          "UA25P",
+          3
+        ],
+        "minlevel": 1,
+        "description": "I can cast prepared psion spells using Intelligence as my spellcasting ability\n   Psionic Spellcasting: My psion spells don't require Verbal or Material components\n   Exception: Material components that are consumed or have a cost specified",
+        "additional": [
+          "2 cantrips known",
+          "2 cantrips known",
+          "2 cantrips known",
+          "3 cantrips known",
+          "3 cantrips known",
+          "3 cantrips known",
+          "3 cantrips known",
+          "3 cantrips known",
+          "3 cantrips known",
+          "4 cantrips known",
+          "4 cantrips known",
+          "4 cantrips known",
+          "4 cantrips known",
+          "4 cantrips known",
+          "4 cantrips known",
+          "4 cantrips known",
+          "4 cantrips known",
+          "4 cantrips known",
+          "4 cantrips known",
+          "4 cantrips known"
+        ]
+      },
+      "psionic power": {
+        "name": "Psionic Power",
+        "source": [
+          "UA25P",
+          2
+        ],
+        "minlevel": 1,
+        "description": "I have Psionic Energy Dice that fuel my psionic abilities\n   I regain 1 expended die on a short rest, all on a long rest\n   Telekinetic Propel: Bonus action, target Large or smaller creature within 30 ft\n     Target makes Str save or moved 5 ft toward/away from me\n     Can roll 1 die: distance = 5 ft × roll; die expended only if target fails save\n   Telepathic Connection: I have 30 ft telepathy\n     Bonus action, roll 1 die: increase telepathy range by 10 ft × roll for 1 hour\n     First use after long rest doesn't expend die; all other times expends die",
+        "additional": [
+          "4d6 dice",
+          "4d6 dice",
+          "4d6 dice",
+          "4d6 dice",
+          "6d8 dice",
+          "6d8 dice",
+          "6d8 dice",
+          "6d8 dice",
+          "8d8 dice",
+          "8d8 dice",
+          "8d10 dice",
+          "8d10 dice",
+          "10d10 dice",
+          "10d10 dice",
+          "10d10 dice",
+          "10d10 dice",
+          "12d12 dice",
+          "12d12 dice",
+          "12d12 dice",
+          "12d12 dice"
+        ],
+        "usages": [
+          4,
+          4,
+          4,
+          4,
+          6,
+          6,
+          6,
+          6,
+          8,
+          8,
+          8,
+          8,
+          10,
+          10,
+          10,
+          10,
+          12,
+          12,
+          12,
+          12
+        ],
+        "recovery": "long rest",
+        "action": [
+          [
+            "bonus action",
+            "Telekinetic Propel"
+          ],
+          [
+            "bonus action",
+            "Telepathic Connection"
+          ]
+        ],
+        "extraLimitedFeatures": [
+          {
+            "name": "Psionic Energy Die (Short Rest)",
+            "usages": 1,
+            "recovery": "short rest"
+          }
+        ]
+      },
+      "subtle telekinesis": {
+        "name": "Subtle Telekinesis",
+        "source": [
+          "UA25P",
+          3
+        ],
+        "minlevel": 1,
+        "description": "I know the Mage Hand cantrip\n   I can cast it without Somatic components, and make the hand Invisible when cast",
+        "spellcastingBonus": {
+          "name": "Subtle Telekinesis",
+          "spells": [
+            "mage hand"
+          ],
+          "selection": [
+            "mage hand"
+          ],
+          "firstCol": "atwill"
+        },
+        "spellChanges": {
+          "mage hand": {
+            "components": "V",
+            "description": "Invisible spectral hand can carry up to 10 lb; 1 a to control; can't attack/activate magic items/carry multiple items",
+            "changes": "Using Subtle Telekinesis, I can cast Mage Hand without somatic components and make it invisible."
+          }
+        }
+      },
+      "psionic discipline": {
+        "name": "Psionic Discipline",
+        "source": [
+          "UA25P",
+          3
+        ],
+        "minlevel": 2,
+        "description": "I learn psionic techniques fueled by my Psionic Energy Dice\n   I can use only one Discipline per turn and only once per turn\n   I can replace one discipline when I gain a psion level",
+        "additional": [
+          "",
+          "2 disciplines",
+          "2 disciplines",
+          "2 disciplines",
+          "3 disciplines",
+          "3 disciplines",
+          "3 disciplines",
+          "3 disciplines",
+          "3 disciplines",
+          "4 disciplines",
+          "4 disciplines",
+          "4 disciplines",
+          "5 disciplines",
+          "5 disciplines",
+          "5 disciplines",
+          "5 disciplines",
+          "6 disciplines",
+          "6 disciplines",
+          "6 disciplines",
+          "6 disciplines"
+        ],
+        "extraTimes": [
+          0,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          4,
+          4,
+          4,
+          5,
+          5,
+          5,
+          5,
+          6,
+          6,
+          6,
+          6
+        ],
+        "extraname": "Psionic Discipline",
+        "extrachoices": [
+          "Biofeedback",
+          "Bolstering Precognition",
+          "Destructive Thoughts",
+          "Devilish Tongue",
+          "Expanded Awareness",
+          "Id Insinuation",
+          "Inerrant Aim",
+          "Observant Mind",
+          "Psionic Backlash",
+          "Psionic Guards",
+          "Sharpened Mind"
+        ],
+        "biofeedback": {
+          "name": "Biofeedback",
+          "source": [
+            "UA25P",
+            4
+          ],
+          "description": "When I cast a Necromancy or Transmutation psion spell, I can expend Psionic Energy Dice\n   Up to my Int mod; roll them and gain temp HP = total + Int mod (min 1)"
+        },
+        "bolstering precognition": {
+          "name": "Bolstering Precognition",
+          "source": [
+            "UA25P",
+            4
+          ],
+          "description": "When I cast an Abjuration or Divination psion spell, I can expend 1 Psionic Energy Die\n   Choose a creature within 60 ft (can be me); roll die, creature gains bonus to next D20 Test\n   Bonus = roll, lasts until end of my next turn"
+        },
+        "destructive thoughts": {
+          "name": "Destructive Thoughts",
+          "source": [
+            "UA25P",
+            4
+          ],
+          "description": "When I cast Conjuration or Evocation psion spell forcing save, can expend Psionic Energy Dice\n   Up to my Int mod; creature takes Psychic dmg = total + Int mod regardless of save result"
+        },
+        "devilish tongue": {
+          "name": "Devilish Tongue",
+          "source": [
+            "UA25P",
+            4
+          ],
+          "description": "When I take the Influence action, I can roll 1 Psionic Energy Die and add to check\n   Die expended only if this causes me to succeed on the check"
+        },
+        "expanded awareness": {
+          "name": "Expanded Awareness",
+          "source": [
+            "UA25P",
+            4
+          ],
+          "description": "When I take the Search action, I can roll 1 Psionic Energy Die and add to check\n   Die expended only if this causes me to succeed on the check"
+        },
+        "id insinuation": {
+          "name": "Id Insinuation",
+          "source": [
+            "UA25P",
+            4
+          ],
+          "description": "When I cast Enchantment or Illusion psion spell forcing save, expend 1 Psionic Energy Die\n   One target I can see subtracts half the roll (round up) from its save against the spell"
+        },
+        "inerrant aim": {
+          "name": "Inerrant Aim",
+          "source": [
+            "UA25P",
+            5
+          ],
+          "description": "When I miss with an attack roll, I can roll 1 Psionic Energy Die and add to attack\n   Die expended only if this causes the attack to hit"
+        },
+        "observant mind": {
+          "name": "Observant Mind",
+          "source": [
+            "UA25P",
+            5
+          ],
+          "description": "When I take the Study action, I can roll 1 Psionic Energy Die and add to check\n   Die expended only if this causes me to succeed on the check"
+        },
+        "psionic backlash": {
+          "name": "Psionic Backlash",
+          "source": [
+            "UA25P",
+            5
+          ],
+          "description": "Reaction when creature I can see hits me with attack; expend 1 Psionic Energy Die\n   Roll it; reduce damage by 2 × roll + Int mod (min 2)\n   Attacker makes Wis save; fail: takes Psychic dmg = damage I reduced",
+          "action": [
+            [
+              "reaction",
+              " (when hit)"
+            ]
+          ]
+        },
+        "psionic guards": {
+          "name": "Psionic Guards",
+          "source": [
+            "UA25P",
+            5
+          ],
+          "description": "At start of my turn, expend 1 Psionic Energy Die for benefits until start of next turn:\n   Immunity to Charmed and Frightened; Advantage on Int saves\n   If Charmed or Frightened when used, condition ends; can use different discipline this turn"
+        },
+        "sharpened mind": {
+          "name": "Sharpened Mind",
+          "source": [
+            "UA25P",
+            5
+          ],
+          "description": "At start of turn, expend 1 die to hone psionics; roll and record number for 1 min:\n   My weapon attacks, psion spells, psion features ignore Psychic resistance\n   Once per turn when dealing Psychic dmg, replace 1 damage die with recorded number\n   Can use different discipline this turn"
+        }
+      },
+      "subclassfeature3": {
+        "name": "Psion Subclass",
+        "source": [
+          "UA25P",
+          3
+        ],
+        "minlevel": 3,
+        "description": "Choose a Psion Subclass to commit to and put it in the \"Class\" field\n   Choose either Metamorph, Psykinetic, or Telepath"
+      },
+      "ability score improvement": {
+        "name": "Ability Score Improvement",
+        "source": [
+          "UA25P",
+          4
+        ],
+        "minlevel": 4,
+        "description": "I can increase one ability score by 2, or two ability scores by 1\n   Alternatively, I can take a feat instead if the DM allows it",
+        "additional": [
+          "",
+          "",
+          "",
+          "1 feat(s)/ASI(s)",
+          "1 feat(s)/ASI(s)",
+          "1 feat(s)/ASI(s)",
+          "1 feat(s)/ASI(s)",
+          "2 feat(s)/ASI(s)",
+          "2 feat(s)/ASI(s)",
+          "2 feat(s)/ASI(s)",
+          "2 feat(s)/ASI(s)",
+          "3 feat(s)/ASI(s)",
+          "3 feat(s)/ASI(s)",
+          "3 feat(s)/ASI(s)",
+          "3 feat(s)/ASI(s)",
+          "4 feat(s)/ASI(s)",
+          "4 feat(s)/ASI(s)",
+          "4 feat(s)/ASI(s)",
+          "4 feat(s)/ASI(s)",
+          "4 feat(s)/ASI(s)"
+        ]
+      },
+      "psionic restoration": {
+        "name": "Psionic Restoration",
+        "source": [
+          "UA25P",
+          4
+        ],
+        "minlevel": 5,
+        "description": "I can meditate for 1 minute; at the end, I regain expended Psionic Energy Dice",
+        "usages": 1,
+        "recovery": "long rest"
+      },
+      "psionic surge": {
+        "name": "Psionic Surge",
+        "source": [
+          "UA25P",
+          4
+        ],
+        "minlevel": 7,
+        "description": "After rolling Psionic Energy Dice, I can expend 1 Hit Point Die\n   Treat any roll of 1, 2, or 3 on those Psionic Energy Dice as a 4"
+      },
+      "psionic reserves": {
+        "name": "Psionic Reserves",
+        "source": [
+          "UA25P",
+          4
+        ],
+        "minlevel": 18,
+        "description": "When I roll Initiative, I regain expended Psionic Energy Dice until I have 4"
+      },
+      "epic boon": {
+        "name": "Epic Boon",
+        "source": [
+          "UA25P",
+          4
+        ],
+        "minlevel": 19,
+        "description": "I gain an Epic Boon feat or another feat of my choice for which I qualify"
+      },
+      "enkindled life force": {
+        "name": "Enkindled Life Force",
+        "source": [
+          "UA25P",
+          4
+        ],
+        "minlevel": 20,
+        "description": "Once per turn when I roll Psionic Energy Dice for psion feature or discipline:\n   I can expend 1 or 2 Hit Point Dice\n   For each HD expended, roll additional Psionic Energy Die and add to total\n   These additional rolls don't expend the Psionic Energy Dice"
       }
     }
   }

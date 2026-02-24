@@ -1974,7 +1974,7 @@
     "ammo": "bomb",
     "isNotWeapon": true,
     "isAlwaysProf": false,
-    "tooltip": "As an action, a character can light this bomb and throw it at a point up to 60 ft away. Each creature within 5 ft of that point must succeed on a DC 12 Dexterity saving throw or take 3d6 fire damage.\n   A bomb costs 150 gp and weighs 1 lb.",
+    "tooltip": "As an action, a character can light this bomb and throw it at a point up to 60 ft away. Each creature within 5 ft of that point must succeed on a DC 12 Dexterity saving throw or take 3d6 fire damage.\n   A bomb costs 150 gp and weights 1 lb.",
     "defaultExcluded": true
   },
   {
@@ -3143,7 +3143,7 @@
     "ammo": "bomb",
     "isNotWeapon": true,
     "isAlwaysProf": false,
-    "tooltip": "As an action, a character can light this bomb and throw it at a point up to 60 ft away. Each creature within a 5-ft-radius Sphere must succeed on a DC 12 Dexterity saving throw or take 3d6 fire damage.\n   A bomb costs 100 gp and weighs 1 lb.",
+    "tooltip": "As an action, a character can light this bomb and throw it at a point up to 60 ft away. Each creature within a 5-ft-radius Sphere must succeed on a DC 12 Dexterity saving throw or take 3d6 fire damage.\n   A bomb costs 100 gp and weights 1 lb.",
     "defaultExcluded": true
   }
 ]

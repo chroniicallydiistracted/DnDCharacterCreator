@@ -8,7 +8,7 @@
     "date": "2023/01/26"
   },
   "LMoP": {
-    "name": "Lost Mine of Phandelver [items]",
+    "name": "Lost Mines of Phandelver [items]",
     "abbreviation": "LMoP",
     "group": "Adventure Books",
     "campaignSetting": "Forgotten Realms",
@@ -951,5 +951,85 @@
     "group": "Core Sources",
     "url": "https://marketplace.dndbeyond.com/core-rules/3709000?pid=DB3709000",
     "date": "2025/02/18"
+  },
+  "NF": {
+    "name": "Netheril's Fall [Items]",
+    "abbreviation": "NF",
+    "abbreviationSpellsheet": "NF",
+    "group": "Adventure Books",
+    "url": "https://marketplace.dndbeyond.com/category/DB8U430LO",
+    "date": "2025/11/11"
+  },
+  "FR:AiF": {
+    "name": "Forgotten Realms: Adventures in Faerun [Items]",
+    "abbreviation": "FR:AiF",
+    "abbreviationSpellsheet": "AF",
+    "group": "Adventure Books",
+    "url": "https://marketplace.dndbeyond.com/category/4714000?pid=DB4714000",
+    "date": "2025/11/11"
+  },
+  "U25": {
+    "name": "UA Realms",
+    "abbreviation": "UAR",
+    "group": "Unearthed Arcana",
+    "url": "https://media.dndbeyond.com/compendium-images/ua/forgotten-realms-subclasses/OXcW3UjTCurUcQy7/UA2025-RealmsSubclasses.pdf",
+    "date": "2025/02/4"
+  },
+  "FRHoF": {
+    "name": "Forgotten Realms: Heroes of Faerûn",
+    "abbreviation": "FRHoF",
+    "abbreviationSpellsheet": "HF",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Forgotten Realms"
+  },
+  "UA25P": {
+    "name": "Unearthed Arcana 2025 - Psion Update",
+    "abbreviation": "UA25P",
+    "abbreviationSpellsheet": "P",
+    "group": "Unearthed Arcana",
+    "date": "2025/10/07",
+    "url": "https://media.dndbeyond.com/compendium-images/ua/psion-update/kZh2hf4yC7KS45wW/UA2025-Psion+Update.pdf"
+  },
+  "XUA25AS": {
+    "name": "Unearthed Arcana 2025: Arcane Subclasses",
+    "abbreviation": "XUA25AS",
+    "date": "2025/06/26",
+    "group": "UA:5.24E",
+    "url": "https://media.dndbeyond.com/compendium-images/ua/arcane-subclasses/zepvK7DBkeSt6dqv/UA2025-ArcaneSubclasses.pdf"
+  },
+  "MJ:HB": {
+    "name": "MasterJedi2014's Homebrew",
+    "abbreviation": "MJ:HB",
+    "date": "2024/04/20"
+  },
+  "XUA25AU": {
+    "name": "Unearthed Arcana 2025: Arcane Updates",
+    "abbreviation": "XUA25AU",
+    "date": "2025/09/18",
+    "group": "UA:5.24E",
+    "url": "https://media.dndbeyond.com/compendium-images/ua/arcane-subclasses-update/LEwFmioFBYHWqzpd/UA2025-ArcaneSubclassesUpdate.pdf"
+  },
+  "XUA24A": {
+    "name": "Unearthed Arcana 2024: The Artificer",
+    "abbreviation": "XUA24A",
+    "date": "2024/12/16",
+    "group": "UA:5.24E",
+    "url": "https://media.dndbeyond.com/compendium-images/ua/the-artificer/AzQEA72K8EMf9HmU/UA2024-Artificer.pdf"
+  },
+  "XUA25EU": {
+    "name": "Unearthed Arcana 2025: Eberron Updates",
+    "abbreviation": "XUA25EU",
+    "date": "2025/02/27",
+    "group": "UA:5.24E",
+    "url": "https://media.dndbeyond.com/compendium-images/ua/eberron-updates/Lhg25Ggx5iY3rETH/UA2025-CartographerArtificer.pdf"
+  },
+  "E:FA": {
+    "name": "Eberron: Forge of the Artificer",
+    "abbreviation": "E:FA",
+    "abbreviationSpellsheet": "FA",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Eberron",
+    "url": "https://marketplace.dndbeyond.com/category/5147000?pid=D5147000",
+    "date": "2025/12/09"
   }
 }

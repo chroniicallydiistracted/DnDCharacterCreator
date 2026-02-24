@@ -617,113 +617,11 @@ AddSubClass("psion", "telepath", {
     }
 });
 
-// New Spells
-SpellsList["telekinetic fling"] = {
-    name: "Telekinetic Fling",
-    classes: ["psion"],
-    source: ["UA25P", 0],
-    level: 0,
-    school: "Evoc",
-    time: "1 a",
-    range: "60 ft",
-    components: "V,M",
-    compMaterial: "an arrow, bolt, bullet, or needle worth at least 1 cp",
-    duration: "Instantaneous",
-    description: "Ranged spell attack; 1d10 Force dmg; ammunition destroyed; +1d10 at CL 5, 11, 17",
-    descriptionCantripDie: "Ranged spell attack; `CD`d10 Force dmg; ammunition destroyed",
-    descriptionFull: "You brandish the ammunition used to cast this spell and fire it at a creature within range using psionic energy. Make a ranged spell attack against the target. On a hit, the target takes 1d10 force damage, and the ammunition is destroyed." + AtHigherLevels + "The damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10)."
-};
-
-SpellsList["tasha's mind whip"] = {
-    name: "Tasha's Mind Whip",
-    classes: ["psion", "sorcerer", "wizard"],
-    source: ["UA25P", 0],
-    level: 2,
-    school: "Ench",
-    time: "1 a",
-    range: "90 ft",
-    components: "V",
-    duration: "Instantaneous",
-    save: "Int",
-    description: "1 creature 3d6 psychic dmg, save halves; fail: no opportunity attacks until end next turn, action or bonus action next turn",
-    descriptionFull: "You psychically lash out at one creature you can see within range. The target must make an Intelligence saving throw. On a failed save, the target takes 3d6 psychic damage, and it can't make opportunity attacks until the end of its next turn. Moreover, on its next turn, it can take either an action or a bonus action, not both. On a successful save, the target takes half as much damage only." + AtHigherLevels + "You can target one additional creature for each spell slot level above 2nd."
-};
-
-SpellsList["intellect fortress"] = {
-    name: "Intellect Fortress",
-    classes: ["artificer", "bard", "psion", "sorcerer", "warlock", "wizard"],
-    source: ["UA25P", 0],
-    level: 3,
-    school: "Abjur",
-    time: "1 a",
-    range: "30 ft",
-    components: "V",
-    duration: "Conc, 1 h",
-    description: "1 willing creature gains resistance to psychic dmg, adv. on Int/Wis/Cha saves; +1 target/SL",
-    descriptionFull: "For the duration, one willing creature you can see within range has resistance to psychic damage, as well as advantage on Intelligence, Wisdom, and Charisma saving throws." + AtHigherLevels + "You can target one additional creature for each spell slot level above 3rd."
-};
-
-SpellsList["summon astral entity"] = {
-    name: "Summon Astral Entity",
-    classes: ["psion", "sorcerer", "warlock", "wizard"],
-    source: ["UA25P", 0],
-    level: 3,
-    school: "Conj",
-    time: "1 a",
-    range: "90 ft",
-    components: "V,S,M\u0192",
-    compMaterial: "a gem or crystal worth 300+ gp",
-    duration: "Conc, 1 h",
-    description: "Summon psionic spirit; Crystal Entity, Ectoplasmic Entity, or Ghostly Entity; obeys commands",
-    descriptionFull: "You call forth the spirit of a psionic entity. It manifests in an unoccupied space that you can see within range and uses the Psionic Spirit stat block. When you cast the spell, choose Crystal Entity, Ectoplasmic Entity, or Ghostly Entity. The creature resembles an astral entity of that kind, which determines certain details in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.\n\nThe creature is an ally to you and your companions. In combat, the creature shares your initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger." + AtHigherLevels + "Use the spell slot's level for the spell's level in the stat block."
-};
-
-SpellsList["telekinetic crush"] = {
-    name: "Telekinetic Crush",
-    classes: ["psion", "sorcerer", "warlock"],
-    source: ["UA25P", 0],
-    level: 3,
-    school: "Trans",
-    time: "1 a",
-    range: "120 ft",
-    components: "V",
-    duration: "Instantaneous",
-    save: "Str",
-    description: "30-ft cube; all creatures 5d6 Force dmg and prone, save halves dmg only; +1d6/SL",
-    descriptionFull: "You create a field of crushing telekinetic force in a 30-foot cube within range. Each creature in the area makes a Strength saving throw. On a failed save, a target takes 5d6 force damage and has the prone condition. On a successful save, a target takes half as much damage only." + AtHigherLevels + "The damage increases by 1d6 for each spell slot level above 3rd."
-};
-
-SpellsList["raulothim's psychic lance"] = {
-    name: "Raulothim's Psychic Lance",
-    classes: ["bard", "psion", "sorcerer", "warlock", "wizard"],
-    source: ["UA25P", 0],
-    level: 4,
-    school: "Ench",
-    time: "1 a",
-    range: "120 ft",
-    components: "V",
-    duration: "Instantaneous",
-    save: "Int",
-    description: "1 creature (or named target) 7d6 psychic dmg, incapacitated until start of my next turn; save halves, no incapacitated; +1d6/SL",
-    descriptionFull: "You unleash a shimmering lance of psychic power from your forehead at a creature that you can see within range. Alternatively, you can utter a creature's name (a pseudonym, title, or nickname doesn't work). If the named target is within range, it becomes the spell's target even if you can't see it. If the named target isn't within range or you use an invalid name, the lance dissipates without effect.\n\nThe target must make an Intelligence saving throw. On a failed save, the target takes 7d6 psychic damage and has the incapacitated condition until the start of your next turn. On a successful save, the target takes half as much damage only." + AtHigherLevels + "The damage increases by 1d6 for each spell slot level above 4th."
-};
-
-SpellsList["psychic scream"] = {
-    name: "Psychic Scream",
-    classes: ["bard", "psion", "sorcerer", "warlock"],
-    source: ["UA25P", 0],
-    level: 9,
-    school: "Ench",
-    time: "1 a",
-    range: "90 ft",
-    components: "S",
-    duration: "Instantaneous",
-    save: "Int",
-    description: "10 creatures Int>2: 14d6 psychic dmg, stunned; save halves, no stunned; repeat save at end of turn; 0 HP = head explodes",
-    descriptionFull: "You unleash the power of your mind to blast the intellect of up to ten creatures of your choice that you can see within range. Creatures that have an Intelligence score of 2 or lower are unaffected.\n\nEach target must make an Intelligence saving throw. On a failed save, a target takes 14d6 psychic damage and has the stunned condition. On a successful save, a target takes half as much damage only. If the target is reduced to 0 hit points by this damage, its head explodes, assuming it has one.\n\nAt the end of each of its turns, the stunned target repeats the save, ending the condition on itself on a success."
-};
-
 // New Wild Talent Feats
+// Note: Psion spell definitions (telekinetic fling, tasha's mind whip,
+// intellect fortress, summon astral entity, telekinetic crush,
+// raulothim's psychic lance, psychic scream) are defined in PsionUpdate.js,
+// which is the authoritative updated source and runs after this file.
 
 FeatsList["atmokinesis"] = {
     name: "Atmokinesis",

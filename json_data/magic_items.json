@@ -20909,25 +20909,14 @@
     "name": "Boots of the Winding Path",
     "source": [
       [
-        "E:RLW",
-        62
-      ],
-      [
-        "T",
-        21
-      ],
-      [
-        "UA:A2",
-        9
-      ],
-      [
-        "UA:A3",
-        12
+        "E:FA",
+        112
       ]
     ],
     "type": "wondrous item",
-    "description": "While wearing these boots, I can teleport up to 15 ft as a bonus action to an unoccupied space I can see, as long as I occupied that space at some point during the current turn.",
-    "descriptionFull": "While wearing these boots, a creature can teleport up to 15 feet as a bonus action to an unoccupied space the creature can see. The creature must have occupied that space at some point during the current turn.",
+    "rarity": "uncommon",
+    "description": "While wearing these boots, I can teleport up to 15 ft as a Bonus Action to an unoccupied space I can see, as long as I occupied that space at some point during the current turn.",
+    "descriptionFull": "While wearing these boots, you can take a Bonus Action to teleport up to 15 feet to an unoccupied space you can see. You must have occupied that space at some point during the current turn.",
     "attunement": true,
     "action": [
       [
@@ -21011,6 +21000,14 @@
     "nameTest": "Radiant",
     "source": [
       [
+        "XUA25EU",
+        8
+      ],
+      [
+        "XUA24A",
+        13
+      ],
+      [
         "E:RLW",
         62
       ],
@@ -21020,12 +21017,13 @@
       ]
     ],
     "type": "weapon (any)",
-    "description": "This item adds a +1 on its to hit and damage, has 4 charges, and regains 1d4 at dawn. As a bonus action, I can have it start/stop shedding light, bright in 30 ft, dim in another 30 ft. As a reaction if hit by an attack, I can use 1 charge to blind the attacker until the end of its next turn unless it makes a Con save (my spell DC).",
-    "descriptionFull": "This magic weapon grants a +1 bonus to attack and damage rolls made with it. While holding it, the wielder can take a bonus action to cause it to shed bright light in a 30-foot radius and dim light for an additional 30 feet. The wielder can extinguish the light as a bonus action.\n   The weapon has 4 charges. As a reaction immediately after being hit by an attack, the wielder can expend 1 charge and cause the attacker to be blinded until the end of the attacker's next turn, unless the attacker succeeds on a Constitution saving throw against your spell save DC. The weapon regains 1d4 expended charges daily at dawn.",
+    "rarity": "rare",
+    "description": "This item adds a +1 on its to hit and damage, has 4 charges, and regains 1d4 at dawn. As a Bonus Action, I can have it start/stop shedding light, Bright in 30 ft, Dim in another 30 ft. As a Reaction if hit by an attack, I can use 1 charge to Blind the attacker until the end of its next turn unless it makes a Con 15 save.",
+    "descriptionFull": "This magic weapon grants a +1 bonus to attack and damage rolls made with it. While holding it, the wielder can take a Bonus Action to cause it to shed Bright Light in a 30-foot radius and Dim Light for an additional 30 feet. The wielder can extinguish the light as a Bonus Action.\n   The weapon has 4 charges. As a Reaction immediately after being hit by an attack, the wielder can expend 1 charge and cause the attacker to be Blinded until the end of the attacker's next turn, unless the attacker succeeds on a DC 15 Constitution saving throw. The weapon regains 1d4 expended charges daily at dawn.",
     "attunement": true,
     "usages": 4,
     "recovery": "dawn",
-    "additional": "blind attacker; regains 1d4",
+    "additional": "Blind attacker; regains 1d4",
     "action": [
       [
         "bonus action",
@@ -21048,14 +21046,14 @@
       "atkAdd": [
         {
           "_type": "function",
-          "body": "function(e,a){a.theWea.isMagicWeapon||a.isSpell||!/radiant/i.test(a.WeaponTextName)||(a.theWea.isMagicWeapon=!0,e.Description=e.Description.replace(/(, |; )?Counts as magical/i,\"\"),e.Description+=(e.Description?\"; \":\"\")+\"Reaction to blind attacker\")}"
+          "body": "function (fields, v) {\r\n\t\tif (!v.theWea.isMagicWeapon && !v.isSpell && (/radiant/i).test(v.WeaponTextName)) {\r\n\t\t  v.theWea.isMagicWeapon = true;\r\n\t\t  fields.Description = fields.Description.replace(/(, |; )?Counts as magical/i, '');\r\n\t\t  fields.Description += (fields.Description ? '; ' : '') + 'Reaction to blind attacker';\r\n\t\t}\r\n\t  }"
         },
-        "If I include the word \"Radiant\" in the name of a weapon, it will be treated as the magic weapon Radiant Weapon. It has +1 to hit and damage and can be used to shed light and to blind an attacker."
+        "If I include the word \"Radiant\" in the name of a weapon, it will be treated as the magic weapon Radiant Weapon. It has +1 to hit and damage and can be used to shed light and to Blind an attacker."
       ],
       "atkCalc": [
         {
           "_type": "function",
-          "body": "function(e,a,t){a.isMeleeWeapon&&!a.isSpell&&/radiant/i.test(a.WeaponTextName)&&(t.magic=a.thisWeapon[1]+1)}"
+          "body": "function (fields, v, output) {\r\n\t\tif (v.isMeleeWeapon && !v.isSpell && (/radiant/i).test(v.WeaponTextName)) {\r\n\t\t  output.magic = v.thisWeapon[1] + 1;\r\n\t\t}\r\n\t  }"
         }
       ]
     }
@@ -21065,21 +21063,14 @@
     "name": "Repeating Shot",
     "source": [
       [
-        "E:RLW",
-        62
-      ],
-      [
-        "T",
-        22
-      ],
-      [
-        "UA:A3",
-        13
+        "E:FA",
+        112
       ]
     ],
     "type": "weapon (any with ammunition)",
-    "description": "When I use this magic weapon to make a ranged attack, it magically produces one piece of ammunition and grants a +1 bonus to its attack and damage rolls. Thus, it doesn't require ammunition and ignores the loading property if it has it. The produced ammunition vanishes once it hits or misses a target.",
-    "descriptionFull": "This magic weapon grants a +1 bonus to attack and damage rolls made with it when it's used to make a ranged attack, and it ignores the loading property if it has it.\n   If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target.",
+    "rarity": "uncommon",
+    "description": "When I use this magic weapon to make a ranged attack, it magically produces one piece of ammunition and grants a +1 bonus to its attack and damage rolls. Thus, it doesn't require ammunition and ignores the Loading property if it has it. The produced ammunition vanishes once it hits or misses a target.",
+    "descriptionFull": "This magic weapon grants a +1 bonus to attack and damage rolls made with it when it's used to make a ranged attack, and it ignores the Loading property if it has it.\n   If you load no ammunition in the weapon, it produces its own, automatically creating one piece of magic ammunition when you make a ranged attack with it. The ammunition created by the weapon vanishes the instant after it hits or misses a target.",
     "attunement": true,
     "chooseGear": {
       "type": "weapon",
@@ -21090,21 +21081,21 @@
       ],
       "excludeCheck": {
         "_type": "function",
-        "body": "function(e,a){return!/ammunition/i.test(a.description)}"
+        "body": "function(inObjKey, inObj) {\n            return !(/ammunition/i).test(inObj.description);\n        }"
       }
     },
     "calcChanges": {
       "atkAdd": [
         {
           "_type": "function",
-          "body": "function(e,a){a.theWea.isMagicWeapon||a.isSpell||!/^(?=.*repeating shot)(?=.*ammunition).*$/i.test(a.WeaponText)||(a.theWea.isMagicWeapon=!0,e.Description=e.Description.replace(/(, |; )?Counts as magical/i,\"\").replace(/(;|,)? ?loading/i,\"\"))}"
+          "body": "function(fields, v) {\n                if (!v.theWea.isMagicWeapon && !v.isSpell && (/^(?=.*repeating shot)(?=.*ammunition).*$/i).test(v.WeaponText)) {\n                    v.theWea.isMagicWeapon = true;\n                    fields.Description = fields.Description.replace(/(, |; )?Counts as magical/i, '').replace(/(;|,)? ?loading/i, '');\n                }\n            }"
         },
         "If I include the words \"Repeating Shot\" in the name of a weapon with the ammunition property, it will be treated as the magic weapon Repeating Shot. It has +1 to hit and damage and produces its own ammunition, thus its loading property is removed if it has it."
       ],
       "atkCalc": [
         {
           "_type": "function",
-          "body": "function(e,a,t){/^(?=.*repeating shot)(?=.*ammunition).*$/i.test(a.WeaponText)&&!a.isSpell&&(t.magic=a.thisWeapon[1]+1)}"
+          "body": "function(fields, v, output) {\n                if ((/^(?=.*repeating shot)(?=.*ammunition).*$/i).test(v.WeaponText) && !v.isSpell) {\n                    output.magic = v.thisWeapon[1] + 1;\n                }\n            }"
         },
         ""
       ]
@@ -21115,17 +21106,14 @@
     "name": "Repulsion Shield",
     "source": [
       [
-        "E:RLW",
-        63
-      ],
-      [
-        "T",
-        23
+        "E:FA",
+        112
       ]
     ],
-    "type": "shield",
-    "description": "I gain an additional +1 bonus to Armor Class while wielding this shield. The shield has 4 charges and regains 1d4 expended charges daily at dawn. As a reaction immediately after being hit by a melee attack, I can expend 1 charge to push the attacker up to 15 ft away.",
-    "descriptionFull": "A creature gains a +1 bonus to Armor Class while wielding this shield.\n   The shield has 4 charges. While holding it, the wielder can use a reaction immediately after being hit by a melee attack to expend 1 of the shield's charges and push the attacker up to 15 feet away. The shield regains 1d4 expended charges daily at dawn.",
+    "type": "armor (shield)",
+    "rarity": "uncommon",
+    "description": "I gain an additional +1 bonus to Armor Class while wielding this shield. The shield has 4 charges and regains 1d4 expended charges daily at dawn. As a Reaction immediately after being hit by a melee attack, I can expend 1 charge to push the attacker up to 15 ft away.",
+    "descriptionFull": "You gains a +1 bonus to Armor Class while wielding this shield.\n   The shield has 4 charges. While holding it, when a Large or smaller creature within 5 feet of you hits you with a melee attack roll, you can use a Reaction to expend 1 of the shield's charges and push the attacker up to 15 feet away. The shield regains 1d4 expended charges daily at dawn.",
     "weight": 6,
     "attunement": true,
     "usages": 4,
@@ -21149,23 +21137,12 @@
     "nameTest": "Returning",
     "source": [
       [
-        "E:RLW",
-        63
-      ],
-      [
-        "T",
-        23
-      ],
-      [
-        "UA:A3",
-        14
-      ],
-      [
-        "UA:A2",
-        10
+        "E:FA",
+        112
       ]
     ],
     "type": "weapon (any thrown)",
+    "rarity": "uncommon",
     "description": "This magic weapon grants a +1 bonus to attack and damage rolls I make with it. It returns to my hand immediately after I use it to make a ranged attack.",
     "descriptionFull": "This magic weapon grants a +1 bonus to attack and damage rolls made with it, and it returns to the wielder's hand immediately after it is used to make a ranged attack.",
     "chooseGear": {
@@ -21177,21 +21154,21 @@
       ],
       "excludeCheck": {
         "_type": "function",
-        "body": "function(e,a){return!/\\bthrown\\b/i.test(a.description)}"
+        "body": "function(inObjKey, inObj) {\n            return !/\\bthrown\\b/i.test(inObj.description);\n        }"
       }
     },
     "calcChanges": {
       "atkAdd": [
         {
           "_type": "function",
-          "body": "function(e,a){!a.theWea.isMagicWeapon&&a.isThrownWeapon&&/returning/i.test(a.WeaponText)&&(a.theWea.isMagicWeapon=!0,e.Description=e.Description.replace(/(, |; )?Counts as magical/i,\"\"),e.Description+=(e.Description?\"; \":\"\")+\"Returns immediately after ranged attack\")}"
+          "body": "function(fields, v) {\n                if (!v.theWea.isMagicWeapon && v.isThrownWeapon && /returning/i.test(v.WeaponText)) {\n                    v.theWea.isMagicWeapon = true;\n                    fields.Description = fields.Description.replace(/(, |; )?Counts as magical/i, '');\n                    fields.Description += (fields.Description ? '; ' : '') + 'Returns immediately after ranged attack';\n                }\n            }"
         },
         "If I include the word \"Returning\" in the name of a thrown weapon, it will be treated as the magic weapon Returning Weapon. It has +1 to hit and damage and returns to my hand immediately after I use it to make a ranged attack."
       ],
       "atkCalc": [
         {
           "_type": "function",
-          "body": "function(e,a,t){a.isThrownWeapon&&/returning/i.test(a.WeaponText)&&(t.magic=a.thisWeapon[1]+1)}"
+          "body": "function(fields, v, output) {\n                if (v.isThrownWeapon && /returning/i.test(v.WeaponText)) {\n                    output.magic = v.thisWeapon[1] + 1;\n                }\n            }"
         },
         ""
       ]
@@ -25443,41 +25420,35 @@
     "name": "Helm of Awareness",
     "source": [
       [
-        "T",
-        21
-      ],
-      [
-        "UA:SP3",
-        3
+        "E:FA",
+        112
       ]
     ],
     "type": "wondrous item",
-    "description": "While wearing this helmet, I have advantage on initiative rolls. In addition, I can't be surprised, provided I'm not incapacitated.",
-    "descriptionFull": "While wearing this helmet, a creature has advantage on initiative rolls. In addition, the wearer can't be surprised, provided it isn't incapacitated.",
+    "rarity": "uncommon",
+    "description": "While wearing this helmet, I have Advantage on Initiative rolls.",
+    "descriptionFull": "While wearing this helmet, you have Advantage on Initiative rolls.",
     "attunement": true,
     "advantages": [
       [
         "Initiative",
         true
       ]
-    ],
-    "savetxt": {
-      "immune": [
-        "surprised"
-      ]
-    }
+    ]
   },
   {
     "_key": "mind sharpener",
     "name": "Mind Sharpener",
     "source": [
       [
-        "T",
-        22
+        "E:FA",
+        112
       ]
     ],
-    "descriptionFull": "The infused item can send a jolt to the wearer to refocus their mind. The item has 4 charges. When the wearer fails a Constitution saving throw to maintain concentration on a spell, the wearer can use its reaction to expend 1 of the item's charges to succeed instead. The item regains 1d4 expended charges daily at dawn.",
-    "description": "This magic armor or robes can send a jolt to refocus my mind. It has 4 charges and regains 1d4 expended charges daily at dawn. As a reaction when I fail a Constitution saving throw to maintain concentration on a spell, I can expend 1 charge to succeed instead.",
+    "type": "ring",
+    "rarity": "uncommon",
+    "description": "This ring can send a jolt to refocus my mind. It has 4 charges and regains 1d4 expended charges daily at dawn. As a Reaction when I fail a Constitution saving throw to maintain Concentration on a spell, I can expend 1 charge to succeed instead.",
+    "descriptionFull": "The item has 4 charges. When you fail a Constitution saving throw to maintain Concentration on a spell, you can use its reaction to expend 1 of the item's charges to succeed instead. The item regains 1d4 expended charges daily at dawn.",
     "action": [
       [
         "reaction",
@@ -25487,50 +25458,38 @@
     "usages": 4,
     "recovery": "dawn",
     "additional": "regains 1d4",
-    "choices": [
-      "Mind Sharpener Armor",
-      "Mind Sharpener Robes"
-    ],
-    "choicesNotInMenu": true,
-    "mind sharpener armor": {
-      "name": "Mind  Sharpener",
-      "type": "armor (light, medium, or heavy)",
-      "description": "This magic armor can send a jolt to refocus my mind. It has 4 charges and regains 1d4 expended charges daily at dawn. As a reaction when I fail a Constitution saving throw to maintain concentration on a spell, I can expend 1 charge to succeed instead.",
-      "chooseGear": {
-        "type": "armor",
-        "prefixOrSuffix": "brackets",
-        "itemName1stPage": [
-          "suffix",
-          "Mind Sharpener"
-        ],
-        "descriptionChange": [
-          "prefix",
-          "armor"
-        ]
-      }
-    },
-    "mind sharpener robes": {
-      "name": "Mind Sharpener (Robes)",
-      "type": "wondrous item",
-      "description": "These magic robes can send a jolt to refocus my mind. It has 4 charges and regains 1d4 expended charges daily at dawn. As a reaction when I fail a Constitution saving throw to maintain concentration on a spell, I can expend 1 charge to succeed instead."
-    }
+    "attunement": true
   },
   {
     "_key": "spell-refueling ring",
     "name": "Spell-Refueling Ring",
     "source": [
       [
+        "XUA25EU",
+        9
+      ],
+      [
+        "XUA24A",
+        14
+      ],
+      [
         "T",
         23
       ]
     ],
     "type": "ring",
-    "descriptionFull": "While wearing this ring, the creature can recover one expended spell slot as an action. The recovered slot can be of 3rd level or lower. Once used, the ring can't be used again until the next dawn.",
-    "description": "As an action, I can activate this magic ring to recover one expended spell slot. The recovered slot can be of 3rd level or lower. Once used, the ring can't be used again until the next dawn.",
+    "rarity": "uncommon",
+    "description": "As a Bonus Action, I can activate this magic ring to recover one expended spell slot. The recovered slot can be of level 3 or lower. Once used, the ring can't be used again until the next dawn.",
+    "descriptionFull": "While wearing this ring, the creature can recover one expended spell slot as a Bonus Action. The recovered slot can be of level 3 or lower. Once used, the ring can't be used again until the next dawn.",
+    "prerequisite": "Requires attunement by a spellcaster",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) {\n        return v.isSpellcaster;\n    }"
+    },
     "attunement": true,
     "action": [
       [
-        "action",
+        "bonus action",
         ""
       ]
     ],
@@ -42690,6 +42649,864 @@
           ""
         ]
       }
+    }
+  },
+  {
+    "_key": "arcane battery",
+    "name": "Arcane Battery",
+    "source": [
+      [
+        "NF",
+        ""
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "uncommon",
+    "magicItemTable": "?",
+    "description": "This smooth, oval stone is etched with faintly glowing magical symbols. As a Magic action while held, I can touch the battery to one magic item. If that magic item regains expended charges daily, it immediately regains 1d4 + 1 expended charges and the battery loses its magic.",
+    "descriptionFull": "This smooth, oval stone is etched with faintly glowing, magical symbols. While holding the battery, you can take a Magic action to touch the battery to one magic item. If that magic item normally regains expended charges daily, it immediately regains 1d4 + 1 expended charges, and the battery loses its magic."
+  },
+  {
+    "_key": "brooch of the elements",
+    "name": "Brooch of the Elements",
+    "source": [
+      [
+        "NF",
+        ""
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "rare",
+    "magicItemTable": "?",
+    "attunement": true,
+    "description": "The central jewel of this butterfly-shaped brooch swirls with multicolored iridescence. It has 3 charges, regained at dawn. As a Reaction when a visible creature in 60 ft hits with an atk roll, I can use 1 charge to change a damage type dealt by the attack to Acid, Cold, Fire, Lightning, Poison, or Thunder.",
+    "descriptionFull": "The central jewel of this butterfly-shaped brooch swirls with multicolored iridescence.\n   The brooch has 3 charges and regains all expended charges daily at dawn. As a Reaction when a creature you can see within 60 feet of you hits a target with an attack roll and deals damage, you can expend 1 charge and change one damage type the attack deals to one of the following damage types: Acid, Cold, Fire, Lightning, Poison, or Thunder.",
+    "usages": 3,
+    "recovery": "dawn",
+    "action": [
+      [
+        "reaction",
+        ""
+      ]
+    ]
+  },
+  {
+    "_key": "fork of eddy summoning",
+    "name": "Fork of Eddy Summoning",
+    "source": [
+      [
+        "NF",
+        ""
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "rare",
+    "magicItemTable": "?",
+    "description": "This tuning fork crackles with harmless magic. As a Magic action once per dawn, tap it against object to summon an Eldritch Eddy. It appears in closest empty space, is Friendly to me and allies, and obeys me (no action needed). If no commands, defends self only. Goes after me on my Initiative and disappears in 1 hr, at 0 HP, or with BA.",
+    "descriptionLong": "This tuning fork crackles with harmless multicolored magic. As a Magic action, tap it against an object to summon an Eldritch Eddy, which appears in the closest empty space. The eddy is Friendly to me and my allies, and obeys my commands (no action required). If I don't command it, the eddy defends itself but takes no other actions. It takes its turn immediately after me on my Initiative count and disappears after 1 hour, when it dies, or when I dismiss it as a Bonus Action. The fork can’t be used again until the next dawn.",
+    "descriptionFull": "This Tiny tuning fork crackles with harmless, multicolored magical energy. As a Magic action, you can tap the fork against any object to summon an Eldritch Eddy (see appendix B). The eddy appears in an unoccupied space as close to you as possible. The eddy is Friendly to you and your allies, and it obeys your commands. If you fail to command it, the eddy defends itself against attackers but takes no other actions. It takes its turn immediately after you on your Initiative count. The eddy disappears after 1 hour, when it dies, or when you dismiss it as a Bonus Action. The fork can’t be used this way again until the next dawn.",
+    "creaturesAdd": [
+      [
+        "Eldritch Eddy",
+        true
+      ]
+    ],
+    "usages": 1,
+    "recovery": "dawn",
+    "action": [
+      [
+        "action",
+        ""
+      ]
+    ]
+  },
+  {
+    "_key": "hat of vortexes",
+    "name": "Hat of Vortexes",
+    "source": [
+      [
+        "NF",
+        ""
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "uncommon",
+    "magicItemTable": "?",
+    "attunement": true,
+    "description": "This hat has 3 charges, regained at dawn. As a Magic action while held, use 1 charge to release a magical vortex. The vortex fills a 10-ft Cube originating from me and lasts for 1 hr. Its area is Difficult Terrain. I decide a vortex’s visual details on creation, such as multicolor or glittery.",
+    "descriptionFull": "This hat has 3 charges and regains all expended charges daily at dawn. You can take a Magic action and expend 1 charge while holding the hat to release a magical vortex from it. The vortex fills a 10-foot Cube originating from you and lasts for 1 hour. While the vortex is present, its area is Difficult Terrain.\n   You decide a vortex’s visual details when you create it. For instance, the vortex might be multicolored or glittery.",
+    "usages": 3,
+    "recovery": "dawn",
+    "action": [
+      [
+        "action",
+        ""
+      ]
+    ]
+  },
+  {
+    "_key": "magen handbell",
+    "name": "Magen Handbill",
+    "source": [
+      [
+        "NF",
+        ""
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "rare",
+    "magicItemTable": "?",
+    "description": "As Magic action while held (1/1d6 days), ring this brass handbell to summon a Terran Magen to empty space in 30 ft. It understands, obeys, & goes after me in Initiative. Disappears in 1 hr, at 0 HP, or as BA. If starts turn Bloodied, roll 1d6. On 6 goes berserk. Can't dismiss & atks closest visible creature each turn. If none in reach, atks obj. Berserk until disappears or creature with bell makes DC 15 CHA (Persuasion) to regain control.",
+    "descriptionLong": "As a Magic action while held, I can ring this brass handbell to summon a Terran Magen, which appears in an empty space I choose within 30 ft. The magen understands and obeys me, and goes after me on my Initiative. It disappears after 1 hr, at 0 HP, or as a Bonus Action. If the magen starts turn Bloodied, roll 1d6. On 6 it goes berserk and attacks nearest visible creature each turn. If none in reach, attacks object. Remains berserk until disappears or a creature holding bell makes a DC 15 CHA Persuasion to regain control. While berserk, it can't be dismissed. The bell can be used every 1d6 days.",
+    "descriptionFull": "While holding this brass handbell, you can take a Magic action to ring it and summon a Terran Magen. The magen appears in an unoccupied space you choose within 30 feet of yourself, understands your languages, obeys your commands, and takes its turn immediately after you on your Initiative count. The magen disappears after 1 hour, when it dies, or when you dismiss it as a Bonus Action. The bell can’t be used this way again for 1d6 days.\n   Berserk Magen. Whenever the magen summoned by this item starts its turn Bloodied, roll 1d6. On a 6, the magen goes berserk.\n   While berserk, the magen no longer obeys your commands, and you can’t dismiss it as a Bonus Action. On each of its turns, the berserk magen attacks the nearest creature it can see. If no creature is near enough for the magen to move to and attack, the magen attacks an object. The magen remains berserk until it disappears, or until a creature holding the handbell takes an Influence action and succeeds on a DC 15 Charisma (Persuasion) check to regain control of the magen.",
+    "creaturesAdd": [
+      [
+        "Terran Magen",
+        true
+      ]
+    ],
+    "usages": 1,
+    "recovery": "1d6 days",
+    "action": [
+      [
+        "action",
+        ""
+      ]
+    ]
+  },
+  {
+    "_key": "mask of changed appearance",
+    "name": "Mask of Changed Appearance",
+    "source": [
+      [
+        "NF",
+        ""
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "common",
+    "magicItemTable": "?",
+    "description": "This jeweled mask has 3 charges, 1d3 regained at dawn. As Magic action, use 1 charge to alter my face for 1 hr. I can’t look like another person, but can smooth or deepen wrinkles, whiten teeth, hide or increase bags under my eyes, & other minor cosmetic changes. While my face is changed, the mask is Invisible. If use last charge, 5% chance (1 on d20) mask explodes into sweet powder.",
+    "descriptionFull": "This jeweled mask has 3 charges. As a Magic action, you can expend 1 charge and change your face’s appearance. You can’t make yourself look like a different person, but you can smooth or deepen your wrinkles, whiten your teeth, hide or accentuate bags under your eyes, or perform other minor cosmetic changes. While your appearance is changed, the mask has the Invisible condition. Your changed appearance lasts 1 hour.\n   Regaining Charges. The mask regains 1d3 expended charges daily at dawn. If you expend the last charge, roll 1d20. On a 1, the mask explodes in a harmless cloud of sweet-swelling powder and is destroyed.",
+    "usages": 3,
+    "recovery": "dawn",
+    "additional": "regains 1d3",
+    "action": [
+      [
+        "action",
+        ""
+      ]
+    ]
+  },
+  {
+    "_key": "mythallar bracelet",
+    "name": "Mythallar Bracelet",
+    "source": [
+      [
+        "NF",
+        ""
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "common",
+    "magicItemTable": "?",
+    "description": "Three small crystal beads from a decommissioned mythallar are strung on this leather bracelet. As a Magic action, I can pluck 1 bead to gain Adv on Str (Athletics) checks for 1 min and the bead disappears. Once all 3 beads have been plucked, the bracelet loses its magic.",
+    "descriptionFull": "Three small, crystal beads made from a decommissioned mythallar are strung on this leather bracelet. As a Magic action, you can pluck one bead from the bracelet to gain Advantage on Strength (Athletics) checks for 1 minute.\n   A bead disappears immediately after it’s plucked. Once all three beads have been plucked, the bracelet loses its magic.",
+    "usages": 3,
+    "recovery": "Never",
+    "action": [
+      [
+        "action",
+        ""
+      ]
+    ]
+  },
+  {
+    "_key": "mythallar cloak",
+    "name": "Mythallar Cloak",
+    "source": [
+      [
+        "NF",
+        ""
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "uncommon",
+    "magicItemTable": "?",
+    "attunement": true,
+    "description": "This electric-blue cloak is studded with crystal shards of a decommissioned mythallar. It has 10 charges, 1d10 regained at dawn. As bonus action while worn, 1 charge to activate for 1 min or until ended (no action). Gain 30 ft Fly and hover. Once per turn when I hit with atk, can deal extra 1d4 Radiant. Fall if aloft when magic ends.",
+    "descriptionFull": "This electric-blue cloak is studded with sewn-in crystals that are shards of a decommissioned mythallar. The cloak has 10 charges and regains 1d10 expended charges daily at dawn.\n   While wearing the cloak, you can take a Bonus Action and expend 1 charge to activate the cloak’s magic. The magic lasts for 1 minute or until you end it early (no action required).\n   While the cloak’s magic is active, you gain a Fly Speed of 30 feet and can hover. Additionally, once on each of your turns when you hit a creature with an attack roll and deal damage, you can cause the target to take an extra 1d4 Radiant damage. If you are aloft when the cloak’s magic ends, you fall.",
+    "usages": 10,
+    "recovery": "dawn",
+    "additional": "regains 1d10",
+    "action": [
+      [
+        "bonus action",
+        ""
+      ]
+    ]
+  },
+  {
+    "_key": "harper pin",
+    "name": "Harper Pin",
+    "source": [
+      [
+        "FR:AiF",
+        ""
+      ]
+    ],
+    "type": "wondrous item",
+    "magicItemTable": "?",
+    "attunement": true,
+    "description": "This battleaxe's handle is carved with leaves and vines. It deals an extra 1d8 slashing damage against ordinary plants and plant creatures. When a creature of non-good alignment makes an attack with it, it sprouts thorns, dealing 1 magical piercing damage to the wielder after the attack is made.",
+    "descriptionFull": "When you attune to this pin, choose a Harper persona (see the Forgotten Realms: Heroes of Faerûn for examples), including an alignment and a creature type. While wearing this pin, you register as that persona when targeted by magic to determine your creature type, alignment, or location.\n   The type of pin determines its rarity and effects.\n   Silver Harper Pin. When you attune to this pin, you can devise a general line of thought of 25 words or fewer. While you wear this pin, a creature that reads your thoughts detects your preprogrammed line of thought instead. A creature that takes the Study action while reading your thoughts makes a DC 13 Intelligence (Investigation) check. On a successful check, it becomes aware that the detected thoughts are preprogrammed.\n   Gold Harper Pin. While wearing this pin, you can cast the Nondetection spell on yourself. The duration of this spell is permanent until you disable the effect (no action required), you remove the pin, or you are no longer attuned to the pin.",
+    "choices": [
+      "Silver",
+      "Gold"
+    ],
+    "silver": {
+      "name": "Silver Harper Pin",
+      "rarity": "uncommon",
+      "description": "When I attune to this pin, I can devise a general line of thought (25 words or less). While worn, a creature that reads thoughts detects my preprogrammed line of thought instead. If a creature takes the Study action while reading my thoughts, it makes a DC 13 Int (Investigation) check. On a pass, it knows the detected thoughts are preprogrammed."
+    },
+    "gold": {
+      "name": "Gold Harper Pin",
+      "rarity": "rare",
+      "description": "While wearing this pin, I can cast Nondetection on myself. The duration of this spell is permanent until I disable the effect (no action required), I remove the pin, or I'm no longer attuned.",
+      "spellcastingBonus": {
+        "name": "Self Only",
+        "spells": [
+          "nondetection"
+        ],
+        "selection": [
+          "nondetection"
+        ],
+        "firstCol": "atwill"
+      },
+      "spellChanges": {
+        "nondetection": {
+          "duration": "Permanent",
+          "changes": "Spell lasts until dismissed, I remove the pin, or I'm no longer attuned"
+        }
+      }
+    }
+  },
+  {
+    "_key": "mechanical wonder",
+    "name": "Mechanical Wonder",
+    "source": [
+      [
+        "FR:AiF",
+        ""
+      ]
+    ],
+    "type": "wondrous item",
+    "magicItemTable": "?",
+    "description": "A Mechanical Wonder is a semi-autonomous object imbued with power. They vary in size and form depending on their function and must be wound for 1 minute to activate (Utilize each turn). Once wound, it remains active as per the wonder type.",
+    "descriptionFull": [
+      "A Mechanical Wonder is a semi-autonomous object imbued with magical power. Mechanical Wonders vary greatly in size and form depending on their function.",
+      "A Mechanical Wonder is a dormant object until activated. To activate a Mechanical Wonder , you must wind the wonder with a handheld key unique to that wonder. It takes 1 minute to wind a Mechanical Wonder . While you wind it, you must take the Utilize action each turn.",
+      "Once wound, a Mechanical Wonder remains activated for the duration specified in the wonder’s description below.",
+      "Domestic Wonder (Uncommon). This bipedal wonder is designed to assist with household duties. It vaguely resembles whatever species its creator used as inspiration. An activated domestic wonder uses the Domestic Wonder stat block. The wonder is an ally to you and your allies. In combat, the wonder shares your Initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don’t issue any, it takes the Dodge action and uses its movement to avoid danger. The domestic wonderis destroyed if it drops to 0 Hit Points.",
+      "Flying Wonder (Common). An activated flying wonder uses the Flying Wonder stat block. The wonder is an ally to you and your allies. In combat, the wonder shares your Initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don’t issue any, it takes the Dodge action and uses its movement to avoid danger. The flying wonderis destroyed if it drops to 0 Hit Points.",
+      "Gyrocopter Wonder (Rare). This wagon-sized vehicle is made of brassy metal and has a spiral-shaped propeller atop it. Its midsection is open on two sides. Once wound, the gyrocopter wonder remains active for 8 hours. While active, the gyrocopter can be used as a vehicle; it requires one pilot.",
+      "The gyrocopter wonder is a Huge object that weighs 500 pounds and has the following statistics: AC 14, HP 50, Speed 5 ft., and Fly Speed 20 ft. The gyrocopter can bear up to 2,000 pounds of cargo; if it bears any more than this, it deactivates.",
+      "Eight spectral cords are mounted to the inside of the cargo bay. A creature riding in the gyrocopter wonder can take a Utilize action to attach itself to or detach itself from one of these cords. A creature attached to a cord can leap from the gyrocopter wonder and glide, moving up to 5 feet horizontally for every 1 foot it descends in the air. If a creature attached to a cord is ever more than 500 feet away from the gyrocopter, the cord immediately disappears and returns to the wonder.",
+      "Mobility Wonder (Common). While inactive, the mobility wonder resembles a metal turtle shell with straps. It is designed to be worn on your back or flank, depending on your anatomy. Once wound, the mobility wonder transforms into a personal transport device and remains active for 24 hours. While active, the mobility wonder increases your Speed to 30 feet. Other creatures can’t remove your mobility wonder from you unless you allow it."
+    ],
+    "choices": [
+      "Domestic Wonder",
+      "Flying Wonder",
+      "Gyrocopter Wonder",
+      "Mobility Wonder"
+    ],
+    "domestic wonder": {
+      "name": "Domestic Wonder",
+      "rarity": "uncommon",
+      "creaturesAdd": [
+        [
+          "Domestic Wonder",
+          true
+        ]
+      ],
+      "description": "Bipedal construct for household duties. Wind for 1 min with Utilize to activate Domestic Wonder statblock. Ally to me and allies. In combat, shares my Initiative & takes turn immediately after me. Obeys my verbal commands (no action needed). If no command, Dodge and move to avoid danger. Wonder is destroyed at 0 HP."
+    },
+    "flying wonder": {
+      "name": "Flying Wonder",
+      "rarity": "common",
+      "creaturesAdd": [
+        [
+          "Flying Wonder",
+          true
+        ]
+      ],
+      "description": "Wind for 1 min with Utilize to activate Flying Wonder statblock. It's an ally to me and allies. In combat, shares my Initiative & takes turn immediately after me. Obeys my verbal commands (no action needed). If no command, Dodge and move to avoid danger. Wonder is destroyed at 0 HP."
+    },
+    "gyrocopter wonder": {
+      "name": "Gyrocopter Wonder",
+      "rarity": "rare",
+      "description": "This wagon-sized brassy vehicle has a spiral propeller on top and is open on 2 sides. Wind for 1 min with Utilize to activate for 8 hrs. While active, can be flown by 1 pilot. Huge Obj (500 lbs, AC 14, Speed 5/20 Fly, holds 2000 lbs) with 8 spectral cords in cargo bay. Utilize to attach/detach from cord. If attached, can leap from gyrocopter & glide (move 5 ft/1 ft descends). If more than 500 ft away, cord detaches and returns to gyrocoper.",
+      "descriptionLong": "This wagon-sized brassy vehicle has a spiral propeller on top and its middle is open on 2 sides. I can wind it for 1 min with Utilize to activate it for 8 hrs. While active, the gyrocopter can be flown by 1 pilot. It's a Huge Object (500 lbs, AC 14, Speed 5 ft/20 ft Fly) and can hold up to 2000 lbs without deactivating. There are 8 spectral cords in the cargo bay. A passenger can take Utilize action to attach/detach from a cord. If attached, can leap from gyrocopter and glide (move 5 ft per 1 ft descends). If ever more than 500 ft away, cord detaches and returns to gyrocoper."
+    },
+    "mobility wonder": {
+      "name": "Mobility Wonder",
+      "rarity": "common",
+      "description": "While inactive, this wonder resembles a metal turtle shell with straps and can be worn on my back or flank. Wind for 1 min with Utilize to transform it into a personal transport device for 24 hrs, which increases my Speed to 30 ft. The wonder can't be removed unless I allow it."
+    }
+  },
+  {
+    "_key": "adventurer's ring",
+    "name": "Adventurer's Ring",
+    "source": [
+      [
+        "FRHoF",
+        132
+      ]
+    ],
+    "type": "ring",
+    "rarity": "common",
+    "magicItemTable": "?",
+    "description": "While the cover of this ring is open, the ring produces a flame that creates no heat and consumes no fuel. It sheds Bright Light in a 20-ft radius and Dim Light for an additional 20 ft. As a Bonus Action, I can close the cover, smothering the flame, or open it again.",
+    "descriptionFull": "While the cover of this ring is open, the ring produces a flame that creates no heat and consumes no fuel. It sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. As a Bonus Action, you can close the cover, smothering the flame, or open it again.",
+    "action": [
+      [
+        "bonus action",
+        " (Open/Close)"
+      ]
+    ]
+  },
+  {
+    "_key": "windskiff",
+    "name": "Windskiff",
+    "source": [
+      [
+        "FRHoF",
+        133
+      ]
+    ],
+    "type": "wonderous item",
+    "rarity": "rare",
+    "magicItemTable": "?",
+    "description": "This jewelry has 3 charges, regained at dawn. As Magic action, 1 charge to transform into a Medium-size personal vehicle: AC 12, HP 30, Speed 40 ft. The vehicle hovers a few inches off the surface and can glide, moving 5 ft horizontally for every 1 ft it descends. The Windskiff and its riders take no falling damage.",
+    "descriptionFull": [
+      "This small piece of jewelry has 3 charges and regains all expended charges daily at dawn. While you are holding it, you can take a Magic action to expend 1 charge, which causes the jewelry to transform into a sail-powered personal vehicle. The vehicle is roughly the size and shape of a household door with a 10-foot-tall sail extending from one side. After 1 hour or until you use the item's command word (no action required), the transformation ends and the Windskiff reverts to its jewelry form.",
+      "In vehicle form, a Windskiff is a Medium object with the following statistics: AC 12, HP 30, and Speed 40 ft. The Windskiff hovers a few inches above whatever surface it's on and can glide; it moves 5 feet horizontally for every 1 foot it descends in the air. A Windskiff and its riders take no damage from falling."
+    ],
+    "action": [
+      [
+        "action",
+        " (Transform)"
+      ]
+    ],
+    "limfeaname": "Windskiff",
+    "usages": 3,
+    "recovery": "dawn"
+  },
+  {
+    "_key": "mechanical wonder (domestic)",
+    "name": "Mechanical Wonder (Domestic)",
+    "source": [
+      [
+        "FRHoF",
+        134
+      ]
+    ],
+    "type": "wonderous item",
+    "rarity": "uncommon",
+    "magicItemTable": "?",
+    "description": "Bipedal construct that uses the Domestic Wonder stat block. It is an ally to me and my allies. In combat it shares my Initiative count, but takes its turn immediately after mine. It obeys my verbal command (no action needed). It takes the Dodge action if I don't issue a command. The wonder is destroyed when reduced to 0 HP.",
+    "descriptionFull": [
+      "This bipedal wonder is designed to assist with household duties. It vaguely resembles whatever species its creator used as inspiration. An activated domestic wonder uses the Domestic Wonder stat block. The wonder is an ally to you and your allies. In combat, the wonder shares your Initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger. The domestic wonder is destroyed if it drops to 0 Hit Points."
+    ]
+  },
+  {
+    "_key": "transmuter's stone",
+    "name": "Transmuter's Stone",
+    "source": [
+      [
+        "XUA25AU",
+        9
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "common",
+    "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & a benefit from one of the item's options, which the Transmuter chooses when they create the stone. They can change the stone's benefit when they cast a Transmutation spell using a spell slot. Select the benefit the Transmuter chose using the little square button in this magic item line.",
+    "descriptionFull": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & a benefit from one of the item's options, which the Transmuter chooses when they create the stone. They can change the stone's benefit when they cast a Transmutation spell using a spell slot.",
+    "allowDuplicates": true,
+    "choices": [
+      "Darkvision",
+      "Speed",
+      "Resistance: Acid",
+      "Resistance: Cold",
+      "Resistance: Fire",
+      "Resistance: Lightning",
+      "Resistance: Poison",
+      "Resistance: Thunder"
+    ],
+    "darkvision": {
+      "name": "Transmuter's Stone (Darkvision)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & the following benefit, which the Transmuter chooses when they create the stone. They can change the stone's benefit when they cast a Transmutation spell using a spell slot. Darkvision: The bearer gains Darkvision with a range of 60 feet or increases the range of its Darkvision by 60 feet.",
+      "rarity": "common",
+      "vision": [
+        [
+          "Darkvision",
+          "fixed 60"
+        ],
+        [
+          "Darkvision",
+          "+60"
+        ]
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": false
+    },
+    "speed": {
+      "name": "Transmuter's Stone (Speed)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & the following benefit, which the Transmuter chooses when they create the stone. They can change the stone's benefit when they cast a Transmutation spell using a spell slot. Speed: The bearer's Speed increases by 10 feet.",
+      "rarity": "common",
+      "speed": {
+        "allModes": {
+          "bonus": "+10"
+        }
+      },
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": false
+    },
+    "resistance: acid": {
+      "name": "Transmuter's Stone (Resistance: Acid)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & the following benefit, which the Transmuter chooses when they create the stone. They can change the stone's benefit when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Acid damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Acid"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    },
+    "resistance: cold": {
+      "name": "Transmuter's Stone (Resistance: Cold)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & the following benefit, which the Transmuter chooses when they create the stone. They can change the stone's benefit when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Cold damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Cold"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    },
+    "resistance: fire": {
+      "name": "Transmuter's Stone (Resistance: Fire)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & the following benefit, which the Transmuter chooses when they create the stone. They can change the stone's benefit when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Fire damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Fire"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    },
+    "resistance: lightning": {
+      "name": "Transmuter's Stone (Resistance: Lightning)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & the following benefit, which the Transmuter chooses when they create the stone. They can change the stone's benefit when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Lightning damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Lightning"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    },
+    "resistance: poison": {
+      "name": "Transmuter's Stone (Resistance: Poison)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & the following benefit, which the Transmuter chooses when they create the stone. They can change the stone's benefit when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Poison damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Poison"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    },
+    "resistance: thunder": {
+      "name": "Transmuter's Stone (Resistance: Thunder)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & the following benefit, which the Transmuter chooses when they create the stone. They can change the stone's benefit when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Thunder damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Thunder"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    }
+  },
+  {
+    "_key": "potent transmuter's stone",
+    "name": "Potent Transmuter's Stone",
+    "source": [
+      [
+        "XUA25AU",
+        9
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "common",
+    "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Select one of the benefits the Transmuter chose using the little square button in this magic item line.",
+    "descriptionFull": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit when they cast a Transmutation spell using a spell slot.",
+    "allowDuplicates": true,
+    "choices": [
+      "Darkvision",
+      "Speed",
+      "Mighty Build",
+      "Tremorsense",
+      "Resistance: Acid",
+      "Resistance: Cold",
+      "Resistance: Fire",
+      "Resistance: Lightning",
+      "Resistance: Poison",
+      "Resistance: Thunder"
+    ],
+    "darkvision": {
+      "name": "Potent Transmuter's Stone (Darkvision)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Darkvision: The bearer gains Darkvision with a range of 60 feet or increases the range of its Darkvision by 60 feet.",
+      "rarity": "common",
+      "vision": [
+        [
+          "Darkvision",
+          "fixed 60"
+        ],
+        [
+          "Darkvision",
+          "+60"
+        ]
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": false
+    },
+    "speed": {
+      "name": "Potent Transmuter's Stone (Speed)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Speed: The bearer's Speed increases by 10 feet.",
+      "rarity": "common",
+      "speed": {
+        "allModes": {
+          "bonus": "+10"
+        }
+      },
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": false
+    },
+    "mighty build": {
+      "name": "Potent Transmuter's Stone (Might Build)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Mighty Build: The bearer has Adv on Str saves. The bearer also counts as one size larger when determining its carrying capacity.",
+      "rarity": "common",
+      "carryingCapacity": 2,
+      "savetxt": {
+        "text": [
+          "Adv on Str saves"
+        ]
+      },
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": false
+    },
+    "tremorsense": {
+      "name": "Potent Transmuter's Stone (Tremorsense)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Tremorsense: The bearer gains Tremorsense with a range of 30 feet.",
+      "rarity": "common",
+      "vision": [
+        [
+          "Tremorsense",
+          "fixed 30"
+        ]
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": false
+    },
+    "resistance: acid": {
+      "name": "Potent Transmuter's Stone (Resistance: Acid)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Acid damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Acid"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    },
+    "resistance: cold": {
+      "name": "Potent Transmuter's Stone (Resistance: Cold)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Cold damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Cold"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    },
+    "resistance: fire": {
+      "name": "Potent Transmuter's Stone (Resistance: Fire)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Fire damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Fire"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    },
+    "resistance: lightning": {
+      "name": "Potent Transmuter's Stone (Resistance: Lightning)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Lightning damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Lightning"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    },
+    "resistance: poison": {
+      "name": "Potent Transmuter's Stone (Resistance: Poison)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Poison damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Poison"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    },
+    "resistance: thunder": {
+      "name": "Potent Transmuter's Stone (Resistance: Thunder)",
+      "description": "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves & two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Resistance: The bearer gains Resistance to Thunder damage.",
+      "rarity": "common",
+      "dmgres": [
+        "Thunder"
+      ],
+      "saves": [
+        "Con"
+      ],
+      "allowDuplicates": true
+    }
+  },
+  {
+    "_key": "mind sharpener ring",
+    "name": "Mind Sharpener Ring",
+    "source": [
+      [
+        "XUA25EU",
+        8
+      ],
+      [
+        "XUA24A",
+        13
+      ],
+      [
+        "T",
+        22
+      ]
+    ],
+    "type": "ring",
+    "rarity": "uncommon",
+    "description": "This ring can send a jolt to refocus my mind. It has 4 charges and regains 1d4 expended charges daily at dawn. As a Reaction when I fail a Constitution saving throw to maintain Concentration on a spell, I can expend 1 charge to succeed instead.",
+    "descriptionFull": "The ring can send a jolt to the wearer to refocus their mind. The item has 4 charges. When the wearer fails a Constitution saving throw to maintain Concentration on a spell, the wearer can use its reaction to expend 1 of the item's charges to succeed instead. The item regains 1d4 expended charges daily at dawn.",
+    "action": [
+      [
+        "reaction",
+        ""
+      ]
+    ],
+    "usages": 4,
+    "recovery": "dawn",
+    "additional": "regains 1d4"
+  },
+  {
+    "_key": "enhanced defense (armor)",
+    "name": "Enhanced Defense Armor",
+    "source": [
+      [
+        "MJ:HB",
+        0
+      ],
+      [
+        "E:RLW",
+        62
+      ],
+      [
+        "T",
+        21
+      ]
+    ],
+    "defaultExcluded": true,
+    "type": "armor",
+    "rarity": "uncommon",
+    "description": "I have a bonus to AC while wearing this armor. The bonus increases to +2 when I reach character level 10. Select the bonus using the little square button in this magic item line.",
+    "descriptionFull": "You have a bonus to AC while wearing this armor. The bonus increases to +2 when you reach character level 10. Select the bonus using the little square button in this magic item line.",
+    "allowDuplicates": true,
+    "chooseGear": {
+      "type": "armor",
+      "prefixOrSuffix": "brackets",
+      "descriptionChange": [
+        "prefix",
+        "armor"
+      ]
+    },
+    "choices": [
+      "+1 Enhanced Defense (Armor)",
+      "+2 Enhanced Defense (Armor) (Lvl 10+)"
+    ],
+    "+1 enhanced defense (armor)": {
+      "name": "Enhanced Defense Armor +1",
+      "nameTest": "+1 Enhanced Defense Armor",
+      "defaultExcluded": true,
+      "rarity": "uncommon",
+      "description": "I have a bonus to AC while wearing this armor. The bonus increases to +2 when I reach character level 10. Select the bonus using the little square button in this magic item line.",
+      "allowDuplicates": true
+    },
+    "+2 enhanced defense (armor) (lvl 10+)": {
+      "name": "Enhanced Defense Armor +2 (Lvl 10+)",
+      "nameTest": "+2 Enhanced Defense Armor",
+      "defaultExcluded": true,
+      "rarity": "rare",
+      "description": "I have a bonus to AC while wearing this armor. The bonus increases to +2 when I reach character level 10. Select the bonus using the little square button in this magic item line.",
+      "allowDuplicates": true
+    }
+  },
+  {
+    "_key": "enhanced defense (shield)",
+    "name": "Enhanced Defense Shield",
+    "source": [
+      [
+        "MJ:HB",
+        0
+      ],
+      [
+        "E:RLW",
+        62
+      ],
+      [
+        "T",
+        21
+      ]
+    ],
+    "defaultExcluded": true,
+    "type": "shield",
+    "rarity": "uncommon",
+    "description": "I have a bonus to AC while wielding this shield. The bonus increases to +2 when I reach character level 10. Select the bonus using the little square button in this magic item line.",
+    "descriptionFull": "You have a bonus to AC while wielding this shield. The bonus increases to +2 when you reach character level 10. Select the bonus using the little square button in this magic item line.",
+    "allowDuplicates": true,
+    "choices": [
+      "+1 Enhanced Defense (Shield)",
+      "+2 Enhanced Defense (Shield) (Lvl 10+)"
+    ],
+    "+1 enhanced defense (shield)": {
+      "name": "Enhanced Defense Shield +1",
+      "nameTest": "+1 Enhanced Defense Shield",
+      "defaultExcluded": true,
+      "rarity": "uncommon",
+      "description": "I have a bonus to AC while wielding this shield. The bonus increases to +2 when I reach character level 10. Select the bonus using the little square button in this magic item line.",
+      "allowDuplicates": true
+    },
+    "+2 enhanced defense (shield) (lvl 10+)": {
+      "name": "Enhanced Defense Shield +2 (Lvl 10+)",
+      "nameTest": "+2 Enhanced Defense Shield",
+      "defaultExcluded": true,
+      "rarity": "rare",
+      "description": "I have a bonus to AC while wielding this shield. The bonus increases to +2 when I reach character level 10. Select the bonus using the little square button in this magic item line.",
+      "allowDuplicates": true
+    }
+  },
+  {
+    "_key": "manifold tool",
+    "name": "Manifold Tool",
+    "source": [
+      [
+        "E:FA",
+        112
+      ]
+    ],
+    "type": "wondrous item",
+    "rarity": "common",
+    "description": "This tool takes the form of a wrench, screwdriver, or other basic tool. As a Magic action, I can touch the item and transform it into a type of Artisan’s Tools of my choice. Whatever form the tool takes, I have proficiency with it when I use it.",
+    "descriptionFull": "This tool takes the form of a wrench, screwdriver, or other basic tool. As a Magic action, you can touch the item and transform it into a type of Artisan’s Tools of your choice. Whatever form the tool takes, you have proficiency with it when you use it.",
+    "attunement": true,
+    "action": [
+      [
+        "action",
+        "Transform Manifold Tool"
+      ]
+    ]
+  },
+  {
+    "_key": "dazzling weapon",
+    "name": "Dazzling Weapon",
+    "nameTest": "Dazzling",
+    "source": [
+      "E:FA",
+      112
+    ],
+    "type": "weapon (any)",
+    "rarity": "rare",
+    "description": "This item adds a +1 on its to hit and damage, has 4 charges, and regains 1d4 at dawn. As a Bonus Action, I can have it start/stop shedding light, Bright in 30 ft, Dim in another 30 ft. As a Reaction if hit by an attack, I can use 1 charge to Blind the attacker until the end of its next turn unless it makes a Con 15 save.",
+    "descriptionFull": "This magic weapon grants a +1 bonus to attack and damage rolls made with it. While holding it, you can take a Bonus Action to cause it to shed Bright Light in a 30-foot radius and Dim Light for an additional 30 feet. You can extinguish the light as a Bonus Action.\n   The weapon has 4 charges. As a Reaction immediately after being hit by an attack, you can expend 1 charge and cause the attacker to be Blinded until the end of the attacker's next turn, unless the attacker succeeds on a DC 15 Constitution saving throw. The weapon regains 1d4 expended charges daily at dawn.",
+    "attunement": true,
+    "usages": 4,
+    "recovery": "dawn",
+    "additional": "Blind attacker; regains 1d4",
+    "action": [
+      [
+        "bonus action",
+        " (start/stop light)"
+      ],
+      [
+        "reaction",
+        " (1 charge; after hit)"
+      ]
+    ],
+    "chooseGear": {
+      "type": "weapon",
+      "prefixOrSuffix": "suffix",
+      "descriptionChange": [
+        "replace",
+        "weapon"
+      ]
+    },
+    "calcChanges": {
+      "atkAdd": [
+        {
+          "_type": "function",
+          "body": "function(fields, v) {\n                if (!v.theWea.isMagicWeapon && !v.isSpell && (/dazzling/i).test(v.WeaponTextName)) {\n                    v.theWea.isMagicWeapon = true;\n                    fields.Description = fields.Description.replace(/(, |; )?Counts as magical/i, '');\n                    fields.Description += (fields.Description ? '; ' : '') + 'Reaction to blind attacker';\n                }\n            }"
+        },
+        "If I include the word \"Dazzling\" in the name of a weapon, it will be treated as the magic weapon Dazzling Weapon. It has +1 to hit and damage and can be used to shed light and to Blind an attacker."
+      ],
+      "atkCalc": [
+        {
+          "_type": "function",
+          "body": "function(fields, v, output) {\n                if (v.isWeapon && !v.isSpell && (/dazzling/i).test(v.WeaponTextName)) {\n                    output.magic = v.thisWeapon[1] + 1;\n                }\n            }"
+        }
+      ]
     }
   }
 ]

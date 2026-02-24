@@ -3546,5 +3546,85 @@
         ]
       }
     }
+  },
+  {
+    "_key": "shifter-beasthide",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*shifter)(?=.*beasthide).*$",
+      "flags": "i"
+    },
+    "name": "Beasthide Shifter",
+    "sortname": "Shifter, Beasthide",
+    "trait": "Beasthide Shifter\n• Shifting: As a Bonus Action, I can shape-shift to assume a more bestial appearance. This transformation lasts for 1 minute or until you revert to your normal appearance as a Bonus Action. When you shift, you gain Temporary Hit Points equal to 2 times your Proficiency Bonus. You can shift a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.\n• Beasthide: I gain 1d6 additional Temporary Hit Points. While shifted, I have a +1 bonus to my Armor Class."
+  },
+  {
+    "_key": "shifter-longtooth",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*shifter)(?=.*longtooth).*$",
+      "flags": "i"
+    },
+    "name": "Longtooth Shifter",
+    "sortname": "Shifter, Longtooth",
+    "action": [
+      [
+        "bonus action",
+        "Longtooth Fangs (while shifted)"
+      ]
+    ],
+    "weaponOptions": [
+      {
+        "baseWeapon": "unarmed strike",
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "^(?=.*fangs?)(?=.*long)(?=.*(tooth|teeth)).*$",
+          "flags": "i"
+        },
+        "name": "Longtooth Fangs",
+        "source": [
+          [
+            "E:FA",
+            0
+          ]
+        ],
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "description": "Only while shifted; One attack as bonus action",
+        "selectNow": true
+      }
+    ],
+    "trait": "Longtooth Shifter\n• Shifting: As a Bonus Action, I can shape-shift to assume a more bestial appearance. This transformation lasts for 1 minute or until you revert to your normal appearance as a Bonus Action. When you shift, you gain Temporary Hit Points equal to 2 times your Proficiency Bonus. You can shift a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.\n• Longtooth: When I shift and as a Bonus Action on my other turns while shifted, I can use my elongated fangs to make an Unarmed Strike. If I hit with this Unarmed Strike and deal damage, I can deal Piercing damage equal to 1d6 plus my Strength modifier instead of the normal damage of an Unarmed Strike."
+  },
+  {
+    "_key": "shifter-swiftstride",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*shifter)(?=.*swiftstride).*$",
+      "flags": "i"
+    },
+    "name": "Swiftstride Shifter",
+    "sortname": "Shifter, Swiftstride",
+    "action": [
+      [
+        "reaction",
+        "Move (While shifted)"
+      ]
+    ],
+    "trait": "Swiftstride Shifter\n• Shifting: As a Bonus Action, I can shape-shift to assume a more bestial appearance. This transformation lasts for 1 minute or until you revert to your normal appearance as a Bonus Action. When you shift, you gain Temporary Hit Points equal to 2 times your Proficiency Bonus. You can shift a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.\n• Swiftstride: When I am shifted, my Speed increases by 10 feet. Additionally, I can move up to 10 feet as a Reaction when a creature ends its turn within 5 feet of me. This reactive movement doesn't provoke Opportunity Attack action."
+  },
+  {
+    "_key": "shifter-wildhunt",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*shifter)(?=.*wildhunt).*$",
+      "flags": "i"
+    },
+    "name": "Wildhunt Shifter",
+    "sortname": "Shifter, Wildhunt",
+    "trait": "Wildhunt Shifter\n• Shifting: As a Bonus Action, I can shape-shift to assume a more bestial appearance. This transformation lasts for 1 minute or until you revert to your normal appearance as a Bonus Action. When you shift, you gain Temporary Hit Points equal to 2 times your Proficiency Bonus. You can shift a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.\n• Wildhunt: While shifted, I have Advantage on Wisdom checks. Additionally, no creature within 30 feet of me can have Advantage on an attack roll against me unless I have the Incapacitated condition."
   }
 ]

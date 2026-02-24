@@ -142,68 +142,6 @@
     ]
   },
   {
-    "_key": "half-elf",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*half)(?=.*(elf|elv|drow|silvanesti|qualinesti|grugach|kagonesti)).*$",
-      "flags": "i"
-    },
-    "name": "Half-elf",
-    "source": [
-      [
-        "SRD",
-        6
-      ],
-      [
-        "P",
-        39
-      ]
-    ],
-    "plural": "Half-elves",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "languageProfs": [
-      "Common",
-      "Elvish",
-      1
-    ],
-    "vision": [
-      [
-        "Darkvision",
-        60
-      ]
-    ],
-    "savetxt": {
-      "text": [
-        "Magic can't put me to sleep"
-      ],
-      "adv_vs": [
-        "charmed"
-      ]
-    },
-    "skillstxt": "Choose any two skills",
-    "age": " reach adulthood around age 20 and often live over 180 years",
-    "height": " range from 5 to 6 feet tall (4'9\" + 2d8\")",
-    "weight": " weigh around 155 lb (110 + 2d8 × 2d4 lb)",
-    "heightMetric": " range from 1,5 to 1,8 metres tall (145 + 5d8 cm)",
-    "weightMetric": " weigh around 70 kg (50 + 5d8 × 4d4 / 10 kg)",
-    "scorestxt": "+2 Charisma and +1 to two other ability scores of my choice",
-    "scores": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      2
-    ],
-    "trait": "Half-Elf (+2 Charisma and +1 to two other ability scores of my choice)\n\nSkill Versatility: I gain proficiency in two skills of my choice."
-  },
-  {
     "_key": "half-orc",
     "regExpSearch": {
       "_type": "RegExp",
@@ -5268,569 +5206,6 @@
     "trait": "Dankwood Goblin (+2 Dexterity, +1 Wisdom)\n   Speak with Small Beasts: Through sounds and gestures, I can communicate simple ideas with Small or smaller beasts. Dankwood goblins love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.\n   Nimble Escape: As a bonus action, I can take the Disengage or Hide action."
   },
   {
-    "_key": "changeling",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "changeling",
-      "flags": "i"
-    },
-    "name": "Changeling",
-    "source": [
-      [
-        "E:RLW",
-        18
-      ]
-    ],
-    "plural": "Changelings",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "skillstxt": "Choose two from Deception, Intimidation, Insight, and Persuasion",
-    "languageProfs": [
-      "Common",
-      2
-    ],
-    "age": " mature slightly faster than humans but share a similar lifespan, typically a century or less. While a changeling can transform to conceal their age, the effects of aging affect them similarly to humans",
-    "height": " stand between 5 and 6 feet tall (5'1\" + 2d4\")",
-    "weight": " weigh around 140 lb (115 + 2d4 × 2d4 lb)",
-    "heightMetric": " stand between 1,5 to over 1,8 metres tall (155 + 5d4 cm)",
-    "weightMetric": " weigh around 65 kg (52 + 5d4 × 4d4 / 10 kg)",
-    "scorestxt": "+2 Charisma and +1 to one other ability score of my choice",
-    "scores": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      2
-    ],
-    "trait": "Changeling (+2 Charisma and +1 to one other ability score of my choice)\nShapechanger: As an action, I can change my appearance and voice to or from a humanoid-shaped form I have seen, not changing my equipment. I determine the specifics of the form like hair length, eye color, and sex. I can adjust my height and weight, but not so much that my size changes. I revert back when I die. I can make myself appear as a member of another race, though none of my game statistics change.",
-    "action": [
-      [
-        "action",
-        "Shapechanger"
-      ]
-    ]
-  },
-  {
-    "_key": "kalashtar",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "kalashtar",
-      "flags": "i"
-    },
-    "name": "Kalashtar",
-    "source": [
-      [
-        "E:RLW",
-        30
-      ]
-    ],
-    "plural": "Kalashtar",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "languageProfs": [
-      "Common",
-      "Quori",
-      1
-    ],
-    "savetxt": {
-      "immune": [
-        "effects that require me to dream"
-      ],
-      "text": [
-        "Adv. on all Wis saves"
-      ]
-    },
-    "advantages": [
-      [
-        "Wisdom",
-        true
-      ]
-    ],
-    "dmgres": [
-      "Psychic"
-    ],
-    "age": " reach adulthood in their late teens and live less than 100 years",
-    "height": " range from 5 and a half to well over 6 feet tall (5'4\" + 2d6\")",
-    "weight": " weigh around 145 lb (110 + 2d6 × 1d6 lb)",
-    "heightMetric": " range from 1,7 to 1,9 metres tall (160 + 5d6 cm)",
-    "weightMetric": " weigh around 65 kg (50 + 5d6 × 2d6 / 10 kg)",
-    "scores": [
-      0,
-      0,
-      0,
-      0,
-      2,
-      1
-    ],
-    "trait": "Kalashtar (+2 Wisdom, +1 Charisma)\n   Dual Mind: I have advantage on Wisdom saving throws.\n   Mind Link: I can speak telepathically to any creature I can see within 10 ft × my level, as long as it can speak at least one language. As an action, I can give that creature the ability to speak telepathically back to me while it can see me and is within range. This lasts for 1 hour, until I use this ability on another creature, or until I end it as an action.\n   Severed from Dreams: I don't dream and thus immune to spells that affect dreams.",
-    "action": [
-      [
-        "action",
-        "Mind Link (start/stop)"
-      ]
-    ]
-  },
-  {
-    "_key": "beasthide shifter",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?!.*(multiverse|motm\\b))(?=.*shifter)(?=.*beast)(?=.*hide).*$",
-      "flags": "i"
-    },
-    "name": "Beasthide shifter",
-    "sortname": "Shifter, Beasthide",
-    "source": [
-      [
-        "E:RLW",
-        34
-      ]
-    ],
-    "plural": "Beasthide shifters",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "languageProfs": [
-      "Common"
-    ],
-    "vision": [
-      [
-        "Darkvision",
-        60
-      ]
-    ],
-    "skills": [
-      "Athletics"
-    ],
-    "age": " reach young adulthood at age 10 and rarely live over 70",
-    "height": " range from under 5 to almost 6 feet tall (4'6\" + 2d8\")",
-    "weight": " weigh around 135 lb (90 + 2d8 × 2d4 lb)",
-    "heightMetric": " range from under 1,5 to 1,8 metres tall (4'6\" + 5d8 cm)",
-    "weightMetric": " weigh around 65 kg (40 + 5d8 × 4d4 / 10 kg)",
-    "scores": [
-      1,
-      0,
-      2,
-      0,
-      0,
-      0
-    ],
-    "trait": "Beasthide Shifter (+1 Strength, +2 Constitution)\n\nShifting: As a bonus action once per short rest, I can assume a more bestial appearance.\nThis transformation lasts for 1 minute, until I die, or until I revert back as a bonus action.\nWhen I shift, I gain temporary HP equal to 1d6 + my level + my Constitution modifier (minimum 1 temporary hit point).\nWhile transformed like this, I have a +1 bonus to AC.",
-    "features": {
-      "shift": {
-        "name": "Shift",
-        "minlevel": 1,
-        "usages": 1,
-        "recovery": "short rest",
-        "action": [
-          [
-            "bonus action",
-            " (start/end)"
-          ]
-        ],
-        "additional": [
-          "1d6 + 1 + Con mod temp HP",
-          "1d6 + 2 + Con mod temp HP",
-          "1d6 + 3 + Con mod temp HP",
-          "1d6 + 4 + Con mod temp HP",
-          "1d6 + 5 + Con mod temp HP",
-          "1d6 + 6 + Con mod temp HP",
-          "1d6 + 7 + Con mod temp HP",
-          "1d6 + 8 + Con mod temp HP",
-          "1d6 + 9 + Con mod temp HP",
-          "1d6 + 10 + Con mod temp HP",
-          "1d6 + 11 + Con mod temp HP",
-          "1d6 + 12 + Con mod temp HP",
-          "1d6 + 13 + Con mod temp HP",
-          "1d6 + 14 + Con mod temp HP",
-          "1d6 + 15 + Con mod temp HP",
-          "1d6 + 16 + Con mod temp HP",
-          "1d6 + 17 + Con mod temp HP",
-          "1d6 + 18 + Con mod temp HP",
-          "1d6 + 19 + Con mod temp HP",
-          "1d6 + 20 + Con mod temp HP"
-        ]
-      }
-    }
-  },
-  {
-    "_key": "longtooth shifter",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?!.*(multiverse|motm\\b))(?=.*shifter)(?=.*long)(?=.*(tooth|teeth)).*$",
-      "flags": "i"
-    },
-    "name": "Longtooth shifter",
-    "sortname": "Shifter, Longtooth",
-    "source": [
-      [
-        "E:RLW",
-        34
-      ]
-    ],
-    "plural": "Longtooth shifters",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "languageProfs": [
-      "Common"
-    ],
-    "weaponOptions": [
-      {
-        "baseWeapon": "unarmed strike",
-        "regExpSearch": {
-          "_type": "RegExp",
-          "source": "^(?=.*fangs?)(?=.*long)(?=.*(tooth|teeth)).*$",
-          "flags": "i"
-        },
-        "name": "Longtooth Fangs",
-        "source": [
-          [
-            "E:RLW",
-            34
-          ]
-        ],
-        "damage": [
-          1,
-          6,
-          "piercing"
-        ],
-        "description": "Only while shifted; One attack as bonus action",
-        "selectNow": true
-      }
-    ],
-    "vision": [
-      [
-        "Darkvision",
-        60
-      ]
-    ],
-    "skills": [
-      "Intimidation"
-    ],
-    "age": " reach young adulthood at age 10 and rarely live over 70",
-    "height": " range from under 5 to almost 6 feet tall (4'6\" + 2d8\")",
-    "weight": " weigh around 135 lb (90 + 2d8 × 2d4 lb)",
-    "heightMetric": " range from under 1,5 to 1,8 metres tall (4'6\" + 5d8 cm)",
-    "weightMetric": " weigh around 65 kg (40 + 5d8 × 4d4 / 10 kg)",
-    "scores": [
-      2,
-      1,
-      0,
-      0,
-      0,
-      0
-    ],
-    "trait": "Longtooth Shifter (+2 Strength, +1 Dexterity)\nShifting: As a bonus action once per short rest, I can assume a more bestial appearance.\nThis transformation lasts for 1 minute, until I die, or until I revert back as a bonus action.\nWhen I shift, I gain temporary HP equal to my level + my Constitution modifier (minimum 1 temporary hit point).\nWhile transformed like this, I use my elongated fangs to make unarmed strikes, dealing 1d6 piercing damage. As a bonus action, I can maken one attack with my fangs.",
-    "action": [
-      [
-        "bonus action",
-        "Longtooth Fangs attack (while shifted)"
-      ]
-    ],
-    "features": {
-      "shift": {
-        "name": "Shift",
-        "minlevel": 1,
-        "usages": 1,
-        "recovery": "short rest",
-        "action": [
-          [
-            "bonus action",
-            " (start/end)"
-          ]
-        ],
-        "additional": [
-          "1 + Con mod temp HP",
-          "2 + Con mod temp HP",
-          "3 + Con mod temp HP",
-          "4 + Con mod temp HP",
-          "5 + Con mod temp HP",
-          "6 + Con mod temp HP",
-          "7 + Con mod temp HP",
-          "8 + Con mod temp HP",
-          "9 + Con mod temp HP",
-          "10 + Con mod temp HP",
-          "11 + Con mod temp HP",
-          "12 + Con mod temp HP",
-          "13 + Con mod temp HP",
-          "14 + Con mod temp HP",
-          "15 + Con mod temp HP",
-          "16 + Con mod temp HP",
-          "17 + Con mod temp HP",
-          "18 + Con mod temp HP",
-          "19 + Con mod temp HP",
-          "20 + Con mod temp HP"
-        ]
-      }
-    }
-  },
-  {
-    "_key": "swiftstride shifter",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?!.*(multiverse|motm\\b))(?=.*shifter)(?=.*swift)(?=.*stride).*$",
-      "flags": "i"
-    },
-    "name": "Swiftstride shifter",
-    "sortname": "Shifter, Swiftstride",
-    "source": [
-      [
-        "E:RLW",
-        34
-      ]
-    ],
-    "plural": "Swiftstride shifters",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "languageProfs": [
-      "Common"
-    ],
-    "vision": [
-      [
-        "Darkvision",
-        60
-      ]
-    ],
-    "skills": [
-      "Acrobatics"
-    ],
-    "age": " reach young adulthood at age 10 and rarely live over 70",
-    "height": " range from under 5 to almost 6 feet tall (4'6\" + 2d8\")",
-    "weight": " weigh around 135 lb (90 + 2d8 × 2d4 lb)",
-    "heightMetric": " range from under 1,5 to 1,8 metres tall (4'6\" + 5d8 cm)",
-    "weightMetric": " weigh around 65 kg (40 + 5d8 × 4d4 / 10 kg)",
-    "scores": [
-      0,
-      2,
-      0,
-      0,
-      0,
-      1
-    ],
-    "trait": "Swiftstride Shifter (+2 Dexterity, +1 Charisma)\nShifting: As a bonus action once per short rest, I can assume a more bestial appearance.\nThis transformation lasts for 1 minute, until I die, or until I revert back as a bonus action.\nWhen I shift, I gain temporary HP equal to my level + my Con mod (minimum 1 temp HP).\nWhile transformed like this, my walking speed increases with 10 ft.\nAs a reaction when an enemy ends its turn within 5 ft of me while I'm shifted, I can move 10 ft without provoking opportunity attacks.",
-    "action": [
-      [
-        "reaction",
-        "Stride (while shifted)"
-      ]
-    ],
-    "features": {
-      "shift": {
-        "name": "Shift",
-        "minlevel": 1,
-        "usages": 1,
-        "recovery": "short rest",
-        "action": [
-          [
-            "bonus action",
-            " (start/end)"
-          ]
-        ],
-        "additional": [
-          "1 + Con mod temp HP",
-          "2 + Con mod temp HP",
-          "3 + Con mod temp HP",
-          "4 + Con mod temp HP",
-          "5 + Con mod temp HP",
-          "6 + Con mod temp HP",
-          "7 + Con mod temp HP",
-          "8 + Con mod temp HP",
-          "9 + Con mod temp HP",
-          "10 + Con mod temp HP",
-          "11 + Con mod temp HP",
-          "12 + Con mod temp HP",
-          "13 + Con mod temp HP",
-          "14 + Con mod temp HP",
-          "15 + Con mod temp HP",
-          "16 + Con mod temp HP",
-          "17 + Con mod temp HP",
-          "18 + Con mod temp HP",
-          "19 + Con mod temp HP",
-          "20 + Con mod temp HP"
-        ]
-      }
-    }
-  },
-  {
-    "_key": "wildhunt shifter",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?!.*(multiverse|motm\\b))(?=.*shifter)(?=.*wild)(?=.*hunt).*$",
-      "flags": "i"
-    },
-    "name": "Wildhunt shifter",
-    "sortname": "Shifter, Wildhunt",
-    "source": [
-      [
-        "E:RLW",
-        34
-      ]
-    ],
-    "plural": "Wildhunt shifters",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "languageProfs": [
-      "Common"
-    ],
-    "vision": [
-      [
-        "Darkvision",
-        60
-      ]
-    ],
-    "skills": [
-      "Survival"
-    ],
-    "age": " reach young adulthood at age 10 and rarely live over 70",
-    "height": " range from under 5 to almost 6 feet tall (4'6\" + 2d8\")",
-    "weight": " weigh around 135 lb (90 + 2d8 × 2d4 lb)",
-    "heightMetric": " range from under 1,5 to 1,8 metres tall (4'6\" + 5d8 cm)",
-    "weightMetric": " weigh around 65 kg (40 + 5d8 × 4d4 / 10 kg)",
-    "scores": [
-      0,
-      1,
-      0,
-      0,
-      2,
-      0
-    ],
-    "trait": "Wildhunt Shifter (+1 Dexterity, +2 Wisdom)\nShifting: As a bonus action once per short rest, I can assume a more bestial appearance.\nThis transformation lasts for 1 minute, until I die, or until I revert back as a bonus action.\nWhen I shift, I gain temporary HP equal to my level + my Constitution modifier (minimum 1 temporary hit point).\nWhile transformed like this, I have advantage on Wisdom checks and no creature within 30 ft can make an attack roll with advantage against me, unless I'm incapacitated.",
-    "features": {
-      "shift": {
-        "name": "Shift",
-        "minlevel": 1,
-        "usages": 1,
-        "recovery": "short rest",
-        "action": [
-          [
-            "bonus action",
-            " (start/end)"
-          ]
-        ],
-        "additional": [
-          "1 + Con mod temp HP",
-          "2 + Con mod temp HP",
-          "3 + Con mod temp HP",
-          "4 + Con mod temp HP",
-          "5 + Con mod temp HP",
-          "6 + Con mod temp HP",
-          "7 + Con mod temp HP",
-          "8 + Con mod temp HP",
-          "9 + Con mod temp HP",
-          "10 + Con mod temp HP",
-          "11 + Con mod temp HP",
-          "12 + Con mod temp HP",
-          "13 + Con mod temp HP",
-          "14 + Con mod temp HP",
-          "15 + Con mod temp HP",
-          "16 + Con mod temp HP",
-          "17 + Con mod temp HP",
-          "18 + Con mod temp HP",
-          "19 + Con mod temp HP",
-          "20 + Con mod temp HP"
-        ]
-      }
-    }
-  },
-  {
-    "_key": "warforged",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "warforged",
-      "flags": "i"
-    },
-    "name": "Warforged",
-    "source": [
-      [
-        "E:RLW",
-        36
-      ]
-    ],
-    "plural": "Warforged",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "languageProfs": [
-      "Common",
-      1
-    ],
-    "toolProfs": [
-      [
-        "Any tool",
-        1
-      ]
-    ],
-    "skillstxt": "Choose any one skill and any one tool",
-    "savetxt": {
-      "text": [
-        "Magic can't put me to sleep"
-      ],
-      "immune": [
-        "disease",
-        "magical aging effects"
-      ],
-      "adv_vs": [
-        "poison"
-      ]
-    },
-    "dmgres": [
-      "Poison"
-    ],
-    "age": " typical are between two and thirty years old. The maximum warforged lifespan remains a mystery; so far, warforged have shown no signs of deterioration due to age. Warforged are immune to magical aging effects.",
-    "height": " stand between 6 and 7 feet tall (5'10\" + 2d6\")",
-    "weight": " weigh around 300 lb (270 + 2d6 × 4 lb)",
-    "heightMetric": " stand between 1,8 and 2,1 metres tall (178 + 5d6 cm)",
-    "weightMetric": " weigh around 135 kg (125 + 5d6 × 8 / 10 kg)",
-    "scorestxt": "+2 Constitution and +1 to one other ability score of my choice",
-    "scores": [
-      0,
-      0,
-      2,
-      0,
-      0,
-      0
-    ],
-    "trait": "Warforged (+2 Constitution and +1 to one other ability score of my choice)\nWarforged Resilience: I do not need to sleep, eat, drink, or breathe.\nSentry's Rest: To benefit from a long rest, I need to enter an inactive state for 6 hours, during which I am not rendered unconscious and can see and hear as normal.\nIntegrated Protection: I gain +1 AC and I can don only armor with which I'm proficient. To don or doff armor, I must (un)incorporate it into my body over the course of 1 hour, which can be done during resting. Donned armor can't be removed against my will while I'm alive.",
-    "extraAC": {
-      "name": "Integrated Protection",
-      "mod": 1,
-      "text": "I gain a +1 bonus to AC."
-    }
-  },
-  {
     "_key": "dragonmark detection half-elf",
     "regExpSearch": {
       "_type": "RegExp",
@@ -9023,43 +8398,6 @@
     "carryingCapacity": 2
   },
   {
-    "_key": "multiverse changeling",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*(multiverse|motm\\b))(?=.*changeling).*$",
-      "flags": "i"
-    },
-    "name": "Multiverse Changeling",
-    "sortname": "Changeling, Multiverse",
-    "source": [
-      [
-        "MotM",
-        41
-      ]
-    ],
-    "plural": "Changelings",
-    "size": [
-      3,
-      4
-    ],
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "skillstxt": "Choose two from Deception, Insight, Intimidation, Performance, and Persuasion",
-    "age": " typically live to be around 100 years old. While a changeling can transform to conceal their age, the effects of aging affect them similarly to humans",
-    "scoresGeneric": true,
-    "trait": "Changeling\n • Fey: My creature type is fey, rather than humanoid.\n • Shapechanger: As an action, I can change my appearance and voice to or from a humanoid-shaped form I have seen, not changing my equipment. I determine the specifics of the form like hair length, eye color, and sex. I can adjust my height and weight between Medium and Small and can appear as a member of another race, though none of my game statistics change. I revert back when I die.",
-    "action": [
-      [
-        "action",
-        "Shapechanger"
-      ]
-    ]
-  },
-  {
     "_key": "multiverse deep gnome",
     "regExpSearch": {
       "_type": "RegExp",
@@ -10800,325 +10138,6 @@
           ]
         ]
       }
-    }
-  },
-  {
-    "_key": "multiverse beasthide shifter",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*(multiverse|motm\\b))(?=.*beast)(?=.*hide)(?=.*shifter).*$",
-      "flags": "i"
-    },
-    "name": "Multiverse Beasthide Shifter",
-    "sortname": "Shifter, Beasthide, Multiverse",
-    "source": [
-      [
-        "MotM",
-        32
-      ]
-    ],
-    "plural": "Beasthide shifters",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "vision": [
-      [
-        "Darkvision",
-        60
-      ]
-    ],
-    "skillstxt": "Choose one skill from Acrobatics, Athletics, Intimidation, or Survival",
-    "scoresGeneric": true,
-    "trait": "Beasthide Shifter\n • Bestial Instincts: I have proficiency in Acrobatics, Athletics, Intimidation, or Survival.\n • Shifting (Beasthide): Prof Bonus per long rest, as a bonus action, I can assume a more bestial appearance. This transformation lasts for 1 minute, until I die, or until I revert back as a bonus action. When I shift, I gain 1d6 + twice my proficiency bonus in temporary hit points and a +1 bonus to my AC.",
-    "features": {
-      "shift": {
-        "name": "Shift",
-        "minlevel": 1,
-        "usages": "Proficiency bonus per ",
-        "usagescalc": "event.value = How('Proficiency Bonus');",
-        "recovery": "long rest",
-        "additional": [
-          "1d6 + 4 temp HP",
-          "1d6 + 4 temp HP",
-          "1d6 + 4 temp HP",
-          "1d6 + 4 temp HP",
-          "1d6 + 6 temp HP",
-          "1d6 + 6 temp HP",
-          "1d6 + 6 temp HP",
-          "1d6 + 6 temp HP",
-          "1d6 + 8 temp HP",
-          "1d6 + 8 temp HP",
-          "1d6 + 8 temp HP",
-          "1d6 + 8 temp HP",
-          "1d6 + 10 temp HP",
-          "1d6 + 10 temp HP",
-          "1d6 + 10 temp HP",
-          "1d6 + 10 temp HP",
-          "1d6 + 12 temp HP",
-          "1d6 + 12 temp HP",
-          "1d6 + 12 temp HP",
-          "1d6 + 12 temp HP"
-        ]
-      }
-    }
-  },
-  {
-    "_key": "multiverse longtooth shifter",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*(multiverse|motm\\b))(?=.*long)(?=.*(tooth|teeth))(?=.*shifter).*$",
-      "flags": "i"
-    },
-    "name": "Multiverse Longtooth Shifter",
-    "sortname": "Shifter, Longtooth, Multiverse",
-    "source": [
-      [
-        "MotM",
-        32
-      ]
-    ],
-    "plural": "Longtooth shifters",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "vision": [
-      [
-        "Darkvision",
-        60
-      ]
-    ],
-    "skillstxt": "Choose one skill from Acrobatics, Athletics, Intimidation, or Survival",
-    "scoresGeneric": true,
-    "trait": "Longtooth Shifter\n • Bestial Instincts: I have proficiency in Acrobatics, Athletics, Intimidation, or Survival.\n • Shifting (Longtooth): Prof Bonus per long rest, as a bonus action, I can assume a more bestial appearance for 1 minute, until I die, or until I revert back as a bonus action. When I shift, I gain twice my proficiency bonus in temporary hit points and my fangs elongate. As part of the bonus action when I shift and as a bonus action while shifted, I can make a single unarmed strike with my elongated fangs that deals 1d6 piercing damage.",
-    "features": {
-      "shift": {
-        "name": "Shift",
-        "minlevel": 1,
-        "usages": "Proficiency bonus per ",
-        "usagescalc": "event.value = How('Proficiency Bonus');",
-        "recovery": "long rest",
-        "additional": [
-          "4 temp HP",
-          "4 temp HP",
-          "4 temp HP",
-          "4 temp HP",
-          "6 temp HP",
-          "6 temp HP",
-          "6 temp HP",
-          "6 temp HP",
-          "8 temp HP",
-          "8 temp HP",
-          "8 temp HP",
-          "8 temp HP",
-          "10 temp HP",
-          "10 temp HP",
-          "10 temp HP",
-          "10 temp HP",
-          "12 temp HP",
-          "12 temp HP",
-          "12 temp HP",
-          "12 temp HP"
-        ],
-        "action": [
-          [
-            "bonus action",
-            " (start/end)"
-          ]
-        ]
-      }
-    },
-    "action": [
-      [
-        "bonus action",
-        "Longtooth Fangs (while shifted)"
-      ]
-    ],
-    "weaponOptions": [
-      {
-        "baseWeapon": "unarmed strike",
-        "regExpSearch": {
-          "_type": "RegExp",
-          "source": "^(?=.*fangs?)(?=.*long)(?=.*(tooth|teeth)).*$",
-          "flags": "i"
-        },
-        "name": "Longtooth Fangs",
-        "source": [
-          [
-            "MotM",
-            32
-          ]
-        ],
-        "damage": [
-          1,
-          6,
-          "piercing"
-        ],
-        "description": "Only while shifted; One attack as bonus action",
-        "selectNow": true
-      }
-    ]
-  },
-  {
-    "_key": "multiverse swiftstride shifter",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*(multiverse|motm\\b))(?=.*swift)(?=.*stride)(?=.*shifter).*$",
-      "flags": "i"
-    },
-    "name": "Multiverse Swiftstride Shifter",
-    "sortname": "Shifter, Swiftstride, Multiverse",
-    "source": [
-      [
-        "MotM",
-        32
-      ]
-    ],
-    "plural": "Swiftstride shifters",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "vision": [
-      [
-        "Darkvision",
-        60
-      ]
-    ],
-    "skillstxt": "Choose one skill from Acrobatics, Athletics, Intimidation, or Survival",
-    "scoresGeneric": true,
-    "trait": "Swiftstride Shifter\n • Bestial Instincts: I have proficiency in Acrobatics, Athletics, Intimidation, or Survival.\n • Shifting (Swiftstride): Prof Bonus per long rest, as a bonus action, I can assume a more bestial appearance for 1 minute, until I die, or until I revert back as a bonus action. When I shift, I gain twice my proficiency bonus in temporary hit points and +10 ft to my walking speed. Additionally, as a reaction when a creature ends its turn within 5 ft of me, I can move up to 10 ft. This reactive movement doesn't provoke opportunity attacks.",
-    "features": {
-      "shift": {
-        "name": "Shift",
-        "minlevel": 1,
-        "usages": "Proficiency bonus per ",
-        "usagescalc": "event.value = How('Proficiency Bonus');",
-        "recovery": "long rest",
-        "additional": [
-          "4 temp HP",
-          "4 temp HP",
-          "4 temp HP",
-          "4 temp HP",
-          "6 temp HP",
-          "6 temp HP",
-          "6 temp HP",
-          "6 temp HP",
-          "8 temp HP",
-          "8 temp HP",
-          "8 temp HP",
-          "8 temp HP",
-          "10 temp HP",
-          "10 temp HP",
-          "10 temp HP",
-          "10 temp HP",
-          "12 temp HP",
-          "12 temp HP",
-          "12 temp HP",
-          "12 temp HP"
-        ],
-        "action": [
-          [
-            "bonus action",
-            " (start/end)"
-          ]
-        ]
-      }
-    },
-    "action": [
-      [
-        "reaction",
-        "Reactive Stride (while shifted)"
-      ]
-    ]
-  },
-  {
-    "_key": "multiverse wildhunt shifter",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*(multiverse|motm\\b))(?=.*wild)(?=.*hunt)(?=.*shifter).*$",
-      "flags": "i"
-    },
-    "name": "Multiverse Wildhunt Shifter",
-    "sortname": "Shifter, Wildhunt, Multiverse",
-    "source": [
-      [
-        "MotM",
-        32
-      ]
-    ],
-    "plural": "Wildhunt shifters",
-    "size": 3,
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "vision": [
-      [
-        "Darkvision",
-        60
-      ],
-      [
-        "While shifted, creatures within 30 ft can't attack me with adv.",
-        0
-      ]
-    ],
-    "skillstxt": "Choose one skill from Acrobatics, Athletics, Intimidation, or Survival",
-    "scoresGeneric": true,
-    "trait": "Wildhunt Shifter\n • Bestial Instincts: I have proficiency in Acrobatics, Athletics, Intimidation, or Survival.\n • Shifting (Wildhunt): Prof Bonus per long rest, as a bonus action, I can assume a more bestial appearance. This transformation lasts for 1 minute, until I die, or until I revert back as a bonus action. When I shift, I gain twice my proficiency bonus in temporary hit points. While I'm shifted, I have advantage on Wisdom checks and no creature within 30 ft of me can make an attack roll with advantage against me unless I'm incapacitated.",
-    "features": {
-      "shift": {
-        "name": "Shift",
-        "minlevel": 1,
-        "usages": "Proficiency bonus per ",
-        "usagescalc": "event.value = How('Proficiency Bonus');",
-        "recovery": "long rest",
-        "additional": [
-          "4 temp HP",
-          "4 temp HP",
-          "4 temp HP",
-          "4 temp HP",
-          "6 temp HP",
-          "6 temp HP",
-          "6 temp HP",
-          "6 temp HP",
-          "8 temp HP",
-          "8 temp HP",
-          "8 temp HP",
-          "8 temp HP",
-          "10 temp HP",
-          "10 temp HP",
-          "10 temp HP",
-          "10 temp HP",
-          "12 temp HP",
-          "12 temp HP",
-          "12 temp HP",
-          "12 temp HP"
-        ],
-        "action": [
-          [
-            "bonus action",
-            " (start/end)"
-          ]
-        ]
-      }
-    },
-    "savetxt": {
-      "text": [
-        "While shifted, Adv. on Wis checks"
-      ]
     }
   },
   {
@@ -19739,6 +18758,1283 @@
     ],
     "replaces": [
       "tiefling"
+    ]
+  },
+  {
+    "_key": "changeling (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "changeling",
+      "flags": "i"
+    },
+    "name": "Changeling (L)",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Changelings",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "skillstxt": "Choose two from Deception, Intimidation, Insight, and Persuasion",
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "age": " mature slightly faster than humans but share a similar lifespan, typically a century or less. While a changeling can transform to conceal their age, the effects of aging affect them similarly to humans",
+    "height": " stand between 5 and 6 feet tall (5'1\" + 2d4\")",
+    "weight": " weigh around 140 lb (115 + 2d4 × 2d4 lb)",
+    "heightMetric": " stand between 1,5 to over 1,8 metres tall (155 + 5d4 cm)",
+    "weightMetric": " weigh around 65 kg (52 + 5d4 × 4d4 / 10 kg)",
+    "scorestxt": "+2 Charisma and +1 to one other ability score of my choice",
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "trait": "Changeling (+2 Charisma and +1 to one other ability score of my choice)\nShapechanger: As an action, I can change my appearance and voice to or from a humanoid-shaped form I have seen, not changing my equipment. I determine the specifics of the form like hair length, eye color, and sex. I can adjust my height and weight, but not so much that my size changes. I revert back when I die. I can make myself appear as a member of another race, though none of my game statistics change.",
+    "action": [
+      [
+        "action",
+        "Shapechanger"
+      ]
+    ],
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "multiverse changeling (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(multiverse|motm\\b))(?=.*changeling).*$",
+      "flags": "i"
+    },
+    "name": "Multiverse Changeling (L)",
+    "sortname": "Changeling, Multiverse",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Changelings",
+    "size": [
+      3,
+      4
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "skillstxt": "Choose two from Deception, Insight, Intimidation, Performance, and Persuasion",
+    "age": " typically live to be around 100 years old. While a changeling can transform to conceal their age, the effects of aging affect them similarly to humans",
+    "scoresGeneric": true,
+    "trait": "Changeling\n • Fey: My creature type is fey, rather than humanoid.\n • Shapechanger: As an action, I can change my appearance and voice to or from a humanoid-shaped form I have seen, not changing my equipment. I determine the specifics of the form like hair length, eye color, and sex. I can adjust my height and weight between Medium and Small and can appear as a member of another race, though none of my game statistics change. I revert back when I die.",
+    "action": [
+      [
+        "action",
+        "Shapechanger"
+      ]
+    ],
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "changeling",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*changeling).*$",
+      "flags": "i"
+    },
+    "name": "Changeling",
+    "sortname": "Changeling",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "plural": "Changelings",
+    "size": [
+      3,
+      4
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "skillstxt": [
+      "Choose 2 : Deception, Insight, Intimidation, Performance, or Persuasion"
+    ],
+    "age": "",
+    "height": " are about 4-7 feet tall, when medium size, or 2-4 feet tall, when small size",
+    "trait": "Changeling\n• Creature Type : Fey\n• Changeling Instincts: I gain proficiency in two of the following skills of my choice: Deception, Insight, Intimidation, Performance, or Persuasion.\n• Shape-Shifter: As an action, I can shape-shift to change my appearance and my voice. I determine the specifics of the changes, including my coloration, hair length, and sex. I can also adjust my height and weight and can change my size between Medium and Small. I can make myself appear as a member of another playable species, though none of my game statistics change. I can’t duplicate the appearance of an individual I’ve never seen, and I must adopt a form that has the same basic arrangement of limbs that I have. This trait doesn’t change my clothing and equipment. While shape-shifted with this trait, I have Advantage on Charisma checks. I stay in the new form until I take an action to revert to my true form.",
+    "replaces": [
+      "changeling",
+      "multiverse changeling"
+    ]
+  },
+  {
+    "_key": "kalashtar (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "kalashtar",
+      "flags": "i"
+    },
+    "name": "Kalashtar (L)",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Kalashtar",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Quori",
+      1
+    ],
+    "savetxt": {
+      "immune": [
+        "effects that require me to dream"
+      ],
+      "text": [
+        "Adv. on all Wis saves"
+      ]
+    },
+    "advantages": [
+      [
+        "Wisdom",
+        true
+      ]
+    ],
+    "dmgres": [
+      "Psychic"
+    ],
+    "age": " reach adulthood in their late teens and live less than 100 years",
+    "height": " range from 5 and a half to well over 6 feet tall (5'4\" + 2d6\")",
+    "weight": " weigh around 145 lb (110 + 2d6 × 1d6 lb)",
+    "heightMetric": " range from 1,7 to 1,9 metres tall (160 + 5d6 cm)",
+    "weightMetric": " weigh around 65 kg (50 + 5d6 × 2d6 / 10 kg)",
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      2,
+      1
+    ],
+    "trait": "Kalashtar (+2 Wisdom, +1 Charisma)\n   Dual Mind: I have advantage on Wisdom saving throws.\n   Mind Link: I can speak telepathically to any creature I can see within 10 ft × my level, as long as it can speak at least one language. As an action, I can give that creature the ability to speak telepathically back to me while it can see me and is within range. This lasts for 1 hour, until I use this ability on another creature, or until I end it as an action.\n   Severed from Dreams: I don't dream and thus immune to spells that affect dreams.",
+    "action": [
+      [
+        "action",
+        "Mind Link (start/stop)"
+      ]
+    ],
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "kalashtar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*kalashtar).*$",
+      "flags": "i"
+    },
+    "name": "Kalashtar",
+    "sortname": "Kalashtar",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "plural": "Kalashtar",
+    "size": [
+      3
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "dmgres": [
+      "Psychic"
+    ],
+    "savetxt": {
+      "text": [
+        "Adv on Wis and Cha saves; "
+      ]
+    },
+    "skillstxt": [
+      "Choose any 1, can replace after Long Rest"
+    ],
+    "age": "",
+    "height": " are about 6-7 feet tall",
+    "trait": "Kalashtar\n• Creature Type : Aberration\n• Mind Link: I have telepathy with a range in feet equal to 10 times my level. When I’m using this trait to speak telepathically to a creature, I can take a Magic action to give that creature the ability to speak telepathically with me for 1 hour or until I take another Magic action to end this effect.\n• Severed from Dreams: I can't be the target of the Dream spell. In addition, when I finish a Long Rest, I gain proficiency in one skill of my choice. This proficiency lasts until I finish another Long Rest.",
+    "replaces": [
+      "kalashtar"
+    ]
+  },
+  {
+    "_key": "half-elf (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*half)(?=.*(elf|elv|drow|silvanesti|qualinesti|grugach|kagonesti)).*$",
+      "flags": "i"
+    },
+    "name": "Half-elf (L)",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Half-elves",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Elvish",
+      1
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "savetxt": {
+      "text": [
+        "Magic can't put me to sleep"
+      ],
+      "adv_vs": [
+        "charmed"
+      ]
+    },
+    "skillstxt": "Choose any two skills",
+    "age": " reach adulthood around age 20 and often live over 180 years",
+    "height": " range from 5 to 6 feet tall (4'9\" + 2d8\")",
+    "weight": " weigh around 155 lb (110 + 2d8 × 2d4 lb)",
+    "heightMetric": " range from 1,5 to 1,8 metres tall (145 + 5d8 cm)",
+    "weightMetric": " weigh around 70 kg (50 + 5d8 × 4d4 / 10 kg)",
+    "scorestxt": "+2 Charisma and +1 to two other ability scores of my choice",
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "trait": "Half-Elf (+2 Charisma and +1 to two other ability scores of my choice)\n\nSkill Versatility: I gain proficiency in two skills of my choice.",
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "half-elf",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*khoravar)|(?=.*half)(?=.*(elf|elv|drow|silvanesti|qualinesti|grugach|kagonesti)).*$",
+      "flags": "i"
+    },
+    "name": "Half-Elf",
+    "sortname": "Half-Elf",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "plural": "Half-Elves",
+    "size": [
+      3,
+      4
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "savetxt": {
+      "adv_vs": [
+        "avoiding or ending the Charmed condition"
+      ]
+    },
+    "skillstxt": [
+      "Choose any 1 skill or tool prof, can replace after Long Rest"
+    ],
+    "age": "",
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Fey Gift",
+        "class": [
+          "cleric",
+          "druid",
+          "wizard"
+        ],
+        "selection": [
+          "friends"
+        ],
+        "level": [
+          0,
+          0
+        ],
+        "times": 1,
+        "firstCol": "atwill"
+      }
+    ],
+    "limfeaname": "Lethargy Resilience",
+    "usages": 1,
+    "recovery": "long rest",
+    "additional": "Recover after 1d4 Long Rests",
+    "height": " are about 4-6 feet tall, when medium size, or 2-4 feet tall, when small size",
+    "trait": "Half-Elf\n• Fey Gift: I know the Friends cantrip. Whenever I finish a Long Rest, I can replace it with a different cantrip from the Cleric, Druid, or Wizard spell list Int, Wis, or Cha is my spellcasting ability for spells I cast with this trait. (Choosen when I select this species).\n• Lethargic Resilience: When I fail a saving throw to avoid or end the Unconscious condition, I can succeed instead. Once I use this trait, I can't do so again until I finish 1d4 Long Rests.",
+    "replaces": [
+      "half-elf"
+    ]
+  },
+  {
+    "_key": "beasthide shifter (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*(multiverse|motm\\b))(?=.*shifter)(?=.*beast)(?=.*hide).*$",
+      "flags": "i"
+    },
+    "name": "Beasthide shifter (L)",
+    "sortname": "Shifter, Beasthide",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Beasthide shifters",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "skills": [
+      "Athletics"
+    ],
+    "age": " reach young adulthood at age 10 and rarely live over 70",
+    "height": " range from under 5 to almost 6 feet tall (4'6\" + 2d8\")",
+    "weight": " weigh around 135 lb (90 + 2d8 × 2d4 lb)",
+    "heightMetric": " range from under 1,5 to 1,8 metres tall (4'6\" + 5d8 cm)",
+    "weightMetric": " weigh around 65 kg (40 + 5d8 × 4d4 / 10 kg)",
+    "scores": [
+      1,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    "trait": "Beasthide Shifter (+1 Strength, +2 Constitution)\n\nShifting: As a bonus action once per short rest, I can assume a more bestial appearance.\nThis transformation lasts for 1 minute, until I die, or until I revert back as a bonus action.\nWhen I shift, I gain temporary HP equal to 1d6 + my level + my Constitution modifier (minimum 1 temporary hit point).\nWhile transformed like this, I have a +1 bonus to AC.",
+    "features": {
+      "shift": {
+        "name": "Shift",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "short rest",
+        "action": [
+          [
+            "bonus action",
+            " (start/end)"
+          ]
+        ],
+        "additional": [
+          "1d6 + 1 + Con mod temp HP",
+          "1d6 + 2 + Con mod temp HP",
+          "1d6 + 3 + Con mod temp HP",
+          "1d6 + 4 + Con mod temp HP",
+          "1d6 + 5 + Con mod temp HP",
+          "1d6 + 6 + Con mod temp HP",
+          "1d6 + 7 + Con mod temp HP",
+          "1d6 + 8 + Con mod temp HP",
+          "1d6 + 9 + Con mod temp HP",
+          "1d6 + 10 + Con mod temp HP",
+          "1d6 + 11 + Con mod temp HP",
+          "1d6 + 12 + Con mod temp HP",
+          "1d6 + 13 + Con mod temp HP",
+          "1d6 + 14 + Con mod temp HP",
+          "1d6 + 15 + Con mod temp HP",
+          "1d6 + 16 + Con mod temp HP",
+          "1d6 + 17 + Con mod temp HP",
+          "1d6 + 18 + Con mod temp HP",
+          "1d6 + 19 + Con mod temp HP",
+          "1d6 + 20 + Con mod temp HP"
+        ]
+      }
+    },
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "multiverse beasthide shifter (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(multiverse|motm\\b))(?=.*beast)(?=.*hide)(?=.*shifter).*$",
+      "flags": "i"
+    },
+    "name": "Multiverse Beasthide Shifter (L)",
+    "sortname": "Shifter, Beasthide, Multiverse",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Beasthide shifters",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "skillstxt": "Choose one skill from Acrobatics, Athletics, Intimidation, or Survival",
+    "scoresGeneric": true,
+    "trait": "Beasthide Shifter\n • Bestial Instincts: I have proficiency in Acrobatics, Athletics, Intimidation, or Survival.\n • Shifting (Beasthide): Prof Bonus per long rest, as a bonus action, I can assume a more bestial appearance. This transformation lasts for 1 minute, until I die, or until I revert back as a bonus action. When I shift, I gain 1d6 + twice my proficiency bonus in temporary hit points and a +1 bonus to my AC.",
+    "features": {
+      "shift": {
+        "name": "Shift",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "additional": [
+          "1d6 + 4 temp HP",
+          "1d6 + 4 temp HP",
+          "1d6 + 4 temp HP",
+          "1d6 + 4 temp HP",
+          "1d6 + 6 temp HP",
+          "1d6 + 6 temp HP",
+          "1d6 + 6 temp HP",
+          "1d6 + 6 temp HP",
+          "1d6 + 8 temp HP",
+          "1d6 + 8 temp HP",
+          "1d6 + 8 temp HP",
+          "1d6 + 8 temp HP",
+          "1d6 + 10 temp HP",
+          "1d6 + 10 temp HP",
+          "1d6 + 10 temp HP",
+          "1d6 + 10 temp HP",
+          "1d6 + 12 temp HP",
+          "1d6 + 12 temp HP",
+          "1d6 + 12 temp HP",
+          "1d6 + 12 temp HP"
+        ]
+      }
+    },
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "longtooth shifter (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*(multiverse|motm\\b))(?=.*shifter)(?=.*long)(?=.*(tooth|teeth)).*$",
+      "flags": "i"
+    },
+    "name": "Longtooth shifter (L)",
+    "sortname": "Shifter, Longtooth",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Longtooth shifters",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common"
+    ],
+    "weaponOptions": [
+      {
+        "baseWeapon": "unarmed strike",
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "^(?=.*fangs?)(?=.*long)(?=.*(tooth|teeth)).*$",
+          "flags": "i"
+        },
+        "name": "Longtooth Fangs",
+        "source": [
+          [
+            "E:RLW",
+            34
+          ]
+        ],
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "description": "Only while shifted; One attack as bonus action",
+        "selectNow": true
+      }
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "skills": [
+      "Intimidation"
+    ],
+    "age": " reach young adulthood at age 10 and rarely live over 70",
+    "height": " range from under 5 to almost 6 feet tall (4'6\" + 2d8\")",
+    "weight": " weigh around 135 lb (90 + 2d8 × 2d4 lb)",
+    "heightMetric": " range from under 1,5 to 1,8 metres tall (4'6\" + 5d8 cm)",
+    "weightMetric": " weigh around 65 kg (40 + 5d8 × 4d4 / 10 kg)",
+    "scores": [
+      2,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "trait": "Longtooth Shifter (+2 Strength, +1 Dexterity)\nShifting: As a bonus action once per short rest, I can assume a more bestial appearance.\nThis transformation lasts for 1 minute, until I die, or until I revert back as a bonus action.\nWhen I shift, I gain temporary HP equal to my level + my Constitution modifier (minimum 1 temporary hit point).\nWhile transformed like this, I use my elongated fangs to make unarmed strikes, dealing 1d6 piercing damage. As a bonus action, I can maken one attack with my fangs.",
+    "action": [
+      [
+        "bonus action",
+        "Longtooth Fangs attack (while shifted)"
+      ]
+    ],
+    "features": {
+      "shift": {
+        "name": "Shift",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "short rest",
+        "action": [
+          [
+            "bonus action",
+            " (start/end)"
+          ]
+        ],
+        "additional": [
+          "1 + Con mod temp HP",
+          "2 + Con mod temp HP",
+          "3 + Con mod temp HP",
+          "4 + Con mod temp HP",
+          "5 + Con mod temp HP",
+          "6 + Con mod temp HP",
+          "7 + Con mod temp HP",
+          "8 + Con mod temp HP",
+          "9 + Con mod temp HP",
+          "10 + Con mod temp HP",
+          "11 + Con mod temp HP",
+          "12 + Con mod temp HP",
+          "13 + Con mod temp HP",
+          "14 + Con mod temp HP",
+          "15 + Con mod temp HP",
+          "16 + Con mod temp HP",
+          "17 + Con mod temp HP",
+          "18 + Con mod temp HP",
+          "19 + Con mod temp HP",
+          "20 + Con mod temp HP"
+        ]
+      }
+    },
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "multiverse longtooth shifter (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(multiverse|motm\\b))(?=.*long)(?=.*(tooth|teeth))(?=.*shifter).*$",
+      "flags": "i"
+    },
+    "name": "Multiverse Longtooth Shifter (L)",
+    "sortname": "Shifter, Longtooth, Multiverse",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Longtooth shifters",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "skillstxt": "Choose one skill from Acrobatics, Athletics, Intimidation, or Survival",
+    "scoresGeneric": true,
+    "trait": "Longtooth Shifter\n • Bestial Instincts: I have proficiency in Acrobatics, Athletics, Intimidation, or Survival.\n • Shifting (Longtooth): Prof Bonus per long rest, as a bonus action, I can assume a more bestial appearance for 1 minute, until I die, or until I revert back as a bonus action. When I shift, I gain twice my proficiency bonus in temporary hit points and my fangs elongate. As part of the bonus action when I shift and as a bonus action while shifted, I can make a single unarmed strike with my elongated fangs that deals 1d6 piercing damage.",
+    "features": {
+      "shift": {
+        "name": "Shift",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "additional": [
+          "4 temp HP",
+          "4 temp HP",
+          "4 temp HP",
+          "4 temp HP",
+          "6 temp HP",
+          "6 temp HP",
+          "6 temp HP",
+          "6 temp HP",
+          "8 temp HP",
+          "8 temp HP",
+          "8 temp HP",
+          "8 temp HP",
+          "10 temp HP",
+          "10 temp HP",
+          "10 temp HP",
+          "10 temp HP",
+          "12 temp HP",
+          "12 temp HP",
+          "12 temp HP",
+          "12 temp HP"
+        ],
+        "action": [
+          [
+            "bonus action",
+            " (start/end)"
+          ]
+        ]
+      }
+    },
+    "action": [
+      [
+        "bonus action",
+        "Longtooth Fangs (while shifted)"
+      ]
+    ],
+    "weaponOptions": [
+      {
+        "baseWeapon": "unarmed strike",
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "^(?=.*fangs?)(?=.*long)(?=.*(tooth|teeth)).*$",
+          "flags": "i"
+        },
+        "name": "Longtooth Fangs",
+        "source": [
+          [
+            "MotM",
+            32
+          ]
+        ],
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "description": "Only while shifted; One attack as bonus action",
+        "selectNow": true
+      }
+    ],
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "swiftstride shifter (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*(multiverse|motm\\b))(?=.*shifter)(?=.*swift)(?=.*stride).*$",
+      "flags": "i"
+    },
+    "name": "Swiftstride shifter (L)",
+    "sortname": "Shifter, Swiftstride",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Swiftstride shifters",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "skills": [
+      "Acrobatics"
+    ],
+    "age": " reach young adulthood at age 10 and rarely live over 70",
+    "height": " range from under 5 to almost 6 feet tall (4'6\" + 2d8\")",
+    "weight": " weigh around 135 lb (90 + 2d8 × 2d4 lb)",
+    "heightMetric": " range from under 1,5 to 1,8 metres tall (4'6\" + 5d8 cm)",
+    "weightMetric": " weigh around 65 kg (40 + 5d8 × 4d4 / 10 kg)",
+    "scores": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      1
+    ],
+    "trait": "Swiftstride Shifter (+2 Dexterity, +1 Charisma)\nShifting: As a bonus action once per short rest, I can assume a more bestial appearance.\nThis transformation lasts for 1 minute, until I die, or until I revert back as a bonus action.\nWhen I shift, I gain temporary HP equal to my level + my Con mod (minimum 1 temp HP).\nWhile transformed like this, my walking speed increases with 10 ft.\nAs a reaction when an enemy ends its turn within 5 ft of me while I'm shifted, I can move 10 ft without provoking opportunity attacks.",
+    "action": [
+      [
+        "reaction",
+        "Stride (while shifted)"
+      ]
+    ],
+    "features": {
+      "shift": {
+        "name": "Shift",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "short rest",
+        "action": [
+          [
+            "bonus action",
+            " (start/end)"
+          ]
+        ],
+        "additional": [
+          "1 + Con mod temp HP",
+          "2 + Con mod temp HP",
+          "3 + Con mod temp HP",
+          "4 + Con mod temp HP",
+          "5 + Con mod temp HP",
+          "6 + Con mod temp HP",
+          "7 + Con mod temp HP",
+          "8 + Con mod temp HP",
+          "9 + Con mod temp HP",
+          "10 + Con mod temp HP",
+          "11 + Con mod temp HP",
+          "12 + Con mod temp HP",
+          "13 + Con mod temp HP",
+          "14 + Con mod temp HP",
+          "15 + Con mod temp HP",
+          "16 + Con mod temp HP",
+          "17 + Con mod temp HP",
+          "18 + Con mod temp HP",
+          "19 + Con mod temp HP",
+          "20 + Con mod temp HP"
+        ]
+      }
+    },
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "multiverse swiftstride shifter (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(multiverse|motm\\b))(?=.*swift)(?=.*stride)(?=.*shifter).*$",
+      "flags": "i"
+    },
+    "name": "Multiverse Swiftstride Shifter (L)",
+    "sortname": "Shifter, Swiftstride, Multiverse",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Swiftstride shifters",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "skillstxt": "Choose one skill from Acrobatics, Athletics, Intimidation, or Survival",
+    "scoresGeneric": true,
+    "trait": "Swiftstride Shifter\n • Bestial Instincts: I have proficiency in Acrobatics, Athletics, Intimidation, or Survival.\n • Shifting (Swiftstride): Prof Bonus per long rest, as a bonus action, I can assume a more bestial appearance for 1 minute, until I die, or until I revert back as a bonus action. When I shift, I gain twice my proficiency bonus in temporary hit points and +10 ft to my walking speed. Additionally, as a reaction when a creature ends its turn within 5 ft of me, I can move up to 10 ft. This reactive movement doesn't provoke opportunity attacks.",
+    "features": {
+      "shift": {
+        "name": "Shift",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "additional": [
+          "4 temp HP",
+          "4 temp HP",
+          "4 temp HP",
+          "4 temp HP",
+          "6 temp HP",
+          "6 temp HP",
+          "6 temp HP",
+          "6 temp HP",
+          "8 temp HP",
+          "8 temp HP",
+          "8 temp HP",
+          "8 temp HP",
+          "10 temp HP",
+          "10 temp HP",
+          "10 temp HP",
+          "10 temp HP",
+          "12 temp HP",
+          "12 temp HP",
+          "12 temp HP",
+          "12 temp HP"
+        ],
+        "action": [
+          [
+            "bonus action",
+            " (start/end)"
+          ]
+        ]
+      }
+    },
+    "action": [
+      [
+        "reaction",
+        "Reactive Stride (while shifted)"
+      ]
+    ],
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "wildhunt shifter (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*(multiverse|motm\\b))(?=.*shifter)(?=.*wild)(?=.*hunt).*$",
+      "flags": "i"
+    },
+    "name": "Wildhunt shifter (L)",
+    "sortname": "Shifter, Wildhunt",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Wildhunt shifters",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "skills": [
+      "Survival"
+    ],
+    "age": " reach young adulthood at age 10 and rarely live over 70",
+    "height": " range from under 5 to almost 6 feet tall (4'6\" + 2d8\")",
+    "weight": " weigh around 135 lb (90 + 2d8 × 2d4 lb)",
+    "heightMetric": " range from under 1,5 to 1,8 metres tall (4'6\" + 5d8 cm)",
+    "weightMetric": " weigh around 65 kg (40 + 5d8 × 4d4 / 10 kg)",
+    "scores": [
+      0,
+      1,
+      0,
+      0,
+      2,
+      0
+    ],
+    "trait": "Wildhunt Shifter (+1 Dexterity, +2 Wisdom)\nShifting: As a bonus action once per short rest, I can assume a more bestial appearance.\nThis transformation lasts for 1 minute, until I die, or until I revert back as a bonus action.\nWhen I shift, I gain temporary HP equal to my level + my Constitution modifier (minimum 1 temporary hit point).\nWhile transformed like this, I have advantage on Wisdom checks and no creature within 30 ft can make an attack roll with advantage against me, unless I'm incapacitated.",
+    "features": {
+      "shift": {
+        "name": "Shift",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "short rest",
+        "action": [
+          [
+            "bonus action",
+            " (start/end)"
+          ]
+        ],
+        "additional": [
+          "1 + Con mod temp HP",
+          "2 + Con mod temp HP",
+          "3 + Con mod temp HP",
+          "4 + Con mod temp HP",
+          "5 + Con mod temp HP",
+          "6 + Con mod temp HP",
+          "7 + Con mod temp HP",
+          "8 + Con mod temp HP",
+          "9 + Con mod temp HP",
+          "10 + Con mod temp HP",
+          "11 + Con mod temp HP",
+          "12 + Con mod temp HP",
+          "13 + Con mod temp HP",
+          "14 + Con mod temp HP",
+          "15 + Con mod temp HP",
+          "16 + Con mod temp HP",
+          "17 + Con mod temp HP",
+          "18 + Con mod temp HP",
+          "19 + Con mod temp HP",
+          "20 + Con mod temp HP"
+        ]
+      }
+    },
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "multiverse wildhunt shifter (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(multiverse|motm\\b))(?=.*wild)(?=.*hunt)(?=.*shifter).*$",
+      "flags": "i"
+    },
+    "name": "Multiverse Wildhunt Shifter (L)",
+    "sortname": "Shifter, Wildhunt, Multiverse",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Wildhunt shifters",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ],
+      [
+        "While shifted, creatures within 30 ft can't attack me with adv.",
+        0
+      ]
+    ],
+    "skillstxt": "Choose one skill from Acrobatics, Athletics, Intimidation, or Survival",
+    "scoresGeneric": true,
+    "trait": "Wildhunt Shifter\n • Bestial Instincts: I have proficiency in Acrobatics, Athletics, Intimidation, or Survival.\n • Shifting (Wildhunt): Prof Bonus per long rest, as a bonus action, I can assume a more bestial appearance. This transformation lasts for 1 minute, until I die, or until I revert back as a bonus action. When I shift, I gain twice my proficiency bonus in temporary hit points. While I'm shifted, I have advantage on Wisdom checks and no creature within 30 ft of me can make an attack roll with advantage against me unless I'm incapacitated.",
+    "features": {
+      "shift": {
+        "name": "Shift",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "additional": [
+          "4 temp HP",
+          "4 temp HP",
+          "4 temp HP",
+          "4 temp HP",
+          "6 temp HP",
+          "6 temp HP",
+          "6 temp HP",
+          "6 temp HP",
+          "8 temp HP",
+          "8 temp HP",
+          "8 temp HP",
+          "8 temp HP",
+          "10 temp HP",
+          "10 temp HP",
+          "10 temp HP",
+          "10 temp HP",
+          "12 temp HP",
+          "12 temp HP",
+          "12 temp HP",
+          "12 temp HP"
+        ],
+        "action": [
+          [
+            "bonus action",
+            " (start/end)"
+          ]
+        ]
+      }
+    },
+    "savetxt": {
+      "text": [
+        "While shifted, Adv. on Wis checks"
+      ]
+    },
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "shifter",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*shifter).*$",
+      "flags": "i"
+    },
+    "name": "Shifter",
+    "sortname": "Shifter",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "plural": "Shifters",
+    "size": [
+      3,
+      4
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "skillstxt": "Choose one between Acrobatics, Athletics, Intimidation, or Survival",
+    "age": "",
+    "height": " are about 4-7 feet tall, when medium size, or 2-4 feet tall, when small size",
+    "action": [
+      [
+        "bonus action",
+        "Shifter (Shift/Revert)"
+      ]
+    ],
+    "limfeaname": "Shift",
+    "usages": "Proficiency bonus per ",
+    "usagescalc": "event.value = How('Proficiency Bonus');",
+    "recovery": "long rest",
+    "trait": "Shifter\n• Shifting: Use 'Racial Options' above to choose a lineage that grants me supernatural abilities. As a Bonus Action, you can shape-shift to assume a more bestial appearance. This transformation lasts for 1 minute or until you revert to your normal appearance as a Bonus Action. When you shift, you gain Temporary Hit Points equal to 2 times your Proficiency Bonus. You can shift a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.",
+    "variants": [
+      "beasthide",
+      "longtooth",
+      "swiftstride",
+      "wildhunt"
+    ],
+    "replaces": [
+      "beasthide shifter",
+      "multiverse beasthide shifter",
+      "longtooth shifter",
+      "multiverse longtooth shifter",
+      "swiftstride shifter",
+      "multiverse swiftstride shifter",
+      "wildhunt shifter",
+      "multiverse wildhunt shifter"
+    ]
+  },
+  {
+    "_key": "warforged (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "warforged",
+      "flags": "i"
+    },
+    "name": "Warforged (L)",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Warforged",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      1
+    ],
+    "toolProfs": [
+      [
+        "Any tool",
+        1
+      ]
+    ],
+    "skillstxt": "Choose any one skill and any one tool",
+    "savetxt": {
+      "text": [
+        "Magic can't put me to sleep"
+      ],
+      "immune": [
+        "disease",
+        "magical aging effects"
+      ],
+      "adv_vs": [
+        "poison"
+      ]
+    },
+    "dmgres": [
+      "Poison"
+    ],
+    "age": " typical are between two and thirty years old. The maximum warforged lifespan remains a mystery; so far, warforged have shown no signs of deterioration due to age. Warforged are immune to magical aging effects.",
+    "height": " stand between 6 and 7 feet tall (5'10\" + 2d6\")",
+    "weight": " weigh around 300 lb (270 + 2d6 × 4 lb)",
+    "heightMetric": " stand between 1,8 and 2,1 metres tall (178 + 5d6 cm)",
+    "weightMetric": " weigh around 135 kg (125 + 5d6 × 8 / 10 kg)",
+    "scorestxt": "+2 Constitution and +1 to one other ability score of my choice",
+    "scores": [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    "trait": "Warforged (+2 Constitution and +1 to one other ability score of my choice)\nWarforged Resilience: I do not need to sleep, eat, drink, or breathe.\nSentry's Rest: To benefit from a long rest, I need to enter an inactive state for 6 hours, during which I am not rendered unconscious and can see and hear as normal.\nIntegrated Protection: I gain +1 AC and I can don only armor with which I'm proficient. To don or doff armor, I must (un)incorporate it into my body over the course of 1 hour, which can be done during resting. Donned armor can't be removed against my will while I'm alive.",
+    "extraAC": {
+      "name": "Integrated Protection",
+      "mod": 1,
+      "text": "I gain a +1 bonus to AC."
+    },
+    "shortname": "undefined (L)"
+  },
+  {
+    "_key": "warforged",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*warforged).*$",
+      "flags": "i"
+    },
+    "name": "Warforged",
+    "sortname": "Warforged",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "plural": "Warforged",
+    "size": [
+      3,
+      4
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "dmgres": [
+      "Poison"
+    ],
+    "savetxt": {
+      "adv_vs": [
+        "avoiding or ending the Poisoned condition"
+      ]
+    },
+    "skillstxt": [
+      "Choose any 1 skill or tool proficiency"
+    ],
+    "age": "",
+    "extraAC": {
+      "name": "Integrated Protection",
+      "mod": 1,
+      "text": "I gain a +1 bonus to AC."
+    },
+    "height": " are about 6-8 feet tall, when medium size, or 3-4 feet tall, when small size",
+    "trait": "Warforged\n• Creature Type : Construct\n• Sentry's Rest: I don't need to sleep, and magic can't put me to sleep. I can finish a Long Rest in 6 hours if I spend those hours in an inactive, motionless state. During this time, I appear inert but remain conscious.\n• Tireless: I don't gain Exhaustion levels from dehydration, malnutrition, or suffocation.",
+    "replaces": [
+      "warforged"
     ]
   }
 ]

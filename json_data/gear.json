@@ -998,5 +998,89 @@
     "weight": 2,
     "type": "explosives",
     "defaultExcluded": true
+  },
+  {
+    "_key": "adventurer's ring",
+    "infoname": "Adventurer's Ring [250 gp]",
+    "name": "Adventurer's Ring",
+    "amount": "",
+    "weight": ""
+  },
+  {
+    "_key": "bright fungal cloak",
+    "infoname": "Bright Fungal Cloak [25 gp]",
+    "name": "Bright Fungal Cloak",
+    "amount": "",
+    "weight": 4
+  },
+  {
+    "_key": "desert clothing",
+    "infoname": "Desert Clothing [10 gp]",
+    "name": "Desert Clothing",
+    "amount": "",
+    "weight": 4
+  },
+  {
+    "_key": "devil mask",
+    "infoname": "Devil Mask [25 gp]",
+    "name": "Devil Mask",
+    "amount": "",
+    "weight": ""
+  },
+  {
+    "_key": "garb of light and shadow",
+    "infoname": "Garb of Light and Shadow [50 gp]",
+    "name": "Garb of Light and Shadow",
+    "amount": "",
+    "weight": 6
+  },
+  {
+    "_key": "genie robe",
+    "infoname": "Genie Robe [50 gp]",
+    "name": "Genie Robe",
+    "amount": "",
+    "weight": 6
+  },
+  {
+    "_key": "locking spellbook",
+    "infoname": "Locking Spellbook [35 gp]",
+    "name": "Locking Spellbook",
+    "amount": "",
+    "weight": 3
+  },
+  {
+    "_key": "monster camouflage",
+    "infoname": "Monster Camouflage [50 gp]",
+    "name": "Monster Camouflage",
+    "amount": "",
+    "weight": 6
+  },
+  {
+    "_key": "warm fungal cloak",
+    "infoname": "Warm Fungal Cloak [15 gp]",
+    "name": "Warm Fungal Cloak",
+    "amount": "",
+    "weight": 4
+  },
+  {
+    "_key": "windskiff",
+    "infoname": "Windskiff [4000 gp]",
+    "name": "Windskiff",
+    "amount": "",
+    "weight": ""
+  },
+  {
+    "_key": "winter camouflage",
+    "infoname": "Winter Camouflage [50 gp]",
+    "name": "Winter Camouflage",
+    "amount": "",
+    "weight": 4
+  },
+  {
+    "_key": "mechanical wonder (domestic)",
+    "infoname": "Mechanical Wonder (domestic) [400 gp]",
+    "name": "Mechanical Wonder (domestic)",
+    "amount": "",
+    "weight": ""
   }
 ]

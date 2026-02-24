@@ -542,7 +542,10 @@ const sandbox = {
   BackgroundVariantsList, AddBackgroundVariant,
 
   // ── Standard JS globals ───────────────────────────────────────────────────
-  console, Math,
+  // Wrap console to add console.println() — used by Acrobat/MPMB scripts as
+  // an alias for console.log().  All other console methods pass through.
+  console: Object.assign(Object.create(null), console, { println: function() { console.log.apply(console, arguments); } }),
+  Math,
   parseInt, parseFloat, isNaN, isFinite, encodeURIComponent, decodeURIComponent,
   String, Number, Boolean, Array, Object, RegExp, Function, JSON, Error,
   Symbol, Map, Set, WeakMap, WeakSet, Promise,
@@ -871,6 +874,51 @@ console.log(
 // ─────────────────────────────────────────────────────────────────────────────
 console.log('── Phase 3: Primary source books ────────────────────────────────────');
 runBatch(FILES);
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Phase 4: ExpandedScripts — UA 2024/2025 classes, subclasses, and setting
+//          content that extends or replaces entries from earlier phases.
+//
+//  Load order rules:
+//    • Parent/base entries must precede their update files.
+//    • Within a dependency chain (e.g. Artificer → ArtificerUpdate →
+//      EberronArtificer) each file's legacyClassRefactor /
+//      legacySubClassRefactor calls archive the previous version and write
+//      the new one — so last writer wins, which is the desired behaviour.
+//    • Independent new-content files (AdventuresInFearun, RealmsSubclass,
+//      ThePsion, Arcane_Subclass) run first so their entries are present
+//      before any update file references them.
+//    • HeroesOfFearun runs after RealmsSubclass because it calls
+//      legacySubClassRefactor with replaces: pointing at several
+//      RealmsSubclass keys (Knowledge Domain, Purple Dragon Knight,
+//      Bladesinging).
+//    • PsionUpdate runs after ThePsion so its SpellsList writes are the
+//      authoritative final definitions for all shared psion spells.
+// ─────────────────────────────────────────────────────────────────────────────
+const EXPANDED_FILES = [
+  // ── New standalone content (no dependencies) ─────────────────────────────
+  { file: 'ExpandedScripts/AdventuresInFearun.js',       desc: 'FR:AiF / NF – magic items & creatures'                         },
+
+  // ── FR subclasses: base UA → official FRHoF expansion ────────────────────
+  { file: 'ExpandedScripts/RealmsSubclass.js',           desc: 'UA2025 Realms – 8 FR base subclasses (parent)'                 },
+  { file: 'ExpandedScripts/HeroesOfFearun.js',           desc: 'FRHoF – races, backgrounds, feats, spells; replaces UA entries'},
+
+  // ── Psion: base class → spell updates ────────────────────────────────────
+  { file: 'ExpandedScripts/ThePsion.js',                 desc: 'UA25P – Psion class, 4 subclasses, Wild Talent feats (parent)' },
+  { file: 'ExpandedScripts/PsionUpdate.js',              desc: 'UA25P – authoritative Psion spell definitions + new spells'    },
+
+  // ── Arcane subclasses: base UA → UA update ────────────────────────────────
+  { file: 'ExpandedScripts/Arcane_Subclass.js',          desc: 'XUA25AS – 9 arcane subclasses (parent)'                       },
+  { file: 'ExpandedScripts/Arcane_Subclass_Update.js',   desc: 'XUA25AU – replaces all 9 arcane subclasses with revised forms' },
+
+  // ── Artificer: UA 2024 → UA 2025 update → Eberron expansion ─────────────
+  { file: 'ExpandedScripts/Artificer.js',                desc: 'XUA24A – Artificer class, Alchemist/Artillerist/Battle Smith/Armorer (parent)'},
+  { file: 'ExpandedScripts/ArtificerUpdate.js',          desc: 'XUA25EU – updates Artificer class features; adds Cartographer' },
+  { file: 'ExpandedScripts/EberronArtificer.js',         desc: 'E:FA – Eberron Artificer; scaled elixirs, Dragonmark feats/items'},
+];
+
+console.log('── Phase 4: ExpandedScripts (UA 2024/2025 + setting content) ─────────');
+runBatch(EXPANDED_FILES);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // OUTPUT
