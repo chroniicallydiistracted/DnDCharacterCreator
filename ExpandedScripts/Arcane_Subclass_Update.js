@@ -1480,7 +1480,7 @@ MagicItemsList["potent transmuter's stone"] = {
 	allowDuplicates : false,
   },
   "mighty build" : {
-	name : "Potent Transmuter's Stone (Might Build)",
+	name : "Potent Transmuter's Stone (Mighty Build)",
 	description : "When a Transmuter finishes a Long Rest, they can create a magic stone called a Potent Transmuter's Stone that lasts until they use this feature again. A creature with the stone in its possession gains Prof in Con saves \u0026 two benefits from the item's options, which the Transmuter chooses when they create the stone. They can change one or both of the stone's benefit(s) when they cast a Transmutation spell using a spell slot. Mighty Build: The bearer has Adv on Str saves. The bearer also counts as one size larger when determining its carrying capacity.",
 	rarity : "common",
 	carryingCapacity: 2,
