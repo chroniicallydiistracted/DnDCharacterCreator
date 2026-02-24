@@ -7,6 +7,891 @@
     "url": "https://dnd.wizards.com/resources/systems-reference-document",
     "date": "2023/01/26"
   },
+  "LMoP": {
+    "name": "Lost Mines of Phandelver [items]",
+    "abbreviation": "LMoP",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://www.dndbeyond.com/sources/lmop",
+    "date": "2014/07/15"
+  },
+  "P": {
+    "name": "Player's Handbook",
+    "abbreviation": "PHB",
+    "abbreviationSpellsheet": "P",
+    "group": "Core Sources",
+    "url": "https://dnd.wizards.com/products/rpg_playershandbook",
+    "date": "2014/08/19"
+  },
+  "HotDQ": {
+    "name": "Hoard of the Dragon Queen [background features, items]",
+    "abbreviation": "HotDQ",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://wpn.wizards.com/en/products/tyranny-of-dragons",
+    "date": "2014/08/19"
+  },
+  "RoT": {
+    "name": "Rise of Tiamat [items]",
+    "abbreviation": "RoT",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://wpn.wizards.com/en/products/tyranny-of-dragons",
+    "date": "2014/11/04"
+  },
+  "M": {
+    "name": "Monster Manual",
+    "abbreviation": "MM",
+    "group": "Core Sources",
+    "url": "https://dnd.wizards.com/products/monster-manual",
+    "date": "2014/09/30"
+  },
+  "D": {
+    "name": "Dungeon Master's Guide",
+    "abbreviation": "DMG",
+    "group": "Core Sources",
+    "url": "https://dnd.wizards.com/products/dungeon-masters-guide",
+    "date": "2014/12/09"
+  },
+  "PotA": {
+    "name": "Princes of the Apocalypse [items]",
+    "abbreviation": "PotA",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dnd.wizards.com/products/princes-apocalypse",
+    "date": "2015/04/07"
+  },
+  "AL:EE": {
+    "name": "Elemental Evil Backgrounds [Mulmaster]",
+    "abbreviation": "AL:EE",
+    "group": "Adventurers League",
+    "url": "https://www.dropbox.com/s/ljtrwzmkoijb02o/Mulmaster-Bonds-and-Backgrounds.pdf?dl=1",
+    "date": "2015/04/15"
+  },
+  "E": {
+    "name": "Elemental Evil Player's Companion",
+    "abbreviation": "EE",
+    "abbreviationSpellsheet": "EE",
+    "group": "Primary Sources",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://www.dropbox.com/scl/fi/h3rt7296724s6p8xgr1w2/Elemental-Evil-Players-Companion-v2017.pdf?rlkey=99p2n6gpk0qcz9r3hdjka0b9y&dl=1",
+    "date": "2015/04/16"
+  },
+  "AL:RoD": {
+    "name": "Rage of Demons Backgrounds [Hillsfar]",
+    "abbreviation": "AL:RoD",
+    "group": "Adventurers League",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://www.dropbox.com/s/h4ijcnfun1cn580/Hillsfar-Regional-Character-Options.pdf?dl=1",
+    "date": "2015/07/14"
+  },
+  "OotA": {
+    "name": "Out of the Abyss [beasts, background features, items]",
+    "abbreviation": "OotA",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dnd.wizards.com/products/outoftheabyss",
+    "date": "2015/09/15"
+  },
+  "S": {
+    "name": "Sword Coast Adventure Guide",
+    "abbreviation": "SCAG",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dnd.wizards.com/products/sword-coast-adventurers-guide",
+    "date": "2015/11/03"
+  },
+  "CoS": {
+    "name": "Curse of Strahd [background, items, pack]",
+    "abbreviation": "CoS",
+    "group": "Adventure Books",
+    "campaignSetting": "Ravenloft",
+    "url": "https://media.wizards.com/2016/downloads/DND/CoS_Character_Options.pdf?dl=1",
+    "date": "2016/03/15"
+  },
+  "AL:CoS": {
+    "name": "Curse of Strahd Backgrounds",
+    "abbreviation": "AL:CoS",
+    "group": "Adventurers League",
+    "url": "https://www.dropbox.com/s/f9ktz5u2gcu2509/Curse-of-Strahd-Backgrounds-v1.1.pdf",
+    "date": "2016/04/07"
+  },
+  "SKT": {
+    "name": "Storm King's Thunder [beasts, items]",
+    "abbreviation": "SKT",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dnd.wizards.com/products/storm-kings-thunder",
+    "date": "2016/09/06"
+  },
+  "V": {
+    "name": "Volo's Guide to Monsters",
+    "abbreviation": "VGtM",
+    "group": "Primary Sources",
+    "url": "https://dnd.wizards.com/products/volos-guide-to-monsters",
+    "date": "2016/11/15"
+  },
+  "TftYP": {
+    "name": "Tales from the Yawning Portal [beasts, items]",
+    "abbreviation": "TftYP",
+    "group": "Adventure Books",
+    "campaignSetting": "Anthology",
+    "url": "https://dnd.wizards.com/products/tales-yawning-portal",
+    "date": "2017/04/04"
+  },
+  "TP": {
+    "name": "Tortle Package",
+    "abbreviation": "TP",
+    "group": "Extra Life",
+    "url": "https://www.dmsguild.com/product/221716/Tortle-Package-5e",
+    "date": "2017/09/15",
+    "defaultExcluded": true
+  },
+  "ToA": {
+    "name": "Tomb of Annihilation [backgrounds, beasts, items]",
+    "abbreviation": "ToA",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dnd.wizards.com/products/tomb-annihilation",
+    "date": "2017/09/19"
+  },
+  "OGA": {
+    "name": "One Grung Above",
+    "abbreviation": "OGA",
+    "group": "Extra Life",
+    "url": "https://www.dmsguild.com/product/223738/One-Grung-Above-5e",
+    "date": "2017/10/11",
+    "defaultExcluded": true
+  },
+  "X": {
+    "name": "Xanathar's Guide to Everything",
+    "abbreviation": "XGtE",
+    "abbreviationSpellsheet": "X",
+    "group": "Primary Sources",
+    "url": "https://dnd.wizards.com/products/xanathars-guide-everything",
+    "date": "2017/11/21"
+  },
+  "MToF": {
+    "name": "Mordenkainen's Tome of Foes",
+    "abbreviation": "MToF",
+    "group": "Primary Sources",
+    "url": "https://dnd.wizards.com/products/mordenkainens-tome-foes",
+    "date": "2018/05/29"
+  },
+  "WDH": {
+    "name": "Waterdeep: Dragon Heist [items]",
+    "abbreviation": "WDH",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dnd.wizards.com/products/waterdeep-dragon-heist",
+    "date": "2018/09/18"
+  },
+  "LLoK": {
+    "name": "Lost Laboratory of Kwalish [items, spells]",
+    "abbreviation": "LLoK",
+    "group": "Extra Life",
+    "url": "https://www.dmsguild.com/product/258047/Lost-Laboratory-of-Kwalish-5e",
+    "date": "2018/11/07",
+    "defaultExcluded": true
+  },
+  "G": {
+    "name": "Guildmasters' Guide to Ravnica",
+    "abbreviation": "GGtR",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Magic: The Gathering",
+    "url": "https://dnd.wizards.com/products/guildmasters-guide-ravnica",
+    "date": "2018/11/20"
+  },
+  "WDotMM": {
+    "name": "Waterdeep: Dungeon of the Mad Mage [items]",
+    "abbreviation": "WDotMM",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dnd.wizards.com/products/waterdeep-dungeon-of-the-mad-mage",
+    "date": "2018/11/20"
+  },
+  "GoS": {
+    "name": "Ghosts of Saltmarsh [backgrounds, beasts, items]",
+    "abbreviation": "GoS",
+    "group": "Adventure Books",
+    "campaignSetting": "Anthology",
+    "url": "https://dnd.wizards.com/products/ghosts-saltmarsh",
+    "date": "2019/05/21"
+  },
+  "AcqInc": {
+    "name": "Acquisitions Incorporated",
+    "abbreviation": "AcqInc",
+    "abbreviationSpellsheet": "AI",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Penny Arcade",
+    "url": "https://dnd.wizards.com/products/acquisitions-incorporated",
+    "date": "2019/06/18"
+  },
+  "DiA": {
+    "name": "Baldur's Gate: Descent into Avernus [background, items]",
+    "abbreviation": "DiA",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dnd.wizards.com/products/baldurs-gate-descent-into-avernus",
+    "date": "2019/09/17"
+  },
+  "LR": {
+    "name": "Locathah Rising",
+    "abbreviation": "LR",
+    "group": "Extra Life",
+    "url": "https://www.dmsguild.com/product/289261/Locathah-Rising-5e",
+    "date": "2019/09/19",
+    "defaultExcluded": true
+  },
+  "AwM": {
+    "name": "Adventure with Muk",
+    "abbreviation": "AwM",
+    "group": "Extra Life",
+    "url": "https://www.dmsguild.com/product/294712/Adventure-with-Muk-5e",
+    "date": "2019/11/12",
+    "defaultExcluded": true
+  },
+  "E:RLW": {
+    "name": "Eberron: Rising from the Last War",
+    "abbreviation": "E:RLW",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Eberron",
+    "url": "https://dnd.wizards.com/products/eberron",
+    "date": "2019/11/19"
+  },
+  "W": {
+    "name": "Explorer's Guide to Wildemount",
+    "abbreviation": "EGtW",
+    "abbreviationSpellsheet": "W",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Critical Role",
+    "url": "https://dnd.wizards.com/products/wildemount",
+    "date": "2020/03/17"
+  },
+  "MOT": {
+    "name": "Mythic Odysseys of Theros",
+    "abbreviation": "MOT",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Magic: The Gathering",
+    "url": "https://dnd.wizards.com/products/mythic-odysseys-theros",
+    "date": "2020/07/21"
+  },
+  "RotF": {
+    "name": "Icewind Dale: Rime of the Frostmaiden [creatures, items, spells]",
+    "abbreviation": "RotF",
+    "abbreviationSpellsheet": "RF",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dnd.wizards.com/products/icewind-dale-rime-frostmaiden",
+    "date": "2020/09/15"
+  },
+  "T": {
+    "name": "Tasha's Cauldron of Everything",
+    "abbreviation": "TCoE",
+    "abbreviationSpellsheet": "T",
+    "group": "Primary Sources",
+    "url": "https://dnd.wizards.com/products/tashas-cauldron-everything",
+    "date": "2020/11/17"
+  },
+  "CM": {
+    "name": "Candlekeep Mysteries",
+    "abbreviation": "CM",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dnd.wizards.com/products/candlekeep-mysteries",
+    "date": "2021/03/16"
+  },
+  "VRGtR": {
+    "name": "Van Richten's Guide to Ravenloft",
+    "abbreviation": "VRGtR",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Ravenloft",
+    "url": "https://dnd.wizards.com/products/van-richtens-guide-ravenloft",
+    "date": "2021/05/18"
+  },
+  "WBtW": {
+    "name": "The Wild Beyond the Witchlight",
+    "abbreviation": "WBtW",
+    "group": "Adventure Books",
+    "url": "https://dnd.wizards.com/products/wild-beyond-witchlight",
+    "date": "2021/09/21"
+  },
+  "FToD": {
+    "name": "Fizban's Treasury of Dragons",
+    "abbreviation": "FToD",
+    "abbreviationSpellsheet": "FD",
+    "group": "Primary Sources",
+    "url": "https://dnd.wizards.com/products/treasury-dragons",
+    "date": "2021/10/19"
+  },
+  "SCC": {
+    "name": "Strixhaven: A Curriculum of Chaos",
+    "abbreviation": "SCC",
+    "abbreviationSpellsheet": "SC",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Magic: The Gathering",
+    "url": "https://dnd.wizards.com/products/strixhaven-curriculum-chaos",
+    "date": "2021/12/07"
+  },
+  "MotM": {
+    "name": "Mordenkainen Presents: Monsters of the Multiverse",
+    "abbreviation": "MotM",
+    "group": "Primary Sources",
+    "url": "https://dnd.wizards.com/products/monsters-of-the-multiverse",
+    "date": "2022/01/25"
+  },
+  "CotN": {
+    "name": "Critical Role: Call of the Netherdeep [magic items]",
+    "abbreviation": "CotN",
+    "abbreviationSpellsheet": "MO",
+    "group": "Adventure Books",
+    "campaignSetting": "Critical Role",
+    "url": "https://dnd.wizards.com/products/call-netherdeep",
+    "date": "2022/03/15"
+  },
+  "S:AiS": {
+    "name": "Spelljammer: Adventures in Space",
+    "abbreviation": "S:AiS",
+    "abbreviationSpellsheet": "SJ",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Spelljammer",
+    "url": "https://dnd.wizards.com/products/spelljammer",
+    "date": "2022/08/16"
+  },
+  "D:SotDQ": {
+    "name": "Dragonlance: Shadow of the Dragon Queen",
+    "abbreviation": "D:SotDQ",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Dragonlance",
+    "url": "https://dnd.wizards.com/products/dragonlance",
+    "date": "2022/12/06"
+  },
+  "KftGV": {
+    "name": "Keys from the Golden Vault [items]",
+    "abbreviation": "KftGV",
+    "group": "Adventure Books",
+    "url": "https://dnd.wizards.com/products/keys-from-the-golden-vault",
+    "date": "2023/02/21"
+  },
+  "GotG": {
+    "name": "Bigby Presents: Glory of the Giants",
+    "abbreviation": "GotG",
+    "group": "Primary Sources",
+    "url": "https://www.dndbeyond.com/marketplace/sourcebooks/bigby-presents-glory-of-the-giants",
+    "date": "2023/08/15"
+  },
+  "PaBTSO": {
+    "name": "Phandelver and Below: The Shattered Obelisk [items]",
+    "abbreviation": "PaBTSO",
+    "group": "Adventure Books",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://dndstore.wizards.com/us/product/820931/phandelver-and-below-the-shattered-obelisk-digital-plus-physical-bundle",
+    "date": "2023/09/19"
+  },
+  "P:AitM": {
+    "name": "Planescape: Adventures in the Multiverse",
+    "abbreviation": "P:AitM",
+    "abbreviationSpellsheet": "PS",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Planescape",
+    "url": "https://dndstore.wizards.com/us/product/820944/planescape-adventures-in-the-multiverse-digital-plus-physical-bundle",
+    "date": "2023/10/17"
+  },
+  "CoA": {
+    "name": "Chains of Asmodeus",
+    "abbreviation": "CoA",
+    "group": "Extra Life",
+    "campaignSetting": "Forgotten Realms",
+    "url": "https://www.dmsguild.com/product/457996/Chains-of-Asmodeus",
+    "date": "2023/10/30",
+    "defaultExcluded": true
+  },
+  "BoMT": {
+    "name": "The Book of Many Things",
+    "abbreviation": "BoMT",
+    "abbreviationSpellsheet": "MT",
+    "group": "Primary Sources",
+    "url": "https://dndstore.wizards.com/us/en/product/865604/the-deck-of-many-things-digital-plus-physical-bundle",
+    "date": "2023/11/14"
+  },
+  "VEoR": {
+    "name": "Vecna: Eve of Ruin",
+    "abbreviation": "VEoR",
+    "group": "Adventure Books",
+    "url": "https://dndstore.wizards.com/us/en/product/924703/vecna-eve-of-ruin-digital-plus-physical-bundle",
+    "date": "2024/05/21"
+  },
+  "QftIS": {
+    "name": "Quests from the Infinite Staircase",
+    "abbreviation": "QftIS",
+    "group": "Adventure Books",
+    "url": "https://dndstore.wizards.com/us/en/product/928653/quests-from-the-infinite-staircase-digital-plus-physical-bundle",
+    "date": "2024/07/16"
+  },
+  "ALPGs9": {
+    "name": "AL Player's Guide v9.1: Inglorious Redemption",
+    "abbreviation": "ALPGs9",
+    "group": "Adventurers League",
+    "url": "https://www.dropbox.com/s/8r1cwjrk6n2rzyo/AL-Players-Guide-v9.1-Forgotten-Realms.pdf?dl=1",
+    "date": "2019/09/17",
+    "defaultExcluded": true
+  },
+  "UA:E": {
+    "name": "Unearthed Arcana: Eberron",
+    "abbreviation": "UA:E",
+    "group": "Unearthed Arcana",
+    "campaignSetting": "Eberron",
+    "url": "https://media.wizards.com/2015/downloads/dnd/UA_Eberron_v1.1.pdf",
+    "date": "2015/02/02"
+  },
+  "UA:MC": {
+    "name": "Unearthed Arcana: Modifying Classes",
+    "abbreviation": "UA:MC",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2015/downloads/dnd/UA3_ClassDesignVariants.pdf",
+    "date": "2015/04/06"
+  },
+  "UA:WA": {
+    "name": "Unearthed Arcana: Waterborne Adventures",
+    "abbreviation": "UA:WA",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2015/downloads/dnd/UA_Waterborne_v3.pdf",
+    "date": "2015/05/04"
+  },
+  "UA:MM": {
+    "name": "Unearthed Arcana: Modern Magic",
+    "abbreviation": "UA:MM",
+    "group": "Unearthed Arcana",
+    "campaignSetting": "Modern",
+    "url": "https://media.wizards.com/2015/downloads/dnd/UA_ModernMagic.pdf",
+    "date": "2015/08/03"
+  },
+  "UA:R": {
+    "name": "Unearthed Arcana: Ranger",
+    "abbreviation": "UA:R",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2015/downloads/dnd/DX_0907_UA_RangerOptions.pdf",
+    "date": "2015/09/09"
+  },
+  "UA:PCRM": {
+    "name": "Unearthed Arcana: Prestige Classes and Rune Magic",
+    "abbreviation": "UA:PCRM",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2015/downloads/dnd/UA_Rune_Magic_Prestige_Class.pdf",
+    "date": "2015/10/05"
+  },
+  "UA:LDU": {
+    "name": "Unearthed Arcana: Light, Dark, Underdark!",
+    "abbreviation": "UA:LDU",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2015/downloads/dnd/02_UA_Underdark_Characters.pdf",
+    "date": "2015/11/02"
+  },
+  "UA:TOBM": {
+    "name": "Unearthed Arcana: That Old Black Magic",
+    "abbreviation": "UA:TOBM",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2015/downloads/dnd/07_UA_That_Old_Black_Magic.pdf",
+    "date": "2015/12/17"
+  },
+  "UA:KoO": {
+    "name": "Unearthed Arcana: Kits of Old",
+    "abbreviation": "UA:KoO",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2015/downloads/dnd/04_UA_Classics_Revisited.pdf",
+    "date": "2016/01/04"
+  },
+  "UA:GH": {
+    "name": "Unearthed Arcana: Gothic Heroes",
+    "abbreviation": "UA:GH",
+    "group": "Unearthed Arcana",
+    "url": "https://media.dnd.wizards.com/upload/articles/UA%20Gothic%20Characters.pdf",
+    "date": "2016/04/04"
+  },
+  "UA:F": {
+    "name": "Unearthed Arcana: Feats",
+    "abbreviation": "UA:F",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/downloads/DND/UA-Feats-V1.pdf",
+    "date": "2016/06/06"
+  },
+  "UA:TF": {
+    "name": "Unearthed Arcana: The Faithful",
+    "abbreviation": "UA:TF",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/dnd/downloads/UA%20Non-Divine%20Faithful%20SFG.pdf",
+    "date": "2016/08/01"
+  },
+  "UA:RR": {
+    "name": "Unearthed Arcana: The Ranger, Revised",
+    "abbreviation": "UA:RR",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/dnd/downloads/UA_RevisedRanger.pdf",
+    "date": "2016/09/12"
+  },
+  "UA:BPP": {
+    "name": "Unearthed Arcana: Barbarian Primal Paths",
+    "abbreviation": "UA:BPP",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/dnd/downloads/UA_Barbarian.pdf",
+    "date": "2016/11/07"
+  },
+  "UA:BC": {
+    "name": "Unearthed Arcana: Bard Colleges",
+    "abbreviation": "UA:BC",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/dnd/downloads/UA_Bard.pdf",
+    "date": "2016/11/14"
+  },
+  "UA:CDD": {
+    "name": "Unearthed Arcana: Cleric Divine Domains",
+    "abbreviation": "UA:CDD",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/dnd/downloads/UA_Cleric.pdf",
+    "date": "2016/11/21"
+  },
+  "UA:DC": {
+    "name": "Unearthed Arcana: Druid Circles",
+    "abbreviation": "UA:DC",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/dnd/downloads/UA_Druid11272016_CAWS.pdf",
+    "date": "2016/11/28"
+  },
+  "UA:FMA": {
+    "name": "Unearthed Arcana: Fighter Martial Archetypes",
+    "abbreviation": "UA:FMA",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/dnd/downloads/2016_Fighter_UA_1205_1.pdf",
+    "date": "2016/12/05"
+  },
+  "UA:MMT": {
+    "name": "Unearthed Arcana: Monk Monastic Traditions",
+    "abbreviation": "UA:MMT",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/dnd/downloads/M_2016_UAMonk1_12_12WKWT.pdf",
+    "date": "2016/12/12"
+  },
+  "UA:PSO": {
+    "name": "Unearthed Arcana: Paladin Sacred Oaths",
+    "abbreviation": "UA:PSO",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/dnd/downloads/UAPaladin_SO_20161219_1.pdf",
+    "date": "2016/12/19"
+  },
+  "UA:RnR": {
+    "name": "Unearthed Arcana: Ranger and Rogue",
+    "abbreviation": "UA:RnR",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2016/dnd/downloads/2017_01_UA_RangerRogue_0117JCMM.pdf",
+    "date": "2017/01/16"
+  },
+  "UA:SO": {
+    "name": "Unearthed Arcana: Sorcerous Origins",
+    "abbreviation": "UA:SO",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/26_UASorcererUA020617s.pdf",
+    "date": "2017/02/06"
+  },
+  "UA:WnW": {
+    "name": "Unearthed Arcana: Warlock and Wizard",
+    "abbreviation": "UA:WnW",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/20170213_Wizrd_Wrlck_UAv2_i48nf.pdf",
+    "date": "2017/02/13"
+  },
+  "UA:TMC": {
+    "name": "Unearthed Arcana: The Mystic Class",
+    "abbreviation": "UA:TMC",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/UAMystic3.pdf",
+    "date": "2017/03/13"
+  },
+  "UA:WR": {
+    "name": "Unearthed Arcana: Wizard Revisited",
+    "abbreviation": "UA:WR",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/MJ320UAWizardVF2017.pdf",
+    "date": "2017/03/20"
+  },
+  "UA:AToS": {
+    "name": "Unearthed Arcana: A Trio of Subclasses",
+    "abbreviation": "UA:AToS",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/UAThreeSubclasses.pdf",
+    "date": "2017/03/27"
+  },
+  "UA:SS": {
+    "name": "Unearthed Arcana: Starter Spells",
+    "abbreviation": "UA:SS",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/UA-Starter-Spells.pdf",
+    "date": "2017/04/03"
+  },
+  "UA:FS": {
+    "name": "Unearthed Arcana: Feats for Skills",
+    "abbreviation": "UA:FS",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/UA-SkillFeats.pdf",
+    "date": "2017/04/17"
+  },
+  "UA:FR": {
+    "name": "Unearthed Arcana: Feats for Races",
+    "abbreviation": "UA:FR",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/RJSJC2017_04UASkillFeats_24v10.pdf",
+    "date": "2017/04/24"
+  },
+  "UA:RS": {
+    "name": "Unearthed Arcana: Revised Subclasses",
+    "abbreviation": "UA:RS",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/UA-RevisedSubclasses.pdf",
+    "date": "2017/05/01"
+  },
+  "UA:RCO": {
+    "name": "Unearthed Arcana: Revised Class Options",
+    "abbreviation": "UA:RCO",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/June5UA_RevisedClassOptv1.pdf",
+    "date": "2017/06/05"
+  },
+  "UA:EnG": {
+    "name": "Unearthed Arcana: Eladrin and Gith",
+    "abbreviation": "UA:EnG",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/UA-Eladrin-Gith.pdf",
+    "date": "2017/09/11"
+  },
+  "UA:FO": {
+    "name": "Unearthed Arcana: Fiendish Options",
+    "abbreviation": "UA:FO",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/UA_FiendishOptions.pdf",
+    "date": "2017/10/09"
+  },
+  "UA:ES": {
+    "name": "Unearthed Arcana: Elf Subraces",
+    "abbreviation": "UA:ES",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2017/dnd/downloads/UA-ElfSubraces.pdf",
+    "date": "2017/11/13"
+  },
+  "UA:TS": {
+    "name": "Unearthed Arcana: Three Subclasses",
+    "abbreviation": "UA:TS",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2018/dnd/downloads/UA-3Subclasses0108.pdf",
+    "date": "2018/01/08"
+  },
+  "UA:OD": {
+    "name": "Unearthed Arcana: Order Domain",
+    "abbreviation": "UA:OD",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2018/dnd/downloads/UA_OrderDomain.pdf",
+    "date": "2018/04/09"
+  },
+  "UA:CnM": {
+    "name": "Unearthed Arcana: Centaur and Minotaur",
+    "abbreviation": "UA:CnM",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2018/dnd/downloads/UA-Centaur.pdf",
+    "date": "2018/05/14"
+  },
+  "UA:GSS": {
+    "name": "Unearthed Arcana: Giant Soul Sorcerer",
+    "abbreviation": "UA:GSS",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2018/dnd/downloads/UA_GiantSoul.pdf",
+    "date": "2018/06/11"
+  },
+  "UA:RoE": {
+    "name": "Unearthed Arcana: Races of Eberron",
+    "abbreviation": "UA:RoE",
+    "group": "Unearthed Arcana",
+    "campaignSetting": "Eberron",
+    "url": "https://media.wizards.com/2018/dnd/downloads/723UA_EberronRaces7232018.pdf",
+    "date": "2018/07/23"
+  },
+  "UA:MIoE": {
+    "name": "Unearthed Arcana: Magic Items of Eberron",
+    "abbreviation": "UA:MIoE",
+    "group": "Unearthed Arcana",
+    "campaignSetting": "Eberron",
+    "url": "https://media.wizards.com/2018/dnd/downloads/UA_Magic_Items_of_Eberron.pdf",
+    "date": "2018/08/10"
+  },
+  "UA:RoR": {
+    "name": "Unearthed Arcana: Races of Ravnica",
+    "abbreviation": "UA:RoR",
+    "group": "Unearthed Arcana",
+    "campaignSetting": "Magic: The Gathering",
+    "url": "https://media.wizards.com/2018/dnd/downloads/UA_RavnicaRaces.pdf",
+    "date": "2018/08/13"
+  },
+  "UA:D": {
+    "name": "Unearthed Arcana: Dragonmarks",
+    "abbreviation": "UA:D",
+    "group": "Unearthed Arcana",
+    "campaignSetting": "Eberron",
+    "url": "https://media.wizards.com/2018/dnd/downloads/UA_Dragonmarks.pdf",
+    "date": "2018/09/10"
+  },
+  "UA:BnM": {
+    "name": "Unearthed Arcana: Barbarian and Monk",
+    "abbreviation": "UA:BnM",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2019/dnd/downloads/UA-WildAstral.pdf",
+    "date": "2019/08/15"
+  },
+  "UA:SnW": {
+    "name": "Unearthed Arcana: Sorcerer and Warlock",
+    "abbreviation": "UA:SnW",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2019/dnd/downloads/UA-AberrantLurk.pdf",
+    "date": "2019/09/05"
+  },
+  "UA:BnP": {
+    "name": "Unearthed Arcana: Bard and Paladin",
+    "abbreviation": "UA:BnP",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2019/dnd/downloads/UA-EloquentHeroics.pdf",
+    "date": "2019/09/18"
+  },
+  "UA:CDnW": {
+    "name": "Unearthed Arcana: Cleric, Druid, and Wizard",
+    "abbreviation": "UA:CDnW",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2019/dnd/downloads/UA-TwilightFireNames.pdf",
+    "date": "2019/10/03"
+  },
+  "UA:FRnR": {
+    "name": "Unearthed Arcana: Fighter, Ranger, and Rogue",
+    "abbreviation": "UA:FRnR",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2019/dnd/downloads/UA-RuneSwarmRevived.pdf",
+    "date": "2019/10/17"
+  },
+  "UA:CFV": {
+    "name": "Unearthed Arcana: Class Feature Variants",
+    "abbreviation": "UA:CFV",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2019/dnd/downloads/UA_ClassFeatures.pdf",
+    "date": "2019/11/04"
+  },
+  "UA:FRnW": {
+    "name": "Unearthed Arcana: Fighter, Rogue, and Wizard",
+    "abbreviation": "UA:FRnW",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2019/dnd/downloads/UA-PsychicSoulPsionics.pdf",
+    "date": "2019/11/25"
+  },
+  "UA:SP1": {
+    "name": "Unearthed Arcana: Subclasses, Part 1",
+    "abbreviation": "UA:SP1",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2020/dnd/downloads/UA2020-Subclasses01.pdf",
+    "date": "2020/01/14"
+  },
+  "UA:SP2": {
+    "name": "Unearthed Arcana: Subclasses, Part 2",
+    "abbreviation": "UA:SP2",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2020/dnd/downloads/UA2020_02_06_Subclasses2.pdf",
+    "date": "2020/02/06"
+  },
+  "UA:SP3": {
+    "name": "Unearthed Arcana: Subclasses, Part 3",
+    "abbreviation": "UA:SP3",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2020/dnd/downloads/UA2020-Subclasses03_0224.pdf",
+    "date": "2020/02/24"
+  },
+  "UA:SR": {
+    "name": "Unearthed Arcana: Subclasses Revisited",
+    "abbreviation": "UA:SR",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2020/dnd/downloads/UA2020_SubclassesRevisited_0512.pdf",
+    "date": "2020/05/12"
+  },
+  "UA:F2": {
+    "name": "Unearthed Arcana: Feats 2020",
+    "abbreviation": "UA:F2",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2020/dnd/downloads/UA2020_Feats.pdf",
+    "date": "2020/07/13"
+  },
+  "UA:SP4": {
+    "name": "Unearthed Arcana: Subclasses, Part 4",
+    "abbreviation": "UA:SP4",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2020/dnd/downloads/UA2020_Subclasses04.pdf",
+    "date": "2020/08/05"
+  },
+  "UA:SP5": {
+    "name": "Unearthed Arcana: Subclasses, Part 5",
+    "abbreviation": "UA:SP5",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2020/dnd/downloads/UA2020_102620_Subclasses05.pdf",
+    "date": "2020/10/26"
+  },
+  "UA:GL": {
+    "name": "Unearthed Arcana: Gothic Lineages",
+    "abbreviation": "UA:GL",
+    "group": "Unearthed Arcana",
+    "campaignSetting": "Ravenloft",
+    "url": "https://media.wizards.com/2021/dnd/downloads/UA2021_GothicLineages.pdf",
+    "date": "2021/01/26"
+  },
+  "UA:FotF": {
+    "name": "Unearthed Arcana: Folk of the Feywild",
+    "abbreviation": "UA:FotF",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2021/dnd/downloads/UA2021_FeyFolk.pdf",
+    "date": "2021/03/11"
+  },
+  "UA:DO": {
+    "name": "Unearthed Arcana: Draconic Options",
+    "abbreviation": "UA:DO",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2021/downloads/Unearthed-Arcana-2021-Draconic-Options.pdf",
+    "date": "2021/04/14"
+  },
+  "UA:TotM": {
+    "name": "Unearthed Arcana: Travelers of the Multiverse",
+    "abbreviation": "UA:TotM",
+    "group": "Unearthed Arcana",
+    "campaignSetting": "Spelljammer",
+    "url": "https://media.wizards.com/2021/dnd/downloads/UA2021_TravelersoftheMultiverse.pdf",
+    "date": "2021/10/08"
+  },
+  "UA:HoK": {
+    "name": "Unearthed Arcana: Heroes of Krynn",
+    "abbreviation": "UA:HoK",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2022/dnd/downloads/UA2022HeroesofKrynn.pdf",
+    "date": "2022/03/08"
+  },
+  "UA:HoKR": {
+    "name": "Unearthed Arcana: Heroes of Krynn Revisited",
+    "abbreviation": "UA:HoKR",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2022/dnd/downloads/UA2022-HeroesofKrynnRevisited.pdf",
+    "date": "2022/04/25"
+  },
+  "UA:GO": {
+    "name": "Unearthed Arcana: Giant Options",
+    "abbreviation": "UA:GO",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2022/dnd/downloads/UA2022-drjwf73f8n.pdf",
+    "date": "2022/05/23"
+  },
+  "UA:WotM": {
+    "name": "Unearthed Arcana: Wonders of the Multiverse",
+    "abbreviation": "UA:WotM",
+    "group": "Unearthed Arcana",
+    "url": "https://media.wizards.com/2022/dnd/downloads/UA2022-WondersoftheMultiverse.pdf",
+    "date": "2022/07/18"
+  },
   "P24": {
     "name": "2024 Player's Handbook",
     "abbreviation": "P24",
@@ -59,14 +944,6 @@
     "url": "https://marketplace.dndbeyond.com/category/3710000?pid=DB3710000",
     "date": "2024/11/12"
   },
-  "X": {
-    "name": "Xanathar's Guide to Everything",
-    "abbreviation": "XGtE",
-    "abbreviationSpellsheet": "X",
-    "group": "Primary Sources",
-    "url": "https://dnd.wizards.com/products/xanathars-guide-everything",
-    "date": "2017/11/21"
-  },
   "M24": {
     "name": "2025 Monster Manual",
     "abbreviation": "M24",
@@ -74,29 +951,5 @@
     "group": "Core Sources",
     "url": "https://marketplace.dndbeyond.com/core-rules/3709000?pid=DB3709000",
     "date": "2025/02/18"
-  },
-  "W": {
-    "name": "Explorer's Guide to Wildemount",
-    "abbreviation": "EGtW",
-    "abbreviationSpellsheet": "W",
-    "group": "Campaign Sourcebooks",
-    "campaignSetting": "Critical Role",
-    "url": "https://dnd.wizards.com/products/wildemount",
-    "date": "2020/03/17"
-  },
-  "VRGtR": {
-    "name": "Van Richten's Guide to Ravenloft",
-    "abbreviation": "VRGtR",
-    "group": "Campaign Sourcebooks",
-    "campaignSetting": "Ravenloft",
-    "url": "https://dnd.wizards.com/products/van-richtens-guide-ravenloft",
-    "date": "2021/05/18"
-  },
-  "WBtW": {
-    "name": "The Wild Beyond the Witchlight",
-    "abbreviation": "WBtW",
-    "group": "Adventure Books",
-    "url": "https://dnd.wizards.com/products/wild-beyond-witchlight",
-    "date": "2021/09/21"
   }
 }

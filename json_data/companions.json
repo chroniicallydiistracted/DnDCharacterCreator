@@ -259,29 +259,6 @@
     }
   },
   {
-    "_key": "spell_creatures",
-    "name": "Spell Creatures",
-    "nameMenu": "Spell Creatures (Creatures Created/Summoned by a Spell)",
-    "nameOrigin": "Spell Creatures Created by spell effects of conjuration or transmutation spells",
-    "source": [
-      [
-        "P24",
-        234
-      ]
-    ],
-    "attributesChange": {
-      "_type": "function",
-      "body": "function(sCrea, objCrea) {\r\n        // Check for spell attribute before attempting to access it.\r\n        if (!CreatureList[sCrea].spell) return;\r\n        // Access the spell attribute holding the spell name from the original CreatureOptions object\r\n        // Find all casters of that spell\r\n        var casters = isSpellUsed(CreatureList[sCrea].spell);\r\n        // Used to store an array where oScore[0] is the class and oScore[1] is the attack modifier w/ bonuses\r\n        var oScore = undefined;\r\n\r\n        // Loop through all casters\r\n        for (var caster of casters) {\r\n            // Ensure it's from a class and calcSpellScores is present.\r\n            if (CurrentSpells[caster].refType !== \"class\" || !CurrentSpells[caster].calcSpellScores) continue;\r\n\r\n            // The total attack modifier w/ bonuses if any\r\n            var oAtkMod = CurrentSpells[caster].calcSpellScores.attack;\r\n\r\n            // Check if oScore is empty or if the current attack modifier is higher\r\n            if (oScore === undefined || oAtkMod > oScore[1]) {\r\n                oScore = [caster, oAtkMod]; // Store the class and ability\r\n            }\r\n        }\r\n\r\n        if (oScore === undefined) return; // Return if no score found\r\n\r\n        // Update attacks with the highest class ability\r\n        for (var i = 0; i < objCrea.attacks.length; i++) {\r\n            var oAtk = objCrea.attacks[i];\r\n            oAtk.useSpellMod = oScore[0]; // Set the highest class\r\n        }\r\n    }"
-    },
-    "notes": [
-      {
-        "name": "Creature Recalculation",
-        "description": "If I update my spellcasting mod, or are multiclassing, and my secondary class has a higher spellcasting mod, I will need to reselect this companion to update its attack to hit.",
-        "joinString": ", "
-      }
-    ]
-  },
-  {
     "_key": "steed",
     "name": "Find Greater Steed",
     "nameTooltip": "the Find Greater Steed spell",
@@ -344,6 +321,231 @@
         "name": "I can't have more than one steed bonded at a time",
         "description": "As an action, I can release it from its bond",
         "joinString": "; "
+      }
+    ]
+  },
+  {
+    "_key": "strixhaven_mascot",
+    "name": "Strixhaven Mascot",
+    "nameTooltip": "Strixhaven Mascot (feat)",
+    "nameOrigin": "variant of the Find Familiar 1st-level conjuration [ritual] spell",
+    "nameMenu": "Strixhaven Mascot familiar (feat)",
+    "source": [
+      [
+        "SCC",
+        37
+      ]
+    ],
+    "includeCheck": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea, iCreaCR, bIsAL) {\n\t\t\t// return true if to be included, or a string to add a note to the menu option\n\t\t\treturn !objCrea.companion ? false : objCrea.companion.indexOf(\"familiar\") !== -1 ? true : !bIsAL && objCrea.companion.indexOf(\"familiar_not_al\") !== -1 ? \" (if DM approves)\" : false;\n\t\t}"
+    },
+    "action": [
+      [
+        "action",
+        "Swap places with Strixhaven Mascot"
+      ],
+      [
+        "action",
+        "Familiar (dismiss/reappear)"
+      ],
+      [
+        "action",
+        "Use familiar's senses"
+      ]
+    ],
+    "attributesChange": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea) {\n\t\t\tif (objCrea.type.toLowerCase() === \"beast\") {\n\t\t\t\tobjCrea.type = [\"Celestial\", \"Fey\", \"Fiend\"];\n\t\t\t\tobjCrea.subtype = \"\";\n\t\t\t}\n\t\t}"
+    },
+    "attributesAdd": {
+      "header": "Familiar",
+      "features": [
+        {
+          "name": "Find Familiar",
+          "description": "If dropped to 0 HP, the familiar disappears, leaving behind no physical form. The familiar must obey all commands of its master."
+        }
+      ]
+    },
+    "notes": [
+      {
+        "name": "Summon a spirit that serves as a familiar",
+        "description": "appearing in an unoccupied space within 10 ft\n   It assumes a chosen beast or mascot form (can change at every casting), see the spell and feat\n   It has the chosen form's statistics, but its type changes from beast to celestial, fey, or fiend\n   When the familiar drops to 0 hit points, it disappears, leaving behind no physical form\n   It reappears when I cast this spell again (in a new form if so desired)",
+        "joinString": ", "
+      },
+      {
+        "name": "The familiar acts independently of me",
+        "description": "but it always obeys my commands\n   In combat, it rolls its own initiative and acts on its own turn, but it can't attack on its turn",
+        "joinString": ", "
+      },
+      {
+        "name": "While it is within 100 ft of me",
+        "description": "I can communicate with it telepathically",
+        "joinString": ", "
+      },
+      {
+        "name": "With my Attack action",
+        "description": "I can forgo one attack to have the familiar make one with its reaction",
+        "joinString": ", "
+      },
+      {
+        "name": "As an action, I see/hear what it does",
+        "description": " (but not with my senses) until the start of my next turn",
+        "joinString": ""
+      },
+      {
+        "name": "As an action, I can temporarily dismiss it",
+        "description": "having it disappear into a pocket dimension",
+        "joinString": ", "
+      },
+      {
+        "name": "As an action, while it is temporarily dismissed",
+        "description": "I can cause it to reappear within 30 ft",
+        "joinString": ", "
+      },
+      {
+        "name": "I can't have more than one familiar bonded at a time",
+        "description": "As an action, I can dismiss it forever",
+        "joinString": "; "
+      },
+      {
+        "name": "When I cast a spell with a range of touch",
+        "description": "my familiar can deliver the spell\n   It must be within 100 ft of me and it must use its reaction to deliver the spell when I cast it\n   It acts as if it cast the spell, but it can use my modifiers for any attack rolls the spell requires",
+        "joinString": ", "
+      },
+      {
+        "name": "As an action while it is within 60 ft, we can teleport",
+        "description": "swapping places if there is enough space\n   I can do this once per long rest, or by expending a 2nd-level or higher spell slot (SS 2+)",
+        "joinString": ", "
+      }
+    ]
+  },
+  {
+    "_key": "companionrr",
+    "name": "Animal Companion",
+    "nameTooltip": "Beast Conclave: Animal Companion",
+    "nameOrigin": "Beast Conclave 3",
+    "nameMenu": "Animal Companion (Beast Conclave feature)",
+    "source": [
+      [
+        "UA:RR",
+        5
+      ]
+    ],
+    "includeCheck": {
+      "_type": "function",
+      "body": "function(e,a,t){return/^(ape|black bear|boar|giant badger|giant weasel|mule|panther|wolf)$/i.test(e)}"
+    },
+    "attributesAdd": {
+      "header": "Companion",
+      "minlevelLinked": [
+        "rangerua",
+        "ranger",
+        "spell-less ranger"
+      ],
+      "attacksAction": 1,
+      "proficiencyBonusLinked": true,
+      "features": [
+        {
+          "name": "Coordinated Attack",
+          "description": "As a reaction when the ranger owner takes the Attack action, the companion can make one melee attack.",
+          "minlevel": 5
+        },
+        {
+          "name": "Storm of Claws and Fangs",
+          "description": "As an action, the companion can make a melee attack against each creature that is within 5 ft.",
+          "minlevel": 11
+        },
+        {
+          "name": "Superior Beast's Defense",
+          "description": "As a reaction, the companion can halve the damage of an attack from an attacker that it can see.",
+          "minlevel": 15
+        }
+      ],
+      "hdLinked": {
+        "_type": "function",
+        "body": "function(e){var a=CurrentCompRace[e]&&CurrentCompRace[e].hd?CurrentCompRace[e].hd[0]:0,t=!1;return[\"rangerua\",\"ranger\",\"spell-less ranger\"].forEach(function(e){classes.known[e]&&(t=!0,a+=3<classes.known[e].level?classes.known[e].level-3:0)}),!t&&3<classes.totallevel&&(a+=classes.totallevel-3),a}"
+      }
+    },
+    "notes": [
+      {
+        "name": "Call forth and bond with an animal",
+        "description": "from the wilderness by spending 8 hours and 50 gp",
+        "joinString": " "
+      },
+      {
+        "name": "I can have one companion at a time",
+        "description": "If it dies, I can spend 8 hours and 25 gp to bring it back",
+        "joinString": "; "
+      },
+      {
+        "name": "Companion's Bond",
+        "description": "It obeys my commands as best it can, or acts on its own if I can't command it\n   When moving stealthily together with only my companion, we can move at a normal pace\n   It uses my Proficiency Bonus instead of its own and adds this to its AC and damage rolls\n   My companion gains proficiency with 2 skills of my choice (not automated), as well as all saves\n   It gains a HD (and thus HP) for every ranger level I gain after 3rd, and an ASI whenever I do",
+        "joinString": "\n   "
+      },
+      {
+        "name": "In Combat",
+        "description": "My companion rolls for initiative and takes actions as normal, but can't use Multiattack\n   My companion gains a bonus on damage rolls against my favored enemies just like me",
+        "joinString": ":\n   "
+      },
+      {
+        "name": "Coordinated Attack (Beast Conclave 5, UA:RR 6)",
+        "description": "When I take the Attack action, my companion can use its reaction to make one melee attack",
+        "joinString": "\n   ",
+        "minlevel": 5
+      },
+      {
+        "name": "Beast's Defense (Beast Conclave 7, UA:RR 6)",
+        "description": "While my companion can see me, it has advantage on all saving throws",
+        "joinString": "\n   ",
+        "minlevel": 7
+      },
+      {
+        "name": "Storm of Claws and Fangs (Beast Conclave 11, UA:RR 6)",
+        "description": "My companion can, as an action, make a melee attack vs. all creatures within 5 ft of it",
+        "joinString": "\n   ",
+        "minlevel": 11
+      },
+      {
+        "name": "Superior Beast's Defense (Beast Conclave 15, UA:RR 6)",
+        "description": "My companion can, as a reaction, halve the damage of an attack from an attacker that it sees",
+        "joinString": "\n   ",
+        "minlevel": 15
+      }
+    ],
+    "attributesChange": {
+      "_type": "function",
+      "body": "function(e,n){for(var a=0;a<n.attacks.length;a++){var t=n.attacks[a];t.modifiers?t.modifiers[1]+=\"+Prof\":t.modifiers=[\"\",\"Prof\"],t.description&&(t.description=t.description.replace(/(((One|Two|2).+as an Attack action)|(2 per Attack));? ?/i,\"\"))}[\"traits\",\"features\",\"actions\"].forEach(function(e){if(n[e])for(var a=n[e].length-1;-1<a;a--){var t=n[e][a];t.name&&/multiattack/i.test(t.name)&&n[e].splice(a,1)}});for(var i=n.saves||[\"\",\"\",\"\",\"\",\"\",\"\"],a=0;a<i.length;a++){var o=Math.round(.5*(n.scores[a]-10.5))+n.proficiencyBonus;(\"\"===i[a]||i[a]<o)&&(i[a]=o)}n.saves=i}"
+    },
+    "eval": {
+      "_type": "function",
+      "body": "function(e,a){var t=tDoc.getField(\"Alignment\").currentValueIndices,t=(-1!==t?PickDropdown(e+\"Comp.Desc.Alignment\",t):Value(e+\"Comp.Desc.Alignment\",What(\"Alignment\")),e+\"Comp.Use.HP.Max\"),n=How(t).split(\",\");n[3]=\"fixed\",AddTooltip(t,void 0,n.join()),AddToModFld(e+\"Comp.Use.AC\",\"Prof\",!1,\"Animal Companion\",\"An beast conclave's animal companion adds its proficiency bonus (Prof) to its AC.\"),app.alert({cMsg:toUni(\"Pick Two Skills\")+\"\\nThe Ranger's Animal Companion that you have just added, gains proficiency with two additional skills to those already selected. Because there is no automation for selecting these proficiencies, please do so manually.\\n\\n\"+toUni(\"Ability Score Improvements\")+\"\\nThe Ranger's Animal Companion gains Ability Score Improvements (ASI) whenever your character gains them. An animal companion can't use these to take feats. There is no automation for adding these ASIs either, so please don't forget to increase the ability scores for the animal companion when you get the reminder pop-up for ASI changes.\\nAlso, remember that any DCs for abilities that the beast possesses are based on ability scores modifier and that they might need to be manually changed when increasing ability scores modifiers.\\nThe 'Notes' section on the companion page automatically keeps track of how many points you can increase the ability scores with and what the base value of those scores are according to the Monster Manual.\",nIcon:3,cTitle:\"Don't forget the Skills and Ability Score Improvements!\"})}"
+    },
+    "changeeval": {
+      "_type": "function",
+      "body": "function(e,a){var t=CurrentCompRace[e];if(\"creature\"===t.typeFound&&CreatureList[t.known]){var n,i,t=CreatureList[t.known],o=0;for(n in classes.known)CurrentClasses[n].improvements&&(i=Math.min(CurrentClasses[n].improvements.length,classes.known[n].level),o+=2*CurrentClasses[n].improvements[i-1]);var s=What(e+\"Cnote.Left\"),r=s;r=o?(t=\"Currently, \"+o+\" points to divide \"+(t&&t.scores?\"(default: \"+t.scores[0]+\" Str, \"+t.scores[1]+\" Dex, \"+t.scores[2]+\" Con, \"+t.scores[3]+\" Int, \"+t.scores[4]+\" Wis, \"+t.scores[5]+\" Cha)\":\"among the ability scores\"),s.replace(/(ASI.*)([\\r\\n]? *Currently, \\d+ points.*)?/,\"$1\\r   \"+t)):s.replace(/[\\r\\n]? *Currently, \\d+ points.*/,\"\"),s!==r&&Value(e+\"Cnote.Left\",r)}}"
+    }
+  },
+  {
+    "_key": "spell_creatures",
+    "name": "Spell Creatures",
+    "nameMenu": "Spell Creatures (Creatures Created/Summoned by a Spell)",
+    "nameOrigin": "Spell Creatures Created by spell effects of conjuration or transmutation spells",
+    "source": [
+      [
+        "P24",
+        234
+      ]
+    ],
+    "attributesChange": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea) {\r\n        // Check for spell attribute before attempting to access it.\r\n        if (!CreatureList[sCrea].spell) return;\r\n        // Access the spell attribute holding the spell name from the original CreatureOptions object\r\n        // Find all casters of that spell\r\n        var casters = isSpellUsed(CreatureList[sCrea].spell);\r\n        // Used to store an array where oScore[0] is the class and oScore[1] is the attack modifier w/ bonuses\r\n        var oScore = undefined;\r\n\r\n        // Loop through all casters\r\n        for (var caster of casters) {\r\n            // Ensure it's from a class and calcSpellScores is present.\r\n            if (CurrentSpells[caster].refType !== \"class\" || !CurrentSpells[caster].calcSpellScores) continue;\r\n\r\n            // The total attack modifier w/ bonuses if any\r\n            var oAtkMod = CurrentSpells[caster].calcSpellScores.attack;\r\n\r\n            // Check if oScore is empty or if the current attack modifier is higher\r\n            if (oScore === undefined || oAtkMod > oScore[1]) {\r\n                oScore = [caster, oAtkMod]; // Store the class and ability\r\n            }\r\n        }\r\n\r\n        if (oScore === undefined) return; // Return if no score found\r\n\r\n        // Update attacks with the highest class ability\r\n        for (var i = 0; i < objCrea.attacks.length; i++) {\r\n            var oAtk = objCrea.attacks[i];\r\n            oAtk.useSpellMod = oScore[0]; // Set the highest class\r\n        }\r\n    }"
+    },
+    "notes": [
+      {
+        "name": "Creature Recalculation",
+        "description": "If I update my spellcasting mod, or are multiclassing, and my secondary class has a higher spellcasting mod, I will need to reselect this companion to update its attack to hit.",
+        "joinString": ", "
       }
     ]
   }

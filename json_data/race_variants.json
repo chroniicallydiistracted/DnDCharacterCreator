@@ -139,6 +139,2577 @@
     ]
   },
   {
+    "_key": "human-variant",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "variant",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "P",
+        31
+      ]
+    ],
+    "skillstxt": "Choose any one skill",
+    "scorestxt": "+1 to two different ability scores of my choice",
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "trait": "Human (+1 to two different ability scores of my choice)\n\nSkills: I gain proficiency in one skill of my choice.\n\nFeat: I gain one feat of my choice.",
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddString(\"Feat Note 1\",\"Human bonus feat\",\"; \")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveString(\"Feat Note 1\",\"Human bonus feat\")}"
+    },
+    "_parentRace": "human",
+    "_variantKey": "variant"
+  },
+  {
+    "_key": "half-elf-aquatic",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "aquatic",
+      "flags": "i"
+    },
+    "name": "Half-aquatic elf",
+    "source": [
+      [
+        "S",
+        116
+      ]
+    ],
+    "plural": "Half-aquatic elves",
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "swim": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "skillstxt": "",
+    "trait": "Half-Aquatic Elf (+2 Charisma and +1 to two other ability scores of my choice)\n\nSwimming Speed:\n   My aquatic heritage gives me a swimming speed of 30 feet.",
+    "_parentRace": "half-elf",
+    "_variantKey": "aquatic"
+  },
+  {
+    "_key": "half-elf-cantrip",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "cantrip",
+      "flags": "i"
+    },
+    "name": "Half-high elf",
+    "source": [
+      [
+        "S",
+        116
+      ]
+    ],
+    "plural": "Half-high elves",
+    "skillstxt": "",
+    "trait": "Half-High Elf (+2 Charisma and +1 to two other ability scores of my choice)\n\nCantrip:\n   I know one cantrip of my choice from the wizard spell list.\n   Intelligence is my spellcasting ability for it.",
+    "spellcastingAbility": 4,
+    "spellcastingBonus": [
+      {
+        "name": "High Elf Cantrip",
+        "class": "wizard",
+        "level": [
+          0,
+          0
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "_parentRace": "half-elf",
+    "_variantKey": "cantrip"
+  },
+  {
+    "_key": "half-elf-drow magic",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*drow)(?=.*magic).*$",
+      "flags": "i"
+    },
+    "name": "Half-drow",
+    "source": [
+      [
+        "S",
+        116
+      ]
+    ],
+    "plural": "Half-drow",
+    "skillstxt": "",
+    "trait": "Half-drow (+2 Charisma and +1 to two other ability scores of my choice)\n\nDrow Magic:\n   I know the Dancing Lights cantrip.\n   Once I reach 3rd level, I can cast the Faerie Fire spell once per long rest.\n   Once I reach 5th level, I can also cast the Darkness spell once per long rest.\n   Charisma is my spellcasting ability for these spells.",
+    "spellcastingAbility": 6,
+    "spellcastingBonus": [
+      {
+        "name": "Drow Magic (level 1)",
+        "spells": [
+          "dancing lights"
+        ],
+        "selection": [
+          "dancing lights"
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "features": {
+      "faerie fire": {
+        "name": "Drow Magic (level 3)",
+        "limfeaname": "Faerie Fire",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "spellcastingBonus": [
+          {
+            "name": "Drow Magic (level 3)",
+            "spells": [
+              "faerie fire"
+            ],
+            "selection": [
+              "faerie fire"
+            ],
+            "firstCol": "oncelr"
+          }
+        ]
+      },
+      "darkness": {
+        "name": "Drow Magic (level 5)",
+        "limfeaname": "Darkness",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "spellcastingBonus": [
+          {
+            "name": "Drow Magic (level 5)",
+            "spells": [
+              "darkness"
+            ],
+            "selection": [
+              "darkness"
+            ],
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    },
+    "_parentRace": "half-elf",
+    "_variantKey": "drow magic"
+  },
+  {
+    "_key": "half-elf-elf weapon training",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*\\b(elf|elven)\\b)(?=.*weapon)(?=.*training).*$",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "S",
+        116
+      ]
+    ],
+    "skillstxt": "",
+    "trait": "Half-Elf (+2 Charisma and +1 to two other ability scores of my choice)",
+    "weaponProfs": [
+      false,
+      false,
+      [
+        "longsword",
+        "shortsword",
+        "longbow",
+        "shortbow"
+      ]
+    ],
+    "_parentRace": "half-elf",
+    "_variantKey": "elf weapon training"
+  },
+  {
+    "_key": "half-elf-fleet of foot",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*fleet)(?=.*\\b(foot|feet)\\b).*$",
+      "flags": "i"
+    },
+    "name": "Half-wood elf",
+    "source": [
+      [
+        "S",
+        116
+      ]
+    ],
+    "plural": "Half-wood elves",
+    "speed": {
+      "walk": {
+        "spd": 35,
+        "enc": 25
+      }
+    },
+    "skillstxt": "",
+    "trait": "Half-Wood Elf (+2 Charisma and +1 to two other ability scores of my choice)",
+    "_parentRace": "half-elf",
+    "_variantKey": "fleet of foot"
+  },
+  {
+    "_key": "half-elf-mask of the wild",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*\\bmasks?\\b)(?=.*\\bwilds?\\b).*$",
+      "flags": "i"
+    },
+    "name": "Half-wood elf",
+    "source": [
+      [
+        "S",
+        116
+      ]
+    ],
+    "plural": "Half-wood elves",
+    "skillstxt": "",
+    "trait": "Half-Wood Elf (+2 Charisma and +1 to two other ability scores of my choice)\n\nMask of the Wild:\n   I can attempt to hide even when I am only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.",
+    "_parentRace": "half-elf",
+    "_variantKey": "mask of the wild"
+  },
+  {
+    "_key": "tiefling-devil's tongue",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*devil)(?=.*tongue).*$",
+      "flags": "i"
+    },
+    "name": "Devil's tongue tiefling",
+    "source": [
+      [
+        "S",
+        118
+      ]
+    ],
+    "plural": "Devil's tongue tieflings",
+    "trait": "Devil's Tongue Tiefling (+1 Intelligence, +2 Charisma)\n\nDevil's Tongue:\n   I know the Vicious Mockery cantrip.\n   At 3rd level, I can cast the Charm Person spell once per long rest as a 2nd-level spell.\n   At 5th level, I can also cast the Enthrall spell once per long rest.\n   Charisma is my spellcasting ability for these spells.",
+    "spellcastingBonus": [
+      {
+        "name": "Devil's Tongue (level 1)",
+        "spells": [
+          "vicious mockery"
+        ],
+        "selection": [
+          "vicious mockery"
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "features": {
+      "charm person": {
+        "name": "Devil's Tongue (level 3)",
+        "limfeaname": "Charm Person (2 targets)",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "spellcastingBonus": [
+          {
+            "name": "Devil's Tongue (level 3)",
+            "spells": [
+              "charm person"
+            ],
+            "selection": [
+              "charm person"
+            ],
+            "firstCol": "oncelr"
+          }
+        ],
+        "spellChanges": {
+          "charm person": {
+            "description": "2 humanoids, max 30 ft apart, save or charmed; advantage on save if I or my allies are fighting it",
+            "changes": "Using Devil's Tongue, I cast Charm Person as if I'm using a 2nd-level spell slot, affecting 2 humanoids."
+          }
+        }
+      },
+      "enthrall": {
+        "name": "Devil's Tongue (level 5)",
+        "limfeaname": "Enthrall",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "spellcastingBonus": [
+          {
+            "name": "Devil's Tongue (level 5)",
+            "spells": [
+              "enthrall"
+            ],
+            "selection": [
+              "enthrall"
+            ],
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    },
+    "_parentRace": "tiefling",
+    "_variantKey": "devil's tongue"
+  },
+  {
+    "_key": "tiefling-hellfire",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "hellfire",
+      "flags": "i"
+    },
+    "name": "Hellfire tiefling",
+    "source": [
+      [
+        "S",
+        118
+      ]
+    ],
+    "plural": "Hellfire tieflings",
+    "trait": "Hellfire Tiefling (+1 Intelligence, +2 Charisma)\n\nInfernal Legacy (Hellfire):\n   I know the Thaumaturgy cantrip.\n   At 3rd level, I can cast the Burning Hands spell once per long rest as a 2nd-level spell.\n   At 5th level, I can also cast the Darkness spell once per long rest.\n   Charisma is my spellcasting ability for these spells.",
+    "features": {
+      "burning hands": {
+        "name": "Hellfire Legacy (level 3)",
+        "limfeaname": "Burning Hands (4d6)",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "spellcastingBonus": [
+          {
+            "name": "Hellfire Legacy (level 3)",
+            "spells": [
+              "burning hands"
+            ],
+            "selection": [
+              "burning hands"
+            ],
+            "firstCol": "oncelr"
+          }
+        ],
+        "spellChanges": {
+          "burning hands": {
+            "description": "4d6 Fire damage; save halves; unattended flammable objects ignite",
+            "changes": "Using Hellfire Legacy, I cast Burning Hands as if I'm using a 2nd-level spell slot, doing 4d6 Fire damage."
+          }
+        }
+      },
+      "darkness": {
+        "name": "Hellfire Legacy (level 5)",
+        "limfeaname": "Darkness",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "spellcastingBonus": [
+          {
+            "name": "Infernal Legacy (level 5)",
+            "spells": [
+              "darkness"
+            ],
+            "selection": [
+              "darkness"
+            ],
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    },
+    "_parentRace": "tiefling",
+    "_variantKey": "hellfire"
+  },
+  {
+    "_key": "tiefling-winged",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "wing",
+      "flags": "i"
+    },
+    "name": "Winged tiefling",
+    "source": [
+      [
+        "S",
+        118
+      ],
+      [
+        "ALPGs9",
+        6
+      ]
+    ],
+    "plural": "Winged tieflings",
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "fly": {
+        "spd": 30,
+        "enc": 0
+      }
+    },
+    "trait": "Winged Tiefling (+1 Intelligence, +2 Charisma)\n\nWings:\n   I have bat-like wings sprouting from my shoulder blades that give me flying speed of 30 ft when I'm not wearing heavy armor.",
+    "features": "",
+    "spellcastingAbility": "",
+    "spellcastingBonus": "",
+    "_parentRace": "tiefling",
+    "_variantKey": "winged"
+  },
+  {
+    "_key": "human-yuan-ti transformed",
+    "defaultExcluded": true,
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*variant)(?=.*yuan.ti)(?=.*transformed)?.*$",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "ToA",
+        119
+      ]
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "savetxt": {
+      "immune": [
+        "poison"
+      ],
+      "adv_vs": [
+        "magic"
+      ]
+    },
+    "spellcastingAbility": 6,
+    "spellcastingBonus": [
+      {
+        "name": "Innate Spellcasting (level 1)",
+        "spells": [
+          "poison spray",
+          "animal friendship"
+        ],
+        "selection": [
+          "poison spray",
+          "animal friendship"
+        ],
+        "firstCol": "atwill",
+        "times": 2
+      }
+    ],
+    "spellChanges": {
+      "animal friendship": {
+        "description": "1 snake (beast) with less than 4 Int save or charmed for the duration",
+        "changes": "Using Innate Spellcasting, I can cast Animal Friendship at will, but only to target snakes."
+      }
+    },
+    "features": {
+      "suggestion": {
+        "name": "Innate Spellcasting (level 3)",
+        "limfeaname": "Suggestion",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "spellcastingBonus": [
+          {
+            "name": "Innate Spellcasting (level 3)",
+            "spells": [
+              "suggestion"
+            ],
+            "selection": [
+              "suggestion"
+            ],
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    },
+    "trait": "Yuan-ti Human (+1 to all ability scores)\n   Madness: I suffer from an indefinite madness (DMG 258).\n   Innate Spellcasting: I know the Poison Spray cantrip and can cast Animal Friendship on snakes at will. Once I reach 3rd level, I can cast Suggestion once per long rest. Charisma is my spellcasting ability for these spells.\n   Magic Resistance: I have advantage on saves against spells and other magical effects.",
+    "_parentRace": "human",
+    "_variantKey": "yuan-ti transformed"
+  },
+  {
+    "_key": "human-yuan-ti transformed variant",
+    "defaultExcluded": true,
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*variant)(?=.*yuan.ti)(?=.*transformed)?.*$",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "ToA",
+        119
+      ]
+    ],
+    "skillstxt": "Choose any one skill",
+    "scorestxt": "+1 to two different ability scores of my choice",
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "savetxt": {
+      "immune": [
+        "poison"
+      ],
+      "adv_vs": [
+        "magic"
+      ]
+    },
+    "spellcastingAbility": 6,
+    "spellcastingBonus": [
+      {
+        "name": "Innate Spellcasting (level 1)",
+        "spells": [
+          "poison spray",
+          "animal friendship"
+        ],
+        "selection": [
+          "poison spray",
+          "animal friendship"
+        ],
+        "firstCol": "atwill",
+        "times": 2
+      }
+    ],
+    "spellChanges": {
+      "animal friendship": {
+        "description": "1 snake (beast) with less than 4 Int save or charmed for the duration",
+        "changes": "Using Innate Spellcasting, I can cast Animal Friendship at will, but only to target snakes."
+      }
+    },
+    "features": {
+      "suggestion": {
+        "name": "Innate Spellcasting (level 3)",
+        "limfeaname": "Suggestion",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "spellcastingBonus": [
+          {
+            "name": "Innate Spellcasting (level 3)",
+            "spells": [
+              "suggestion"
+            ],
+            "selection": [
+              "suggestion"
+            ],
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    },
+    "trait": "Yuan-ti Human (+1 to two different ability scores of my choice)\n   Skill & Feat: I gain proficiency in one skill of my choice and I gain one feat of my choice.\n   Madness: I suffer from an indefinite madness (DMG 258).\n   Innate Spellcasting: I know the Poison Spray cantrip and can cast Animal Friendship on snakes at will. Once I reach 3rd level, I can cast Suggestion once per long rest. Charisma is my spellcasting ability for these spells.\n   Magic Resistance: I have advantage on saves against spells and other magical effects.",
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddString(\"Feat Note 1\",\"Human bonus feat\",\"; \")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveString(\"Feat Note 1\",\"Human bonus feat\")}"
+    },
+    "_parentRace": "human",
+    "_variantKey": "yuan-ti transformed variant"
+  },
+  {
+    "_key": "githyanki-mtof-tool proficiency",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "tool proficiency",
+      "flags": "i"
+    },
+    "skillstxt": "",
+    "toolProfs": [
+      [
+        "Any tool",
+        1
+      ]
+    ],
+    "_parentRace": "githyanki-mtof",
+    "_variantKey": "tool proficiency"
+  },
+  {
+    "_key": "githyanki-mtof-skill proficiency",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "skill proficiency",
+      "flags": "i"
+    },
+    "skillstxt": "Choose any one skill",
+    "_parentRace": "githyanki-mtof",
+    "_variantKey": "skill proficiency"
+  },
+  {
+    "_key": "simic hybrid-manta glide",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "manta glide",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "G",
+        20
+      ]
+    ],
+    "trait": "Simic Hybrid (+2 Constitution and +1 to one other ability score of my choice)\n   Animal Enhancement (Manta Glide): I have manta ray-like wings that I can use to slow my fall. I subtract 100 ft when calculating falling damage and I can move 2 ft horizontally for every 1 ft I descend.\n   Animal Enhancement (5th level): At 5th level, I gain another animal enhancement. I can choose Nimble Climber, Underwater Adaptation, Grappling Appendages, Carapace, or Acid Spit.",
+    "_parentRace": "simic hybrid",
+    "_variantKey": "manta glide"
+  },
+  {
+    "_key": "simic hybrid-nimble climber",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "nimble climber",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "G",
+        20
+      ]
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "climb": {
+        "spd": "walk",
+        "enc": "walk"
+      }
+    },
+    "trait": "Simic Hybrid (+2 Constitution and +1 to one other ability score of my choice)\n   Animal Enhancement (Nimble Climber): I have a climbing speed equal to my walking speed.\n   Animal Enhancement (5th level): At 5th level, I gain another animal enhancement. I can choose Manta Glide, Underwater Adaptation, Grappling Appendages, Carapace, or Acid Spit.",
+    "_parentRace": "simic hybrid",
+    "_variantKey": "nimble climber"
+  },
+  {
+    "_key": "simic hybrid-underwater adaptation",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "underwater adaptation",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "G",
+        20
+      ]
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "swim": {
+        "spd": "walk",
+        "enc": "walk"
+      }
+    },
+    "trait": "Simic Hybrid (+2 Constitution and +1 to one other ability score of my choice)\n   Animal Enhancement (Underwater Adaptation): I can breathe air and water, and I have a swimming speed equal to my walking speed.\n   Animal Enhancement (5th level): At 5th level, I gain another animal enhancement. I can choose Manta Glide, Nimble Climber, Grappling Appendages, Carapace, or Acid Split.",
+    "_parentRace": "simic hybrid",
+    "_variantKey": "underwater adaptation"
+  },
+  {
+    "_key": "draconblood dragonborn-black",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "black",
+      "flags": "i"
+    },
+    "name": "Black draconblood dragonborn",
+    "trait": "Black draconblood dragonborn (+2 Intelligence, +1 Charisma)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "acid",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "black"
+  },
+  {
+    "_key": "draconblood dragonborn-blue",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "blue",
+      "flags": "i"
+    },
+    "name": "Blue draconblood dragonborn",
+    "trait": "Blue draconblood dragonborn (+2 Intelligence, +1 Charisma)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "lightning",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "blue"
+  },
+  {
+    "_key": "draconblood dragonborn-brass",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "brass",
+      "flags": "i"
+    },
+    "name": "Brass draconblood dragonborn",
+    "trait": "Brass draconblood dragonborn (+2 Intelligence, +1 Charisma)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "fire",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "brass"
+  },
+  {
+    "_key": "draconblood dragonborn-bronze",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "bronze",
+      "flags": "i"
+    },
+    "name": "Bronze draconblood dragonborn",
+    "trait": "Bronze draconblood dragonborn (+2 Intelligence, +1 Charisma)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "lightning",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "bronze"
+  },
+  {
+    "_key": "draconblood dragonborn-copper",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "copper",
+      "flags": "i"
+    },
+    "name": "Copper draconblood dragonborn",
+    "trait": "Copper draconblood dragonborn (+2 Intelligence, +1 Charisma)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "acid",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "copper"
+  },
+  {
+    "_key": "draconblood dragonborn-gold",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "gold",
+      "flags": "i"
+    },
+    "name": "Gold draconblood dragonborn",
+    "trait": "Gold draconblood dragonborn (+2 Intelligence, +1 Charisma)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "fire",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "gold"
+  },
+  {
+    "_key": "draconblood dragonborn-green",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "green",
+      "flags": "i"
+    },
+    "name": "Green draconblood dragonborn",
+    "trait": "Green draconblood dragonborn (+2 Intelligence, +1 Charisma)Poison Breath Weapon: As an action once per short rest, I can deal 2d6 poison damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "poison",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "green"
+  },
+  {
+    "_key": "draconblood dragonborn-red",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "red",
+      "flags": "i"
+    },
+    "name": "Red draconblood dragonborn",
+    "trait": "Red draconblood dragonborn (+2 Intelligence, +1 Charisma)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "fire",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "red"
+  },
+  {
+    "_key": "draconblood dragonborn-silver",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "silver",
+      "flags": "i"
+    },
+    "name": "Silver draconblood dragonborn",
+    "trait": "Silver draconblood dragonborn (+2 Intelligence, +1 Charisma)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "cold",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "silver"
+  },
+  {
+    "_key": "draconblood dragonborn-white",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "white",
+      "flags": "i"
+    },
+    "name": "White draconblood dragonborn",
+    "trait": "White draconblood dragonborn (+2 Intelligence, +1 Charisma)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "cold",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "white"
+  },
+  {
+    "_key": "ravenite dragonborn-black",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "black",
+      "flags": "i"
+    },
+    "name": "Black ravenite dragonborn",
+    "trait": "Black ravenite dragonborn (+2 Strength, +1 Constitution)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "acid",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "black"
+  },
+  {
+    "_key": "ravenite dragonborn-blue",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "blue",
+      "flags": "i"
+    },
+    "name": "Blue ravenite dragonborn",
+    "trait": "Blue ravenite dragonborn (+2 Strength, +1 Constitution)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "lightning",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "blue"
+  },
+  {
+    "_key": "ravenite dragonborn-brass",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "brass",
+      "flags": "i"
+    },
+    "name": "Brass ravenite dragonborn",
+    "trait": "Brass ravenite dragonborn (+2 Strength, +1 Constitution)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "fire",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "brass"
+  },
+  {
+    "_key": "ravenite dragonborn-bronze",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "bronze",
+      "flags": "i"
+    },
+    "name": "Bronze ravenite dragonborn",
+    "trait": "Bronze ravenite dragonborn (+2 Strength, +1 Constitution)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "lightning",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "bronze"
+  },
+  {
+    "_key": "ravenite dragonborn-copper",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "copper",
+      "flags": "i"
+    },
+    "name": "Copper ravenite dragonborn",
+    "trait": "Copper ravenite dragonborn (+2 Strength, +1 Constitution)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "acid",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "copper"
+  },
+  {
+    "_key": "ravenite dragonborn-gold",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "gold",
+      "flags": "i"
+    },
+    "name": "Gold ravenite dragonborn",
+    "trait": "Gold ravenite dragonborn (+2 Strength, +1 Constitution)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "fire",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "gold"
+  },
+  {
+    "_key": "ravenite dragonborn-green",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "green",
+      "flags": "i"
+    },
+    "name": "Green ravenite dragonborn",
+    "trait": "Green ravenite dragonborn (+2 Strength, +1 Constitution)Poison Breath Weapon: As an action once per short rest, I can deal 2d6 poison damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "poison",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "green"
+  },
+  {
+    "_key": "ravenite dragonborn-red",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "red",
+      "flags": "i"
+    },
+    "name": "Red ravenite dragonborn",
+    "trait": "Red ravenite dragonborn (+2 Strength, +1 Constitution)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "fire",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "red"
+  },
+  {
+    "_key": "ravenite dragonborn-silver",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "silver",
+      "flags": "i"
+    },
+    "name": "Silver ravenite dragonborn",
+    "trait": "Silver ravenite dragonborn (+2 Strength, +1 Constitution)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "cold",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "silver"
+  },
+  {
+    "_key": "ravenite dragonborn-white",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "white",
+      "flags": "i"
+    },
+    "name": "White ravenite dragonborn",
+    "trait": "White ravenite dragonborn (+2 Strength, +1 Constitution)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "cold",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "white"
+  },
+  {
+    "_key": "custom lineage-darkvision",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "darkvision",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "T",
+        8
+      ]
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "trait": "Custom Lineage (+2 to one ability score of my choice)Size: I am Small or Medium (my choice).\n   Feat: I gain one feat of my choice for which I qualify.\n   Variable Trait: I have darkvision with a range of 60 ft.",
+    "_parentRace": "custom lineage",
+    "_variantKey": "darkvision"
+  },
+  {
+    "_key": "custom lineage-skill proficiency",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "skill proficiency",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "T",
+        8
+      ]
+    ],
+    "skillstxt": "Choose any one skill",
+    "trait": "Custom Lineage (+2 to one ability score of my choice)Size: I am Small or Medium (my choice).\n   Feat: I gain one feat of my choice for which I qualify.\n   Variable Trait: I have proficiency with a skill of my choice.",
+    "_parentRace": "custom lineage",
+    "_variantKey": "skill proficiency"
+  },
+  {
+    "_key": "chromatic dragonborn-black",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Black",
+      "flags": "i"
+    },
+    "name": "Black chromatic dragonborn",
+    "trait": "Black chromatic dragonbornAcid Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest. The damage increases with +1d10 at 5th, 11th, and 17th level.\n • Chromatic Warding: From 5th level, I can protect myself using my draconic energies. As an action once per long rest, I can become immune to acid damage for 1 minute.",
+    "dmgres": [
+      "Acid"
+    ],
+    "_parentRace": "chromatic dragonborn",
+    "_variantKey": "black"
+  },
+  {
+    "_key": "chromatic dragonborn-blue",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Blue",
+      "flags": "i"
+    },
+    "name": "Blue chromatic dragonborn",
+    "trait": "Blue chromatic dragonbornLightning Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest. The damage increases with +1d10 at 5th, 11th, and 17th level.\n • Chromatic Warding: From 5th level, I can protect myself using my draconic energies. As an action once per long rest, I can become immune to lightning damage for 1 minute.",
+    "dmgres": [
+      "Lightning"
+    ],
+    "_parentRace": "chromatic dragonborn",
+    "_variantKey": "blue"
+  },
+  {
+    "_key": "chromatic dragonborn-green",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Green",
+      "flags": "i"
+    },
+    "name": "Green chromatic dragonborn",
+    "trait": "Green chromatic dragonbornPoison Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 poison damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest. The damage increases with +1d10 at 5th, 11th, and 17th level.\n • Chromatic Warding: From 5th level, I can protect myself using my draconic energies. As an action once per long rest, I can become immune to poison damage for 1 minute.",
+    "dmgres": [
+      "Poison"
+    ],
+    "_parentRace": "chromatic dragonborn",
+    "_variantKey": "green"
+  },
+  {
+    "_key": "chromatic dragonborn-red",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Red",
+      "flags": "i"
+    },
+    "name": "Red chromatic dragonborn",
+    "trait": "Red chromatic dragonbornFire Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 fire damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest. The damage increases with +1d10 at 5th, 11th, and 17th level.\n • Chromatic Warding: From 5th level, I can protect myself using my draconic energies. As an action once per long rest, I can become immune to fire damage for 1 minute.",
+    "dmgres": [
+      "Fire"
+    ],
+    "_parentRace": "chromatic dragonborn",
+    "_variantKey": "red"
+  },
+  {
+    "_key": "chromatic dragonborn-white",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "White",
+      "flags": "i"
+    },
+    "name": "White chromatic dragonborn",
+    "trait": "White chromatic dragonbornCold Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 cold damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest. The damage increases with +1d10 at 5th, 11th, and 17th level.\n • Chromatic Warding: From 5th level, I can protect myself using my draconic energies. As an action once per long rest, I can become immune to cold damage for 1 minute.",
+    "dmgres": [
+      "Cold"
+    ],
+    "_parentRace": "chromatic dragonborn",
+    "_variantKey": "white"
+  },
+  {
+    "_key": "gem dragonborn-amethyst",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Amethyst",
+      "flags": "i"
+    },
+    "name": "Amethyst gem dragonborn",
+    "trait": "Amethyst gem dragonbornForce Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 force damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus). I can do this my Prof. Bonus per long rest.\n • Psionic Mind: I can telepathically message a creature with a language I can see in 30 ft.\n • Gem Flight: From 5th level, I can manifest spectral wings. As a bonus action once per long rest, I can gain, for 1 minute, a flying speed equal to my walking speed and can hover.",
+    "dmgres": [
+      "Force"
+    ],
+    "_parentRace": "gem dragonborn",
+    "_variantKey": "amethyst"
+  },
+  {
+    "_key": "gem dragonborn-crystal",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Crystal",
+      "flags": "i"
+    },
+    "name": "Crystal gem dragonborn",
+    "trait": "Crystal gem dragonbornRadiant Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 radiant damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus). I can do this my Prof. Bonus per long rest.\n • Psionic Mind: I can telepathically message a creature with a language I can see in 30 ft.\n • Gem Flight: From 5th level, I can manifest spectral wings. As a bonus action once per long rest, I can gain, for 1 minute, a flying speed equal to my walking speed and can hover.",
+    "dmgres": [
+      "Radiant"
+    ],
+    "_parentRace": "gem dragonborn",
+    "_variantKey": "crystal"
+  },
+  {
+    "_key": "gem dragonborn-emerald",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Emerald",
+      "flags": "i"
+    },
+    "name": "Emerald gem dragonborn",
+    "trait": "Emerald gem dragonbornPsychic Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 psychic damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus). I can do this my Prof. Bonus per long rest.\n • Psionic Mind: I can telepathically message a creature with a language I can see in 30 ft.\n • Gem Flight: From 5th level, I can manifest spectral wings. As a bonus action once per long rest, I can gain, for 1 minute, a flying speed equal to my walking speed and can hover.",
+    "dmgres": [
+      "Psychic"
+    ],
+    "_parentRace": "gem dragonborn",
+    "_variantKey": "emerald"
+  },
+  {
+    "_key": "gem dragonborn-sapphire",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Sapphire",
+      "flags": "i"
+    },
+    "name": "Sapphire gem dragonborn",
+    "trait": "Sapphire gem dragonbornThunder Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 thunder damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus). I can do this my Prof. Bonus per long rest.\n • Psionic Mind: I can telepathically message a creature with a language I can see in 30 ft.\n • Gem Flight: From 5th level, I can manifest spectral wings. As a bonus action once per long rest, I can gain, for 1 minute, a flying speed equal to my walking speed and can hover.",
+    "dmgres": [
+      "Thunder"
+    ],
+    "_parentRace": "gem dragonborn",
+    "_variantKey": "sapphire"
+  },
+  {
+    "_key": "gem dragonborn-topaz",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Topaz",
+      "flags": "i"
+    },
+    "name": "Topaz gem dragonborn",
+    "trait": "Topaz gem dragonbornNecrotic Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 necrotic damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus). I can do this my Prof. Bonus per long rest.\n • Psionic Mind: I can telepathically message a creature with a language I can see in 30 ft.\n • Gem Flight: From 5th level, I can manifest spectral wings. As a bonus action once per long rest, I can gain, for 1 minute, a flying speed equal to my walking speed and can hover.",
+    "dmgres": [
+      "Necrotic"
+    ],
+    "_parentRace": "gem dragonborn",
+    "_variantKey": "topaz"
+  },
+  {
+    "_key": "metallic dragonborn-brass",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Brass",
+      "flags": "i"
+    },
+    "name": "Brass metallic dragonborn",
+    "trait": "Brass metallic dragonbornFire Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof. Bonus). I can do this my Prof. Bonus per long rest.\n • Metallic Breath Weapon: At 5th level I gain a second breath weapon once per long rest, that works just like the first, but I choose the effect when I use it: Enervating: Con save or incapacitated until my next turn starts. Repulsion: Str save or pushed 20 ft and prone.",
+    "dmgres": [
+      "Fire"
+    ],
+    "_parentRace": "metallic dragonborn",
+    "_variantKey": "brass"
+  },
+  {
+    "_key": "metallic dragonborn-bronze",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Bronze",
+      "flags": "i"
+    },
+    "name": "Bronze metallic dragonborn",
+    "trait": "Bronze metallic dragonbornLightning Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 lightning damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof. Bonus). I can do this my Prof. Bonus per long rest.\n • Metallic Breath Weapon: At 5th level I gain a second breath weapon once per long rest, that works just like the first, but I choose the effect when I use it: Enervating: Con save or incapacitated until my next turn starts. Repulsion: Str save or pushed 20 ft and prone.",
+    "dmgres": [
+      "Lightning"
+    ],
+    "_parentRace": "metallic dragonborn",
+    "_variantKey": "bronze"
+  },
+  {
+    "_key": "metallic dragonborn-copper",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Copper",
+      "flags": "i"
+    },
+    "name": "Copper metallic dragonborn",
+    "trait": "Copper metallic dragonbornAcid Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 acid damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof. Bonus). I can do this my Prof. Bonus per long rest.\n • Metallic Breath Weapon: At 5th level I gain a second breath weapon once per long rest, that works just like the first, but I choose the effect when I use it: Enervating: Con save or incapacitated until my next turn starts. Repulsion: Str save or pushed 20 ft and prone.",
+    "dmgres": [
+      "Acid"
+    ],
+    "_parentRace": "metallic dragonborn",
+    "_variantKey": "copper"
+  },
+  {
+    "_key": "metallic dragonborn-gold",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Gold",
+      "flags": "i"
+    },
+    "name": "Gold metallic dragonborn",
+    "trait": "Gold metallic dragonbornFire Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof. Bonus). I can do this my Prof. Bonus per long rest.\n • Metallic Breath Weapon: At 5th level I gain a second breath weapon once per long rest, that works just like the first, but I choose the effect when I use it: Enervating: Con save or incapacitated until my next turn starts. Repulsion: Str save or pushed 20 ft and prone.",
+    "dmgres": [
+      "Fire"
+    ],
+    "_parentRace": "metallic dragonborn",
+    "_variantKey": "gold"
+  },
+  {
+    "_key": "metallic dragonborn-silver",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Silver",
+      "flags": "i"
+    },
+    "name": "Silver metallic dragonborn",
+    "trait": "Silver metallic dragonbornCold Breath Weapon: When I take the Attack action on my turn, I can replace one attack with a breath weapon that deals 1d10 cold damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof. Bonus). I can do this my Prof. Bonus per long rest.\n • Metallic Breath Weapon: At 5th level I gain a second breath weapon once per long rest, that works just like the first, but I choose the effect when I use it: Enervating: Con save or incapacitated until my next turn starts. Repulsion: Str save or pushed 20 ft and prone.",
+    "dmgres": [
+      "Cold"
+    ],
+    "_parentRace": "metallic dragonborn",
+    "_variantKey": "silver"
+  },
+  {
+    "_key": "multiverse aasimar-necrotic shroud",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "shroud",
+      "flags": "i"
+    },
+    "name": "Necrotic Shroud Aasimar",
+    "source": [
+      [
+        "MotM",
+        7
+      ]
+    ],
+    "abilitySave": 6,
+    "trait": "Aasimar (Necrotic Shroud) • Light Bearer: I know the Light cantrip.\n • Healing Hands: As an action once per long rest, I can touch a creature and heal it for a number of d4s equal to my Proficiency Bonus.\n • Necrotic Shroud (3rd level): Once per long rest, I can transform for 1 minute as a bonus action (start/end), causing enemies within 10 ft to make a Cha save (DC 8 + Cha mod + Prof Bonus) or become frightened of me until my next turn ends. Also, once on each of my turns, I can deal my Prof Bonus in necrotic damage to one damaged by my attack or spell.",
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "long rest",
+        "additional": [
+          "2d4 healing",
+          "2d4 healing",
+          "2d4 healing",
+          "2d4 healing",
+          "3d4 healing",
+          "3d4 healing",
+          "3d4 healing",
+          "3d4 healing",
+          "4d4 healing",
+          "4d4 healing",
+          "4d4 healing",
+          "4d4 healing",
+          "5d4 healing",
+          "5d4 healing",
+          "5d4 healing",
+          "5d4 healing",
+          "6d4 healing",
+          "6d4 healing",
+          "6d4 healing",
+          "6d4 healing"
+        ],
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      },
+      "necrotic shroud": {
+        "name": "Necrotic Shroud",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "additional": [
+          "+2 necrotic damage",
+          "+2 necrotic damage",
+          "+2 necrotic damage",
+          "+2 necrotic damage",
+          "+3 necrotic damage",
+          "+3 necrotic damage",
+          "+3 necrotic damage",
+          "+3 necrotic damage",
+          "+4 necrotic damage",
+          "+4 necrotic damage",
+          "+4 necrotic damage",
+          "+4 necrotic damage",
+          "+5 necrotic damage",
+          "+5 necrotic damage",
+          "+5 necrotic damage",
+          "+5 necrotic damage",
+          "+6 necrotic damage",
+          "+6 necrotic damage",
+          "+6 necrotic damage",
+          "+6 necrotic damage"
+        ],
+        "action": [
+          [
+            "bonus action",
+            " (start/end)"
+          ]
+        ]
+      }
+    },
+    "_parentRace": "multiverse aasimar",
+    "_variantKey": "necrotic shroud"
+  },
+  {
+    "_key": "multiverse aasimar-radiant consumption",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "consumption",
+      "flags": "i"
+    },
+    "name": "Radiant Consumption Aasimar",
+    "source": [
+      [
+        "MotM",
+        7
+      ]
+    ],
+    "plural": "Aasimar",
+    "trait": "Aasimar (Radiant Consumption) • Light Bearer: I know the Light cantrip.\n • Healing Hands: As an action once per long rest, I can touch a creature and heal it for a number of d4s equal to my Proficiency Bonus.\n • Radiant Consumption (3rd level): Once per long rest, I can transform for 1 minute as a bonus action (start/end). I shed 10-ft radius bright light and 10-ft dim light. At the end of my turns, all in this bright light take my Prof Bonus in radiant damage. Also, once on my turns, I can deal Prof Bonus in radiant damage to one damaged by my attack or spell.",
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "long rest",
+        "additional": [
+          "2d4 healing",
+          "2d4 healing",
+          "2d4 healing",
+          "2d4 healing",
+          "3d4 healing",
+          "3d4 healing",
+          "3d4 healing",
+          "3d4 healing",
+          "4d4 healing",
+          "4d4 healing",
+          "4d4 healing",
+          "4d4 healing",
+          "5d4 healing",
+          "5d4 healing",
+          "5d4 healing",
+          "5d4 healing",
+          "6d4 healing",
+          "6d4 healing",
+          "6d4 healing",
+          "6d4 healing"
+        ],
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      },
+      "radiant consumption": {
+        "name": "Radiant Consumption",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "additional": [
+          "+2 radiant damage",
+          "+2 radiant damage",
+          "+2 radiant damage",
+          "+2 radiant damage",
+          "+3 radiant damage",
+          "+3 radiant damage",
+          "+3 radiant damage",
+          "+3 radiant damage",
+          "+4 radiant damage",
+          "+4 radiant damage",
+          "+4 radiant damage",
+          "+4 radiant damage",
+          "+5 radiant damage",
+          "+5 radiant damage",
+          "+5 radiant damage",
+          "+5 radiant damage",
+          "+6 radiant damage",
+          "+6 radiant damage",
+          "+6 radiant damage",
+          "+6 radiant damage"
+        ],
+        "action": [
+          [
+            "bonus action",
+            " (start/end)"
+          ]
+        ]
+      }
+    },
+    "_parentRace": "multiverse aasimar",
+    "_variantKey": "radiant consumption"
+  },
+  {
+    "_key": "multiverse aasimar-radiant soul",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "soul",
+      "flags": "i"
+    },
+    "name": "Radiant Soul Aasimar",
+    "source": [
+      [
+        "MotM",
+        7
+      ]
+    ],
+    "plural": "Aasimar",
+    "trait": "Aasimar (Radiant Soul) • Light Bearer: I know the Light cantrip.\n • Healing Hands: As an action once per long rest, I can touch a creature and heal it for a number of d4s equal to my Proficiency Bonus.\n • Radiant Soul (3rd level): As a bonus action once per long rest, I can transform to gain spectral wings that give my a flying speed equal to my walking speed. These last for 1 minute or until I dismiss them as a bonus action. Once on each of my turns while active, I can deal my Prof Bonus in radiant damage to one target damaged by my attack or spell.",
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "long rest",
+        "additional": [
+          "2d4 healing",
+          "2d4 healing",
+          "2d4 healing",
+          "2d4 healing",
+          "3d4 healing",
+          "3d4 healing",
+          "3d4 healing",
+          "3d4 healing",
+          "4d4 healing",
+          "4d4 healing",
+          "4d4 healing",
+          "4d4 healing",
+          "5d4 healing",
+          "5d4 healing",
+          "5d4 healing",
+          "5d4 healing",
+          "6d4 healing",
+          "6d4 healing",
+          "6d4 healing",
+          "6d4 healing"
+        ],
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      },
+      "radiant soul": {
+        "name": "Radiant Soul",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "additional": [
+          "+2 radiant damage",
+          "+2 radiant damage",
+          "+2 radiant damage",
+          "+2 radiant damage",
+          "+3 radiant damage",
+          "+3 radiant damage",
+          "+3 radiant damage",
+          "+3 radiant damage",
+          "+4 radiant damage",
+          "+4 radiant damage",
+          "+4 radiant damage",
+          "+4 radiant damage",
+          "+5 radiant damage",
+          "+5 radiant damage",
+          "+5 radiant damage",
+          "+5 radiant damage",
+          "+6 radiant damage",
+          "+6 radiant damage",
+          "+6 radiant damage",
+          "+6 radiant damage"
+        ],
+        "action": [
+          [
+            "bonus action",
+            " (start/end)"
+          ]
+        ]
+      }
+    },
+    "_parentRace": "multiverse aasimar",
+    "_variantKey": "radiant soul"
+  },
+  {
+    "_key": "multiverse kobold-craftiness",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "craftiness",
+      "flags": "i"
+    },
+    "name": "Craftiness Multiverse Kobold",
+    "source": [
+      [
+        "MotM",
+        25
+      ]
+    ],
+    "skillstxt": "Choose one from Arcana, Investigation, Medicine, Sleight of Hand, or Survival",
+    "trait": "Kobold\n • Kobold Legacy (Craftiness): I gain proficiency in one of the following skills of my choice: Arcana, Investigation, Medicine, Sleight of Hand, or Survival.\n • Draconic Cry: As a bonus action, I can let out a cry. Until the start of my next turn, my allies and I have advantage on attack rolls against any enemies within 10 ft of me who could hear the cry. I can do this a number of times per long rest equal to my Proficiency Bonus.",
+    "_parentRace": "multiverse kobold",
+    "_variantKey": "craftiness"
+  },
+  {
+    "_key": "multiverse kobold-defiance",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "defiance",
+      "flags": "i"
+    },
+    "name": "Defiance Multiverse Kobold",
+    "source": [
+      [
+        "MotM",
+        25
+      ]
+    ],
+    "plural": "Kobolds",
+    "savetxt": {
+      "adv_vs": [
+        "frightened"
+      ]
+    },
+    "trait": "Kobold\n • Kobold Legacy (Defiance): I have advantage on saving throws to avoid or end the frightened condition on myself.\n • Draconic Cry: As a bonus action, I can let out a cry. Until the start of my next turn, my allies and I have advantage on attack rolls against any enemies within 10 ft of me who could hear the cry. I can do this a number of times per long rest equal to my Proficiency Bonus.",
+    "_parentRace": "multiverse kobold",
+    "_variantKey": "defiance"
+  },
+  {
+    "_key": "multiverse kobold-draconic sorcery",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "sorcery",
+      "flags": "i"
+    },
+    "name": "Draconic Sorcery Multiverse Kobold",
+    "source": [
+      [
+        "MotM",
+        25
+      ]
+    ],
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Kobold Legacy",
+        "class": "sorcerer",
+        "level": [
+          0,
+          0
+        ],
+        "firstCol": "atwill",
+        "allowUpCasting": true
+      }
+    ],
+    "trait": "Kobold\n • Kobold Legacy (Draconic Sorcery): I know one cantrip from the sorcerer spell list. Intelligence, Wisdom, or Charisma is my spellcasting ability for it (one-time choice).\n • Draconic Cry: As a bonus action, I can let out a cry. Until the start of my next turn, my allies and I have advantage on attack rolls against any enemies within 10 ft of me who could hear the cry. I can do this a number of times per long rest equal to my Proficiency Bonus.",
+    "_parentRace": "multiverse kobold",
+    "_variantKey": "draconic sorcery"
+  },
+  {
+    "_key": "fallen aasimar-winged",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "wing",
+      "flags": "i"
+    },
+    "name": "Winged Fallen Aasimar",
+    "source": [
+      [
+        "ALPGs9",
+        6
+      ]
+    ],
+    "plural": "Winged Fallen Aasimar",
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "fly": {
+        "spd": 30,
+        "enc": 0
+      }
+    },
+    "trait": "Winged Fallen Aasimar (+1 Strength, +2 Charisma)\n\nHealing Hands:\n   As an action, once per long rest, I can touch to heal for my level in HP.\nWings:\n   Once I'm 5th level, I sprout feathered wings from my shoulder blades that give me a flying speed of 30 feet when I'm not wearing heavy armor.",
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "usages": 1,
+        "minlevel": 1,
+        "recovery": "long rest",
+        "additional": [
+          "1 HP",
+          "2 HP",
+          "3 HP",
+          "4 HP",
+          "5 HP",
+          "6 HP",
+          "7 HP",
+          "8 HP",
+          "9 HP",
+          "10 HP",
+          "11 HP",
+          "12 HP",
+          "13 HP",
+          "14 HP",
+          "15 HP",
+          "16 HP",
+          "17 HP",
+          "18 HP",
+          "19 HP",
+          "20 HP"
+        ],
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      }
+    },
+    "abilitySave": "",
+    "spellcastingAbility": "",
+    "spellcastingBonus": "",
+    "_parentRace": "fallen aasimar",
+    "_variantKey": "winged"
+  },
+  {
+    "_key": "protector aasimar-winged",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "wing",
+      "flags": "i"
+    },
+    "name": "Winged Protector Aasimar",
+    "source": [
+      [
+        "ALPGs9",
+        6
+      ]
+    ],
+    "plural": "Winged Protector Aasimar",
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "fly": {
+        "spd": 30,
+        "enc": 0
+      }
+    },
+    "trait": "Winged Protector Aasimar (+1 Wisdom, +2 Charisma)\n\nHealing Hands:\n   As an action, once per long rest, I can touch to heal for my level in HP.\nWings:\n   Once I'm 5th level, I sprout feathered wings from my shoulder blades that give me a flying speed of 30 feet when I'm not wearing heavy armor.",
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "usages": 1,
+        "minlevel": 1,
+        "recovery": "long rest",
+        "additional": [
+          "1 HP",
+          "2 HP",
+          "3 HP",
+          "4 HP",
+          "5 HP",
+          "6 HP",
+          "7 HP",
+          "8 HP",
+          "9 HP",
+          "10 HP",
+          "11 HP",
+          "12 HP",
+          "13 HP",
+          "14 HP",
+          "15 HP",
+          "16 HP",
+          "17 HP",
+          "18 HP",
+          "19 HP",
+          "20 HP"
+        ],
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      }
+    },
+    "abilitySave": "",
+    "spellcastingAbility": "",
+    "spellcastingBonus": "",
+    "_parentRace": "protector aasimar",
+    "_variantKey": "winged"
+  },
+  {
+    "_key": "scourge aasimar-winged",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "wing",
+      "flags": "i"
+    },
+    "name": "Winged Scourge Aasimar",
+    "source": [
+      [
+        "ALPGs9",
+        6
+      ]
+    ],
+    "plural": "Winged Scourge Aasimar",
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "fly": {
+        "spd": 30,
+        "enc": 0
+      }
+    },
+    "trait": "Winged Scourge Aasimar (+1 Constitution, +2 Charisma)\n\nHealing Hands:\n   As an action, once per long rest, I can touch to heal for my level in HP.\nWings:\n   Once I'm 5th level, I sprout feathered wings from my shoulder blades that give me a flying speed of 30 feet when I'm not wearing heavy armor.",
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "usages": 1,
+        "minlevel": 1,
+        "recovery": "long rest",
+        "additional": [
+          "1 HP",
+          "2 HP",
+          "3 HP",
+          "4 HP",
+          "5 HP",
+          "6 HP",
+          "7 HP",
+          "8 HP",
+          "9 HP",
+          "10 HP",
+          "11 HP",
+          "12 HP",
+          "13 HP",
+          "14 HP",
+          "15 HP",
+          "16 HP",
+          "17 HP",
+          "18 HP",
+          "19 HP",
+          "20 HP"
+        ],
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      }
+    },
+    "abilitySave": "",
+    "spellcastingAbility": "",
+    "spellcastingBonus": "",
+    "_parentRace": "scourge aasimar",
+    "_variantKey": "winged"
+  },
+  {
+    "_key": "shifter-ua-beasthide",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "beasthide",
+      "flags": "i"
+    },
+    "name": "Beasthide shifter",
+    "source": [
+      [
+        "UA:E",
+        2
+      ]
+    ],
+    "plural": "Beasthide shifters",
+    "scorestxt": "",
+    "scores": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "trait": "Beasthide Shifter (+1 Dexterity, +1 Constitution)\nShifting:\n   On my turn, I can shift as a bonus action. Shifting lasts for 1 minute or until I end it on my turn as a bonus action. I must finish a short rest before I can shift again.\n   While shifted, I gain temporary hit points equal to my level + my Constitution modifier (minimum of 1) and I gain a +1 bonus to my AC.",
+    "_parentRace": "shifter-ua",
+    "_variantKey": "beasthide"
+  },
+  {
+    "_key": "shifter-ua-cliffwalk",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "cliffwalk",
+      "flags": "i"
+    },
+    "name": "Cliffwalk shifter",
+    "source": [
+      [
+        "UA:E",
+        2
+      ]
+    ],
+    "plural": "Cliffwalk shifters",
+    "scorestxt": "",
+    "scores": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "trait": "Cliffwalk Shifter (+2 Dexterity)\nShifting:\n   On my turn, I can shift as a bonus action. Shifting lasts for 1 minute or until I end it on my turn as a bonus action. I must finish a short rest before I can shift again.\n   While shifted, I gain temporary hit points equal to my level + my Constitution modifier (minimum of 1) and I gain a climb speed of 30 feet.",
+    "_parentRace": "shifter-ua",
+    "_variantKey": "cliffwalk"
+  },
+  {
+    "_key": "shifter-ua-longstride",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "longstride",
+      "flags": "i"
+    },
+    "name": "Longstride shifter",
+    "source": [
+      [
+        "UA:E",
+        2
+      ]
+    ],
+    "plural": "Longstride shifters",
+    "scorestxt": "",
+    "scores": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "trait": "Longstride Shifter (+2 Dexterity)\nShifting:\n   On my turn, I can shift as a bonus action. Shifting lasts for 1 minute or until I end it on my turn as a bonus action. I must finish a short rest before I can shift again.\n   While shifted, I gain temporary hit points equal to my level + my Constitution modifier (minimum of 1) and I can use the Dash action as a bonus action.",
+    "_parentRace": "shifter-ua",
+    "_variantKey": "longstride"
+  },
+  {
+    "_key": "shifter-ua-longtooth",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(longtooth|longteeth)",
+      "flags": "i"
+    },
+    "name": "Longtooth shifter",
+    "source": [
+      [
+        "UA:E",
+        2
+      ]
+    ],
+    "plural": "Longtooth shifters",
+    "weaponOptions": [
+      {
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "\\blongtooth\\b",
+          "flags": "i"
+        },
+        "name": "Longtooth",
+        "source": [
+          [
+            "UA:E",
+            2
+          ]
+        ],
+        "ability": 1,
+        "type": "Natural",
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee",
+        "description": "Only while shifted; Target up to my size is grappled",
+        "abilitytodamage": true,
+        "selectNow": true
+      }
+    ],
+    "scorestxt": "",
+    "scores": [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "trait": "Longtooth Shifter (+1 Strength, +1 Dexterity)\nShifting: On my turn, I can shift as a bonus action. Shifting lasts for 1 minute or until I end it on my turn as a bonus action. I must finish a short rest before I can shift again. While shifted, I gain temporary hit points equal to my level + my Constitution modifier (minimum of 1) and, as an action, I can make can make a bite attack. This is a melee weapon attack that uses Strength and deals 1d6 piercing damage. If this attack hits a target that is my size or smaller, the target is also grappled.",
+    "_parentRace": "shifter-ua",
+    "_variantKey": "longtooth"
+  },
+  {
+    "_key": "shifter-ua-razorclaw",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "razorclaw",
+      "flags": "i"
+    },
+    "name": "Razorclaw shifter",
+    "source": [
+      [
+        "UA:E",
+        2
+      ]
+    ],
+    "plural": "Razorclaw shifters",
+    "weaponOptions": [
+      {
+        "baseWeapon": "unarmed strike",
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "\\brazorclaw\\b",
+          "flags": "i"
+        },
+        "name": "Razorclaw",
+        "source": [
+          [
+            "UA:E",
+            2
+          ]
+        ],
+        "damage": [
+          1,
+          "",
+          "slashing"
+        ],
+        "description": "Only while shifted, use instead of unarmed strike: Can use as bonus action; Finesse",
+        "selectNow": true
+      }
+    ],
+    "scorestxt": "",
+    "scores": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "trait": "Razorclaw Shifter (+2 Dexterity)\nShifting:\n   On my turn, I can shift as a bonus action. Shifting lasts for 1 minute or until I end it on my turn as a bonus action. I must finish a short rest before I can shift again.\n   While shifted, I gain temporary hit points equal to my level + my Constitution modifier (minimum of 1) and, as a bonus action, I can make an unarmed strike that can use my Dexterity for the attack roll and damage, dealing slashing damage.",
+    "_parentRace": "shifter-ua",
+    "_variantKey": "razorclaw"
+  },
+  {
+    "_key": "shifter-ua-wildhunt",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "wildhunt",
+      "flags": "i"
+    },
+    "name": "Wildhunt shifter",
+    "source": [
+      [
+        "UA:E",
+        3
+      ]
+    ],
+    "plural": "Wildhunt shifters",
+    "scorestxt": "",
+    "scores": [
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "trait": "Wildhunt Shifter (+1 Dexterity, +1 Wisdom)\nShifting:\n   On my turn, I can shift as a bonus action. Shifting lasts for 1 minute or until I end it on my turn as a bonus action. I must finish a short rest before I can shift again.\n   While shifted, I gain temporary hit points equal to my level + my Constitution modifier (minimum of 1) and I gain advantage on all Wisdom-based checks and saving throws.",
+    "_parentRace": "shifter-ua",
+    "_variantKey": "wildhunt"
+  },
+  {
+    "_key": "minotaur-ua-cunning",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(cunning|wisdom)",
+      "flags": "i"
+    },
+    "name": "Minotaur [Cunning]",
+    "source": [
+      [
+        "UA:WA",
+        2
+      ]
+    ],
+    "scorestxt": "",
+    "scores": [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "trait": "Minotaur [cunning] (+1 Strength, +1 Wisdom)\nHorns: I am proficient with my horns, a 1d10 piercing damage melee weapon that grant me advantage on shoving a creature, but not to avoid being shoved myself.\nGoring Rush: When taking a Dash action, I can make a horns attack as a bonus action.\nHammering Horns: When taking a melee Attack action, I can attempt to shove with my horns as a bonus action. I cannot use this to knock a creature prone.\nLabyrinthine Recall: I can perfectly recall any path I have travelled.",
+    "_parentRace": "minotaur-ua",
+    "_variantKey": "cunning"
+  },
+  {
+    "_key": "minotaur-ua-intellect",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(intellect|intelligence)",
+      "flags": "i"
+    },
+    "name": "Minotaur [Intellect]",
+    "source": [
+      [
+        "UA:WA",
+        2
+      ]
+    ],
+    "scorestxt": "",
+    "scores": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "trait": "Minotaur [intellect] (+1 Strength, +1 Intelligence)\nHorns: I am proficient with my horns, a 1d10 piercing damage melee weapon that grant me advantage on shoving a creature, but not to avoid being shoved myself.\nGoring Rush: When taking a Dash action, I can make a horns attack as a bonus action.\nHammering Horns: When taking a melee Attack action, I can attempt to shove with my horns as a bonus action. I cannot use this to knock a creature prone.\nLabyrinthine Recall: I can perfectly recall any path I have travelled.",
+    "_parentRace": "minotaur-ua",
+    "_variantKey": "intellect"
+  },
+  {
+    "_key": "minotaur-ua-strength",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(strength|strong|\\bmight\\b)",
+      "flags": "i"
+    },
+    "name": "Minotaur [Strength]",
+    "source": [
+      [
+        "UA:WA",
+        2
+      ]
+    ],
+    "scorestxt": "",
+    "scores": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "trait": "Minotaur [strength] (+2 Strength)\nHorns: I am proficient with my horns, a 1d10 piercing damage melee weapon that grant me advantage on shoving a creature, but not to avoid being shoved myself.\nGoring Rush: When taking a Dash action, I can make a horns attack as a bonus action.\nHammering Horns: When taking a melee Attack action, I can attempt to shove with my horns as a bonus action. I cannot use this to knock a creature prone.\nLabyrinthine Recall: I can perfectly recall any path I have travelled.",
+    "_parentRace": "minotaur-ua",
+    "_variantKey": "strength"
+  },
+  {
+    "_key": "githyanki-ua-tool proficiency",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "tool proficiency",
+      "flags": "i"
+    },
+    "toolProfs": [
+      [
+        "Any tool",
+        1
+      ]
+    ],
+    "_parentRace": "githyanki-ua",
+    "_variantKey": "tool proficiency"
+  },
+  {
+    "_key": "githyanki-ua-skill proficiency",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "skill proficiency",
+      "flags": "i"
+    },
+    "skillstxt": "Choose any one skill",
+    "_parentRace": "githyanki-ua",
+    "_variantKey": "skill proficiency"
+  },
+  {
+    "_key": "simic hybrid-ua-manta glide",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "manta glide",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "UA:RoR",
+        3
+      ]
+    ],
+    "trait": "Simic Hybrid (+2 Constitution and +1 to one other ability score of my choice)\n   Animal Enhancement (Manta Glide): I have manta ray-like wings that I can use to slow my fall. I subtract 100 ft when calculating falling damage and I can move 2 ft horizontally for every 1 ft I descend.\n   Animal Enhancement (5th level): At 5th level, I gain another animal enhancement. I can choose Nimble Climber, Underwater Adaptation, Grappling Appendages, Carapace, or Acid Spit.",
+    "_parentRace": "simic hybrid-ua",
+    "_variantKey": "manta glide"
+  },
+  {
+    "_key": "simic hybrid-ua-nimble climber",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "nimble climber",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "UA:RoR",
+        3
+      ]
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "climb": {
+        "spd": "walk",
+        "enc": "walk"
+      }
+    },
+    "trait": "Simic Hybrid (+2 Constitution and +1 to one other ability score of my choice)\n   Animal Enhancement (Nimble Climber): I have a climbing speed equal to my walking speed.\n   Animal Enhancement (5th level): At 5th level, I gain another animal enhancement. I can choose Manta Glide, Underwater Adaptation, Grappling Appendages, Carapace, or Acid Spit.",
+    "_parentRace": "simic hybrid-ua",
+    "_variantKey": "nimble climber"
+  },
+  {
+    "_key": "simic hybrid-ua-underwater adaptation",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "underwater adaptation",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "UA:RoR",
+        3
+      ]
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "swim": {
+        "spd": "walk",
+        "enc": "walk"
+      }
+    },
+    "trait": "Simic Hybrid (+2 Constitution and +1 to one other ability score of my choice)\n   Animal Enhancement (Underwater Adaptation): I can breathe air and water, and I have a swimming speed equal to my walking speed.\n   Animal Enhancement (5th level): At 5th level, I gain another animal enhancement. I can choose Manta Glide, Nimble Climber, Grappling Appendages, Carapace, or Acid Split.",
+    "_parentRace": "simic hybrid-ua",
+    "_variantKey": "underwater adaptation"
+  },
+  {
+    "_key": "dragonmark shadow elf-ua-performance, ",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "performance",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "WGtE",
+        105
+      ],
+      [
+        "UA:D",
+        6
+      ]
+    ],
+    "skills": [
+      "Perception",
+      "Performance"
+    ],
+    "skillstxt": "",
+    "_parentRace": "dragonmark shadow elf-ua",
+    "_variantKey": "performance, "
+  },
+  {
+    "_key": "dragonmark shadow elf-ua-musical instrument, ",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "musical instrument",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "WGtE",
+        105
+      ],
+      [
+        "UA:D",
+        6
+      ]
+    ],
+    "skillstxt": "",
+    "toolProfs": [
+      [
+        "Musical instrument",
+        1
+      ]
+    ],
+    "_parentRace": "dragonmark shadow elf-ua",
+    "_variantKey": "musical instrument, "
+  },
+  {
+    "_key": "reborn-ua-undead",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "undead",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "UA:GL",
+        5
+      ]
+    ],
+    "trait": "Reborn\t• Type: My creature type is both Humanoid and Undead.\n • Deathless Nature: I don't need to sleep, eat, drink, or breathe. I have adv. on saves vs. disease, poison, and death saves. I have resistance to poison damage. Magic can't put me to sleep and I can finish a long rest in 4 hours if I spend it inactive and motionless.\n • Knowledge from a Past Life: When I make an ability check that uses a skill, I can add +1d6 to the roll after seeing the d20 result. I can do this a number of times equal to my Proficiency Bonus and regain all expended uses when I finish a long rest.",
+    "_parentRace": "reborn-ua",
+    "_variantKey": "undead"
+  },
+  {
+    "_key": "reborn-ua-construct",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "construct",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "UA:GL",
+        5
+      ]
+    ],
+    "trait": "Reborn\t• Type: My creature type is both Humanoid and Construct.\n • Deathless Nature: I don't need to sleep, eat, drink, or breathe. I have adv. on saves vs. disease, poison, and death saves. I have resistance to poison damage. Magic can't put me to sleep and I can finish a long rest in 4 hours if I spend it inactive and motionless.\n • Knowledge from a Past Life: When I make an ability check that uses a skill, I can add +1d6 to the roll after seeing the d20 result. I can do this a number of times equal to my Proficiency Bonus and regain all expended uses when I finish a long rest.",
+    "_parentRace": "reborn-ua",
+    "_variantKey": "construct"
+  },
+  {
+    "_key": "chromatic dragonborn-ua-black",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Black",
+      "flags": "i"
+    },
+    "name": "Black chromatic dragonborn",
+    "trait": "Black chromatic dragonbornAcid Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest. The damage increases to 3d8 at 5th level, 4d8 at 11th level, and 5d8 at 17th level.\n • Chromatic Warding: From 3rd level, I can protect myself using my draconic energies. As an action once per long rest, I can become immune to acid damage for 10 minutes.",
+    "dmgres": [
+      "Acid"
+    ],
+    "_parentRace": "chromatic dragonborn-ua",
+    "_variantKey": "black"
+  },
+  {
+    "_key": "chromatic dragonborn-ua-blue",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Blue",
+      "flags": "i"
+    },
+    "name": "Blue chromatic dragonborn",
+    "trait": "Blue chromatic dragonbornLightning Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest. The damage increases to 3d8 at 5th level, 4d8 at 11th level, and 5d8 at 17th level.\n • Chromatic Warding: From 3rd level, I can protect myself using my draconic energies. As an action once per long rest, I can become immune to lightning damage for 10 minutes.",
+    "dmgres": [
+      "Lightning"
+    ],
+    "_parentRace": "chromatic dragonborn-ua",
+    "_variantKey": "blue"
+  },
+  {
+    "_key": "chromatic dragonborn-ua-green",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Green",
+      "flags": "i"
+    },
+    "name": "Green chromatic dragonborn",
+    "trait": "Green chromatic dragonbornPoison Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 poison damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest. The damage increases to 3d8 at 5th level, 4d8 at 11th level, and 5d8 at 17th level.\n • Chromatic Warding: From 3rd level, I can protect myself using my draconic energies. As an action once per long rest, I can become immune to poison damage for 10 minutes.",
+    "dmgres": [
+      "Poison"
+    ],
+    "_parentRace": "chromatic dragonborn-ua",
+    "_variantKey": "green"
+  },
+  {
+    "_key": "chromatic dragonborn-ua-red",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Red",
+      "flags": "i"
+    },
+    "name": "Red chromatic dragonborn",
+    "trait": "Red chromatic dragonbornFire Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 fire damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest. The damage increases to 3d8 at 5th level, 4d8 at 11th level, and 5d8 at 17th level.\n • Chromatic Warding: From 3rd level, I can protect myself using my draconic energies. As an action once per long rest, I can become immune to fire damage for 10 minutes.",
+    "dmgres": [
+      "Fire"
+    ],
+    "_parentRace": "chromatic dragonborn-ua",
+    "_variantKey": "red"
+  },
+  {
+    "_key": "chromatic dragonborn-ua-white",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "White",
+      "flags": "i"
+    },
+    "name": "White chromatic dragonborn",
+    "trait": "White chromatic dragonbornCold Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 cold damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest. The damage increases to 3d8 at 5th level, 4d8 at 11th level, and 5d8 at 17th level.\n • Chromatic Warding: From 3rd level, I can protect myself using my draconic energies. As an action once per long rest, I can become immune to cold damage for 10 minutes.",
+    "dmgres": [
+      "Cold"
+    ],
+    "_parentRace": "chromatic dragonborn-ua",
+    "_variantKey": "white"
+  },
+  {
+    "_key": "metallic dragonborn-ua-brass",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Brass",
+      "flags": "i"
+    },
+    "name": "Brass metallic dragonborn",
+    "trait": "Brass metallic dragonbornFire Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest.\n • Metallic Breath Weapon: At 3rd level I gain a second breath weapon once per long rest, that works just like the first. It doesn't deal damage, but I can choose one effect: Str save or pushed 20 ft and prone, or Con save or incapacitated until my next turn starts.",
+    "dmgres": [
+      "Fire"
+    ],
+    "_parentRace": "metallic dragonborn-ua",
+    "_variantKey": "brass"
+  },
+  {
+    "_key": "metallic dragonborn-ua-bronze",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Bronze",
+      "flags": "i"
+    },
+    "name": "Bronze metallic dragonborn",
+    "trait": "Bronze metallic dragonbornLightning Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 lightning damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest.\n • Metallic Breath Weapon: At 3rd level I gain a second breath weapon once per long rest, that works just like the first. It doesn't deal damage, but I can choose one effect: Str save or pushed 20 ft and prone, or Con save or incapacitated until my next turn starts.",
+    "dmgres": [
+      "Lightning"
+    ],
+    "_parentRace": "metallic dragonborn-ua",
+    "_variantKey": "bronze"
+  },
+  {
+    "_key": "metallic dragonborn-ua-copper",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Copper",
+      "flags": "i"
+    },
+    "name": "Copper metallic dragonborn",
+    "trait": "Copper metallic dragonbornAcid Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 acid damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest.\n • Metallic Breath Weapon: At 3rd level I gain a second breath weapon once per long rest, that works just like the first. It doesn't deal damage, but I can choose one effect: Str save or pushed 20 ft and prone, or Con save or incapacitated until my next turn starts.",
+    "dmgres": [
+      "Acid"
+    ],
+    "_parentRace": "metallic dragonborn-ua",
+    "_variantKey": "copper"
+  },
+  {
+    "_key": "metallic dragonborn-ua-gold",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Gold",
+      "flags": "i"
+    },
+    "name": "Gold metallic dragonborn",
+    "trait": "Gold metallic dragonbornFire Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest.\n • Metallic Breath Weapon: At 3rd level I gain a second breath weapon once per long rest, that works just like the first. It doesn't deal damage, but I can choose one effect: Str save or pushed 20 ft and prone, or Con save or incapacitated until my next turn starts.",
+    "dmgres": [
+      "Fire"
+    ],
+    "_parentRace": "metallic dragonborn-ua",
+    "_variantKey": "gold"
+  },
+  {
+    "_key": "metallic dragonborn-ua-silver",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Silver",
+      "flags": "i"
+    },
+    "name": "Silver metallic dragonborn",
+    "trait": "Silver metallic dragonbornCold Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 cold damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest.\n • Metallic Breath Weapon: At 3rd level I gain a second breath weapon once per long rest, that works just like the first. It doesn't deal damage, but I can choose one effect: Str save or pushed 20 ft and prone, or Con save or incapacitated until my next turn starts.",
+    "dmgres": [
+      "Cold"
+    ],
+    "_parentRace": "metallic dragonborn-ua",
+    "_variantKey": "silver"
+  },
+  {
+    "_key": "gem dragonborn-ua-amethyst",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Amethyst",
+      "flags": "i"
+    },
+    "name": "Amethyst gem dragonborn",
+    "trait": "Amethyst gem dragonbornForce Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 force damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest.\n • Psionic Mind: I can speak telepathically to a creature with a language I can see in 30 ft.\n • Gem Flight: From 3rd level, I can temporarily fly. As a bonus action once per long rest, I can gain a flying speed equal to my walking speed and can hover. This lasts for 1 minute.",
+    "dmgres": [
+      "Force"
+    ],
+    "_parentRace": "gem dragonborn-ua",
+    "_variantKey": "amethyst"
+  },
+  {
+    "_key": "gem dragonborn-ua-crystal",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Crystal",
+      "flags": "i"
+    },
+    "name": "Crystal gem dragonborn",
+    "trait": "Crystal gem dragonbornRadiant Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 radiant damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest.\n • Psionic Mind: I can speak telepathically to a creature with a language I can see in 30 ft.\n • Gem Flight: From 3rd level, I can temporarily fly. As a bonus action once per long rest, I can gain a flying speed equal to my walking speed and can hover. This lasts for 1 minute.",
+    "dmgres": [
+      "Radiant"
+    ],
+    "_parentRace": "gem dragonborn-ua",
+    "_variantKey": "crystal"
+  },
+  {
+    "_key": "gem dragonborn-ua-emerald",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Emerald",
+      "flags": "i"
+    },
+    "name": "Emerald gem dragonborn",
+    "trait": "Emerald gem dragonbornPsychic Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 psychic damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest.\n • Psionic Mind: I can speak telepathically to a creature with a language I can see in 30 ft.\n • Gem Flight: From 3rd level, I can temporarily fly. As a bonus action once per long rest, I can gain a flying speed equal to my walking speed and can hover. This lasts for 1 minute.",
+    "dmgres": [
+      "Psychic"
+    ],
+    "_parentRace": "gem dragonborn-ua",
+    "_variantKey": "emerald"
+  },
+  {
+    "_key": "gem dragonborn-ua-sapphire",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Sapphire",
+      "flags": "i"
+    },
+    "name": "Sapphire gem dragonborn",
+    "trait": "Sapphire gem dragonbornThunder Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 thunder damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest.\n • Psionic Mind: I can speak telepathically to a creature with a language I can see in 30 ft.\n • Gem Flight: From 3rd level, I can temporarily fly. As a bonus action once per long rest, I can gain a flying speed equal to my walking speed and can hover. This lasts for 1 minute.",
+    "dmgres": [
+      "Thunder"
+    ],
+    "_parentRace": "gem dragonborn-ua",
+    "_variantKey": "sapphire"
+  },
+  {
+    "_key": "gem dragonborn-ua-topaz",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "Topaz",
+      "flags": "i"
+    },
+    "name": "Topaz gem dragonborn",
+    "trait": "Topaz gem dragonbornNecrotic Breath Weapon: When I take the Attack action, I can replace one attack with a breath weapon that deals 2d8 necrotic damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Proficiency Bonus). I can do this my Proficiency Bonus per long rest.\n • Psionic Mind: I can speak telepathically to a creature with a language I can see in 30 ft.\n • Gem Flight: From 3rd level, I can temporarily fly. As a bonus action once per long rest, I can gain a flying speed equal to my walking speed and can hover. This lasts for 1 minute.",
+    "dmgres": [
+      "Necrotic"
+    ],
+    "_parentRace": "gem dragonborn-ua",
+    "_variantKey": "topaz"
+  },
+  {
+    "_key": "draconic kobold-ua-brave",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "brave",
+      "flags": "i"
+    },
+    "name": "Draconic Kobold-Brave",
+    "source": [
+      [
+        "UA:DO",
+        4
+      ]
+    ],
+    "plural": "Draconic Kobolds",
+    "savetxt": {
+      "adv_vs": [
+        "frightened"
+      ]
+    },
+    "trait": "Draconic Kobold\n • Draconic Legacy (Brave): I have advantage on saving throws to avoid or end the frightened condition on myself.\n • Draconic Roar: As a bonus action, I can let out a draconic roar at enemies within 10 ft. Until the end of my next turn, my allies and I have advantage on attack rolls against any enemies who could hear the roar. I can do this my Proficiency Bonus per long rest.",
+    "_parentRace": "draconic kobold-ua",
+    "_variantKey": "brave"
+  },
+  {
+    "_key": "draconic kobold-ua-cantrip",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "cantrip",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "UA:DO",
+        4
+      ]
+    ],
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "allowUpCasting": true,
+    "spellcastingBonus": [
+      {
+        "name": "Draconic Legacy",
+        "class": "sorcerer",
+        "level": [
+          0,
+          0
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "trait": "Draconic Kobold\n • Draconic Legacy (Cantrip). I know one cantrip from the sorcerer spell list. Intelligence, Wisdom, or Charisma is my spellcasting ability for it (chosen when I select this race).\n • Draconic Roar: As a bonus action, I can let out a draconic roar at enemies within 10 ft. Until the end of my next turn, my allies and I have advantage on attack rolls against any enemies who could hear the roar. I can do this my Proficiency Bonus per long rest.",
+    "_parentRace": "draconic kobold-ua",
+    "_variantKey": "cantrip"
+  },
+  {
+    "_key": "draconic kobold-ua-tail",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "tail",
+      "flags": "i"
+    },
+    "source": [
+      [
+        "UA:DO",
+        4
+      ]
+    ],
+    "weaponOptions": [
+      {
+        "baseWeapon": "unarmed strike",
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "^(?=.*draconic)(?=.*tail).*$",
+          "flags": "i"
+        },
+        "name": "Draconic Tail",
+        "source": [
+          [
+            "UA:DO",
+            4
+          ]
+        ],
+        "damage": [
+          1,
+          6,
+          "bludgeoning"
+        ],
+        "selectNow": true
+      }
+    ],
+    "trait": "Draconic Kobold\n • Draconic Legacy (Tail): I can make unarmed strikes with my tail. The tail deals 1d6 + my Strength modifier bludgeoning damage.\n • Draconic Roar: As a bonus action, I can let out a draconic roar at enemies within 10 ft. Until the end of my next turn, my allies and I have advantage on attack rolls against any enemies who could hear the roar. I can do this my Proficiency Bonus per long rest.",
+    "_parentRace": "draconic kobold-ua",
+    "_variantKey": "tail"
+  },
+  {
     "_key": "elf-dark",
     "regExpSearch": {
       "_type": "RegExp",
@@ -975,265 +3546,5 @@
         ]
       }
     }
-  },
-  {
-    "_key": "draconblood dragonborn-black",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "black",
-      "flags": "i"
-    },
-    "name": "Black draconblood dragonborn",
-    "trait": "Black draconblood dragonborn (+2 Intelligence, +1 Charisma)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
-    "breathDmgType": "acid",
-    "_parentRace": "draconblood dragonborn",
-    "_variantKey": "black"
-  },
-  {
-    "_key": "draconblood dragonborn-blue",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "blue",
-      "flags": "i"
-    },
-    "name": "Blue draconblood dragonborn",
-    "trait": "Blue draconblood dragonborn (+2 Intelligence, +1 Charisma)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
-    "breathDmgType": "lightning",
-    "_parentRace": "draconblood dragonborn",
-    "_variantKey": "blue"
-  },
-  {
-    "_key": "draconblood dragonborn-brass",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "brass",
-      "flags": "i"
-    },
-    "name": "Brass draconblood dragonborn",
-    "trait": "Brass draconblood dragonborn (+2 Intelligence, +1 Charisma)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
-    "breathDmgType": "fire",
-    "_parentRace": "draconblood dragonborn",
-    "_variantKey": "brass"
-  },
-  {
-    "_key": "draconblood dragonborn-bronze",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "bronze",
-      "flags": "i"
-    },
-    "name": "Bronze draconblood dragonborn",
-    "trait": "Bronze draconblood dragonborn (+2 Intelligence, +1 Charisma)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
-    "breathDmgType": "lightning",
-    "_parentRace": "draconblood dragonborn",
-    "_variantKey": "bronze"
-  },
-  {
-    "_key": "draconblood dragonborn-copper",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "copper",
-      "flags": "i"
-    },
-    "name": "Copper draconblood dragonborn",
-    "trait": "Copper draconblood dragonborn (+2 Intelligence, +1 Charisma)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
-    "breathDmgType": "acid",
-    "_parentRace": "draconblood dragonborn",
-    "_variantKey": "copper"
-  },
-  {
-    "_key": "draconblood dragonborn-gold",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "gold",
-      "flags": "i"
-    },
-    "name": "Gold draconblood dragonborn",
-    "trait": "Gold draconblood dragonborn (+2 Intelligence, +1 Charisma)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
-    "breathDmgType": "fire",
-    "_parentRace": "draconblood dragonborn",
-    "_variantKey": "gold"
-  },
-  {
-    "_key": "draconblood dragonborn-green",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "green",
-      "flags": "i"
-    },
-    "name": "Green draconblood dragonborn",
-    "trait": "Green draconblood dragonborn (+2 Intelligence, +1 Charisma)Poison Breath Weapon: As an action once per short rest, I can deal 2d6 poison damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
-    "breathDmgType": "poison",
-    "_parentRace": "draconblood dragonborn",
-    "_variantKey": "green"
-  },
-  {
-    "_key": "draconblood dragonborn-red",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "red",
-      "flags": "i"
-    },
-    "name": "Red draconblood dragonborn",
-    "trait": "Red draconblood dragonborn (+2 Intelligence, +1 Charisma)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
-    "breathDmgType": "fire",
-    "_parentRace": "draconblood dragonborn",
-    "_variantKey": "red"
-  },
-  {
-    "_key": "draconblood dragonborn-silver",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "silver",
-      "flags": "i"
-    },
-    "name": "Silver draconblood dragonborn",
-    "trait": "Silver draconblood dragonborn (+2 Intelligence, +1 Charisma)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
-    "breathDmgType": "cold",
-    "_parentRace": "draconblood dragonborn",
-    "_variantKey": "silver"
-  },
-  {
-    "_key": "draconblood dragonborn-white",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "white",
-      "flags": "i"
-    },
-    "name": "White draconblood dragonborn",
-    "trait": "White draconblood dragonborn (+2 Intelligence, +1 Charisma)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
-    "breathDmgType": "cold",
-    "_parentRace": "draconblood dragonborn",
-    "_variantKey": "white"
-  },
-  {
-    "_key": "ravenite dragonborn-black",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "black",
-      "flags": "i"
-    },
-    "name": "Black ravenite dragonborn",
-    "trait": "Black ravenite dragonborn (+2 Strength, +1 Constitution)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
-    "breathDmgType": "acid",
-    "_parentRace": "ravenite dragonborn",
-    "_variantKey": "black"
-  },
-  {
-    "_key": "ravenite dragonborn-blue",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "blue",
-      "flags": "i"
-    },
-    "name": "Blue ravenite dragonborn",
-    "trait": "Blue ravenite dragonborn (+2 Strength, +1 Constitution)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
-    "breathDmgType": "lightning",
-    "_parentRace": "ravenite dragonborn",
-    "_variantKey": "blue"
-  },
-  {
-    "_key": "ravenite dragonborn-brass",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "brass",
-      "flags": "i"
-    },
-    "name": "Brass ravenite dragonborn",
-    "trait": "Brass ravenite dragonborn (+2 Strength, +1 Constitution)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
-    "breathDmgType": "fire",
-    "_parentRace": "ravenite dragonborn",
-    "_variantKey": "brass"
-  },
-  {
-    "_key": "ravenite dragonborn-bronze",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "bronze",
-      "flags": "i"
-    },
-    "name": "Bronze ravenite dragonborn",
-    "trait": "Bronze ravenite dragonborn (+2 Strength, +1 Constitution)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
-    "breathDmgType": "lightning",
-    "_parentRace": "ravenite dragonborn",
-    "_variantKey": "bronze"
-  },
-  {
-    "_key": "ravenite dragonborn-copper",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "copper",
-      "flags": "i"
-    },
-    "name": "Copper ravenite dragonborn",
-    "trait": "Copper ravenite dragonborn (+2 Strength, +1 Constitution)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
-    "breathDmgType": "acid",
-    "_parentRace": "ravenite dragonborn",
-    "_variantKey": "copper"
-  },
-  {
-    "_key": "ravenite dragonborn-gold",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "gold",
-      "flags": "i"
-    },
-    "name": "Gold ravenite dragonborn",
-    "trait": "Gold ravenite dragonborn (+2 Strength, +1 Constitution)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
-    "breathDmgType": "fire",
-    "_parentRace": "ravenite dragonborn",
-    "_variantKey": "gold"
-  },
-  {
-    "_key": "ravenite dragonborn-green",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "green",
-      "flags": "i"
-    },
-    "name": "Green ravenite dragonborn",
-    "trait": "Green ravenite dragonborn (+2 Strength, +1 Constitution)Poison Breath Weapon: As an action once per short rest, I can deal 2d6 poison damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
-    "breathDmgType": "poison",
-    "_parentRace": "ravenite dragonborn",
-    "_variantKey": "green"
-  },
-  {
-    "_key": "ravenite dragonborn-red",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "red",
-      "flags": "i"
-    },
-    "name": "Red ravenite dragonborn",
-    "trait": "Red ravenite dragonborn (+2 Strength, +1 Constitution)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
-    "breathDmgType": "fire",
-    "_parentRace": "ravenite dragonborn",
-    "_variantKey": "red"
-  },
-  {
-    "_key": "ravenite dragonborn-silver",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "silver",
-      "flags": "i"
-    },
-    "name": "Silver ravenite dragonborn",
-    "trait": "Silver ravenite dragonborn (+2 Strength, +1 Constitution)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
-    "breathDmgType": "cold",
-    "_parentRace": "ravenite dragonborn",
-    "_variantKey": "silver"
-  },
-  {
-    "_key": "ravenite dragonborn-white",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "white",
-      "flags": "i"
-    },
-    "name": "White ravenite dragonborn",
-    "trait": "White ravenite dragonborn (+2 Strength, +1 Constitution)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
-    "breathDmgType": "cold",
-    "_parentRace": "ravenite dragonborn",
-    "_variantKey": "white"
   }
 ]

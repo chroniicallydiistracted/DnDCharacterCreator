@@ -18,6 +18,1699 @@
     ]
   },
   {
+    "_key": "are you entertained?",
+    "description": "I can always find a place to perform (arena/pit fight), where I receive free lodging and food of a modest or comfortable standard, as long as I perform each night. In addition, my performance makes me something of a local figure. When strangers recognize me in a town where I have performed, they typically take a liking to me.",
+    "source": [
+      [
+        "P",
+        131
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "bad reputation",
+    "description": "No matter where I go, people are afraid of me due to my reputation. When I am in a civilized settlement, I can get away with minor criminal offenses, such as refusing to pay for food at a tavern or breaking down doors at a local shop, since most people will not report my activity to the authorities.",
+    "source": [
+      [
+        "P",
+        139
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "by popular demand",
+    "description": "I can always find a place to perform (inn/tavern/circus/etc.), where I receive free lodging and food of a modest or comfortable standard, as long as I perform each night. In addition, my performance makes me something of a local figure. When strangers recognize me in a town where I have performed, they typically take a liking to me.",
+    "source": [
+      [
+        "P",
+        130
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "city secrets",
+    "description": "I know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When I am not in combat, I (and companions I lead) can travel between any two locations in the city twice as fast as my speed would normally allow.",
+    "source": [
+      [
+        "P",
+        141
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "criminal contact",
+    "description": "I have a reliable and trustworthy contact who acts as my liaison to a network of other criminals. I know how to get messages to and from my contact, even over great distances; specifically, I know the local messengers, corrupt caravan masters, and seedy sailors who can deliver my messages.",
+    "source": [
+      [
+        "P",
+        129
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "discovery",
+    "description": "The quiet seclusion of my extended hermitage gave me access to a unique and powerful discovery. The exact nature of this revelation depends on the nature of my seclusion. It might be a great truth, a hidden site, a long forgotten fact, or unearthed some relic of the past that could rewrite history.",
+    "source": [
+      [
+        "P",
+        134
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "false identity",
+    "description": "I have created a second identity that includes documentation, established acquaintances, and disguises that allow me to assume that persona. Additionally, I can forge documents, including official papers and personal letters, as long as I have seen an example of the kind of document or the handwriting I am trying to copy.",
+    "source": [
+      [
+        "P",
+        128
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "guild membership",
+    "description": "5 gp membership fees per month: The guild offers lodging if possible. In case of being accused of a crime, the guild will support me if a good case can be made for my innocence or the crime is justifiable. I can also gain access to powerful political figures through the guild, as long as I'm in good standing and the guild is paid enough.",
+    "source": [
+      [
+        "P",
+        133
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "military rank",
+    "description": "I have a military rank from my career as a soldier. Soldiers loyal to my former military organization still recognize my authority and influence. I can invoke my rank to influence soldiers and temporarily requisition simple equipment or horses. I can usually gain access to friendly military encampments and fortresses where my rank is recognized.",
+    "source": [
+      [
+        "P",
+        140
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "position of privilege",
+    "description": "I am welcome in high society, and people assume I have the right to be wherever I am. The common folk make every effort to accommodate me and avoid my displeasure, and other people of high birth treat me as a member of the same social sphere. I can secure an audience with a local noble if I need to.",
+    "source": [
+      [
+        "P",
+        135
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "researcher",
+    "description": "When I attempt to learn or recall a piece of lore, if I do not know that information, I often know where and from whom I can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.",
+    "source": [
+      [
+        "P",
+        138
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "retainers",
+    "description": "I have the service of three retainers loyal to my family, one of whom is another noble and my squire. My other retainers are commoners who can perform mundane tasks for me, but they do not fight for me, will not follow me into obviously dangerous areas (such as dungeons), and will leave if they are frequently endangered or abused.",
+    "source": [
+      [
+        "P",
+        136
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "rustic hospitality",
+    "description": "Since I come from the ranks of the common folk, I fit in among them with ease. I can find a place to hide, rest, or recuperate among other commoners, unless I have shown myself to be a danger to them. They will shield me from the law or anyone else searching for me, though they will not risk their lives for me.",
+    "source": [
+      [
+        "P",
+        131
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "ship's passage",
+    "description": "When I need to, I can secure free passage on a sailing ship for myself and my companions. I might sail on the ship I served on, or another ship I have good relations with. Because I'm calling in a favor, I can't be certain of a schedule or route that will meet my every need. My companions and I are expected to assist the crew during the voyage.",
+    "source": [
+      [
+        "P",
+        139
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "wanderer",
+    "description": "I have an excellent memory for maps and geography, and I can always recall the general layout of terrain, settlements, and other features around me. In addition, I can find food and fresh water for myself and up to five other people each day, provided that the land offers berries, small game, water, and so forth.",
+    "source": [
+      [
+        "P",
+        136
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "cult of the dragon infiltrator",
+    "description": "I have infiltrated the ranks of the Cult of the Dragon. Having spied on the organization for quite some time, I am familiar with its inner workings and customs. I have a second identity as an initiate of the cult, enough of a facade to blend in as a simple grunt or servant.",
+    "source": [
+      [
+        "HotDQ",
+        87
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "dragon scholar",
+    "description": "I have studied dragons and their lore for many years. I can automatically identify locations built or used by dragons, and I can identify dragon eggs and scales by sight. If I fail an Intelligence check to recall lore relating to dragons, I know someone or some book that I can consult for the answer unless the DM rules that the lore is unknown.",
+    "source": [
+      [
+        "HotDQ",
+        87
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "wagonmaster",
+    "description": "I'm used to being in charge. My reputation has me on a short list for critical jobs, allows me to attract two more loyal workers for caravaning, and causes others to look to me for direction. I can identify the most defensible locations for camping. I have a great memory for maps and geography. While travelling, I can always find my cardinal directions.",
+    "source": [
+      [
+        "AL:EE",
+        2
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "deep miner",
+    "description": "I am used to navigating the deep places of the earth. I never get lost in caves or mines if I have either seen an accurate map of them or have been through them before. Furthermore, I am able to scrounge fresh water and food for myself and as many as five other people each day if I am in a mine or natural caves.",
+    "source": [
+      [
+        "AL:EE",
+        3
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "harborfolk",
+    "description": "I grew up on the docks and waters of Mulmaster Harbor. The harborfolk remember me and still treat me as one of them. They welcome me and my companions. While they might charge me for it, they'll always offer what food and shelter they have; they'll even hide me if the City Watch is after me (but not if the Hawks are).",
+    "source": [
+      [
+        "AL:EE",
+        4
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "highborn",
+    "description": "Mulmaster is run by and for its aristoracy. Every other class of citizen in the city defers to me, and even the priesthood, Soldiery, Hawks, and Cloaks treat me with deference. Other aristocrats and nobles accept me in their circles and likely know me or of me. My connections can get me the ear of a Zor or Zora under the right circumstances.",
+    "source": [
+      [
+        "AL:EE",
+        5
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "phlan survivor",
+    "description": "Whatever my prior standing I'm now one of the many refugees that came to Mulmaster. I'm able to find refuge with others from Phlan and those who sympathize with my plight. Within Mulmaster this means that I can find a place to sleep, recover, and hide from the watch with either other refugees from Phlan, or the Zhents within the ghettos.",
+    "source": [
+      [
+        "AL:EE",
+        6
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "factor",
+    "description": "My family has assigned me the services of a loyal retainer from the business. This person can perform mundane tasks for me such as making purchases, delivering messages, and running errands. He or she will not fight for me or follow me into danger, and will leave if frequently endangered or abused. If killed, my family assigns me another within days.",
+    "source": [
+      [
+        "AL:RoD",
+        7
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "investigative services",
+    "description": "I have a way of communicating with others that puts them at ease. I can invoke my rank to allow me access to a crime scene or to requisition equipment or horses on a temporary basis. When entering a settlement around Hillsfar, I can identify a contact who will give me information and would help me because I want to stop anyone from disrupting trade.",
+    "source": [
+      [
+        "AL:RoD",
+        11
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "red plume and mage guild contacts",
+    "description": "I made friends among the Red Plumes and Mage's Guild when I lived at the Hillsfar Gate. They remember me fondly and help me in little ways when they can. I can invoke their assistance in and around Hillsfar to obtain food, simple equipment for temporary use, and to gain access to the low-security areas of their garrisons, halls, and encampments.",
+    "source": [
+      [
+        "AL:RoD",
+        6
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "secret identity",
+    "description": "I have created a secret identity that I use to conceal my true race and that offers a covering explanation for my presence in Hillsfar. In addition, I can forge documents, including official papers and personal letters, as long as I have seen an example of the kind of document or the handwriting I am trying to copy.",
+    "source": [
+      [
+        "AL:RoD",
+        9
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "secret passage",
+    "description": "I can call on my smuggler contacts to secure secret passage into or out of Hillsfar for myself and my friends, no questions asked, and no Red Plume entanglements. Because I'm calling in a favor, I can't be certain when or if they can help. In return for passage, my companions and I may owe the Rogue's Guild a favor and/or may have to pay bribes.",
+    "source": [
+      [
+        "AL:RoD",
+        8
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "secret society",
+    "description": "I have a special way of communicating with others who feel the same way I do about the Shade. When I enter a village or larger city, I can identify a contact who will give me information on those that would hinder my goals and those would help me simply because of my desire to see the Shade Enclave return in all its glory.",
+    "source": [
+      [
+        "AL:RoD",
+        10
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "shelter of the elven clergy",
+    "description": "The clerics of Elventree have vowed to care for the Cormanthor refugees. They will help me when they can, including providing me and my companions with free healing and care at temples, shrines, and other established presences in Elventree. They will also provide me (but only me) with a poor lifestyle.",
+    "source": [
+      [
+        "AL:RoD",
+        5
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "trade contact",
+    "description": "My family and I have trade contacts such as caravan masters, sailors, artisans, farmers, and shopkeepers throughout the Moonsea region and all along the Sword Coast. When adventuring in either of those areas, I can use those contacts to get information about the local area or to pass a message to someone in those areas, even across great distance.",
+    "source": [
+      [
+        "AL:RoD",
+        7
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "deep delver",
+    "description": "I have a knack for finding my way in the Underdark, recalling all twists and turns with ease, such that I can always retrace my steps underground. I can determine which sources of food and water are safe to consume. I can always find sufficient food and water for myself and up to five other people in the Underdark, if sustenance is available in the area.",
+    "source": [
+      [
+        "OotA",
+        221
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "underdark experience",
+    "description": "I'm no casual visitor to the Underdark, but have spent considerable time there learning its ways. I'm familiar with the various races, civilizations, settlements, and travel routes of the Underdark. If I fail an Intelligence check to recall some piece of Underdark lore, I know a source I can consult for the answer unless the DM rules that the lore is unknown.",
+    "source": [
+      [
+        "OotA",
+        221
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "court functionary",
+    "description": "My knowledge of how bureaucracies function lets me gain access to the records and inner workings of any noble court or government I encounter. I know or can easily acquire the knowledge who the movers and shakers are, whom to go to for the favors I seek, and what the current intrigues of interest in the group are.",
+    "source": [
+      [
+        "S",
+        147
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "all eyes on you",
+    "description": "My accent, mannerisms, figures of speech all mark me as foreign. Curious glances are directed my way wherever I go. A nuisance, but I also gain the friendly interest of the curious. I can parley this attention into access I might not otherwise have, for me and my companions. Nobles, scholars, merchants, and guilds, might be among the interested.",
+    "source": [
+      [
+        "S",
+        149
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "ear to the ground",
+    "description": "I am in frequent contact with people in my chosen segment of society. These people might be associated with the criminal underworld, the rough-and-tumble folk of the streets, or members of high society. This connection comes in the form of a contact in any city I visit, a person who provides information about the people and places of the local area.",
+    "source": [
+      [
+        "S",
+        153
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "inheritance",
+    "description": "The item I inherited has a special significance, history, power, and/or important value. When I begin my adventuring career, I can decide whether to tell my companions about it right away. Rather than attracting attention to myself, I could decide to keep it a secret until I learn more about what it means to me and what it can do for me.",
+    "source": [
+      [
+        "S",
+        150
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "kept in style",
+    "description": "While I am in Waterdeep or elsewhere in the North my house sees to my everyday needs. My name and signet are sufficient to cover most of my expenses; the inns, taverns, and festhalls I frequent are glad to record my debt and send an accounting to my family's estate. This advantage enables me to take 2 gp of my daily lifestyle costs down to 0 gp.",
+    "source": [
+      [
+        "S",
+        154
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "knightly regard",
+    "description": "I receive shelter and succor from members of my knightly order and its sympathizers. Religious knightly orders get aid from temples and communities of my deity. Civic order knights get help from the community they serve. Philosophical order knights can find help from those they have aided in pursuit of their ideals, and those who share those ideals.",
+    "source": [
+      [
+        "S",
+        151
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "library access",
+    "description": "I have free access to most of the library I work at, though it might have repositories of lore that are too valuable, magical, or secret to permit anyone immediate access. I have a working knowledge of my cloister's personnel and bureaucracy, and I know how to navigate those connections. I am likely to gain preferential treatment at other libraries.",
+    "source": [
+      [
+        "S",
+        146
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "mercenary life",
+    "description": "I know the mercenary life well. I am able to identify mercenary company emblems, and I know a little about any such company, including the leaders, reputation, and who hired them recently. I can find the locales where mercenaries abide anywhere, as long as I speak the language. My mercenary work between adventures affords me a comfortable lifestyle.",
+    "source": [
+      [
+        "S",
+        152
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "respect of the stout folk",
+    "description": "No one esteems clan crafters quite so highly as dwarves do. I always have free room and board in any place where shield dwarves or gold dwarves dwell, and the individuals in such a settlement might vie among themselves to determine who can offer me (and possibly my compatriots) the finest accommodations and assistance.",
+    "source": [
+      [
+        "S",
+        145
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "safe haven",
+    "description": "As a faction agent, I have access to a secret network of support and operatives who can provide assistance on my adventures. I know secret signs and passwords to identify such operatives, who can provide me with access to a hidden safe house, free room and board, or assistance in finding information. These agents never risk their lives or identity for me.",
+    "source": [
+      [
+        "S",
+        147
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "uthgardt heritage",
+    "description": "I have an excellent knowledge of my tribe's territory, and surrounding terrain and natural resources. I am familiar enough with any wilderness area that I can find twice as much food and water as one normally would. I can call upon the hospitality of my people, and those allied, often including members of druid circles, nomadic elves, and priesthoods.",
+    "source": [
+      [
+        "S",
+        154
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "watcher's eye",
+    "description": "My experience in enforcing the law, and dealing with lawbreakers, gives me a feel for local laws and criminals. I can easily find the local outpost of the watch, guards or a similar organization, and just as easily pick out the dens of criminal activity in a community. I am far more likely to be welcome in the former locations rather than the latter, however.",
+    "source": [
+      [
+        "S",
+        145
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "at home in the wild",
+    "description": "In the wilderness, my home, I can find a place to hide, rest, or recuperate that is secure enough to conceal me from most natural threats, but not all supernatural, magical, or threats that actively seek me out. However, this feature doesn't shield or conceal me from scrying, mental probing, nor from threats that don't need the five senses to find me.",
+    "source": [
+      [
+        "AL:CoS",
+        9
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "black-market breeder",
+    "description": "I know how to find people who are always looking for stolen animals and vehicles, for pit fights or getaways during an illegal job. This provides me with information of what such animals & vehicles are in high demand in the area, but also offer to give me favors and information (DM choice) if I bring such animals and vehicles to them.",
+    "source": [
+      [
+        "AL:CoS",
+        5
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "double agent",
+    "description": "I have a trusty contact in the Tears of Virulence garrison in Phlan to whom I pass information. In exchange, I get away with minor criminal offenses in Phlan. My Black Fists contacts can help me get an audience with the Lord Regent, the Lord Sage, Black Fists members, or deposed nobles who are sympathetic to the Phlan refugees and insurgents.",
+    "source": [
+      [
+        "AL:CoS",
+        2
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "dragonscarred",
+    "description": "My extensive scars from being tortured by Vorgansharax give me fame and notoriety, but it is difficult to disguise my appearance and hide from prying eyes. I can use this to gain access to people and places I might not otherwise have, for me and my companions. However, I fear that my afflictions are not completely mundane, as they burn and writhe.",
+    "source": [
+      [
+        "AL:CoS",
+        3
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "ex-convict",
+    "description": "The knowledge gained during my incarceration lets me gain insight into local guards and jailors. I know which will accept bribes, or look the other way for me. I can also seek shelter for myself from authorities with other criminals in the area.",
+    "source": [
+      [
+        "AL:CoS",
+        8
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "guerilla",
+    "description": "I've come to know the surrounding other natural features in which I can take refuge--or set up ambushes. I can quickly survey my environment for advantageous features. Additionally, I can scavenge around my natural surroundings to cobble together simple supplies (such as improvised torches, rope, patches of fabric, etc.) that are consumed after use.",
+    "source": [
+      [
+        "AL:CoS",
+        6
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "heart of darkness",
+    "description": "Those who look into my eyes can see that I have faced unimaginable horror and that I am no stranger to darkness. Though they might fear me, commoners will extend me every courtesy and do their utmost to help. Unless I have shown myself to be a danger to them, they will even take up arms to fight with me, should I find myself facing an enemy alone.",
+    "source": [
+      [
+        "CoS",
+        209
+      ],
+      [
+        "VRGtR",
+        34
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "adept linguist",
+    "description": "I can communicate with humanoids who don't speak any language I know. I must observe the humanoids interacting with one another for at least one day, after which I learn a handful of important words, expressions, and gestures ― enough to communicate on a rudimentary level.",
+    "source": [
+      [
+        "ToA",
+        191
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "historical knowledge",
+    "description": "When I enter a ruin or dungeon, I can correctly ascertain its original purpose and determine its builders, whether those were dwarves, elves, humans, yuan-ti, or some other known race. In addition, I can determine the monetary value of art objects more than a century old.",
+    "source": [
+      [
+        "ToA",
+        192
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "legal authority",
+    "description": "I have the authority to enforce the laws of Ravnica, inspiring respect and fear as a result. People mind their manners, avoid my attention, and assume I have a right to be wherever I am. My Azorius insignia gets me an audience with anyone I want, though it might work adversely with incorrigible lawbreakers. Abusing this privilege can get me in serious trouble.",
+    "source": [
+      [
+        "G",
+        33
+      ]
+    ]
+  },
+  {
+    "_key": "legion station",
+    "description": "I am established in the hierarchy of the Boros Legion. I can requisition simple equipment for temporary use. I have access to any Boros garrison in Ravnica where I can rest in safety and have access to medics. I'm paid 1 gp per week (a Boros-minted 1-zino coin), allowing me (together with the free garrison lodging) to have a poor lifestyle between adventures.",
+    "source": [
+      [
+        "G",
+        40
+      ]
+    ]
+  },
+  {
+    "_key": "false guild identity",
+    "description": "I have more than one identity. The one I wear most of the time makes me appear to be a member of a guild other than my own. I have documentation, established acquaintances, and disguises that allow me to assume that persona and fit into the secondary guild. Whenever I choose, I can drop this identity and blend into the guildless masses of the city.",
+    "source": [
+      [
+        "G",
+        46
+      ]
+    ]
+  },
+  {
+    "_key": "undercity paths",
+    "description": "I know hidden, underground pathways that I can use to bypass crowds, obstacles, and observation as I move through the city. I can lead a group to travel between two locations in the city twice as fast as normally. The paths of the undercity are haunted by dangers that rarely brave the light of the surface world, so my journey isn't guaranteed to be safe.",
+    "source": [
+      [
+        "G",
+        53
+      ]
+    ]
+  },
+  {
+    "_key": "rubblebelt refuge",
+    "description": "I'm very familiar with areas of the city that most people shun: neighborhoods ruined by wurms, overgrown parks gone untended for decades, and the vast, long abandoned rubblebelts of broken terrain. There, I can find a suitable place for me and my allies to hide or rest, as well as food and fresh water for myself and up to five other people each day.",
+    "source": [
+      [
+        "G",
+        60
+      ]
+    ]
+  },
+  {
+    "_key": "urban infrastructure",
+    "description": "Although the Izzet League is infamous for mad inventions it is also involved in construction of the city's infrastructure. I have a basic knowledge of the structure of buildings and what is behind its walls. I can find their blueprints showing entry points, secret spaces, structural weaknesses, or secret spaces. My guild won't protect me if I use this knowledge unlawfully.",
+    "source": [
+      [
+        "G",
+        66
+      ]
+    ]
+  },
+  {
+    "_key": "leverage",
+    "description": "I can exert leverage over one or more below me in the guild's hierarchy and demand their help as needs warrant. For example, deliver a message, arrange a ride, or clean up a bloody mess. As my status in the guild improves, I gain influence over more people of higher station. The DM decides if the demands are reasonable and if subordinates are available.",
+    "source": [
+      [
+        "G",
+        72
+      ]
+    ]
+  },
+  {
+    "_key": "fearsome reputation",
+    "description": "People recognize me as a member of the Cult of Rakdos, and they're careful not to draw my anger or ridicule. I can get away with minor criminal offenses, such as refusing to pay for food at a restaurant or breaking down a door at a local shop, if no legal authorities witness the crime. Most are too daunted by me to report my wrongdoing to the Azorius.",
+    "source": [
+      [
+        "G",
+        79
+      ]
+    ]
+  },
+  {
+    "_key": "conclave's shelter",
+    "description": "My companions and I can find a place to hide or rest in any Selesnya enclave in the city, unless I have proven to be a danger to them. The members of the enclave will shield me from anyone searching for me, but will not risk their lives. I can receive free healing and care at a Selesnya enclave, though I must provide material components needed for spells.",
+    "source": [
+      [
+        "G",
+        86
+      ]
+    ]
+  },
+  {
+    "_key": "simic researcher",
+    "description": "I know where or from whom I can acquire scientific facts, usually from a Simic laboratory, or sometimes an Izzet facility, library, university, independent scholar, or creature. I might need to offer bribes, favors, or other incentives to induce people to reveal their secrets. The DM can rule that the knowledge is inaccessible place, can't be found, or requires a quest.",
+    "source": [
+      [
+        "G",
+        93
+      ]
+    ]
+  },
+  {
+    "_key": "harvest the water",
+    "description": "I gain advantage on ability checks made using fishing tackle. If I have access to a body of water that sustains marine life, I can maintain a moderate lifestyle while working as a fisher, and I can catch enough food to feed myself and up to ten other people each day.",
+    "source": [
+      [
+        "GoS",
+        29
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "steady",
+    "description": "I can move twice the normal amount of time (up to 16 hours) each day before being subject to the effect of a forced march and need to make Constitution saves at the end of each extra hour to avoid gaining a level of exhaustion. Additionally, I can automatically find a safe route to land a boat on shore, provided such a route exists.",
+    "source": [
+      [
+        "GoS",
+        31
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "i'll patch it!",
+    "description": "Provided I have carpenter's tools and wood, I can perform repairs on a water vehicle. When I use this ability, I restore a number of hit points to the hull of a water vehicle equal to 5× my proficiency modifier. A vehicle cannot be patched by me in this way again until after it has been pulled ashore and fully repaired.",
+    "source": [
+      [
+        "GoS",
+        33
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "down low",
+    "description": "I am acquainted with a network of smugglers who are willing to help me out of tight spots. While in a particular town, city, or other similarly sized community, my companions and I can stay for free in safe houses. Safe houses provide a poor lifestyle. While staying at a safe house, I can choose to keep my presence (and that of my companions) a secret.",
+    "source": [
+      [
+        "GoS",
+        34
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "name dropping",
+    "description": "I know and have met any number of powerful people across the land, and some might even remember me. I might be able to wrangle minor assistance from a major figure in the campaign, at the DM's discretion. Additionally, the common folk treat me with deference, and my heritage and the stories I tell might be good for a free meal or a place to sleep.",
+    "source": [
+      [
+        "AcqInc",
+        48
+      ]
+    ]
+  },
+  {
+    "_key": "supply chain",
+    "description": "From my time as a merchant, I retain connections with wholesalers, suppliers, and other merchants and entrepreneurs. I can call upon these connections when looking for items or information.",
+    "source": [
+      [
+        "AcqInc",
+        49
+      ]
+    ]
+  },
+  {
+    "_key": "never tell me the odds",
+    "description": "Odds and probability are my bread and butter. During downtime activities that involve games of chance or figuring odds on the best plan, I can get a solid sense of which choice is likely the best one and which opportunities seem too good to be true, at the DM's determination.",
+    "source": [
+      [
+        "AcqInc",
+        50
+      ]
+    ]
+  },
+  {
+    "_key": "legalese",
+    "description": "My experience with the local legal system has given me a firm knowledge of its ins and outs. Even when the law is not on my side, I can use complex terms like \"ex injuria jus non oritur\" to frighten people into thinking I know what I'm talking about. I might be able to intimidate or deceive folks who don't know any better to get favors or special treatment.",
+    "source": [
+      [
+        "AcqInc",
+        50
+      ]
+    ]
+  },
+  {
+    "_key": "inside informant",
+    "description": "I have connections to my previous employer or other groups I dealt with during my previous employment. I can communicate with my contacts, gaining information at the DM's discretion.",
+    "source": [
+      [
+        "AcqInc",
+        51
+      ]
+    ]
+  },
+  {
+    "_key": "religious community",
+    "description": "I'm tightly connected with the religious community of the city. I know if a deity has a following in the city, any places that faith openly congregates, and the neighborhoods those faithful typically inhabit. While this isn't remarkable for most of the city's larger faiths, keeping track of the hundreds of religions newcomers bring with them is no mean feat.",
+    "source": [
+      [
+        "DiA",
+        202
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "long-lost heir",
+    "description": "I can pose as the long-lost heir to some imaginary or dead lineage. I'm well-versed in the mannerisms and idiosyncrasies of nobility, imitating them smoothly enough to convince anybody of my authenticity. However, any true test is likely to reveal my deception. I can enter places that only nobility can and might be able to bluff other through with me.",
+    "source": [
+      [
+        "DiA",
+        202
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "criminal connections",
+    "description": "In a big city, crime is just another business. As a result, I can arrange a meeting with a low-ranking operative of nearly any business, noble family, crew, government institution, or guild. This operative will hear me out and, at their discretion, take my information or request up their chain of command. These meetings almost always occur in shady venues.",
+    "source": [
+      [
+        "DiA",
+        202
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "backstage pass",
+    "description": "I know that most of the real business, in entertainment or otherwise, happens behind the scenes. It's easy for me to case what sorts of audiences attend a venue. After a successful performance, I may meet an enthusiastic member of the crowd—someone of an occupation or social class that frequents the venue, who is delighted to talk with me, and to listen.",
+    "source": [
+      [
+        "DiA",
+        202
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "dual personalities",
+    "description": "The world knows me as my persona and those who seek to learn more about me find themselves stymied by my disguise. I'm unidentifiable as my true self while disguised and behaving as my persona, allowing me to change appearances between my two personalities as I wish. My deception might lose its effectiveness if someone realize the connection.",
+    "source": [
+      [
+        "DiA",
+        204
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "social vengeance",
+    "description": "I've lived my whole life amongst the lower class of the city, seeing the upper class flaunt their wealth while my hardworking neighbors struggled. I know their eagerness to give the wealthy their comeuppance. I can convince 1d6 commoners in a busy area in 2d10 min to perform a non-illegal act that inconveniences a guard, noble, or wealthy looking individual.",
+    "source": [
+      [
+        "DiA",
+        204
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "professional courtesy",
+    "description": "I conduct my business in one of the city's districts and I'm familiar with its local crews, their territories, and inter-crew politics. When I need information about something in my district, I can learn the local gossip from crew members. Within my district, I can gain entry to nearly any bank, guild hall, place of business, workhouse, or crew meeting place.",
+    "source": [
+      [
+        "DiA",
+        205
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "the real city",
+    "description": "I know the city that most of its inhabitants ignore, the dog-eat-dog world of the homeless and unfortunate. I know where to go for anonymity. In these slums and alley camps, I can get a damp bed and a bad meal, but also a degree of privacy and no questions asked. Living here isn't comfortable, but it's unlikely any will find me—and I can stay as long as I want.",
+    "source": [
+      [
+        "DiA",
+        205
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "patriar",
+    "description": "As a member of an elite family of the city, I may pass through without paying tolls, enter the better part of town and stay there after dark, mingle among the nobility unquestioned, and impress those looking for wealthy patrons. My word is accepted over others' without question, and any corruption among guards or officials tends to work in my favor.",
+    "source": [
+      [
+        "DiA",
+        206
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "immigrant experience",
+    "description": "Even after my short time in the city, I've learned it holds more walls and gates than those the guards patrol. I'm known within the city's immigrant communities. Should I ever need to learn about a foreign land, people, tradition, or history, I know where to find someone with firsthand experience—likely somewhere in the poorer part of town.",
+    "source": [
+      [
+        "DiA",
+        206
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "rumor monger",
+    "description": "Via my personal rumor mill and published articles, I can surmise a great deal about the secrets of the city's inhabitants—necromancy, spying, smuggling, dealing in magical wares. Whenever a noteworthy crime or happening occurs in the city, I immediately have a list of 1d4 suspects who, if they aren't involved, have a strong chance of knowing who is.",
+    "source": [
+      [
+        "DiA",
+        206
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "smuggler's sense",
+    "description": "I'm familiar with the docks of the city, the movement of inspectors and tax collectors, the way cargo and coin flows, the movements of the harbor guards, and how to operate the port's machinery for moving wares. As a result, it's easy for me to hustle a load of cargo ashore or see such a cargo onto a cooperative ship without attracting suspicion or taxation.",
+    "source": [
+      [
+        "DiA",
+        207
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "city guard: lower city (the flaming fists)",
+    "description": "I'm required to take a regular shift patrolling the lower or outer city and I must report for training once every ten days. In return, I have access to the guard's fortresses and a direct line of communication with officers and other soldiers. I can also pass through the city's gates and go to the upper city without question, but can't bring guests to the upper city.",
+    "source": [
+      [
+        "DiA",
+        207
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "city guard: upper city (the watch)",
+    "description": "I'm required to take a regular shift patrolling the upper city or its gates and I must report for training once every ten days. In return, I have access to the citadel and a direct line of communication with officers and officials. My word carries considerable weight. I can escort people into the upper city unimpeded, but I'm regarded with suspicion in the lower city.",
+    "source": [
+      [
+        "DiA",
+        207
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "loyalty test",
+    "description": "I can spot the behaviors common to corrupt guards and military officers a mile away. While this doesn't equate to evidence, and my sense isn't foolproof, my instinct proves a starting point to determine who might take a bribe, who might turn a blind eye to a crime, who might have criminal connections, or who might fulfill their duties strictly by the book.",
+    "source": [
+      [
+        "DiA",
+        207
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "gateguide connection",
+    "description": "I've associated with enough of the Gateguides crew that I know their torch-based code. From the lighting, placement, and type of torch arranged on or near a structure, I can gather information about those who live or do business there—if they deal fairly with strangers, have guild or government connections, or their standing with the Gateguides.",
+    "source": [
+      [
+        "DiA",
+        207
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "house connections",
+    "description": "As an agent of my house, I can always get food and lodging for my friends at a house enclave. My house usually provides me with necessary supplies and transportation if it assigns me a mission. I have many old friends, mentors, and rivals in my house that I might run into and be willing to help me depending on my current standing in the house.",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        95
+      ]
+    ]
+  },
+  {
+    "_key": "ballad of the grinning fool",
+    "description": "A member of the Golden Grin will find me and give shelter to me and my companions if I play the Ballad of the Grinning Fool in a major tavern or inn in a large city. This shelter might be discontinued if it becomes too dangerous to hide me. I must use the ballad with caution, for those who know the ballad can be traitors, counterspies, or agents of tyranny.",
+    "source": [
+      [
+        "W",
+        200
+      ]
+    ]
+  },
+  {
+    "_key": "shadow network",
+    "description": "I can use the Volstrucker shadow network to communicate with other members over long distances. I can write a letter in special arcane ink (10 gp per page), address it to another member of the Volstrucker, and cast it into a fire. It will burn and materialize whole again on the person of the addressee. This special ink is the same as used for a wizard's spellbook.",
+    "source": [
+      [
+        "W",
+        202
+      ]
+    ]
+  },
+  {
+    "_key": "echoes of victory",
+    "description": "I have attracted admiration among spectators, fellow athletes, and trainers in the region that hosted my past athletic victories. When visiting any settlement within 100 miles of where I grew up, there is a 50 percent change that I can find someone there who admires me and is willing to provide information or temporary shelter.",
+    "source": [
+      [
+        "MOT",
+        31
+      ]
+    ]
+  },
+  {
+    "_key": "inheritor",
+    "description": "I'm the clear inheritor of a famed legacy, my ancestor or mentor. I've inherited a token that marks me as their inheritor. Revealing my legacy lets me swiftly learn the local opinion of my predecessor, if they heard of it. As rumors spread swiftly, locals will consider me either a hero or a threat. Heroes are welcomed, while threats are encouraged to leave.",
+    "source": [
+      [
+        "VRGtR",
+        31
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "mist wanderer",
+    "description": "The Mists whisper to me and guide me through. I immediately know if an object I'm touching is a Mist talisman, a nonmagical object that resonates with the domain where it originated, allowing the creature holding it to find a path to that domain. I recognize where the talisman originates from if I have been to its domain of origin.",
+    "source": [
+      [
+        "VRGtR",
+        31
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "spirit medium",
+    "description": "A fateful experience made me believe I'm aligned with spirits and can serve as a conduit for their insights and goals. I have advantage on Arcana and Religion check to remember or research information about spirits and the afterlife. I have and am proficient with a device I made for communing with otherworldly forces (e.g. a spirit-board or tarokka deck).",
+    "source": [
+      [
+        "VRGtR",
+        31
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "trauma survivor",
+    "description": "I faced something specifically traumatic and survived. Now people view me as an expert on it and can help others make it through. I'm aware of nonmagical recovery techniques, common resources, and misinformation. I know how to speak to sympathetic doctors, clergy, and leaders to can convince them to shelter one other than myself up to one month.",
+    "source": [
+      [
+        "VRGtR",
+        32
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "traveler",
+    "description": "I come from another place that others couldn't begin to understand. I can find a spot to hide, rest, or recuperate among sympathetic trading caravans, itinerant families, or displaced groups, so long as I present no visible danger. Such groups will hide me, but won't risk their lives for me. I can tell if an object I can see and touch is from my homeland.",
+    "source": [
+      [
+        "VRGtR",
+        32
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "official inquiry",
+    "description": "Through a combination of fast-talking, determination, and official-looking documentation, I can gain access to a place or an individual related to a crime I'm investigating. Those who aren't involved in my investigation avoid impeding me or pass along my requests. Local law enforcement has firm opinions, viewing me as either a nuisance or one of their own.",
+    "source": [
+      [
+        "VRGtR",
+        35
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "feywild connection",
+    "description": "My mannerisms and knowledge of fey customs are recognized by natives of the Feywild, who see me as one of their own. Because of this, friendly Fey creatures are inclined to come to my aid if I am lost or need help in the Feywild.",
+    "source": [
+      [
+        "WBtW",
+        11
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "carnival fixture",
+    "description": "The Witchlight Carnival provides me with free, modest lodging and food. In addition, I may wander about the carnival and partake of its many wonders at no cost to me, provided I don't disrupt its shows or cause any other trouble.",
+    "source": [
+      [
+        "WBtW",
+        11
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "lorehold initiate",
+    "description": "I gain the Strixhaven Initiate feat for the Lorehold college. In addition, I add the following spells to the spell list of all my spellcasting classes, if any: Comprehend Languages, Identify, Borrowed Knowledge, Locate Object, Speak with Dead, Spirit Guardians, Arcane Eye, Stone Shape, Flame Strike, and Legend Lore.",
+    "source": [
+      [
+        "SCC",
+        31
+      ]
+    ],
+    "calcChanges": {
+      "spellList": [
+        {
+          "_type": "function",
+          "body": "function(e,a,t){!ClassList[a]||e.spells||e.psionic||-1!==t.indexOf(\"bonus\")&&(e.school||!e.class||-1===e.class.indexOf(a)&&\"fighter\"!==a)||(e.extraspells=e.extraspells.concat([\"comprehend languages\",\"identify\",\"borrowed knowledge\",\"locate object\",\"speak with dead\",\"spirit guardians\",\"arcane eye\",\"stone shape\",\"flame strike\",\"legend lore\"]))}"
+        },
+        "My background feature adds extra spells to the spell list(s) of my spellcasting class(es): Comprehend Languages, Identify, Borrowed Knowledge, Locate Object, Speak with Dead, Spirit Guardians, Arcane Eye, Stone Shape, Flame Strike, and Legend Lore."
+      ]
+    },
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Strixhaven Initiate\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Strixhaven Initiate\")}"
+    }
+  },
+  {
+    "_key": "prismari initiate",
+    "description": "I gain the Strixhaven Initiate feat for the Prismari college. In addition, I add the following spells to the spell list of all my spellcasting classes, if any: Chromatic Orb, Thunderwave, Flaming Sphere, Kinetic Jaunt, Haste, Water Walk, Freedom of Movement, Wall of Fire, Cone of Cold, and Conjure Elemental.",
+    "source": [
+      [
+        "SCC",
+        32
+      ]
+    ],
+    "calcChanges": {
+      "spellList": [
+        {
+          "_type": "function",
+          "body": "function(e,a,t){!ClassList[a]||e.spells||e.psionic||-1!==t.indexOf(\"bonus\")&&(e.school||!e.class||-1===e.class.indexOf(a)&&\"fighter\"!==a)||(e.extraspells=e.extraspells.concat([\"chromatic orb\",\"thunderwave\",\"flaming sphere\",\"kinetic jaunt\",\"haste\",\"water walk\",\"freedom of movement\",\"wall of fire\",\"cone of cold\",\"conjure elemental\"]))}"
+        },
+        "My background feature adds extra spells to the spell list(s) of my spellcasting class(es): Chromatic Orb, Thunderwave, Flaming Sphere, Kinetic Jaunt, Haste, Water Walk, Freedom of Movement, Wall of Fire, Cone of Cold, and Conjure Elemental."
+      ]
+    },
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Strixhaven Initiate [Prismari]\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Strixhaven Initiate [Prismari]\")}"
+    }
+  },
+  {
+    "_key": "quandrix initiate",
+    "description": "I gain the Strixhaven Initiate feat for the Quandrix college. In addition, I add the following spells to the spell list of all my spellcasting classes, if any: Entangle, Guiding Bolt, Enlarge/Reduce, Vortex Warp, Aura of Vitality, Haste, Control Water, Freedom of Movement, Circle of Power, and Passwall.",
+    "source": [
+      [
+        "SCC",
+        33
+      ]
+    ],
+    "calcChanges": {
+      "spellList": [
+        {
+          "_type": "function",
+          "body": "function(e,a,t){!ClassList[a]||e.spells||e.psionic||-1!==t.indexOf(\"bonus\")&&(e.school||!e.class||-1===e.class.indexOf(a)&&\"fighter\"!==a)||(e.extraspells=e.extraspells.concat([\"entangle\",\"guiding bolt\",\"enlarge/reduce\",\"vortex warp\",\"aura of vitality\",\"haste\",\"control water\",\"freedom of movement\",\"circle of power\",\"passwall\"]))}"
+        },
+        "My background feature adds extra spells to the spell list(s) of my spellcasting class(es): Entangle, Guiding Bolt, Enlarge/Reduce, Vortex Warp, Aura of Vitality, Haste, Control Water, Freedom of Movement, Circle of Power, and Passwall."
+      ]
+    },
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Strixhaven Initiate [Quandrix]\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Strixhaven Initiate [Quandrix]\")}"
+    }
+  },
+  {
+    "_key": "silverquill initiate",
+    "description": "I gain the Strixhaven Initiate feat for the Silverquill college. In addition, I add the following spells to the spell list of all my spellcasting classes, if any: Dissonant Whispers, Silvery Barbs, Calm Emotions, Darkness, Beacon of Hope, Daylight, Compulsion, Confusion, Dominate Person, and Rary's Telepathic Bond.",
+    "source": [
+      [
+        "SCC",
+        35
+      ]
+    ],
+    "calcChanges": {
+      "spellList": [
+        {
+          "_type": "function",
+          "body": "function(e,a,t){!ClassList[a]||e.spells||e.psionic||-1!==t.indexOf(\"bonus\")&&(e.school||!e.class||-1===e.class.indexOf(a)&&\"fighter\"!==a)||(e.extraspells=e.extraspells.concat([\"dissonant whispers\",\"silvery barbs\",\"calm emotions\",\"darkness\",\"beacon of hope\",\"daylight\",\"compulsion\",\"confusion\",\"dominate person\",\"rary's telepathic bond\"]))}"
+        },
+        "My background feature adds extra spells to the spell list(s) of my spellcasting class(es): Dissonant Whispers, Silvery Barbs, Calm Emotions, Darkness, Beacon of Hope, Daylight, Compulsion, Confusion, Dominate Person, and Rary's Telepathic Bond."
+      ]
+    },
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Strixhaven Initiate [Silverquill]\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Strixhaven Initiate [Silverquill]\")}"
+    }
+  },
+  {
+    "_key": "witherbloom initiate",
+    "description": "I gain the Strixhaven Initiate feat for the Witherbloom college. In addition, I add the following spells to the spell list of all my spellcasting classes, if any: Cure Wounds, Inflict Wounds, Lesser Restoration, Wither and Bloom, Revivify, Vampiric Touch, Blight, Death Ward, Antilife Shell, and Greater Restoration.",
+    "source": [
+      [
+        "SCC",
+        36
+      ]
+    ],
+    "calcChanges": {
+      "spellList": [
+        {
+          "_type": "function",
+          "body": "function(e,a,t){!ClassList[a]||e.spells||e.psionic||-1!==t.indexOf(\"bonus\")&&(e.school||!e.class||-1===e.class.indexOf(a)&&\"fighter\"!==a)||(e.extraspells=e.extraspells.concat([\"cure wounds\",\"inflict wounds\",\"lesser restoration\",\"wither and bloom\",\"revivify\",\"vampiric touch\",\"blight\",\"death ward\",\"antilife shell\",\"greater restoration\"]))}"
+        },
+        "My background feature adds extra spells to the spell list(s) of my spellcasting class(es): Cure Wounds, Inflict Wounds, Lesser Restoration, Wither and Bloom, Revivify, Vampiric Touch, Blight, Death Ward, Antilife Shell, and Greater Restoration."
+      ]
+    },
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Strixhaven Initiate [Witherbloom]\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Strixhaven Initiate [Witherbloom]\")}"
+    }
+  },
+  {
+    "_key": "divine contact",
+    "description": "I am 20d6 years older than I look, thanks to time spent in the Astral Sea without aging. While in the Astral Sea, I crossed paths with a wandering deity. The encounter was brief and nonviolent, yet it made a lasting impression on me. This deity saw fit to share one secret or obscure bit of cosmic lore with me. I gain the Magic Initiate [Cleric] feat.",
+    "source": [
+      [
+        "S:AiS",
+        7
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Magic Initiate [Cleric]\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Magic Initiate [Cleric]\")}"
+    }
+  },
+  {
+    "_key": "wildspace adaptation",
+    "description": "I was raised in the void of Wildspace, home to asteroid miners, moon farmers, and other hardy folk. Life in Wildspace has toughened me to face the terrors and other challenges of the airless night and I've learned how to adapt to zero gravity. Being weightless doesn't give me disadvantage on any of my melee attack rolls and I gain the Tough feat.",
+    "source": [
+      [
+        "S:AiS",
+        8
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Tough\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Tough\")}"
+    }
+  },
+  {
+    "_key": "squire of solamnia",
+    "description": "I gain the Squire of Solamnia feat. In addition, the Knights of Solamnia provide me free, modest lodging and food at any of their fortresses or encampments.",
+    "source": [
+      [
+        "D:SotDQ",
+        0
+      ],
+      [
+        "UA:HoKR",
+        2
+      ],
+      [
+        "UA:HoK",
+        3
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Squire of Solamnia\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Squire of Solamnia\")}"
+    }
+  },
+  {
+    "_key": "initiate of high sorcery",
+    "description": "I gain the Initiate of High Sorcery feat. In addition, the Mages of High Sorcery provide me with free, modest lodging and food indefinitely at any occupied Tower of High Sorcery and for one night at the home of an organization member.",
+    "source": [
+      [
+        "D:SotDQ",
+        0
+      ],
+      [
+        "UA:HoKR",
+        3
+      ],
+      [
+        "UA:HoK",
+        4
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Initiate of High Sorcery\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Initiate of High Sorcery\")}"
+    }
+  },
+  {
+    "_key": "strike of the giants",
+    "description": "I grew up among giants or where they lived. Something about this environment—the food, water, elemental magic, or some blessing—caused me to grow to a remarkable size for my kind. I'm used to moving through a world much bigger than I, and that is reflected in my skills, attitude, and perspective on life. I gain the Strike of the Giants feat.",
+    "source": [
+      [
+        "GotG",
+        13
+      ],
+      [
+        "UA:WotM",
+        4
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Strike of the Giants\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Strike of the Giants\")}"
+    }
+  },
+  {
+    "_key": "rune shaper",
+    "description": "I've dedicated my life to studying runecraft, taught by a master rune carver or learned by poring over ancient engravings. I can tap into the supernatural power held within runes. The art of runecraft has been adopted by many outside of giant society and those often incorporate their native language among the Giant runes. I gain the Rune Shaper feat.",
+    "source": [
+      [
+        "GotG",
+        14
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Rune Shaper\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Rune Shaper\")}"
+    }
+  },
+  {
+    "_key": "planar infusion",
+    "description": "I spent a good amount of time somewhere influenced by planar forces. I'm accustomed to experiences that would leave others reeling in terror or captivated by beauty, and I'm comfortable dealing with fiends and celestials. I know where to find free, modest lodging and food in the community I grew up in. Also, I gain the Scion of the Outer Planes feat.",
+    "source": [
+      [
+        "P:AitM",
+        7
+      ],
+      [
+        "UA:WotM",
+        3
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Scion of the Outer Planes\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Scion of the Outer Planes\")}"
+    }
+  },
+  {
+    "_key": "conviction",
+    "description": "I subscribe to a distinct philosophy that seeks to understand the nature of the planes or a hidden truth of the multiverse and spread my philosophy. I am part of a network of like-minded believers who provide me free, modest lodging and food at any of their holding or the homes of other faction members. Also, I gain the Scion of the Outer Planes feat.",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ],
+      [
+        "UA:WotM",
+        4
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Scion of the Outer Planes\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Scion of the Outer Planes\")}"
+    }
+  },
+  {
+    "_key": "fortune's favor",
+    "description": "I have unexpected good fortune in life, caused by something like a genie who granted me wishes, extraordinary luck during a game, me honing my skills to endure a supernatural trial, or some other force that transformed my life. This boon is reflected in my choice of one free feat: Lucky, Magic Initiate, or Skilled.",
+    "source": [
+      [
+        "BoMT",
+        57
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){var e,a;IsNotImport&&(a=[\"lucky\",\"magic initiate\",\"skilled\"].filter(e=>-1===CurrentFeats.known.indexOf(e))).length&&(a=1===a.length?a[0]:(e=a.map(e=>FeatsList[e].name),a[AskUserOptions(\"Fortune's Favor bonus feat\",\"The Fortune's Favor background feature offers a choice of a bonus feat.\",e,\"radio\",!0,\"You can change what you select here by changing the feat selection in the corresponding section of the sheet.\\nBe aware that if you change the selected feat and remove this background feature, the changed feat will not automatically be removed.\",!0)]),AddFeat(FeatsList[a].name),SetFeatureChoice(\"background feature\",\"fortune's favor\",!1,a))}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){var e=GetFeatureChoice(\"background feature\",\"fortune's favor\");e&&RemoveFeat(e)}"
+    }
+  },
+  {
+    "_key": "still standing",
+    "description": "I have weathered ruinous misfortune in my life and I possess hidden reserves because of this. Possibly I've had to keep my senses sharp, had to redouble my efforts to reclaim what is mine, had to stoically persevered through it, or experienced something else transformative. How I've dealt with this is reflected in my choice of one free feat: Alert, Skilled, or Tough.",
+    "source": [
+      [
+        "BoMT",
+        58
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){var e,a;IsNotImport&&(a=[\"alert\",\"skilled\",\"tough\"].filter(e=>-1===CurrentFeats.known.indexOf(e))).length&&(a=1===a.length?a[0]:(e=a.map(e=>FeatsList[e].name),a[AskUserOptions(\"Still Standing bonus feat\",\"The Still Standing background feature offers a choice of a bonus feat.\",e,\"radio\",!0,\"You can change what you select here by changing the feat selection in the corresponding section of the sheet.\\nBe aware that if you change the selected feat and remove this background feature, the changed feat will not automatically be removed.\",!0)]),AddFeat(FeatsList[a].name),SetFeatureChoice(\"background feature\",\"still standing\",!1,a))}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){var e=GetFeatureChoice(\"background feature\",\"still standing\");e&&RemoveFeat(e)}"
+    }
+  },
+  {
+    "_key": "rune carver apprentice",
+    "description": "I've dedicated my life to studying the practice of runecraft. Whether I was personally taught by a master rune carver or learned by poring over engravings in ancient ruins, I understand how to tap into the supernatural power held within runes. Also, I gain the Rune Carver Apprentice feat.",
+    "source": [
+      [
+        "UA:WotM",
+        5
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(){AddFeat(\"Rune Carver Apprentice\")}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(){RemoveFeat(\"Rune Carver Apprentice\")}"
+    }
+  },
+  {
     "_key": "magic initiate (cleric)",
     "description": "",
     "source": [
@@ -232,155 +1925,5 @@
       "_type": "function",
       "body": "function() {\r\n        RemoveFeat(\"Savage Attacker [Origin]\");\r\n    }"
     }
-  },
-  {
-    "_key": "ballad of the grinning fool",
-    "description": "A member of the Golden Grin will find me and give shelter to me and my companions if I play the Ballad of the Grinning Fool in a major tavern or inn in a large city. This shelter might be discontinued if it becomes too dangerous to hide me. I must use the ballad with caution, for those who know the ballad can be traitors, counterspies, or agents of tyranny.",
-    "source": [
-      [
-        "W",
-        200
-      ]
-    ]
-  },
-  {
-    "_key": "shadow network",
-    "description": "I can use the Volstrucker shadow network to communicate with other members over long distances. I can write a letter in special arcane ink (10 gp per page), address it to another member of the Volstrucker, and cast it into a fire. It will burn and materialize whole again on the person of the addressee. This special ink is the same as used for a wizard's spellbook.",
-    "source": [
-      [
-        "W",
-        202
-      ]
-    ]
-  },
-  {
-    "_key": "inheritor",
-    "description": "I'm the clear inheritor of a famed legacy, my ancestor or mentor. I've inherited a token that marks me as their inheritor. Revealing my legacy lets me swiftly learn the local opinion of my predecessor, if they heard of it. As rumors spread swiftly, locals will consider me either a hero or a threat. Heroes are welcomed, while threats are encouraged to leave.",
-    "source": [
-      [
-        "VRGtR",
-        31
-      ],
-      [
-        "ALbackground",
-        0
-      ]
-    ]
-  },
-  {
-    "_key": "mist wanderer",
-    "description": "The Mists whisper to me and guide me through. I immediately know if an object I'm touching is a Mist talisman, a nonmagical object that resonates with the domain where it originated, allowing the creature holding it to find a path to that domain. I recognize where the talisman originates from if I have been to its domain of origin.",
-    "source": [
-      [
-        "VRGtR",
-        31
-      ],
-      [
-        "ALbackground",
-        0
-      ]
-    ]
-  },
-  {
-    "_key": "spirit medium",
-    "description": "A fateful experience made me believe I'm aligned with spirits and can serve as a conduit for their insights and goals. I have advantage on Arcana and Religion check to remember or research information about spirits and the afterlife. I have and am proficient with a device I made for communing with otherworldly forces (e.g. a spirit-board or tarokka deck).",
-    "source": [
-      [
-        "VRGtR",
-        31
-      ],
-      [
-        "ALbackground",
-        0
-      ]
-    ]
-  },
-  {
-    "_key": "trauma survivor",
-    "description": "I faced something specifically traumatic and survived. Now people view me as an expert on it and can help others make it through. I'm aware of nonmagical recovery techniques, common resources, and misinformation. I know how to speak to sympathetic doctors, clergy, and leaders to can convince them to shelter one other than myself up to one month.",
-    "source": [
-      [
-        "VRGtR",
-        32
-      ],
-      [
-        "ALbackground",
-        0
-      ]
-    ]
-  },
-  {
-    "_key": "traveler",
-    "description": "I come from another place that others couldn't begin to understand. I can find a spot to hide, rest, or recuperate among sympathetic trading caravans, itinerant families, or displaced groups, so long as I present no visible danger. Such groups will hide me, but won't risk their lives for me. I can tell if an object I can see and touch is from my homeland.",
-    "source": [
-      [
-        "VRGtR",
-        32
-      ],
-      [
-        "ALbackground",
-        0
-      ]
-    ]
-  },
-  {
-    "_key": "heart of darkness",
-    "description": "Those who look into my eyes can see that I have faced unimaginable horror and that I am no stranger to darkness. Though they might fear me, commoners will extend me every courtesy and do their utmost to help. Unless I have shown myself to be a danger to them, they will even take up arms to fight with me, should I find myself facing an enemy alone.",
-    "source": [
-      [
-        "CoS",
-        209
-      ],
-      [
-        "VRGtR",
-        34
-      ],
-      [
-        "ALbackground",
-        0
-      ]
-    ]
-  },
-  {
-    "_key": "official inquiry",
-    "description": "Through a combination of fast-talking, determination, and official-looking documentation, I can gain access to a place or an individual related to a crime I'm investigating. Those who aren't involved in my investigation avoid impeding me or pass along my requests. Local law enforcement has firm opinions, viewing me as either a nuisance or one of their own.",
-    "source": [
-      [
-        "VRGtR",
-        35
-      ],
-      [
-        "ALbackground",
-        0
-      ]
-    ]
-  },
-  {
-    "_key": "feywild connection",
-    "description": "My mannerisms and knowledge of fey customs are recognized by natives of the Feywild, who see me as one of their own. Because of this, friendly Fey creatures are inclined to come to my aid if I am lost or need help in the Feywild.",
-    "source": [
-      [
-        "WBtW",
-        11
-      ],
-      [
-        "ALbackground",
-        0
-      ]
-    ]
-  },
-  {
-    "_key": "carnival fixture",
-    "description": "The Witchlight Carnival provides me with free, modest lodging and food. In addition, I may wander about the carnival and partake of its many wonders at no cost to me, provided I don't disrupt its shows or cause any other trouble.",
-    "source": [
-      [
-        "WBtW",
-        11
-      ],
-      [
-        "ALbackground",
-        0
-      ]
-    ]
   }
 ]

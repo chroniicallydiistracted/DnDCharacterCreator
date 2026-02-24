@@ -1,5 +1,1278 @@
 [
   {
+    "_key": "entertainer-gladiator",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "gladiator",
+      "flags": "i"
+    },
+    "name": "Gladiator",
+    "source": [
+      [
+        "P",
+        131
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "equipright": [
+      [
+        "Costume",
+        "",
+        4
+      ],
+      [
+        "Favor of an admirer",
+        "",
+        ""
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ],
+      [
+        "Inexpensive, unusual weapon",
+        "",
+        ""
+      ]
+    ],
+    "feature": "Are You Entertained?",
+    "extra": "",
+    "_parentBackground": "entertainer",
+    "_variantKey": "gladiator"
+  },
+  {
+    "_key": "guild artisan-guild merchant",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*guild)(?=.*merchant).*$",
+      "flags": "i"
+    },
+    "name": "Guild Merchant",
+    "source": [
+      [
+        "P",
+        133
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "equipleft": [
+      [
+        "Letter of introduction from guild",
+        "",
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ],
+      [
+        "Cart",
+        "",
+        ""
+      ],
+      [
+        "Mule",
+        "",
+        ""
+      ]
+    ],
+    "extra": [
+      "Select a Guild Business",
+      "Traders",
+      "Caravan masters",
+      "Shopkeepers"
+    ],
+    "toolProfs": [
+      "Navigator's tools (or language)"
+    ],
+    "_parentBackground": "guild artisan",
+    "_variantKey": "guild merchant"
+  },
+  {
+    "_key": "noble-knight",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*order)(?=.*knight).*$",
+      "flags": "i"
+    },
+    "name": "Knight",
+    "source": [
+      [
+        "P",
+        136
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ],
+      [
+        "Signet ring",
+        "",
+        ""
+      ],
+      [
+        "Purse (with coins)",
+        "",
+        1
+      ],
+      [
+        "Banner or token from devoted love",
+        "",
+        ""
+      ]
+    ],
+    "feature": "Retainers",
+    "_parentBackground": "noble",
+    "_variantKey": "knight"
+  },
+  {
+    "_key": "sailor-pirate",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "pirate",
+      "flags": "i"
+    },
+    "name": "Pirate",
+    "source": [
+      [
+        "P",
+        139
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "feature": "Bad Reputation",
+    "_parentBackground": "sailor",
+    "_variantKey": "pirate"
+  },
+  {
+    "_key": "soldier-city watch",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*city)(?=.*(watch|guard)).*$",
+      "flags": "i"
+    },
+    "name": "City Watch",
+    "source": [
+      [
+        "S",
+        145
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "Athletics",
+      "Insight"
+    ],
+    "equipright": [
+      [
+        "Uniform of my unit",
+        "",
+        3
+      ],
+      [
+        "Insignia of rank",
+        "",
+        ""
+      ],
+      [
+        "Horn",
+        "",
+        2
+      ],
+      [
+        "Manacles",
+        "",
+        6
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Watcher's Eye",
+    "extra": "",
+    "toolProfs": "",
+    "languageProfs": [
+      2
+    ],
+    "lifestyle": "modest",
+    "_parentBackground": "soldier",
+    "_variantKey": "city watch"
+  },
+  {
+    "_key": "guild artisan-clan crafter",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*clan)(?=.*(crafter|smith|builder|miner)).*$",
+      "flags": "i"
+    },
+    "name": "Clan Crafter",
+    "source": [
+      [
+        "S",
+        145
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "History",
+      "Insight"
+    ],
+    "equipleft": [
+      [
+        "Set of artisan's tools",
+        "",
+        ""
+      ],
+      [
+        "Maker's mark chisel",
+        "",
+        0.5
+      ]
+    ],
+    "equipright": [
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ],
+      [
+        "Belt pouch (with coins and 10 gp gem)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Respect of the Stout Folk",
+    "extra": "",
+    "languageProfs": [
+      "Dwarvish"
+    ],
+    "lifestyle": "comfortable",
+    "_parentBackground": "guild artisan",
+    "_variantKey": "clan crafter"
+  },
+  {
+    "_key": "sage-cloistered scholar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*cloistered)(?=.*scholar).*$",
+      "flags": "i"
+    },
+    "name": "Cloistered Scholar",
+    "source": [
+      [
+        "S",
+        146
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "History"
+    ],
+    "skillstxt": "History and choose one from Arcana, Nature, and Religion",
+    "gold": 10,
+    "equipleft": [
+      [
+        "Ink, 1 ounce bottle of",
+        1,
+        ""
+      ],
+      [
+        "Quill",
+        "",
+        ""
+      ],
+      [
+        "Parchment, sheets of",
+        1,
+        ""
+      ],
+      [
+        "Small penknife",
+        "",
+        0.5
+      ],
+      [
+        "Borrowed book",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Scholar's robes",
+        "",
+        3
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Library Access",
+    "extra": [
+      "Name your Library"
+    ],
+    "languageProfs": [
+      2
+    ],
+    "lifestyle": "modest",
+    "_parentBackground": "sage",
+    "_variantKey": "cloistered scholar"
+  },
+  {
+    "_key": "guild artisan-courtier",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "courtier",
+      "flags": "i"
+    },
+    "name": "Courtier",
+    "source": [
+      [
+        "S",
+        146
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "Insight",
+      "Persuasion"
+    ],
+    "gold": 5,
+    "equipleft": "",
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        3
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Court Functionary",
+    "extra": "",
+    "toolProfs": "",
+    "languageProfs": [
+      2
+    ],
+    "lifestyle": "comfortable",
+    "_parentBackground": "guild artisan",
+    "_variantKey": "courtier"
+  },
+  {
+    "_key": "acolyte-faction agent",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*(faction|harper|order of the gauntlet|emerald enclave|lord.?s alliance|zhentarim)).*$",
+      "flags": "i"
+    },
+    "name": "Faction Agent",
+    "source": [
+      [
+        "S",
+        147
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "Insight"
+    ],
+    "skillstxt": "Insight and choose one Intelligence, Wisdom, or Charisma skill",
+    "gold": 15,
+    "equipleft": [
+      [
+        "Copy of seminal faction's text",
+        "",
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Common clothes",
+        "",
+        3
+      ],
+      [
+        "Badge or emblem of faction",
+        "",
+        ""
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Safe Haven",
+    "extra": [
+      "Select a Faction",
+      "The Harpers",
+      "The Order of the Gauntlet",
+      "The Emerald Enclave",
+      "The Lord's Alliance",
+      "The Zhentarim"
+    ],
+    "languageProfs": [
+      2
+    ],
+    "lifestyle": "modest",
+    "_parentBackground": "acolyte",
+    "_variantKey": "faction agent"
+  },
+  {
+    "_key": "folk hero-inheritor",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "inheritor",
+      "flags": "i"
+    },
+    "name": "Inheritor",
+    "source": [
+      [
+        "S",
+        150
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "Survival"
+    ],
+    "skillstxt": "Survival and choose one from Arcana, History, and Religion",
+    "gold": 15,
+    "equipleft": [
+      [
+        "Gaming set or musical instrument",
+        "",
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ],
+      [
+        "The inheritance",
+        "",
+        ""
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Inheritance",
+    "extra": [
+      "Select an Inheritance",
+      "Document such as a map, letter, or journal",
+      "A trinket",
+      "Article of clothing",
+      "Piece of jewelry",
+      "Arcane book or formulary",
+      "Written story, song, poem, or secret",
+      "Tattoo or other body marking"
+    ],
+    "toolProfs": [
+      [
+        "Gaming set or musical instrument",
+        1
+      ]
+    ],
+    "languageProfs": [
+      1
+    ],
+    "lifestyle": "wealthy",
+    "_parentBackground": "folk hero",
+    "_variantKey": "inheritor"
+  },
+  {
+    "_key": "soldier-investigator",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "investigator",
+      "flags": "i"
+    },
+    "name": "Investigator",
+    "source": [
+      [
+        "S",
+        145
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "Insight",
+      "Investigation"
+    ],
+    "equipright": [
+      [
+        "Uniform",
+        "",
+        3
+      ],
+      [
+        "Insignia of rank",
+        "",
+        ""
+      ],
+      [
+        "Horn",
+        "",
+        2
+      ],
+      [
+        "Manacles",
+        "",
+        6
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Watcher's Eye",
+    "extra": "",
+    "toolProfs": "",
+    "languageProfs": [
+      2
+    ],
+    "_parentBackground": "soldier",
+    "_variantKey": "investigator"
+  },
+  {
+    "_key": "soldier-knight of the order",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*knight)(?=.*order).*$",
+      "flags": "i"
+    },
+    "name": "Knight of the Order",
+    "source": [
+      [
+        "S",
+        151
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "Persuasion"
+    ],
+    "skillstxt": "Persuasion and choose one from Arcana, History, Nature, and Religion",
+    "equipright": [
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ],
+      [
+        "Signet, banner, or seal of rank",
+        "",
+        ""
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Knightly Regard",
+    "extra": [
+      "Name your Knightly Order"
+    ],
+    "toolProfs": [
+      [
+        "Gaming set or musical instrument",
+        1
+      ]
+    ],
+    "languageProfs": [
+      1
+    ],
+    "lifestyle": "comfortable",
+    "_parentBackground": "soldier",
+    "_variantKey": "knight of the order"
+  },
+  {
+    "_key": "soldier-mercenary veteran",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*mercenary)(?=.*(veteran|soldier)).*$",
+      "flags": "i"
+    },
+    "name": "Mercenary Veteran",
+    "source": [
+      [
+        "S",
+        152
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "Athletics",
+      "Persuasion"
+    ],
+    "equipright": [
+      [
+        "Uniform of my company",
+        "",
+        4
+      ],
+      [
+        "Insignia of rank",
+        "",
+        ""
+      ],
+      [
+        "Gaming set",
+        "",
+        ""
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Mercenary Life",
+    "extra": [
+      "Name your Mercenary Company"
+    ],
+    "lifestyle": "modest",
+    "_parentBackground": "soldier",
+    "_variantKey": "mercenary veteran"
+  },
+  {
+    "_key": "criminal-urban bounty hunter",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*urban)(?=.*bounty)(?=.*hunter).*$",
+      "flags": "i"
+    },
+    "name": "Urban Bounty Hunter",
+    "source": [
+      [
+        "S",
+        153
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": "",
+    "skillstxt": "Choose two from Deception, Insight, Persuasion, and Stealth",
+    "gold": 20,
+    "equipright": [
+      [
+        "Appropriate Clothes",
+        "",
+        3
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Ear to the Ground",
+    "extra": "",
+    "toolProfs": [
+      [
+        "Gaming set, instrument, or thieves' tools",
+        2
+      ]
+    ],
+    "lifestyle": "poor",
+    "_parentBackground": "criminal",
+    "_variantKey": "urban bounty hunter"
+  },
+  {
+    "_key": "outlander-uthgardt tribe member",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(uthgardt|barbarian|nomad|clan))(?=.*tribe)(?=.*member).*$",
+      "flags": "i"
+    },
+    "name": "Uthgardt Tribe Member",
+    "source": [
+      [
+        "S",
+        153
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "equipright": [
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ],
+      [
+        "Hunting trap",
+        "",
+        25
+      ],
+      [
+        "Totemic token or tattoos of tribal totem",
+        "",
+        ""
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Uthgardt Heritage",
+    "extra": "",
+    "toolProfs": [
+      [
+        "Artisan's tools or musical instrument",
+        1
+      ]
+    ],
+    "languageProfs": [
+      1
+    ],
+    "lifestyle": "poor",
+    "_parentBackground": "outlander",
+    "_variantKey": "uthgardt tribe member"
+  },
+  {
+    "_key": "noble-waterdhavian noble",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(waterdhavian|waterdeep))(?=.*noble).*$",
+      "flags": "i"
+    },
+    "name": "Waterdhavian Noble",
+    "source": [
+      [
+        "S",
+        154
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "gold": 20,
+    "equipleft": [
+      [
+        "Scroll of pedigree",
+        "",
+        ""
+      ],
+      [
+        "Skin of fine zzar or wine",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ],
+      [
+        "Signet ring or brooch",
+        "",
+        ""
+      ],
+      [
+        "Purse (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Kept in Style",
+    "toolProfs": [
+      [
+        "Gaming set or musical instrument",
+        1
+      ]
+    ],
+    "languageProfs": [
+      1
+    ],
+    "lifestyle": "wealthy",
+    "_parentBackground": "noble",
+    "_variantKey": "waterdhavian noble"
+  },
+  {
+    "_key": "house agent-deneith",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*deneith).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Deneith",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Deneith",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      [
+        "Gaming set",
+        1
+      ],
+      "Vehicles (land)"
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "deneith"
+  },
+  {
+    "_key": "house agent-ghallanda",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*ghallanda).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Ghallanda",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Ghallanda",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      "Brewer's supplies",
+      "Cook's utensils"
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "ghallanda"
+  },
+  {
+    "_key": "house agent-jorasco",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*jorasco).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Jorasco",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Jorasco",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      "Alchemist's supplies",
+      "Herbalism kit"
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "jorasco"
+  },
+  {
+    "_key": "house agent-kundarak",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*kundarak).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Kundarak",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Kundarak",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      [
+        "Thieves' tools",
+        "Dex"
+      ],
+      "Tinker's tools"
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "kundarak"
+  },
+  {
+    "_key": "house agent-lyrandar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*lyrandar).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Lyrandar",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Lyrandar",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      "Navigator's tools",
+      "Vehicles (sea/air)"
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "lyrandar"
+  },
+  {
+    "_key": "house agent-medani",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*medani).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Medani",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Medani",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      "Disguise kit",
+      [
+        "Thieves' tools",
+        "Dex"
+      ]
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "medani"
+  },
+  {
+    "_key": "house agent-orien",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*orien).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Orien",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Orien",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      [
+        "Gaming set",
+        1
+      ],
+      "Vehicles (land)"
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "orien"
+  },
+  {
+    "_key": "house agent-phiarlan",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*phiarlan).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Phiarlan",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Phiarlan",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      "Disguise kit",
+      [
+        "Musical instrument",
+        1
+      ]
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "phiarlan"
+  },
+  {
+    "_key": "house agent-sivis",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*sivis).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Sivis",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Sivis",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      "Calligrapher's tools",
+      "Forgery kit"
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "sivis"
+  },
+  {
+    "_key": "house agent-tharashk",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*tharashk).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Tharashk",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Tharashk",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      [
+        "Gaming set",
+        1
+      ],
+      [
+        "Thieves' tools",
+        "Dex"
+      ]
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "tharashk"
+  },
+  {
+    "_key": "house agent-thuranni",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*thuranni).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Thuranni",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Thuranni",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      [
+        "Musical instrument",
+        1
+      ],
+      "Poisoner's kit"
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "thuranni"
+  },
+  {
+    "_key": "house agent-vadalis",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*vadalis).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Vadalis",
+    "source": [
+      [
+        "E:RLW",
+        53
+      ],
+      [
+        "WGtE",
+        94
+      ]
+    ],
+    "equipleft": [
+      [
+        "Signet ring of house Vadalis",
+        "",
+        ""
+      ]
+    ],
+    "toolProfs": [
+      "Herbalism kit",
+      "Vehicles (land)"
+    ],
+    "_parentBackground": "house agent",
+    "_variantKey": "vadalis"
+  },
+  {
     "_key": "acolyte-luxonborn",
     "regExpSearch": {
       "_type": "RegExp",
@@ -91,5 +1364,401 @@
     "extra": "",
     "_parentBackground": "criminal",
     "_variantKey": "augen trust"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of athar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*athar).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Athar",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Religion"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Athar style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of athar"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of bleak cabal",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*bleak cabal).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Bleak Cabal",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Insight"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Bleak Cabal style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of bleak cabal"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of doomguard",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*doomguard).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Doomguard",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Nature"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Doomguard style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of doomguard"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of fated",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*fated).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Fated",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Intimidation"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Fated style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of fated"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of fraternity of order",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*fraternity of order).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Fraternity of Order",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "History"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Fraternity of Order style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of fraternity of order"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of hands of havoc",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*hands of havoc).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Hands of Havoc",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Stealth"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Hands of Havoc style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of hands of havoc"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of harmonium",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*harmonium).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Harmonium",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Perception"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Harmonium style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of harmonium"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of heralds of dust",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*heralds of dust).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Heralds of Dust",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Medicine"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Heralds of Dust style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of heralds of dust"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of mercykillers",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*mercykillers).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Mercykillers",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Survival"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Mercykillers style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of mercykillers"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of mind's eye",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*mind's eye).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Mind's Eye",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Persuasion"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Mind's Eye style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of mind's eye"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of society of sensation",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*society of sensation).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Society of Sensation",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Performance"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Society of Sensation style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of society of sensation"
+  },
+  {
+    "_key": "planar philosopher-planar philosopher of transcendent order",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*planar)(?=.*philosopher)(?=.*transcendent order).*$",
+      "flags": "i"
+    },
+    "name": "Planar Philosopher of Transcendent Order",
+    "source": [
+      [
+        "P:AitM",
+        8
+      ]
+    ],
+    "skills": [
+      "Arcana",
+      "Athletics"
+    ],
+    "equipright": [
+      [
+        "Common clothes in Transcendent Order style",
+        "",
+        3
+      ],
+      [
+        "Pouch (with coins from different planes)",
+        "",
+        1
+      ]
+    ],
+    "_parentBackground": "planar philosopher",
+    "_variantKey": "planar philosopher of transcendent order"
   }
 ]

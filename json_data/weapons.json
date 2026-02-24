@@ -1599,69 +1599,30 @@
     "dc": true
   },
   {
-    "_key": "unarmed strike dc",
+    "_key": "thorn whip",
     "regExpSearch": {
       "_type": "RegExp",
-      "source": "\\b(fists?|arms?|legs?|foot|feet|claws?|talons?)\\b|^(?=.*unarmed)(?=.*strike).*$|^(?=.*martial)(?=.*arts).*$|^(?=.*tavern)(?=.*brawler).*$",
+      "source": "^(?=.*thorn)(?=.*whip).*$",
       "flags": "i"
     },
-    "name": "Unarmed strike (DC)",
-    "list": "melee",
-    "source": [
-      [
-        "SRD24",
-        190
-      ],
-      [
-        "P24",
-        377
-      ]
-    ],
-    "ability": 1,
-    "type": "Natural",
-    "damage": [
-      "Str save",
-      "",
-      "Shove/Grapple"
-    ],
-    "range": "Melee",
-    "description": "Up to 1 size larger; Push 5 ft or prone or grappled condition; Can damage instead (with attack roll)",
-    "monkweapon": true,
-    "abilitytodamage": false,
-    "dc": true
-  },
-  {
-    "_key": "musket",
-    "name": "Musket",
-    "infoname": "Musket [500 gp]",
+    "name": "Thorn Whip",
     "source": [
       [
         "P24",
-        215
+        333
       ]
     ],
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "musket",
-      "flags": "i"
-    },
-    "type": "Martial",
-    "ability": 2,
-    "abilitytodamage": true,
+    "list": "spell",
+    "ability": 5,
+    "type": "Cantrip",
     "damage": [
-      1,
-      12,
+      "C",
+      6,
       "piercing"
     ],
-    "range": "40/120 ft",
-    "description": "Ammunition (Bullet, Firearm), Loading, Two-Handed; Slow",
-    "list": [
-      "ranged",
-      "firearm"
-    ],
-    "weight": 10,
-    "ammo": "renaissance bullet",
-    "monkweapon": false
+    "range": "Melee, 30 ft",
+    "description": "Melee spell attack, pull target up to 10 ft closer",
+    "abilitytodamage": false
   },
   {
     "_key": "pistol",
@@ -1697,6 +1658,1256 @@
     "monkweapon": false
   },
   {
+    "_key": "musket",
+    "name": "Musket",
+    "infoname": "Musket [500 gp]",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "musket",
+      "flags": "i"
+    },
+    "type": "Martial",
+    "ability": 2,
+    "abilitytodamage": true,
+    "damage": [
+      1,
+      12,
+      "piercing"
+    ],
+    "range": "40/120 ft",
+    "description": "Ammunition (Bullet, Firearm), Loading, Two-Handed; Slow",
+    "list": [
+      "ranged",
+      "firearm"
+    ],
+    "weight": 10,
+    "ammo": "renaissance bullet",
+    "monkweapon": false
+  },
+  {
+    "_key": "pistol automatic",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*pistol)(?=.*automatic).*$",
+      "flags": "i"
+    },
+    "name": "Automatic pistol",
+    "nameAlt": [
+      "Pistol, Automatic"
+    ],
+    "source": [
+      [
+        "D",
+        268
+      ]
+    ],
+    "list": "firearm",
+    "ability": 2,
+    "type": "Martial",
+    "damage": [
+      2,
+      6,
+      "piercing"
+    ],
+    "range": "50/150 ft",
+    "weight": 3,
+    "description": "Ammunition, reload (15 shots)",
+    "abilitytodamage": true,
+    "ammo": "modern bullet",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "revolver",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*revolver).*$",
+      "flags": "i"
+    },
+    "name": "Revolver",
+    "source": [
+      [
+        "D24",
+        73
+      ]
+    ],
+    "list": "firearm",
+    "ability": 2,
+    "type": "Martial",
+    "damage": [
+      2,
+      8,
+      "piercing"
+    ],
+    "range": "40/120 ft",
+    "weight": 3,
+    "description": "Ammunition, reload (6 shots); Sap",
+    "abilitytodamage": true,
+    "ammo": "modern bullet",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "rifle hunting",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(((?=.*hunting)(?=.*rifle))|((?!.*(automatic|laser|antimatter))(?=.*\\brifles?\\b))).*$",
+      "flags": "i"
+    },
+    "name": "Hunting rifle",
+    "nameAlt": [
+      "Rifle, Hunting"
+    ],
+    "source": [
+      [
+        "D24",
+        73
+      ]
+    ],
+    "list": "firearm",
+    "ability": 2,
+    "type": "Martial",
+    "damage": [
+      2,
+      10,
+      "piercing"
+    ],
+    "range": "80/240 ft",
+    "weight": 8,
+    "description": "Ammunition, reload (5 shots), two-handed; Slow",
+    "abilitytodamage": true,
+    "ammo": "modern bullet",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "rifle automatic",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*automatic)(?=.*rifle).*$",
+      "flags": "i"
+    },
+    "name": "Automatic rifle",
+    "nameAlt": [
+      "Rifle, Automatic"
+    ],
+    "source": [
+      [
+        "D24",
+        73
+      ]
+    ],
+    "list": "firearm",
+    "ability": 2,
+    "type": "Martial",
+    "damage": [
+      2,
+      8,
+      "piercing"
+    ],
+    "range": "80/240 ft",
+    "weight": 8,
+    "description": "Ammunition, reload (30 shots), two-handed, burst fire; Slow",
+    "abilitytodamage": true,
+    "ammo": "modern bullet",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "shotgun",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*shotgun).*$",
+      "flags": "i"
+    },
+    "name": "Shotgun",
+    "source": [
+      [
+        "D24",
+        73
+      ]
+    ],
+    "list": "firearm",
+    "ability": 2,
+    "type": "Martial",
+    "damage": [
+      2,
+      8,
+      "piercing"
+    ],
+    "range": "30/90 ft",
+    "weight": 7,
+    "description": "Ammunition, reload (2 shots); Push",
+    "abilitytodamage": true,
+    "ammo": "modern bullet",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "laser pistol",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*laser)(?=.*pistol).*$",
+      "flags": "i"
+    },
+    "name": "Laser pistol",
+    "nameAlt": [
+      "Pistol, Laser"
+    ],
+    "source": [
+      [
+        "D24",
+        73
+      ]
+    ],
+    "list": "firearm",
+    "ability": 2,
+    "type": "Martial",
+    "damage": [
+      3,
+      6,
+      "radiant"
+    ],
+    "range": "40/120 ft",
+    "weight": 2,
+    "description": "Ammunition, reload (50 shots); Vex",
+    "abilitytodamage": true,
+    "ammo": "energy cell",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "antimatter rifle",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*antimatter)(?=.*rifle).*$",
+      "flags": "i"
+    },
+    "name": "Antimatter rifle",
+    "nameAlt": [
+      "Rifle, Antimatter"
+    ],
+    "source": [
+      [
+        "D24",
+        73
+      ]
+    ],
+    "list": "firearm",
+    "ability": 2,
+    "type": "Martial",
+    "damage": [
+      6,
+      8,
+      "necrotic"
+    ],
+    "range": "120/360 ft",
+    "weight": 10,
+    "description": "Ammunition, reload (2 shots), two-handed; Sap",
+    "abilitytodamage": true,
+    "ammo": "energy cell",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "laser rifle",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*laser)(?=.*rifle).*$",
+      "flags": "i"
+    },
+    "name": "Laser rifle",
+    "nameAlt": [
+      "Rifle, Laser"
+    ],
+    "source": [
+      [
+        "D24",
+        73
+      ]
+    ],
+    "list": "firearm",
+    "ability": 2,
+    "type": "Martial",
+    "damage": [
+      3,
+      8,
+      "radiant"
+    ],
+    "range": "100/300 ft",
+    "weight": 7,
+    "description": "Ammunition, reload (30 shots), two-handed; Slow",
+    "abilitytodamage": true,
+    "ammo": "energy cell",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "bomb, renaissance",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*bomb)(?=.*renaissance).*$",
+      "flags": "i"
+    },
+    "name": "Bomb, renaissance",
+    "source": [
+      [
+        "D",
+        267
+      ]
+    ],
+    "list": "explosive",
+    "ability": 0,
+    "type": "Explosive",
+    "damage": [
+      3,
+      6,
+      "fire"
+    ],
+    "range": "60 ft",
+    "weight": 1,
+    "description": "Dex save for all within 5-ft radius",
+    "abilitytodamage": false,
+    "modifiers": [
+      4,
+      ""
+    ],
+    "dc": true,
+    "ammo": "bomb",
+    "isNotWeapon": true,
+    "isAlwaysProf": false,
+    "tooltip": "As an action, a character can light this bomb and throw it at a point up to 60 ft away. Each creature within 5 ft of that point must succeed on a DC 12 Dexterity saving throw or take 3d6 fire damage.\n   A bomb costs 150 gp and weights 1 lb.",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "dynamite stick",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dynamite)(?=.*stick).*$",
+      "flags": "i"
+    },
+    "name": "Dynamite stick",
+    "source": [
+      [
+        "D24",
+        72
+      ]
+    ],
+    "list": "explosive",
+    "ability": 0,
+    "type": "Explosive",
+    "damage": [
+      3,
+      6,
+      "force"
+    ],
+    "range": "60 ft",
+    "weight": 1,
+    "description": "Dex save for all within 5-ft radius",
+    "abilitytodamage": false,
+    "modifiers": [
+      4,
+      ""
+    ],
+    "dc": true,
+    "ammo": "dynamite stick",
+    "isNotWeapon": true,
+    "isAlwaysProf": false,
+    "tooltip": "As an action, a character can light this stick of dynamite and throw it at a point up to 60 ft away. Each creature within a 5-ft-radius Sphere must succeed on a DC 12 Dexterity saving throw or take 3d6 force damage.",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "grenade, fragmentation",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*grenade)(?=.*frag(\\b|mentation)).*$",
+      "flags": "i"
+    },
+    "name": "Fragmentation Grenade",
+    "nameAlt": [
+      "Grenade, Fragmentation"
+    ],
+    "source": [
+      [
+        "D24",
+        73
+      ]
+    ],
+    "list": "explosive",
+    "ability": 0,
+    "type": "Explosive",
+    "damage": [
+      5,
+      6,
+      "piercing"
+    ],
+    "range": "60 ft",
+    "weight": 1,
+    "description": "Dex save for all within 20-ft radius",
+    "abilitytodamage": false,
+    "modifiers": [
+      7,
+      ""
+    ],
+    "dc": true,
+    "isAlwaysProf": false,
+    "tooltip": "As an action, a character can either throw a grenade at a point up to 60 ft away or use a Grenade Launcher to propel the grenade to a point up to 1,000 ft away. Each creature within a 20-ft-radius Sphere must succeed on a DC 15 Dexterity saving throw or take 5d6 piercing damage.",
+    "ammo": "grenade",
+    "isNotWeapon": true,
+    "defaultExcluded": true
+  },
+  {
+    "_key": "create bonfire",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*create)(?=.*bonfire).*$",
+      "flags": "i"
+    },
+    "name": "Create Bonfire",
+    "source": [
+      [
+        "X",
+        152
+      ],
+      [
+        "E",
+        16
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      8,
+      "fire"
+    ],
+    "range": "60 ft",
+    "description": "5-ft cube; Dex save at casting or when moved into, success - no damage; Conc, 1 min",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "frostbite",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "frostbite",
+      "flags": "i"
+    },
+    "name": "Frostbite",
+    "source": [
+      [
+        "X",
+        156
+      ],
+      [
+        "E",
+        18
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "cold"
+    ],
+    "range": "60 ft",
+    "description": "Con save, success - no damage, fail - also disadv. on next weapon attack roll in next turn; 1 creature",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "magic stone",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*magic)(?=.*stone).*$",
+      "flags": "i"
+    },
+    "name": "Magic Stone",
+    "source": [
+      [
+        "X",
+        160
+      ],
+      [
+        "E",
+        20
+      ]
+    ],
+    "list": "spell",
+    "ability": 5,
+    "type": "Cantrip",
+    "damage": [
+      1,
+      6,
+      "bludgeoning"
+    ],
+    "range": "60/120 ft",
+    "description": "Produces 3 stones that each can be thrown (60 ft) or hurled with a sling (120 ft) as a spell attack",
+    "abilitytodamage": true
+  },
+  {
+    "_key": "thunderclap",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "thunderclap",
+      "flags": "i"
+    },
+    "name": "Thunderclap",
+    "source": [
+      [
+        "X",
+        168
+      ],
+      [
+        "E",
+        22
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "thunder"
+    ],
+    "range": "5-ft radius",
+    "description": "Con save, success - no damage; all creatures in area; audible in 100 ft",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "booming blade",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*booming)(?=.*blade).*$",
+      "flags": "i"
+    },
+    "name": "Booming Blade",
+    "source": [
+      [
+        "T",
+        106
+      ],
+      [
+        "S",
+        142
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "Bd8/Cd8",
+      "",
+      "thunder"
+    ],
+    "range": "With melee wea",
+    "description": "First damage added to the attack; second to the target if it moves next round",
+    "abilitytodamage": false
+  },
+  {
+    "_key": "green-flame blade",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*green)(?=.*flame)(?=.*blade).*$",
+      "flags": "i"
+    },
+    "name": "Green-Flame Blade",
+    "source": [
+      [
+        "T",
+        107
+      ],
+      [
+        "S",
+        143
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "Bd8/Bd8",
+      "",
+      "fire"
+    ],
+    "range": "With melee wea",
+    "description": "First damage added to the attack; second to a target within 5 ft",
+    "abilitytodamage": true
+  },
+  {
+    "_key": "lightning lure",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*lightning)(?=.*lure).*$",
+      "flags": "i"
+    },
+    "name": "Lightning Lure",
+    "source": [
+      [
+        "T",
+        107
+      ],
+      [
+        "S",
+        143
+      ]
+    ],
+    "list": "spell",
+    "ability": 5,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      8,
+      "lightning"
+    ],
+    "range": "15 ft",
+    "description": "Str save; success - nothing; fail - pulled 10 ft closer to me, only take damage if end within 5 ft of me",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "sword burst",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*sword)(?=.*burst).*$",
+      "flags": "i"
+    },
+    "name": "Sword Burst",
+    "source": [
+      [
+        "T",
+        115
+      ],
+      [
+        "S",
+        143
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "force"
+    ],
+    "range": "5-ft radius",
+    "description": "Dex save, success - no damage; all creatures in range",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "yklwa",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "yklwa",
+      "flags": "i"
+    },
+    "name": "Yklwa",
+    "source": [
+      [
+        "ToA",
+        32
+      ]
+    ],
+    "list": "melee",
+    "ability": 1,
+    "type": "Simple",
+    "damage": [
+      1,
+      8,
+      "piercing"
+    ],
+    "range": "Melee, 10/30 ft",
+    "weight": 3,
+    "description": "Thrown",
+    "monkweapon": true,
+    "abilitytodamage": true
+  },
+  {
+    "_key": "shadow blade",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(?=.*shadow)(?=.*blade).*$",
+      "flags": "i"
+    },
+    "name": "Shadow Blade",
+    "source": [
+      [
+        "X",
+        164
+      ]
+    ],
+    "list": "spell",
+    "ability": 1,
+    "type": "Simple",
+    "damage": [
+      2,
+      8,
+      "psychic"
+    ],
+    "range": "Melee, 20/60 ft",
+    "description": "Finesse, light, thrown; +1d8 at SL3/5/7; Adv. if target in dim light/darkness",
+    "abilitytodamage": true,
+    "isAlwaysProf": true,
+    "useSpellcastingAbility": false
+  },
+  {
+    "_key": "infestation",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "infestation",
+      "flags": "i"
+    },
+    "name": "Infestation",
+    "source": [
+      [
+        "X",
+        158
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "poison"
+    ],
+    "range": "30 ft",
+    "description": "Con save, success - no damage, fail - target also moved 5 ft in random direction",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "primal savagery",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*primal)(?=.*savagery).*$",
+      "flags": "i"
+    },
+    "name": "Primal Savagery",
+    "source": [
+      [
+        "X",
+        169
+      ]
+    ],
+    "list": "spell",
+    "ability": 5,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      10,
+      "acid"
+    ],
+    "range": "Melee (5 ft)",
+    "description": "",
+    "abilitytodamage": false
+  },
+  {
+    "_key": "toll the dead",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*toll)(?=.*the)(?=.*dead).*$",
+      "flags": "i"
+    },
+    "name": "Toll the Dead",
+    "source": [
+      [
+        "X",
+        169
+      ],
+      [
+        "UA:SS",
+        4
+      ]
+    ],
+    "list": "spell",
+    "ability": 5,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      12,
+      "necrotic"
+    ],
+    "range": "60 ft",
+    "description": "Wis save, success - no damage; If target is at full HP, d8 instead of d12 damage",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "word of radiance",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*word)(?=.*radiance).*$",
+      "flags": "i"
+    },
+    "name": "Word of Radiance",
+    "source": [
+      [
+        "X",
+        171
+      ]
+    ],
+    "list": "spell",
+    "ability": 5,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "radiant"
+    ],
+    "range": "5-ft radius",
+    "description": "Con save, success - no damage; Only chosen creatures I can see are affected",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "oversized longbow",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*oversized?)(?=.*(\\bbows?\\b|longbow)).*$",
+      "flags": "i"
+    },
+    "name": "Oversized Longbow",
+    "nameAlt": [
+      "Bow, Oversized"
+    ],
+    "source": [
+      [
+        "WDH",
+        201
+      ]
+    ],
+    "list": "ranged",
+    "ability": 2,
+    "type": "Martial",
+    "damage": [
+      2,
+      6,
+      "piercing"
+    ],
+    "range": "150/600 ft",
+    "weight": 2,
+    "description": "Ammunition, heavy, two-handed; Damage uses Str; Requires Medium size and Str 18",
+    "abilitytodamage": false,
+    "modifiers": [
+      "",
+      "Str"
+    ],
+    "ammo": "oversized arrow",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "double-bladed scimitar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*double)(?=.*scimitar).*$",
+      "flags": "i"
+    },
+    "name": "Double-bladed scimitar",
+    "nameAlt": [
+      "Scimitar, Double-bladed"
+    ],
+    "source": [
+      [
+        "E:RLW",
+        22
+      ],
+      [
+        "WGtE",
+        74
+      ]
+    ],
+    "list": "melee",
+    "ability": 1,
+    "type": "Martial",
+    "damage": [
+      2,
+      4,
+      "slashing"
+    ],
+    "range": "Melee",
+    "weight": 6,
+    "description": "Two-handed; With Attack action, one attack as bonus action for 1d4",
+    "special": true,
+    "abilitytodamage": true
+  },
+  {
+    "_key": "sapping sting",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*sapping)(?=.*sting).*$",
+      "flags": "i"
+    },
+    "name": "Sapping Sting",
+    "source": [
+      [
+        "W",
+        189
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      4,
+      "necrotic"
+    ],
+    "range": "30 ft",
+    "description": "Con save, success - no damage, fail - also fall prone",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "mind sliver",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*mind)(?=.*sliver).*$",
+      "flags": "i"
+    },
+    "name": "Mind Sliver",
+    "source": [
+      [
+        "P24",
+        298
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "psychic"
+    ],
+    "range": "60 ft",
+    "description": "1 creature Int save, success - no damage, fail - also -1d4 on first save before my next turn ends",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "hoopak, melee",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "hoopak",
+      "flags": "i"
+    },
+    "name": "Hoopak, melee",
+    "source": [
+      [
+        "D:SotDQ",
+        0
+      ]
+    ],
+    "list": "melee",
+    "ability": 1,
+    "type": "Martial",
+    "damage": [
+      1,
+      6,
+      "piercing"
+    ],
+    "range": "Melee",
+    "weight": 2,
+    "description": "Finesse, two-handed; Can be used ranged (40/160 ft) with ammo, for 1d4 bludgeoning damage",
+    "special": true,
+    "abilitytodamage": true
+  },
+  {
+    "_key": "hoopak, ranged",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*hoopak)(?=.*ranged).*$",
+      "flags": "i"
+    },
+    "name": "Hoopak, ranged",
+    "source": [
+      [
+        "D:SotDQ",
+        0
+      ]
+    ],
+    "list": "ranged",
+    "ability": 1,
+    "type": "Martial",
+    "damage": [
+      1,
+      4,
+      "bludgeoning"
+    ],
+    "range": "40/160 ft",
+    "weight": 2,
+    "description": "Ammunition, finesse, two-handed; Can be used in melee without ammo, for 1d6 piercing damage",
+    "special": true,
+    "abilitytodamage": true
+  },
+  {
+    "_key": "grenade, concussion",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*grenade)(?=.*concussion).*$",
+      "flags": "i"
+    },
+    "name": "Concussion Grenade",
+    "nameAlt": [
+      "Grenade, Concussion"
+    ],
+    "source": [
+      [
+        "D",
+        268
+      ]
+    ],
+    "list": "explosive",
+    "ability": 0,
+    "type": "Explosive",
+    "damage": [
+      6,
+      6,
+      "force"
+    ],
+    "range": "60 ft",
+    "weight": 1,
+    "description": "All within 20-ft radius, Dex save halves",
+    "abilitytodamage": false,
+    "modifiers": [
+      7,
+      ""
+    ],
+    "dc": true,
+    "ammo": "grenade",
+    "isNotWeapon": true,
+    "isAlwaysProf": false,
+    "tooltip": "As an action, a character can throw a grenade at a point up to 60 feet away. With a grenade launcher, the character can propel the grenade up to 120 feet away.\n   A concussion grenade explodes in a concussive blast that fills a 20-foot-radius sphere. Each creature in that area must make a DC 15 Dexterity saving throw, taking 6d6 force damage on a failed save or half as much damage on a successful one.",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "energy beam-ua-psy",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*\\benergy\\b)(?=.*\\bbeam\\b).*$",
+      "flags": "i"
+    },
+    "name": "Energy Beam",
+    "source": [
+      [
+        "UA:TMC",
+        27
+      ]
+    ],
+    "list": "psionic",
+    "ability": 4,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      8,
+      "My choice"
+    ],
+    "range": "90 ft",
+    "description": "Dex save, success - no damage; Acid, cold, fire, lightning, or thunder damage [my choice]",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "mind slam-ua-psy",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*\\bmind\\b)(?=.*\\bslam\\b).*$",
+      "flags": "i"
+    },
+    "name": "Mind Slam",
+    "source": [
+      [
+        "UA:TMC",
+        28
+      ]
+    ],
+    "list": "psionic",
+    "ability": 4,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "force"
+    ],
+    "range": "60 ft",
+    "description": "Con save, success - no damage, fail - Large or smaller target also knocked prone",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "mind thrust-ua-psy",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*\\bmind\\b)(?=.*\\bthrust\\b).*$",
+      "flags": "i"
+    },
+    "name": "Mind Thrust",
+    "source": [
+      [
+        "UA:TMC",
+        28
+      ]
+    ],
+    "list": "psionic",
+    "ability": 4,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      10,
+      "psychic"
+    ],
+    "range": "120 ft",
+    "description": "Int save, success - no damage",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "psychic hammer-ua-psy",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*\\bpsychic\\b)(?=.*\\bhammer\\b).*$",
+      "flags": "i"
+    },
+    "name": "Psychic Hammer",
+    "source": [
+      [
+        "UA:TMC",
+        28
+      ]
+    ],
+    "list": "psionic",
+    "ability": 4,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "force"
+    ],
+    "range": "120 ft",
+    "description": "Str save, success - no damage, fail - also move 10 ft in chosen direction",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "hand of radiance-uass",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*hand)(?=.*radiance).*$",
+      "flags": "i"
+    },
+    "name": "Hand of Radiance",
+    "source": [
+      [
+        "UA:SS",
+        3
+      ]
+    ],
+    "list": "spell",
+    "ability": 5,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "radiant"
+    ],
+    "range": "5-ft radius",
+    "description": "Con save, success - no damage; Only chosen creatures I can see are affected",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "infestation-uass",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "infestation",
+      "flags": "i"
+    },
+    "name": "Infestation",
+    "source": [
+      [
+        "UA:SS",
+        3
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "piercing"
+    ],
+    "range": "30 ft",
+    "description": "Con save, success - no damage, fail - target also moved 5 ft in random direction",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "primal savagery-uass",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*primal)(?=.*savagery).*$",
+      "flags": "i"
+    },
+    "name": "Primal Savagery",
+    "source": [
+      [
+        "UA:SS",
+        3
+      ]
+    ],
+    "list": "spell",
+    "ability": 5,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      10,
+      "piercing"
+    ],
+    "range": "Melee (5 ft)",
+    "description": "Does either Piercing or Slashing damage (my choice)",
+    "abilitytodamage": false
+  },
+  {
+    "_key": "unarmed strike dc",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "\\b(fists?|arms?|legs?|foot|feet|claws?|talons?)\\b|^(?=.*unarmed)(?=.*strike).*$|^(?=.*martial)(?=.*arts).*$|^(?=.*tavern)(?=.*brawler).*$",
+      "flags": "i"
+    },
+    "name": "Unarmed strike (DC)",
+    "list": "melee",
+    "source": [
+      [
+        "SRD24",
+        190
+      ],
+      [
+        "P24",
+        377
+      ]
+    ],
+    "ability": 1,
+    "type": "Natural",
+    "damage": [
+      "Str save",
+      "",
+      "Shove/Grapple"
+    ],
+    "range": "Melee",
+    "description": "Up to 1 size larger; Push 5 ft or prone or grappled condition; Can damage instead (with attack roll)",
+    "monkweapon": true,
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
     "_key": "oil",
     "regExpSearch": {
       "_type": "RegExp",
@@ -1730,33 +2941,6 @@
     "dc": true,
     "isAlwaysProf": true,
     "isNotWeapon": true
-  },
-  {
-    "_key": "mind sliver",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*mind)(?=.*sliver).*$",
-      "flags": "i"
-    },
-    "name": "Mind Sliver",
-    "source": [
-      [
-        "P24",
-        298
-      ]
-    ],
-    "list": "spell",
-    "ability": 6,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      6,
-      "psychic"
-    ],
-    "range": "60 ft",
-    "description": "1 creature Int save, success - no damage, fail - also -1d4 on first save before my next turn ends",
-    "abilitytodamage": false,
-    "dc": true
   },
   {
     "_key": "shillelagh-club",
@@ -1867,94 +3051,6 @@
     "abilitytodamage": false
   },
   {
-    "_key": "toll the dead",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*toll)(?=.*the)(?=.*dead).*$",
-      "flags": "i"
-    },
-    "name": "Toll the Dead",
-    "source": [
-      [
-        "X",
-        169
-      ],
-      [
-        "UA:SS",
-        4
-      ]
-    ],
-    "list": "spell",
-    "ability": 5,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      12,
-      "necrotic"
-    ],
-    "range": "60 ft",
-    "description": "Wis save, success - no damage; If target is at full HP, d8 instead of d12 damage",
-    "abilitytodamage": false,
-    "dc": true
-  },
-  {
-    "_key": "thorn whip",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*thorn)(?=.*whip).*$",
-      "flags": "i"
-    },
-    "name": "Thorn Whip",
-    "source": [
-      [
-        "P24",
-        333
-      ]
-    ],
-    "list": "spell",
-    "ability": 5,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      6,
-      "piercing"
-    ],
-    "range": "Melee, 30 ft",
-    "description": "Melee spell attack, pull target up to 10 ft closer",
-    "abilitytodamage": false
-  },
-  {
-    "_key": "thunderclap",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "thunderclap",
-      "flags": "i"
-    },
-    "name": "Thunderclap",
-    "source": [
-      [
-        "X",
-        168
-      ],
-      [
-        "E",
-        22
-      ]
-    ],
-    "list": "spell",
-    "ability": 6,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      6,
-      "thunder"
-    ],
-    "range": "5-ft radius",
-    "description": "Con save, success - no damage; all creatures in area; audible in 100 ft",
-    "abilitytodamage": false,
-    "dc": true
-  },
-  {
     "_key": "true strike",
     "regExpSearch": {
       "_type": "RegExp",
@@ -1980,126 +3076,6 @@
     "description": "As Part of this Spell make one Weapon Atk using your Spell mod instead of Str/Dex, Dmg can become Radiant",
     "abilitytodamage": false,
     "dc": false
-  },
-  {
-    "_key": "word of radiance",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*word)(?=.*radiance).*$",
-      "flags": "i"
-    },
-    "name": "Word of Radiance",
-    "source": [
-      [
-        "X",
-        171
-      ]
-    ],
-    "list": "spell",
-    "ability": 5,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      6,
-      "radiant"
-    ],
-    "range": "5-ft radius",
-    "description": "Con save, success - no damage; Only chosen creatures I can see are affected",
-    "abilitytodamage": false,
-    "dc": true
-  },
-  {
-    "_key": "rifle automatic",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*automatic)(?=.*rifle).*$",
-      "flags": "i"
-    },
-    "name": "Automatic rifle",
-    "nameAlt": [
-      "Rifle, Automatic"
-    ],
-    "source": [
-      [
-        "D24",
-        73
-      ]
-    ],
-    "list": "firearm",
-    "ability": 2,
-    "type": "Martial",
-    "damage": [
-      2,
-      8,
-      "piercing"
-    ],
-    "range": "80/240 ft",
-    "weight": 8,
-    "description": "Ammunition, reload (30 shots), two-handed, burst fire; Slow",
-    "abilitytodamage": true,
-    "ammo": "modern bullet",
-    "defaultExcluded": true
-  },
-  {
-    "_key": "rifle hunting",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(((?=.*hunting)(?=.*rifle))|((?!.*(automatic|laser|antimatter))(?=.*\\brifles?\\b))).*$",
-      "flags": "i"
-    },
-    "name": "Hunting rifle",
-    "nameAlt": [
-      "Rifle, Hunting"
-    ],
-    "source": [
-      [
-        "D24",
-        73
-      ]
-    ],
-    "list": "firearm",
-    "ability": 2,
-    "type": "Martial",
-    "damage": [
-      2,
-      10,
-      "piercing"
-    ],
-    "range": "80/240 ft",
-    "weight": 8,
-    "description": "Ammunition, reload (5 shots), two-handed; Slow",
-    "abilitytodamage": true,
-    "ammo": "modern bullet",
-    "defaultExcluded": true
-  },
-  {
-    "_key": "revolver",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*revolver).*$",
-      "flags": "i"
-    },
-    "name": "Revolver",
-    "source": [
-      [
-        "D24",
-        73
-      ]
-    ],
-    "list": "firearm",
-    "ability": 2,
-    "type": "Martial",
-    "damage": [
-      2,
-      8,
-      "piercing"
-    ],
-    "range": "40/120 ft",
-    "weight": 3,
-    "description": "Ammunition, reload (6 shots); Sap",
-    "abilitytodamage": true,
-    "ammo": "modern bullet",
-    "defaultExcluded": true
   },
   {
     "_key": "pistol semiautomatic",
@@ -2131,131 +3107,6 @@
     "description": "Ammunition, reload (15 shots); Vex",
     "abilitytodamage": true,
     "ammo": "modern bullet",
-    "defaultExcluded": true
-  },
-  {
-    "_key": "shotgun",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*shotgun).*$",
-      "flags": "i"
-    },
-    "name": "Shotgun",
-    "source": [
-      [
-        "D24",
-        73
-      ]
-    ],
-    "list": "firearm",
-    "ability": 2,
-    "type": "Martial",
-    "damage": [
-      2,
-      8,
-      "piercing"
-    ],
-    "range": "30/90 ft",
-    "weight": 7,
-    "description": "Ammunition, reload (2 shots); Push",
-    "abilitytodamage": true,
-    "ammo": "modern bullet",
-    "defaultExcluded": true
-  },
-  {
-    "_key": "antimatter rifle",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*antimatter)(?=.*rifle).*$",
-      "flags": "i"
-    },
-    "name": "Antimatter rifle",
-    "nameAlt": [
-      "Rifle, Antimatter"
-    ],
-    "source": [
-      [
-        "D24",
-        73
-      ]
-    ],
-    "list": "firearm",
-    "ability": 2,
-    "type": "Martial",
-    "damage": [
-      6,
-      8,
-      "necrotic"
-    ],
-    "range": "120/360 ft",
-    "weight": 10,
-    "description": "Ammunition, reload (2 shots), two-handed; Sap",
-    "abilitytodamage": true,
-    "ammo": "energy cell",
-    "defaultExcluded": true
-  },
-  {
-    "_key": "laser pistol",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*laser)(?=.*pistol).*$",
-      "flags": "i"
-    },
-    "name": "Laser pistol",
-    "nameAlt": [
-      "Pistol, Laser"
-    ],
-    "source": [
-      [
-        "D24",
-        73
-      ]
-    ],
-    "list": "firearm",
-    "ability": 2,
-    "type": "Martial",
-    "damage": [
-      3,
-      6,
-      "radiant"
-    ],
-    "range": "40/120 ft",
-    "weight": 2,
-    "description": "Ammunition, reload (50 shots); Vex",
-    "abilitytodamage": true,
-    "ammo": "energy cell",
-    "defaultExcluded": true
-  },
-  {
-    "_key": "laser rifle",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*laser)(?=.*rifle).*$",
-      "flags": "i"
-    },
-    "name": "Laser rifle",
-    "nameAlt": [
-      "Rifle, Laser"
-    ],
-    "source": [
-      [
-        "D24",
-        73
-      ]
-    ],
-    "list": "firearm",
-    "ability": 2,
-    "type": "Martial",
-    "damage": [
-      3,
-      8,
-      "radiant"
-    ],
-    "range": "100/300 ft",
-    "weight": 7,
-    "description": "Ammunition, reload (30 shots), two-handed; Slow",
-    "abilitytodamage": true,
-    "ammo": "energy cell",
     "defaultExcluded": true
   },
   {
@@ -2294,282 +3145,5 @@
     "isAlwaysProf": false,
     "tooltip": "As an action, a character can light this bomb and throw it at a point up to 60 ft away. Each creature within a 5-ft-radius Sphere must succeed on a DC 12 Dexterity saving throw or take 3d6 fire damage.\n   A bomb costs 100 gp and weights 1 lb.",
     "defaultExcluded": true
-  },
-  {
-    "_key": "dynamite stick",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*dynamite)(?=.*stick).*$",
-      "flags": "i"
-    },
-    "name": "Dynamite stick",
-    "source": [
-      [
-        "D24",
-        72
-      ]
-    ],
-    "list": "explosive",
-    "ability": 0,
-    "type": "Explosive",
-    "damage": [
-      3,
-      6,
-      "force"
-    ],
-    "range": "60 ft",
-    "weight": 1,
-    "description": "Dex save for all within 5-ft radius",
-    "abilitytodamage": false,
-    "modifiers": [
-      4,
-      ""
-    ],
-    "dc": true,
-    "ammo": "dynamite stick",
-    "isNotWeapon": true,
-    "isAlwaysProf": false,
-    "tooltip": "As an action, a character can light this stick of dynamite and throw it at a point up to 60 ft away. Each creature within a 5-ft-radius Sphere must succeed on a DC 12 Dexterity saving throw or take 3d6 force damage.",
-    "defaultExcluded": true
-  },
-  {
-    "_key": "grenade, fragmentation",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*grenade)(?=.*frag(\\b|mentation)).*$",
-      "flags": "i"
-    },
-    "name": "Fragmentation Grenade",
-    "nameAlt": [
-      "Grenade, Fragmentation"
-    ],
-    "source": [
-      [
-        "D24",
-        73
-      ]
-    ],
-    "list": "explosive",
-    "ability": 0,
-    "type": "Explosive",
-    "damage": [
-      5,
-      6,
-      "piercing"
-    ],
-    "range": "60 ft",
-    "weight": 1,
-    "description": "Dex save for all within 20-ft radius",
-    "abilitytodamage": false,
-    "modifiers": [
-      7,
-      ""
-    ],
-    "dc": true,
-    "isAlwaysProf": false,
-    "tooltip": "As an action, a character can either throw a grenade at a point up to 60 ft away or use a Grenade Launcher to propel the grenade to a point up to 1,000 ft away. Each creature within a 20-ft-radius Sphere must succeed on a DC 15 Dexterity saving throw or take 5d6 piercing damage.",
-    "ammo": "grenade",
-    "isNotWeapon": true,
-    "defaultExcluded": true
-  },
-  {
-    "_key": "shadow blade",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "(?=.*shadow)(?=.*blade).*$",
-      "flags": "i"
-    },
-    "name": "Shadow Blade",
-    "source": [
-      [
-        "X",
-        164
-      ]
-    ],
-    "list": "spell",
-    "ability": 1,
-    "type": "Simple",
-    "damage": [
-      2,
-      8,
-      "psychic"
-    ],
-    "range": "Melee, 20/60 ft",
-    "description": "Finesse, light, thrown; +1d8 at SL3/5/7; Adv. if target in dim light/darkness",
-    "abilitytodamage": true,
-    "isAlwaysProf": true,
-    "useSpellcastingAbility": false
-  },
-  {
-    "_key": "create bonfire",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*create)(?=.*bonfire).*$",
-      "flags": "i"
-    },
-    "name": "Create Bonfire",
-    "source": [
-      [
-        "X",
-        152
-      ],
-      [
-        "E",
-        16
-      ]
-    ],
-    "list": "spell",
-    "ability": 6,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      8,
-      "fire"
-    ],
-    "range": "60 ft",
-    "description": "5-ft cube; Dex save at casting or when moved into, success - no damage; Conc, 1 min",
-    "abilitytodamage": false,
-    "dc": true
-  },
-  {
-    "_key": "frostbite",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "frostbite",
-      "flags": "i"
-    },
-    "name": "Frostbite",
-    "source": [
-      [
-        "X",
-        156
-      ],
-      [
-        "E",
-        18
-      ]
-    ],
-    "list": "spell",
-    "ability": 6,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      6,
-      "cold"
-    ],
-    "range": "60 ft",
-    "description": "Con save, success - no damage, fail - also disadv. on next weapon attack roll in next turn; 1 creature",
-    "abilitytodamage": false,
-    "dc": true
-  },
-  {
-    "_key": "infestation",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "infestation",
-      "flags": "i"
-    },
-    "name": "Infestation",
-    "source": [
-      [
-        "X",
-        158
-      ]
-    ],
-    "list": "spell",
-    "ability": 6,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      6,
-      "poison"
-    ],
-    "range": "30 ft",
-    "description": "Con save, success - no damage, fail - target also moved 5 ft in random direction",
-    "abilitytodamage": false,
-    "dc": true
-  },
-  {
-    "_key": "magic stone",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*magic)(?=.*stone).*$",
-      "flags": "i"
-    },
-    "name": "Magic Stone",
-    "source": [
-      [
-        "X",
-        160
-      ],
-      [
-        "E",
-        20
-      ]
-    ],
-    "list": "spell",
-    "ability": 5,
-    "type": "Cantrip",
-    "damage": [
-      1,
-      6,
-      "bludgeoning"
-    ],
-    "range": "60/120 ft",
-    "description": "Produces 3 stones that each can be thrown (60 ft) or hurled with a sling (120 ft) as a spell attack",
-    "abilitytodamage": true
-  },
-  {
-    "_key": "primal savagery",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*primal)(?=.*savagery).*$",
-      "flags": "i"
-    },
-    "name": "Primal Savagery",
-    "source": [
-      [
-        "X",
-        169
-      ]
-    ],
-    "list": "spell",
-    "ability": 5,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      10,
-      "acid"
-    ],
-    "range": "Melee (5 ft)",
-    "description": "",
-    "abilitytodamage": false
-  },
-  {
-    "_key": "sapping sting",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*sapping)(?=.*sting).*$",
-      "flags": "i"
-    },
-    "name": "Sapping Sting",
-    "source": [
-      [
-        "W",
-        189
-      ]
-    ],
-    "list": "spell",
-    "ability": 6,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      4,
-      "necrotic"
-    ],
-    "range": "30 ft",
-    "description": "Con save, success - no damage, fail - also fall prone",
-    "abilitytodamage": false,
-    "dc": true
   }
 ]
