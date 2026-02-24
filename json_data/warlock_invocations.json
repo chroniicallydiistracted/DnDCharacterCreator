@@ -1395,7 +1395,7 @@
   },
   {
     "_key": "bond_of_the_talisman_(prereq:_level_12_warlock,_pact_of_the_talisman)_(ua)",
-    "name": "Bond of the Talisman",
+    "name": "Bond of the Talisman",
     "source": [
       [
         "UA:CFV",
@@ -1484,7 +1484,7 @@
   },
   {
     "_key": "far_scribe_(prereq:_level_5_warlock,_pact_of_the_tome)_(ua)",
-    "name": "Far Scribe",
+    "name": "Far Scribe",
     "source": [
       [
         "UA:CFV",
@@ -1527,7 +1527,7 @@
   },
   {
     "_key": "gift_of_the_protectors_(prereq:_level_9_warlock,_pact_of_the_tome)_(ua)",
-    "name": "Gift of the Protectors",
+    "name": "Gift of the Protectors",
     "source": [
       [
         "UA:CFV",
@@ -1552,7 +1552,7 @@
   },
   {
     "_key": "investment_of_the_chain_master_(prereq:_pact_of_the_chain)_(ua)",
-    "name": "Investment of the Chain Master",
+    "name": "Investment of the Chain Master",
     "source": [
       [
         "UA:CFV",
@@ -1578,7 +1578,7 @@
   },
   {
     "_key": "protection_of_the_talisman_(prereq:_level_9_warlock,_pact_of_the_talisman)_(ua)",
-    "name": "Protection of the Talisman",
+    "name": "Protection of the Talisman",
     "source": [
       [
         "UA:CFV",
@@ -1600,7 +1600,7 @@
   },
   {
     "_key": "rebuke_of_the_talisman_(prereq:_pact_of_the_talisman)_(ua)",
-    "name": "Rebuke of the Talisman",
+    "name": "Rebuke of the Talisman",
     "source": [
       [
         "UA:CFV",

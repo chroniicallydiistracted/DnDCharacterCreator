@@ -45039,7 +45039,7 @@
               ]
             ],
             "description": "As a reaction when a creature I can see moves within 5 of me, I can attack it\n   I expend a superiority die and make one weapon attack, adding the die to the damage",
-            "limfeaname": "Brace ",
+            "limfeaname": "Brace ",
             "action": [
               [
                 "reaction",

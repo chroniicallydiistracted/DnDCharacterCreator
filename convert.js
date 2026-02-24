@@ -35,7 +35,7 @@ function serialize(value, _seen, depth) {
 
   if (value === null || value === undefined) return value;
   if (typeof value === 'boolean') return value;
-  if (typeof value === 'string')  return value;
+  if (typeof value === 'string')  return value.replace(/\u00a0/g, ' ');
   if (typeof value === 'number') {
     if (!isFinite(value) || isNaN(value)) return null;
     return value;
