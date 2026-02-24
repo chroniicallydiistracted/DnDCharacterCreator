@@ -31,38 +31,6 @@
     "abilitytodamage": true
   },
   {
-    "_key": "unarmed strike dc",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "\\b(fists?|arms?|legs?|foot|feet|claws?|talons?)\\b|^(?=.*unarmed)(?=.*strike).*$|^(?=.*martial)(?=.*arts).*$|^(?=.*tavern)(?=.*brawler).*$",
-      "flags": "i"
-    },
-    "name": "Unarmed strike (DC)",
-    "list": "melee",
-    "source": [
-      [
-        "SRD24",
-        190
-      ],
-      [
-        "P24",
-        377
-      ]
-    ],
-    "ability": 1,
-    "type": "Natural",
-    "damage": [
-      "Str save",
-      "",
-      "Shove/Grapple"
-    ],
-    "range": "Melee",
-    "description": "Up to 1 size larger; Push 5 ft or prone or grappled condition; Can damage instead (with attack roll)",
-    "monkweapon": true,
-    "abilitytodamage": false,
-    "dc": true
-  },
-  {
     "_key": "club",
     "name": "Club",
     "infoname": "Club [1 sp]",
@@ -361,36 +329,6 @@
     "monkweapon": true
   },
   {
-    "_key": "dart",
-    "name": "Dart",
-    "infoname": "Dart [5 cp]",
-    "source": [
-      [
-        "P24",
-        215
-      ]
-    ],
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "dart",
-      "flags": "i"
-    },
-    "type": "Simple",
-    "ability": 2,
-    "abilitytodamage": true,
-    "damage": [
-      1,
-      4,
-      "piercing"
-    ],
-    "range": "20/60 ft",
-    "description": "Finesse, Thrown; Vex",
-    "list": "ranged",
-    "weight": 0.25,
-    "ammo": "dart",
-    "monkweapon": false
-  },
-  {
     "_key": "light crossbow",
     "name": "Light Crossbow",
     "infoname": "Light Crossbow [25 gp]",
@@ -418,6 +356,36 @@
     "list": "ranged",
     "weight": 5,
     "ammo": "bolts",
+    "monkweapon": false
+  },
+  {
+    "_key": "dart",
+    "name": "Dart",
+    "infoname": "Dart [5 cp]",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "dart",
+      "flags": "i"
+    },
+    "type": "Simple",
+    "ability": 2,
+    "abilitytodamage": true,
+    "damage": [
+      1,
+      4,
+      "piercing"
+    ],
+    "range": "20/60 ft",
+    "description": "Finesse, Thrown; Vex",
+    "list": "ranged",
+    "weight": 0.25,
+    "ammo": "dart",
     "monkweapon": false
   },
   {
@@ -916,35 +884,6 @@
     "monkweapon": false
   },
   {
-    "_key": "warhammer",
-    "name": "Warhammer",
-    "infoname": "Warhammer [15 gp]",
-    "source": [
-      [
-        "P24",
-        215
-      ]
-    ],
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "warhammer",
-      "flags": "i"
-    },
-    "type": "Martial",
-    "ability": 1,
-    "abilitytodamage": true,
-    "damage": [
-      1,
-      8,
-      "bludgeoning"
-    ],
-    "range": "Melee",
-    "description": "Versatile (1d10); Push",
-    "list": "melee",
-    "weight": 5,
-    "monkweapon": false
-  },
-  {
     "_key": "war pick",
     "name": "War Pick",
     "infoname": "War Pick [5 gp]",
@@ -971,6 +910,35 @@
     "description": "Versatile (1d10); Sap",
     "list": "melee",
     "weight": 2,
+    "monkweapon": false
+  },
+  {
+    "_key": "warhammer",
+    "name": "Warhammer",
+    "infoname": "Warhammer [15 gp]",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "warhammer",
+      "flags": "i"
+    },
+    "type": "Martial",
+    "ability": 1,
+    "abilitytodamage": true,
+    "damage": [
+      1,
+      8,
+      "bludgeoning"
+    ],
+    "range": "Melee",
+    "description": "Versatile (1d10); Push",
+    "list": "melee",
+    "weight": 5,
     "monkweapon": false
   },
   {
@@ -1123,70 +1091,35 @@
     "monkweapon": false
   },
   {
-    "_key": "musket",
-    "name": "Musket",
-    "infoname": "Musket [500 gp]",
+    "_key": "net",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "\\bnet(ting)?s?\\b",
+      "flags": "i"
+    },
+    "name": "Net",
     "source": [
       [
         "P24",
-        215
+        227
       ]
     ],
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "musket",
-      "flags": "i"
-    },
-    "type": "Martial",
+    "list": "gear",
     "ability": 2,
-    "abilitytodamage": true,
+    "type": "Adventuring Gear",
     "damage": [
-      1,
-      12,
-      "piercing"
+      "Dex save",
+      "",
+      "Restrained"
     ],
-    "range": "40/120 ft",
-    "description": "Ammunition (Bullet, Firearm), Loading, Two-Handed; Slow",
-    "list": [
-      "ranged",
-      "firearm"
-    ],
-    "weight": 10,
-    "ammo": "renaissance bullet",
-    "monkweapon": false
-  },
-  {
-    "_key": "pistol",
-    "name": "Pistol",
-    "infoname": "Pistol [250 gp]",
-    "source": [
-      [
-        "P24",
-        215
-      ]
-    ],
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "pistol",
-      "flags": "i"
-    },
-    "type": "Martial",
-    "ability": 2,
-    "abilitytodamage": true,
-    "damage": [
-      1,
-      10,
-      "piercing"
-    ],
-    "range": "30/90 ft",
-    "description": "Ammunition (Bullet, Firearm), Loading; Vex",
-    "list": [
-      "ranged",
-      "firearm"
-    ],
+    "range": "15 ft",
     "weight": 3,
-    "ammo": "renaissance bullet",
-    "monkweapon": false
+    "description": "Up to Large target; DC 10 Athletics to escape as an Action",
+    "tooltip": "When you take the Attack action, you can replace one of your attacks with throwing a Net. Target a creature you can see within 15 feet of yourself. The target must succeed on a Dexterity saving throw (DC 8 plus your Dexterity modifier and Proficiency Bonus) or have the Restrained condition until it escapes. The target succeeds automatically if it is Huge or larger.\nTo escape, the target or a creature within 5 feet of it must take an action to make a DC 10 Strength (Athletics) check, freeing the Restrained creature on a success. Destroying the Net (AC 10; 5 HP; Immunity to Bludgeoning, Poison, and Psychic damage) also frees the target, ending the effect.",
+    "abilitytodamage": false,
+    "dc": true,
+    "isAlwaysProf": true,
+    "isNotWeapon": true
   },
   {
     "_key": "improvised weapon",
@@ -1216,37 +1149,6 @@
     "range": "Melee, 20/60 ft",
     "description": "Damage die, type, range, etc. are at the DM's discretion",
     "abilitytodamage": true
-  },
-  {
-    "_key": "vials of acid",
-    "name": "Vial of Acid",
-    "source": [
-      [
-        "P24",
-        222
-      ]
-    ],
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*vial)(?=.*acid).*$",
-      "flags": "i"
-    },
-    "list": "gear",
-    "ability": 2,
-    "type": "Adventuring Gear",
-    "dc": true,
-    "damage": [
-      2,
-      6,
-      "acid"
-    ],
-    "range": "20 ft",
-    "weight": 1,
-    "description": "",
-    "abilitytodamage": true,
-    "isAlwaysProf": true,
-    "ammo": "vials of acid",
-    "isNotWeapon": true
   },
   {
     "_key": "alchemist fire",
@@ -1280,6 +1182,37 @@
     "isNotWeapon": true
   },
   {
+    "_key": "vials of acid",
+    "name": "Vial of Acid",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*vial)(?=.*acid).*$",
+      "flags": "i"
+    },
+    "list": "gear",
+    "ability": 2,
+    "type": "Adventuring Gear",
+    "dc": true,
+    "damage": [
+      2,
+      6,
+      "acid"
+    ],
+    "range": "20 ft",
+    "weight": 1,
+    "description": "",
+    "abilitytodamage": true,
+    "isAlwaysProf": true,
+    "ammo": "vials of acid",
+    "isNotWeapon": true
+  },
+  {
     "_key": "holy water",
     "name": "Holy Water",
     "source": [
@@ -1307,72 +1240,6 @@
     "description": "Only does damage against fiends and undead; Comes in flasks",
     "abilitytodamage": true,
     "ammo": "holy water",
-    "isNotWeapon": true
-  },
-  {
-    "_key": "net",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "\\bnet(ting)?s?\\b",
-      "flags": "i"
-    },
-    "name": "Net",
-    "source": [
-      [
-        "P24",
-        227
-      ]
-    ],
-    "list": "gear",
-    "ability": 2,
-    "type": "Adventuring Gear",
-    "damage": [
-      "Dex save",
-      "",
-      "Restrained"
-    ],
-    "range": "15 ft",
-    "weight": 3,
-    "description": "Up to Large target; DC 10 Athletics to escape as an Action",
-    "tooltip": "When you take the Attack action, you can replace one of your attacks with throwing a Net. Target a creature you can see within 15 feet of yourself. The target must succeed on a Dexterity saving throw (DC 8 plus your Dexterity modifier and Proficiency Bonus) or have the Restrained condition until it escapes. The target succeeds automatically if it is Huge or larger.\nTo escape, the target or a creature within 5 feet of it must take an action to make a DC 10 Strength (Athletics) check, freeing the Restrained creature on a success. Destroying the Net (AC 10; 5 HP; Immunity to Bludgeoning, Poison, and Psychic damage) also frees the target, ending the effect.",
-    "abilitytodamage": false,
-    "dc": true,
-    "isAlwaysProf": true,
-    "isNotWeapon": true
-  },
-  {
-    "_key": "oil",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "oil",
-      "flags": "i"
-    },
-    "name": "Oil",
-    "source": [
-      [
-        "SRD24",
-        98
-      ],
-      [
-        "P24",
-        227
-      ]
-    ],
-    "list": "gear",
-    "ability": 2,
-    "type": "Adventuring Gear",
-    "damage": [
-      "Dex save",
-      "",
-      "Covered"
-    ],
-    "range": "20 ft",
-    "weight": 1,
-    "description": "If covered target takes fire damage in next minute, the oil burns for 5 fire damage",
-    "abilitytodamage": false,
-    "ammo": "oil",
-    "dc": true,
-    "isAlwaysProf": true,
     "isNotWeapon": true
   },
   {
@@ -1541,33 +1408,6 @@
     "abilitytodamage": false
   },
   {
-    "_key": "mind sliver",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*mind)(?=.*sliver).*$",
-      "flags": "i"
-    },
-    "name": "Mind Sliver",
-    "source": [
-      [
-        "P24",
-        298
-      ]
-    ],
-    "list": "spell",
-    "ability": 6,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      6,
-      "psychic"
-    ],
-    "range": "60 ft",
-    "description": "1 creature Int save, success - no damage, fail - also -1d4 on first save before my next turn ends",
-    "abilitytodamage": false,
-    "dc": true
-  },
-  {
     "_key": "poison spray",
     "regExpSearch": {
       "_type": "RegExp",
@@ -1674,6 +1514,251 @@
     "dc": true
   },
   {
+    "_key": "shillelagh",
+    "baseWeapon": "quarterstaff",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "shillelagh",
+      "flags": "i"
+    },
+    "name": "Shillelagh",
+    "source": [
+      [
+        "SRD",
+        179
+      ],
+      [
+        "P",
+        275
+      ]
+    ],
+    "list": "spell",
+    "ability": 5,
+    "type": "Simple",
+    "damage": [
+      1,
+      8,
+      "bludgeoning"
+    ],
+    "range": "Melee",
+    "description": "Imbued club or quarterstaff; Counts as a magical weapon",
+    "monkweapon": true,
+    "abilitytodamage": true
+  },
+  {
+    "_key": "shocking grasp",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*shocking)(?=.*grasp).*$",
+      "flags": "i"
+    },
+    "name": "Shocking Grasp",
+    "source": [
+      [
+        "P24",
+        316
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      8,
+      "lightning"
+    ],
+    "range": "Melee",
+    "description": "Target cannot make opportunity attacks until its next turn",
+    "abilitytodamage": false
+  },
+  {
+    "_key": "vicious mockery",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*vicious)(?=.*mockery).*$",
+      "flags": "i"
+    },
+    "name": "Vicious Mockery",
+    "source": [
+      [
+        "P24",
+        337
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "psychic"
+    ],
+    "range": "60 ft",
+    "description": "Wis save, success - no damage, fail - also disadv. on next attack roll in next turn; 1 creature",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "unarmed strike dc",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "\\b(fists?|arms?|legs?|foot|feet|claws?|talons?)\\b|^(?=.*unarmed)(?=.*strike).*$|^(?=.*martial)(?=.*arts).*$|^(?=.*tavern)(?=.*brawler).*$",
+      "flags": "i"
+    },
+    "name": "Unarmed strike (DC)",
+    "list": "melee",
+    "source": [
+      [
+        "SRD24",
+        190
+      ],
+      [
+        "P24",
+        377
+      ]
+    ],
+    "ability": 1,
+    "type": "Natural",
+    "damage": [
+      "Str save",
+      "",
+      "Shove/Grapple"
+    ],
+    "range": "Melee",
+    "description": "Up to 1 size larger; Push 5 ft or prone or grappled condition; Can damage instead (with attack roll)",
+    "monkweapon": true,
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
+    "_key": "musket",
+    "name": "Musket",
+    "infoname": "Musket [500 gp]",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "musket",
+      "flags": "i"
+    },
+    "type": "Martial",
+    "ability": 2,
+    "abilitytodamage": true,
+    "damage": [
+      1,
+      12,
+      "piercing"
+    ],
+    "range": "40/120 ft",
+    "description": "Ammunition (Bullet, Firearm), Loading, Two-Handed; Slow",
+    "list": [
+      "ranged",
+      "firearm"
+    ],
+    "weight": 10,
+    "ammo": "renaissance bullet",
+    "monkweapon": false
+  },
+  {
+    "_key": "pistol",
+    "name": "Pistol",
+    "infoname": "Pistol [250 gp]",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "pistol",
+      "flags": "i"
+    },
+    "type": "Martial",
+    "ability": 2,
+    "abilitytodamage": true,
+    "damage": [
+      1,
+      10,
+      "piercing"
+    ],
+    "range": "30/90 ft",
+    "description": "Ammunition (Bullet, Firearm), Loading; Vex",
+    "list": [
+      "ranged",
+      "firearm"
+    ],
+    "weight": 3,
+    "ammo": "renaissance bullet",
+    "monkweapon": false
+  },
+  {
+    "_key": "oil",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "oil",
+      "flags": "i"
+    },
+    "name": "Oil",
+    "source": [
+      [
+        "SRD24",
+        98
+      ],
+      [
+        "P24",
+        227
+      ]
+    ],
+    "list": "gear",
+    "ability": 2,
+    "type": "Adventuring Gear",
+    "damage": [
+      "Dex save",
+      "",
+      "Covered"
+    ],
+    "range": "20 ft",
+    "weight": 1,
+    "description": "If covered target takes fire damage in next minute, the oil burns for 5 fire damage",
+    "abilitytodamage": false,
+    "ammo": "oil",
+    "dc": true,
+    "isAlwaysProf": true,
+    "isNotWeapon": true
+  },
+  {
+    "_key": "mind sliver",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*mind)(?=.*sliver).*$",
+      "flags": "i"
+    },
+    "name": "Mind Sliver",
+    "source": [
+      [
+        "P24",
+        298
+      ]
+    ],
+    "list": "spell",
+    "ability": 6,
+    "type": "Cantrip",
+    "damage": [
+      "C",
+      6,
+      "psychic"
+    ],
+    "range": "60 ft",
+    "description": "1 creature Int save, success - no damage, fail - also -1d4 on first save before my next turn ends",
+    "abilitytodamage": false,
+    "dc": true
+  },
+  {
     "_key": "shillelagh-club",
     "baseWeapon": "club",
     "regExpSearch": {
@@ -1728,32 +1813,6 @@
       "force"
     ],
     "description": "Imbued club or quarterstaff"
-  },
-  {
-    "_key": "shocking grasp",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*shocking)(?=.*grasp).*$",
-      "flags": "i"
-    },
-    "name": "Shocking Grasp",
-    "source": [
-      [
-        "P24",
-        316
-      ]
-    ],
-    "list": "spell",
-    "ability": 6,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      8,
-      "lightning"
-    ],
-    "range": "Melee",
-    "description": "Target cannot make opportunity attacks until its next turn",
-    "abilitytodamage": false
   },
   {
     "_key": "sorcerous burst",
@@ -1921,33 +1980,6 @@
     "description": "As Part of this Spell make one Weapon Atk using your Spell mod instead of Str/Dex, Dmg can become Radiant",
     "abilitytodamage": false,
     "dc": false
-  },
-  {
-    "_key": "vicious mockery",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*vicious)(?=.*mockery).*$",
-      "flags": "i"
-    },
-    "name": "Vicious Mockery",
-    "source": [
-      [
-        "P24",
-        337
-      ]
-    ],
-    "list": "spell",
-    "ability": 6,
-    "type": "Cantrip",
-    "damage": [
-      "C",
-      6,
-      "psychic"
-    ],
-    "range": "60 ft",
-    "description": "Wis save, success - no damage, fail - also disadv. on next attack roll in next turn; 1 creature",
-    "abilitytodamage": false,
-    "dc": true
   },
   {
     "_key": "word of radiance",

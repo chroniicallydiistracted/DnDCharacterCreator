@@ -1,103 +1,5 @@
 [
   {
-    "_key": "aasimar",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "aasimar",
-      "flags": "i"
-    },
-    "name": "Aasimar",
-    "sortname": "Aasimar",
-    "source": [
-      [
-        "P24",
-        186
-      ]
-    ],
-    "plural": "Aasimar",
-    "size": [
-      3,
-      4
-    ],
-    "speed": {
-      "walk": {
-        "spd": 30,
-        "enc": 20
-      }
-    },
-    "languageProfs": [
-      "Common",
-      2
-    ],
-    "vision": [
-      [
-        "Darkvision",
-        60
-      ]
-    ],
-    "dmgres": [
-      "Necrotic",
-      "Radiant"
-    ],
-    "age": " reach maturity their in late teens and live about 160 years",
-    "height": " are about 2-4 or 4-7 feet tall",
-    "features": {
-      "healing hands": {
-        "name": "Healing Hands",
-        "minlevel": 1,
-        "limfeaname": "Healing Hands",
-        "usages": 1,
-        "recovery": "long rest",
-        "action": "action",
-        "description": "As a Magic action, I touch a creature and roll a number of d4s equal to my Proficiency Bonus. The creature regains a number of Hit Points equal to the total rolled. Once I use this trait, I can't use it again until I finish a Long Rest."
-      },
-      "celestial revelation": {
-        "name": "Celestial Revelation",
-        "limfeaname": "Celestial Revelation",
-        "minlevel": 3,
-        "usages": 1,
-        "recovery": "long rest",
-        "action": [
-          [
-            "bonus action",
-            "Celestial Revelation"
-          ]
-        ],
-        "description": "When I reach character level 3, I can transform as a Bonus Action using one of the options below (See Notes Page) (choose the option each time I transform). That transformation lasts for 1 minute or until I end it (no action required). Once I transform, I can't do so again until I finish a Long Rest. Once on each of my turns before the transformation ends, I can deal extra damage to one target when I deal damage to it with an attack or a spell. The extra damage equals my Proficiency Bonus, and the extra damage's type is either Necrotic for Necrotic Shroud or Radiant for Heavenly Wings and Inner Radiance.",
-        "toNotesPage": [
-          {
-            "name": "Celestial Revelation",
-            "note": [
-              "Heavenly Wings : Two spectral wings sprout from my back temporarily. Until the transformation ends, I have a Fly Speed equal to my Speed.",
-              "Inner Radiance : Searing light temporarily radiates from my eyes and mouth. For the duration, I shed Bright Light in a 10-foot radius and Dim Light for an additional 10 feet, and at the end of each of my turns, each creature within 10 feet of me takes Radiant damage equal to my Proficiency Bonus",
-              "Necrotic Shroud : My eyes briefly become pools of darkness, and flightless wings sprout from my back temporarily. Creatures other than my allies within 10 feet of me must succeed on a Charisma saving throw (DC 8 plus my Charisma modifier and Proficiency Bonus) or have the Frightened condition until the end of my next turn"
-            ]
-          }
-        ]
-      }
-    },
-    "spellcastingAbility": 6,
-    "spellcastingBonus": [
-      {
-        "name": "Light Bearer",
-        "spells": [
-          "light"
-        ],
-        "selection": [
-          "light"
-        ],
-        "times": 1
-      }
-    ],
-    "trait": "Aasimar\n• Healing Hands: Once per Long Rest as a Magic action I can touch a creature & restore my Prof Bonus d4s HP.\n• Light Bearer: I know the Light cantrip. Charisma is my spellcasting ability for it.\n• Celestial Revelation: Once per Long Rest as a Bonus Action I can transform for 1 min or until I end it. (no action) (choose an option each time) (See Notes Page)",
-    "replaces": [
-      "fallen aasimar",
-      "protector aasimar",
-      "scourge aasimar",
-      "multiverse aasimar"
-    ]
-  },
-  {
     "_key": "dragonborn",
     "regExpSearch": {
       "_type": "RegExp",
@@ -240,6 +142,321 @@
     ]
   },
   {
+    "_key": "half-elf",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*half)(?=.*(elf|elv|drow|silvanesti|qualinesti|grugach|kagonesti)).*$",
+      "flags": "i"
+    },
+    "name": "Half-elf",
+    "source": [
+      [
+        "SRD",
+        6
+      ],
+      [
+        "P",
+        39
+      ]
+    ],
+    "plural": "Half-elves",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Elvish",
+      1
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "savetxt": {
+      "text": [
+        "Magic can't put me to sleep"
+      ],
+      "adv_vs": [
+        "charmed"
+      ]
+    },
+    "skillstxt": "Choose any two skills",
+    "age": " reach adulthood around age 20 and often live over 180 years",
+    "height": " range from 5 to 6 feet tall (4'9\" + 2d8\")",
+    "weight": " weigh around 155 lb (110 + 2d8 × 2d4 lb)",
+    "heightMetric": " range from 1,5 to 1,8 metres tall (145 + 5d8 cm)",
+    "weightMetric": " weigh around 70 kg (50 + 5d8 × 4d4 / 10 kg)",
+    "scorestxt": "+2 Charisma and +1 to two other ability scores of my choice",
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "trait": "Half-Elf (+2 Charisma and +1 to two other ability scores of my choice)\n\nSkill Versatility: I gain proficiency in two skills of my choice."
+  },
+  {
+    "_key": "half-orc",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*half)(?=.*\\bor(c|k)).*$",
+      "flags": "i"
+    },
+    "name": "Half-orc",
+    "source": [
+      [
+        "SRD",
+        7
+      ],
+      [
+        "P",
+        41
+      ]
+    ],
+    "plural": "Half-orcs",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Orc"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "skills": [
+      "Intimidation"
+    ],
+    "age": " reach adulthood around age 14 and rarely live longer than 75 years",
+    "height": " range from 5 to well over 6 feet tall (4'10\" + 2d10\")",
+    "weight": " weigh around 215 lb (140 + 2d10 × 2d6 lb)",
+    "heightMetric": " range from 1,5 to well over 1,8 metres tall (150 + 5d10 cm)",
+    "weightMetric": " weigh around 100 kg (65 + 5d10 × 4d6 / 10 kg)",
+    "scores": [
+      2,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "features": {
+      "relentless endurance": {
+        "name": "Relentless Endurance",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "long rest"
+      },
+      "savage attacks": {
+        "name": "Savage Attacks",
+        "minlevel": 1,
+        "calcChanges": {
+          "atkAdd": [
+            {
+              "_type": "function",
+              "body": "function (fields, v) {\n\t\t\t\t\t\t\tif (v.isMeleeWeapon && (/d\\d+/).test(fields.Damage_Die)) {\n\t\t\t\t\t\t\t\tif (v.extraCritM) {\n\t\t\t\t\t\t\t\t\tv.extraCritM += 1;\n\t\t\t\t\t\t\t\t\tvar extraCritRegex = /\\d+(d\\d+ extra on a crit(ical)?( hit)? in melee)/i;\n\t\t\t\t\t\t\t\t\tfields.Description = fields.Description.replace(extraCritRegex, v.extraCritM + '$1');\n\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\tv.extraCritM = 1;\n\t\t\t\t\t\t\t\t\tfields.Description += (fields.Description ? '; ' : '') + v.extraCritM + fields.Damage_Die.replace(/.*(d\\d+).*/, '$1') + ' extra on a crit in melee';\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}"
+            },
+            "My melee weapon attacks roll 1 additional dice on a critical hit.",
+            900
+          ]
+        }
+      }
+    },
+    "trait": "Half-Orc (+2 Strength, +1 Constitution) \nRelentless Endurance: When I am reduced to 0 hit points but not killed outright, I can drop to 1 hit point instead. I can't use this feature again until I finish a long rest.\n\nSavage Attacks: When I score a critical hit with a melee weapon attack, I can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+  },
+  {
+    "_key": "aasimar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "aasimar",
+      "flags": "i"
+    },
+    "name": "Aasimar",
+    "sortname": "Aasimar",
+    "source": [
+      [
+        "P24",
+        186
+      ]
+    ],
+    "plural": "Aasimar",
+    "size": [
+      3,
+      4
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "dmgres": [
+      "Necrotic",
+      "Radiant"
+    ],
+    "age": " reach maturity their in late teens and live about 160 years",
+    "height": " are about 2-4 or 4-7 feet tall",
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "minlevel": 1,
+        "limfeaname": "Healing Hands",
+        "usages": 1,
+        "recovery": "long rest",
+        "action": "action",
+        "description": "As a Magic action, I touch a creature and roll a number of d4s equal to my Proficiency Bonus. The creature regains a number of Hit Points equal to the total rolled. Once I use this trait, I can't use it again until I finish a Long Rest."
+      },
+      "celestial revelation": {
+        "name": "Celestial Revelation",
+        "limfeaname": "Celestial Revelation",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "action": [
+          [
+            "bonus action",
+            "Celestial Revelation"
+          ]
+        ],
+        "description": "When I reach character level 3, I can transform as a Bonus Action using one of the options below (See Notes Page) (choose the option each time I transform). That transformation lasts for 1 minute or until I end it (no action required). Once I transform, I can't do so again until I finish a Long Rest. Once on each of my turns before the transformation ends, I can deal extra damage to one target when I deal damage to it with an attack or a spell. The extra damage equals my Proficiency Bonus, and the extra damage's type is either Necrotic for Necrotic Shroud or Radiant for Heavenly Wings and Inner Radiance.",
+        "toNotesPage": [
+          {
+            "name": "Celestial Revelation",
+            "note": [
+              "Heavenly Wings : Two spectral wings sprout from my back temporarily. Until the transformation ends, I have a Fly Speed equal to my Speed.",
+              "Inner Radiance : Searing light temporarily radiates from my eyes and mouth. For the duration, I shed Bright Light in a 10-foot radius and Dim Light for an additional 10 feet, and at the end of each of my turns, each creature within 10 feet of me takes Radiant damage equal to my Proficiency Bonus",
+              "Necrotic Shroud : My eyes briefly become pools of darkness, and flightless wings sprout from my back temporarily. Creatures other than my allies within 10 feet of me must succeed on a Charisma saving throw (DC 8 plus my Charisma modifier and Proficiency Bonus) or have the Frightened condition until the end of my next turn"
+            ]
+          }
+        ]
+      }
+    },
+    "spellcastingAbility": 6,
+    "spellcastingBonus": [
+      {
+        "name": "Light Bearer",
+        "spells": [
+          "light"
+        ],
+        "selection": [
+          "light"
+        ],
+        "times": 1
+      }
+    ],
+    "trait": "Aasimar\n• Healing Hands: Once per Long Rest as a Magic action I can touch a creature & restore my Prof Bonus d4s HP.\n• Light Bearer: I know the Light cantrip. Charisma is my spellcasting ability for it.\n• Celestial Revelation: Once per Long Rest as a Bonus Action I can transform for 1 min or until I end it. (no action) (choose an option each time) (See Notes Page)",
+    "replaces": [
+      "fallen aasimar",
+      "protector aasimar",
+      "scourge aasimar",
+      "multiverse aasimar"
+    ]
+  },
+  {
+    "_key": "hill dwarf (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^((?=.*(neidar|klar))|((?=.*\\b(dwarfs?|dwarves|dwarfish|dwarvish|dwarven)\\b)(?=.*\\b(hill|gold)\\b))).*$",
+      "flags": "i"
+    },
+    "name": "Hill dwarf (L)",
+    "sortname": "Dwarf, Hill",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Hill dwarves",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 25,
+        "enc": 25
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Dwarvish"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "savetxt": {
+      "adv_vs": [
+        "poison"
+      ]
+    },
+    "dmgres": [
+      "Poison"
+    ],
+    "weaponProfs": [
+      false,
+      false,
+      [
+        "battleaxe",
+        "handaxe",
+        "warhammer",
+        "light hammer"
+      ]
+    ],
+    "toolProfs": [
+      [
+        "Smith, brewer, or mason tools",
+        1
+      ]
+    ],
+    "age": " are considered young until they are 50 and live about 350 years",
+    "height": " stand between 4 and 5 feet tall (3'8\" + 2d4\")",
+    "weight": " weigh around 150 lb (115 + 2d4 × 2d6 lb)",
+    "heightMetric": " stand between 1,2 and 1,5 metres tall (110 + 5d4 cm)",
+    "weightMetric": " weigh around 70 kg (55 + 5d4 × 4d6 / 10 kg)",
+    "scores": [
+      0,
+      0,
+      2,
+      0,
+      1,
+      0
+    ],
+    "trait": "Hill Dwarf (+2 Constitution, +1 Wisdom)\n\nStonecunning: Whenever I make an Intelligence (History) check related to the origin of stonework, I am considered proficient in the History skill and add double my proficiency bonus to the check, instead of my normal proficiency bonus.\n\nDwarven Toughness: My hit point maximum increases by 1 for every level I have.",
+    "calcChanges": {
+      "hp": {
+        "_type": "function",
+        "body": "function (totalHD) { return [totalHD, \"Dwarven Toughness\"]; }"
+      }
+    },
+    "shortname": "undefined (L)"
+  },
+  {
     "_key": "dwarf",
     "regExpSearch": {
       "_type": "RegExp",
@@ -316,6 +533,88 @@
     ]
   },
   {
+    "_key": "high elf (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*half)((?=.*(silvanesti|qualinesti))|((?=.*\\b(elfs?|elves|elvish|elven)\\b)(?=.*\\b(high|sun|moon|grey|gray|valleys?|silvers?)\\b))).*$",
+      "flags": "i"
+    },
+    "name": "High elf (L)",
+    "sortname": "Elf, High",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "High elves",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Elvish",
+      1
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "savetxt": {
+      "text": [
+        "Magic can't put me to sleep"
+      ],
+      "adv_vs": [
+        "charmed"
+      ]
+    },
+    "weaponProfs": [
+      false,
+      false,
+      [
+        "longsword",
+        "shortsword",
+        "longbow",
+        "shortbow"
+      ]
+    ],
+    "skills": [
+      "Perception"
+    ],
+    "age": " typically claim adulthood around age 100 and can live to be 750 years old",
+    "height": " range from under 5 to over 6 feet tall (4'6\" + 2d10\")",
+    "weight": " weigh around 115 lb (90 + 2d10 × 1d4 lb)",
+    "heightMetric": " range from under 1,5 to over 1,8 metres tall (140 + 5d10 cm)",
+    "weightMetric": " weigh around 55 kg (40 + 5d10 × 2d4 / 10 kg)",
+    "scores": [
+      0,
+      2,
+      0,
+      1,
+      0,
+      0
+    ],
+    "trait": "High Elf (+2 Dexterity, +1 Intelligence)\nTrance: Elves don't need to sleep, but meditate semiconsciously, for 4 hours a day. While meditating, I can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After resting in this way, I gain the same benefit that a human does from 8 hours of sleep, thus needing only 4 hours for a long rest.\nCantrip: I know one cantrip of my choice from the wizard spell list. Intelligence is my spellcasting ability for it.",
+    "spellcastingAbility": 4,
+    "spellcastingBonus": [
+      {
+        "name": "High Elf Cantrip",
+        "class": "wizard",
+        "level": [
+          0,
+          0
+        ]
+      }
+    ],
+    "shortname": "undefined (L)"
+  },
+  {
     "_key": "elf",
     "regExpSearch": {
       "_type": "RegExp",
@@ -367,6 +666,63 @@
       "high elf",
       "wood elf"
     ]
+  },
+  {
+    "_key": "rock gnome (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^((?=.*\\bgnomes?\\b)(?=.*\\b(rocks?|tinker|tinkering)\\b)).*$",
+      "flags": "i"
+    },
+    "name": "Rock gnome (L)",
+    "sortname": "Gnome, Rock",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Rock gnomes",
+    "size": 4,
+    "speed": {
+      "walk": {
+        "spd": 25,
+        "enc": 15
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Gnomish"
+    ],
+    "toolProfs": [
+      "Tinker's tools"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "savetxt": {
+      "text": [
+        "Adv. on Int/Wis/Cha saves vs. magic"
+      ]
+    },
+    "age": " start adult life around age 40 and can live 350 to almost 500 years",
+    "height": " are 3 to 4 feet tall (2'11\" + 2d4\")",
+    "weight": " weigh around 40 lb (35 + 2d4 lb)",
+    "heightMetric": " are 90 to 120 cm tall (2'11\" + 5d4)",
+    "weightMetric": " weigh around 18 kg (16 + 5d4 / 10 kg)",
+    "scores": [
+      0,
+      0,
+      1,
+      2,
+      0,
+      0
+    ],
+    "trait": "Rock Gnome (+1 Constitution, +2 Intelligence) Artificer's Lore: Add twice my proficiency bonus to Intelligence (History) checks with magic, alchemical, and technological items.\nTinker: Construct a Tiny clockwork device (AC 5, 1 HP) using tinker's tools, 1 hour, and 10 gp of material components, that functions for 24 hours. I can have up to 3 active. -Clockwork Toy: animal, monster, or person that can move 5 ft per turn in a random direction, making appropriate noises; -Fire Starter: 1 action to produce miniature flame to light things; -Music Box: plays single song at a moderate volume.",
+    "shortname": "undefined (L)"
   },
   {
     "_key": "gnome",
@@ -468,6 +824,54 @@
     ]
   },
   {
+    "_key": "lightfoot halfling (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^((?=.*(hairfoot|tallfellow))|((?=.*\\b(halflings?|hobbits?)\\b)(?=.*lightfoot))).*$",
+      "flags": "i"
+    },
+    "name": "Lightfoot halfling (L)",
+    "sortname": "Halfling, Lightfoot",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Lightfoot halflings",
+    "size": 4,
+    "speed": {
+      "walk": {
+        "spd": 25,
+        "enc": 15
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Halfling"
+    ],
+    "savetxt": {
+      "adv_vs": [
+        "frightened"
+      ]
+    },
+    "age": " reach adulthood at age 20 and live around 150 years",
+    "height": " average about 3 feet tall (2'7\" + 2d4\")",
+    "weight": " weigh around 40 lb (35 + 2d4 lb)",
+    "heightMetric": " average about 90 cm tall (80 + 5d4)",
+    "weightMetric": " weigh around 18 kg (16 + 5d4 / 10 kg)",
+    "scores": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      1
+    ],
+    "trait": "Lightfoot Halfling (+2 Dexterity, +1 Charisma)\nLucky: When I roll a 1 on an attack roll, ability check, or saving throw, I can reroll the die and must use the new roll.\nHalfling Nimbleness: I can move through the space of any creature that is of a size larger than me.\nNaturally Stealthy: I can attempt to hide even when I am obscured only by a creature that is at least one size larger than me.",
+    "shortname": "undefined (L)"
+  },
+  {
     "_key": "halfling",
     "regExpSearch": {
       "_type": "RegExp",
@@ -506,6 +910,50 @@
       "lightfoot halfling",
       "stout halfling"
     ]
+  },
+  {
+    "_key": "human (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "human",
+      "flags": "i"
+    },
+    "name": "Human (L)",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Humans",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      1
+    ],
+    "age": " reach adulthood in their late teens and live less than 100 years",
+    "height": " range from barely 5 to well over 6 feet tall (4'8\" + 2d10\")",
+    "weight": " weigh around 165 lb (110 + 2d10 × 2d4 lb)",
+    "heightMetric": " range from barely 1,5 to well over 1,8 metres tall (145 + 5d10 cm)",
+    "weightMetric": " weigh around 75 kg (50 + 5d10 × 4d4 / 10 kg)",
+    "scorestxt": "+1 to all ability scores",
+    "scores": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "trait": "Human (+1 to all ability scores)",
+    "shortname": "undefined (L)"
   },
   {
     "_key": "human",
@@ -618,6 +1066,109 @@
       "multiverse orc",
       "orc"
     ]
+  },
+  {
+    "_key": "tiefling (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^((?=.*tiefling)|(?=.*planetouched)(?=.*(hell|abyss|fiend|devil|asmodeus))).*$",
+      "flags": "i"
+    },
+    "name": "Tiefling (L)",
+    "source": [
+      [
+        "LEGACYRACE",
+        1
+      ]
+    ],
+    "plural": "Tieflings",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Infernal"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "dmgres": [
+      "Fire"
+    ],
+    "age": " reach adulthood in their late teens and live around 100 years",
+    "height": " range from 5 to over 6 feet tall (4'9\" + 2d8\")",
+    "weight": " weigh around 155 lb (110 + 2d8 × 2d4 lb)",
+    "heightMetric": " range from 1,5 to over 1,8 metres tall (145 + 5d8 cm)",
+    "weightMetric": " weigh around 70 kg (50 + 5d8 × 4d4 / 10 kg)",
+    "scores": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      2
+    ],
+    "trait": "Tiefling (+1 Intelligence, +2 Charisma)\n\nInfernal Legacy:\n   I know the Thaumaturgy cantrip.\n   At 3rd level, I can cast Hellish Rebuke once per long rest as a 2nd-level spell.\n   At 5th level, I can also cast Darkness once per long rest.\n   Charisma is my spellcasting ability for these spells.",
+    "spellcastingAbility": 6,
+    "spellcastingBonus": [
+      {
+        "name": "Infernal Legacy (level 1)",
+        "spells": [
+          "thaumaturgy"
+        ],
+        "selection": [
+          "thaumaturgy"
+        ]
+      }
+    ],
+    "features": {
+      "hellish rebuke": {
+        "name": "Infernal Legacy (level 3)",
+        "minlevel": 3,
+        "spellcastingBonus": [
+          {
+            "name": "Infernal Legacy (level 3)",
+            "spells": [
+              "hellish rebuke"
+            ],
+            "selection": [
+              "hellish rebuke"
+            ],
+            "firstCol": "oncelr"
+          }
+        ],
+        "spellChanges": {
+          "hellish rebuke": {
+            "description": "Cast when taking damage, creature that dealt damage takes 3d10 Fire damage; save halves",
+            "changes": "Using Infernal Legacy, I cast Hellish Rebuke as if I'm using a 2nd-level spell slot, doing 3d10 damage."
+          }
+        }
+      },
+      "darkness": {
+        "name": "Infernal Legacy (level 5)",
+        "minlevel": 5,
+        "spellcastingBonus": [
+          {
+            "name": "Infernal Legacy (level 5)",
+            "spells": [
+              "darkness"
+            ],
+            "selection": [
+              "darkness"
+            ],
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    },
+    "shortname": "undefined (L)"
   },
   {
     "_key": "tiefling",

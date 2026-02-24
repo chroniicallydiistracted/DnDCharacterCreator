@@ -1,79 +1,60 @@
 [
   {
-    "_key": "arrows",
+    "_key": "arrow",
     "name": "Arrows",
-    "infoname": "Arrows [1 gp]",
     "source": [
       [
-        "P24",
-        222
+        "SRD",
+        69
+      ],
+      [
+        "P",
+        150
       ]
     ],
-    "icon": "Arrows",
-    "amount": 20,
-    "weight": 0.05
+    "weight": 0.05,
+    "icon": "Arrows"
   },
   {
-    "_key": "bolts",
+    "_key": "bolt",
     "name": "Bolts",
-    "infoname": "Bolts [1 gp]",
+    "weight": 0.075,
     "source": [
       [
-        "P24",
-        222
+        "SRD",
+        69
+      ],
+      [
+        "P",
+        150
       ]
     ],
     "icon": "Arrows",
-    "invName": "Crossbow bolts",
-    "weight": 0.075
+    "invName": "Crossbow bolts"
   },
   {
-    "_key": "renaissance bullet",
-    "name": "Bullets, Renaissance",
+    "_key": "bullet",
+    "name": "Bullets",
+    "weight": 0.075,
     "source": [
       [
-        "P24",
-        222
+        "SRD",
+        69
+      ],
+      [
+        "P",
+        150
       ]
     ],
-    "weight": 0.1,
     "icon": "Bullets",
-    "invName": "Bullets, renaissance",
+    "invName": "Sling bullets",
     "alternatives": [
       {
         "_type": "RegExp",
-        "source": "^(?=.*bullet)(?=.*renaissance).*$",
+        "source": "^(?=.*bullet)(?=.*sling).*$",
         "flags": "i"
       }
     ]
-  },
-  {
-    "_key": "bullets, sling",
-    "name": "Bullets, Sling",
-    "infoname": "Bullets, Sling [4 cp]",
-    "source": [
-      [
-        "P24",
-        222
-      ]
-    ],
-    "icon": "Arrows",
-    "invName": "Sling bullets",
-    "weight": 0.075
-  },
-  {
-    "_key": "needles",
-    "name": "Needles",
-    "infoname": "Needles [1 gp]",
-    "source": [
-      [
-        "P24",
-        222
-      ]
-    ],
-    "invName": "Blowgun needles",
-    "amount": 50,
-    "weight": 0.02
   },
   {
     "_key": "dagger",
@@ -152,6 +133,23 @@
     "alternatives": [
       "Hammer"
     ]
+  },
+  {
+    "_key": "needle",
+    "name": "Needles",
+    "source": [
+      [
+        "SRD",
+        66
+      ],
+      [
+        "P",
+        149
+      ]
+    ],
+    "weight": 0.02,
+    "icon": "Bullets",
+    "invName": "Blowgun needles"
   },
   {
     "_key": "spear",
@@ -248,6 +246,82 @@
         "flags": "i"
       }
     ]
+  },
+  {
+    "_key": "arrows",
+    "name": "Arrows",
+    "infoname": "Arrows [1 gp]",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "icon": "Arrows",
+    "amount": 20,
+    "weight": 0.05
+  },
+  {
+    "_key": "bolts",
+    "name": "Bolts",
+    "infoname": "Bolts [1 gp]",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "icon": "Arrows",
+    "invName": "Crossbow bolts",
+    "weight": 0.075
+  },
+  {
+    "_key": "renaissance bullet",
+    "name": "Bullets, Renaissance",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "weight": 0.1,
+    "icon": "Bullets",
+    "invName": "Bullets, renaissance",
+    "alternatives": [
+      {
+        "_type": "RegExp",
+        "source": "^(?=.*bullet)(?=.*renaissance).*$",
+        "flags": "i"
+      }
+    ]
+  },
+  {
+    "_key": "bullets, sling",
+    "name": "Bullets, Sling",
+    "infoname": "Bullets, Sling [4 cp]",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "icon": "Arrows",
+    "invName": "Sling bullets",
+    "weight": 0.075
+  },
+  {
+    "_key": "needles",
+    "name": "Needles",
+    "infoname": "Needles [1 gp]",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "invName": "Blowgun needles",
+    "amount": 50,
+    "weight": 0.02
   },
   {
     "_key": "oil",

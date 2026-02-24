@@ -93,9 +93,2064 @@
         "recovery": "long rest",
         "description": "As a Bonus Action, cause creatures in a 30-foot radius to make a Wisdom save (DC 8 + Strength mod + Proficiency). On failure, they are Frightened for 1 minute, repeating the save at each turn's end. Regain use after a Long Rest or by expending a Rage use."
       }
+    }
+  },
+  {
+    "_key": "bard-college of lore",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(?=^.*^(?=.*(college|bard|minstrel|troubadour|jongleur))(?=.*lore).*$.*$)(?!^Bard \\(College of Lore\\)$)",
+      "flags": "i"
+    },
+    "subname": "College of Lore - 2014",
+    "source": [
+      [
+        "LEGACYCLASS",
+        1
+      ]
+    ],
+    "features": {
+      "subclassfeature3": {
+        "name": "Bonus Proficiencies",
+        "source": [
+          [
+            "SRD",
+            13
+          ],
+          [
+            "P",
+            54
+          ]
+        ],
+        "minlevel": 3,
+        "description": "I gain proficiency with three skills of my choice",
+        "skillstxt": "Choose any three skills"
+      },
+      "subclassfeature3.1": {
+        "name": "Cutting Words",
+        "source": [
+          [
+            "SRD",
+            13
+          ],
+          [
+            "P",
+            54
+          ]
+        ],
+        "minlevel": 3,
+        "description": "As a reaction, when a foe within earshot & 60 ft rolls ability check, attack or damage,\n   I can subtract a Bardic Inspiration die from the result unless the foe can't be charmed",
+        "action": [
+          [
+            "reaction",
+            ""
+          ]
+        ]
+      },
+      "subclassfeature6": {
+        "name": "Additional Magical Secrets",
+        "source": [
+          [
+            "SRD",
+            13
+          ],
+          [
+            "P",
+            55
+          ]
+        ],
+        "minlevel": 6,
+        "description": "I can add two spells/cantrips from any class to my Spells Known",
+        "spellcastingBonus": [
+          {
+            "name": "Additional Magical Secret",
+            "class": "any",
+            "times": 2
+          }
+        ]
+      },
+      "subclassfeature14": {
+        "name": "Peerless Skill",
+        "source": [
+          [
+            "SRD",
+            14
+          ],
+          [
+            "P",
+            55
+          ]
+        ],
+        "minlevel": 14,
+        "description": "When making an ability check, I can expend a use of Bardic Inspiration to add the die"
+      }
+    },
+    "_parentClass": "bard",
+    "_subKey": "college of lore"
+  },
+  {
+    "_key": "cleric-life domain",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(?=^.*^(?=.*(cleric|priest|clergy|acolyte))(?=.*\\b(life|living|healing)\\b).*$.*$)(?!^Cleric \\(Life Domain\\)$)",
+      "flags": "i"
+    },
+    "subname": "Life Domain - 2014",
+    "source": [
+      [
+        "LEGACYCLASS",
+        1
+      ]
+    ],
+    "spellcastingExtra": [
+      "bless",
+      "cure wounds",
+      "lesser restoration",
+      "spiritual weapon",
+      "beacon of hope",
+      "revivify",
+      "death ward",
+      "guardian of faith",
+      "mass cure wounds",
+      "raise dead"
+    ],
+    "features": {
+      "subclassfeature1": {
+        "name": "Bonus Proficiency",
+        "source": [
+          [
+            "SRD",
+            17
+          ],
+          [
+            "P",
+            60
+          ]
+        ],
+        "minlevel": 1,
+        "description": "I gain proficiency with heavy armor",
+        "armorProfs": [
+          false,
+          false,
+          true,
+          false
+        ]
+      },
+      "subclassfeature1.1": {
+        "name": "Disciple of Life",
+        "source": [
+          [
+            "SRD",
+            17
+          ],
+          [
+            "P",
+            60
+          ]
+        ],
+        "minlevel": 1,
+        "description": "Whenever a 1st-level or higher spell I cast restores HP to a creature, it heals more\n   The creature regains an additional 2 + spell level (SL) worth of hit points\n   Note that \"X/SL\" on the spell page means per spell slot level above the spell's normal level",
+        "calcChanges": {
+          "spellAdd": [
+            {
+              "_type": "function",
+              "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\t\t\tif (spellObj.psionic || !spellObj.level) return;\n\t\t\t\t\t\t\tswitch (spellKey) {\n\t\t\t\t\t\t\t\tcase \"enervation\" :\n\t\t\t\t\t\t\t\tcase \"life transference\" :\n\t\t\t\t\t\t\t\tcase \"vampiric touch\" :\n\t\t\t\t\t\t\t\t\tvar useSpellDescr = getSpellShortDescription(spellKey, spellObj);\n\t\t\t\t\t\t\t\t\tvar strAdd = \" +\" + (spellObj.level + 2) + (spellObj.allowUpCasting === false ? \"\": \"+1/SL\");\n\t\t\t\t\t\t\t\t\tspellObj.description = useSpellDescr.replace(/(heals? (half|twice)( the damage dealt| that)?)( in HP)?/, \"$1\" + strAdd);\n\t\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t\tcase \"mass heal\" :\n\t\t\t\t\t\t\t\t\tspellObj.description = spellObj.descriptionShorter.replace(/crea(tures)? in range.*cure[sd]/i, \"crea in range, each then +11 HP, cured\");\n\t\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t\tdefault :\n\t\t\t\t\t\t\t\t\tif (!genericSpellDmgEdit(spellKey, spellObj, \"heal\", (2 + spellObj.level))) return;\n\t\t\t\t\t\t\t\t\tif (spellObj.level < 9 && spellObj.allowUpCasting !== false) genericSpellDmgEdit(spellKey, spellObj, \"heal\", \"1/SL\");\n\t\t\t\t\t\t\t\t\tspellObj.discipleOfLife = true; // for Blessed Healer and Supreme Healing\n\t\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}"
+            },
+            "When I use a spell that restores hit points, it restores an additional 2 + the level of the spell slot (or spell slot equivalent) used to cast the spell."
+          ]
+        }
+      },
+      "subclassfeature2": {
+        "name": "Channel Divinity: Preserve Life",
+        "source": [
+          [
+            "SRD",
+            17
+          ],
+          [
+            "P",
+            60
+          ]
+        ],
+        "minlevel": 2,
+        "description": "As an action, I can heal any creature within 30 ft of me up to half their maximum HP\n   I divide the number of hit points among the creatures as I see fit",
+        "additional": [
+          "",
+          "10 hit points",
+          "15 hit points",
+          "20 hit points",
+          "25 hit points",
+          "30 hit points",
+          "35 hit points",
+          "40 hit points",
+          "45 hit points",
+          "50 hit points",
+          "55 hit points",
+          "60 hit points",
+          "65 hit points",
+          "70 hit points",
+          "75 hit points",
+          "80 hit points",
+          "85 hit points",
+          "90 hit points",
+          "95 hit points",
+          "100 hit points"
+        ],
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      },
+      "subclassfeature6": {
+        "name": "Blessed Healer",
+        "source": [
+          [
+            "SRD",
+            17
+          ],
+          [
+            "P",
+            60
+          ]
+        ],
+        "minlevel": 6,
+        "description": "When I restore HP to another with a spell, I regain 2 + the spell (slot) level in HP",
+        "calcChanges": {
+          "spellAdd": [
+            {
+              "_type": "function",
+              "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\t\t\tvar otherHealSpells = [\"mass heal\", \"life transference\", \"power word heal\", \"resurrection\", \"true resurrection\"];\n\t\t\t\t\t\t\tvar noHealAtCast = [\"aura of life\", \"aura of vitality\", \"goodberry\", \"healing elixir-uass\", \"healing spirit\"];\n\t\t\t\t\t\t\tif (noHealAtCast.indexOf(spellKey) !== -1) return;\n\t\t\t\t\t\t\tif (spellObj.discipleOfLife || otherHealSpells.indexOf(spellKey) !== -1) {\n\t\t\t\t\t\t\t\tvar useSpellDescr = getSpellShortDescription(spellKey, spellObj).replace(/spell(casting)? (ability )?mod(ifier)?/i, \"spell mod\");\n\t\t\t\t\t\t\t\tswitch (spellKey) {\n\t\t\t\t\t\t\t\t\tcase \"heal\" :\n\t\t\t\t\t\t\t\t\tcase \"life transference\" :\n\t\t\t\t\t\t\t\t\tcase \"mass heal\" :\n\t\t\t\t\t\t\t\t\t\tuseSpellDescr = useSpellDescr.replace(\" in range\", \"\").replace(\" I can see\", \"\").replace(\"blindness, deafness\", \"blind, deaf\");\n\t\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t\tcase \"regenerate\" :\n\t\t\t\t\t\t\t\t\t\tuseSpellDescr = useSpellDescr.replace(\" for the duration; restores lost body\", \"; regrow\");\n\t\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t\tcase \"resurrection\" :\n\t\t\t\t\t\t\t\t\tcase \"true resurrection\" :\n\t\t\t\t\t\t\t\t\t\tuseSpellDescr = useSpellDescr.replace(\" with\", \", \").replace(\"century\", \"100y\").replace(\"1000gp\", \"1k gp\");\n\t\t\t\t\t\t\t\t\tcase \"raise dead\" :\n\t\t\t\t\t\t\t\t\tcase \"revivify\" :\n\t\t\t\t\t\t\t\t\t\tuseSpellDescr = useSpellDescr.replace(/(Resurrects?|Restores?) (a )?crea(ture)?('s)? (body )?that (has )?died in( the)?/i, \"Restore crea that died in\");\n\t\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t};\n\t\t\t\t\t\t\t\tvar alwaysOthers = [\"life transference\", \"raise dead\", \"revivify\", \"resurrection\", \"true resurrection\"];\n\t\t\t\t\t\t\t\tvar strPart = alwaysOthers.indexOf(spellKey) === -1 ? \"; if other, I heal \" : \"; I heal \";\n\t\t\t\t\t\t\t\tvar strAdd = spellObj.level < 9 ? strPart + (spellObj.level + 2) + (spellObj.allowUpCasting === false ? \"\" : \"+1/SL\") + \" HP\" : strPart + \"11 HP\";\n\t\t\t\t\t\t\t\tspellObj.description = useSpellDescr + strAdd;\n\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}"
+            },
+            "When I cast a spell that restores hit points to another creature than myself at the moment of casting, I also heal 2 + the level of the spell slot (or spell slot equivalent) hit points."
+          ]
+        }
+      },
+      "subclassfeature8": {
+        "name": "Divine Strike",
+        "source": [
+          [
+            "SRD",
+            17
+          ],
+          [
+            "P",
+            60
+          ]
+        ],
+        "minlevel": 8,
+        "description": "Once per turn, when I hit a creature with a weapon attack, I can do extra damage",
+        "additional": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "+1d8 radiant damage",
+          "+1d8 radiant damage",
+          "+1d8 radiant damage",
+          "+1d8 radiant damage",
+          "+1d8 radiant damage",
+          "+1d8 radiant damage",
+          "+2d8 radiant damage",
+          "+2d8 radiant damage",
+          "+2d8 radiant damage",
+          "+2d8 radiant damage",
+          "+2d8 radiant damage",
+          "+2d8 radiant damage",
+          "+2d8 radiant damage"
+        ],
+        "calcChanges": {
+          "atkAdd": [
+            {
+              "_type": "function",
+              "body": "function (fields, v) {\n\t\t\t\t\t\t\tif (classes.known.cleric && v.isWeapon) {\n\t\t\t\t\t\t\t\tfields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 radiant damage';\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}"
+            },
+            "Once per turn, I can have one of my weapon attacks that hit do extra radiant damage."
+          ]
+        }
+      },
+      "subclassfeature17": {
+        "name": "Supreme Healing",
+        "source": [
+          [
+            "SRD",
+            17
+          ],
+          [
+            "P",
+            60
+          ]
+        ],
+        "minlevel": 17,
+        "description": "When I restore HP with a spell, I heal the maximum amount instead of rolling the dice",
+        "calcChanges": {
+          "spellAdd": [
+            {
+              "_type": "function",
+              "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\t\t\tif (!spellObj.discipleOfLife) return;\n\t\t\t\t\t\t\treturn genericSpellDmgEdit(spellKey, spellObj, \"heal\", false, false, true, true);\n\t\t\t\t\t\t}"
+            },
+            "When I use a spell that restores hit points by rolling one or more dice to restore hit points with a spell, I instead use the highest number possible for each die."
+          ]
+        }
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "bless",
+            "cure wounds",
+            "lesser restoration",
+            "spiritual weapon",
+            "beacon of hope",
+            "revivify",
+            "death ward",
+            "guardian of faith",
+            "mass cure wounds",
+            "raise dead",
+            "beacon of hope legacy",
+            "bless legacy",
+            "cure wounds legacy",
+            "death ward legacy",
+            "guardian of faith legacy",
+            "lesser restoration legacy",
+            "mass cure wounds legacy",
+            "raise dead legacy",
+            "revivify legacy",
+            "spiritual weapon legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "bless",
+            "cure wounds",
+            "lesser restoration",
+            "spiritual weapon",
+            "beacon of hope",
+            "revivify",
+            "death ward",
+            "guardian of faith",
+            "mass cure wounds",
+            "raise dead"
+          ]
+        },
+        "legacySpells": [
+          "beacon of hope legacy",
+          "bless legacy",
+          "cure wounds legacy",
+          "death ward legacy",
+          "guardian of faith legacy",
+          "lesser restoration legacy",
+          "mass cure wounds legacy",
+          "raise dead legacy",
+          "revivify legacy",
+          "spiritual weapon legacy"
+        ]
+      }
+    },
+    "_parentClass": "cleric",
+    "_subKey": "life domain"
+  },
+  {
+    "_key": "druid-circle of the land",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(?=^.*^(?=.*(druid|shaman))(?=.*\\b(land|arctic|coast|deserts?|forests?|grasslands?|savannah|steppes?|mountains?|swamps?|underdark)\\b).*$.*$)(?!^Druid \\(Circle of the Land\\)$)",
+      "flags": "i"
+    },
+    "subname": "Circle of the Land - 2014",
+    "source": [
+      [
+        "LEGACYCLASS",
+        1
+      ]
+    ],
+    "features": {
+      "subclassfeature2": {
+        "name": "Bonus Cantrip",
+        "source": [
+          [
+            "SRD",
+            21
+          ],
+          [
+            "P",
+            68
+          ]
+        ],
+        "minlevel": 2,
+        "description": "I know one additional druid cantrip of my choice",
+        "spellcastingBonus": [
+          {
+            "name": "Bonus Druid Cantrip",
+            "class": "druid",
+            "level": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "subclassfeature2.1": {
+        "name": "Natural Recovery",
+        "source": [
+          [
+            "SRD",
+            21
+          ],
+          [
+            "P",
+            68
+          ]
+        ],
+        "minlevel": 2,
+        "description": "After a short rest, I can recover a number of 5th-level or lower spell slots",
+        "additional": [
+          "1 level spell slots",
+          "1 level spell slots",
+          "2 levels spell slots",
+          "2 levels spell slots",
+          "3 levels spell slots",
+          "3 levels spell slots",
+          "4 levels spell slots",
+          "4 levels spell slots",
+          "5 levels spell slots",
+          "5 levels spell slots",
+          "6 levels spell slots",
+          "6 levels spell slots",
+          "7 levels spell slots",
+          "7 levels spell slots",
+          "8 levels spell slots",
+          "8 levels spell slots",
+          "9 levels spell slots",
+          "9 levels spell slots",
+          "10 levels spell slots",
+          "10 levels spell slots"
+        ],
+        "usages": 1,
+        "recovery": "long rest"
+      },
+      "subclassfeature3": {
+        "name": "Circle Spells",
+        "source": [
+          [
+            "SRD",
+            21
+          ],
+          [
+            "P",
+            68
+          ]
+        ],
+        "minlevel": 3,
+        "description": "Choose a terrain that grants you spells using the \"Choose Feature\" button above",
+        "choices": [
+          "Arctic",
+          "Coast",
+          "Desert",
+          "Forest",
+          "Grassland",
+          "Mountain",
+          "Swamp",
+          "Underdark"
+        ],
+        "arctic": {
+          "name": "Arctic Circle Spells",
+          "description": "My mystical connection to the arctic infuses me with the ability to cast certain spells\n   These are always prepared, but don't count against the number of spells I can prepare",
+          "spellcastingExtra": [
+            "hold person",
+            "spike growth",
+            "sleet storm",
+            "slow",
+            "freedom of movement",
+            "ice storm",
+            "commune with nature",
+            "cone of cold"
+          ]
+        },
+        "coast": {
+          "name": "Coast Circle Spells",
+          "description": "My mystical connection to the coast infuses me with the ability to cast certain spells\n   These are always prepared, but don't count against the number of spells I can prepare",
+          "spellcastingExtra": [
+            "mirror image",
+            "misty step",
+            "water breathing",
+            "water walk",
+            "control water",
+            "freedom of movement",
+            "conjure elemental",
+            "scrying"
+          ]
+        },
+        "desert": {
+          "name": "Desert Circle Spells",
+          "description": "My mystical connection to the desert infuses me with the ability to cast certain spells\n   These are always prepared, but don't count against the number of spells I can prepare",
+          "spellcastingExtra": [
+            "blur",
+            "silence",
+            "create food and water",
+            "protection from energy",
+            "blight",
+            "hallucinatory terrain",
+            "insect plague",
+            "wall of stone"
+          ]
+        },
+        "forest": {
+          "name": "Forest Circle Spells",
+          "description": "My mystical connection to the forest infuses me with the ability to cast certain spells\n   These are always prepared, but don't count against the number of spells I can prepare",
+          "spellcastingExtra": [
+            "barkskin",
+            "spider climb",
+            "call lightning",
+            "plant growth",
+            "divination",
+            "freedom of movement",
+            "commune with nature",
+            "tree stride"
+          ]
+        },
+        "grassland": {
+          "name": "Grassland Circle Spells",
+          "description": "My connection to the grassland infuses me with the ability to cast certain spells\n   These are always prepared, but don't count against the number of spells I can prepare",
+          "spellcastingExtra": [
+            "invisibility",
+            "pass without trace",
+            "daylight",
+            "haste",
+            "divination",
+            "freedom of movement",
+            "dream",
+            "insect plague"
+          ]
+        },
+        "mountain": {
+          "name": "Mountain Circle Spells",
+          "description": "My connection to the mountains infuses me with the ability to cast certain spells\n   These are always prepared, but don't count against the number of spells I can prepare",
+          "spellcastingExtra": [
+            "spider climb",
+            "spike growth",
+            "lightning bolt",
+            "meld into stone",
+            "stone shape",
+            "stoneskin",
+            "passwall",
+            "wall of stone"
+          ]
+        },
+        "swamp": {
+          "name": "Swamp Circle Spells",
+          "description": "My mystical connection to the swamp infuses me with the ability to cast certain spells\n   These are always prepared, but don't count against the number of spells I can prepare",
+          "spellcastingExtra": [
+            "darkness",
+            "melf's acid arrow",
+            "water walk",
+            "stinking cloud",
+            "freedom of movement",
+            "locate creature",
+            "insect plague",
+            "scrying"
+          ]
+        },
+        "underdark": {
+          "name": "Underdark Circle Spells",
+          "description": "My connection to the underdark infuses me with the ability to cast certain spells\n   These are always prepared, but don't count against the number of spells I can prepare",
+          "spellcastingExtra": [
+            "spider climb",
+            "web",
+            "gaseous form",
+            "stinking cloud",
+            "greater invisibility",
+            "stone shape",
+            "cloudkill",
+            "insect plague"
+          ]
+        }
+      },
+      "subclassfeature6": {
+        "name": "Land's Stride",
+        "source": [
+          [
+            "SRD",
+            22
+          ],
+          [
+            "P",
+            68
+          ]
+        ],
+        "minlevel": 6,
+        "description": "I can travel through nonmagical, difficult terrain without penalty\n   I have advantage on saves vs. plants that impede movement by magical influence",
+        "savetxt": {
+          "adv_vs": [
+            "magical plants that impede movement"
+          ]
+        }
+      },
+      "subclassfeature10": {
+        "name": "Nature's Ward",
+        "source": [
+          [
+            "SRD",
+            22
+          ],
+          [
+            "P",
+            68
+          ]
+        ],
+        "minlevel": 10,
+        "description": "I am immune to poison/disease and I can't be charmed/frightened by elementals or fey",
+        "savetxt": {
+          "text": [
+            "Immune to being charmed or frightened by elementals or fey"
+          ],
+          "immune": [
+            "poison",
+            "disease"
+          ]
+        }
+      },
+      "subclassfeature14": {
+        "name": "Nature's Sanctuary",
+        "source": [
+          [
+            "SRD",
+            22
+          ],
+          [
+            "P",
+            68
+          ]
+        ],
+        "minlevel": 14,
+        "description": "When a beast or plant attacks me, it must make a Wis save or pick a different target\n   If it can't, it automatically misses; On a successful save, it is immune for 24 hours"
+      }
+    },
+    "_parentClass": "druid",
+    "_subKey": "circle of the land"
+  },
+  {
+    "_key": "fighter-champion",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(fighter))(?=.*(champion)).*$",
+      "flags": "i"
+    },
+    "subname": "Champion",
+    "source": [
+      [
+        "P24",
+        96
+      ]
+    ],
+    "features": {
+      "subclassfeature3": {
+        "name": "Improved Critical",
+        "source": [
+          [
+            "P24",
+            96
+          ]
+        ],
+        "minlevel": 3,
+        "calcChanges": {
+          "atkAdd": [
+            {
+              "_type": "function",
+              "body": "function(fields, v) {\r\n                        if (!v.isSpell && !v.CritChance && classes.known.fighter && classes.known.fighter.level < 15) {\r\n                            fields.Description += (fields.Description ? '; ' : '') + 'Crit on 19-20';\r\n                            v.CritChance = 19;\r\n                        }\r\n                    }"
+            },
+            "My weapon attacks score a critical on a to hit roll of both 19 and 20.",
+            19
+          ]
+        },
+        "description": "I score a critical hit with my weapon attacks/Unarmed Strikes on a roll of 19 and 20"
+      },
+      "subclassfeature3.1": {
+        "name": "Remarkable Athlete",
+        "source": [
+          [
+            "P24",
+            96
+          ]
+        ],
+        "minlevel": 3,
+        "description": "I have Advantage on Initiative and Strength(Athletics) checks\n   On a critical hit, I can move half my Speed without provoking Opportunity Attacks"
+      },
+      "subclassfeature7": {
+        "name": "Additional Fighting Style",
+        "source": [
+          [
+            "P24",
+            96
+          ]
+        ],
+        "minlevel": 7,
+        "choices": [
+          "Fighting Style [Archery]",
+          "Fighting Style [Blind Fighting]",
+          "Fighting Style [Defense]",
+          "Fighting Style [Dueling]",
+          "Fighting Style [Great Weapon Fighting]",
+          "Fighting Style [Interception]",
+          "Fighting Style [Protection]",
+          "Fighting Style [Thrown Weapon Fighting]",
+          "Fighting Style [Two-Weapon Fighting]",
+          "Fighting Style [Unarmed Fighting]"
+        ],
+        "fighting style [archery]": {
+          "name": "Fighting Style [Archery]",
+          "description": "I gain a +2 bonus to attack rolls I make with Ranged weapons.",
+          "calcChanges": {
+            "atkCalc": [
+              {
+                "_type": "function",
+                "body": "function(fields, v, output) {\r\n                            if (v.isRangedWeapon && !v.isNaturalWeapon && !v.isDC) output.extraHit += 2;\r\n                        }"
+              },
+              "My ranged weapons get a +2 bonus on the To Hit."
+            ]
+          }
+        },
+        "fighting style [blind fighting]": {
+          "name": "Fighting Style [Blind Fighting]",
+          "description": "I have Blindsight with a range of 10 feet.",
+          "vision": [
+            [
+              "Blindsight",
+              10
+            ]
+          ]
+        },
+        "fighting style [defense]": {
+          "name": "Fighting Style [Defense]",
+          "description": "While I'm wearing Light, Medium, or Heavy armor, I gain a +1 bonus to Armor Class.",
+          "extraAC": {
+            "name": "Defense Fighting Style",
+            "mod": 1,
+            "text": "I gain a +1 bonus to AC while wearing armor.",
+            "stopeval": {
+              "_type": "function",
+              "body": "function(v) {\r\n                        return !v.wearingArmor;\r\n                    }"
+            }
+          }
+        },
+        "fighting style [dueling]": {
+          "name": "Fighting Style [Dueling]",
+          "description": "When I'm holding a Melee weapon in one hand and no other weapons, I gain a +2 bonus to damage rolls with that weapon.",
+          "calcChanges": {
+            "atkCalc": [
+              {
+                "_type": "function",
+                "body": "function(fields, v, output) {\r\n                            for (var i = 1; i <= FieldNumbers.actions; i++) {\r\n                                if ((/off.hand.attack/i).test(What('Bonus Action ' + i))) return;\r\n                            }\r\n                            if (v.isMeleeWeapon && !v.isNaturalWeapon && !(/((^|[^+-]\\b)2|\\btwo).?hand(ed)?s?\\b/i).test(fields.Description)) output.extraDmg += 2;\r\n                        }"
+              },
+              "When I'm wielding a melee weapon in one hand and no weapon in my other hand, I do +2 damage with that melee weapon. This condition will always be false if the bonus action 'Off-hand Attack' exists."
+            ]
+          }
+        },
+        "fighting style [great weapon fighting]": {
+          "name": "Fighting Style [Great Weapon Fighting]",
+          "description": "When I roll damage for an attack I make with a Melee weapon that I am holding with two hands, I can treat any 1 or 2 on a damage die as a 3. The weapon must have the Two-Handed or Versatile properties to gain this benefit.",
+          "calcChanges": {
+            "atkAdd": [
+              {
+                "_type": "function",
+                "body": "function(fields, v) {\r\n                            if (v.isMeleeWeapon && (/(\\bversatile|((^|[^+-]\\b)2|\\btwo).?hand(ed)?s?)\\b/i).test(fields.Description)) {\r\n                                fields.Description += (fields.Description ? '; ' : '') + 'treat rolls of 1 or 2 on the damage die as a 3' + ((/versatile/i).test(fields.Description) ? ' when two-handed' : '');\r\n                            }\r\n                        }"
+              },
+              "While wielding a two-handed or versatile melee weapon in two hands, I can treat a roll of 1 or 2 on any damage die as a 3."
+            ]
+          }
+        },
+        "fighting style [interception]": {
+          "name": "Fighting Style [Interception]",
+          "description": "When a creature I can see hits another creature within 5 feet of me with an attack roll, I can take a Reaction to reduce the damage dealt to the target by 1d10 plus my Proficiency Bonus. I must be holding a Shield or a Simple or Martial weapon to use this Reaction.",
+          "action": "reaction"
+        },
+        "fighting style [protection]": {
+          "name": "Fighting Style [Protection]",
+          "description": "When a creature I can see attacks a target other than me that is within 5 feet of me, I can take a Reaction to interpose my Shield if I'm holding one. I impose Disadvantage on the triggering attack roll and all other attack rolls against the target until the start of my next turn if I remain within 5 feet of the target.",
+          "action": "reaction"
+        },
+        "fighting style [thrown weapon fighting]": {
+          "name": "Fighting Style [Thrown Weapon Fighting]",
+          "description": "When I hit with a ranged attack roll using a weapon that has the Thrown property, I gain a +2 bonus to the damage roll.",
+          "calcChanges": {
+            "atkAdd": [
+              {
+                "_type": "function",
+                "body": "function(fields, v) {\r\n                            if (v.isThrownWeapon && v.isMeleeWeapon) {\r\n                                fields.Description += (fields.Description ? '; ' : '') + '+2 damage when thrown';\r\n                            }\r\n                        }"
+              },
+              "I deal +2 damage when I hit a ranged attack made with a thrown weapon."
+            ],
+            "atkCalc": [
+              {
+                "_type": "function",
+                "body": "function(fields, v, output) {\r\n                            if (v.isThrownWeapon && !v.isMeleeWeapon) {\r\n                                output.extraDmg += 2;\r\n                            }\r\n                        }"
+              },
+              ""
+            ]
+          }
+        },
+        "fighting style [two-weapon fighting]": {
+          "name": "Fighting Style [Two-Weapon Fighting]",
+          "description": "When I make an extra attack as a result of using a weapon that has the Light property, I can add my ability modifier to the damage to that attack if I am not already adding it to the damage.",
+          "calcChanges": {
+            "atkCalc": [
+              {
+                "_type": "function",
+                "body": "function(fields, v, output) {\r\n                            if (v.isOffHand) output.modToDmg = true;\r\n                        }"
+              },
+              "When engaging in two-weapon fighting, I can add my ability modifier to the damage of my off-hand attacks. If a melee weapon includes 'off-hand' or 'secondary' in its name or description, it is considered an off-hand attack."
+            ]
+          }
+        },
+        "fighting style [unarmed fighting]": {
+          "name": "Fighting Style [Unarmed Fighting]",
+          "description": "When I hit with my Unarmed Strike and deal damage, I can deal Bludgeoning damage equal to 1d6 plus my Strength modifier instead of the normal damage of an Unarmed Strike. If I am not holding any weapons or a Shield when I make the attack roll, the d6 becomes a d8.\n At the start of each of my turns, I can deal 1d4 Bludgeoning damage to one creature Grappled by me.",
+          "calcChanges": {
+            "atkAdd": [
+              {
+                "_type": "function",
+                "body": "function(fields, v) {\r\n                            if (v.baseWeaponName == \"unarmed strike\") {\r\n                                if (fields.Damage_Die == 1 || fields.Damage_Die == \"1d4\") fields.Damage_Die = '1d6';\r\n                                fields.Description += (fields.Description ? '; ' : '') + 'Versatile (d8)';\r\n                            }\r\n                        }"
+              },
+              "My unarmed strikes deal 1d6 damage instead of 1, which increases to 1d8 if I have both hands free to make an unarmed strike with.",
+              1
+            ]
+          }
+        },
+        "description": "I gain another different Fighting Style feat of my choice."
+      },
+      "subclassfeature10": {
+        "name": "Heroic Warrior",
+        "source": [
+          [
+            "P24",
+            96
+          ]
+        ],
+        "minlevel": 10,
+        "description": "I gain Heroic Inspiration in combat when I start a turn without it"
+      },
+      "subclassfeature15": {
+        "name": "Superior Critical",
+        "source": [
+          [
+            "P24",
+            96
+          ]
+        ],
+        "minlevel": 15,
+        "calcChanges": {
+          "atkAdd": [
+            {
+              "_type": "function",
+              "body": "function(fields, v) {\r\n                        if (v.isSpell) return;\r\n                        if (v.CritChance && v.CritChance > 18) {\r\n                            fields.Description = fields.Description.replace('Crit on ' + CritChance + '-20', 'Crit on 18-20');\r\n                            v.CritChance = 18;\r\n                        } else if (!v.CritChance) {\r\n                            fields.Description += (fields.Description ? '; ' : '') + 'Crit on 18-20';\r\n                            v.CritChance = 18;\r\n                        }\r\n                    }"
+            },
+            "My weapon attacks also score a critical on a to hit roll of 18.",
+            18
+          ]
+        },
+        "description": "I score a critical hit with my weapon attacks/Unarmed Strikes on a roll of 18, 19, and 20"
+      },
+      "subclassfeature18": {
+        "name": "Survivor",
+        "source": [
+          [
+            "P24",
+            96
+          ]
+        ],
+        "minlevel": 18,
+        "description": "I roll with Advantage on Death Saves and 18-19 counts as a critical success\n   At the start of my turn, if I'm not above half or at 0 HP, I regain 5 + Con mod HP"
+      }
+    }
+  },
+  {
+    "_key": "monk-way of the open hand",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(?=^.*^(?=.*\\bopen\\b)(?=.*\\bhand\\b)((?=.*(monk|monastic))|(((?=.*martial)(?=.*(artist|arts)))|((?=.*spiritual)(?=.*warrior)))).*$.*$)(?!^Monk \\(Warrior of the Open Hand\\)$)",
+      "flags": "i"
+    },
+    "subname": "Way of the Open Hand - 2014",
+    "source": [
+      [
+        "LEGACYCLASS",
+        1
+      ]
+    ],
+    "features": {
+      "subclassfeature3": {
+        "name": "Hand Technique",
+        "source": [
+          [
+            "SRD",
+            28
+          ],
+          [
+            "P",
+            79
+          ]
+        ],
+        "minlevel": 3,
+        "description": "Whenever I hit a creature with a Flurry of Blows attack I can do one of the following:\n   • Have it make a Dexterity save or be knocked prone\n   • Have it make a Strength save or be pushed up to 15 ft away from me\n   • Stop it from taking reactions until the end of my next turn"
+      },
+      "subclassfeature6": {
+        "name": "Wholeness of Body",
+        "source": [
+          [
+            "SRD",
+            28
+          ],
+          [
+            "P",
+            79
+          ]
+        ],
+        "minlevel": 6,
+        "description": "As an action, I regain hit points equal to three times my monk level",
+        "additional": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "18 hit points",
+          "21 hit points",
+          "24 hit points",
+          "27 hit points",
+          "30 hit points",
+          "33 hit points",
+          "36 hit points",
+          "39 hit points",
+          "42 hit points",
+          "45 hit points",
+          "48 hit points",
+          "51 hit points",
+          "54 hit points",
+          "57 hit points",
+          "60 hit points"
+        ],
+        "usages": 1,
+        "recovery": "long rest",
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      },
+      "subclassfeature11": {
+        "name": "Tranquility",
+        "source": [
+          [
+            "SRD",
+            29
+          ],
+          [
+            "P",
+            80
+          ]
+        ],
+        "minlevel": 11,
+        "description": "After a long rest, I gain the effect of a Sanctuary spell until a next long rest",
+        "quivering palm": {
+          "name": "Quivering Palm",
+          "extraname": "Way of the Open Hand 17",
+          "source": [
+            [
+              "SRD",
+              29
+            ],
+            [
+              "P",
+              80
+            ]
+          ],
+          "description": " [3 ki points]When I hit a creature with an unarmed strike, I can start imperceptible vibrations\n   Within my monk level in days, I can use an action to have the creature make a Con save\n   If it fails, it is reduced to 0 hit points; If it succeeds, it takes 10d10 necrotic damage"
+        },
+        "autoSelectExtrachoices": [
+          {
+            "extrachoice": "quivering palm",
+            "minlevel": 17
+          }
+        ]
+      }
+    },
+    "_parentClass": "monk",
+    "_subKey": "way of the open hand"
+  },
+  {
+    "_key": "paladin-oath of devotion",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(?=^.*^(?=.*(devotion|obedience))((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$.*$)(?!^Paladin \\(Oath of Devotion\\)$)",
+      "flags": "i"
+    },
+    "subname": "Oath of Devotion - 2014",
+    "source": [
+      [
+        "LEGACYCLASS",
+        1
+      ]
+    ],
+    "features": {
+      "subclassfeature3": {
+        "name": "Channel Divinity: Sacred Weapon",
+        "source": [
+          [
+            "SRD",
+            33
+          ],
+          [
+            "P",
+            86
+          ]
+        ],
+        "minlevel": 3,
+        "description": "As an action, for 1 minute, I add my Cha modifier to hit for one weapon I'm holding\n   It also counts as magical and emits bright light in a 20-ft radius and equal dim light",
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ],
+        "calcChanges": {
+          "atkCalc": [
+            {
+              "_type": "function",
+              "body": "function (fields, v, output) {\n\t\t\t\t\t\t\tif (classes.known.paladin && classes.known.paladin.level > 2 && !v.isSpell && (/^(?=.*sacred)(?=.*weapon).*$/i).test(v.WeaponTextName)) {\n\t\t\t\t\t\t\t\toutput.extraHit += What('Cha Mod');\n\t\t\t\t\t\t\t};\n\t\t\t\t\t\t}"
+            },
+            "If I include the words 'Sacred Weapon' in the name of a weapon, it gets my Charisma modifier added to its To Hit."
+          ]
+        },
+        "spellcastingExtra": [
+          "protection from evil and good",
+          "sanctuary",
+          "lesser restoration",
+          "zone of truth",
+          "beacon of hope",
+          "dispel magic",
+          "freedom of movement",
+          "guardian of faith",
+          "commune",
+          "flame strike"
+        ]
+      },
+      "subclassfeature3.1": {
+        "name": "Channel Divinity: Turn the Unholy",
+        "source": [
+          [
+            "SRD",
+            33
+          ],
+          [
+            "P",
+            86
+          ]
+        ],
+        "minlevel": 3,
+        "description": "As an action, all fiends/undead within 30 ft that can hear me must make a Wis save\n   If one of them fails this save, it is turned for 1 minute or until it takes damage\n   Turned: move away, never within 30 ft of me, no reactions or actions other than Dash\n   Turned: may Dodge instead of Dash when nowhere to move and unable to escape bonds",
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      },
+      "subclassfeature7": {
+        "name": "Aura of Devotion",
+        "source": [
+          [
+            "SRD",
+            33
+          ],
+          [
+            "P",
+            86
+          ]
+        ],
+        "minlevel": 7,
+        "description": "While I'm conscious, allies within range and I can't be charmed",
+        "additional": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "10-foot aura",
+          "10-foot aura",
+          "10-foot aura",
+          "10-foot aura",
+          "10-foot aura",
+          "10-foot aura",
+          "10-foot aura",
+          "10-foot aura",
+          "10-foot aura",
+          "10-foot aura",
+          "10-foot aura",
+          "30-foot aura",
+          "30-foot aura",
+          "30-foot aura"
+        ],
+        "savetxt": {
+          "immune": [
+            "charmed"
+          ]
+        }
+      },
+      "subclassfeature15": {
+        "name": "Purity of Spirit",
+        "source": [
+          [
+            "SRD",
+            33
+          ],
+          [
+            "P",
+            86
+          ]
+        ],
+        "minlevel": 15,
+        "description": "I am always under the effect of a Protection from Evil and Good spell"
+      },
+      "subclassfeature20": {
+        "name": "Holy Nimbus",
+        "source": [
+          [
+            "SRD",
+            33
+          ],
+          [
+            "P",
+            86
+          ]
+        ],
+        "minlevel": 20,
+        "description": "As an action, I shine with a 30-ft radius bright light and equal dim light for 1 minute\n   If an enemy starts its turn in the bright light, it takes 10 radiant damage\n   For the duration, I have advantage on saves vs. spells cast by fiends and undead",
+        "recovery": "long rest",
+        "usages": 1,
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      }
+    },
+    "_parentClass": "paladin",
+    "_subKey": "oath of devotion"
+  },
+  {
+    "_key": "ranger-hunter",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(ranger))(?=.*(hunter)).*$",
+      "flags": "i"
+    },
+    "subname": "Hunter",
+    "source": [
+      [
+        "P24",
+        127
+      ]
+    ],
+    "features": {
+      "subclassfeature3": {
+        "name": "Hunter's Lore",
+        "source": [
+          [
+            "P24",
+            127
+          ]
+        ],
+        "minlevel": 3,
+        "description": "While a creature is marked by my Hunter's Mark, I know the following about it:\n   Damage/condition immunities, damage resistances, and/or damage vulnerabilities."
+      },
+      "subclassfeature3.1": {
+        "name": "Hunter's Prey",
+        "source": [
+          [
+            "P24",
+            127
+          ]
+        ],
+        "minlevel": 3,
+        "choices": [
+          "Colossus Slayer",
+          "Horde Breaker"
+        ],
+        "colossus slayer": {
+          "name": "Colossus Slayer",
+          "description": "Once per turn, when I hit a creature with a weapon, I deal an extra 1d8 damage to the target if it's missing any Hit Points. After a Short or Long Rest, I can replace this feature with the 'Horde Breaker' feature."
+        },
+        "horde breaker": {
+          "name": "Horde Breaker",
+          "description": "Once per turn, when I hit a creature, I can make an attack vs. another within 5 ft of it if I haven't hit it during this turn. After a Short or Long Rest, I can replace this feature with the 'Colossus Slayer' feature."
+        },
+        "description": "Use the 'choose feature' button to select a Hunter's Prey option, after a Short or Long Rest, I can replace the chosen option with the other one."
+      },
+      "subclassfeature7": {
+        "name": "Defensive Tactics",
+        "source": [
+          [
+            "P24",
+            127
+          ]
+        ],
+        "minlevel": 7,
+        "choices": [
+          "Escape the Horde",
+          "Multiattack Defense"
+        ],
+        "escape the horde": {
+          "name": "Escape the Horde",
+          "description": "Opportunity Attacks have Disadvantage against me. After a Short or Long Rest, I can replace this feature with the 'Multiattack Defense' feature."
+        },
+        "multiattack defense": {
+          "name": "Multiattack Defense",
+          "description": "When a creature hits me with an attack roll, that creature has Disadvantage on all other attack rolls against me this turn. After a Short or Long Rest, I can replace this feature with the 'Escape the Horde' feature."
+        },
+        "description": "Use the 'choose feature' button to select a Defensive Tactics option, After a Short or Long Rest, I can replace the chosen option with the other one."
+      },
+      "subclassfeature11": {
+        "name": "Superior Hunter's Prey",
+        "source": [
+          [
+            "P24",
+            127
+          ]
+        ],
+        "minlevel": 11,
+        "description": "Once per turn when I deal damage to a creature marked by my Hunter's mark, I can also deal the extra damage to another creature I can see within 30 feet."
+      },
+      "subclassfeature15": {
+        "name": "Superior Hunter's Defense",
+        "source": [
+          [
+            "P24",
+            127
+          ]
+        ],
+        "minlevel": 15,
+        "action": [
+          "reaction",
+          " (taking damage)"
+        ],
+        "description": "When I take damage, I can take a Reaction to give myself Resistance to that damage and any other damage of the same type until the end of the current turn."
+      }
+    }
+  },
+  {
+    "_key": "rogue-thief",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(rogue))(?=.*(thief)).*$",
+      "flags": "i"
+    },
+    "subname": "Thief",
+    "source": [
+      [
+        "P24",
+        137
+      ]
+    ],
+    "features": {
+      "subclassfeature3": {
+        "name": "Fast Hands",
+        "source": [
+          [
+            "P24",
+            137
+          ]
+        ],
+        "minlevel": 3,
+        "action": [
+          "bonus action",
+          "Pick Lock/Disarm Trap/Utilize Item/Activate Magic Item"
+        ],
+        "description": "I can do these as a bonus action:\n   Sleight of Hand: Make a Dex (Sleight of Hand) check to pick a lock/disarm a trap or pick a pocket.\n   Use an Object: Take the Utilize action, or take the Magic action to use a magic item that requires one."
+      },
+      "subclassfeature6": {
+        "name": "Second-Story Work",
+        "source": [
+          [
+            "P24",
+            137
+          ]
+        ],
+        "minlevel": 3,
+        "speed": {
+          "climb": {
+            "spd": "walk",
+            "enc": "walk"
+          }
+        },
+        "description": "I gain a Climb Speed equal to my Speed and can determine my jump distance using Dex."
+      },
+      "subclassfeature9": {
+        "name": "Supreme Sneak",
+        "source": [
+          [
+            "P24",
+            137
+          ]
+        ],
+        "minlevel": 9,
+        "description": "I gain the following Cunning Strike option:\n   Stealth Attack (Cost 1d6): This attack doesn't end Hiding if I end the turn behind Three-Quarters or Total Cover."
+      },
+      "subclassfeature13": {
+        "name": "Use Magic Device",
+        "source": [
+          [
+            "P24",
+            137
+          ]
+        ],
+        "minlevel": 13,
+        "description": "Attunement: I can attune to up to four magic items at once.\n   Charges: When I use a magic item property with charges, a 6 on a 1d6 roll means no charges are used.\n   Scrolls: I can use any Spell Scroll, using Int as my spellcasting ability. Level 2+ spells require an Int (Arcana) check (DC 10 + Spell Level) to cast or the scroll disintegrates."
+      },
+      "subclassfeature17": {
+        "name": "Thief's Reflexes",
+        "source": [
+          [
+            "P24",
+            137
+          ]
+        ],
+        "minlevel": 17,
+        "description": "I can take two turns during the first round of any combat at my normal Initiative and my second turn at my Initiative - 10."
+      }
+    }
+  },
+  {
+    "_key": "sorcerer-draconic bloodline",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(?=^.*^(?=.*(sorcerer|witch))(?=.*(draconic|dragon)).*$.*$)(?!^Sorcerer \\(Draconic Sorcery\\)$)",
+      "flags": "i"
+    },
+    "subname": "Draconic Bloodline - 2014",
+    "source": [
+      [
+        "LEGACYCLASS",
+        1
+      ]
+    ],
+    "features": {
+      "subclassfeature1": {
+        "name": "Dragon Ancestor",
+        "source": [
+          [
+            "SRD",
+            44
+          ],
+          [
+            "P",
+            102
+          ]
+        ],
+        "minlevel": 1,
+        "description": "Choose a Dragon Ancestor using the \"Choose Feature\" button above\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+        "choices": [
+          "Black Dragon Ancestor",
+          "Blue Dragon Ancestor",
+          "Brass Dragon Ancestor",
+          "Bronze Dragon Ancestor",
+          "Copper Dragon Ancestor",
+          "Gold Dragon Ancestor",
+          "Green Dragon Ancestor",
+          "Red Dragon Ancestor",
+          "Silver Dragon Ancestor",
+          "White Dragon Ancestor"
+        ],
+        "black dragon ancestor": {
+          "name": "Black Dragon Ancestor",
+          "description": "I have draconic ancestry with black dragons, which are affiliated with acid damage\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+          "dependentChoices": "acid"
+        },
+        "blue dragon ancestor": {
+          "name": "Blue Dragon Ancestor",
+          "description": "I have draconic ancestry with blue dragons, which are affiliated with lightning damage\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+          "dependentChoices": "lightning"
+        },
+        "brass dragon ancestor": {
+          "name": "Brass Dragon Ancestor",
+          "description": "I have draconic ancestry with brass dragons, which are affiliated with fire damage\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+          "dependentChoices": "fire"
+        },
+        "bronze dragon ancestor": {
+          "name": "Bronze Dragon Ancestor",
+          "description": "I have draconic ancestry with bronze dragons, which are affiliated with lightning dmg\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+          "dependentChoices": "lightning"
+        },
+        "copper dragon ancestor": {
+          "name": "Copper Dragon Ancestor",
+          "description": "I have draconic ancestry with copper dragons, which are affiliated with acid damage\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+          "dependentChoices": "acid"
+        },
+        "gold dragon ancestor": {
+          "name": "Gold Dragon Ancestor",
+          "description": "I have draconic ancestry with gold dragons, which are affiliated with fire damage\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+          "dependentChoices": "fire"
+        },
+        "green dragon ancestor": {
+          "name": "Green Dragon Ancestor",
+          "description": "I have draconic ancestry with green dragons, which are affiliated with poison damage\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+          "dependentChoices": "poison"
+        },
+        "red dragon ancestor": {
+          "name": "Red Dragon Ancestor",
+          "description": "I have draconic ancestry with red dragons, which are affiliated with fire damage\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+          "dependentChoices": "fire"
+        },
+        "silver dragon ancestor": {
+          "name": "Silver Dragon Ancestor",
+          "description": "I have draconic ancestry with silver dragons, which are affiliated with cold damage\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+          "dependentChoices": "cold"
+        },
+        "white dragon ancestor": {
+          "name": "White Dragon Ancestor",
+          "description": "I have draconic ancestry with white dragons, which are affiliated with cold damage\n   When interacting with dragons, if I can add my Proficiency Bonus, I can double it",
+          "dependentChoices": "cold"
+        },
+        "languageProfs": [
+          "Draconic"
+        ],
+        "choiceDependencies": [
+          {
+            "feature": "subclassfeature6",
+            "choiceAttribute": true
+          }
+        ]
+      },
+      "subclassfeature1.1": {
+        "name": "Draconic Resilience",
+        "source": [
+          [
+            "SRD",
+            45
+          ],
+          [
+            "P",
+            102
+          ]
+        ],
+        "minlevel": 1,
+        "description": "When I am not wearing armor, my AC is 13 + Dexterity modifier\n   My hit point maximum increases by an amount equal to my sorcerer level",
+        "calcChanges": {
+          "hp": {
+            "_type": "function",
+            "body": "function (totalHD) {\n\t\t\t\t\t\tif (classes.known.sorcerer) {\n\t\t\t\t\t\t\treturn [classes.known.sorcerer.level, \"Draconic Resilience (sorcerer level)\"];\n\t\t\t\t\t\t}\n\t\t\t\t\t}"
+          }
+        },
+        "armorOptions": [
+          {
+            "regExpSearch": {
+              "_type": "RegExp",
+              "source": "^(?=.*(dragon|draconic))(?=.*(hide|skin|scales|resilience)).*$",
+              "flags": "i"
+            },
+            "name": "Draconic Resilience",
+            "source": [
+              [
+                "SRD",
+                45
+              ],
+              [
+                "P",
+                102
+              ]
+            ],
+            "ac": 13,
+            "affectsWildShape": true,
+            "selectNow": true
+          }
+        ]
+      },
+      "subclassfeature6": {
+        "name": "Elemental Affinity",
+        "source": [
+          [
+            "SRD",
+            45
+          ],
+          [
+            "P",
+            102
+          ]
+        ],
+        "minlevel": 6,
+        "description": "Choose a Dragon Ancestor using the \"Choose Feature\" button above\n   I add Cha mod for spell damage if matching my dragon ancestor's affiliated type\n   I can spend 1 sorcery point to gain resistance to my dragon ancestor's affiliated type",
+        "additional": "optional: 1 sorcery point",
+        "choices": [
+          "acid",
+          "cold",
+          "fire",
+          "lightning",
+          "poison"
+        ],
+        "choicesNotInMenu": true,
+        "acid": {
+          "name": "Acid Elemental Affinity",
+          "description": "I add my Charisma modifier to one damage roll of a spell if it does acid damage\n   When I do this, I can spend 1 sorcery point to gain acid resistance for 1 hour",
+          "calcChanges": {
+            "atkCalc": [
+              {
+                "_type": "function",
+                "body": "function (fields, v, output) {\n\t\t\t\t\t\t\t\tif (classes.known.sorcerer && classes.known.sorcerer.level > 5 && v.isSpell && (/acid/i).test(fields.Damage_Type)) {\n\t\t\t\t\t\t\t\t\toutput.extraDmg += What('Cha Mod');\n\t\t\t\t\t\t\t\t};\n\t\t\t\t\t\t\t}"
+              },
+              "Cantrips and spells that deal acid damage get my Charisma modifier added to their damage."
+            ],
+            "spellAdd": [
+              {
+                "_type": "function",
+                "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\t\t\t\tif (!spellObj.psionic) return genericSpellDmgEdit(spellKey, spellObj, \"acid\", \"Cha\", true);\n\t\t\t\t\t\t\t}"
+              },
+              "Cantrips and spells that deal acid damage get my Charisma modifier added to their damage."
+            ]
+          }
+        },
+        "cold": {
+          "name": "Cold Elemental Affinity",
+          "description": "I add my Charisma modifier to one damage roll of a spell if it does cold damage\n   When I do this, I can spend 1 sorcery point to gain cold resistance for 1 hour",
+          "calcChanges": {
+            "atkCalc": [
+              {
+                "_type": "function",
+                "body": "function (fields, v, output) {\n\t\t\t\t\t\t\t\tif (classes.known.sorcerer && classes.known.sorcerer.level > 5 && v.isSpell && (/cold/i).test(fields.Damage_Type)) {\n\t\t\t\t\t\t\t\t\toutput.extraDmg += What('Cha Mod');\n\t\t\t\t\t\t\t\t};\n\t\t\t\t\t\t\t}"
+              },
+              "Cantrips and spells that deal cold damage get my Charisma modifier added to their damage."
+            ],
+            "spellAdd": [
+              {
+                "_type": "function",
+                "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\t\t\t\tif (!spellObj.psionic) return genericSpellDmgEdit(spellKey, spellObj, \"cold\", \"Cha\", true);\n\t\t\t\t\t\t\t}"
+              },
+              "Cantrips and spells that deal cold damage get my Charisma modifier added to their damage."
+            ]
+          }
+        },
+        "fire": {
+          "name": "Fire Elemental Affinity",
+          "description": "I add my Charisma modifier to one damage roll of a spell if it does fire damage\n   When I do this, I can spend 1 sorcery point to gain fire resistance for 1 hour",
+          "calcChanges": {
+            "atkCalc": [
+              {
+                "_type": "function",
+                "body": "function (fields, v, output) {\n\t\t\t\t\t\t\t\tif (classes.known.sorcerer && classes.known.sorcerer.level > 5 && v.isSpell && (/fire/i).test(fields.Damage_Type)) {\n\t\t\t\t\t\t\t\t\toutput.extraDmg += What('Cha Mod');\n\t\t\t\t\t\t\t\t};\n\t\t\t\t\t\t\t}"
+              },
+              "Cantrips and spells that deal fire damage get my Charisma modifier added to their damage."
+            ],
+            "spellAdd": [
+              {
+                "_type": "function",
+                "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\t\t\t\tif (!spellObj.psionic) return genericSpellDmgEdit(spellKey, spellObj, \"fire\", \"Cha\", true);\n\t\t\t\t\t\t\t}"
+              },
+              "Cantrips and spells that deal fire damage get my Charisma modifier added to their damage."
+            ]
+          }
+        },
+        "lightning": {
+          "name": "Lightning Elemental Affinity",
+          "description": "I add my Charisma modifier to one damage roll of a spell if it does lightning damage\n   When I do this, I can spend 1 sorcery point to gain lightning resistance for 1 hour",
+          "calcChanges": {
+            "atkCalc": [
+              {
+                "_type": "function",
+                "body": "function (fields, v, output) {\n\t\t\t\t\t\t\t\tif (classes.known.sorcerer && classes.known.sorcerer.level > 5 && v.isSpell && (/lightning/i).test(fields.Damage_Type)) {\n\t\t\t\t\t\t\t\t\toutput.extraDmg += What('Cha Mod');\n\t\t\t\t\t\t\t\t};\n\t\t\t\t\t\t\t}"
+              },
+              "Cantrips and spells that deal lightning damage get my Charisma modifier added to their damage."
+            ],
+            "spellAdd": [
+              {
+                "_type": "function",
+                "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\t\t\t\tif (!spellObj.psionic) return genericSpellDmgEdit(spellKey, spellObj, \"lightn\\\\.?|lightning\", \"Cha\", true);\n\t\t\t\t\t\t\t}"
+              },
+              "Cantrips and spells that deal lightning damage get my Charisma modifier added to their damage."
+            ]
+          }
+        },
+        "poison": {
+          "name": "Poison Elemental Affinity",
+          "description": "I add my Charisma modifier to one damage roll of a spell if it does poison damage\n   When I do this, I can spend 1 sorcery point to gain poison resistance for 1 hour",
+          "calcChanges": {
+            "atkCalc": [
+              {
+                "_type": "function",
+                "body": "function (fields, v, output) {\n\t\t\t\t\t\t\t\tif (classes.known.sorcerer && classes.known.sorcerer.level > 5 && v.isSpell && (/poison/i).test(fields.Damage_Type)) {\n\t\t\t\t\t\t\t\t\toutput.extraDmg += What('Cha Mod');\n\t\t\t\t\t\t\t\t};\n\t\t\t\t\t\t\t}"
+              },
+              "Cantrips and spells that deal poison damage get my Charisma modifier added to their damage."
+            ],
+            "spellAdd": [
+              {
+                "_type": "function",
+                "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\t\t\t\tif (!spellObj.psionic) return genericSpellDmgEdit(spellKey, spellObj, \"poison\", \"Cha\", true);\n\t\t\t\t\t\t\t}"
+              },
+              "Cantrips and spells that deal poison damage get my Charisma modifier added to their damage."
+            ]
+          }
+        }
+      },
+      "subclassfeature14": {
+        "name": "Dragon Wings",
+        "source": [
+          [
+            "SRD",
+            45
+          ],
+          [
+            "P",
+            103
+          ]
+        ],
+        "minlevel": 14,
+        "description": "As a bonus action, unless armor is in the way, I can sprout dragon wings from my back\n   I gain a fly speed equal to my current speed until I dismiss the wings as a bonus action",
+        "action": [
+          [
+            "bonus action",
+            " (start/stop)"
+          ]
+        ],
+        "speed": {
+          "fly": {
+            "spd": "walk",
+            "enc": "walk"
+          }
+        }
+      },
+      "subclassfeature18": {
+        "name": "Draconic Presence",
+        "source": [
+          [
+            "SRD",
+            45
+          ],
+          [
+            "P",
+            103
+          ]
+        ],
+        "minlevel": 18,
+        "description": "As an action, I create 60-ft radius aura of awe/fear for concentration up to 1 minute\n   All hostiles in this aura must make a Wis save or be charmed (awe) or frightened (fear)\n   They make their saves at the beginning of their turns\n   A creature that succeeds on the save is immune to my aura for 24 hours",
+        "additional": "5 sorcery points",
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      }
+    },
+    "_parentClass": "sorcerer",
+    "_subKey": "draconic bloodline"
+  },
+  {
+    "_key": "warlock-the fiend",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(warlock))(?=.*(fiend)).*$",
+      "flags": "i"
+    },
+    "subname": "Fiend Patron",
+    "spellcastingExtra": [
+      "burning hands",
+      "command",
+      "scorching ray",
+      "suggestion",
+      "fireball",
+      "stinking cloud",
+      "fire shield",
+      "wall of fire",
+      "geas",
+      "insect plague"
+    ],
+    "spellcastingExtraApplyNonconform": true,
+    "source": [
+      [
+        "P24",
+        161
+      ]
+    ],
+    "features": {
+      "subclassfeature3": {
+        "name": "Dark One's Blessing",
+        "source": [
+          [
+            "P24",
+            161
+          ]
+        ],
+        "minlevel": 3,
+        "description": "When I reduce a hostile to 0 HP, I gain Cha mod + Warlock level temp HP (min 1). I also gain this temp HP if an enemy within 10 ft of me is reduced to 0 Hit Points."
+      },
+      "subclassfeature6": {
+        "name": "Dark One's Own Luck",
+        "source": [
+          [
+            "P24",
+            162
+          ]
+        ],
+        "minlevel": 6,
+        "usages": "Charisma modifier per ",
+        "usagescalc": "event.value = Math.max(1, What('Cha Mod'));",
+        "recovery": "long rest",
+        "description": "Once per roll, when I make an ability check or saving throw, I can add 1d10 after rolling the d20 but before any of the roll's effects occur."
+      },
+      "subclassfeature10": {
+        "name": "Fiendish Resilience",
+        "source": [
+          [
+            "P24",
+            162
+          ]
+        ],
+        "minlevel": 10,
+        "description": "At the end of a Rest, I can choose a damage type (not Force) to be Resistant to until I choose another."
+      },
+      "subclassfeature14": {
+        "name": "Hurl Through Hell",
+        "source": [
+          [
+            "P24",
+            162
+          ]
+        ],
+        "minlevel": 14,
+        "usages": 1,
+        "recovery": "long rest",
+        "altResource": "SS",
+        "description": "Once per turn when I hit a creature with an attack roll I can force it to make a Cha save, or it is Incapacitated and disappears into the Lower Planes until the end of my next turn. When it returns it takes 8d10 Psychic damage if it isn't a Fiend. This Feature can be used 1/LR unless I expend a Warlock SS to regain use of it."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "burning hands",
+            "command",
+            "scorching ray",
+            "suggestion",
+            "fireball",
+            "stinking cloud",
+            "fire shield",
+            "wall of fire",
+            "geas",
+            "insect plague",
+            "burning hands legacy",
+            "command legacy",
+            "fireball legacy",
+            "fire shield legacy",
+            "geas legacy",
+            "insect plague legacy",
+            "scorching ray legacy",
+            "stinking cloud legacy",
+            "suggestion legacy",
+            "wall of fire legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "burning hands",
+            "command",
+            "scorching ray",
+            "suggestion",
+            "fireball",
+            "stinking cloud",
+            "fire shield",
+            "wall of fire",
+            "geas",
+            "insect plague"
+          ]
+        },
+        "legacySpells": [
+          "burning hands legacy",
+          "command legacy",
+          "fireball legacy",
+          "fire shield legacy",
+          "geas legacy",
+          "insect plague legacy",
+          "scorching ray legacy",
+          "stinking cloud legacy",
+          "suggestion legacy",
+          "wall of fire legacy"
+        ]
+      }
+    }
+  },
+  {
+    "_key": "wizard-evocation",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(?=^.*(evocation|evocer|evoker).*$)(?!^Wizard \\(Evoker\\)$)",
+      "flags": "i"
+    },
+    "subname": "School of Evocation - 2014",
+    "fullname": "Evoker - 2014",
+    "source": [
+      [
+        "LEGACYCLASS",
+        1
+      ]
+    ],
+    "features": {
+      "subclassfeature2": {
+        "name": "Evocation Savant",
+        "source": [
+          [
+            "SRD",
+            54
+          ],
+          [
+            "P",
+            117
+          ]
+        ],
+        "minlevel": 2,
+        "description": "I halve the gp and time needed to copy evocation spells into my spellbook"
+      },
+      "subclassfeature2.1": {
+        "name": "Sculpt Spells",
+        "source": [
+          [
+            "SRD",
+            54
+          ],
+          [
+            "P",
+            117
+          ]
+        ],
+        "minlevel": 2,
+        "description": "If I cast an evocation spell affecting others I can see, I can protect 1 + the spell's level\n   The chosen automatically succeed on their saving throws vs. the spell\n   They also take no damage if the spell would normally deal half damage on a save"
+      },
+      "subclassfeature6": {
+        "name": "Potent Cantrip",
+        "source": [
+          [
+            "SRD",
+            54
+          ],
+          [
+            "P",
+            117
+          ]
+        ],
+        "minlevel": 6,
+        "description": "Any cantrips I cast still deal half damage on a successful save",
+        "calcChanges": {
+          "atkAdd": [
+            {
+              "_type": "function",
+              "body": "function (fields, v) {\n\t\t\t\t\t\t\tif (v.isSpell && v.isDC && v.thisWeapon[3] && SpellsList[v.thisWeapon[3]].save) {\n\t\t\t\t\t\t\t\tfields.Description = fields.Description.replace(/ success - no( damage|thing)/ , \"success - half damage\");\n\t\t\t\t\t\t\t};\n\t\t\t\t\t\t}"
+            },
+            "My cantrips still do half damage on a successful saving throw, but none of their other effects."
+          ],
+          "spellAdd": [
+            {
+              "_type": "function",
+              "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\t\t\tif (spellObj.psionic || spellObj.level || !spellObj.save || !(/\\d+d\\d+/).test(spellObj.description)) return;\n\t\t\t\t\t\t\tvar startDescr = spellObj.description;\n\t\t\t\t\t\t\tspellObj.description = spellObj.description.replace(\"at CL 5, 11, and 17\", \"CL 5, 11, 17\").replace(/damage/ig, \"dmg\").replace(/creatures?/ig, \"crea\").replace(\"save or \", \"\").replace(\"at casting or entering\", \"at cast/enter\").replace(/(; \\+\\d+d\\d+.*$|$)/, \"; save: half dmg only$1\");\n\t\t\t\t\t\t\tswitch (spellKey) {\n\t\t\t\t\t\t\t\tcase \"lightning lure\" :\n\t\t\t\t\t\t\t\t\tspellObj.description = spellObj.description.replace(/(Lightn|pull)(ing|ed)/gi, \"$1\");\n\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\tcase \"create bonfire\" :\n\t\t\t\t\t\t\t\t\tspellObj.description = spellObj.description.replace(\"half dmg only\", \"half dmg\");\n\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn startDescr !== spellObj.description;\n\t\t\t\t\t\t}"
+            },
+            "My cantrips still do half damage on a successful saving throw, but none of their other effects."
+          ]
+        }
+      },
+      "subclassfeature10": {
+        "name": "Empowered Evocation",
+        "source": [
+          [
+            "SRD",
+            54
+          ],
+          [
+            "P",
+            117
+          ]
+        ],
+        "minlevel": 10,
+        "description": "I can add my Int modifier to a single damage roll of any wizard evocation spell I cast",
+        "calcChanges": {
+          "atkCalc": [
+            {
+              "_type": "function",
+              "body": "function (fields, v, output) {\n\t\t\t\t\t\t\tif (v.thisWeapon[4].indexOf(\"wizard\") !== -1 && SpellsList[v.thisWeapon[3]] && SpellsList[v.thisWeapon[3]].school === \"Evoc\") {\n\t\t\t\t\t\t\t\toutput.extraDmg += What('Int Mod');\n\t\t\t\t\t\t\t};\n\t\t\t\t\t\t}"
+            },
+            "I add my Intelligence modifier to a single damage roll of any wizard evocation spell I cast."
+          ],
+          "spellAdd": [
+            {
+              "_type": "function",
+              "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\t\t\tif (spName.indexOf(\"wizard\") !== -1 && !spellObj.psionic && spellObj.school === \"Evoc\") return genericSpellDmgEdit(spellKey, spellObj, \"\\\\w+\\\\.?\", \"Int\", true);\n\t\t\t\t\t\t}"
+            },
+            "I add my Intelligence modifier to a single damage roll of any wizard evocation spell I cast."
+          ]
+        }
+      },
+      "subclassfeature14": {
+        "name": "Overchannel",
+        "source": [
+          [
+            "SRD",
+            54
+          ],
+          [
+            "P",
+            118
+          ]
+        ],
+        "minlevel": 14,
+        "description": "When I cast a 5th-level or lower wizard spell that damages, it can deal max damage\n   Except the first time I do this after a long rest, I suffer 2d12 necrotic dmg per spell lvl\n   Every time I do it after that, before a long rest, I take another 1d12 necrotic damage\n   This necrotic damage surpasses my resistances/immunities; I can't overchannel cantrips",
+        "extraLimitedFeatures": [
+          {
+            "name": "Overchannel",
+            "recovery": "long rest",
+            "usages": "1 + ∞"
+          }
+        ]
+      }
+    },
+    "_parentClass": "wizard",
+    "_subKey": "evocation"
+  },
+  {
+    "_key": "barbarian-berserker_2014",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(?=^.*^((?=.*\\b(berserker|berserk|berserkr|ulfheoinn|ulfheonar)s?\\b)|((?=.*(warrior|fighter))(?=.*(odin|thor)))).*$.*$)(?!^Barbarian \\(Path of the Berserker\\)$)",
+      "flags": "i"
+    },
+    "subname": "Path of the Berserker - 2014",
+    "fullname": "Berserker - 2014",
+    "source": [
+      [
+        "LEGACYCLASS",
+        1
+      ]
+    ],
+    "abilitySave": 6,
+    "features": {
+      "subclassfeature3": {
+        "name": "Frenzy",
+        "source": [
+          [
+            "SRD",
+            9
+          ],
+          [
+            "P",
+            49
+          ]
+        ],
+        "minlevel": 3,
+        "description": "As a bonus action each turn while raging, I can make a melee attack\n   After my rage is over, I suffer one level of exhaustion",
+        "action": [
+          [
+            "bonus action",
+            " attack (while raging)"
+          ]
+        ]
+      },
+      "subclassfeature6": {
+        "name": "Mindless Rage",
+        "source": [
+          [
+            "SRD",
+            10
+          ],
+          [
+            "P",
+            49
+          ]
+        ],
+        "minlevel": 6,
+        "description": "While raging, I can't be charmed or frightened, and such effects are suspended",
+        "savetxt": {
+          "immune": [
+            "Charmed (in rage)",
+            "Frightened (in rage)"
+          ]
+        }
+      },
+      "subclassfeature10": {
+        "name": "Intimidating Presence",
+        "source": [
+          [
+            "SRD",
+            10
+          ],
+          [
+            "P",
+            49
+          ]
+        ],
+        "minlevel": 10,
+        "description": "As an action, frighten one creature in 30 ft for one turn if it fails a Wisdom save\n   This effect ends if the creature is out of line of sight or more than 60 ft away\n   If a creature succeeds its saving throw, it is immune for 24 hours",
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      },
+      "subclassfeature14": {
+        "name": "Retaliation",
+        "source": [
+          [
+            "SRD",
+            10
+          ],
+          [
+            "P",
+            50
+          ]
+        ],
+        "minlevel": 14,
+        "description": "When an enemy within 5 ft damages me, I can make a melee attack as a reaction",
+        "action": [
+          [
+            "reaction",
+            " (after taking damage)"
+          ]
+        ]
+      }
     },
     "_parentClass": "barbarian",
-    "_subKey": "berserker"
+    "_subKey": "berserker_2014"
   },
   {
     "_key": "barbarian-wild heart",
@@ -995,6 +3050,73 @@
         ],
         "minlevel": 17,
         "description": "I can heal max HP when I would roll to restore HP with a spell or Channel Divinity."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "aid",
+            "bless",
+            "cure wounds",
+            "lesser restoration",
+            "mass healing word",
+            "revivify",
+            "aura of life",
+            "death ward",
+            "greater restoration",
+            "mass cure wounds",
+            "aid legacy",
+            "bless legacy",
+            "cure wounds legacy",
+            "death ward legacy",
+            "greater restoration legacy",
+            "lesser restoration legacy",
+            "mass cure wounds legacy",
+            "mass healing word legacy",
+            "revivify legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "aid",
+            "bless",
+            "cure wounds",
+            "lesser restoration",
+            "mass healing word",
+            "revivify",
+            "aura of life",
+            "death ward",
+            "greater restoration",
+            "mass cure wounds"
+          ]
+        },
+        "legacySpells": [
+          "aid legacy",
+          "bless legacy",
+          "cure wounds legacy",
+          "death ward legacy",
+          "greater restoration legacy",
+          "lesser restoration legacy",
+          "mass cure wounds legacy",
+          "mass healing word legacy",
+          "revivify legacy"
+        ]
       }
     },
     "_parentClass": "cleric",
@@ -1120,6 +3242,75 @@
         "usagescalc": "event.value = Math.max(1, What('Wis Mod'));",
         "recovery": "long rest",
         "description": "As a Magic action, I can emit Bright Light in a 60-ft radius and Dim Light for an addtl 30 ft (sunlight) for 1 min or until dismissed (no action). Foes in the Bright Light have Disadv on saves against my Radiance of the Dawn & Fire or Radiant spell damage."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "burning hands",
+            "faerie fire",
+            "scorching ray",
+            "see invisibility",
+            "daylight",
+            "fireball",
+            "arcane eye",
+            "wall of fire",
+            "flame strike",
+            "scrying",
+            "arcane eye legacy",
+            "burning hands legacy",
+            "daylight legacy",
+            "faerie fire legacy",
+            "fireball legacy",
+            "flame strike legacy",
+            "scorching ray legacy",
+            "scrying legacy",
+            "see invisibility legacy",
+            "wall of fire legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "burning hands",
+            "faerie fire",
+            "scorching ray",
+            "see invisibility",
+            "daylight",
+            "fireball",
+            "arcane eye",
+            "wall of fire",
+            "flame strike",
+            "scrying"
+          ]
+        },
+        "legacySpells": [
+          "arcane eye legacy",
+          "burning hands legacy",
+          "daylight legacy",
+          "faerie fire legacy",
+          "fireball legacy",
+          "flame strike legacy",
+          "scorching ray legacy",
+          "scrying legacy",
+          "see invisibility legacy",
+          "wall of fire legacy"
+        ]
       }
     },
     "_parentClass": "cleric",
@@ -1201,6 +3392,75 @@
         ],
         "minlevel": 17,
         "description": "My Invoke Duplicity illusion has grown more powerful:\n   Shared Distraction: Allies & I have Adv on attacks vs creatures w/in 5 ft of the double.\n   Healing Illusion: When the illusion ends I choose a creature w/in 5 feet of it or myself to regain my Cleric level HP."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "charm person",
+            "disguise self",
+            "invisibility",
+            "pass without trace",
+            "hypnotic pattern",
+            "nondetection",
+            "confusion",
+            "dimension door",
+            "dominate person",
+            "modify memory",
+            "charm person legacy",
+            "confusion legacy",
+            "dimension door legacy",
+            "disguise self legacy",
+            "dominate person legacy",
+            "hypnotic pattern legacy",
+            "invisibility legacy",
+            "modify memory legacy",
+            "nondetection legacy",
+            "pass without trace legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "charm person",
+            "disguise self",
+            "invisibility",
+            "pass without trace",
+            "hypnotic pattern",
+            "nondetection",
+            "confusion",
+            "dimension door",
+            "dominate person",
+            "modify memory"
+          ]
+        },
+        "legacySpells": [
+          "charm person legacy",
+          "confusion legacy",
+          "dimension door legacy",
+          "disguise self legacy",
+          "dominate person legacy",
+          "hypnotic pattern legacy",
+          "invisibility legacy",
+          "modify memory legacy",
+          "nondetection legacy",
+          "pass without trace legacy"
+        ]
       }
     },
     "_parentClass": "cleric",
@@ -1290,6 +3550,71 @@
           "Slashing"
         ],
         "description": "I gain Resistance to Bludgeoning, Piercing, and Slashing damage."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "guiding bolt",
+            "magic weapon",
+            "shield of faith",
+            "spiritual weapon",
+            "crusader's mantle",
+            "spirit guardians",
+            "fire shield",
+            "freedom of movement",
+            "hold monster",
+            "steel wind strike",
+            "fire shield legacy",
+            "freedom of movement legacy",
+            "guiding bolt legacy",
+            "hold monster legacy",
+            "magic weapon legacy",
+            "shield of faith legacy",
+            "spirit guardians legacy",
+            "spiritual weapon legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "guiding bolt",
+            "magic weapon",
+            "shield of faith",
+            "spiritual weapon",
+            "crusader's mantle",
+            "spirit guardians",
+            "fire shield",
+            "freedom of movement",
+            "hold monster",
+            "steel wind strike"
+          ]
+        },
+        "legacySpells": [
+          "fire shield legacy",
+          "freedom of movement legacy",
+          "guiding bolt legacy",
+          "hold monster legacy",
+          "magic weapon legacy",
+          "shield of faith legacy",
+          "spirit guardians legacy",
+          "spiritual weapon legacy"
+        ]
       }
     },
     "_parentClass": "cleric",
@@ -1648,6 +3973,55 @@
         ],
         "minlevel": 14,
         "description": "Once per turn, I can deal an extra 2d10 Radiant damage with a Wild Shape attack.\n   When using Moonlight Step, I can also teleport one willing creature within 10 feet to a space within 10 feet of my destination."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "cure wounds",
+            "moonbeam",
+            "starry wisp",
+            "conjure animals",
+            "fount of moonlight",
+            "mass cure wounds",
+            "conjure animals legacy",
+            "cure wounds legacy",
+            "mass cure wounds legacy",
+            "moonbeam legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "cure wounds",
+            "moonbeam",
+            "starry wisp",
+            "conjure animals",
+            "fount of moonlight",
+            "mass cure wounds"
+          ]
+        },
+        "legacySpells": [
+          "conjure animals legacy",
+          "cure wounds legacy",
+          "mass cure wounds legacy",
+          "moonbeam legacy"
+        ]
       }
     },
     "_parentClass": "druid",
@@ -1731,6 +4105,79 @@
         ],
         "minlevel": 14,
         "description": "I can manifest my ocean spray around another willing creature within 60 feet. By expending two uses of Wild Shape, I can cover both myself and the other creature with the spray."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "fog cloud",
+            "gust of wind",
+            "ray of frost",
+            "shatter",
+            "thunderwave",
+            "lightning bolt",
+            "water breathing",
+            "control water",
+            "ice storm",
+            "conjure elemental",
+            "hold monster",
+            "conjure elemental legacy",
+            "control water legacy",
+            "fog cloud legacy",
+            "gust of wind legacy",
+            "hold monster legacy",
+            "ice storm legacy",
+            "lightning bolt legacy",
+            "ray of frost legacy",
+            "shatter legacy",
+            "thunderwave legacy",
+            "water breathing legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "fog cloud",
+            "gust of wind",
+            "ray of frost",
+            "shatter",
+            "thunderwave",
+            "lightning bolt",
+            "water breathing",
+            "control water",
+            "ice storm",
+            "conjure elemental",
+            "hold monster"
+          ]
+        },
+        "legacySpells": [
+          "conjure elemental legacy",
+          "control water legacy",
+          "fog cloud legacy",
+          "gust of wind legacy",
+          "hold monster legacy",
+          "ice storm legacy",
+          "lightning bolt legacy",
+          "ray of frost legacy",
+          "shatter legacy",
+          "thunderwave legacy",
+          "water breathing legacy"
+        ]
       }
     },
     "_parentClass": "druid",
@@ -2244,17 +4691,18 @@
     "_subKey": "battle master"
   },
   {
-    "_key": "fighter-champion",
+    "_key": "fighter-champion_2014",
     "regExpSearch": {
       "_type": "RegExp",
-      "source": "^(?=.*(fighter))(?=.*(champion)).*$",
+      "source": "(?=^.*champion.*$)(?!^Fighter \\(Champion\\)$)",
       "flags": "i"
     },
-    "subname": "Champion",
+    "subname": "Champion - 2014",
+    "fullname": "Champion - 2014",
     "source": [
       [
-        "P24",
-        96
+        "LEGACYCLASS",
+        1
       ]
     ],
     "features": {
@@ -2262,222 +4710,175 @@
         "name": "Improved Critical",
         "source": [
           [
-            "P24",
-            96
+            "SRD",
+            25
+          ],
+          [
+            "P",
+            72
           ]
         ],
         "minlevel": 3,
+        "description": "I score a critical hit with my weapon attacks on a roll of 19 and 20",
         "calcChanges": {
           "atkAdd": [
             {
               "_type": "function",
-              "body": "function(fields, v) {\r\n                        if (!v.isSpell && !v.CritChance && classes.known.fighter && classes.known.fighter.level < 15) {\r\n                            fields.Description += (fields.Description ? '; ' : '') + 'Crit on 19-20';\r\n                            v.CritChance = 19;\r\n                        }\r\n                    }"
+              "body": "function (fields, v) {\n\t\t\t\t\t\t\tif (!v.isSpell && !v.CritChance && !v.isDC && classes.known.fighter && classes.known.fighter.level < 15) {\n\t\t\t\t\t\t\t\tfields.Description += (fields.Description ? '; ' : '') + 'Crit on 19-20';\n\t\t\t\t\t\t\t\tv.CritChance = 19;\n\t\t\t\t\t\t\t};\n\t\t\t\t\t\t}"
             },
             "My weapon attacks score a critical on a to hit roll of both 19 and 20.",
             19
           ]
-        },
-        "description": "I score a critical hit with my weapon attacks/Unarmed Strikes on a roll of 19 and 20"
+        }
       },
-      "subclassfeature3.1": {
+      "subclassfeature7": {
         "name": "Remarkable Athlete",
         "source": [
           [
-            "P24",
-            96
-          ]
-        ],
-        "minlevel": 3,
-        "description": "I have Advantage on Initiative and Strength(Athletics) checks\n   On a critical hit, I can move half my Speed without provoking Opportunity Attacks"
-      },
-      "subclassfeature7": {
-        "name": "Additional Fighting Style",
-        "source": [
+            "SRD",
+            25
+          ],
           [
-            "P24",
-            96
+            "P",
+            72
           ]
         ],
         "minlevel": 7,
-        "choices": [
-          "Fighting Style [Archery]",
-          "Fighting Style [Blind Fighting]",
-          "Fighting Style [Defense]",
-          "Fighting Style [Dueling]",
-          "Fighting Style [Great Weapon Fighting]",
-          "Fighting Style [Interception]",
-          "Fighting Style [Protection]",
-          "Fighting Style [Thrown Weapon Fighting]",
-          "Fighting Style [Two-Weapon Fighting]",
-          "Fighting Style [Unarmed Fighting]"
+        "description": "I add half my Proficiency Bonus to Str/Dex/Con checks if I would otherwise add none\n   When making running long jumps, I add my Strength modifier to the distance in feet",
+        "eval": {
+          "_type": "function",
+          "body": "function() { Checkbox('Remarkable Athlete', true); }"
+        },
+        "removeeval": {
+          "_type": "function",
+          "body": "function() { Checkbox('Remarkable Athlete', false); }"
+        }
+      },
+      "subclassfeature10": {
+        "name": "Additional Fighting Style",
+        "source": [
+          [
+            "SRD",
+            25
+          ],
+          [
+            "P",
+            73
+          ]
         ],
-        "fighting style [archery]": {
-          "name": "Fighting Style [Archery]",
-          "description": "I gain a +2 bonus to attack rolls I make with Ranged weapons.",
+        "minlevel": 10,
+        "description": "Choose an Additional Fighting Style using the \"Choose Feature\" button above ",
+        "choices": [
+          "Archery",
+          "Defense",
+          "Dueling",
+          "Great Weapon Fighting",
+          "Protection",
+          "Two-Weapon Fighting"
+        ],
+        "archery": {
+          "name": "Archery Fighting Style",
+          "description": "+2 bonus to attack rolls I make with ranged weapons",
           "calcChanges": {
             "atkCalc": [
-              {
-                "_type": "function",
-                "body": "function(fields, v, output) {\r\n                            if (v.isRangedWeapon && !v.isNaturalWeapon && !v.isDC) output.extraHit += 2;\r\n                        }"
-              },
+              null,
               "My ranged weapons get a +2 bonus on the To Hit."
             ]
           }
         },
-        "fighting style [blind fighting]": {
-          "name": "Fighting Style [Blind Fighting]",
-          "description": "I have Blindsight with a range of 10 feet.",
-          "vision": [
-            [
-              "Blindsight",
-              10
-            ]
-          ]
-        },
-        "fighting style [defense]": {
-          "name": "Fighting Style [Defense]",
-          "description": "While I'm wearing Light, Medium, or Heavy armor, I gain a +1 bonus to Armor Class.",
+        "defense": {
+          "name": "Defense Fighting Style",
+          "description": "+1 bonus to AC when I'm wearing armor",
           "extraAC": {
             "name": "Defense Fighting Style",
             "mod": 1,
-            "text": "I gain a +1 bonus to AC while wearing armor.",
-            "stopeval": {
-              "_type": "function",
-              "body": "function(v) {\r\n                        return !v.wearingArmor;\r\n                    }"
-            }
+            "text": "I gain a +1 bonus to AC while wearing armor."
           }
         },
-        "fighting style [dueling]": {
-          "name": "Fighting Style [Dueling]",
-          "description": "When I'm holding a Melee weapon in one hand and no other weapons, I gain a +2 bonus to damage rolls with that weapon.",
+        "dueling": {
+          "name": "Dueling Fighting Style",
+          "description": "+2 to damage rolls when wielding a melee weapon in one hand and no other weapons",
           "calcChanges": {
             "atkCalc": [
-              {
-                "_type": "function",
-                "body": "function(fields, v, output) {\r\n                            for (var i = 1; i <= FieldNumbers.actions; i++) {\r\n                                if ((/off.hand.attack/i).test(What('Bonus Action ' + i))) return;\r\n                            }\r\n                            if (v.isMeleeWeapon && !v.isNaturalWeapon && !(/((^|[^+-]\\b)2|\\btwo).?hand(ed)?s?\\b/i).test(fields.Description)) output.extraDmg += 2;\r\n                        }"
-              },
+              null,
               "When I'm wielding a melee weapon in one hand and no weapon in my other hand, I do +2 damage with that melee weapon. This condition will always be false if the bonus action 'Off-hand Attack' exists."
             ]
           }
         },
-        "fighting style [great weapon fighting]": {
-          "name": "Fighting Style [Great Weapon Fighting]",
-          "description": "When I roll damage for an attack I make with a Melee weapon that I am holding with two hands, I can treat any 1 or 2 on a damage die as a 3. The weapon must have the Two-Handed or Versatile properties to gain this benefit.",
+        "great weapon fighting": {
+          "name": "Great Weapon Fighting Style",
+          "description": "Reroll 1 or 2 on damage if wielding two-handed/versatile melee weapon in both hands",
           "calcChanges": {
             "atkAdd": [
-              {
-                "_type": "function",
-                "body": "function(fields, v) {\r\n                            if (v.isMeleeWeapon && (/(\\bversatile|((^|[^+-]\\b)2|\\btwo).?hand(ed)?s?)\\b/i).test(fields.Description)) {\r\n                                fields.Description += (fields.Description ? '; ' : '') + 'treat rolls of 1 or 2 on the damage die as a 3' + ((/versatile/i).test(fields.Description) ? ' when two-handed' : '');\r\n                            }\r\n                        }"
-              },
-              "While wielding a two-handed or versatile melee weapon in two hands, I can treat a roll of 1 or 2 on any damage die as a 3."
+              null,
+              "While wielding a two-handed or versatile melee weapon in two hands, I can re-roll a 1 or 2 on any damage die once."
             ]
           }
         },
-        "fighting style [interception]": {
-          "name": "Fighting Style [Interception]",
-          "description": "When a creature I can see hits another creature within 5 feet of me with an attack roll, I can take a Reaction to reduce the damage dealt to the target by 1d10 plus my Proficiency Bonus. I must be holding a Shield or a Simple or Martial weapon to use this Reaction.",
-          "action": "reaction"
-        },
-        "fighting style [protection]": {
-          "name": "Fighting Style [Protection]",
-          "description": "When a creature I can see attacks a target other than me that is within 5 feet of me, I can take a Reaction to interpose my Shield if I'm holding one. I impose Disadvantage on the triggering attack roll and all other attack rolls against the target until the start of my next turn if I remain within 5 feet of the target.",
-          "action": "reaction"
-        },
-        "fighting style [thrown weapon fighting]": {
-          "name": "Fighting Style [Thrown Weapon Fighting]",
-          "description": "When I hit with a ranged attack roll using a weapon that has the Thrown property, I gain a +2 bonus to the damage roll.",
-          "calcChanges": {
-            "atkAdd": [
-              {
-                "_type": "function",
-                "body": "function(fields, v) {\r\n                            if (v.isThrownWeapon && v.isMeleeWeapon) {\r\n                                fields.Description += (fields.Description ? '; ' : '') + '+2 damage when thrown';\r\n                            }\r\n                        }"
-              },
-              "I deal +2 damage when I hit a ranged attack made with a thrown weapon."
-            ],
-            "atkCalc": [
-              {
-                "_type": "function",
-                "body": "function(fields, v, output) {\r\n                            if (v.isThrownWeapon && !v.isMeleeWeapon) {\r\n                                output.extraDmg += 2;\r\n                            }\r\n                        }"
-              },
+        "protection": {
+          "name": "Protection Fighting Style",
+          "description": "As a reaction, I can give disadv. on an attack made vs. someone within 5 ft of me\n   I need to be wielding a shield and be able to see the attacker to do this",
+          "action": [
+            [
+              "reaction",
               ""
             ]
-          }
+          ]
         },
-        "fighting style [two-weapon fighting]": {
-          "name": "Fighting Style [Two-Weapon Fighting]",
-          "description": "When I make an extra attack as a result of using a weapon that has the Light property, I can add my ability modifier to the damage to that attack if I am not already adding it to the damage.",
+        "two-weapon fighting": {
+          "name": "Two-Weapon Fighting Style",
+          "description": "I can add my ability modifier to the damage of my off-hand attacks",
           "calcChanges": {
             "atkCalc": [
-              {
-                "_type": "function",
-                "body": "function(fields, v, output) {\r\n                            if (v.isOffHand) output.modToDmg = true;\r\n                        }"
-              },
+              null,
               "When engaging in two-weapon fighting, I can add my ability modifier to the damage of my off-hand attacks. If a melee weapon includes 'off-hand' or 'secondary' in its name or description, it is considered an off-hand attack."
             ]
           }
-        },
-        "fighting style [unarmed fighting]": {
-          "name": "Fighting Style [Unarmed Fighting]",
-          "description": "When I hit with my Unarmed Strike and deal damage, I can deal Bludgeoning damage equal to 1d6 plus my Strength modifier instead of the normal damage of an Unarmed Strike. If I am not holding any weapons or a Shield when I make the attack roll, the d6 becomes a d8.\n At the start of each of my turns, I can deal 1d4 Bludgeoning damage to one creature Grappled by me.",
-          "calcChanges": {
-            "atkAdd": [
-              {
-                "_type": "function",
-                "body": "function(fields, v) {\r\n                            if (v.baseWeaponName == \"unarmed strike\") {\r\n                                if (fields.Damage_Die == 1 || fields.Damage_Die == \"1d4\") fields.Damage_Die = '1d6';\r\n                                fields.Description += (fields.Description ? '; ' : '') + 'Versatile (d8)';\r\n                            }\r\n                        }"
-              },
-              "My unarmed strikes deal 1d6 damage instead of 1, which increases to 1d8 if I have both hands free to make an unarmed strike with.",
-              1
-            ]
-          }
-        },
-        "description": "I gain another different Fighting Style feat of my choice."
-      },
-      "subclassfeature10": {
-        "name": "Heroic Warrior",
-        "source": [
-          [
-            "P24",
-            96
-          ]
-        ],
-        "minlevel": 10,
-        "description": "I gain Heroic Inspiration in combat when I start a turn without it"
+        }
       },
       "subclassfeature15": {
         "name": "Superior Critical",
         "source": [
           [
-            "P24",
-            96
+            "SRD",
+            25
+          ],
+          [
+            "P",
+            73
           ]
         ],
         "minlevel": 15,
+        "description": "I score a critical hit with my weapon attacks on a roll of 18, 19, and 20",
         "calcChanges": {
           "atkAdd": [
             {
               "_type": "function",
-              "body": "function(fields, v) {\r\n                        if (v.isSpell) return;\r\n                        if (v.CritChance && v.CritChance > 18) {\r\n                            fields.Description = fields.Description.replace('Crit on ' + CritChance + '-20', 'Crit on 18-20');\r\n                            v.CritChance = 18;\r\n                        } else if (!v.CritChance) {\r\n                            fields.Description += (fields.Description ? '; ' : '') + 'Crit on 18-20';\r\n                            v.CritChance = 18;\r\n                        }\r\n                    }"
+              "body": "function (fields, v) {\n\t\t\t\t\t\t\tif (v.isSpell || v.isDC) return;\n\t\t\t\t\t\t\tif (v.CritChance && v.CritChance > 18) {\n\t\t\t\t\t\t\t\tfields.Description = fields.Description.replace('Crit on ' + CritChance + '-20', 'Crit on 18-20');\n\t\t\t\t\t\t\t\tv.CritChance = 18;\n\t\t\t\t\t\t\t} else if (!v.CritChance) {\n\t\t\t\t\t\t\t\tfields.Description += (fields.Description ? '; ' : '') + 'Crit on 18-20';\n\t\t\t\t\t\t\t\tv.CritChance = 18;\n\t\t\t\t\t\t\t};\n\t\t\t\t\t\t}"
             },
             "My weapon attacks also score a critical on a to hit roll of 18.",
             18
           ]
-        },
-        "description": "I score a critical hit with my weapon attacks/Unarmed Strikes on a roll of 18, 19, and 20"
+        }
       },
       "subclassfeature18": {
         "name": "Survivor",
         "source": [
           [
-            "P24",
-            96
+            "SRD",
+            25
+          ],
+          [
+            "P",
+            73
           ]
         ],
         "minlevel": 18,
-        "description": "I roll with Advantage on Death Saves and 18-19 counts as a critical success\n   At the start of my turn, if I'm not above half or at 0 HP, I regain 5 + Con mod HP"
+        "description": "At the start of my turn, if I'm not above half or at 0 HP, I regain 5 + Con mod HP"
       }
     },
     "_parentClass": "fighter",
-    "_subKey": "champion"
+    "_subKey": "champion_2014"
   },
   {
     "_key": "fighter-eldritch knight",
@@ -3302,6 +5703,77 @@
         "recovery": "long rest",
         "altResource": "SS 5",
         "description": "As a Bonus Action, I can give my Aura of Protection the benefits below for 10 minutes:\n   Holy Ward: I have Advantage on saving throws I'm forced to make by a Fiend or Undead.\n   Radiant Damage: An enemy that starts its turn in range takes my Cha mod + Prof Bonus Radiant damage.\n   Sunlight: The aura is filled with Bright Light that is sunlight.\n   I can end it for free; I can spend a level 5 spell slot or Long Rest to restore it."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "divine smite",
+            "protection from evil and good",
+            "shield of faith",
+            "aid",
+            "zone of truth",
+            "beacon of hope",
+            "dispel magic",
+            "freedom of movement",
+            "guardian of faith",
+            "commune",
+            "flame strike",
+            "aid legacy",
+            "beacon of hope legacy",
+            "commune legacy",
+            "dispel magic legacy",
+            "flame strike legacy",
+            "freedom of movement legacy",
+            "guardian of faith legacy",
+            "protection from evil and good legacy",
+            "shield of faith legacy",
+            "zone of truth legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "divine smite",
+            "protection from evil and good",
+            "shield of faith",
+            "aid",
+            "zone of truth",
+            "beacon of hope",
+            "dispel magic",
+            "freedom of movement",
+            "guardian of faith",
+            "commune",
+            "flame strike"
+          ]
+        },
+        "legacySpells": [
+          "aid legacy",
+          "beacon of hope legacy",
+          "commune legacy",
+          "dispel magic legacy",
+          "flame strike legacy",
+          "freedom of movement legacy",
+          "guardian of faith legacy",
+          "protection from evil and good legacy",
+          "shield of faith legacy",
+          "zone of truth legacy"
+        ]
       }
     },
     "_parentClass": "paladin",
@@ -3454,6 +5926,75 @@
             ""
           ]
         ]
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "divine smite",
+            "guiding bolt",
+            "heroism",
+            "enhance ability",
+            "magic weapon",
+            "haste",
+            "protection from energy",
+            "compulsion",
+            "freedom of movement",
+            "legend lore",
+            "yolande's regal presence",
+            "compulsion legacy",
+            "enhance ability legacy",
+            "freedom of movement legacy",
+            "guiding bolt legacy",
+            "haste legacy",
+            "heroism legacy",
+            "legend lore legacy",
+            "magic weapon legacy",
+            "protection from energy legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "divine smite",
+            "guiding bolt",
+            "heroism",
+            "enhance ability",
+            "magic weapon",
+            "haste",
+            "protection from energy",
+            "compulsion",
+            "freedom of movement",
+            "legend lore",
+            "yolande's regal presence"
+          ]
+        },
+        "legacySpells": [
+          "compulsion legacy",
+          "enhance ability legacy",
+          "freedom of movement legacy",
+          "guiding bolt legacy",
+          "haste legacy",
+          "heroism legacy",
+          "legend lore legacy",
+          "magic weapon legacy",
+          "protection from energy legacy"
+        ]
       }
     },
     "_parentClass": "paladin",
@@ -3561,6 +6102,75 @@
         ],
         "minlevel": 20,
         "description": "As a Bonus Action, I can give my Aura of Protection the benefits below for 10 minutes:\n    • At the start of each of my turns, I regain 10 hit points\n    • I can cast paladin spells with a casting time of 1 action as a bonus action instead\n    • Enemies within range have disadv. on saves vs. my paladin spells and channel divinity"
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "divine smite",
+            "ensnaring strike",
+            "speak with animals",
+            "misty step",
+            "moonbeam",
+            "plant growth",
+            "protection from energy",
+            "ice storm",
+            "stoneskin",
+            "commune with nature",
+            "tree stride",
+            "commune with nature legacy",
+            "ice storm legacy",
+            "misty step legacy",
+            "moonbeam legacy",
+            "plant growth legacy",
+            "protection from energy legacy",
+            "speak with animals legacy",
+            "stoneskin legacy",
+            "tree stride legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "divine smite",
+            "ensnaring strike",
+            "speak with animals",
+            "misty step",
+            "moonbeam",
+            "plant growth",
+            "protection from energy",
+            "ice storm",
+            "stoneskin",
+            "commune with nature",
+            "tree stride"
+          ]
+        },
+        "legacySpells": [
+          "commune with nature legacy",
+          "ice storm legacy",
+          "misty step legacy",
+          "moonbeam legacy",
+          "plant growth legacy",
+          "protection from energy legacy",
+          "speak with animals legacy",
+          "stoneskin legacy",
+          "tree stride legacy"
+        ]
       }
     },
     "_parentClass": "paladin",
@@ -3669,6 +6279,77 @@
           "",
           "",
           "30-foot aura"
+        ]
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "divine smite",
+            "bane",
+            "hunter's mark",
+            "hold person",
+            "misty step",
+            "haste",
+            "protection from energy",
+            "banishment",
+            "dimension door",
+            "hold monster",
+            "scrying",
+            "bane legacy",
+            "banishment legacy",
+            "dimension door legacy",
+            "haste legacy",
+            "hold monster legacy",
+            "hold person legacy",
+            "hunter's mark legacy",
+            "misty step legacy",
+            "protection from energy legacy",
+            "scrying legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "divine smite",
+            "bane",
+            "hunter's mark",
+            "hold person",
+            "misty step",
+            "haste",
+            "protection from energy",
+            "banishment",
+            "dimension door",
+            "hold monster",
+            "scrying"
+          ]
+        },
+        "legacySpells": [
+          "bane legacy",
+          "banishment legacy",
+          "dimension door legacy",
+          "haste legacy",
+          "hold monster legacy",
+          "hold person legacy",
+          "hunter's mark legacy",
+          "misty step legacy",
+          "protection from energy legacy",
+          "scrying legacy"
         ]
       }
     },
@@ -3916,6 +6597,53 @@
         "usagescalc": "event.value = Math.max(1, What('Wis Mod'));",
         "recovery": "long rest",
         "description": "I can cast Misty Step without expending a spell slot and can bring a willing creature within 5 ft\n   That creature teleports to an unoccupied space of my choice within 5 ft of my destination."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "charm person",
+            "misty step",
+            "summon fey",
+            "dimension door",
+            "mislead",
+            "charm person legacy",
+            "dimension door legacy",
+            "mislead legacy",
+            "misty step legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "charm person",
+            "misty step",
+            "summon fey",
+            "dimension door",
+            "mislead"
+          ]
+        },
+        "legacySpells": [
+          "charm person legacy",
+          "dimension door legacy",
+          "mislead legacy",
+          "misty step legacy"
+        ]
       }
     },
     "_parentClass": "ranger",
@@ -4041,106 +6769,187 @@
     "_subKey": "gloom stalker"
   },
   {
-    "_key": "ranger-hunter",
+    "_key": "ranger-hunter_2014",
     "regExpSearch": {
       "_type": "RegExp",
-      "source": "^(?=.*(ranger))(?=.*(hunter)).*$",
+      "source": "(?=^.*^(?!.*(monster|barbarian|bard|cleric|druid|fighter|monk|paladin|rogue|sorcerer|warlock|wizard))(?=.*(hunter|huntress|hunts(wo)?m(e|a)n)).*$.*$)(?!^Ranger \\(Hunter\\)$)",
       "flags": "i"
     },
-    "subname": "Hunter",
+    "subname": "Hunter - 2014",
+    "fullname": "Hunter - 2014",
     "source": [
       [
-        "P24",
-        127
+        "LEGACYCLASS",
+        1
       ]
     ],
     "features": {
       "subclassfeature3": {
-        "name": "Hunter's Lore",
-        "source": [
-          [
-            "P24",
-            127
-          ]
-        ],
-        "minlevel": 3,
-        "description": "While a creature is marked by my Hunter's Mark, I know the following about it:\n   Damage/condition immunities, damage resistances, and/or damage vulnerabilities."
-      },
-      "subclassfeature3.1": {
         "name": "Hunter's Prey",
         "source": [
           [
-            "P24",
-            127
+            "SRD",
+            37
+          ],
+          [
+            "P",
+            93
           ]
         ],
         "minlevel": 3,
+        "description": "Choose Colossus Slayer, Giant Killer, or Horde Breaker with the \"Choose Feature\" button",
         "choices": [
           "Colossus Slayer",
+          "Giant killer",
           "Horde Breaker"
         ],
         "colossus slayer": {
-          "name": "Colossus Slayer",
-          "description": "Once per turn, when I hit a creature with a weapon, I deal an extra 1d8 damage to the target if it's missing any Hit Points. After a Short or Long Rest, I can replace this feature with the 'Horde Breaker' feature."
+          "name": "Hunter's Prey: Colossus Slayer",
+          "description": "Once per turn, when hitting someone that is below max HP, I do an extra 1d8 damage"
+        },
+        "giant killer": {
+          "name": "Hunter's Prey: Giant Killer",
+          "description": "As a reaction, when a Large or larger enemy in 5 ft attacks me, I can attack it once",
+          "action": [
+            [
+              "reaction",
+              ""
+            ]
+          ]
         },
         "horde breaker": {
-          "name": "Horde Breaker",
-          "description": "Once per turn, when I hit a creature, I can make an attack vs. another within 5 ft of it if I haven't hit it during this turn. After a Short or Long Rest, I can replace this feature with the 'Colossus Slayer' feature."
-        },
-        "description": "Use the 'choose feature' button to select a Hunter's Prey option, after a Short or Long Rest, I can replace the chosen option with the other one."
+          "name": "Hunter's Prey: Horde Breaker",
+          "description": "Once per turn, when I hit a creature, I can make an attack vs. another within 5 ft of it"
+        }
       },
       "subclassfeature7": {
         "name": "Defensive Tactics",
         "source": [
           [
-            "P24",
-            127
+            "SRD",
+            38
+          ],
+          [
+            "P",
+            93
           ]
         ],
         "minlevel": 7,
+        "description": "\"Choose Feature\" button to choose Escape the Horde, Multiattack Defense, or Steel Will",
         "choices": [
           "Escape the Horde",
-          "Multiattack Defense"
+          "Multiattack Defense",
+          "Steel Will"
         ],
         "escape the horde": {
-          "name": "Escape the Horde",
-          "description": "Opportunity Attacks have Disadvantage against me. After a Short or Long Rest, I can replace this feature with the 'Multiattack Defense' feature."
+          "name": "Defensive Tactic: Escape the Horde",
+          "description": "Creatures attacking me with opportunity attacks have disadvantage on the attack rolls"
         },
         "multiattack defense": {
-          "name": "Multiattack Defense",
-          "description": "When a creature hits me with an attack roll, that creature has Disadvantage on all other attack rolls against me this turn. After a Short or Long Rest, I can replace this feature with the 'Escape the Horde' feature."
+          "name": "Defensive Tactic: Multiattack Defense",
+          "description": "When a creature hits me, I gain +4 AC against that creature for the rest of the turn"
         },
-        "description": "Use the 'choose feature' button to select a Defensive Tactics option, After a Short or Long Rest, I can replace the chosen option with the other one."
+        "steel will": {
+          "name": "Defensive Tactic: Steel Will",
+          "description": "I have advantage on saves against being frightened",
+          "savetxt": {
+            "adv_vs": [
+              "frightened"
+            ]
+          }
+        }
       },
       "subclassfeature11": {
-        "name": "Superior Hunter's Prey",
+        "name": "Multiattack",
         "source": [
           [
-            "P24",
-            127
+            "SRD",
+            38
+          ],
+          [
+            "P",
+            93
           ]
         ],
         "minlevel": 11,
-        "description": "Once per turn when I deal damage to a creature marked by my Hunter's mark, I can also deal the extra damage to another creature I can see within 30 feet."
+        "description": "Choose Volley or Whirlwind Attack using the \"Choose Feature\" button above",
+        "choices": [
+          "Volley",
+          "Whirlwind Attack"
+        ],
+        "volley": {
+          "name": "Multiattack: Volley",
+          "description": "As an action, I can make ranged attacks vs. all within a 10-ft radius of a point in range",
+          "action": [
+            [
+              "action",
+              ""
+            ]
+          ]
+        },
+        "whirlwind attack": {
+          "name": "Multiattack: Whirlwind Attack",
+          "description": "As an action, I can make melee attacks vs. all creatures within 5 ft of me",
+          "action": [
+            [
+              "action",
+              ""
+            ]
+          ]
+        }
       },
       "subclassfeature15": {
         "name": "Superior Hunter's Defense",
         "source": [
           [
-            "P24",
-            127
+            "SRD",
+            38
+          ],
+          [
+            "P",
+            93
           ]
         ],
         "minlevel": 15,
-        "action": [
-          "reaction",
-          " (taking damage)"
+        "description": "\"Choose Feature\" button to choose Evasion, Stand Against the Tide, or Uncanny Dodge",
+        "choices": [
+          "Evasion",
+          "Stand Against the Tide",
+          "Uncanny Dodge"
         ],
-        "description": "When I take damage, I can take a Reaction to give myself Resistance to that damage and any other damage of the same type until the end of the current turn."
+        "evasion": {
+          "name": "Evasion",
+          "description": "If I make a Dex save to halve damage, I instead take none if I succeed and half if I fail.",
+          "savetxt": {
+            "text": [
+              "**Dex save for half dmg**. *Failure:* half dmg, *Success:* no dmg"
+            ]
+          }
+        },
+        "stand against the tide": {
+          "name": "Stand Against the Tide",
+          "description": "When a creature misses me with a melee attack, I can use my reaction on the attack\n   I force the attacker to repeat it vs. another (not attacker) of my choice within range",
+          "action": [
+            [
+              "reaction",
+              ""
+            ]
+          ]
+        },
+        "uncanny dodge": {
+          "name": "Uncanny Dodge",
+          "description": "As a reaction, I halve the damage of an attack from an attacker that I can see",
+          "action": [
+            [
+              "reaction",
+              ""
+            ]
+          ]
+        }
       }
     },
     "_parentClass": "ranger",
-    "_subKey": "hunter"
+    "_subKey": "hunter_2014"
   },
   {
     "_key": "rogue-arcane trickster",
@@ -4545,17 +7354,18 @@
     "_subKey": "soulknife"
   },
   {
-    "_key": "rogue-thief",
+    "_key": "rogue-thief_2014",
     "regExpSearch": {
       "_type": "RegExp",
-      "source": "^(?=.*(rogue))(?=.*(thief)).*$",
+      "source": "(?=^.*^(?!.*(barbarian|bard|cleric|druid|fighter|monk|paladin|ranger|sorcerer|warlock|wizard))(?=.*(thief|burglar)).*$.*$)(?!^Rogue \\(Thief\\)$)",
       "flags": "i"
     },
-    "subname": "Thief",
+    "subname": "Thief - 2014",
+    "fullname": "Thief - 2014",
     "source": [
       [
-        "P24",
-        137
+        "LEGACYCLASS",
+        1
       ]
     ],
     "features": {
@@ -4563,70 +7373,92 @@
         "name": "Fast Hands",
         "source": [
           [
-            "P24",
-            137
+            "SRD",
+            40
+          ],
+          [
+            "P",
+            97
           ]
         ],
         "minlevel": 3,
+        "description": "As a bonus action, I can do one of the following:\n    • Make a Dexterity (Sleight of Hand) check\n    • Use my thieves' tools to disarm a trap or open a lock\n    • Take the Use an Object action",
         "action": [
-          "bonus action",
-          "Pick Lock/Disarm Trap/Utilize Item/Activate Magic Item"
-        ],
-        "description": "I can do these as a bonus action:\n   Sleight of Hand: Make a Dex (Sleight of Hand) check to pick a lock/disarm a trap or pick a pocket.\n   Use an Object: Take the Utilize action, or take the Magic action to use a magic item that requires one."
+          [
+            "bonus action",
+            ""
+          ]
+        ]
       },
-      "subclassfeature6": {
+      "subclassfeature3.1": {
         "name": "Second-Story Work",
         "source": [
           [
-            "P24",
-            137
+            "SRD",
+            41
+          ],
+          [
+            "P",
+            97
           ]
         ],
         "minlevel": 3,
+        "description": "I climb at my normal speed; I add my Dex modifier to the distance of a running jump",
         "speed": {
           "climb": {
             "spd": "walk",
             "enc": "walk"
           }
-        },
-        "description": "I gain a Climb Speed equal to my Speed and can determine my jump distance using Dex."
+        }
       },
       "subclassfeature9": {
         "name": "Supreme Sneak",
         "source": [
           [
-            "P24",
-            137
+            "SRD",
+            41
+          ],
+          [
+            "P",
+            97
           ]
         ],
         "minlevel": 9,
-        "description": "I gain the following Cunning Strike option:\n   Stealth Attack (Cost 1d6): This attack doesn't end Hiding if I end the turn behind Three-Quarters or Total Cover."
+        "description": "I have advantage on Dexterity (Stealth) checks when moving no more than half speed"
       },
       "subclassfeature13": {
         "name": "Use Magic Device",
         "source": [
           [
-            "P24",
-            137
+            "SRD",
+            41
+          ],
+          [
+            "P",
+            97
           ]
         ],
         "minlevel": 13,
-        "description": "Attunement: I can attune to up to four magic items at once.\n   Charges: When I use a magic item property with charges, a 6 on a 1d6 roll means no charges are used.\n   Scrolls: I can use any Spell Scroll, using Int as my spellcasting ability. Level 2+ spells require an Int (Arcana) check (DC 10 + Spell Level) to cast or the scroll disintegrates."
+        "description": "I can use magic items even if I don't meet the class, race, and/or level requirements"
       },
       "subclassfeature17": {
         "name": "Thief's Reflexes",
         "source": [
           [
-            "P24",
-            137
+            "SRD",
+            41
+          ],
+          [
+            "P",
+            97
           ]
         ],
         "minlevel": 17,
-        "description": "I can take two turns during the first round of any combat at my normal Initiative and my second turn at my Initiative - 10."
+        "description": "Unless surprised, I can take two turns on the first round of any combat\n   The first turn is at my regular initiative, and the second is at my initiative - 10"
       }
     },
     "_parentClass": "rogue",
-    "_subKey": "thief"
+    "_subKey": "thief_2014"
   },
   {
     "_key": "sorcerer-aberrant",
@@ -4759,6 +7591,69 @@
         "recovery": "long rest",
         "altResource": "5 SP",
         "description": "As a Magic action, I teleport to a visible unoccupied space w/in 120 feet. Each creature w/in 30 feet of the space I left must make a Strength save or take 3d10 Force damage & be pulled toward the space I left, ending in the nearest unoccupied space. On a success, it takes half damage. I can restore this with a Long Rest or by spending 5 SP (no action)."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "arms of hadar",
+            "calm emotions",
+            "detect thoughts",
+            "dissonant whispers",
+            "mind sliver",
+            "hunger of hadar",
+            "sending",
+            "evard's black tentacles",
+            "summon aberration",
+            "rary's telepathic bond",
+            "telekinesis",
+            "calm emotions legacy",
+            "detect thoughts legacy",
+            "evard's black tentacles legacy",
+            "rary's telepathic bond legacy",
+            "sending legacy",
+            "telekinesis legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "arms of hadar",
+            "calm emotions",
+            "detect thoughts",
+            "dissonant whispers",
+            "mind sliver",
+            "hunger of hadar",
+            "sending",
+            "evard's black tentacles",
+            "summon aberration",
+            "rary's telepathic bond",
+            "telekinesis"
+          ]
+        },
+        "legacySpells": [
+          "calm emotions legacy",
+          "detect thoughts legacy",
+          "evard's black tentacles legacy",
+          "rary's telepathic bond legacy",
+          "sending legacy",
+          "telekinesis legacy"
+        ]
       }
     },
     "_parentClass": "sorcerer",
@@ -4851,6 +7746,73 @@
         "recovery": "long rest",
         "altResource": "7 SP",
         "description": "As an action, I can call spirits to bring balance in a 30-ft cube originating from me; The intangible spirits do all the following inside the cube before vanishing:\n   Heal: Restore up to 100 HP, divided among the creatures as I choose.\n   Repair: Repair all damaged objects entirely instantly.\n   Dispel: End every spell of level 6 or lower on objects or creatures of my choice.\n   I can restore this with a Long Rest or by spending 7 SP (no action)."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "aid",
+            "alarm",
+            "lesser restoration",
+            "protection from evil and good",
+            "dispel magic",
+            "protection from energy",
+            "freedom of movement",
+            "summon construct",
+            "greater restoration",
+            "wall of force",
+            "aid legacy",
+            "alarm legacy",
+            "dispel magic legacy",
+            "freedom of movement legacy",
+            "greater restoration legacy",
+            "lesser restoration legacy",
+            "protection from energy legacy",
+            "protection from evil and good legacy",
+            "wall of force legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "aid",
+            "alarm",
+            "lesser restoration",
+            "protection from evil and good",
+            "dispel magic",
+            "protection from energy",
+            "freedom of movement",
+            "summon construct",
+            "greater restoration",
+            "wall of force"
+          ]
+        },
+        "legacySpells": [
+          "aid legacy",
+          "alarm legacy",
+          "dispel magic legacy",
+          "freedom of movement legacy",
+          "greater restoration legacy",
+          "lesser restoration legacy",
+          "protection from energy legacy",
+          "protection from evil and good legacy",
+          "wall of force legacy"
+        ]
       }
     },
     "_parentClass": "sorcerer",
@@ -4991,6 +7953,67 @@
         "usages": 1,
         "recovery": "long rest",
         "description": "I can cast Summon Dragon w/out a Material component & once per Long Rest without a spell slot. I can also cast it without requiring Concentration, for 1 min."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "alter self",
+            "chromatic orb",
+            "command",
+            "dragon's breath",
+            "fear",
+            "fly",
+            "arcane eye",
+            "charm monster",
+            "legend lore",
+            "summon dragon",
+            "alter self legacy",
+            "arcane eye legacy",
+            "command legacy",
+            "fear legacy",
+            "fly legacy",
+            "legend lore legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "alter self",
+            "chromatic orb",
+            "command",
+            "dragon's breath",
+            "fear",
+            "fly",
+            "arcane eye",
+            "charm monster",
+            "legend lore",
+            "summon dragon"
+          ]
+        },
+        "legacySpells": [
+          "alter self legacy",
+          "arcane eye legacy",
+          "command legacy",
+          "fear legacy",
+          "fly legacy",
+          "legend lore legacy"
+        ]
       }
     },
     "_parentClass": "sorcerer",
@@ -5233,6 +8256,77 @@
         ],
         "minlevel": 14,
         "description": "Right after I cast an Ench or Illus spell with an action + spell slot, I can cast Misty Step as part of the same action and without spending a spell slot."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "calm emotions",
+            "faerie fire",
+            "misty step",
+            "phantasmal force",
+            "sleep",
+            "blink",
+            "plant growth",
+            "dominate beast",
+            "greater invisibility",
+            "dominate person",
+            "seeming",
+            "blink legacy",
+            "calm emotions legacy",
+            "dominate beast legacy",
+            "dominate person legacy",
+            "faerie fire legacy",
+            "greater invisibility legacy",
+            "misty step legacy",
+            "plant growth legacy",
+            "seeming legacy",
+            "sleep legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "calm emotions",
+            "faerie fire",
+            "misty step",
+            "phantasmal force",
+            "sleep",
+            "blink",
+            "plant growth",
+            "dominate beast",
+            "greater invisibility",
+            "dominate person",
+            "seeming"
+          ]
+        },
+        "legacySpells": [
+          "blink legacy",
+          "calm emotions legacy",
+          "dominate beast legacy",
+          "dominate person legacy",
+          "faerie fire legacy",
+          "greater invisibility legacy",
+          "misty step legacy",
+          "plant growth legacy",
+          "seeming legacy",
+          "sleep legacy"
+        ]
       }
     },
     "_parentClass": "warlock",
@@ -5418,86 +8512,168 @@
     "_subKey": "the celestial"
   },
   {
-    "_key": "warlock-the fiend",
+    "_key": "warlock-the fiend_2014",
     "regExpSearch": {
       "_type": "RegExp",
-      "source": "^(?=.*(warlock))(?=.*(fiend)).*$",
+      "source": "(?=^.*^(?=.*(fiend|devil|demon|daemon|hell|abyss))(?=.*warlock).*$.*$)(?!^Warlock \\(Fiend Patron\\)$)",
       "flags": "i"
     },
-    "subname": "Fiend Patron",
+    "subname": "the Fiend - 2014",
+    "source": [
+      [
+        "LEGACYCLASS",
+        1
+      ]
+    ],
     "spellcastingExtra": [
       "burning hands",
       "command",
+      "blindness/deafness",
       "scorching ray",
-      "suggestion",
       "fireball",
       "stinking cloud",
       "fire shield",
       "wall of fire",
-      "geas",
-      "insect plague"
-    ],
-    "spellcastingExtraApplyNonconform": true,
-    "source": [
-      [
-        "P24",
-        161
-      ]
+      "flame strike",
+      "hallow"
     ],
     "features": {
-      "subclassfeature3": {
+      "subclassfeature1": {
         "name": "Dark One's Blessing",
         "source": [
           [
-            "P24",
-            161
+            "SRD",
+            50
+          ],
+          [
+            "P",
+            109
           ]
         ],
-        "minlevel": 3,
-        "description": "When I reduce a hostile to 0 HP, I gain Cha mod + Warlock level temp HP (min 1). I also gain this temp HP if an enemy within 10 ft of me is reduced to 0 Hit Points."
+        "minlevel": 1,
+        "description": "When I reduce a hostile to 0 HP, I gain Cha mod + warlock level temporary HP (min 1)"
       },
       "subclassfeature6": {
         "name": "Dark One's Own Luck",
         "source": [
           [
-            "P24",
-            162
+            "SRD",
+            50
+          ],
+          [
+            "P",
+            109
           ]
         ],
         "minlevel": 6,
-        "usages": "Charisma modifier per ",
-        "usagescalc": "event.value = Math.max(1, What('Cha Mod'));",
-        "recovery": "long rest",
-        "description": "Once per roll, when I make an ability check or saving throw, I can add 1d10 after rolling the d20 but before any of the roll's effects occur."
+        "description": "When I make an ability check or saving throw, I can add 1d10 after rolling the d20",
+        "recovery": "short rest",
+        "usages": 1
       },
       "subclassfeature10": {
         "name": "Fiendish Resilience",
         "source": [
           [
-            "P24",
-            162
+            "SRD",
+            51
+          ],
+          [
+            "P",
+            109
           ]
         ],
         "minlevel": 10,
-        "description": "At the end of a Rest, I can choose a damage type (not Force) to be Resistant to until I choose another."
+        "description": "After a short or long rest, I can choose one damage type to become resistant to\n   This lasts until I choose another type; Magical and silver weapons ignore this resistance"
       },
       "subclassfeature14": {
         "name": "Hurl Through Hell",
         "source": [
           [
-            "P24",
-            162
+            "SRD",
+            51
+          ],
+          [
+            "P",
+            109
           ]
         ],
         "minlevel": 14,
-        "usages": 1,
+        "description": "When I hit a creature with an attack, I can instantly transport it through lower planes\n   It returns at the end of my next turn and takes 10d10 psychic damage if not a fiend",
         "recovery": "long rest",
-        "altResource": "SS",
-        "description": "Once per turn when I hit a creature with an attack roll I can force it to make a Cha save, or it is Incapacitated and disappears into the Lower Planes until the end of my next turn. When it returns it takes 8d10 Psychic damage if it isn't a Fiend. This Feature can be used 1/LR unless I expend a Warlock SS to regain use of it."
+        "usages": 1
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "burning hands",
+            "command",
+            "blindness/deafness",
+            "scorching ray",
+            "fireball",
+            "stinking cloud",
+            "fire shield",
+            "wall of fire",
+            "flame strike",
+            "hallow",
+            "blindness/deafness legacy",
+            "burning hands legacy",
+            "command legacy",
+            "fireball legacy",
+            "fire shield legacy",
+            "flame strike legacy",
+            "hallow legacy",
+            "scorching ray legacy",
+            "stinking cloud legacy",
+            "wall of fire legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "burning hands",
+            "command",
+            "blindness/deafness",
+            "scorching ray",
+            "fireball",
+            "stinking cloud",
+            "fire shield",
+            "wall of fire",
+            "flame strike",
+            "hallow"
+          ]
+        },
+        "legacySpells": [
+          "blindness/deafness legacy",
+          "burning hands legacy",
+          "command legacy",
+          "fireball legacy",
+          "fire shield legacy",
+          "flame strike legacy",
+          "hallow legacy",
+          "scorching ray legacy",
+          "stinking cloud legacy",
+          "wall of fire legacy"
+        ]
       }
     },
     "_parentClass": "warlock",
-    "_subKey": "the fiend"
+    "_subKey": "the fiend_2014"
   },
   {
     "_key": "warlock-the great old one",
@@ -5611,6 +8787,67 @@
         ],
         "minlevel": 14,
         "description": "Summon Aberration can not require Concentration; That casting lasts 1 min and the Aberration has Temp HP (my Warlock level + Cha mod).\n   The first time each turn the Aberration hits a creature under my Hex it deals extra Psych damage equal to the bonus damage of that spell."
+      },
+      "subclassfeature24": {
+        "name": "Legacy spells",
+        "source": [
+          [
+            "LEGACYSPELLS",
+            1
+          ]
+        ],
+        "minlevel": 1,
+        "description": "\n I can choose to access to the legacy version of spells",
+        "choices": [
+          "Show Legacy",
+          "Hide Legacy"
+        ],
+        "show legacy": {
+          "name": "Show legacy spells",
+          "description": "\n   I have access to the legacy version of spells",
+          "spellcastingExtra": [
+            "detect thoughts",
+            "dissonant whispers",
+            "phantasmal force",
+            "tasha's hideous laughter",
+            "clairvoyance",
+            "hunger of hadar",
+            "confusion",
+            "summon aberration",
+            "modify memory",
+            "telekinesis",
+            "clairvoyance legacy",
+            "confusion legacy",
+            "detect thoughts legacy",
+            "modify memory legacy",
+            "tasha's hideous laughter legacy",
+            "telekinesis legacy"
+          ]
+        },
+        "hide legacy": {
+          "name": "Hide legacy spells",
+          "description": "\n   I have hidden the legacy version of spells",
+          "spellcastingExtra": [
+            "detect thoughts",
+            "dissonant whispers",
+            "phantasmal force",
+            "tasha's hideous laughter",
+            "clairvoyance",
+            "hunger of hadar",
+            "confusion",
+            "summon aberration",
+            "modify memory",
+            "telekinesis"
+          ]
+        },
+        "legacySpells": [
+          "clairvoyance legacy",
+          "confusion legacy",
+          "detect thoughts legacy",
+          "modify memory legacy",
+          "tasha's hideous laughter legacy",
+          "telekinesis legacy"
+        ]
       }
     },
     "_parentClass": "warlock",
@@ -7658,21 +10895,30 @@
           "Two-Weapon Fighting"
         ],
         "dueling": {
-          "name": "Dueling",
-          "description": "When I am wielding a melee weapon in one hand and no other weapons, +2 to damage rolls",
+          "name": "Dueling Fighting Style",
+          "description": "+2 to damage rolls when wielding a melee weapon in one hand and no other weapons",
           "calcChanges": {
             "atkCalc": [
               {
                 "_type": "function",
-                "body": "function(fields, v, output) {\r\n          if (v.isMeleeWeapon && !v.isNaturalWeapon && !v.isOffHand &&\r\n              !(/\\b(2|two|double).?hand/i).test(fields.Description)) {\r\n            output.extraDmg += 2;\r\n          }\r\n        }"
+                "body": "function (fields, v, output) {\n\t\t\t\t\tfor (var i = 1; i <= FieldNumbers.actions; i++) {\n\t\t\t\t\t\tif ((/off.hand.attack/i).test(What('Bonus Action ' + i))) return;\n\t\t\t\t\t};\n\t\t\t\t\tif (v.isMeleeWeapon && !v.isNaturalWeapon && !(/((^|[^+-]\\b)2|\\btwo).?hand(ed)?s?\\b/i).test(fields.Description)) output.extraDmg += 2;\n\t\t\t\t}"
               },
-              "When I am wielding a melee weapon in one hand and no other weapons, I gain a +2 bonus to damage rolls with that weapon."
+              "When I'm wielding a melee weapon in one hand and no weapon in my other hand, I do +2 damage with that melee weapon. This condition will always be false if the bonus action 'Off-hand Attack' exists."
             ]
           }
         },
         "two-weapon fighting": {
-          "name": "Two-Weapon Fighting",
-          "description": "When engaging in two-weapon fighting, I can add my ability modifier to the damage of the extra attack"
+          "name": "Two-Weapon Fighting Style",
+          "description": "I can add my ability modifier to the damage of my off-hand attacks",
+          "calcChanges": {
+            "atkCalc": [
+              {
+                "_type": "function",
+                "body": "function (fields, v, output) {\n\t\t\t\t\tif (v.isOffHand) output.modToDmg = true;\n\t\t\t\t}"
+              },
+              "When engaging in two-weapon fighting, I can add my ability modifier to the damage of my off-hand attacks. If a melee weapon includes 'off-hand' or 'secondary' in its name or description, it is considered an off-hand attack."
+            ]
+          }
         }
       },
       "subclassfeature3.2": {
@@ -8111,9 +11357,16 @@
           "atkCalc": [
             {
               "_type": "function",
-              "body": "function(fields, v, output) {\r\n          if (v.isSpell && v.spellLevel === 0) {\r\n            output.extraDmg += How(\"Wis Mod\");\r\n          }\r\n        }"
+              "body": "function (fields, v, output) {\n\t\t\t\t\tif (v.thisWeapon[3] && /\\bcleric\\b/.test(v.thisWeapon[4]) && SpellsList[v.thisWeapon[3]].level === 0 && /\\d/.test(fields.Damage_Die)) {\n\t\t\t\t\t\toutput.extraDmg += What('Wis Mod');\n\t\t\t\t\t};\n\t\t\t\t}"
             },
-            "I add my Wisdom modifier to the damage I deal with my cantrips."
+            "My cleric cantrips get my Wisdom modifier added to their damage."
+          ],
+          "spellAdd": [
+            {
+              "_type": "function",
+              "body": "function (spellKey, spellObj, spName) {\n\t\t\t\t\tif (spellObj.psionic || spellObj.level !== 0 || spName.indexOf(\"cleric\") == -1 || !What(\"Wis Mod\") || Number(What(\"Wis Mod\")) <= 0) return;\n\t\t\t\t\treturn genericSpellDmgEdit(spellKey, spellObj, \"\\\\w+\\\\.?\", \"Wis\");\n\t\t\t\t}"
+            },
+            "My cleric cantrips get my Wisdom modifier added to their damage."
           ]
         }
       },

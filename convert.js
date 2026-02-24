@@ -315,6 +315,13 @@ function newObj(obj) {
 var CurrentUpdates = { types: [] };
 
 /**
+ * FieldNumbers — MPMB form field count constants referenced inside calcChanges
+ * function bodies. The functions are never called during extraction so only
+ * the object needs to exist to prevent reference errors.
+ */
+var FieldNumbers = { actions: 3, bonus_actions: 3, infoboxes: 3 };
+
+/**
  * WarlockInvocationsList — dedicated container for Eldritch Invocations,
  * equivalent to how subclasses use ClassSubList.
  */
@@ -431,7 +438,7 @@ const sandbox = {
   // ── MPMB API ─────────────────────────────────────────────────────────────
   AddSubClass, RequiredSheetVersion,
   desc, toUni, tDoc, sourceCategories,
-  AtHigherLevels, levels, typePF: false,
+  AtHigherLevels, levels, typePF: false, typeA4: false,
   CurrentSources,
   SetWeaponsdropdown, SetAmmosdropdown,
   How, What, Value, show, hide, processActions, tDoc_text,
@@ -441,7 +448,7 @@ const sandbox = {
   AddRacialVariant, ConvertToMetric,
   RunFunctionAtEnd, GenericClassFeatures,
   FeatureChoicesList, AddFeatureChoice,
-  addEvals, newObj, CurrentUpdates,
+  addEvals, newObj, CurrentUpdates, FieldNumbers,
   WarlockInvocationsList, AddWarlockInvocation,
   BackgroundVariantsList, AddBackgroundVariant,
 
@@ -460,10 +467,24 @@ const sandbox = {
 vm.createContext(sandbox);
 
 // ─────────────────────────────────────────────────────────────────────────────
-// FILE PROCESSING ORDER
-//   PHB first — it defines the legacy-refactor helper functions that later
-//   files may depend on; its functions survive in the shared sandbox context.
+// FILE LISTS
+//   SRD files first — they use Base_* variable names and are merged into the
+//   standard sandbox containers before the primary source books run.
+//   Non-SRD books are processed second so their more-detailed versions
+//   naturally override any SRD entries with the same key.
 // ─────────────────────────────────────────────────────────────────────────────
+const SRD_FILES = [
+  { file: 'SRD/ListsSpells.js',      desc: 'SRD – base spells'                              },
+  { file: 'SRD/ListsClasses.js',     desc: 'SRD – base classes & subclasses'               },
+  { file: 'SRD/ListsRaces.js',       desc: 'SRD – base races & racial variants'             },
+  { file: 'SRD/ListsBackgrounds.js', desc: 'SRD – base backgrounds & background features'   },
+  { file: 'SRD/ListsFeats.js',       desc: 'SRD – base feats'                               },
+  { file: 'SRD/ListsGear.js',        desc: 'SRD – weapons, armor, ammo, gear, tools, packs' },
+  { file: 'SRD/ListsMagicItems.js',  desc: 'SRD – base magic items'                         },
+  { file: 'SRD/ListsCreatures.js',   desc: 'SRD – base creatures'                           },
+  { file: 'SRD/ListsCompanions.js',  desc: 'SRD – companion types'                          },
+];
+
 const FILES = [
   { file: 'Player_Handbook.js',            desc: '2024 PHB – classes, races, spells, equipment'   },
   { file: 'DungeonMasterGuide.js',         desc: '2024 DMG – magic items, supernatural gifts'      },
@@ -476,27 +497,146 @@ const FILES = [
 
 const runStats = {};
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Helper: run a batch of source files and record success/failure in runStats.
+// ─────────────────────────────────────────────────────────────────────────────
+function runBatch(fileList) {
+  for (let fi = 0; fi < fileList.length; fi++) {
+    const entry    = fileList[fi];
+    const filePath = path.join(__dirname, entry.file);
+    process.stdout.write('  Processing ' + entry.file + ' ... ');
+    const t0 = Date.now();
+    try {
+      const code = fs.readFileSync(filePath, 'utf8');
+      vm.runInContext(code, sandbox, { filename: entry.file, timeout: 60000 });
+      const ms = Date.now() - t0;
+      console.log('✓  (' + ms + 'ms)');
+      runStats[entry.file] = 'ok';
+    } catch (err) {
+      console.log('✗');
+      console.error('    └─ ' + err.message);
+      runStats[entry.file] = err.message;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Helper: merge an SRD Base_* sandbox variable into a standard container.
+// Uses "fill-gaps" semantics — only copies keys not already present so that
+// non-SRD books (processed afterward) win on any duplicate.
+// ─────────────────────────────────────────────────────────────────────────────
+function mergeBase(srcKey, target) {
+  var src = sandbox[srcKey];
+  if (!src || typeof src !== 'object') return 0;
+  var added = 0;
+  Object.keys(src).forEach(function(k) {
+    if (!target[k]) { target[k] = src[k]; added++; }
+  });
+  return added;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// After running SRD files, promote their Base_* containers into the shared
+// standard containers so non-SRD books can reference and extend them.
+// ─────────────────────────────────────────────────────────────────────────────
+function mergeSRDBase() {
+  console.log('\n  Merging SRD Base_* containers into standard containers …');
+
+  // Simple fill-gap merges ─────────────────────────────────────────────────
+  var simpleMerges = [
+    ['Base_ClassList',             ClassList            ],
+    ['Base_SpellsList',            SpellsList           ],
+    ['Base_ArmourList',            ArmourList           ],
+    ['Base_WeaponsList',           WeaponsList          ],
+    ['Base_AmmoList',              AmmoList             ],
+    ['Base_PacksList',             PacksList            ],
+    ['Base_GearList',              GearList             ],
+    ['Base_ToolsList',             ToolsList            ],
+    ['Base_MagicItemsList',        MagicItemsList       ],
+    ['Base_CreatureList',          CreatureList         ],
+    ['Base_CompanionList',         CompanionList        ],
+    ['Base_BackgroundList',        BackgroundList       ],
+    ['Base_BackgroundFeatureList', BackgroundFeatureList],
+    ['Base_FeatsList',             FeatsList            ],
+  ];
+
+  var totalAdded = 0;
+  simpleMerges.forEach(function(pair) {
+    var n = mergeBase(pair[0], pair[1]);
+    if (n > 0) console.log('    ✓  ' + pair[0] + ' +' + n);
+    totalAdded += n;
+  });
+
+  // Base_RaceList — merge races first so AddRacialVariant can link to them ──
+  var n = mergeBase('Base_RaceList', RaceList);
+  if (n > 0) console.log('    ✓  Base_RaceList +' + n);
+  totalAdded += n;
+
+  // Base_RaceSubList — use AddRacialVariant to maintain parent ↔ variant links
+  var baseRaceSub = sandbox['Base_RaceSubList'];
+  if (baseRaceSub && typeof baseRaceSub === 'object') {
+    var rAdded = 0;
+    Object.keys(baseRaceSub).forEach(function(fullKey) {
+      if (RaceSubList[fullKey]) return; // non-SRD version already present
+      var obj      = baseRaceSub[fullKey];
+      var dashIdx  = fullKey.indexOf('-');
+      if (dashIdx === -1) return;
+      var raceKey    = fullKey.substring(0, dashIdx);
+      var variantKey = fullKey.substring(dashIdx + 1);
+      AddRacialVariant(raceKey, variantKey, obj);
+      rAdded++;
+    });
+    if (rAdded > 0) console.log('    ✓  Base_RaceSubList +' + rAdded);
+    totalAdded += rAdded;
+  }
+
+  // Base_ClassSubList — use AddSubClass to wire parent ↔ subclass links ─────
+  var baseSubs = sandbox['Base_ClassSubList'];
+  if (baseSubs && typeof baseSubs === 'object') {
+    var sAdded = 0;
+    Object.keys(baseSubs).forEach(function(fullKey) {
+      if (ClassSubList[fullKey]) return; // non-SRD version already present
+      var obj     = baseSubs[fullKey];
+      var dashIdx = fullKey.indexOf('-');
+      if (dashIdx === -1) return;
+      var classKey = fullKey.substring(0, dashIdx);
+      var subKey   = fullKey.substring(dashIdx + 1);
+      AddSubClass(classKey, subKey, obj);
+      sAdded++;
+    });
+    if (sAdded > 0) console.log('    ✓  Base_ClassSubList +' + sAdded);
+    totalAdded += sAdded;
+  }
+
+  // Add SRD as a recognized source ──────────────────────────────────────────
+  if (!SourceList['SRD']) {
+    SourceList['SRD'] = {
+      name:                   'Systems Reference Document 5.1',
+      abbreviation:           'SRD',
+      abbreviationSpellsheet: 'SRD',
+      group:                  'Core Sources',
+      url:                    'https://dnd.wizards.com/resources/systems-reference-document',
+      date:                   '2023/01/26',
+    };
+    console.log('    ✓  Added SRD source entry');
+  }
+
+  console.log('  ── SRD merge complete: ' + totalAdded + ' entries added\n');
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MAIN PROCESSING
+// ─────────────────────────────────────────────────────────────────────────────
 console.log('╔══════════════════════════════════════════════════════════════════╗');
 console.log('║   MPMB Character Sheet → JSON Converter                         ║');
 console.log('╚══════════════════════════════════════════════════════════════════╝\n');
 
-for (let fi = 0; fi < FILES.length; fi++) {
-  const entry    = FILES[fi];
-  const filePath = path.join(__dirname, entry.file);
-  process.stdout.write('  Processing ' + entry.file + ' ... ');
-  const t0 = Date.now();
-  try {
-    const code = fs.readFileSync(filePath, 'utf8');
-    vm.runInContext(code, sandbox, { filename: entry.file, timeout: 60000 });
-    const ms = Date.now() - t0;
-    console.log('✓  (' + ms + 'ms)');
-    runStats[entry.file] = 'ok';
-  } catch (err) {
-    console.log('✗');
-    console.error('    └─ ' + err.message);
-    runStats[entry.file] = err.message;
-  }
-}
+console.log('── Phase 1: SRD (Systems Reference Document) ───────────────────────');
+runBatch(SRD_FILES);
+mergeSRDBase();
+
+console.log('── Phase 2: Primary source books ────────────────────────────────────');
+runBatch(FILES);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // OUTPUT
