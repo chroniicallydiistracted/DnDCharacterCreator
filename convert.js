@@ -782,15 +782,22 @@ WOTC_TRACKED.forEach(function(c) {
 //     prototype via a regex literal (not via the sandbox's host-realm RegExp).
 //     Both methods delegate to the pattern source string; the returned strings
 //     are stored back into regExpSearch, which is fine for JSON extraction.
+//     Object.defineProperty keeps the new methods non-enumerable, matching
+//     the behaviour of built-in prototype methods and preventing surprises in
+//     for…in loops or Object.keys() reflection on RegExp instances.
 vm.runInContext(
   '(function() {' +
   '  var _p = Object.getPrototypeOf(/x/);' +
-  '  _p.replace = function() {' +
-  '    return String.prototype.replace.apply(this.source, arguments);' +
-  '  };' +
-  '  _p.indexOf = function() {' +
-  '    return String.prototype.indexOf.apply(this.source, arguments);' +
-  '  };' +
+  '  Object.defineProperty(_p, "replace", {' +
+  '    value: function() {' +
+  '      return String.prototype.replace.apply(this.source, arguments);' +
+  '    }, enumerable: false, configurable: true, writable: true' +
+  '  });' +
+  '  Object.defineProperty(_p, "indexOf", {' +
+  '    value: function() {' +
+  '      return String.prototype.indexOf.apply(this.source, arguments);' +
+  '    }, enumerable: false, configurable: true, writable: true' +
+  '  });' +
   '}());',
   sandbox
 );
@@ -812,8 +819,21 @@ try {
   // BoMT.to1stPerson() replace callback: the capture group `n` corresponds to
   // the optional pattern ( \(.*?\))? and can be `undefined` when no parenthetical
   // source citation follows a >>text<<. marker.  Guard both uses with (n||"").
+  //
+  // The target string is matched with a regex so we can assert exactly one hit.
+  // A count of 0 means the upstream file changed formatting; failing fast here
+  // produces a clear diagnostic instead of a cryptic runtime error later.
+  const BOMT_PATCH_RE = /t\.toUpperCase\(\)\+n\.toLowerCase\(\)\+"\\n   ":a\+t\+n\+": "/g;
+  const patchMatches = wotcCode.match(BOMT_PATCH_RE);
+  if (!patchMatches || patchMatches.length !== 1) {
+    throw new Error(
+      'Pre-run patch: expected exactly 1 match for BoMT.to1stPerson() target, ' +
+      'found ' + (patchMatches ? patchMatches.length : 0) + '. ' +
+      'The upstream file may have changed; review the patch in convert.js.'
+    );
+  }
   wotcCode = wotcCode.replace(
-    't.toUpperCase()+n.toLowerCase()+"\\n   ":a+t+n+": "',
+    BOMT_PATCH_RE,
     't.toUpperCase()+(n||"").toLowerCase()+"\\n   ":a+t+(n||"")+": "'
   );
 
