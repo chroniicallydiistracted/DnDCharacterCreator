@@ -1,0 +1,477 @@
+[
+  {
+    "_key": "burglar",
+    "name": "Burglar's pack (16 gp)",
+    "source": [
+      [
+        "P24",
+        224
+      ]
+    ],
+    "items": [
+      [
+        "Backpack, with:",
+        "",
+        5
+      ],
+      [
+        "Bag of ball bearings",
+        "",
+        2
+      ],
+      [
+        "Bell",
+        "",
+        ""
+      ],
+      [
+        "Candles",
+        10,
+        ""
+      ],
+      [
+        "Crowbar",
+        "",
+        5
+      ],
+      [
+        "Hooded lantern",
+        "",
+        2
+      ],
+      [
+        "Oil, flasks of",
+        7,
+        1
+      ],
+      [
+        "Rations, days of",
+        5,
+        2
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ],
+      [
+        "Waterskin",
+        "",
+        5
+      ]
+    ]
+  },
+  {
+    "_key": "diplomat",
+    "name": "Diplomat's pack (39 gp)",
+    "source": [
+      [
+        "P24",
+        225
+      ]
+    ],
+    "items": [
+      [
+        "Chest, with:",
+        "",
+        25
+      ],
+      [
+        "Fine clothes",
+        "",
+        6
+      ],
+      [
+        "Ink",
+        "",
+        ""
+      ],
+      [
+        "Ink Pens",
+        5,
+        ""
+      ],
+      [
+        "Lamp",
+        "",
+        1
+      ],
+      [
+        "Cases, Map or Scroll",
+        2,
+        1
+      ],
+      [
+        "Oil, flasks of",
+        4,
+        1
+      ],
+      [
+        "Paper, sheets of",
+        5,
+        ""
+      ],
+      [
+        "Parchment, sheets of",
+        5,
+        ""
+      ],
+      [
+        "Perfume, vial of",
+        "",
+        ""
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ]
+    ]
+  },
+  {
+    "_key": "dungeoneer",
+    "name": "Dungeoneer's pack (12 gp)",
+    "source": [
+      [
+        "P24",
+        225
+      ]
+    ],
+    "items": [
+      [
+        "Backpack, with:",
+        "",
+        5
+      ],
+      [
+        "Caltrops",
+        20,
+        0.1
+      ],
+      [
+        "Crowbar",
+        "",
+        5
+      ],
+      [
+        "Oil, flasks of",
+        2,
+        1
+      ],
+      [
+        "Rations, days of",
+        10,
+        2
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ],
+      [
+        "Torches",
+        10,
+        1
+      ],
+      [
+        "Waterskin",
+        "",
+        5
+      ]
+    ]
+  },
+  {
+    "_key": "entertainer",
+    "name": "Entertainer's pack (40 gp)",
+    "source": [
+      [
+        "P24",
+        225
+      ]
+    ],
+    "items": [
+      [
+        "Backpack, with:",
+        "",
+        5
+      ],
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Bell",
+        "",
+        ""
+      ],
+      [
+        "Bullseye Lantern",
+        "",
+        2
+      ],
+      [
+        "Costume clothes",
+        3,
+        4
+      ],
+      [
+        "Mirror, steel",
+        "",
+        0.5
+      ],
+      [
+        "Oil, flasks of",
+        8,
+        1
+      ],
+      [
+        "Rations, days of",
+        9,
+        2
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ],
+      [
+        "Waterskin",
+        "",
+        5
+      ]
+    ]
+  },
+  {
+    "_key": "explorer",
+    "name": "Explorer's pack (10 gp)",
+    "source": [
+      [
+        "P24",
+        225
+      ]
+    ],
+    "items": [
+      [
+        "Backpack, with:",
+        "",
+        5
+      ],
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Oil, flasks of",
+        2,
+        1
+      ],
+      [
+        "Rations, days of",
+        10,
+        2
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ],
+      [
+        "Torches",
+        10,
+        1
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ],
+      [
+        "Waterskin",
+        "",
+        5
+      ]
+    ]
+  },
+  {
+    "_key": "priest",
+    "name": "Priest's pack (33 gp)",
+    "source": [
+      [
+        "P24",
+        225
+      ]
+    ],
+    "items": [
+      [
+        "Backpack, with:",
+        "",
+        5
+      ],
+      [
+        "Blanket",
+        "",
+        3
+      ],
+      [
+        "Holy Water, flask of",
+        1,
+        1
+      ],
+      [
+        "Lamp",
+        "",
+        1
+      ],
+      [
+        "Rations, days of",
+        7,
+        2
+      ],
+      [
+        "Robe",
+        "",
+        4
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ]
+    ]
+  },
+  {
+    "_key": "scholar",
+    "name": "Scholar's pack (40 gp)",
+    "source": [
+      [
+        "P24",
+        225
+      ]
+    ],
+    "items": [
+      [
+        "Backpack, with:",
+        "",
+        5
+      ],
+      [
+        "Book",
+        "",
+        5
+      ],
+      [
+        "Ink",
+        "",
+        ""
+      ],
+      [
+        "Ink Pen",
+        "",
+        ""
+      ],
+      [
+        "Lamp",
+        "",
+        1
+      ],
+      [
+        "Oil, flasks of",
+        10,
+        1
+      ],
+      [
+        "Parchment, sheets of",
+        10,
+        ""
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ]
+    ]
+  },
+  {
+    "_key": "monsterhunter",
+    "name": "Monster hunter's pack (33 gp)",
+    "source": [
+      [
+        "CoS",
+        209
+      ],
+      [
+        "VRGtR",
+        34
+      ]
+    ],
+    "items": [
+      [
+        "Chest, with:",
+        "",
+        25
+      ],
+      [
+        "Crowbar",
+        "",
+        5
+      ],
+      [
+        "Hammer",
+        "",
+        3
+      ],
+      [
+        "Wooden stake",
+        3,
+        1
+      ],
+      [
+        "Amulet holy symbol",
+        "",
+        ""
+      ],
+      [
+        "Holy water, flasks of",
+        1,
+        1
+      ],
+      [
+        "Manacles",
+        "",
+        6
+      ],
+      [
+        "Steel mirror",
+        "",
+        0.5
+      ],
+      [
+        "Oil, flasks of",
+        1,
+        1
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ],
+      [
+        "Torches",
+        3,
+        1
+      ]
+    ]
+  }
+]

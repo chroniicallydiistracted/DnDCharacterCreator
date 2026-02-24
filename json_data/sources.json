@@ -1,0 +1,94 @@
+{
+  "P24": {
+    "name": "2024 Player's Handbook",
+    "abbreviation": "P24",
+    "abbreviationSpellsheet": "P4",
+    "group": "Core Sources",
+    "url": "https://marketplace.dndbeyond.com/core-rules/3709000?pid=DB3709000",
+    "date": "2024/09/17"
+  },
+  "LEGACYSPELLS": {
+    "name": "Spells Deprecated by 2024 Player's Handbook",
+    "abbreviation": "LEGACY",
+    "abbreviationSpellsheet": "L",
+    "group": "Core Sources",
+    "url": "https://marketplace.dndbeyond.com/core-rules/3709000?pid=DB3709000",
+    "date": "2014/01/01",
+    "defaultExcluded": true
+  },
+  "LEGACYCLASS": {
+    "name": "Subclasses Deprecated by 2024 Player's Handbook",
+    "abbreviation": "LEGACY",
+    "abbreviationSpellsheet": "L",
+    "group": "Core Sources",
+    "url": "https://marketplace.dndbeyond.com/core-rules/3709000?pid=DB3709000",
+    "date": "2014/01/01",
+    "defaultExcluded": true
+  },
+  "LEGACYRACE": {
+    "name": "Races Deprecated by 2024 Player's Handbook",
+    "abbreviation": "LEGACY",
+    "abbreviationSpellsheet": "L",
+    "group": "Core Sources",
+    "url": "https://marketplace.dndbeyond.com/core-rules/3709000?pid=DB3709000",
+    "date": "2014/01/01",
+    "defaultExcluded": true
+  },
+  "LEGACYBG": {
+    "name": "Backgrounds Deprecated by 2024 Player's Handbook",
+    "abbreviation": "LEGACY",
+    "abbreviationSpellsheet": "L",
+    "group": "Core Sources",
+    "url": "https://marketplace.dndbeyond.com/core-rules/3709000?pid=DB3709000",
+    "date": "2014/01/01",
+    "defaultExcluded": true
+  },
+  "D24": {
+    "name": "2024 Dungeon Master's Guide",
+    "abbreviation": "D24",
+    "abbreviationSpellsheet": "D4",
+    "group": "Core Sources",
+    "url": "https://marketplace.dndbeyond.com/category/3710000?pid=DB3710000",
+    "date": "2024/11/12"
+  },
+  "X": {
+    "name": "Xanathar's Guide to Everything",
+    "abbreviation": "XGtE",
+    "abbreviationSpellsheet": "X",
+    "group": "Primary Sources",
+    "url": "https://dnd.wizards.com/products/xanathars-guide-everything",
+    "date": "2017/11/21"
+  },
+  "M24": {
+    "name": "2025 Monster Manual",
+    "abbreviation": "M24",
+    "abbreviationSpellsheet": "M4",
+    "group": "Core Sources",
+    "url": "https://marketplace.dndbeyond.com/core-rules/3709000?pid=DB3709000",
+    "date": "2025/02/18"
+  },
+  "W": {
+    "name": "Explorer's Guide to Wildemount",
+    "abbreviation": "EGtW",
+    "abbreviationSpellsheet": "W",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Critical Role",
+    "url": "https://dnd.wizards.com/products/wildemount",
+    "date": "2020/03/17"
+  },
+  "VRGtR": {
+    "name": "Van Richten's Guide to Ravenloft",
+    "abbreviation": "VRGtR",
+    "group": "Campaign Sourcebooks",
+    "campaignSetting": "Ravenloft",
+    "url": "https://dnd.wizards.com/products/van-richtens-guide-ravenloft",
+    "date": "2021/05/18"
+  },
+  "WBtW": {
+    "name": "The Wild Beyond the Witchlight",
+    "abbreviation": "WBtW",
+    "group": "Adventure Books",
+    "url": "https://dnd.wizards.com/products/wild-beyond-witchlight",
+    "date": "2021/09/21"
+  }
+}

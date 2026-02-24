@@ -1,0 +1,1970 @@
+[
+  {
+    "_key": "acolyte",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*acolyte).*$",
+      "flags": "i"
+    },
+    "name": "Acolyte",
+    "source": [
+      [
+        "P24",
+        178
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Intelligence, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "Insight",
+      "Religion"
+    ],
+    "gold": 8,
+    "equipleft": [
+      [
+        "Book (prayers)",
+        "",
+        5
+      ],
+      [
+        "Parchment, sheets of",
+        10,
+        ""
+      ],
+      [
+        "Robes",
+        "",
+        4
+      ]
+    ],
+    "equipright": [
+      [
+        "Calligrapher's Supplies",
+        "",
+        5
+      ],
+      [
+        "Holy symbol",
+        "",
+        1
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Magic Initiate (Cleric) [Origin]",
+    "trait": [
+      "I devoted myself to service in a temple, either nestled in a town or secluded in a sacred grove. There I performed rites in honor of a god or pantheon. I served under a priest and studied religion. Thanks to my priest's instruction and my own devotion, I also learned how to channel a modicum of divine power in service to my place of worship and the people who prayed there."
+    ],
+    "_variants": [
+      "acolyte-luxonborn"
+    ]
+  },
+  {
+    "_key": "artisan",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*artisan).*$",
+      "flags": "i"
+    },
+    "name": "Artisan",
+    "source": [
+      [
+        "P24",
+        178
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Dexterity, and Intelligence"
+    ],
+    "skills": [
+      "Investigation",
+      "Persuasion"
+    ],
+    "toolProfs": [
+      [
+        "Artisan's tools",
+        1
+      ]
+    ],
+    "gold": 32,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Artisan's Tools",
+        "",
+        5
+      ],
+      [
+        "Belt pouch (with coins)",
+        2,
+        1
+      ]
+    ],
+    "feature": "Crafter [Origin]",
+    "trait": [
+      "I began mopping floors and scrubbing counters in an artisan's workshop for a few coppers per day as soon as I was strong enough to carry a bucket. When I was old enough to apprentice, I learned to create basic crafts of my own, as well as how to sweet talk the occasional demanding customer. My trade has also given me a keen eye for detail."
+    ]
+  },
+  {
+    "_key": "charlatan",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*charlatan).*$",
+      "flags": "i"
+    },
+    "name": "Charlatan",
+    "source": [
+      [
+        "P24",
+        179
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Constitution, and Charisma"
+    ],
+    "skills": [
+      "Deception",
+      "Sleight of Hand"
+    ],
+    "toolProfs": [
+      [
+        "Forgery Kit"
+      ]
+    ],
+    "gold": 15,
+    "equipright": [
+      [
+        "Fine Clothes",
+        "",
+        4
+      ],
+      [
+        "Costume",
+        "",
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Forgery Kit",
+        "",
+        5
+      ]
+    ],
+    "feature": "Skilled [Origin]",
+    "trait": [
+      "Once I was old enough to order an ale, I soon had a favorite stool in every tavern within ten miles of where I was born. As I traveled the circuit from public house to watering hole, I learned to prey on unfortunates who were in the market for a comforting lie or two - perhaps a sham potion or forged ancestry records."
+    ]
+  },
+  {
+    "_key": "criminal",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*criminal).*$",
+      "flags": "i"
+    },
+    "name": "Criminal",
+    "source": [
+      [
+        "P24",
+        179
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Constitution, and Intelligence"
+    ],
+    "skills": [
+      "Sleight of Hand",
+      "Stealth"
+    ],
+    "toolProfs": [
+      [
+        "Thieves' Tools"
+      ]
+    ],
+    "gold": 16,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Dagger",
+        2,
+        1
+      ],
+      [
+        "Belt pouch (with coins)",
+        2,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Crowbar",
+        "",
+        5
+      ],
+      [
+        "Thieves' Tools",
+        "",
+        1
+      ]
+    ],
+    "feature": "Alert [Origin]",
+    "trait": [
+      "I eked out a living in dark alleyways, cutting purses or burgling shops. Perhaps I were part of a small gang of like-minded wrongdoers who looked out for each other. Or maybe I were a lone wolf, fending for myself against the local thieves' guild and more fearsome lawbreakers."
+    ],
+    "_variants": [
+      "criminal-myriad operative",
+      "criminal-augen trust"
+    ]
+  },
+  {
+    "_key": "entertainer",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*entertainer).*$",
+      "flags": "i"
+    },
+    "name": "Entertainer",
+    "source": [
+      [
+        "P24",
+        180
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Dexterity, and Charisma"
+    ],
+    "skills": [
+      "Acrobatics",
+      "Performance"
+    ],
+    "toolProfs": [
+      [
+        "Musical Instrument",
+        1
+      ]
+    ],
+    "gold": 11,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Costumes",
+        2,
+        1
+      ],
+      [
+        "Belt pouch (with coins)",
+        1,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Mirror",
+        "",
+        0.5
+      ],
+      [
+        "Perfume",
+        "",
+        ""
+      ],
+      [
+        "Musical Instrument",
+        "",
+        ""
+      ]
+    ],
+    "feature": "Musician [Origin]",
+    "trait": [
+      "I spent much of my youth following roving fairs and carnivals, performing odd jobs for musicians and acrobats in exchange for lessons. I may have learned how to walk a tightrope, how to play a lute in a distinct style, or how to recite poetry with impeccable diction. To this day, I thrive on applause and long for the stage."
+    ]
+  },
+  {
+    "_key": "farmer",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*farmer).*$",
+      "flags": "i"
+    },
+    "name": "Farmer",
+    "source": [
+      [
+        "P24",
+        180
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Constitution, and Wisdom"
+    ],
+    "skills": [
+      "Animal Handling",
+      "Nature"
+    ],
+    "toolProfs": [
+      [
+        "Carpenter's Tools"
+      ]
+    ],
+    "gold": 30,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Sickle",
+        "",
+        1
+      ],
+      [
+        "Belt pouch (with coins)",
+        1,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Iron Pot",
+        "",
+        10
+      ],
+      [
+        "Shovel",
+        "",
+        5
+      ],
+      [
+        "Healer's Kit",
+        "",
+        3
+      ],
+      [
+        "Carpenter's Tools",
+        "",
+        6
+      ]
+    ],
+    "feature": "Tough [Origin]",
+    "trait": [
+      "I grew up close to the land. Years tending animals and cultivating the earth rewarded me with patience and good health. I have a keen appreciation for nature's bounty alongside a healthy respect for nature's wrath."
+    ]
+  },
+  {
+    "_key": "guard",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*guard).*$",
+      "flags": "i"
+    },
+    "name": "Guard",
+    "source": [
+      [
+        "P24",
+        181
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Intelligence, and Wisdom"
+    ],
+    "skills": [
+      "Athletics",
+      "Perception"
+    ],
+    "toolProfs": [
+      [
+        "Gaming Set",
+        1
+      ]
+    ],
+    "gold": 12,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Spear",
+        "",
+        1
+      ],
+      [
+        "Light Crossbow",
+        "",
+        5
+      ],
+      [
+        "Bolt(s)",
+        20,
+        0.075
+      ],
+      [
+        "Case, Crossbow bolt",
+        "",
+        1
+      ],
+      [
+        "Belt pouch (with coins)",
+        1,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Manacles",
+        "",
+        6
+      ],
+      [
+        "Hooded Lantern",
+        "",
+        2
+      ],
+      [
+        "Gaming Set",
+        "",
+        ""
+      ]
+    ],
+    "feature": "Alert [Origin]",
+    "trait": [
+      "my feet ache when I remember the countless hours I spent at my post in the tower. I was trained to keep one eye looking outside the wall watching for marauders sweeping from the nearby forest, and my other eye looking inside the wall searching for cut purses and troublemakers."
+    ]
+  },
+  {
+    "_key": "guide",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*guide).*$",
+      "flags": "i"
+    },
+    "name": "Guide",
+    "source": [
+      [
+        "P24",
+        181
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Constitution, and Wisdom"
+    ],
+    "skills": [
+      "Stealth",
+      "Survival"
+    ],
+    "toolProfs": [
+      [
+        "Cartographer's Tools"
+      ]
+    ],
+    "gold": 3,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Shortbow",
+        "",
+        1
+      ],
+      [
+        "Arrow(s)",
+        20,
+        0.05
+      ],
+      [
+        "Quiver",
+        "",
+        1
+      ],
+      [
+        "Belt pouch (with coins)",
+        1,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Tent",
+        "",
+        20
+      ],
+      [
+        "Cartographer's Tools",
+        "",
+        6
+      ]
+    ],
+    "feature": "Magic Initiate (Druid) [Origin]",
+    "trait": [
+      "I came of age outdoors, far from settled lands. My home was anywhere I chose to spread my bedroll. There are wonders in the wilderness - strange monsters, pristine forests, streams, overgrown ruins of great halls once trod by giants - and I learned to fend for myself as I explored them. From time to time, I guided friendly nature priests who instructed me in the fundamentals of channeling the magic of the wild."
+    ]
+  },
+  {
+    "_key": "hermit",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*hermit).*$",
+      "flags": "i"
+    },
+    "name": "Hermit",
+    "source": [
+      [
+        "P24",
+        182
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Constitution, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "Medicine",
+      "Religion"
+    ],
+    "toolProfs": [
+      [
+        "Herbalism Kit"
+      ]
+    ],
+    "gold": 16,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Quarterstaff",
+        "",
+        1
+      ],
+      [
+        "Book (philosophy)",
+        "",
+        5
+      ],
+      [
+        "Belt pouch (with coins)",
+        1,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Lamp Oil",
+        3,
+        1
+      ],
+      [
+        "Herbalism Kit",
+        "",
+        3
+      ]
+    ],
+    "feature": "Healer [Origin]",
+    "trait": [
+      "I spent my early years secluded in a hut or monastery located well beyond the outskirts of the nearest settlement. In those days, my only companions were the creatures of the forest and those who would occasionally visit to bring news of the outside world and supplies. The solitude allowed me to spend many hours pondering the mysteries of creation."
+    ]
+  },
+  {
+    "_key": "merchant",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*merchant).*$",
+      "flags": "i"
+    },
+    "name": "Merchant",
+    "source": [
+      [
+        "P24",
+        182
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Constitution, Intelligence, and Charisma"
+    ],
+    "skills": [
+      "Animal Handling",
+      "Persuasion"
+    ],
+    "toolProfs": [
+      [
+        "Navigator's Tools"
+      ]
+    ],
+    "gold": 22,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Belt pouch (with coins)",
+        2,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Navigator's Tools",
+        "",
+        2
+      ]
+    ],
+    "feature": "Lucky [Origin]",
+    "trait": [
+      "I was apprenticed to a trader, caravan master, or shopkeeper, learning the fundamentals of commerce. I traveled broadly, and I earned a living by buying and selling the raw materials artisans need to practice their craft or finished works from such crafters. I might have transported goods from one place to another (by ship, wagon, or caravan) or bought them from traveling traders and sold them in my own shop."
+    ]
+  },
+  {
+    "_key": "noble",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*noble).*$",
+      "flags": "i"
+    },
+    "name": "Noble",
+    "source": [
+      [
+        "P24",
+        183
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Intelligence, and Charisma"
+    ],
+    "skills": [
+      "History",
+      "Persuasion"
+    ],
+    "toolProfs": [
+      [
+        "Gaming Set",
+        1
+      ]
+    ],
+    "gold": 29,
+    "equipright": [
+      [
+        "Fine Clothes",
+        "",
+        4
+      ],
+      [
+        "Belt pouch (with coins)",
+        2,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Gaming Set",
+        "",
+        ""
+      ],
+      [
+        "Perfume",
+        "",
+        ""
+      ]
+    ],
+    "feature": "Skilled [Origin]",
+    "trait": [
+      "I was raised in a castle, surrounded by wealth, power, and privilege. My family of minor aristocrats ensured that I received a first-class education, some of which I appreciated and some of which I resented. My time in the castle, especially the many hours I spent observing my family at court, also taught me a great deal about leadership."
+    ]
+  },
+  {
+    "_key": "sage",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*sage).*$",
+      "flags": "i"
+    },
+    "name": "Sage",
+    "source": [
+      [
+        "P24",
+        183
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Constitution, Intelligence, and Wisdom"
+    ],
+    "skills": [
+      "Arcana",
+      "History"
+    ],
+    "toolProfs": [
+      [
+        "Calligrapher's Supplies"
+      ]
+    ],
+    "gold": 8,
+    "equipright": [
+      [
+        "Robes",
+        "",
+        4
+      ],
+      [
+        "Quarterstaff",
+        "",
+        1
+      ],
+      [
+        "Book (history)",
+        "",
+        5
+      ],
+      [
+        "Belt pouch (with coins)",
+        1,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Parchment, Sheets of",
+        8,
+        ""
+      ],
+      [
+        "Calligrapher's Supplies",
+        "",
+        5
+      ]
+    ],
+    "feature": "Magic Initiate (Wizard) [Origin]",
+    "trait": [
+      "I spent my formative years traveling between manors and monasteries, performing various odd jobs and services in exchange for access to their libraries. I whiled away many a long evening studying books and scrolls, learning the lore of the multiverse - even the rudiments of magic - and my mind yearns for more."
+    ],
+    "_variants": [
+      "sage-cobalt scholar"
+    ]
+  },
+  {
+    "_key": "sailor",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*sailor).*$",
+      "flags": "i"
+    },
+    "name": "Sailor",
+    "source": [
+      [
+        "P24",
+        184
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Dexterity, and Wisdom"
+    ],
+    "skills": [
+      "Acrobatics",
+      "Perception"
+    ],
+    "toolProfs": [
+      [
+        "Navigator's Tools"
+      ]
+    ],
+    "gold": 20,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Belt pouch (with coins)",
+        2,
+        1
+      ],
+      [
+        "Dagger",
+        "",
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Navigator's Tools",
+        "",
+        2
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ]
+    ],
+    "feature": "Tavern Brawler [Origin]",
+    "trait": [
+      "I lived as a seafarer, wind at my back and decks swaying beneath my feet. I've perched on bar stools in more ports of call than I can remember, faced mighty storms, and swapped stories with folk who live beneath the waves."
+    ],
+    "_variants": [
+      "sailor-revelry pirate"
+    ]
+  },
+  {
+    "_key": "scribe",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*scribe).*$",
+      "flags": "i"
+    },
+    "name": "Scribe",
+    "source": [
+      [
+        "P24",
+        184
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Intelligence, and Wisdom"
+    ],
+    "skills": [
+      "Investigation",
+      "Perception"
+    ],
+    "toolProfs": [
+      [
+        "Calligrapher's Tools"
+      ]
+    ],
+    "gold": 23,
+    "equipright": [
+      [
+        "Fine Clothes",
+        "",
+        4
+      ],
+      [
+        "Belt pouch (with coins)",
+        2,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Calligrapher's Supplies",
+        "",
+        5
+      ],
+      [
+        "Lamp Oil, Flasks of",
+        3,
+        1
+      ],
+      [
+        "Parchment, Sheets of",
+        12,
+        ""
+      ]
+    ],
+    "feature": "Skilled [Origin]",
+    "trait": [
+      "I spent formative years in a scriptorium, a monastery dedicated to the preservation of knowledge, or a government agency, where I learned to write with a clear hand and produce finely written texts. Perhaps I scribed government documents or copied tomes of literature, I might have some skill as a writer of poetry, narrative, or scholarly research. Above all, I have a careful attention to detail, helping me avoid introducing mistakes to the documents I copy and create."
+    ]
+  },
+  {
+    "_key": "soldier",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*soldier).*$",
+      "flags": "i"
+    },
+    "name": "Soldier",
+    "source": [
+      [
+        "P24",
+        185
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Dexterity, and Constitution"
+    ],
+    "skills": [
+      "Athletics",
+      "Intimidation"
+    ],
+    "toolProfs": [
+      [
+        "Gaming Set",
+        1
+      ]
+    ],
+    "gold": 14,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Belt pouch (with coins)",
+        2,
+        1
+      ],
+      [
+        "Spear",
+        "",
+        1
+      ],
+      [
+        "Shortbow",
+        "",
+        1
+      ],
+      [
+        "Arrow(s)",
+        20,
+        0.05
+      ],
+      [
+        "Quiver",
+        "",
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Gaming Set",
+        "",
+        ""
+      ],
+      [
+        "Healer's kit",
+        "",
+        3
+      ]
+    ],
+    "feature": "Savage Attacker [Origin]",
+    "trait": [
+      "I began training for war as soon as I reached adulthood and carry precious few memories of life before I took up arms. Battle is in my blood. Sometimes I catch myself reflexively performing the basic fighting exercises I learned first. Eventually, I put that training to use on the battlefield, protecting the realm by waging war."
+    ]
+  },
+  {
+    "_key": "wayfarer",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*wayfarer).*$",
+      "flags": "i"
+    },
+    "name": "Wayfarer",
+    "source": [
+      [
+        "P24",
+        185
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "Insight",
+      "Stealth"
+    ],
+    "toolProfs": [
+      [
+        "Thieves' Tools"
+      ]
+    ],
+    "gold": 16,
+    "equipright": [
+      [
+        "Traveler's Clothes",
+        "",
+        4
+      ],
+      [
+        "Belt pouch (with coins)",
+        2,
+        1
+      ],
+      [
+        "Dagger",
+        2,
+        1
+      ]
+    ],
+    "equipleft": [
+      [
+        "Thieves' Tools",
+        "",
+        1
+      ],
+      [
+        "Gaming Set",
+        "",
+        ""
+      ],
+      [
+        "Bedroll",
+        "",
+        7
+      ]
+    ],
+    "feature": "Lucky [Origin]",
+    "trait": [
+      "I grew up on the streets surrounded by similarly ill-fated castoffs, a few of them friends and a few of them rivals. I slept where I could and did odd jobs for food. At times, when the hunger became unbearable, I resorted to theft Still, I never lost my pride and never abandoned hope. Fate is not finished with me."
+    ]
+  },
+  {
+    "_key": "grinner",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "grinner",
+      "flags": "i"
+    },
+    "name": "Grinner",
+    "source": [
+      [
+        "W",
+        200
+      ]
+    ],
+    "skills": [
+      "Deception",
+      "Performance"
+    ],
+    "toolProfs": [
+      [
+        "Thieves' tools",
+        "Dex"
+      ],
+      [
+        "Musical instrument",
+        1
+      ]
+    ],
+    "gold": 15,
+    "equipleft": [
+      [
+        "Disguise kit",
+        "",
+        3
+      ],
+      [
+        "Musical instrument",
+        "",
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ],
+      [
+        "Gold-plated ring with smiling face",
+        "",
+        ""
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Ballad of the Grinning Fool",
+    "trait": [
+      "I love the spotlight. Everyone, look at me!",
+      "Give me a drink and I'm your friend.",
+      "Talk to me about yourself. I'm a hell of a listener.",
+      "I hate to start fights, but I love to finish them.",
+      "I can't sit still.",
+      "I'm always humming an old tune from my past.",
+      "When I don't have a reason to smile, I'm miserable.",
+      "I'm lucky like you wouldn't believe."
+    ],
+    "ideal": [
+      [
+        "Revolution",
+        "Revolution: Tyrants must fall, no matter the cost. (Chaotic)"
+      ],
+      [
+        "Compassion",
+        "Compassion: The only way to make a better world is to perform small kindnesses. (Good)"
+      ],
+      [
+        "Justice",
+        "Justice: A nation built upon just foundations will uphold freedom for all. (Law)"
+      ],
+      [
+        "Expression",
+        "Expression: Music, joy, and laughter are the keys to freedom. (Good)"
+      ],
+      [
+        "Self-Determination",
+        "Self-Determination: People should be free to do as they please. (Chaotic)"
+      ],
+      [
+        "Vigilance",
+        "Vigilance: A free people must be carefully taught, lest they be misled. (Neutral)"
+      ]
+    ],
+    "bond": [
+      "I lost someone important to an agent of the empire. That regime will fall.",
+      "The first people to be hurt by this war will be the common folk. I need to protect them.",
+      "Music helped me through a dark time in my life. Now, I'll use music to change the world.",
+      "I will be known as the greatest spy who ever lived.",
+      "All life is precious to me. I know I can change the world without taking a humanoid life.",
+      "The elite in their ivory towers don't understand how we suffer. I intend to show them."
+    ],
+    "flaw": [
+      "I've never lied once in my life. What? No, I'm not crossing my fingers!",
+      "I do everything big! Subtlety? I don't know the meaning of subtlety! Oh, that's a problem?",
+      "Being a spy in wartime is painful. I've seen so much suffering, I think I'm losing my mind.",
+      "I can't focus on my mission. I just want to carouse and sing and play!",
+      "Yeah, that's my name. Yeah, I'm a Grinner spy. Who cares about staying undercover?",
+      "I can't afford to trust anyone. Not. Anyone."
+    ],
+    "extra": [
+      "Select Your Favorite Code-Song",
+      "Zan's Coming Back",
+      "Blow Fire Down the Coast",
+      "Hush! Onward Come the Dragons",
+      "Let the Sword Grow Rust",
+      "Drink Deep, Li'l Hummingbird",
+      "Dirge for the Emerald Fire"
+    ]
+  },
+  {
+    "_key": "volstrucker agent",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*volstrucker)(?=.*agent).*$",
+      "flags": "i"
+    },
+    "name": "Volstrucker Agent",
+    "source": [
+      [
+        "W",
+        202
+      ]
+    ],
+    "skills": [
+      "Deception",
+      "Stealth"
+    ],
+    "toolProfs": [
+      "Poisoner's kit"
+    ],
+    "languageProfs": [
+      1
+    ],
+    "gold": 10,
+    "equipleft": [
+      [
+        "Poisoner's kit",
+        "",
+        2
+      ]
+    ],
+    "equipright": [
+      [
+        "Common clothes",
+        "",
+        3
+      ],
+      [
+        "Black cloak with a hood",
+        "",
+        ""
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Shadow Network",
+    "trait": [
+      "I prefer to keep my thoughts to myself.",
+      "I indulge vice in excess to quiet my conscience.",
+      "I've left emotion behind me. I'm now perfectly placid.",
+      "Some event from the past keeps worming its way into my mind, making me restless.",
+      "I always keep my word—except when I'm commanded to break it.",
+      "I laugh off insults and never take them personally."
+    ],
+    "ideal": [
+      [
+        "Order",
+        "Order: The will of the crown is absolute. (Law)"
+      ],
+      [
+        "True Loyalty",
+        "True Loyalty: The Cerberus Assembly is greater than any power, even the crown. (Any)"
+      ],
+      [
+        "Death",
+        "Death: The penalty for disloyalty is death. (Evil)"
+      ],
+      [
+        "Determination",
+        "Determination: I cannot fail. Not ever. (Neutral)"
+      ],
+      [
+        "Fear",
+        "Fear: People should not respect power. They should fear it. (Evil)"
+      ],
+      [
+        "Escape",
+        "Escape: The Volstrucker are pure evil! I can't atone for what I've done for them, but I can escape with my life. (Any)"
+      ]
+    ],
+    "bond": [
+      "The job is all that matters. I will see it through.",
+      "My orders are important, but my comrades are worth more than anything. I would die for them.",
+      "Everything I've done, I've done to protect someone close to me.",
+      "If the empire falls, all of civilization falls with it. I will hold back chaos and barbarism at any cost."
+    ],
+    "flaw": [
+      "I drink to dull the pain in the back of my head.",
+      "I go a bit mad when I see blood.",
+      "I can hear the voices of everyone I've killed. I see their faces. I can't be free of these ghosts.",
+      "Fear is a powerful motivator. I will do whatever it takes to prevent those who know what I am from seeing me fail, and from those I care about from knowing what I am."
+    ],
+    "extra": [
+      "Select Your Tragedy",
+      "Familicide",
+      "Amnesia",
+      "Capture",
+      "Starvation",
+      "Disfigurement",
+      "Vicissitude"
+    ]
+  },
+  {
+    "_key": "haunted one",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "haunted.one",
+      "flags": "i"
+    },
+    "name": "Haunted One",
+    "source": [
+      [
+        "CoS",
+        209
+      ],
+      [
+        "VRGtR",
+        34
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skillstxt": "Choose two from Arcana, Investigation, Religion, and Survival",
+    "languageProfs": [
+      2
+    ],
+    "gold": 0.1,
+    "equipleft": [
+      [
+        "Chest, with:",
+        "",
+        25
+      ],
+      [
+        "Crowbar",
+        "",
+        5
+      ],
+      [
+        "Hammer",
+        "",
+        3
+      ],
+      [
+        "Wooden Stakes",
+        3,
+        1
+      ],
+      [
+        "Holy symbol",
+        "",
+        1
+      ],
+      [
+        "Holy water, flasks of",
+        "",
+        1
+      ],
+      [
+        "Manacles",
+        "",
+        6
+      ],
+      [
+        "Steel Mirror",
+        "",
+        0.5
+      ],
+      [
+        "Oil, flasks of",
+        "",
+        1
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ],
+      [
+        "Torch",
+        3,
+        1
+      ]
+    ],
+    "equipright": [
+      [
+        "Common clothes",
+        "",
+        3
+      ],
+      [
+        "Trinket of special significance",
+        "",
+        ""
+      ]
+    ],
+    "feature": "Heart of Darkness",
+    "trait": [
+      "I don't run from evil. Evil runs from me.",
+      "I like to read and memorize poetry. It keeps me calm and brings me fleeting moments of happiness.",
+      "I spend money freely and live life to the fullest, knowing that tomorrow I might die.",
+      "I live for the thrill of the hunt.",
+      "I don't talk about the thing that torments me. I'd rather not burden others with my curse.",
+      "I expect danger around every corner.",
+      "I refuse to become a victim, and I will not allow others to be victimized.",
+      "I put no trust in divine beings.",
+      "I had an encounter that I believe gives me a special affinity with a supernatural creature or event.",
+      "A signature piece of clothing or distinct weapon serves as an emblem of who I am.",
+      "I never accept that I'm out of my depth.",
+      "I must know the answer to every secret. No door remains unopened in my presence.",
+      "I let people underestimate me, revealing my full competency only to those close to me.",
+      "I compulsively seek to collect trophies of my travels and victories.",
+      "It doesn't matter if the whole world's against me. I'll always do what I think is right.",
+      "I have morbid interests and a macabre aesthetic.",
+      "I have a personal ritual, mantra, or relaxation method I use to deal with stress.",
+      "Nothing is more important than life, and I never leave anyone in danger.",
+      "I'm quick to jump to extreme solutions. Why risk a lesser option not working?",
+      "I'm easily startled, but I'm not a coward."
+    ],
+    "ideal": [
+      [
+        "Sacrifice",
+        "Sacrifice: I try to help those in need, no matter what the personal cost. (Good)"
+      ],
+      [
+        "Desperation",
+        "Desperation: I'll stop the spirits that haunt me or die trying. (Any)"
+      ],
+      [
+        "Cleansing",
+        "Cleansing: I kill monsters to make the world a safer place, and to exorcise my own demons. (Good)"
+      ],
+      [
+        "Vigilante",
+        "Vigilante: I have a dark calling that puts me above the law. (Chaotic)"
+      ],
+      [
+        "Preparation",
+        "Preparation: I like to know my enemy's capabilities and weaknesses before rushing into battle. (Lawful)"
+      ],
+      [
+        "Destruction",
+        "Destruction: I'm a monster that destroys other monsters, and anything else that gets in my way. (Evil)"
+      ],
+      [
+        "Adrenaline",
+        "Adrenaline: I've experienced such strangeness that now I feel alive only in extreme situations."
+      ],
+      [
+        "Balance",
+        "Balance: I strive to counter the deeds of someone for whom I feel responsible."
+      ],
+      [
+        "Bound",
+        "Bound: I've wronged someone and must work their will to avoid their curse."
+      ],
+      [
+        "Escape",
+        "Escape: I believe there is something beyond the world I know, and I need to find it."
+      ],
+      [
+        "Legacy",
+        "Legacy: I must do something great so that I'm remembered, and my time is running out."
+      ],
+      [
+        "Misdirection",
+        "Misdirection: I work vigorously to keep others from realizing my flaws or misdeeds."
+      ],
+      [
+        "Obsession",
+        "Obsession: I've lived this way for so long that I can't imagine another way."
+      ],
+      [
+        "Obligation",
+        "Obligation: I owe it to my people, faith, family, or teacher to continue a vaunted legacy."
+      ],
+      [
+        "Promise",
+        "Promise: My life is no longer my own. I must fulfill the dream of someone who's gone."
+      ],
+      [
+        "Revelation",
+        "Revelation: I need to know what lies beyond the mysteries of death, the world, or the Mists."
+      ],
+      [
+        "Sanctuary",
+        "Sanctuary: I know the forces at work in the world and strive to create islands apart from them."
+      ],
+      [
+        "Truth",
+        "Truth: I care about the truth above all else, even if it doesn't benefit anyone."
+      ]
+    ],
+    "bond": [
+      "I keep my thoughts and discoveries in a journal. My journal is my legacy.",
+      "I would sacrifice my life and my soul to protect the innocent.",
+      "My torment drove away the person I love. I strive to win back the love I've lost.",
+      "A terrible guilt consumes me. I hope that I can find redemption through my actions.",
+      "There's evil in me, I can feel it. It must never be set free.",
+      "I have a child to protect. I must make the world a safer place for him (or her).",
+      "I desperately need to get back to someone or someplace, but I lost them in the Mists.",
+      "Everything I do is in the service of a powerful master, one I must keep a secret from everyone.",
+      "I owe much to my vanished mentor. I seek to continue their work even as I search to find them.",
+      "I've seen great darkness, and I'm committed to being a light against it—the light of all lights.",
+      "Someone I love has become a monster, murderer, or other threat. It's up to me to redeem them.",
+      "The world has been convinced of a terrible lie. It's up to me to reveal the truth.",
+      "I deeply miss someone and am quick to adopt people who remind me of them.",
+      "A great evil dwells within me. I will fight against it and the world's other evils for as long as I can.",
+      "I'm desperately seeking a cure to an affliction or a curse, either for someone close to me for myself.",
+      "Spirits are drawn to me. I do all I can to help them find peace.",
+      "I use my cunning mind to solve mysteries and find justice for those who've been wronged.",
+      "I lost someone I care about, but I still see them in guilty visions, recurring dreams, or as a spirit."
+    ],
+    "flaw": [
+      "I have certain rituals that I must follow every day. I can never break them.",
+      "I assume the worst in people.",
+      "I feel no compassion for the dead. They're the lucky ones.",
+      "I have an addiction.",
+      "I am a purveyor of doom and gloom who lives in a world without hope.",
+      "I talk to spirits that no one else can see.",
+      "I believe doom follows me and that anyone who gets close to me will face a tragic end.",
+      "I'm convinced something is after me, appearing in mirrors, dreams, and places where no one could.",
+      "I'm especially superstitious and live life seeking to avoid bad luck, wicked spirits, or the Mists.",
+      "I've done unspeakable evil and will do anything to prevent others from finding out.",
+      "I am exceptionally credulous and believe any story or legend immediately.",
+      "I'm a skeptic and don't believe in the power of rituals, religion, superstition, or spirits.",
+      "I know my future is written and that anything I do will lead to a prophesied end.",
+      "I need to find the best in everyone and everything, even when that means denying obvious malice.",
+      "I've seen the evil of a type of place—like forests, cities, or graveyards—and resist going there.",
+      "I'm exceptionally cautious, planning laboriously and devising countless contingencies.",
+      "I have a reputation for defeating a great evil, but that's a lie and the wicked force knows.",
+      "I know the ends always justify the means and am quick to make sacrifices to attain my goals."
+    ],
+    "extra": [
+      "Select a Harrowing Event",
+      "Monster spared my life",
+      "Born under a dark star",
+      "Haunted by an apparition",
+      "Dark arts in the family",
+      "An oni took my sibling",
+      "Memory of cured lycanthropy",
+      "Raised by a hag",
+      "Studied an eldritch tome",
+      "Formerly possessed by a fiend",
+      "Avenged a murder"
+    ]
+  },
+  {
+    "_key": "investigator-vrgtr",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^((?=.*investigator)(?=.*(VRGtR|Richten|Ravenloft))|private eye).*$",
+      "flags": "i"
+    },
+    "name": "Investigator (VRGtR)",
+    "source": [
+      [
+        "VRGtR",
+        35
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skillstxt": "Choose two from Insight, Investigation, and Perception",
+    "toolProfs": [
+      [
+        "Disguise kit",
+        1
+      ],
+      [
+        "Thieves' tools",
+        "Dex"
+      ]
+    ],
+    "gold": 10,
+    "equipleft": [
+      [
+        "Magnifying glass",
+        "",
+        ""
+      ],
+      [
+        "Evidence from a past case (horror trinket)",
+        "",
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Common clothes",
+        "",
+        3
+      ],
+      [
+        "Belt Pouch (with coins)",
+        "",
+        ""
+      ]
+    ],
+    "feature": "Official Inquiry",
+    "trait": [
+      "I had an encounter that I believe gives me a special affinity with a supernatural creature or event.",
+      "A signature piece of clothing or distinct weapon serves as an emblem of who I am.",
+      "I never accept that I'm out of my depth.",
+      "I must know the answer to every secret. No door remains unopened in my presence.",
+      "I let people underestimate me, revealing my full competency only to those close to me.",
+      "I compulsively seek to collect trophies of my travels and victories.",
+      "It doesn't matter if the whole world's against me. I'll always do what I think is right.",
+      "I have morbid interests and a macabre aesthetic.",
+      "I have a personal ritual, mantra, or relaxation method I use to deal with stress.",
+      "Nothing is more important than life, and I never leave anyone in danger.",
+      "I'm quick to jump to extreme solutions. Why risk a lesser option not working?",
+      "I'm easily startled, but I'm not a coward."
+    ],
+    "ideal": [
+      [
+        "Adrenaline",
+        "Adrenaline: I've experienced such strangeness that now I feel alive only in extreme situations."
+      ],
+      [
+        "Balance",
+        "Balance: I strive to counter the deeds of someone for whom I feel responsible."
+      ],
+      [
+        "Bound",
+        "Bound: I've wronged someone and must work their will to avoid their curse."
+      ],
+      [
+        "Escape",
+        "Escape: I believe there is something beyond the world I know, and I need to find it."
+      ],
+      [
+        "Legacy",
+        "Legacy: I must do something great so that I'm remembered, and my time is running out."
+      ],
+      [
+        "Misdirection",
+        "Misdirection: I work vigorously to keep others from realizing my flaws or misdeeds."
+      ],
+      [
+        "Obsession",
+        "Obsession: I've lived this way for so long that I can't imagine another way."
+      ],
+      [
+        "Obligation",
+        "Obligation: I owe it to my people, faith, family, or teacher to continue a vaunted legacy."
+      ],
+      [
+        "Promise",
+        "Promise: My life is no longer my own. I must fulfill the dream of someone who's gone."
+      ],
+      [
+        "Revelation",
+        "Revelation: I need to know what lies beyond the mysteries of death, the world, or the Mists."
+      ],
+      [
+        "Sanctuary",
+        "Sanctuary: I know the forces at work in the world and strive to create islands apart from them."
+      ],
+      [
+        "Truth",
+        "Truth: I care about the truth above all else, even if it doesn't benefit anyone."
+      ]
+    ],
+    "bond": [
+      "I desperately need to get back to someone or someplace, but I lost them in the Mists.",
+      "Everything I do is in the service of a powerful master, one I must keep a secret from everyone.",
+      "I owe much to my vanished mentor. I seek to continue their work even as I search to find them.",
+      "I've seen great darkness, and I'm committed to being a light against it—the light of all lights.",
+      "Someone I love has become a monster, murderer, or other threat. It's up to me to redeem them.",
+      "The world has been convinced of a terrible lie. It's up to me to reveal the truth.",
+      "I deeply miss someone and am quick to adopt people who remind me of them.",
+      "A great evil dwells within me. I will fight against it and the world's other evils for as long as I can.",
+      "I'm desperately seeking a cure to an affliction or a curse, either for someone close to me for myself.",
+      "Spirits are drawn to me. I do all I can to help them find peace.",
+      "I use my cunning mind to solve mysteries and find justice for those who've been wronged.",
+      "I lost someone I care about, but I still see them in guilty visions, recurring dreams, or as a spirit."
+    ],
+    "flaw": [
+      "I believe doom follows me and that anyone who gets close to me will face a tragic end.",
+      "I'm convinced something is after me, appearing in mirrors, dreams, and places where no one could.",
+      "I'm especially superstitious and live life seeking to avoid bad luck, wicked spirits, or the Mists.",
+      "I've done unspeakable evil and will do anything to prevent others from finding out.",
+      "I am exceptionally credulous and believe any story or legend immediately.",
+      "I'm a skeptic and don't believe in the power of rituals, religion, superstition, or spirits.",
+      "I know my future is written and that anything I do will lead to a prophesied end.",
+      "I need to find the best in everyone and everything, even when that means denying obvious malice.",
+      "I've seen the evil of a type of place—like forests, cities, or graveyards—and resist going there.",
+      "I'm exceptionally cautious, planning laboriously and devising countless contingencies.",
+      "I have a reputation for defeating a great evil, but that's a lie and the wicked force knows.",
+      "I know the ends always justify the means and am quick to make sacrifices to attain my goals."
+    ],
+    "extra": [
+      "Select a Path to Mystery",
+      "Proved friend's innocence",
+      "My memory loss",
+      "Helped spirit find peace",
+      "Uncovered magical hoax",
+      "Fugitive after wrongful convicion",
+      "Tracking supernatural phenomena",
+      "Tried to expose mysterious cabal",
+      "Investigate unsolved crimes"
+    ]
+  },
+  {
+    "_key": "feylost",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "feylost",
+      "flags": "i"
+    },
+    "name": "Feylost",
+    "source": [
+      [
+        "WBtW",
+        9
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "Deception",
+      "Survival"
+    ],
+    "toolProfs": [
+      [
+        "Musical instrument",
+        1
+      ]
+    ],
+    "languageProfs": [
+      [
+        "Elvish, Gnomish, Goblin, or Sylvan",
+        1
+      ]
+    ],
+    "gold": 8,
+    "equipleft": [
+      [
+        "Musical instrument of my choice",
+        "",
+        ""
+      ],
+      [
+        "Three Feywild trinkets",
+        "",
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Feywild Connection",
+    "trait": [
+      "I'm haunted by fey laughter that only I can hear, though I know it's just my mind playing tricks on me.",
+      "Like a nomad, I can't settle down in one place for very long.",
+      "Good music makes me weep like a baby.",
+      "Wherever I go, I try to bring a little of the warmth and tranquility of home with me.",
+      "I have never lost my childlike sense of wonder.",
+      "When I have a new idea, I get wildly excited about it until I come up with another, better idea.",
+      "I live by my own set of weird and wonderful rules.",
+      "I can't bring myself to trust most adults."
+    ],
+    "ideal": [
+      [
+        "Friendship",
+        "Friendship: I never leave a friend behind. (Good)"
+      ],
+      [
+        "Empathy",
+        "Empathy: No creature should be made to suffer. (Good)"
+      ],
+      [
+        "Wanderlust",
+        "Wanderlust: I prefer to take the less traveled path. (Chaotic)"
+      ],
+      [
+        "Changeability",
+        "Changeability: Change is good, which is why I live by an ever-changing set of rules. (Chaotic)"
+      ],
+      [
+        "Honor",
+        "Honor: A deal is a deal, and I would never break one. (Lawful)"
+      ],
+      [
+        "Rule of Three",
+        "Rule of Three: Everything in the multiverse happens in threes. I see the \"rule of three\" everywhere. (Lawful)"
+      ],
+      [
+        "Obsession",
+        "Obsession: I won't let go of a grudge. (Evil)"
+      ],
+      [
+        "Greed",
+        "Greed: I will do whatever it takes to get what I want, regardless of the harm it might cause. (Evil)"
+      ]
+    ],
+    "bond": [
+      "I would never break my word.",
+      "I find magic in all its forms to be compelling. The more magical a place, the more I am drawn to it.",
+      "I do what I can to protect the natural world.",
+      "A trusted friend is the most important thing in the multiverse to me.",
+      "I can't bring myself to harm a Fey creature, either because I consider myself one or because I fear the repercussions.",
+      "The Witchlight Carnival feels like home to me.",
+      "I'm drawn to the Feywild and long to return there, if only for a short while.",
+      "I feel indebted to Mister Witch and Mister Light for giving me a home and a purpose."
+    ],
+    "flaw": [
+      "I easily lose track of time. My poor sense of time means I'm always late.",
+      "I think the whole multiverse is out to get me.",
+      "I'm always operating under a tight timeline, and I'm obsessed with keeping everything on schedule.",
+      "I'm a kleptomaniac who covets shiny, sparkling treasure.",
+      "I'm forgetful. Sometimes I can't remember even the simplest things.",
+      "I never give away anything for free and always expect something in return.",
+      "I have many vices and tend to indulge them.",
+      "I'm always changing my mind—well, almost always."
+    ],
+    "extra": [
+      "Select a Fey Mark",
+      "Iridescent color eyes",
+      "Sweet scent",
+      "Long whiskers",
+      "Furry ears",
+      "Skin sparkles in moonlight",
+      "Flowers bloom in my presence",
+      "Flowers wilt in my presence",
+      "Vines for hair",
+      "Brambles for hair",
+      "Tail"
+    ],
+    "toNotesPage": [
+      {
+        "name": "Feywild Visitor",
+        "note": [
+          "Whenever I'm sound asleep or in a deep trance during a long rest, a spirit of the Feywild might pay me a visit, if the DM wishes it. Determine the spirit's form by rolling on the table below. No harm ever comes to me as a result of such visits, which can last for minutes or hours, and I remember each visit when I wake up. Conversations that occur with a visitor can contain any number of things, from messages and insights to nonsense and red herrings, at the DM's discretion. Such conversations are always conducted in a language I can understand, even if the Feywild visitor can't speak that language normally.\n",
+          "d8\tVisitor",
+          " 1\tAwakened creature (beast or plant that had the Awaken spell cast on it)",
+          " 2\tCentaur",
+          " 3\tDryad",
+          " 4\tFaerie dragon",
+          " 5\tPixie",
+          " 6\tSatyr",
+          " 7\tSprite",
+          " 8\tUnicorn"
+        ]
+      }
+    ]
+  },
+  {
+    "_key": "witchlight hand",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(witchlight|carnival))(?=.*hand).*$",
+      "flags": "i"
+    },
+    "name": "Witchlight Hand",
+    "source": [
+      [
+        "WBtW",
+        11
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ],
+    "skills": [
+      "Performance",
+      "Sleight of Hand"
+    ],
+    "toolProfs": [
+      [
+        "Disguise kit or Musical instrument",
+        1
+      ]
+    ],
+    "languageProfs": [
+      1
+    ],
+    "gold": 8,
+    "equipleft": [
+      [
+        "Disguise kit or Musical instrument",
+        "",
+        ""
+      ],
+      [
+        "Deck of cards",
+        "",
+        ""
+      ],
+      [
+        "Feywild trinket",
+        "",
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Carnival uniform or Costume",
+        "",
+        4
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Carnival Fixture",
+    "trait": [
+      "I'm haunted by fey laughter that only I can hear, though I know it's just my mind playing tricks on me.",
+      "Like a nomad, I can't settle down in one place for very long.",
+      "Good music makes me weep like a baby.",
+      "Wherever I go, I try to bring a little of the warmth and tranquility of home with me.",
+      "I have never lost my childlike sense of wonder.",
+      "When I have a new idea, I get wildly excited about it until I come up with another, better idea.",
+      "I live by my own set of weird and wonderful rules.",
+      "I can't bring myself to trust most adults."
+    ],
+    "ideal": [
+      [
+        "Friendship",
+        "Friendship: I never leave a friend behind. (Good)"
+      ],
+      [
+        "Empathy",
+        "Empathy: No creature should be made to suffer. (Good)"
+      ],
+      [
+        "Wanderlust",
+        "Wanderlust: I prefer to take the less traveled path. (Chaotic)"
+      ],
+      [
+        "Changeability",
+        "Changeability: Change is good, which is why I live by an ever-changing set of rules. (Chaotic)"
+      ],
+      [
+        "Honor",
+        "Honor: A deal is a deal, and I would never break one. (Lawful)"
+      ],
+      [
+        "Rule of Three",
+        "Rule of Three: Everything in the multiverse happens in threes. I see the \"rule of three\" everywhere. (Lawful)"
+      ],
+      [
+        "Obsession",
+        "Obsession: I won't let go of a grudge. (Evil)"
+      ],
+      [
+        "Greed",
+        "Greed: I will do whatever it takes to get what I want, regardless of the harm it might cause. (Evil)"
+      ]
+    ],
+    "bond": [
+      "I would never break my word.",
+      "I find magic in all its forms to be compelling. The more magical a place, the more I am drawn to it.",
+      "I do what I can to protect the natural world.",
+      "A trusted friend is the most important thing in the multiverse to me.",
+      "I can't bring myself to harm a Fey creature, either because I consider myself one or because I fear the repercussions.",
+      "The Witchlight Carnival feels like home to me.",
+      "I'm drawn to the Feywild and long to return there, if only for a short while.",
+      "I feel indebted to Mister Witch and Mister Light for giving me a home and a purpose."
+    ],
+    "flaw": [
+      "I easily lose track of time. My poor sense of time means I'm always late.",
+      "I think the whole multiverse is out to get me.",
+      "I'm always operating under a tight timeline, and I'm obsessed with keeping everything on schedule.",
+      "I'm a kleptomaniac who covets shiny, sparkling treasure.",
+      "I'm forgetful. Sometimes I can't remember even the simplest things.",
+      "I never give away anything for free and always expect something in return.",
+      "I have many vices and tend to indulge them.",
+      "I'm always changing my mind—well, almost always."
+    ],
+    "extra": [
+      "Select Carnival Companion",
+      "Old, cantankerous Witchlight hand",
+      "Young, impressionable Witchlight hand",
+      "Performer",
+      "Retired performer",
+      "Seasoned animal trainer",
+      "Old blink dog",
+      "Your hair is made of vines or brambles and grows back to normal length within 1 hour of being cut.",
+      "You have a tail like that of a dog or another animal."
+    ]
+  }
+]

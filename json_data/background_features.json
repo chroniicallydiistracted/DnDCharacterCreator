@@ -1,0 +1,368 @@
+[
+  {
+    "_key": "magic initiate (cleric)",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        178
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Magic Initiate (Cleric) [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Magic Initiate (Cleric) [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "crafter",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        178
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Crafter [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Crafter [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "skilled",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        179
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Skilled [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Skilled [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "alert",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        179
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Alert [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Alert [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "musician",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        180
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Musician [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Musician [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "tough",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        180
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Tough [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Tough [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "magic initiate (druid)",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        181
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Magic Initiate (Druid) [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Magic Initiate (Druid) [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "healer",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        182
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Healer [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Healer [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "lucky",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        182
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Lucky [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Lucky [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "magic initiate (wizard)",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        183
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Magic Initiate (Wizard) [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Magic Initiate (Wizard) [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "tavern brawler",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        184
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Tavern Brawler [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Tavern Brawler [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "savage attacker",
+    "description": "",
+    "source": [
+      [
+        "P24",
+        185
+      ]
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddFeat(\"Savage Attacker [Origin]\");\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveFeat(\"Savage Attacker [Origin]\");\r\n    }"
+    }
+  },
+  {
+    "_key": "ballad of the grinning fool",
+    "description": "A member of the Golden Grin will find me and give shelter to me and my companions if I play the Ballad of the Grinning Fool in a major tavern or inn in a large city. This shelter might be discontinued if it becomes too dangerous to hide me. I must use the ballad with caution, for those who know the ballad can be traitors, counterspies, or agents of tyranny.",
+    "source": [
+      [
+        "W",
+        200
+      ]
+    ]
+  },
+  {
+    "_key": "shadow network",
+    "description": "I can use the Volstrucker shadow network to communicate with other members over long distances. I can write a letter in special arcane ink (10 gp per page), address it to another member of the Volstrucker, and cast it into a fire. It will burn and materialize whole again on the person of the addressee. This special ink is the same as used for a wizard's spellbook.",
+    "source": [
+      [
+        "W",
+        202
+      ]
+    ]
+  },
+  {
+    "_key": "inheritor",
+    "description": "I'm the clear inheritor of a famed legacy, my ancestor or mentor. I've inherited a token that marks me as their inheritor. Revealing my legacy lets me swiftly learn the local opinion of my predecessor, if they heard of it. As rumors spread swiftly, locals will consider me either a hero or a threat. Heroes are welcomed, while threats are encouraged to leave.",
+    "source": [
+      [
+        "VRGtR",
+        31
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "mist wanderer",
+    "description": "The Mists whisper to me and guide me through. I immediately know if an object I'm touching is a Mist talisman, a nonmagical object that resonates with the domain where it originated, allowing the creature holding it to find a path to that domain. I recognize where the talisman originates from if I have been to its domain of origin.",
+    "source": [
+      [
+        "VRGtR",
+        31
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "spirit medium",
+    "description": "A fateful experience made me believe I'm aligned with spirits and can serve as a conduit for their insights and goals. I have advantage on Arcana and Religion check to remember or research information about spirits and the afterlife. I have and am proficient with a device I made for communing with otherworldly forces (e.g. a spirit-board or tarokka deck).",
+    "source": [
+      [
+        "VRGtR",
+        31
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "trauma survivor",
+    "description": "I faced something specifically traumatic and survived. Now people view me as an expert on it and can help others make it through. I'm aware of nonmagical recovery techniques, common resources, and misinformation. I know how to speak to sympathetic doctors, clergy, and leaders to can convince them to shelter one other than myself up to one month.",
+    "source": [
+      [
+        "VRGtR",
+        32
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "traveler",
+    "description": "I come from another place that others couldn't begin to understand. I can find a spot to hide, rest, or recuperate among sympathetic trading caravans, itinerant families, or displaced groups, so long as I present no visible danger. Such groups will hide me, but won't risk their lives for me. I can tell if an object I can see and touch is from my homeland.",
+    "source": [
+      [
+        "VRGtR",
+        32
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "heart of darkness",
+    "description": "Those who look into my eyes can see that I have faced unimaginable horror and that I am no stranger to darkness. Though they might fear me, commoners will extend me every courtesy and do their utmost to help. Unless I have shown myself to be a danger to them, they will even take up arms to fight with me, should I find myself facing an enemy alone.",
+    "source": [
+      [
+        "CoS",
+        209
+      ],
+      [
+        "VRGtR",
+        34
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "official inquiry",
+    "description": "Through a combination of fast-talking, determination, and official-looking documentation, I can gain access to a place or an individual related to a crime I'm investigating. Those who aren't involved in my investigation avoid impeding me or pass along my requests. Local law enforcement has firm opinions, viewing me as either a nuisance or one of their own.",
+    "source": [
+      [
+        "VRGtR",
+        35
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "feywild connection",
+    "description": "My mannerisms and knowledge of fey customs are recognized by natives of the Feywild, who see me as one of their own. Because of this, friendly Fey creatures are inclined to come to my aid if I am lost or need help in the Feywild.",
+    "source": [
+      [
+        "WBtW",
+        11
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
+    "_key": "carnival fixture",
+    "description": "The Witchlight Carnival provides me with free, modest lodging and food. In addition, I may wander about the carnival and partake of its many wonders at no cost to me, provided I don't disrupt its shows or cause any other trouble.",
+    "source": [
+      [
+        "WBtW",
+        11
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  }
+]
