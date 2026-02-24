@@ -11105,10 +11105,10 @@
     "_key": "zhentarim mercenary",
     "regExpSearch": {
       "_type": "RegExp",
-      "source": "^(?=.*zhentarm)(?=.*mercenary).*$",
+      "source": "^(?=.*zhentarim)(?=.*mercenary).*$",
       "flags": "i"
     },
-    "name": "Zhentarm Mercenary",
+    "name": "Zhentarim Mercenary",
     "source": [
       [
         "FRHoF",
