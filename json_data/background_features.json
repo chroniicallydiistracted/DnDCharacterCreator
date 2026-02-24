@@ -1,5 +1,23 @@
 [
   {
+    "_key": "shelter of the faithful",
+    "description": "I command the respect of those who share my faith. I can perform the religious ceremonies of my faith. My companions and I can expect free healing and care at an establishment of my faith, though I must provide any material components needed for spells. Those who share my religion will support me at a modest lifestyle.",
+    "source": [
+      [
+        "SRD",
+        61
+      ],
+      [
+        "P",
+        127
+      ],
+      [
+        "ALbackground",
+        0
+      ]
+    ]
+  },
+  {
     "_key": "magic initiate (cleric)",
     "description": "",
     "source": [

@@ -10,8 +10,7 @@
     "trait": "Black Dragonborn\n• Acid Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Acid damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Acid wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
     "dmgres": [
       "Acid"
-    ],
-    "_parentRace": "dragonborn"
+    ]
   },
   {
     "_key": "dragonborn-blue",
@@ -25,8 +24,7 @@
     "trait": "Blue Dragonborn\n• Lightning Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Lightning damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Lightning wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
     "dmgres": [
       "Lightning"
-    ],
-    "_parentRace": "dragonborn"
+    ]
   },
   {
     "_key": "dragonborn-brass",
@@ -40,8 +38,7 @@
     "trait": "Brass Dragonborn\n• Fire Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Fire damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Fire wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
     "dmgres": [
       "Fire"
-    ],
-    "_parentRace": "dragonborn"
+    ]
   },
   {
     "_key": "dragonborn-bronze",
@@ -55,8 +52,7 @@
     "trait": "Bronze Dragonborn\n• Lightning Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Lightning damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Lightning wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
     "dmgres": [
       "Lightning"
-    ],
-    "_parentRace": "dragonborn"
+    ]
   },
   {
     "_key": "dragonborn-copper",
@@ -70,8 +66,7 @@
     "trait": "Copper Dragonborn\n• Acid Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Acid damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Acid wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
     "dmgres": [
       "Acid"
-    ],
-    "_parentRace": "dragonborn"
+    ]
   },
   {
     "_key": "dragonborn-gold",
@@ -85,8 +80,7 @@
     "trait": "Gold Dragonborn\n• Fire Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Fire damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Fire wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
     "dmgres": [
       "Fire"
-    ],
-    "_parentRace": "dragonborn"
+    ]
   },
   {
     "_key": "dragonborn-green",
@@ -100,8 +94,7 @@
     "trait": "Green Dragonborn\n• Poison Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Poison damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Poison wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
     "dmgres": [
       "Poison"
-    ],
-    "_parentRace": "dragonborn"
+    ]
   },
   {
     "_key": "dragonborn-red",
@@ -115,8 +108,7 @@
     "trait": "Red Dragonborn\n• Fire Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Fire damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Fire wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
     "dmgres": [
       "Fire"
-    ],
-    "_parentRace": "dragonborn"
+    ]
   },
   {
     "_key": "dragonborn-silver",
@@ -130,8 +122,7 @@
     "trait": "Silver Dragonborn\n• Cold Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Cold damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Cold wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
     "dmgres": [
       "Cold"
-    ],
-    "_parentRace": "dragonborn"
+    ]
   },
   {
     "_key": "dragonborn-white",
@@ -145,8 +136,7 @@
     "trait": "White Dragonborn\n• Cold Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Cold damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Cold wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
     "dmgres": [
       "Cold"
-    ],
-    "_parentRace": "dragonborn"
+    ]
   },
   {
     "_key": "elf-dark",
@@ -223,8 +213,7 @@
           }
         ]
       }
-    },
-    "_parentRace": "elf"
+    }
   },
   {
     "_key": "elf-high",
@@ -299,8 +288,7 @@
           }
         ]
       }
-    },
-    "_parentRace": "elf"
+    }
   },
   {
     "_key": "elf-wood",
@@ -377,8 +365,7 @@
           }
         ]
       }
-    },
-    "_parentRace": "elf"
+    }
   },
   {
     "_key": "gnome-forest",
@@ -435,8 +422,7 @@
         "recovery": "long rest",
         "description": "I always have the Speak with Animals spell prepared. I can cast it without a spell slot a number of times equal to my Proficiency Bonus and I regain all expended uses when I finish a Long Rest."
       }
-    },
-    "_parentRace": "gnome"
+    }
   },
   {
     "_key": "gnome-rock",
@@ -486,8 +472,7 @@
         ],
         "description": "I know the Mending and Prestidigitation cantrips. In addition, I can spend 10 minutes casting Prestidigitation to create a Tiny clockwork device (AC 5, 1 HP), such as a toy, fire starter, or music box. When I create the device, I determine its function by choosing one effect from Prestidigitation; the device produces that effect whenever I or another creature takes a Bonus Action to activate it with a touch. If the chosen effect has options for the device when I create it. For example, if I choose the spell's ignite extinguish effect, I determine whether the device ignites or extinguishes fire; the device doesn't do both. I can have three such devices in existence at a time, and each falls apart 8 hours after its creation or when I dismantle it with a touch as a Utilize action."
       }
-    },
-    "_parentRace": "gnome"
+    }
   },
   {
     "_key": "goliath-cloud",
@@ -525,8 +510,7 @@
         ],
         "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
       }
-    },
-    "_parentRace": "goliath"
+    }
   },
   {
     "_key": "goliath-fire",
@@ -569,8 +553,7 @@
         ],
         "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
       }
-    },
-    "_parentRace": "goliath"
+    }
   },
   {
     "_key": "goliath-frost",
@@ -613,8 +596,7 @@
         ],
         "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
       }
-    },
-    "_parentRace": "goliath"
+    }
   },
   {
     "_key": "goliath-hill",
@@ -657,8 +639,7 @@
         ],
         "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
       }
-    },
-    "_parentRace": "goliath"
+    }
   },
   {
     "_key": "goliath-stone",
@@ -701,8 +682,7 @@
         ],
         "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
       }
-    },
-    "_parentRace": "goliath"
+    }
   },
   {
     "_key": "goliath-storm",
@@ -745,8 +725,7 @@
         ],
         "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
       }
-    },
-    "_parentRace": "goliath"
+    }
   },
   {
     "_key": "tiefling-abyssal",
@@ -829,8 +808,7 @@
           }
         ]
       }
-    },
-    "_parentRace": "tiefling"
+    }
   },
   {
     "_key": "tiefling-chthonic",
@@ -913,8 +891,7 @@
           }
         ]
       }
-    },
-    "_parentRace": "tiefling"
+    }
   },
   {
     "_key": "tiefling-infernal",
@@ -997,8 +974,7 @@
           }
         ]
       }
-    },
-    "_parentRace": "tiefling"
+    }
   },
   {
     "_key": "draconblood dragonborn-black",

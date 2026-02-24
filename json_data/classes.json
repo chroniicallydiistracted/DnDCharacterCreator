@@ -74,9 +74,10 @@
     },
     "equipment": "Barbarian starting equipment:\n • A Greataxe;\n • 4 Handaxes;\n • An Explorer's Pack, and 15 gp.\n\nAlternatively, choose 75 gp worth of starting equipment instead of the class's starting equipment.",
     "subclasses": [
-      "Barbarian Subclass",
+      "Primal Path",
       [
         "barbarian-berserker",
+        "barbarian-berserker_2014",
         "barbarian-wild heart",
         "barbarian-world tree",
         "barbarian-zealot",
@@ -796,8 +797,9 @@
     },
     "equipment": "Bard starting equipment:\n • Leather Armor;\n • 2 Daggers;\n • A Musical Instrument;\n • An Entertainer's Pack, and 19 gp.\n\nAlternatively, choose 90 gp worth of starting equipment instead of the class's starting equipment.",
     "subclasses": [
-      "Bard Subclass",
+      "Bard College",
       [
+        "bard-college of lore",
         "bard-dance",
         "bard-glamour",
         "bard-lore",
@@ -1634,8 +1636,9 @@
     },
     "equipment": "Cleric starting equipment:\n • Chain Shirt;\n • A Shield;\n • A Mace;\n • A Holy Symbol;\n • A Priest's Pack, and 7 gp.\n\nAlternatively, choose 110 gp worth of starting equipment instead of the class' starting equipment.",
     "subclasses": [
-      "Cleric Subclass",
+      "Divine Domain",
       [
+        "cleric-life domain",
         "cleric-life",
         "cleric-light",
         "cleric-trickery",
@@ -2077,8 +2080,9 @@
     },
     "equipment": "Druid starting equipment:\n • Leather Armor;\n • A Shield;\n • A Sickle;\n • A Druidic Focus(Quarterstaff);\n • An Herbalism Kit;\n • An Explorer's Pack, and 9 gp.\n\nAlternatively, choose 50 gp worth of starting equipment instead of the class' starting equipment.",
     "subclasses": [
-      "Druid Subclass",
+      "Druid Circle",
       [
+        "druid-circle of the land",
         "druid-land",
         "druid-moon",
         "druid-sea",
@@ -2594,10 +2598,11 @@
     },
     "equipment": "Fighter starting equipment:\n • (a) Chain Mail -or- (b) Studded Leather Armor;\n • (a) Greatsword -or- (b) Scimitar;\n • (a) Flail -or- (b) Shortsword;\n • (a) 8 Javelins -or- (b) Longbow and Quiver of 20 Arrows;\n • (a) Dungeoneer's Pack, and 4 gp -or- (b) Dungeoneer's Pack, and 11 gp;\n\nAlternatively, choose 155 gp worth of starting equipment instead of the class's starting equipment.",
     "subclasses": [
-      "Fighter Subclass",
+      "Martial Archetype",
       [
-        "fighter-battle master",
         "fighter-champion",
+        "fighter-battle master",
+        "fighter-champion_2014",
         "fighter-eldritch knight",
         "fighter-psi warrior",
         "fighter-arcane archer",
@@ -3306,8 +3311,9 @@
     },
     "equipment": "Monk starting equipment:\n • Spear;\n • 5 Daggers;\n • Artisan's Tools or Musical Instrument;\n • Explorer's Pack, and 11 gp;\n\nAlternatively, choose 50 gp worth of starting equipment instead of the class's starting equipment.",
     "subclasses": [
-      "Monk Subclass",
+      "Monastic Tradition",
       [
+        "monk-way of the open hand",
         "monk-mercy",
         "monk-shadow",
         "monk-elements",
@@ -3946,8 +3952,9 @@
     },
     "equipment": "Paladin starting equipment:\n • Chain Mail;\n • Shield;\n • Longsword;\n • 6 Javelins;\n • Holy Symbol;\n • Priest's Pack and 9 gp;\n\nAlternatively, choose 150 gp worth of starting equipment instead of the class's starting equipment.",
     "subclasses": [
-      "Paladin Subclass",
+      "Sacred Oath",
       [
+        "paladin-oath of devotion",
         "paladin-devotion",
         "paladin-glory",
         "paladin-ancients",
@@ -5034,12 +5041,13 @@
     },
     "equipment": "Ranger starting equipment:\n • Studded Leather Armor;\n • Scimitar;\n • Shortsword;\n • Longbow and Quiver of 20 Arrows;\n • Druidic Focus (sprig of mistletoe);\n • Explorer's Pack and 7 gp;\n\nAlternatively, choose 150 gp worth of starting equipment instead of the class's starting equipment.",
     "subclasses": [
-      "Ranger Subclass",
+      "Ranger Archetype",
       [
+        "ranger-hunter",
         "ranger-beast master",
         "ranger-fey wanderer",
         "ranger-gloom stalker",
-        "ranger-hunter",
+        "ranger-hunter_2014",
         "ranger-horizon walker",
         "ranger-monster slayer"
       ]
@@ -6493,12 +6501,13 @@
     },
     "equipment": "Rogue starting equipment:\n • Leather Armor;\n • 2 Daggers;\n • Shortsword;\n • Shortbow and a Quiver of 20 Arrows;\n • Thieves' Tools;\n • Burglar's Pack, and 8 gp;\n\nAlternatively, choose 100 gp worth of starting equipment instead of the class's starting equipment.",
     "subclasses": [
-      "Rogue Subclass",
+      "Roguish Archetype",
       [
+        "rogue-thief",
         "rogue-arcane trickster",
         "rogue-assassin",
         "rogue-soulknife",
-        "rogue-thief",
+        "rogue-thief_2014",
         "rogue-inquisitive",
         "rogue-mastermind",
         "rogue-scout",
@@ -7404,8 +7413,9 @@
     },
     "equipment": "Sorcerer starting equipment:\n • A Spear;\n • 2 Daggers;\n • An Arcane Focus (crystal);\n • A Dungeoneer's Pack, and 28 gp.\n\nAlternatively, choose 50 gp worth of starting equipment instead of the class's starting equipment.",
     "subclasses": [
-      "Sorcerer Subclass",
+      "Sorcerous Origin",
       [
+        "sorcerer-draconic bloodline",
         "sorcerer-aberrant",
         "sorcerer-clockwork",
         "sorcerer-draconic",
@@ -7821,11 +7831,12 @@
     },
     "equipment": "Warlock starting equipment:\n • Leather Armor;\n • Sickle;\n • 2 Daggers;\n • An Arcane Focus (orb);\n • A Book (Occult Lore);\n • A Scholar's Pack, and 15 gp.\n\nAlternatively, choose 100 gp worth of starting equipment instead of the class's starting equipment.",
     "subclasses": [
-      "Warlock Subclass",
+      "Otherworldly Patron",
       [
+        "warlock-the fiend",
         "warlock-the archfey",
         "warlock-the celestial",
-        "warlock-the fiend",
+        "warlock-the fiend_2014",
         "warlock-the great old one",
         "warlock-the hexblade",
         "warlock-the undead"
@@ -9082,8 +9093,9 @@
     },
     "equipment": "Wizard starting equipment:\n • 2 Daggers;\n • An Arcane Focus (Quarterstaff);\n • A Robe;\n • A Spellbook;\n • A Scholar's Pack, and 5 gp.\n\nAlternatively, choose 55 gp worth of starting equipment instead of the class's starting equipment.",
     "subclasses": [
-      "Wizard Subclass",
+      "Arcane Tradition",
       [
+        "wizard-evocation",
         "wizard-abjurer",
         "wizard-diviner",
         "wizard-evoker",

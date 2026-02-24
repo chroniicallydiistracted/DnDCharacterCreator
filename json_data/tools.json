@@ -264,60 +264,36 @@
     ]
   },
   {
-    "_key": "dice",
-    "infoname": "Dice [1 sp]",
-    "name": "Dice",
+    "_key": "dice set",
+    "infoname": "Dice set [1 sp]",
+    "name": "Dice set",
     "amount": "",
     "weight": "",
-    "type": "gaming set",
-    "source": [
-      [
-        "P24",
-        221
-      ]
-    ]
+    "type": "gaming set"
   },
   {
-    "_key": "dragonchess",
-    "infoname": "Dragonchess [1 gp]",
-    "name": "Dragonchess",
+    "_key": "dragonchess set",
+    "infoname": "Dragonchess set [1 gp]",
+    "name": "Dragonchess set",
     "amount": "",
-    "weight": "",
-    "type": "gaming set",
-    "source": [
-      [
-        "P24",
-        221
-      ]
-    ]
+    "weight": 0.5,
+    "type": "gaming set"
   },
   {
-    "_key": "playing cards",
-    "infoname": "Playing Cards [5 sp]",
-    "name": "Playing Cards",
+    "_key": "playing card set",
+    "infoname": "Playing card set [5 sp]",
+    "name": "Playing card set",
     "amount": "",
     "weight": "",
-    "type": "gaming set",
-    "source": [
-      [
-        "P24",
-        221
-      ]
-    ]
+    "type": "gaming set"
   },
   {
-    "_key": "three-dragon ante",
-    "infoname": "Three-Dragon Ante [1 gp]",
-    "name": "Three-Dragon Ante",
+    "_key": "three-dragon ante set",
+    "infoname": "Three-Dragon Ante set [1 gp]",
+    "name": "Three-Dragon Ante set",
     "amount": "",
     "weight": "",
-    "type": "gaming set",
-    "source": [
-      [
-        "P24",
-        221
-      ]
-    ]
+    "type": "gaming set"
   },
   {
     "_key": "herbalism kit",
@@ -504,6 +480,62 @@
     "name": "Thieves' Tools",
     "amount": "",
     "weight": 1,
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "dice",
+    "infoname": "Dice [1 sp]",
+    "name": "Dice",
+    "amount": "",
+    "weight": "",
+    "type": "gaming set",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "dragonchess",
+    "infoname": "Dragonchess [1 gp]",
+    "name": "Dragonchess",
+    "amount": "",
+    "weight": "",
+    "type": "gaming set",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "playing cards",
+    "infoname": "Playing Cards [5 sp]",
+    "name": "Playing Cards",
+    "amount": "",
+    "weight": "",
+    "type": "gaming set",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "three-dragon ante",
+    "infoname": "Three-Dragon Ante [1 gp]",
+    "name": "Three-Dragon Ante",
+    "amount": "",
+    "weight": "",
+    "type": "gaming set",
     "source": [
       [
         "P24",

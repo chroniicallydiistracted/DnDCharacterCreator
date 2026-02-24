@@ -1,4 +1,12 @@
 {
+  "SRD": {
+    "name": "Systems Reference Document 5.1",
+    "abbreviation": "SRD",
+    "abbreviationSpellsheet": "SRD",
+    "group": "Core Sources",
+    "url": "https://dnd.wizards.com/resources/systems-reference-document",
+    "date": "2023/01/26"
+  },
   "P24": {
     "name": "2024 Player's Handbook",
     "abbreviation": "P24",

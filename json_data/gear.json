@@ -1,15 +1,22 @@
 [
   {
-    "_key": "acid",
-    "infoname": "Acid [25 gp]",
-    "name": "Acid",
+    "_key": "abacus",
+    "infoname": "Abacus [2 gp]",
+    "name": "Abacus",
+    "amount": "",
+    "weight": 2
+  },
+  {
+    "_key": "acid (vial)",
+    "infoname": "Acid (vial) [25 gp]",
+    "name": "Acid, vials of",
     "amount": "",
     "weight": 1
   },
   {
-    "_key": "alchemist's fire",
-    "infoname": "Alchemist's Fire [50 gp]",
-    "name": "Alchemist's Fire",
+    "_key": "alchemist's fire (flask)",
+    "infoname": "Alchemist's fire (flask) [50 gp]",
+    "name": "Alchemist's fire, flasks of",
     "amount": "",
     "weight": 1
   },
@@ -45,14 +52,6 @@
     "type": "ammunition"
   },
   {
-    "_key": "firearm bullets (10)",
-    "infoname": "Firearm bullets (10) [3 gp]",
-    "name": "Firearm Bullets",
-    "amount": 10,
-    "weight": 0.2,
-    "type": "ammunition"
-  },
-  {
     "_key": "sling bullets (20)",
     "infoname": "Sling bullets (20) [4 cp]",
     "name": "Sling bullets",
@@ -61,9 +60,9 @@
     "type": "ammunition"
   },
   {
-    "_key": "antitoxin",
-    "infoname": "Antitoxin [50 gp]",
-    "name": "Antitoxin",
+    "_key": "antitoxin (vial)",
+    "infoname": "Antitoxin (vial) [50 gp]",
+    "name": "Antitoxin, vials of",
     "amount": "",
     "weight": ""
   },
@@ -115,9 +114,9 @@
     "weight": 5
   },
   {
-    "_key": "ball bearings",
-    "infoname": "Ball bearings [1 gp]",
-    "name": "Bag of ball bearings",
+    "_key": "ball bearings (bag of 1,000)",
+    "infoname": "Ball bearings (bag of 1,000) [1 gp]",
+    "name": "Bag of 1000 ball bearings",
     "amount": "",
     "weight": 2
   },
@@ -148,6 +147,13 @@
     "name": "Bell",
     "amount": "",
     "weight": ""
+  },
+  {
+    "_key": "bit and bridle",
+    "infoname": "Bit and bridle [2 gp]",
+    "name": "Bit and bridle",
+    "amount": "",
+    "weight": 1
   },
   {
     "_key": "blanket",
@@ -213,11 +219,18 @@
     "weight": 1
   },
   {
-    "_key": "chain",
-    "infoname": "Chain [5 gp]",
-    "name": "Chain",
-    "amount": "",
+    "_key": "chain (10 feet)",
+    "infoname": "Chain (10 feet) [5 gp]",
+    "name": "Chain, feet of",
+    "amount": 10,
     "weight": 1
+  },
+  {
+    "_key": "chalk (1 piece)",
+    "infoname": "Chalk (1 piece) [1 cp]",
+    "name": "Chalk, pieces of",
+    "amount": "",
+    "weight": ""
   },
   {
     "_key": "chest",
@@ -232,6 +245,14 @@
     "name": "Climber's kit",
     "amount": "",
     "weight": 12
+  },
+  {
+    "_key": "common",
+    "infoname": "Common [5 sp]",
+    "name": "Common clothes",
+    "amount": "",
+    "weight": 3,
+    "type": "clothes"
   },
   {
     "_key": "costume",
@@ -280,6 +301,14 @@
     "type": "druidic focus"
   },
   {
+    "_key": "totem",
+    "infoname": "Totem [1 gp]",
+    "name": "Totem druidic focus",
+    "amount": "",
+    "weight": "",
+    "type": "druidic focus"
+  },
+  {
     "_key": "wooden staff",
     "infoname": "Wooden staff [5 gp]",
     "name": "Wooden staff druidic focus",
@@ -296,9 +325,16 @@
     "type": "druidic focus"
   },
   {
-    "_key": "flask",
-    "infoname": "Flask [2 cp]",
-    "name": "Flask",
+    "_key": "fishing tackle",
+    "infoname": "Fishing tackle [1 gp]",
+    "name": "Fishing tackle",
+    "amount": "",
+    "weight": 4
+  },
+  {
+    "_key": "flask or tankard",
+    "infoname": "Flask or tankard [2 cp]",
+    "name": "Flask or tankard",
     "amount": "",
     "weight": 1
   },
@@ -308,6 +344,20 @@
     "name": "Grappling hook",
     "amount": "",
     "weight": 4
+  },
+  {
+    "_key": "hammer",
+    "infoname": "Hammer [1 gp]",
+    "name": "Hammer",
+    "amount": "",
+    "weight": 3
+  },
+  {
+    "_key": "hammer, sledge",
+    "infoname": "Hammer, sledge [2 gp]",
+    "name": "Sledge hammer",
+    "amount": "",
+    "weight": 10
   },
   {
     "_key": "healer's kit",
@@ -348,6 +398,13 @@
     "weight": 1
   },
   {
+    "_key": "hourglass",
+    "infoname": "Hourglass [25 gp]",
+    "name": "Hourglass",
+    "amount": "",
+    "weight": 1
+  },
+  {
     "_key": "hunting trap",
     "infoname": "Hunting trap [5 gp]",
     "name": "Hunting trap",
@@ -369,11 +426,18 @@
     "weight": ""
   },
   {
-    "_key": "jug",
-    "infoname": "Jug [2 cp]",
-    "name": "Jug",
+    "_key": "jug or pitcher",
+    "infoname": "Jug or pitcher [2 cp]",
+    "name": "Jug or pitcher",
     "amount": "",
     "weight": 4
+  },
+  {
+    "_key": "small knife",
+    "infoname": "Small Knife [1 sp]",
+    "name": "Small Knife",
+    "amount": "",
+    "weight": 0.25
   },
   {
     "_key": "ladder (10-foot)",
@@ -425,18 +489,18 @@
     "weight": 6
   },
   {
+    "_key": "mess kit",
+    "infoname": "Mess kit [2 sp]",
+    "name": "Mess kit",
+    "amount": "",
+    "weight": 1
+  },
+  {
     "_key": "mirror, steel",
     "infoname": "Mirror, steel [5 gp]",
     "name": "Steel mirror",
     "amount": "",
     "weight": 0.5
-  },
-  {
-    "_key": "net",
-    "infoname": "Net [1 gp]",
-    "name": "Net",
-    "amount": "",
-    "weight": 3
   },
   {
     "_key": "oil (flask)",
@@ -465,6 +529,20 @@
     "name": "Perfume, vials of",
     "amount": "",
     "weight": ""
+  },
+  {
+    "_key": "pick, miner's",
+    "infoname": "Pick, miner's [2 gp]",
+    "name": "Miner's pick",
+    "amount": "",
+    "weight": 10
+  },
+  {
+    "_key": "piton",
+    "infoname": "Piton [5 cp]",
+    "name": "Piton",
+    "amount": "",
+    "weight": 0.25
   },
   {
     "_key": "poison, basic (vial)",
@@ -530,11 +608,18 @@
     "weight": 4
   },
   {
-    "_key": "rope",
-    "infoname": "Rope [1 gp]",
-    "name": "Rope",
-    "amount": "",
-    "weight": 5
+    "_key": "rope, hempen (50 feet)",
+    "infoname": "Rope, hempen (50 feet) [1 gp]",
+    "name": "Hempen rope, feet of",
+    "amount": 50,
+    "weight": 0.2
+  },
+  {
+    "_key": "rope, silk (50 feet)",
+    "infoname": "Rope, silk (50 feet) [10 gp]",
+    "name": "Silk rope, feet of",
+    "amount": 50,
+    "weight": 0.1
   },
   {
     "_key": "sack",
@@ -560,12 +645,41 @@
     "type": "saddle"
   },
   {
+    "_key": "pack",
+    "infoname": "Pack [5 gp]",
+    "name": "Pack saddle",
+    "amount": "",
+    "weight": 15,
+    "type": "saddle"
+  },
+  {
     "_key": "riding",
     "infoname": "Riding [10 gp]",
     "name": "Riding saddle",
     "amount": "",
     "weight": 25,
     "type": "saddle"
+  },
+  {
+    "_key": "saddlebags",
+    "infoname": "Saddlebags [4 gp]",
+    "name": "Saddlebags",
+    "amount": "",
+    "weight": 8
+  },
+  {
+    "_key": "scale, merchant's",
+    "infoname": "Scale, merchant's [5 gp]",
+    "name": "Merchant's scale",
+    "amount": "",
+    "weight": 3
+  },
+  {
+    "_key": "sealing wax",
+    "infoname": "Sealing wax [5 cp]",
+    "name": "Sealing wax",
+    "amount": "",
+    "weight": ""
   },
   {
     "_key": "shovel",
@@ -582,25 +696,25 @@
     "weight": ""
   },
   {
+    "_key": "signet ring",
+    "infoname": "Signet ring [5 gp]",
+    "name": "Signet ring",
+    "amount": "",
+    "weight": ""
+  },
+  {
+    "_key": "soap",
+    "infoname": "Soap [2 cp]",
+    "name": "Soap",
+    "amount": "",
+    "weight": ""
+  },
+  {
     "_key": "spellbook",
     "infoname": "Spellbook [50 gp]",
     "name": "Spellbook",
     "amount": "",
     "weight": 3
-  },
-  {
-    "_key": "spell scroll (cantrip)",
-    "infoname": "Spell Scroll (Cantrip) [30 gp]",
-    "name": "Spell Scroll (Cantrip)",
-    "amount": "",
-    "weight": ""
-  },
-  {
-    "_key": "spell scroll (level 1)",
-    "infoname": "Spell Scroll (Level 1) [50 gp]",
-    "name": "Spell Scroll (Level 1)",
-    "amount": "",
-    "weight": ""
   },
   {
     "_key": "spikes, iron (10)",
@@ -615,13 +729,6 @@
     "name": "Spyglass",
     "amount": "",
     "weight": 1
-  },
-  {
-    "_key": "string",
-    "infoname": "String [1 sp]",
-    "name": "String",
-    "amount": 10,
-    "weight": ""
   },
   {
     "_key": "tent, two-person",
@@ -657,6 +764,105 @@
     "name": "Waterskin",
     "amount": "",
     "weight": 5
+  },
+  {
+    "_key": "whetstone",
+    "infoname": "Whetstone [1 cp]",
+    "name": "Whetstone",
+    "amount": "",
+    "weight": 1
+  },
+  {
+    "_key": "acid",
+    "infoname": "Acid [25 gp]",
+    "name": "Acid",
+    "amount": "",
+    "weight": 1
+  },
+  {
+    "_key": "alchemist's fire",
+    "infoname": "Alchemist's Fire [50 gp]",
+    "name": "Alchemist's Fire",
+    "amount": "",
+    "weight": 1
+  },
+  {
+    "_key": "firearm bullets (10)",
+    "infoname": "Firearm bullets (10) [3 gp]",
+    "name": "Firearm Bullets",
+    "amount": 10,
+    "weight": 0.2,
+    "type": "ammunition"
+  },
+  {
+    "_key": "antitoxin",
+    "infoname": "Antitoxin [50 gp]",
+    "name": "Antitoxin",
+    "amount": "",
+    "weight": ""
+  },
+  {
+    "_key": "ball bearings",
+    "infoname": "Ball bearings [1 gp]",
+    "name": "Bag of ball bearings",
+    "amount": "",
+    "weight": 2
+  },
+  {
+    "_key": "chain",
+    "infoname": "Chain [5 gp]",
+    "name": "Chain",
+    "amount": "",
+    "weight": 1
+  },
+  {
+    "_key": "flask",
+    "infoname": "Flask [2 cp]",
+    "name": "Flask",
+    "amount": "",
+    "weight": 1
+  },
+  {
+    "_key": "jug",
+    "infoname": "Jug [2 cp]",
+    "name": "Jug",
+    "amount": "",
+    "weight": 4
+  },
+  {
+    "_key": "net",
+    "infoname": "Net [1 gp]",
+    "name": "Net",
+    "amount": "",
+    "weight": 3
+  },
+  {
+    "_key": "rope",
+    "infoname": "Rope [1 gp]",
+    "name": "Rope",
+    "amount": "",
+    "weight": 5
+  },
+  {
+    "_key": "spell scroll (cantrip)",
+    "infoname": "Spell Scroll (Cantrip) [30 gp]",
+    "name": "Spell Scroll (Cantrip)",
+    "amount": "",
+    "weight": ""
+  },
+  {
+    "_key": "spell scroll (level 1)",
+    "infoname": "Spell Scroll (Level 1) [50 gp]",
+    "name": "Spell Scroll (Level 1)",
+    "amount": "",
+    "weight": ""
+  },
+  {
+    "_key": "string",
+    "infoname": "String [1 sp]",
+    "name": "String",
+    "amount": 10,
+    "weight": ""
   },
   {
     "_key": "bomb",
