@@ -548,5 +548,125 @@
         "joinString": ", "
       }
     ]
+  },
+  {
+    "_key": "homunculusservant_xua24a",
+    "name": "Homunculus Servant",
+    "nameMenu": "Homunculus Servant (Homunculus Servant XUA24A spell)",
+    "nameTooltip": "the Homunculus Servant (XUA24A) spell",
+    "nameOrigin": "1st-Level Conjuration [ritual] spell",
+    "source": [
+      [
+        "XUA24A",
+        13
+      ]
+    ],
+    "action": [
+      [
+        "reaction",
+        " command (free)"
+      ]
+    ],
+    "includeCheck": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea, iCreaCR) {\r\n\treturn /^(?=.*homunculus)(?=.*servant).*$/i.test(sCrea);\r\n  }"
+    },
+    "notes": [
+      {
+        "name": "Spell Description",
+        "description": "You summon a special homunculus in an unoccupied space within range. This creature uses the Homunculus Servant stat block. If you already have a homunculus from this spell, the homunculus is replaced by the new one.\n   You determine the homunculus's appearance, such as a mechanical-looking bird; winged vials; or miniature, animate cauldrons.",
+        "joinString": "\n   "
+      },
+      {
+        "name": "Combat",
+        "description": "The homunculus is an ally to you and your allies. In combat, it shares your Initiative count, but it takes its turn immediately after yours. It obeys your commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger.",
+        "joinString": "\n   "
+      },
+      {
+        "name": "At Higher Levels",
+        "description": "Use the spell slot's level for the spell’s level in the stat block.\n   The familiar's HP, Skill/Save Bonuses, & Damage change depending on the level the Homunculus Servant (XUA24A) spell was cast at:\n      - HP total equals 5 + 5 per spell level; the Otherworldly Familiar has a number of Hit Dice [d4s] equal to the spell's level;\n      - The Homunculus Servant adds the spell level to any ability check or saving throw it makes;\n      - Damage equals 1d6 + the spell's level of Force damage.",
+        "joinString": "\n   "
+      }
+    ]
+  },
+  {
+    "_key": "homunculusservant_xua25eu",
+    "name": "Homunculus Servant",
+    "nameMenu": "Homunculus Servant (Homunculus Servant XUA25EU spell)",
+    "nameTooltip": "the Homunculus Servant (XUA25EU) spell",
+    "nameOrigin": "1st-Level Conjuration [ritual] spell",
+    "source": [
+      [
+        "XUA25EU",
+        13
+      ]
+    ],
+    "action": [
+      [
+        "reaction",
+        " command (free)"
+      ]
+    ],
+    "includeCheck": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea, iCreaCR) {\r\n\treturn /^(?=.*homunculus)(?=.*servant).*$/i.test(sCrea);\r\n  }"
+    },
+    "notes": [
+      {
+        "name": "Spell Description",
+        "description": "You summon a special homunculus in an unoccupied space within range. This creature uses the Homunculus Servant stat block. If you already have a homunculus from this spell, the homunculus is replaced by the new one.\n   You determine the homunculus's appearance, such as a mechanical-looking bird; winged vials; or miniature, animate cauldrons.",
+        "joinString": "\n   "
+      },
+      {
+        "name": "Combat",
+        "description": "The homunculus is an ally to you and your allies. In combat, it shares your Initiative count, but it takes its turn immediately after yours. It obeys your commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger.",
+        "joinString": "\n   "
+      },
+      {
+        "name": "At Higher Levels",
+        "description": "Use the spell slot's level for the spell’s level in the stat block.\n   The familiar's HP, Skill/Save Bonuses, & Damage change depending on the level the Homunculus Servant (XUA25EU) spell was cast at:\n      - HP total equals 5 + 5 per spell level; the Otherworldly Familiar has a number of Hit Dice [d4s] equal to the spell's level;\n      - The Homunculus Servant adds the spell level to any ability check or saving throw it makes;\n      - Damage equals 1d6 + the spell's level of Force damage.",
+        "joinString": "\n   "
+      }
+    ]
+  },
+  {
+    "_key": "homunculusservant",
+    "name": "Homunculus Servant",
+    "nameMenu": "Homunculus Servant (Homunculus Servant spell)",
+    "nameTooltip": "the Homunculus Servant spell",
+    "nameOrigin": "2nd-Level Conjuration [ritual] spell",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "action": [
+      [
+        "reaction",
+        " command (free)"
+      ]
+    ],
+    "includeCheck": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea, iCreaCR) {\n        return /^(?=.*homunculus)(?=.*servant).*$/i.test(sCrea);\n    }"
+    },
+    "notes": [
+      {
+        "name": "Spell Description",
+        "description": "You summon a special homunculus in an unoccupied space within range. This creature uses the Homunculus Servant stat block. If you already have a homunculus from this spell, the homunculus is replaced by the new one.\n   You determine the homunculus's appearance, such as a mechanical-looking bird; winged vials; or miniature, animate cauldrons.",
+        "joinString": "\n   "
+      },
+      {
+        "name": "Combat",
+        "description": "The homunculus is an ally to you and your allies. In combat, it shares your Initiative count, but it takes its turn immediately after yours. It obeys your commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger.",
+        "joinString": "\n   "
+      },
+      {
+        "name": "At Higher Levels",
+        "description": "Use the spell slot's level for the spell’s level in the stat block.\n   The familiar's HP, Skill/Save Bonuses, & Damage change depending on the level the Homunculus Servant (XUA25EU) spell was cast at:\n      - HP total equals 5 + 5 per spell level; the Otherworldly Familiar has a number of Hit Dice [d4s] equal to the spell's level;\n      - The Homunculus Servant adds the spell level to any ability check or saving throw it makes;\n      - Damage equals 1d6 + the spell's level of Force damage.",
+        "joinString": "\n   "
+      }
+    ]
   }
 ]

@@ -106,7 +106,8 @@
     "classes": [
       "bard",
       "druid",
-      "ranger"
+      "ranger",
+      "psion"
     ],
     "source": [
       [
@@ -132,7 +133,8 @@
     "classes": [
       "bard",
       "druid",
-      "ranger"
+      "ranger",
+      "psion"
     ],
     "source": [
       [
@@ -179,7 +181,8 @@
     "name": "Animate Dead",
     "classes": [
       "cleric",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -204,7 +207,8 @@
       "artificer",
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -247,7 +251,8 @@
     "name": "Antimagic Field",
     "classes": [
       "cleric",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -271,7 +276,8 @@
     "classes": [
       "bard",
       "druid",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -295,7 +301,8 @@
     "name": "Arcane Eye",
     "classes": [
       "artificer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -342,7 +349,8 @@
     "classes": [
       "cleric",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -390,7 +398,8 @@
     "name": "Awaken",
     "classes": [
       "bard",
-      "druid"
+      "druid",
+      "psion"
     ],
     "source": [
       [
@@ -443,7 +452,8 @@
       "paladin",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -512,7 +522,8 @@
     "classes": [
       "bard",
       "cleric",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -560,7 +571,8 @@
     "_key": "blade barrier",
     "name": "Blade Barrier",
     "classes": [
-      "cleric"
+      "cleric",
+      "psion"
     ],
     "source": [
       [
@@ -638,7 +650,8 @@
       "bard",
       "cleric",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -754,7 +767,8 @@
     "name": "Calm Emotions",
     "classes": [
       "bard",
-      "cleric"
+      "cleric",
+      "psion"
     ],
     "source": [
       [
@@ -806,7 +820,8 @@
       "druid",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -881,7 +896,8 @@
       "bard",
       "cleric",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -977,7 +993,8 @@
     "classes": [
       "bard",
       "cleric",
-      "paladin"
+      "paladin",
+      "psion"
     ],
     "source": [
       [
@@ -1050,7 +1067,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -1074,7 +1092,8 @@
     "name": "Compulsion",
     "nameShort": "Compulsion*",
     "classes": [
-      "bard"
+      "bard",
+      "psion"
     ],
     "source": [
       [
@@ -1124,7 +1143,8 @@
       "bard",
       "druid",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -1286,7 +1306,8 @@
     "name": "Contact Other Plane",
     "classes": [
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -1576,7 +1597,8 @@
       "artificer",
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -1777,7 +1799,8 @@
       "sorcerer",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -1828,7 +1851,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -1854,7 +1878,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -1901,7 +1926,8 @@
     "nameShort": "Disintegrate*",
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -1955,7 +1981,8 @@
       "ranger",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2073,7 +2100,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2098,7 +2126,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2147,7 +2176,8 @@
     "classes": [
       "bard",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2248,7 +2278,8 @@
       "druid",
       "ranger",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2275,7 +2306,8 @@
       "bard",
       "druid",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2326,7 +2358,8 @@
     "nameShort": "Enthrall*",
     "classes": [
       "bard",
-      "warlock"
+      "warlock",
+      "psion"
     ],
     "source": [
       [
@@ -2352,7 +2385,8 @@
       "cleric",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2427,7 +2461,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2522,7 +2557,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2548,7 +2584,8 @@
       "artificer",
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2617,7 +2654,8 @@
     "classes": [
       "bard",
       "cleric",
-      "druid"
+      "druid",
+      "psion"
     ],
     "source": [
       [
@@ -2899,7 +2937,8 @@
       "artificer",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -2982,7 +3021,8 @@
     "classes": [
       "bard",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -3008,7 +3048,8 @@
       "bard",
       "druid",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -3034,7 +3075,8 @@
       "bard",
       "cleric",
       "druid",
-      "ranger"
+      "ranger",
+      "psion"
     ],
     "source": [
       [
@@ -3111,7 +3153,8 @@
       "cleric",
       "druid",
       "paladin",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -3182,7 +3225,8 @@
     "name": "Glibness",
     "classes": [
       "bard",
-      "warlock"
+      "warlock",
+      "psion"
     ],
     "source": [
       [
@@ -3302,7 +3346,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -3492,7 +3537,8 @@
       "bard",
       "druid",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -3613,7 +3659,8 @@
     "classes": [
       "artificer",
       "bard",
-      "druid"
+      "druid",
+      "psion"
     ],
     "source": [
       [
@@ -3711,7 +3758,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -3740,7 +3788,8 @@
       "druid",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -3811,7 +3860,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -3864,7 +3914,8 @@
     "classes": [
       "artificer",
       "bard",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4014,7 +4065,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4040,7 +4092,8 @@
       "druid",
       "ranger",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4065,7 +4118,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4088,7 +4142,8 @@
     "classes": [
       "bard",
       "cleric",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4188,7 +4243,8 @@
     "classes": [
       "artificer",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4215,7 +4271,8 @@
       "bard",
       "cleric",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4264,7 +4321,8 @@
     "classes": [
       "bard",
       "druid",
-      "ranger"
+      "ranger",
+      "psion"
     ],
     "source": [
       [
@@ -4292,7 +4350,8 @@
       "druid",
       "paladin",
       "ranger",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4319,7 +4378,8 @@
       "druid",
       "paladin",
       "ranger",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4345,7 +4405,8 @@
       "bard",
       "druid",
       "ranger",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4368,7 +4429,8 @@
     "name": "Mage Armor",
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4394,7 +4456,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4493,7 +4556,8 @@
     "classes": [
       "artificer",
       "bard",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4545,7 +4609,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4640,7 +4705,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4664,7 +4730,8 @@
     "name": "Maze",
     "nameShort": "Maze*",
     "classes": [
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4745,7 +4812,8 @@
       "cleric",
       "druid",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4771,7 +4839,8 @@
       "bard",
       "druid",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4818,7 +4887,8 @@
     "name": "Mind Blank",
     "classes": [
       "bard",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4842,7 +4912,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4866,7 +4937,8 @@
     "classes": [
       "bard",
       "druid",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4891,7 +4963,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4914,7 +4987,8 @@
     "classes": [
       "bard",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -4961,7 +5035,8 @@
     "nameShort": "Modify Memory*",
     "classes": [
       "bard",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5111,7 +5186,8 @@
     "classes": [
       "druid",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5135,7 +5211,8 @@
     "classes": [
       "bard",
       "ranger",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5233,7 +5310,8 @@
     "nameAlt": "Irresistible Dance",
     "classes": [
       "bard",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5302,7 +5380,8 @@
     "nameShort": "Phantasmal Killer*",
     "classes": [
       "bard",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5398,7 +5477,8 @@
       "druid",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5474,7 +5554,8 @@
       "bard",
       "druid",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5501,7 +5582,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5526,7 +5608,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5574,7 +5657,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5680,7 +5764,8 @@
     "name": "Programmed Illusion",
     "classes": [
       "bard",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5703,7 +5788,8 @@
     "name": "Project Image",
     "classes": [
       "bard",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -5855,7 +5941,8 @@
     "nameAlt": "Telepathic Bond",
     "classes": [
       "bard",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -6052,7 +6139,8 @@
     "classes": [
       "druid",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -6150,12 +6238,17 @@
     "name": "Sanctuary",
     "classes": [
       "artificer",
-      "cleric"
+      "cleric",
+      "psion"
     ],
     "source": [
       [
-        "P24",
-        313
+        "P",
+        272
+      ],
+      [
+        "UA25P",
+        5
       ]
     ],
     "level": 1,
@@ -6163,11 +6256,11 @@
     "time": "1 bns",
     "range": "30 ft",
     "components": "V,S,M",
-    "compMaterial": "A shard of glass from a mirror",
+    "compMaterial": "A small silver mirror",
     "duration": "1 min",
     "save": "Wis",
-    "description": "1 crea warded until atk/cast/do dmg; pass save to atk or target them; no protection vs area spells",
-    "descriptionFull": "You ward a creature within range. Until the spell ends, any creature who targets the warded creature with an attack roll or a damaging spell must succeed on a Wisdom saving throw or either choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from areas of effect.\n   The spell ends if the warded creature makes an attack roll, casts a spell, or deals damage."
+    "description": "1 crea; attackers must save or choose new target or lose atk/spell; breaks if target attacks/casts spell",
+    "descriptionFull": "You ward a creature within range against attack. Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from area effects, such as the explosion of a fireball.\n   If the warded creature makes an attack, casts a spell that affects an enemy, or deals damage to another creature, this spell ends."
   },
   {
     "_key": "scorching ray",
@@ -6202,7 +6295,8 @@
       "cleric",
       "druid",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -6228,7 +6322,8 @@
       "artificer",
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -6253,7 +6348,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -6277,7 +6373,8 @@
     "classes": [
       "bard",
       "cleric",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -6322,7 +6419,8 @@
     "name": "Shapechange",
     "classes": [
       "druid",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -6346,7 +6444,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -6369,24 +6468,29 @@
     "_key": "shield",
     "name": "Shield",
     "classes": [
+      "psion",
       "sorcerer",
       "wizard"
     ],
     "source": [
       [
-        "P24",
-        316
+        "P",
+        275
+      ],
+      [
+        "UA25P",
+        5
       ]
     ],
     "level": 1,
     "school": "Abjur",
     "time": "1 rea",
-    "timeFull": "Reaction, which you take when you are hit by an attack roll or targeted by the Magic Missile spell",
+    "timeFull": "1 reaction, which you take when you are hit by an attack or targeted by the magic missile spell",
     "range": "Self",
     "components": "V,S",
-    "duration": "1 round",
-    "description": "If hit by atk +5 AC until start of next turn, may cause to miss; or stop Magic Missile from damaging me",
-    "descriptionFull": "An imperceptible barrier of magical force protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from Magic Missile."
+    "duration": "1 rnd",
+    "description": "+5 AC until start of next turn; negates magic missile",
+    "descriptionFull": "An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile."
   },
   {
     "_key": "shield of faith",
@@ -6464,7 +6568,8 @@
     "classes": [
       "bard",
       "cleric",
-      "ranger"
+      "ranger",
+      "psion"
     ],
     "source": [
       [
@@ -6488,7 +6593,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -6534,7 +6640,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -6633,7 +6740,8 @@
       "bard",
       "druid",
       "ranger",
-      "warlock"
+      "warlock",
+      "psion"
     ],
     "source": [
       [
@@ -6911,7 +7019,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -7019,7 +7128,8 @@
     "classes": [
       "bard",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -7044,7 +7154,8 @@
     "nameShort": "Telekinesis*",
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -7069,7 +7180,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -7093,7 +7205,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -7117,7 +7230,8 @@
     "nameShort": "Tenser's Floating Disk*",
     "nameAlt": "Floating Disk",
     "classes": [
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -7163,31 +7277,37 @@
     "classes": [
       "bard",
       "druid",
+      "psion",
       "sorcerer",
       "wizard"
     ],
     "source": [
       [
-        "P24",
-        334
+        "P",
+        282
+      ],
+      [
+        "UA25P",
+        5
       ]
     ],
     "level": 1,
     "school": "Evoc",
     "time": "1 a",
-    "range": "S:15ft cube",
+    "range": "S:15-ft cube",
     "components": "V,S",
     "duration": "Instantaneous",
     "save": "Con",
-    "description": "All crea/unsecured obj 2d8+1d8/SL Thunder, pushed 10 ft away; save 1/2 dmg only; audible 300ft",
-    "descriptionFull": "You unleash a wave of thunderous energy. Each creature in a 15-foot Cube originating from you makes a Constitution saving throw. On a failed save, a creature takes 2d8 Thunder damage and is pushed 10 feet away from you. On a successful save, a creature takes half as much damage only.\n   In addition, unsecured objects that are entirely within the Cube are pushed 10 feet away from you, and a thunderous boom is audible within 300 feet.\n   At Higher Levels: The damage increases by 1d8 for each spell slot level above 1."
+    "description": "All creatures 2d8 Thunder dmg and pushed 10 ft away; save halves and not pushed; unsecured objects pushed",
+    "descriptionFull": "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed.\n   In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet.\n\n\n   At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st."
   },
   {
     "_key": "time stop",
     "name": "Time Stop",
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -7212,7 +7332,8 @@
       "cleric",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -7330,7 +7451,8 @@
       "cleric",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -7680,7 +7802,8 @@
     "name": "Weird",
     "classes": [
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -7799,7 +7922,8 @@
     "classes": [
       "bard",
       "cleric",
-      "paladin"
+      "paladin",
+      "psion"
     ],
     "source": [
       [
@@ -8004,7 +8128,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -8231,7 +8356,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -8308,7 +8434,8 @@
     "name": "Dissonant Whispers",
     "nameShort": "Dissonant Whispers*",
     "classes": [
-      "bard"
+      "bard",
+      "psion"
     ],
     "source": [
       [
@@ -8421,7 +8548,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -8574,7 +8702,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -8600,7 +8729,8 @@
     "nameShort": "Power Word Heal*",
     "classes": [
       "bard",
-      "cleric"
+      "cleric",
+      "psion"
     ],
     "source": [
       [
@@ -8720,7 +8850,8 @@
     "_key": "telepathy",
     "name": "Telepathy",
     "classes": [
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -8869,32 +9000,25 @@
   {
     "_key": "abi-dalzim's horrid wilting",
     "name": "Abi-Dalzim's Horrid Wilting",
-    "nameShort": "Abi-D's Horrid Wilting",
-    "nameAlt": "Horrid Wilting",
     "classes": [
+      "psion",
       "sorcerer",
       "wizard"
     ],
     "source": [
-      [
-        "X",
-        150
-      ],
-      [
-        "E",
-        15
-      ]
+      "UA25P",
+      11
     ],
     "level": 8,
     "school": "Necro",
     "time": "1 a",
     "range": "150 ft",
     "components": "V,S,M",
-    "compMaterial": "A bit of sponge",
+    "compMaterial": "a bit of sponge",
     "duration": "Instantaneous",
     "save": "Con",
-    "description": "30-ft cube all crea 12d8 Necrotic dmg; save halves; plants/water elem. dis. const/undead immune",
-    "descriptionFull": "You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren't affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 12d8 necrotic damage on a failed save, or half as much damage on a successful one.\n   Nonmagical plants in the area that aren't creatures, such as trees and shrubs, wither and die instantly."
+    "description": "30-ft cube; all crea 12d8 Necrotic dmg; save halves; Constructs auto save, Plants auto fail; plants wither",
+    "descriptionFull": "You draw the moisture from every creature in a 30-foot Cube centered on a point within range. Each creature in that area makes a Constitution saving throw, taking 12d8 Necrotic damage on a failed save or half as much damage on a successful one. Constructs automatically succeed at the save, and Plant creatures automatically fail the save.\n   Nonmagical plants in the area that aren't creatures, such as trees and shrubs, wither and die instantly."
   },
   {
     "_key": "absorb elements",
@@ -10405,7 +10529,8 @@
       "druid",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -10522,6 +10647,7 @@
     "_key": "dragon's breath",
     "name": "Dragon's Breath",
     "classes": [
+      "artificer",
       "sorcerer",
       "wizard"
     ],
@@ -10582,15 +10708,14 @@
     "name": "Enemies Abound",
     "classes": [
       "bard",
+      "psion",
       "sorcerer",
       "warlock",
       "wizard"
     ],
     "source": [
-      [
-        "X",
-        155
-      ]
+      "UA25P",
+      12
     ],
     "level": 3,
     "school": "Ench",
@@ -10599,8 +10724,8 @@
     "components": "V,S",
     "duration": "Conc, 1 min",
     "save": "Int",
-    "description": "1 crea save or regard all creatures it can see as enemies, random targeting; save when damaged to end",
-    "descriptionFull": "You reach into the mind of one creature you can see and force it to make an Intelligence saving throw. A creature automatically succeeds if it is immune to being frightened. On a failed save, the target loses the ability to distinguish friend from foe, regarding all creatures it can see as enemies until the spell ends. Each time the target takes damage, it can repeat the saving throw, ending the effect on itself on a success.\n   Whenever the affected creature chooses another creature as a target, it must choose the target at random from among the creatures it can see within range of the attack, spell, or other ability it's using. If an enemy provokes an opportunity attack from the affected creature, the creature must make that attack if it is able to."
+    "description": "1 crea frightened, regards all as enemies, random targets, must opportunity atk; save each time takes dmg",
+    "descriptionFull": "Choose a creature you can see within range. The target must succeed on an Intelligence saving throw or have the Frightened condition for the duration. While Frightened, the target loses the ability to distinguish friend from foe and is affected in the following ways:\n • The target regards all creatures it can see as enemies.\n • Whenever the target chooses a creature other than itself for an attack, spell, or other ability, it must choose at random from among the creatures it can see within range of that attack, spell, or other ability.\n • The target must make an Opportunity Attack each time it is able to.\n   Each time the target takes damage, it makes another Intelligence saving throw. On a successful save, the spell ends."
   },
   {
     "_key": "enervation",
@@ -10928,15 +11053,14 @@
     "_key": "mental prison",
     "name": "Mental Prison",
     "classes": [
+      "bard",
+      "psion",
       "sorcerer",
-      "warlock",
       "wizard"
     ],
     "source": [
-      [
-        "X",
-        161
-      ]
+      "UA25P",
+      13
     ],
     "level": 6,
     "school": "Illus",
@@ -10945,17 +11069,8 @@
     "components": "S",
     "duration": "Conc, 1 min",
     "save": "Int",
-    "description": "1 crea 5d10 Psychic dmg; save or restrained, blind, deaf, and if moved: 10d10 dmg, ends; charm effect",
-    "descriptionShorter": "1 crea 5d10 Psychic dmg; save or restrained, blind, deaf, if move: 10d10 dmg, ends; charm",
-    "descriptionFull": "You attempt to bind a creature within an illusory cell that only it perceives. One creature you can see within range must make an Intelligence saving throw. The target succeeds automatically if it is immune to being charmed. On a successful save, the target takes 5d10 psychic damage, and the spell ends. On a failed save, the target takes 5d10 psychic damage, and you make the area immediately around the target's space appear dangerous to it in some way. You might cause the target to perceive itself as being surrounded by fire, floating razors, or hideous maws filled with dripping teeth. Whatever form the illusion takes, the target can't see or hear anything beyond it and is restrained for the spell's duration. If the target is moved out of the illusion, makes a melee attack through it, or reaches any part of its body through it, the target takes 10d10 psychic damage, and the spell ends.",
-    "dynamicDamageBonus": {
-      "multipleDmgMoments": false,
-      "extraDmgGroupsSameType": {
-        "_type": "RegExp",
-        "source": "(if moved?: )((?:\\+?\\d+d?\\d*)+)",
-        "flags": "i"
-      }
-    }
+    "description": "1 crea 8d10 Psychic dmg, charmed, restrained in illusion; save half, spell ends; moved/atk through: 5d10, ends",
+    "descriptionFull": "You attempt to bind a creature within an illusory cell that only it perceives. One creature you can see within range must succeed on an Intelligence saving throw or take 8d10 Psychic damage and have the Charmed condition for the duration. On a successful save, the target takes half damage only and the spell ends.\n   While Charmed, the target has the Restrained condition and perceives the area around its space as dangerous to it in some way you create. You might cause the target to perceive itself as being surrounded by fire, floating razors, or hideous maws filled with dripping teeth. Whatever form the illusion takes, the target can't see or hear anything beyond it. If the target is moved from the illusion, makes a melee attack through it, or reaches any part of its body through it, the target takes 5d10 Psychic damage and the spell ends."
   },
   {
     "_key": "mighty fortress",
@@ -10985,7 +11100,8 @@
     "classes": [
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -11081,15 +11197,13 @@
     "name": "Psychic Scream",
     "classes": [
       "bard",
+      "psion",
       "sorcerer",
-      "warlock",
-      "wizard"
+      "warlock"
     ],
     "source": [
-      [
-        "X",
-        163
-      ]
+      "UA25P",
+      13
     ],
     "level": 9,
     "school": "Ench",
@@ -11098,8 +11212,8 @@
     "components": "S",
     "duration": "Instantaneous",
     "save": "Int",
-    "description": "10 crea Int>2 save or 14d6 Psychic dmg and stunned; save halves, no stun; end of turn save to stop",
-    "descriptionFull": "You unleash the power of your mind to blast the intellect of up to ten creatures of your choice that you can see within range. Creatures that have an Intelligence score of 2 or lower are unaffected.\n   Each target must make an Intelligence saving throw. On a failed save, a target takes 14d6 psychic damage and is stunned. On a successful save, a target takes half as much damage and isn't stunned. If a target is killed by this damage, its head explodes, assuming it has one.\n   A stunned target can make an Intelligence saving throw at the end of each of its turns. On a successful save, the stunning effect ends."
+    "description": "10 crea (Int>2) 14d6 Psychic dmg, stunned; save halves, not stunned; repeat save end turn; 0HP head explodes",
+    "descriptionFull": "You unleash the power of your mind to blast the intellect of up to ten creatures of your choice that you can see within range. Creatures that have an Intelligence score of 2 or lower are unaffected.\n   Each target must make an Intelligence saving throw. On a failed save, the target takes 14d6 Psychic damage and has the Stunned condition. On a successful save, the target takes half as much damage only. If the target is reduced to 0 Hit Points by this damage, its head explodes if it has one.\n   At the end of each of its turns, the Stunned target repeats the save, ending the condition on itself on a success."
   },
   {
     "_key": "scatter",
@@ -11350,7 +11464,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -12176,12 +12291,8 @@
     ],
     "source": [
       [
-        "T",
-        106
-      ],
-      [
-        "RotF",
-        318
+        "FRHoF",
+        143
       ]
     ],
     "level": 9,
@@ -12190,9 +12301,11 @@
     "range": "60 ft",
     "components": "V,S",
     "duration": "Conc, 1 min",
-    "description": "Create weapon; 2 spell atks 4d12 Force dmg; crit on 18+, triple dmg; bns a to move 30 ft & do 2 atks",
-    "descriptionShorter": "Create wea; 2 spell atks 4d12 Force dmg; crit 18+, triple dmg; bns a to move 30 ft & 2 atks",
-    "descriptionFull": "You create a blade-shaped planar rift about 3 feet long in an unoccupied space you can see within range. The blade lasts for the duration. When you cast this spell, you can make up to two melee spell attacks with the blade, each one against a creature, loose object, or structure within 5 feet of the blade. On a hit, the target takes 4d12 force damage. This attack scores a critical hit if the number on the d20 is 18 or higher. On a critical hit, the blade deals an extra 8d12 force damage (for a total of 12d12 force damage).\n   As a bonus action on your turn, you can move the blade up to 30 feet to an unoccupied space you can see and then make up to two melee spell attacks with it again.\n   The blade can harmlessly pass through any barrier, including a wall of force."
+    "description": "Create blade; 2 spell atks 10d6 Force dmg; crit on 18+; bns a move 60 ft & 2 atks; barriers don't block it",
+    "descriptionShorter": "Create wea; 2 spell atks 10d6 Force dmg; crit 18+; bns a move 60 ft & 2 atks",
+    "descriptionFull": [
+      "You create a 3-foot-long blade-shaped planar rift that lasts for the duration. The rift appears within range in a space of your choice, and you can immediately make up to two melee spell attacks, each one against a creature or object within 5 feet of the rift. On a hit, the target takes 10d6 Force damage. This attack scores a Critical Hit if the number on the d20 is 18 or higher.\n   As a Bonus Action on your later turns, you can move the rift up to 60 feet and repeat the two attacks against a creature or an object within 5 feet of it. You can direct the attacks at the same target or at different ones.\n   The blade can harmlessly pass through any barrier, including ones created by spells like Wall of Force."
+    ]
   },
   {
     "_key": "create magen",
@@ -12269,15 +12382,14 @@
     "classes": [
       "artificer",
       "bard",
+      "psion",
       "sorcerer",
       "warlock",
       "wizard"
     ],
     "source": [
-      [
-        "T",
-        107
-      ]
+      "UA25P",
+      12
     ],
     "level": 3,
     "school": "Abjur",
@@ -12285,8 +12397,8 @@
     "range": "30 ft",
     "components": "V",
     "duration": "Conc, 1 h",
-    "description": "1+1/SL crea, each max 30 ft apart, has Psychic damage resistance and adv. on Int, Wis, and Cha saves",
-    "descriptionFull": "For the duration, you or one willing creature you can see within range has resistance to psychic damage, as well as advantage on Intelligence, Wisdom, and Charisma saving throws.\n   At Higher Levels: When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd. The creatures must be within 30 feet of each other when you target them."
+    "description": "1+1/SL willing crea gains Psychic resist, adv on Int/Wis/Cha saves",
+    "descriptionFull": "For the duration, one willing creature you can see within range has Resistance to Psychic damage as well as Advantage on Intelligence, Wisdom, and Charisma saving throws.\n\nUsing a Higher-Level Spell Slot: You can target one additional creature for each spell slot level above 3."
   },
   {
     "_key": "mind sliver",
@@ -12295,7 +12407,8 @@
     "classes": [
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -12356,7 +12469,8 @@
     "nameShort": "Summon Aberration*",
     "classes": [
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -12598,36 +12712,24 @@
   {
     "_key": "tasha's mind whip",
     "name": "Tasha's Mind Whip",
-    "nameAlt": "Mind Whip",
-    "regExpSearch": {
-      "_type": "RegExp",
-      "source": "^(?=.*mind)(?=.*(whip|thrust)).*$",
-      "flags": "i"
-    },
     "classes": [
+      "psion",
       "sorcerer",
       "wizard"
     ],
     "source": [
-      [
-        "T",
-        115
-      ],
-      [
-        "UA:POR",
-        8
-      ]
+      "UA25P",
+      15
     ],
     "level": 2,
     "school": "Ench",
     "time": "1 a",
     "range": "90 ft",
     "components": "V",
-    "duration": "1 rnd",
+    "duration": "Instantaneous",
     "save": "Int",
-    "description": "1+1/SL crea, max 30 ft apart; 3d6 Psychic dmg; no rea; only move, act, or bns; save half, no act limit",
-    "descriptionShorter": "1+1/SL crea, max 30 ft apart; 3d6 Psychic dmg; no rea; move, act, or bns; save half, no act limit",
-    "descriptionFull": "You psychically lash out at one creature you can see within range. The target must make an Intelligence saving throw. On a failed save, the target takes 3d6 psychic damage, and it can't take a reaction until the end of its next turn. Moreover, on its next turn, it must choose whether it gets a move, an action, or a bonus action; it gets only one of the three. On a successful save, the target takes half as much damage and suffers none of the spell's other effects.\n   At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd. The creatures must be within 30 feet of each other when you target them."
+    "description": "1+1/SL crea 3d6 Psychic dmg, no opportunity atks, choose move/action/bonus on next turn; save halves no other effect",
+    "descriptionFull": "You psychically lash out at one creature you can see within range. The target must make an Intelligence saving throw. On a failed save, the target takes 3d6 Psychic damage and can't make Opportunity Attacks until the end of its next turn. On its next turn, it must choose whether it gets a move, an action, or a Bonus Action; it gets only one of the three. On a successful save, the target takes half as much damage only.\n\nUsing a Higher-Level Spell Slot: You can target one additional creature for each spell slot level above 2."
   },
   {
     "_key": "tasha's otherworldly guise",
@@ -12770,18 +12872,16 @@
   {
     "_key": "raulothim's psychic lance",
     "name": "Raulothim's Psychic Lance",
-    "nameAlt": "Psychic Lance",
     "classes": [
       "bard",
+      "psion",
       "sorcerer",
       "warlock",
       "wizard"
     ],
     "source": [
-      [
-        "FToD",
-        21
-      ]
+      "UA25P",
+      13
     ],
     "level": 4,
     "school": "Ench",
@@ -12790,9 +12890,8 @@
     "components": "V",
     "duration": "Instantaneous",
     "save": "Int",
-    "description": "1 crea I see or can name 7d6+1d6/SL Psychic dmg & incap. till start of my turn; save half, not incap.",
-    "descriptionShorter": "1 crea I see or can name 7d6+1d6/SL Psychic dmg & incap. for 1 rnd; save half, not incap.",
-    "descriptionFull": "You unleash a shimmering lance of psychic power from your forehead at a creature that you can see within range. Alternatively, you can utter a creature's name. If the named target is within range, it becomes the spell's target even if you can't see it. If the named target isn't within range, the lance dissipates without effect.\n   The target must make an Intelligence saving throw. On a failed save, the target takes 7d6 psychic damage and is incapacitated until the start of your next turn. On a successful save, the creature takes half as much damage and isn't incapacitated.\n   At Higher Levels: When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d6 for each slot level above 4th."
+    "description": "1 crea (or named) 7d6 Psychic dmg, incapacitated until start my next turn; save halves, no incapacitated; +1d6/SL",
+    "descriptionFull": "You unleash a shimmering lance of psychic power from your forehead at a creature that you can see within range. Alternatively, you can utter a creature's name (a pseudonym, title, or nickname doesn't work). If the named target is within range, it becomes the spell's target even if you can't see it. If the named target isn't within range or you use an invalid name, the lance dissipates without effect.\n   The target must make an Intelligence saving throw. On a failed save, the target takes 7d6 Psychic damage and has the Incapacitated condition until the start of your next turn. On a successful save, the target takes half as much damage only.\n\nUsing a Higher-Level Spell Slot: The damage increases by 1d6 for each spell slot level above 4."
   },
   {
     "_key": "rime's binding ice",
@@ -15074,7 +15173,8 @@
       "bard",
       "druid",
       "warlock",
-      "wizard"
+      "wizard",
+      "psion"
     ],
     "source": [
       [
@@ -20830,7 +20930,8 @@
     "nameShort": "Power Word Fortify*",
     "classes": [
       "bard",
-      "cleric"
+      "cleric",
+      "psion"
     ],
     "source": [
       [
@@ -23944,5 +24045,777 @@
     "duration": "Instantaneous",
     "description": "15ft cube in range per expended charge; all crea in cube Dex save or 5d4 Radiant damage, save halves",
     "descriptionFull": "You can expend 1 to 3 charges from the ring of shooting starts as an action. For every charge you expend, you launch a glowing mote of light from the ring at a point you can see within 60 feet of you. Each creature within a 15-foot cube originating from that point is showered in sparks and must make a DC 15 Dexterity saving throw, taking 5d4 fire damage on a failed save, or half as much damage on a successful one."
+  },
+  {
+    "_key": "alustriel's mooncloak",
+    "name": "Alustriel's Mooncloak",
+    "classes": [
+      "bard",
+      "druid",
+      "ranger",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        142
+      ]
+    ],
+    "level": 5,
+    "school": "Abjur",
+    "time": "1 a",
+    "range": "S:20-ft rad",
+    "components": "V,S,Mƒ",
+    "compMaterial": "a moonstone worth 50+ GP",
+    "duration": "Conc, 1 min",
+    "description": "20-ft rad Dim. Me + ally 1/2 Cover + Resist Cold, Lghtng + Rad dmg. Extra effects that end spell. See B",
+    "descriptionFull": [
+      "For the duration, moonlight fills a 20-foot Emanation originating from you with Dim Light. While in that area, you and your allies have Half Cover and Resistance to Cold, Lightning, and Radiant damage.\n   While the spell lasts, you can use one of the following options, ending the spell immediately:\n   ***Liberation***. When you fail a saving throw to avoid or end the Frightened, Grappled, or Restrained condition, you can take a Reaction to succeed on the save instead.\n   ***Respite***. As a Magic action, you or an ally within the area regains Hit Points equal to 4d10 plus your spellcasting ability modifier."
+    ]
+  },
+  {
+    "_key": "backlash",
+    "name": "Backlash",
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        142
+      ]
+    ],
+    "level": 4,
+    "school": "Abjur",
+    "time": "1 rea",
+    "timeFull": "Reaction, which you take in response to taking damage",
+    "range": "60 ft",
+    "components": "V",
+    "duration": "Instantaneous",
+    "save": "Con",
+    "description": "When dmged, subtract 4d6+1d6/SL + spell mod. If from crea in 60ft, 4d6+1d6/SL Force dmg; 1/2 on save.",
+    "descriptionFull": [
+      "You ward yourself against destructive energy, reducing the damage taken by 4d6 plus your spellcasting ability modifier.\n   If the triggering damage was from a creature within range, you can force the creature to make a Constitution saving throw. The creature takes 4d6 Force damage on a failed save or half as much damage on a successful one.\n   At Higher Levels: The damage reduced and Force damage from this spell both increase by 1d6 for every spell slot level above 4."
+    ]
+  },
+  {
+    "_key": "blade of disaster legacy",
+    "name": "Blade of Disaster (L)",
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "source": [
+      [
+        "LEGACYSPELLS",
+        1
+      ]
+    ],
+    "level": 9,
+    "school": "Conj",
+    "time": "1 bns",
+    "range": "60 ft",
+    "components": "V,S",
+    "duration": "Conc, 1 min",
+    "description": "Create weapon; 2 spell atks 4d12 Force dmg; crit on 18+, triple dmg; bns a to move 30 ft & do 2 atks",
+    "descriptionShorter": "Create wea; 2 spell atks 4d12 Force dmg; crit 18+, triple dmg; bns a to move 30 ft & 2 atks",
+    "descriptionFull": "You create a blade-shaped planar rift about 3 feet long in an unoccupied space you can see within range. The blade lasts for the duration. When you cast this spell, you can make up to two melee spell attacks with the blade, each one against a creature, loose object, or structure within 5 feet of the blade. On a hit, the target takes 4d12 force damage. This attack scores a critical hit if the number on the d20 is 18 or higher. On a critical hit, the blade deals an extra 8d12 force damage (for a total of 12d12 force damage).\n   As a bonus action on your turn, you can move the blade up to 30 feet to an unoccupied space you can see and then make up to two melee spell attacks with it again.\n   The blade can harmlessly pass through any barrier, including a wall of force."
+  },
+  {
+    "_key": "cacophonic shield",
+    "name": "Cacophonic Shield",
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        143
+      ]
+    ],
+    "level": 3,
+    "school": "Evoc",
+    "time": "1 a",
+    "range": "S:10-ft rad",
+    "components": "V,S",
+    "save": "Con",
+    "duration": "Conc, 10 min",
+    "description": "Resist Thdr; Rgd vs me Dis. Cover/enter/end 3d6+1d6/SL Thunder dmg + Deaf to my turn (1/t/c); s: 1/2",
+    "descriptionFull": [
+      "Thunderous reverberations fill a 10-foot Emanation originating from you for the duration. Whenever the Emanation enters a creature's space and whenever a creature enters the Emanation or ends its turn there, the creature makes a Constitution saving throw. On a failed save, the creature takes 3d6 Thunder damage and has the Deafened condition until the start of your next turn. On a successful save, the creature takes half as much damage only. A creature makes this save only once per turn. When you cast this spell, you can designate creatures to be unaffected by it.\n   In addition, you have Resistance to Thunder damage, and ranged attack rolls against you are made with Disadvantage.\n   At Higher Levels: The damage increases by 1d6 for each spell slot above 3."
+    ]
+  },
+  {
+    "_key": "conjure constructs",
+    "name": "Conjure Constructs*",
+    "classes": [
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        143
+      ]
+    ],
+    "level": 3,
+    "school": "Conj",
+    "time": "1 a",
+    "range": "60 ft",
+    "components": "V,S,M",
+    "compMaterial": "a brass cog",
+    "duration": "Conc, 10 min",
+    "save": "Dex",
+    "description": "1 targ. in 5 ft of spirit: 3d6+1d6/SL Force dmg, s: 1/2, or 1d6+Mod+1d6/SL THP; a to redo; 30 ft move.",
+    "descriptionFull": [
+      "You conjure a group of intangible, orderly spirits that appear as a Medium group of modrons or other Constructs in an unoccupied space you can see within range. The spirits last for the duration.\n   When you cast this spell and as a Magic action on subsequent turns, you can command the spirits to target one creature or object you can see within 5 feet of the spirits and create one of the following effects:\n   ***Clockwork Force***. The target makes a Dexterity saving throw, taking 3d6 Force damage on a failed save or half as much damage on a successful one.\n   ***Orderly Ward***. The target gains Temporary Hit Points equal to 1d6 plus your spellcasting ability modifier.\n   When you move on your turn, you can also move the spirits up to 30 feet to an unoccupied space you can see.\n   At Higher Levels: The damage and Temporary Hit Points both increase by 1d6 for each spell slot level above 3."
+    ]
+  },
+  {
+    "_key": "death armor",
+    "name": "Death Armor",
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        143
+      ]
+    ],
+    "level": 2,
+    "school": "Necro",
+    "time": "1 a",
+    "range": "Touch",
+    "components": "V,S,M†",
+    "compMaterial": "an onyx worth 50+ GP, which the spell consumes",
+    "duration": "1 h",
+    "description": "1 crea: Adv on Death saves. 1/turn, if hit by crea in 5-ft with melee atk, deal 2d4 Necrotic dmg to atkr",
+    "descriptionFull": [
+      "For the duration, an inky aura surrounds one creature you touch. The target has Advantage on Death Saving Throws, and once per turn, when a creature within 5 feet of the target hits it with a melee attack roll, the attacker takes 2d4 Necrotic damage."
+    ]
+  },
+  {
+    "_key": "deryan's helpful homunculi",
+    "name": "Deryan's Helpful Homunculi",
+    "nameShort": "D's Helpful Homunculi",
+    "classes": [
+      "cleric",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        143
+      ]
+    ],
+    "ritual": true,
+    "level": 2,
+    "school": "Conj",
+    "time": "1 a",
+    "range": "Self",
+    "components": "V,S,M†",
+    "compMaterial": "powdered gemstones worth 100+ GP, which the spell consumes, and one set of Artisan's Tools with which you have proficiency",
+    "duration": "8 hr",
+    "description": "Summon Construct spirits w/ Prof in Arcana + Tools used to cast. Count as assistant, 1/2 crafting time",
+    "descriptionFull": [
+      "You summon a group of helpful spirits, which last for the duration. The spirits appear as homunculi or as another Construct of choice but are intangible and invulnerable, and they are considered to have proficiency in the Arcana skill and with the set of Artisan's Tools used in the spell's casting.\n   If you are crafting an item, the spirits function as a single assistant for your crafting, halving the crafting time."
+    ]
+  },
+  {
+    "_key": "dirge",
+    "name": "Dirge",
+    "classes": [
+      "bard",
+      "cleric"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        144
+      ]
+    ],
+    "level": 6,
+    "school": "Ench",
+    "time": "1 a",
+    "range": "S:60-ft rad",
+    "components": "V",
+    "duration": "Conc, 1 min",
+    "save": "Con",
+    "description": "Any crea can't regain HP. Cover/enter/end 3d10 Necrotic dmg + Prone (1/t/c). S: 1/2 dmg + 1/2 Speed",
+    "descriptionFull": [
+      "Deathly power fills a 60-foot Emanation originating from you for the duration.\n   When you cast this spell, you can designate creatures to be unaffected by it. Any other creature can't regain Hit Points while in the Emanation. Whenever the Emanation enters a creature's space and whenever a creature enters the Emanation or ends its turn there, the creature makes a Constitution saving throw. On a failed save, the creature takes 3d10 Necrotic damage and has the Prone condition. On a successful save, the creature takes half as much damage and its Speed is halved. A creature makes this save only once per turn.\n   Casting as a Circle Spell: Casting this as a Circle spell requires a minimum of two secondary casters. If the spell is cast as a Circle spell, its duration becomes Concentration up to 10 minutes.\n   A creature that fails its save against the spell's effect also gains 1 Exhaustion level. While the creature has Exhaustion levels, finishing a Long Rest neither restores lost Hit Points nor reduces the creature's Exhaustion level.\n   When the spell is cast, each secondary caster must expend a level 4+ spell slot; otherwise, the spell fails."
+    ]
+  },
+  {
+    "_key": "doomtide",
+    "name": "Doomtide",
+    "classes": [
+      "bard",
+      "cleric",
+      "warlock"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        144
+      ]
+    ],
+    "level": 4,
+    "school": "Conj",
+    "time": "1 a",
+    "range": "120 ft",
+    "components": "V,S,M",
+    "compMaterial": "soot and a dried eel",
+    "duration": "Conc, 1 min",
+    "save": "Wis",
+    "description": "20ft-rad Dark. fog; 10ft away/t; now/cover/enter/end 5d6 Psych. dmg, -1d6 saves next EoT (1/t/c); s: 1/2",
+    "descriptionFull": [
+      "You create a 20-foot-radius Sphere of inky fog within range. The fog is magical, Darkness and lasts for the duration or until a strong wind (such as the one created by the Gust of Wind spell) disperses it, ending the spell.\n   Each creature in the Sphere when it appears makes a Wisdom saving throw. On a failed save, a creature takes 5d6 Psychic damage and subtracts 1d6 from its saving throws until the end of its next turn. On a successful save, a creature takes half as much damage only. A creature also makes this save when the Sphere moves into its space, when it enters the Sphere, or when it ends its turn inside the Sphere. A creature makes tis save only once per turn.\n   The Sphere moves 10 feet away from you at the start of each of your turns.\n   Casting as a Circle Spell: Casting this as a Circle spell requires a minimum of five secondary casters. In addition to the spell's usual components, you must provide a special component (a string of three black pearls from Pandemonium), which the spell consumes. The spell's range increases to 1 mile, and its duration increases to until dispelled (no Concentration required). The spell ends early if any caster who participated in this casting contributes to another casting of Doomtide as a Circle Spell.\n   When the spell is cast, each secondary caster must expend a level 3+ spell slot; otherwise, the spell fails."
+    ]
+  },
+  {
+    "_key": "elminster's effulgent spheres",
+    "name": "Elminster's Effulgent Spheres",
+    "nameShort": "E's Effulgent Spheres",
+    "classes": [
+      "druid",
+      "sorcerer",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        144
+      ]
+    ],
+    "level": 6,
+    "school": "Evoc",
+    "time": "1 a",
+    "range": "Self",
+    "components": "V,S,Mƒ",
+    "compMaterial": "an opal worth 1000+ GP",
+    "duration": "1 h",
+    "description": "6+1/SL orbs. Use 1: ba R. spell atk 120 ft 3d6 dmg (A/C/F/L/T) or Rea on elem. dmg Resist to next turn",
+    "descriptionFull": [
+      "Six chromatic spheres orbit you for the duration.\n   While the spheres are present, you can expend spheres to create the following effects:\n   ***Absorb Energy***. When you take Acid, Cold, Fire, Lightning, or Thunder damage, you can take a Reaction to expend one sphere and give yourself Resistance to the triggering damage type until the start of your next turn.\n   ***Energy Blast***. As a Bonus Action, you send one sphere hurtling toward a target within 120 feet of yourself. Make a ranged spell attack. On a hit, the target takes 3d6 Acid, Cold, Fire, Lightning, or Thunder damage (your choice). Regardless of whether you hit, the sphere is expended.\n   The spell ends early if you have no more spheres remaining.\n   At Higher Levels: The number of spheres increases by 1 for every spell slot level above 6."
+    ]
+  },
+  {
+    "_key": "elminster's elusion",
+    "name": "Elminster's Elusion",
+    "classes": [
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        144
+      ]
+    ],
+    "level": 2,
+    "school": "Abjur",
+    "time": "1 bns",
+    "range": "Self",
+    "components": "V,S",
+    "duration": "Conc, 10 min",
+    "description": "Adv on saves vs spells and magical effects. If I'd take half dmg on successful save, I instead take none.",
+    "descriptionFull": [
+      "Arcane wards protect you against magic for the duration. You have Advantage on saving throws against spells and magical effects. Additionally, if you succeed on a saving throw against a spell or magical effect and would normally take half as much damage, you instead take no damage."
+    ]
+  },
+  {
+    "_key": "holy star of mystra",
+    "name": "Holy Star of Mystra",
+    "classes": [
+      "cleric",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        145
+      ]
+    ],
+    "level": 8,
+    "school": "Evoc",
+    "time": "1 bns",
+    "range": "Self",
+    "components": "V,S",
+    "duration": "Conc, 1 min",
+    "description": "5/5ft Br/Dim; 3/4 Cvr; R. atk 120 ft: 4d10+mod Force/Rad. dmg; If save vs 1 targ. spell ≤7th, Rea deflect",
+    "descriptionFull": [
+      "You create a glowing mote of energy that hovers above you for the duration. The mote sheds Bright Light in a 5-foot radius and Dim Light for an additional 5 feet.\n   When you cast this spell as a Bonus Action on later turns, you can unleash a shining bolt from the mote, targeting one creature within 120 feet of yourself. Make a ranged spell attack. On a hit, the target takes Force or Radiant damage (your choice) equal to 4d10 plus your spellcasting ability modifier.\n   In addition, while the mote is present, you have Three-Quarters Cover, and if you succeed on a saving throw against a spell of level 7 or lower that targeted only you and didn't create an area of effect, you can take a Reaction to deflect that spell back at the spell's caster; the caster makes a saving throw against that spell using that caster's own spell save DC."
+    ]
+  },
+  {
+    "_key": "laeral's silver lance",
+    "name": "Laeral's Silver Lance",
+    "classes": [
+      "cleric",
+      "sorcerer",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        145
+      ]
+    ],
+    "level": 3,
+    "school": "Evoc",
+    "time": "1 a",
+    "range": "Self",
+    "components": "V,S,Mƒ",
+    "compMaterial": "a silver pin worth 250+ GP",
+    "duration": "Instantaneous",
+    "save": "Str",
+    "description": "120-ft long, 5-ft wide Line, any crea 3d10+1d10/SL Force dmg and Prone, save half dmg only",
+    "descriptionFull": [
+      "Silver energy bursts out from you in a 120-foot-long, 5-foot-wide Line. Each creature of your choice in the line makes a Strength saving throw. On a failed save, a creature takes 3d10 Force damage and has the Prone condition. On a successful save, a creature takes half as much damage only.\n   At Higher Levels: The damage increases by d10 for every spell slot above 3."
+    ]
+  },
+  {
+    "_key": "simbul's Synostodweomer",
+    "name": "Simbul's Synostodweomer",
+    "nameShort": "Simbul Synostodweomer",
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        145
+      ]
+    ],
+    "level": 7,
+    "school": "Trans",
+    "time": "1 a",
+    "range": "Touch",
+    "components": "V,S",
+    "duration": "1 h",
+    "description": "1 crea. When they cast with a spell slot, can spend slot level unused HD to heal roll + my spell mod HP",
+    "descriptionFull": [
+      "You imbue one creature you touch with magical healing energy for the duration. Whenever the target casts a spell using a spell slot, the target can immediately roll a number of expended Hit Point Dice equal to the spell slot's level and regain Hit Points equal to the roll's total plus your spellcasting ability modifier; those dice are then expended."
+    ]
+  },
+  {
+    "_key": "songal's elemental suffusion",
+    "name": "Songal's Elemental Suffusion",
+    "nameShort": "Songal's Elem. Suffusion",
+    "classes": [
+      "druid",
+      "sorcerer",
+      "warlock"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        146
+      ]
+    ],
+    "level": 5,
+    "school": "Trans",
+    "time": "1 a",
+    "range": "Self",
+    "components": "V,S,Mƒ",
+    "compMaterial": "a pearl worth 100+ GP",
+    "duration": "Conc, 1 min",
+    "description": "30ft Fly+hover; Resist 1 elem. dmg type; Cast/each turn any crea in 15-ft rad 2d6 dmg (pick A/C/F/L/T)",
+    "descriptionFull": [
+      "You imbue yourself with the elemental power of genies. You gain the following benefits until the spell ends:\n   ***Elemental Immunity***. When you cast this spell, choose one of the following damage types: Acid, Cold, Fire, Lightning, or Thunder. You have Resistance to the chosen damage type.\n   ***Elemental Pulse***. When you cast this spell and at the start of each of your subsequent turns, you release a burst of elemental energy in a 15-foot Emanation originating from yourself. Each creature of your choice in that area makes a Dexterity saving throw. On a failed save, a creature takes 2d6 Acid, Cold, Fire, Lightning, or Thunder damage (your choice) and has the Prone condition. On a successful save, a creature takes half as much damage only.\n   ***Flight***. You gain a Fly Speed of 30 feet and can hover.\n   Casting as a Circle Spell: If the spell is cast as a Circle spell, its casting time increases to 1 minute, and its duration increases to Concentration, up to 10 minutes. For each secondary caster who participates in the casting, you can choose one additional creature, to a maximum of nine additional creatures. The chosen creatures also gain the benefits of the spell for its duration.\n   When the spell is cast, each secondary caster must expenda level 2+ spell slot; otherwise, the spell fails."
+    ]
+  },
+  {
+    "_key": "spellfire flare",
+    "name": "Spellfire Flare",
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        146
+      ]
+    ],
+    "level": 1,
+    "school": "Evoc",
+    "time": "1 a",
+    "range": "60 ft",
+    "components": "V,S",
+    "duration": "Instantaneous",
+    "description": "Ranged spell atk, 2d10 Radiant dmg; 1+1/SL bolt same or different target; ignore 1/2 and 3/4 Cover",
+    "descriptionFull": [
+      "You unleash a blast of brilliant fire. Make a ranged spell attack against a target within range; a target gains no benefit from Half Cover or Three-Quarters Cover from this attack roll. On a hit, the target takes 2d10 Radiant damage.\n   At Higher Levels: You create an additional blast for each spell slot level above 1. You can direct the blasts at the same target or at different ones. Make a separate attack roll for each blast."
+    ]
+  },
+  {
+    "_key": "spellfire storm",
+    "name": "Spellfire Storm",
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        146
+      ]
+    ],
+    "level": 4,
+    "school": "Evoc",
+    "time": "1 a",
+    "range": "60 ft",
+    "components": "V,S",
+    "duration": "Conc, 1 min",
+    "save": "Con",
+    "description": "40×20ft Cyl. Bright; now/enter/end 4d10+1d10/SL Rad. dmg (1/t/c), s: 1/2; If cast, save or fail (keep slot)",
+    "descriptionFull": [
+      "You conjure a pillar of spellfire in a 20-foot-radius, 20-foot-high Cylinder centered on a point within range. The area of the Cylinder is Bright Light, and each creature in it, when it appears, makes a Constitution saving throw, taking 4d10 Radiant damage on a failed save or half as much damage on a successful one. A creature also makes this save when it enters the spell's area for the first time on a turn or ends its turn there. A creature makes this save only once per turn.\n   In addition, whenever a creature in the Cylinder casts a spell, that creature makes a Constitution saving throw. On a failed save, the spell dissipates with no effect, and the action, Bonus Action, or Reaction used to cast it is wasted. If that spell was cast with a spell slot, the slot isn't expended.\n   When you cast this spell, you can designate creatures to be unaffected by it.\n   Casting as a Circle Spell: In addition to the spell's usual components, you must provide a special component (a blue star sapphire worth 25000+ GP), which the spell consumes. The spell's range increases to 1 mile, and it no longer requires Concentration. When the spell is cast, each secondary caster must expend a level 3+ spell slot; otherwise, the spell fails.\n   At Higher Levels: The damage increases by 1d10 for every spell slot level above 4.\n   The number of secondary casters determines the spell's area of effect and duration, as shown in the table below. The spell ends early if any caster who participated in this casting contributes to another casting of Spellfire Storm as a Circle spell.\n   1-3 Secondary Casters, 40-foot-radius, 40-foot-high Cylinder, 1 Hour duration.\n   4-6 Secondary Casters, 60-foot-radius, 60-foot-high Cylinder, 8 Hour duration.\n   7+ Secondary Casters, 100-foot-radius, 100-foot-high Cylinder, 24 Hour duration."
+    ]
+  },
+  {
+    "_key": "sylune's viper",
+    "name": "Sylune's Viper",
+    "classes": [
+      "druid",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        147
+      ]
+    ],
+    "level": 3,
+    "school": "Conj",
+    "time": "1 bns",
+    "range": "Self",
+    "components": "V,S,M",
+    "compMaterial": "a snake fang",
+    "duration": "1 h",
+    "description": "15+5/SL THP. If THP: Climb Spd; R. spell atk 50 ft, 1d6+1d6/SL Force dmg + Incapac. 1 rnd if Poisonable",
+    "descriptionFull": [
+      "A shimmering, spectral snake encircles your body for the duration. You gain 15 Temporary Hit Points; the spell ends early if you have no Temporary Hit Points left.\n   While the spell is active, you gain the following benefits:\n   ***Climbing***. You gain a Climb Speed equal to your Speed.\n   ***Venomous Bite***. As a Magic Action, you can make a ranged spell attack using the snake against one creature within 50 feet. On a hit, the target takes 1d6 Force damage and has the Poisoned condition until the start of your next turn. While Poisoned, the target has the Incapacitated condition.\n   At Higher Levels: For each spell slot level above 3, the number of Temporary Hit Points you gain from this spell increases by 5, and the damage of the Venomous Bite increases by 1d6."
+    ]
+  },
+  {
+    "_key": "wardaway",
+    "name": "Wardaway",
+    "classes": [
+      "bard",
+      "cleric",
+      "paladin",
+      "wizard"
+    ],
+    "source": [
+      [
+        "FRHoF",
+        147
+      ]
+    ],
+    "level": 1,
+    "school": "Abjur",
+    "time": "1 a",
+    "range": "60 ft",
+    "components": "V,S,M",
+    "compMaterial": "a miniature clay hand",
+    "duration": "Instantaneous",
+    "save": "Con",
+    "description": "1 crea 2d4+2d4/SL Force dmg, 1/2 Speed for 1 rnd, can only take Action or Bns on next turn; s: 1/2 only",
+    "descriptionFull": [
+      "You hurl a disorienting magical force toward one creature within range. The target makes a Constitution saving throw; Constructs and Undead automatically succeed on this save.\n   On a failed save, the target takes 2d4 Force damage, its Speed is halved until the start of your next turn, and on its next turn, it can take only an action or a Bonus Action (but not both). On a successful save, the target takes half as much damage only.\n   At Higher Levels: The damage increases by 2d4 for every spell slot level above 1."
+    ]
+  },
+  {
+    "_key": "telekinetic fling",
+    "name": "Telekinetic Fling",
+    "classes": [
+      "psion"
+    ],
+    "source": [
+      "UA25P",
+      5
+    ],
+    "level": 0,
+    "school": "Evoc",
+    "time": "1 a",
+    "range": "60 ft",
+    "components": "S",
+    "duration": "Instantaneous",
+    "description": "1 object 1-5 lbs within 10 ft wreathed in psionic energy; ranged spell atk 1d10 Force dmg; object falls undamaged",
+    "descriptionCantripDie": "Ranged spell attack; `CD`d10 Force dmg; object falls undamaged after",
+    "descriptionFull": "Choose one nonmagical object weighing 1 to 5 pounds within 10 feet of you that isn't being worn or carried to wreathe in psionic energy and fire at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 Force damage. On a hit or miss, the object falls to the ground undamaged.\n\nCantrip Upgrade: The damage increases by 1d10 when you reach levels 5 (2d10), 11 (3d10), and 17 (4d10)."
+  },
+  {
+    "_key": "life siphon",
+    "name": "Life Siphon",
+    "classes": [
+      "psion"
+    ],
+    "source": [
+      "UA25P",
+      12
+    ],
+    "level": 1,
+    "school": "Evoc",
+    "time": "1 a",
+    "range": "120 ft",
+    "components": "S",
+    "duration": "Instantaneous",
+    "description": "Ranged spell atk 1d10 Psychic dmg; can expend 1 HD to add 1d10 dmg; +1d10 and +1 HD per SL",
+    "descriptionFull": "You fire an orb of psionic energy fueled by your life force at a creature you can see within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 Psychic damage and you can expend one Hit Point Die to increase the damage by 1d10.\n\nUsing a Higher-Level Spell Slot: The damage increases by 1d10 and the number of Hit Dice you can expend increases by one for each spell slot level above 1."
+  },
+  {
+    "_key": "ectoplasmic trail",
+    "name": "Ectoplasmic Trail",
+    "classes": [
+      "psion",
+      "warlock"
+    ],
+    "source": [
+      "UA25P",
+      11
+    ],
+    "level": 2,
+    "school": "Necro",
+    "time": "1 bns",
+    "range": "Self",
+    "components": "V,S",
+    "duration": "Instantaneous",
+    "description": "Move through occupied spaces; creatures entered take 2d8 Necrotic dmg at start of turn, speed -10; +10ft spd/SL",
+    "descriptionFull": "You cloak yourself in spirits that leave ectoplasm in your wake until the end of your turn. While cloaked, you can move through occupied spaces as if they were Difficult Terrain, and moving doesn't provoke Opportunity Attacks. If you end your turn in such a space, you are returned to the last unoccupied space you were in.\n   While cloaked, whenever you enter the space of a creature, the creature becomes covered in ectoplasm until the end of your next turn. A creature covered in ectoplasm has its Speed reduced by 10 feet and takes 2d8 Necrotic damage at the start of its turn. A creature can be covered in ectoplasm only once during a turn.\n\nUsing a Higher-Level Spell Slot: While cloaked, your Speed increases by 10 feet for each spell slot level above 2."
+  },
+  {
+    "_key": "ego whip",
+    "name": "Ego Whip",
+    "classes": [
+      "psion"
+    ],
+    "source": [
+      "UA25P",
+      11
+    ],
+    "level": 2,
+    "school": "Ench",
+    "time": "1 rea",
+    "timeFull": "1 reaction, which you take when a creature you can see within 30 feet of yourself makes a Charisma-based ability check or saving throw",
+    "range": "120 ft",
+    "components": "V",
+    "duration": "Instantaneous",
+    "save": "Cha",
+    "description": "Target subtracts 1d8 from Cha check/save; no save",
+    "descriptionFull": "The creature makes Charisma saving throw. On a failed save, the target must subtract 1d8 from the ability check or saving throw."
+  },
+  {
+    "_key": "bleeding darkness",
+    "name": "Bleeding Darkness",
+    "classes": [
+      "psion",
+      "warlock",
+      "wizard"
+    ],
+    "source": [
+      "UA25P",
+      11
+    ],
+    "level": 3,
+    "school": "Evoc",
+    "time": "1 a",
+    "range": "60 ft",
+    "components": "V,S,Mƒ",
+    "compMaterial": "a vial of rare ink worth 50+ GP",
+    "duration": "Conc, 1 min",
+    "save": "Con",
+    "description": "10-ft sphere above; pours darkness in 10-ft rad 40-ft cyl; diff ter; 3d8 Cold dmg, blinded; move sphere 20ft; +1d8/SL",
+    "descriptionFull": "You create an inky void in a 10-foot-radius Sphere at a point you can see above yourself within range. When you cast the spell, magical Darkness pours from the sphere, filling a 10-foot-radius, 40-foot-tall Cylinder originating from the Sphere until the start of your next turn. The Cylinder is Difficult Terrain, and no light—magical or otherwise—can illuminate the area. When the Darkness appears, each creature in the area must succeed on a Constitution saving throw or take 3d8 Cold damage and have the Blinded condition until the end of its next turn. A creature also makes this save when it enters the spell's area for the first time on a turn or ends its turn there. A creature makes this save only once per turn.\n   Until the spell ends, you can take a Magic action to move the Sphere up to 20 feet horizontally and cause the Sphere to pour magical Darkness until the start of your next turn.\n\nUsing a Higher-Level Spell Slot: The damage increases by 1d8 for each spell slot level above 3."
+  },
+  {
+    "_key": "summon astral entity",
+    "name": "Summon Astral Entity",
+    "classes": [
+      "psion",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "source": [
+      "UA25P",
+      14
+    ],
+    "level": 3,
+    "school": "Conj",
+    "time": "1 a",
+    "range": "90 ft",
+    "components": "V,S,Mƒ",
+    "compMaterial": "a gem or crystal worth 300+ GP",
+    "duration": "Conc, 1 h",
+    "description": "Summon psionic spirit; Crystal/Ectoplasmic/Ghostly Entity; obeys commands; see book (300gp cons)",
+    "descriptionFull": "You call forth the spirit of a psionic entity. It manifests in an unoccupied space that you can see within range and uses the Psionic Spirit stat block. When you cast the spell, choose Crystal Entity, Ectoplasmic Entity, or Ghostly Entity. The creature resembles an astral entity of that kind, which determines certain details in its stat block. The creature disappears when it drops to 0 Hit Points or when the spell ends.\n   The creature is an ally to you and your allies. In combat, the creature shares your Initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger.\n\nUsing a Higher-Level Spell Slot: Use the spell slot's level for the spell's level in the stat block."
+  },
+  {
+    "_key": "telekinetic crush",
+    "name": "Telekinetic Crush",
+    "classes": [
+      "psion",
+      "sorcerer",
+      "warlock"
+    ],
+    "source": [
+      "UA25P",
+      15
+    ],
+    "level": 3,
+    "school": "Trans",
+    "time": "1 a",
+    "range": "120 ft",
+    "components": "V",
+    "duration": "Instantaneous",
+    "save": "Str",
+    "description": "30-ft cube; all crea 5d6 Force dmg and prone; save halves, no prone; +1d6/SL",
+    "descriptionFull": "You create a field of crushing telekinetic force in a 30-foot Cube within range. Each creature in the area makes a Strength saving throw. On a failed save, the target takes 5d6 Force damage and has the Prone condition. On a successful save, the target takes half as much damage only.\n\nUsing a Higher-Level Spell Slot: The damage increases by 1d6 for each spell slot level above 3."
+  },
+  {
+    "_key": "life inversion field",
+    "name": "Life Inversion Field",
+    "classes": [
+      "cleric",
+      "psion",
+      "sorcerer"
+    ],
+    "source": [
+      "UA25P",
+      12
+    ],
+    "level": 4,
+    "school": "Abjur",
+    "time": "1 a",
+    "range": "Self",
+    "components": "V,S",
+    "duration": "Conc, 1 min",
+    "save": "Con",
+    "description": "30-ft emanation; I regain 4d8 HP; when I regain HP, 1 crea in aura takes Necrotic dmg = half HP regained; +1d8/SL",
+    "descriptionFull": "An aura radiates from you in a 30-foot Emanation for the duration. When you create the aura, you regain 4d8 Hit Points. Whenever you regain Hit Points, you can choose a creature you can see in the aura and force it to make a Constitution saving throw. On a failed save, the creature takes Necrotic damage equal to half the amount of Hit Points you regained (round up). A creature makes this save only once per turn.\n\nUsing a Higher-Level Spell Slot: The healing increase by 1d8 for each spell slot level above 4."
+  },
+  {
+    "_key": "psionic blast",
+    "name": "Psionic Blast",
+    "classes": [
+      "psion",
+      "wizard"
+    ],
+    "source": [
+      "UA25P",
+      13
+    ],
+    "level": 6,
+    "school": "Evoc",
+    "time": "1 a",
+    "range": "S:60-ft cone",
+    "components": "V,S,M",
+    "duration": "Instantaneous",
+    "save": "Int",
+    "description": "60-ft cone all crea 6d8 Psychic dmg, stunned until start my next turn; save half, not stunned; +1d8/SL",
+    "descriptionFull": "You unleash a concussive burst of psionic energy. Each creature in a 60-foot Cone originating from you makes an Intelligence saving throw. On a failed save, the creature takes 6d8 Psychic damage and has the Stunned condition until the start of your next turn. On a successful save, the creature takes half as much damage only.\n\nUsing a Higher-Level Spell Slot: The damage increases by 1d8 for each spell slot level above 6."
+  },
+  {
+    "_key": "thought form",
+    "name": "Thought Form",
+    "classes": [
+      "psion"
+    ],
+    "source": [
+      "UA25P",
+      15
+    ],
+    "level": 6,
+    "school": "Trans",
+    "time": "1 bns",
+    "range": "Self",
+    "components": "V,Mƒ",
+    "compMaterial": "brain matter in a vessel worth 500+ GP",
+    "duration": "Conc, 1 min",
+    "description": "Transform into psionic spirit; Poison/Psychic immune, fly 60ft hover, pass through creatures; Psionic Recharge",
+    "descriptionFull": "You briefly transform into a psionic spirit. You gain the following benefits until the spell ends.\n   Ghostly Form: You have Immunity to Poison and Psychic damage, and you have Immunity to the Exhaustion condition.\n   Incorporeal Movement: You have a Fly Speed of 60 feet and can hover. You can move through occupied spaces as if they were Difficult Terrain. If you end your turn in such a space, you take 1d10 Force damage. If the spell ends in such a space, you are returned to the last unoccupied space you were in.\n   Psionic Recharge: As a Magic action, you can touch a creature (which can be yourself) and roll 1d6. The creature regains one expended spell slot, the level of which equals half the number rolled (round up) or lower. Once a creature regains a spell slot from this spell, that creature can't do so again until it finishes a Long Rest."
+  },
+  {
+    "_key": "homunculus servant xua24a",
+    "name": "Homunculus Servant (XUA24A)",
+    "source": [
+      [
+        "XUA24A",
+        12
+      ]
+    ],
+    "classes": [
+      "artificer"
+    ],
+    "level": 2,
+    "school": "Conj",
+    "time": "1 h",
+    "range": "10 ft",
+    "rangeMetric": "3 m",
+    "components": "V,S,M†",
+    "compMaterial": "a gem or crystal worth 100+ GP, which the spell consumes",
+    "duration": "Instantaneous",
+    "description": "Gain a Homunculus Servant; can attack; it can deliver touch spells; can be upcast; see B (100gp cons.)",
+    "descriptionFull": "You summon a special homunculus in an unoccupied space within range. This creature uses the Homunculus Servant stat block. If you already have a homunculus from this spell, the homunculus is replaced by the new one.\n   You determine the homunculus's appearance, such as a mechanical-looking bird; winged vials; or miniature, animate cauldrons.\n   Combat. The homunculus is an ally to you and your allies. In combat, it shares your Initiative count, but it takes its turn immediately after yours. It obeys your commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger.\n   At Higher Levels. Use the spell slot's level for the spell’s level in the stat block.",
+    "ritual": true
+  },
+  {
+    "_key": "homunculus servant xua25eu",
+    "name": "Homunculus Servant (XUA25EU)",
+    "source": [
+      [
+        "XUA25EU",
+        12
+      ]
+    ],
+    "classes": [
+      "artificer"
+    ],
+    "level": 2,
+    "school": "Conj",
+    "time": "1 h",
+    "range": "10 ft",
+    "rangeMetric": "3 m",
+    "components": "V,S,M†",
+    "compMaterial": "a gem or crystal worth 100+ GP, which the spell consumes",
+    "duration": "Instantaneous",
+    "description": "Gain a Homunculus Servant; can attack; it can deliver touch spells; can be upcast; see B (100gp cons.)",
+    "descriptionFull": "You summon a special homunculus in an unoccupied space within range. This creature uses the Homunculus Servant stat block. If you already have a homunculus from this spell, the homunculus is replaced by the new one.\n   You determine the homunculus's appearance, such as a mechanical-looking bird; winged vials; or miniature, animate cauldrons.\n   Combat. The homunculus is an ally to you and your allies. In combat, it shares your Initiative count, but it takes its turn immediately after yours. It obeys your commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger.\n   At Higher Levels. Use the spell slot's level for the spell’s level in the stat block.",
+    "ritual": true
+  },
+  {
+    "_key": "homunculus servant",
+    "name": "Homunculus Servant",
+    "source": [
+      [
+        "E:FA",
+        21
+      ]
+    ],
+    "classes": [
+      "artificer"
+    ],
+    "level": 2,
+    "school": "Conj",
+    "time": "1 h",
+    "range": "10 ft",
+    "rangeMetric": "3 m",
+    "components": "V,S,M†",
+    "compMaterial": "a gem or crystal worth 100+ GP",
+    "duration": "Instantaneous",
+    "description": "Gain a Homunculus Servant; can attack; it can deliver touch spells; can be upcast; see B.",
+    "descriptionFull": "You summon a special homunculus in an unoccupied space within range. This creature uses the Homunculus Servant stat block. If you already have a homunculus from this spell, the homunculus is replaced by the new one.\n   You determine the homunculus's appearance, such as a mechanical-looking bird; winged vials; or miniature, animate cauldrons.\n   Combat. The homunculus is an ally to you and your allies. In combat, it shares your Initiative count, but it takes its turn immediately after yours. It obeys your commands (no action required by you). If you don't issue any, it takes the Dodge action and uses its movement to avoid danger.\n   At Higher Levels. Use the spell slot's level for the spell’s level in the stat block.",
+    "ritual": true
   }
 ]

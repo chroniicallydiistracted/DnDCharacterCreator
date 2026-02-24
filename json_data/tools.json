@@ -542,5 +542,47 @@
         221
       ]
     ]
+  },
+  {
+    "_key": "bandore",
+    "infoname": "Bandore [65 gp]",
+    "name": "Bandore",
+    "amount": "",
+    "weight": 3,
+    "type": "musical instrument",
+    "source": [
+      [
+        "FRHoF",
+        135
+      ]
+    ]
+  },
+  {
+    "_key": "cittern",
+    "infoname": "Cittern [65 gp]",
+    "name": "Cittern",
+    "amount": "",
+    "weight": 2,
+    "type": "musical instrument",
+    "source": [
+      [
+        "FRHoF",
+        135
+      ]
+    ]
+  },
+  {
+    "_key": "yarting",
+    "infoname": "Yarting [40 gp]",
+    "name": "Yarting",
+    "amount": "",
+    "weight": 2,
+    "type": "musical instrument",
+    "source": [
+      [
+        "FRHoF",
+        135
+      ]
+    ]
   }
 ]

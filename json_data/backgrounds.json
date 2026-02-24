@@ -3710,40 +3710,51 @@
     "_key": "archaeologist",
     "regExpSearch": {
       "_type": "RegExp",
-      "source": "archa?eologist",
+      "source": "^(?=.*archaeologist).*$",
       "flags": "i"
     },
     "name": "Archaeologist",
     "source": [
       [
-        "ToA",
-        192
-      ],
-      [
-        "ALbackground",
+        "E:FA",
         0
       ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Intelligence, and Wisdom"
     ],
     "skills": [
       "History",
       "Survival"
     ],
-    "gold": 25,
+    "toolProfs": [
+      [
+        "Cartographer's Tools"
+      ]
+    ],
+    "gold": 17,
     "equipleft": [
       [
-        "Map case with a map of a ruin/dungeon",
+        "Map",
+        "",
+        ""
+      ],
+      [
+        "Map or scroll case",
         "",
         1
       ],
       [
+        "Tent",
+        "",
+        20
+      ]
+    ],
+    "equipright": [
+      [
         "Bullseye lantern",
         "",
         2
-      ],
-      [
-        "Miner's pick",
-        "",
-        10
       ],
       [
         "Shovel",
@@ -3751,101 +3762,12 @@
         5
       ],
       [
-        "Two-person tent",
-        "",
-        20
-      ]
-    ],
-    "equipright": [
-      [
         "Traveler's clothes",
         "",
         4
-      ],
-      [
-        "Trinket recovered from a dig site",
-        "",
-        ""
-      ],
-      [
-        "Belt pouch (with coins)",
-        "",
-        1
       ]
     ],
-    "feature": "Historical Knowledge",
-    "trait": [
-      "I love a good puzzle or mystery.",
-      "I'm a pack rat who never throws anything away.",
-      "Fame is more important to me than money.",
-      "I have no qualms about stealing from the dead.",
-      "I'm happier in a dusty old tomb than I am in the centers of civilization.",
-      "Traps don't make me nervous. Idiots who trigger traps make me nervous.",
-      "I might fail, but I will never give up.",
-      "You might think I'm a scholar, but I love a good brawl. These fists were made for punching."
-    ],
-    "ideal": [
-      [
-        "Preservation",
-        "Preservation: That artifact belongs in a museum. (Good)"
-      ],
-      [
-        "Greed",
-        "Greed: I won't risk my life for nothing. I expect some kind of payment. (Any)"
-      ],
-      [
-        "Death Wish",
-        "Death Wish: Nothing is more exhilarating than a narrow escape from the jaws of death. (Chaotic)"
-      ],
-      [
-        "Dignity",
-        "Dignity: The dead and their belongings deserve to be treated with respect. (Lawful)"
-      ],
-      [
-        "Immortality",
-        "Immortality: All my exploring is part of a plan to find the secret of everlasting life. (Any)"
-      ],
-      [
-        "Danger",
-        "Danger: With every great discovery comes grave danger. The two walk hand in hand. (Any)"
-      ]
-    ],
-    "bond": [
-      "Ever since I was a child, I've heard stories about a lost city. I aim to find it, learn its secrets, and earn my place in the history books.",
-      "I want to find my mentor, who disappeared on an expedition some time ago.",
-      "I have a friendly rival. Only one of us can be the best, and I aim to prove it's me.",
-      "I won't sell an art object or other treasure that has historical significance or is one of a kind.",
-      "I'm secretly in love with the wealthy patron who sponsors my archaeological exploits.",
-      "I hope to bring prestige to a library, a museum, or a university."
-    ],
-    "flaw": [
-      "I have a secret fear of some common wild animal ― and in my work, I see them everywhere.",
-      "I can't leave a room without searching it for secret doors.",
-      "When I'm not exploring dungeons or ruins, I get jittery and impatient.",
-      "I have no time for friends or family. I spend every waking moment thinking about and preparing for my next expedition.",
-      "When given the choice of going left or right, I always go left.",
-      "I can't sleep except in total darkness."
-    ],
-    "extra": [
-      "Select a Signature Item",
-      "10-foot pole",
-      "Crowbar",
-      "Hat",
-      "Hooded lantern",
-      "Medallion",
-      "Shovel",
-      "Sledgehammer",
-      "Whip"
-    ],
-    "toolProfs": [
-      [
-        "Cartographer or navigator tools",
-        1
-      ]
-    ],
-    "languageProfs": [
-      1
-    ]
+    "feature": "Archaeologist"
   },
   {
     "_key": "azorius functionary",
@@ -6257,28 +6179,47 @@
     "_key": "house agent",
     "regExpSearch": {
       "_type": "RegExp",
-      "source": "^(?=.*agent)(?=.*house)(?=.*(noble|cannith)).*$",
+      "source": "^(?=.*house)(?=.*agent).*$",
       "flags": "i"
     },
-    "name": "Agent of House Cannith",
+    "name": "House Agent",
+    "replaces": [
+      "agent of house cannith",
+      "agent of house deneith",
+      "agent of house ghallanda",
+      "agent of house jorasco",
+      "agent of house lyrandar",
+      "agent of house medani",
+      "agent of house orien",
+      "agent of house phiarlan",
+      "agent of house sivis",
+      "agent of house tharashk",
+      "agent of house thuranni",
+      "agent of house vadalis"
+    ],
     "source": [
       [
-        "E:RLW",
-        53
-      ],
-      [
-        "WGtE",
-        94
+        "E:FA",
+        0
       ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Intelligence, and Charisma"
     ],
     "skills": [
       "Investigation",
       "Persuasion"
     ],
+    "toolProfs": [
+      [
+        "Artisan's Tools",
+        1
+      ]
+    ],
     "gold": 20,
     "equipleft": [
       [
-        "Signet ring of house Cannith",
+        "Artisan's tools (same as proficiency)",
         "",
         ""
       ]
@@ -6288,100 +6229,9 @@
         "Fine clothes",
         "",
         6
-      ],
-      [
-        "ID papers",
-        "",
-        ""
-      ],
-      [
-        "Purse (with coins)",
-        "",
-        1
       ]
     ],
-    "feature": "House Connections",
-    "trait": [
-      "I never let emotion complicate work.",
-      "I'm always looking to improve efficiency.",
-      "I share trivia about my house's business (medicine, ships, warforged).",
-      "I hold myself and anyone I work with to extremely high standards.",
-      "I never forget an insult made against myself or my house.",
-      "I'm very excited and enthusiastic about everything my house does.",
-      "I'm representing my house and take great pride in my personal appearance.",
-      "I'm critical of monarchies and opposed to any restrictions on the houses."
-    ],
-    "ideal": [
-      [
-        "Common Good",
-        "Common Good: My house serves a vital function, and its prosperity will help everyone. (Good)"
-      ],
-      [
-        "Tradition",
-        "Tradition: I uphold traditions of my house and bring honor to my family. (Lawful)"
-      ],
-      [
-        "Innovation",
-        "Innovation: Abandon old traditions and find better ways to do things. (Chaotic)"
-      ],
-      [
-        "Power",
-        "Power: I want to ensure the prosperity of my house and wield its power myself. (Evil)"
-      ],
-      [
-        "Discovery",
-        "Discovery: I want to learn all I can, both for my house and for my own curiosity. (Any)"
-      ],
-      [
-        "Comfort",
-        "Comfort: I want to ensure that me and friends of mine enjoy the best things in life. (Any)"
-      ]
-    ],
-    "bond": [
-      "My house is my family, and I would do anything for my family.",
-      "I love someone from another house, but the relationship is forbidden.",
-      "Someone I love was killed by a rival faction within my house, and I will have revenge.",
-      "I don't care about the house as a whole, but I would do anything for my old mentor.",
-      "I believe my house needs to evolve to survive, and I need to lead that change.",
-      "I'm determined to impress the leaders of my house, and to become a leader myself."
-    ],
-    "flaw": [
-      "I'm overly concerned with following established procedures and protocols.",
-      "I'm obsessed with conspiracy theories and worried about secret societies and hidden demons.",
-      "I believe that my house and bloodline makes me better than everyone else.",
-      "I'm concealing a secret that could get me driven from my house.",
-      "I have strong religious beliefs that aren't widespread in my house.",
-      "I'm working for a hidden faction in my house that gives me secret assignments."
-    ],
-    "extra": [
-      "Select an House Agent Role",
-      "Acquisition",
-      "Investigation",
-      "Research & Development",
-      "Security",
-      "Intimidation",
-      "Exploration",
-      "Negotiation",
-      "Covert Operations"
-    ],
-    "toolProfs": [
-      "Alchemist's supplies",
-      "Tinker's tools"
-    ],
-    "_variants": [
-      "house agent-deneith",
-      "house agent-ghallanda",
-      "house agent-jorasco",
-      "house agent-kundarak",
-      "house agent-lyrandar",
-      "house agent-medani",
-      "house agent-orien",
-      "house agent-phiarlan",
-      "house agent-sivis",
-      "house agent-tharashk",
-      "house agent-thuranni",
-      "house agent-vadalis"
-    ]
+    "feature": "house Agent"
   },
   {
     "_key": "grinner",
@@ -10020,5 +9870,2373 @@
     "trait": [
       "I grew up on the streets surrounded by similarly ill-fated castoffs, a few of them friends and a few of them rivals. I slept where I could and did odd jobs for food. At times, when the hunger became unbearable, I resorted to theft Still, I never lost my pride and never abandoned hope. Fate is not finished with me."
     ]
+  },
+  {
+    "_key": "spellfire initiate",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*spellfire)(?=.*initiate).*$",
+      "flags": "i"
+    },
+    "name": "Spellfire Initiate",
+    "source": [
+      [
+        "FRHoF",
+        36
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Constitution, Intelligence, and Charisma"
+    ],
+    "skills": [
+      "Arcana",
+      "Perception"
+    ],
+    "toolProfs": [
+      [
+        "Gaming Set",
+        1
+      ]
+    ],
+    "gold": 36,
+    "equipleft": [
+      [
+        "Gaming Set (Same as Proficiency)",
+        "",
+        ""
+      ],
+      [
+        "Arcane Focus (Crystal or Wand)",
+        "",
+        1
+      ]
+    ],
+    "equipright": [
+      [
+        "Pouches",
+        2,
+        1
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Spellfire Initiate"
+  },
+  {
+    "_key": "chondathan freebooter",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*chondathan)(?=.*freebooter).*$",
+      "flags": "i"
+    },
+    "name": "Chondathan Freebooter",
+    "source": [
+      [
+        "FRHoF",
+        25
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Dexterity, and Wisdom"
+    ],
+    "skills": [
+      "Athletics",
+      "Sleight of Hand"
+    ],
+    "toolProfs": [
+      "Weaver's tools"
+    ],
+    "gold": 38,
+    "equipleft": [
+      [
+        "Backpack",
+        "",
+        5
+      ],
+      [
+        "Basket",
+        "",
+        2
+      ],
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Bucket",
+        "",
+        2
+      ],
+      [
+        "Weaver's tools",
+        "",
+        5
+      ],
+      [
+        "Signal whistle",
+        "",
+        ""
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ],
+      [
+        "Bag of ball bearings",
+        "",
+        2
+      ],
+      [
+        "Rations, days of",
+        3,
+        2
+      ]
+    ],
+    "equipright": [
+      [
+        "Dagger",
+        "",
+        1
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Chondathan Freebooter"
+  },
+  {
+    "_key": "dead magic dweller",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dead)(?=.*magic)(?=.*dweller).*$",
+      "flags": "i"
+    },
+    "name": "Dead Magic Dweller",
+    "source": [
+      [
+        "FRHoF",
+        28
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Constitution, and Wisdom"
+    ],
+    "skills": [
+      "Medicine",
+      "Survival"
+    ],
+    "toolProfs": [
+      "Leatherworker's tools"
+    ],
+    "gold": 32,
+    "equipleft": [
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Blanket",
+        "",
+        3
+      ],
+      [
+        "Healer's kit",
+        "",
+        3
+      ],
+      [
+        "Leatherworker's tools",
+        "",
+        5
+      ],
+      [
+        "Pole",
+        "",
+        7
+      ],
+      [
+        "Tent",
+        "",
+        20
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ],
+      [
+        "Torches",
+        5,
+        1
+      ],
+      [
+        "Rations, days of",
+        3,
+        2
+      ],
+      [
+        "Waterskin",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Greatclub",
+        "",
+        10
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Dead Magic Dweller"
+  },
+  {
+    "_key": "flaming fist mercenary",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*flaming)(?=.*fist)(?=.*mercenary).*$",
+      "flags": "i"
+    },
+    "name": "Flaming Fist Mercenary",
+    "source": [
+      [
+        "FRHoF",
+        30
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Constitution, and Charisma"
+    ],
+    "skills": [
+      "Intimidation",
+      "Perception"
+    ],
+    "toolProfs": [
+      "Smith's tools"
+    ],
+    "gold": 4,
+    "equipleft": [
+      [
+        "Smith's tools",
+        "",
+        8
+      ],
+      [
+        "Manacles",
+        "",
+        6
+      ],
+      [
+        "Ram, portable",
+        "",
+        35
+      ]
+    ],
+    "equipright": [
+      [
+        "Mace",
+        "",
+        4
+      ],
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "Flaming Fist Mercenary"
+  },
+  {
+    "_key": "genie touched",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*genie)(?=.*touched).*$",
+      "flags": "i"
+    },
+    "name": "Genie Touched",
+    "source": [
+      [
+        "FRHoF",
+        30
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "Perception",
+      "Persuasion"
+    ],
+    "toolProfs": [
+      "Glassblower's tools"
+    ],
+    "gold": 2,
+    "equipleft": [
+      [
+        "Glassblower's tools",
+        "",
+        5
+      ],
+      [
+        "Lamp",
+        "",
+        1
+      ],
+      [
+        "Oil, flasks of",
+        3,
+        1
+      ],
+      [
+        "Waterskin",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Light hammer",
+        "",
+        2
+      ],
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "Genie Touched"
+  },
+  {
+    "_key": "ice fisher",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*ice)(?=.*fisher).*$",
+      "flags": "i"
+    },
+    "name": "Ice Fisher",
+    "source": [
+      [
+        "FRHoF",
+        31
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Dexterity, and Constitution"
+    ],
+    "skills": [
+      "Animal Handling",
+      "Athletics"
+    ],
+    "toolProfs": [
+      "Woodcarver's tools"
+    ],
+    "gold": 32,
+    "equipleft": [
+      [
+        "Woodcarver's tools",
+        "",
+        5
+      ],
+      [
+        "Basket",
+        "",
+        2
+      ],
+      [
+        "Block and tackle",
+        "",
+        5
+      ],
+      [
+        "Bucket",
+        "",
+        2
+      ],
+      [
+        "Chain",
+        "",
+        10
+      ],
+      [
+        "Hunting trap",
+        "",
+        25
+      ],
+      [
+        "Pole",
+        "",
+        7
+      ],
+      [
+        "Rations, days of",
+        3,
+        2
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Net",
+        "",
+        3
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Ice Fisher"
+  },
+  {
+    "_key": "moonwell pilgrim",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*moonwell)(?=.*pilgrim).*$",
+      "flags": "i"
+    },
+    "name": "Moonwell Pilgrim",
+    "source": [
+      [
+        "FRHoF",
+        33
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Constitution, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "Nature",
+      "Performance"
+    ],
+    "toolProfs": [
+      "Painter's supplies"
+    ],
+    "gold": 13,
+    "equipleft": [
+      [
+        "Painter's supplies",
+        "",
+        5
+      ],
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Bell",
+        "",
+        ""
+      ],
+      [
+        "String",
+        "",
+        ""
+      ],
+      [
+        "Waterskin",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Quarterstaff",
+        "",
+        4
+      ],
+      [
+        "Pouch",
+        "",
+        1
+      ],
+      [
+        "Robe",
+        "",
+        4
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Moonwell Pilgrim"
+  },
+  {
+    "_key": "mulhorandi tomb raider",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*mulhorandi)(?=.*tomb)(?=.*raider).*$",
+      "flags": "i"
+    },
+    "name": "Mulhorandi Tomb Raider",
+    "source": [
+      [
+        "FRHoF",
+        33
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Constitution, and Intelligence"
+    ],
+    "skills": [
+      "Investigation",
+      "Religion"
+    ],
+    "toolProfs": [
+      "Mason's tools"
+    ],
+    "gold": 26,
+    "equipleft": [
+      [
+        "Mason's tools",
+        "",
+        5
+      ],
+      [
+        "Backpack",
+        "",
+        5
+      ],
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Crowbar",
+        "",
+        5
+      ],
+      [
+        "Ladder",
+        "",
+        25
+      ],
+      [
+        "Pole",
+        "",
+        7
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ],
+      [
+        "String",
+        "",
+        ""
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ],
+      [
+        "Torches",
+        5,
+        1
+      ],
+      [
+        "Waterskin",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Dagger",
+        "",
+        1
+      ],
+      [
+        "Light hammer",
+        "",
+        2
+      ],
+      [
+        "Pouches",
+        2,
+        1
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Mulhorandi Tomb Raider"
+  },
+  {
+    "_key": "mythalkeeper",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*mythalkeeper).*$",
+      "flags": "i"
+    },
+    "name": "Mythalkeeper",
+    "source": [
+      [
+        "FRHoF",
+        34
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Intelligence, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "Arcana",
+      "History"
+    ],
+    "toolProfs": [
+      "Jeweler's tools"
+    ],
+    "gold": 16,
+    "equipleft": [
+      [
+        "Jeweler's tools",
+        "",
+        2
+      ],
+      [
+        "Perfume",
+        "",
+        ""
+      ],
+      [
+        "Shovel",
+        "",
+        5
+      ],
+      [
+        "String",
+        "",
+        ""
+      ],
+      [
+        "Waterskin",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Quarterstaff",
+        "",
+        4
+      ],
+      [
+        "Pouch",
+        "",
+        1
+      ],
+      [
+        "Robe",
+        "",
+        4
+      ]
+    ],
+    "feature": "Mythalkeeper"
+  },
+  {
+    "_key": "rashemi wanderer",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*rashemi)(?=.*wanderer).*$",
+      "flags": "i"
+    },
+    "name": "Rashemi Wanderer",
+    "source": [
+      [
+        "FRHoF",
+        35
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Constitution, and Charisma"
+    ],
+    "skills": [
+      "Intimidation",
+      "Perception"
+    ],
+    "toolProfs": [
+      "Cartographer's tools"
+    ],
+    "gold": 23,
+    "equipleft": [
+      [
+        "Cartographer's tools",
+        "",
+        6
+      ],
+      [
+        "Backpack",
+        "",
+        5
+      ],
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Hooded lantern",
+        "",
+        2
+      ],
+      [
+        "Oil, flasks of",
+        3,
+        1
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ],
+      [
+        "Waterskin",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Rashemi Wanderer"
+  },
+  {
+    "_key": "shadowmasters exile",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*shadowmasters)(?=.*exile).*$",
+      "flags": "i"
+    },
+    "name": "Shadowmasters Exile",
+    "source": [
+      [
+        "FRHoF",
+        35
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Intelligence, and Charisma"
+    ],
+    "skills": [
+      "Acrobatics",
+      "Stealth"
+    ],
+    "toolProfs": [
+      "Thieves' tools"
+    ],
+    "gold": 3,
+    "equipleft": [
+      [
+        "Thieves' tools",
+        "",
+        1
+      ],
+      [
+        "Caltrops",
+        20,
+        0.1
+      ],
+      [
+        "Grappling hook",
+        "",
+        4
+      ],
+      [
+        "Iron spikes",
+        10,
+        0.5
+      ],
+      [
+        "Mirror",
+        "",
+        0.5
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Dagger",
+        2,
+        1
+      ],
+      [
+        "Costume",
+        "",
+        4
+      ],
+      [
+        "Pouches",
+        2,
+        1
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Shadowmasters Exile"
+  },
+  {
+    "_key": "dragon cultist",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dragon)(?=.*cultist).*$",
+      "flags": "i"
+    },
+    "name": "Dragon Cultist",
+    "source": [
+      [
+        "FRHoF",
+        29
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Constitution, and Intelligence"
+    ],
+    "skills": [
+      "Deception",
+      "Stealth"
+    ],
+    "toolProfs": [
+      "Calligrapher's supplies"
+    ],
+    "gold": 30,
+    "equipleft": [
+      [
+        "Calligrapher's supplies",
+        "",
+        5
+      ],
+      [
+        "Bottle, glass",
+        "",
+        2
+      ],
+      [
+        "Lamp",
+        "",
+        1
+      ],
+      [
+        "Manacles",
+        "",
+        6
+      ],
+      [
+        "Oil, flasks of",
+        5,
+        1
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Dagger",
+        "",
+        1
+      ],
+      [
+        "Pouch",
+        2,
+        1
+      ],
+      [
+        "Robe",
+        "",
+        4
+      ]
+    ],
+    "feature": "Dragon Cultist"
+  },
+  {
+    "_key": "emerald enclave caretaker",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*emerald)(?=.*enclave)(?=.*caretaker).*$",
+      "flags": "i"
+    },
+    "name": "Emerald Enclave Caretaker",
+    "source": [
+      [
+        "FRHoF",
+        29
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Constitution, Intelligence, and Wisdom"
+    ],
+    "skills": [
+      "Nature",
+      "Survival"
+    ],
+    "toolProfs": [
+      "Herbalism kit"
+    ],
+    "gold": 13,
+    "equipleft": [
+      [
+        "Herbalism kit",
+        "",
+        3
+      ],
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Blanket",
+        "",
+        3
+      ],
+      [
+        "Tent",
+        "",
+        20
+      ]
+    ],
+    "equipright": [
+      [
+        "Shortbow",
+        "",
+        1
+      ],
+      [
+        "Arrows",
+        20,
+        0.05
+      ],
+      [
+        "Pouch",
+        "",
+        1
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Emerald Enclave Caretaker"
+  },
+  {
+    "_key": "harper",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*harper).*$",
+      "flags": "i"
+    },
+    "name": "Harper",
+    "source": [
+      [
+        "FRHoF",
+        31
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Intelligence, and Charisma"
+    ],
+    "skills": [
+      "Performance",
+      "Sleight of Hand"
+    ],
+    "toolProfs": [
+      "Disguise kit"
+    ],
+    "gold": 14,
+    "equipleft": [
+      [
+        "Disguise kit",
+        "",
+        3
+      ],
+      [
+        "Bedroll",
+        "",
+        7
+      ],
+      [
+        "Grappling hook",
+        "",
+        4
+      ],
+      [
+        "Rope",
+        "",
+        5
+      ]
+    ],
+    "equipright": [
+      [
+        "Costume",
+        "",
+        5
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Harper"
+  },
+  {
+    "_key": "knight of the gauntlet",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*knight)(?=.*gauntlet).*$",
+      "flags": "i"
+    },
+    "name": "Knight of the Gauntlet",
+    "source": [
+      [
+        "FRHoF",
+        32
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Intelligence, and Wisdom"
+    ],
+    "skills": [
+      "Athletics",
+      "Medicine"
+    ],
+    "toolProfs": [
+      "Smith's tools"
+    ],
+    "gold": 9,
+    "equipleft": [
+      [
+        "Smith's tools",
+        "",
+        8
+      ],
+      [
+        "Bullseye lantern",
+        "",
+        2
+      ],
+      [
+        "Holy symbol",
+        "",
+        1
+      ],
+      [
+        "Manacles",
+        "",
+        6
+      ],
+      [
+        "Oil, flasks of",
+        5,
+        1
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ]
+    ],
+    "equipright": [
+      [
+        "Spear",
+        "",
+        3
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Knight of the Gauntlet"
+  },
+  {
+    "_key": "lords' alliance vassal",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*lords)(?=.*alliance)(?=.*vassal).*$",
+      "flags": "i"
+    },
+    "name": "Lords' Alliance Vassal",
+    "source": [
+      [
+        "FRHoF",
+        32
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Intelligence, and Charisma"
+    ],
+    "skills": [
+      "Insight",
+      "Persuasion"
+    ],
+    "toolProfs": [
+      "Calligrapher's supplies"
+    ],
+    "gold": 13,
+    "equipleft": [
+      [
+        "Calligrapher's supplies",
+        "",
+        5
+      ],
+      [
+        "Ink",
+        "",
+        ""
+      ],
+      [
+        "Ink pen",
+        5,
+        ""
+      ],
+      [
+        "Parchment, sheets of",
+        9,
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Javelin",
+        2,
+        2
+      ],
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "Lords' Alliance Vassal"
+  },
+  {
+    "_key": "purple dragon squire",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*purple)(?=.*dragon)(?=.*squire).*$",
+      "flags": "i"
+    },
+    "name": "Purple Dragon Squire",
+    "source": [
+      [
+        "FRHoF",
+        34
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "Animal Handling",
+      "Insight"
+    ],
+    "toolProfs": [
+      "Navigator's tools"
+    ],
+    "gold": 9,
+    "equipleft": [
+      [
+        "Navigator's tools",
+        "",
+        2
+      ]
+    ],
+    "equipright": [
+      [
+        "Spear",
+        "",
+        3
+      ],
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "Purple Dragon Squire"
+  },
+  {
+    "_key": "zhentarim mercenary",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*zhentarim)(?=.*mercenary).*$",
+      "flags": "i"
+    },
+    "name": "Zhentarim Mercenary",
+    "source": [
+      [
+        "FRHoF",
+        36
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Dexterity, and Charisma"
+    ],
+    "skills": [
+      "Intimidation",
+      "Perception"
+    ],
+    "toolProfs": [
+      "Forgery kit"
+    ],
+    "gold": 11,
+    "equipleft": [
+      [
+        "Forgery kit",
+        "",
+        5
+      ],
+      [
+        "Hooded lantern",
+        "",
+        2
+      ],
+      [
+        "Oil, flasks of",
+        3,
+        1
+      ],
+      [
+        "String",
+        "",
+        ""
+      ],
+      [
+        "Tinderbox",
+        "",
+        1
+      ]
+    ],
+    "equipright": [
+      [
+        "Club",
+        "",
+        2
+      ],
+      [
+        "Dagger",
+        "",
+        1
+      ],
+      [
+        "Pouch",
+        2,
+        1
+      ],
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "Zhentarim Mercenary"
+  },
+  {
+    "_key": "aberrant heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*aberrant)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "Aberrant Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Constitution, and Charisma"
+    ],
+    "skills": [
+      "History",
+      "Intimidation"
+    ],
+    "toolProfs": [
+      [
+        "Disguise Kit"
+      ]
+    ],
+    "gold": 16,
+    "equipleft": [
+      [
+        "Disguise kit",
+        "",
+        3
+      ]
+    ],
+    "equipright": [
+      [
+        "Dagger",
+        "",
+        1
+      ],
+      [
+        "Costume",
+        "",
+        4
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Aberrant Heir"
+  },
+  {
+    "_key": "archaeologist (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(?=^.*archa?eologist.*$)(?!^Archaeologist$)",
+      "flags": "i"
+    },
+    "name": "Archaeologist (L)",
+    "source": [
+      [
+        "LEGACYBG",
+        1
+      ]
+    ],
+    "skills": [
+      "History",
+      "Survival"
+    ],
+    "gold": 25,
+    "equipleft": [
+      [
+        "Map case with a map of a ruin/dungeon",
+        "",
+        1
+      ],
+      [
+        "Bullseye lantern",
+        "",
+        2
+      ],
+      [
+        "Miner's pick",
+        "",
+        10
+      ],
+      [
+        "Shovel",
+        "",
+        5
+      ],
+      [
+        "Two-person tent",
+        "",
+        20
+      ]
+    ],
+    "equipright": [
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ],
+      [
+        "Trinket recovered from a dig site",
+        "",
+        ""
+      ],
+      [
+        "Belt pouch (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "Historical Knowledge",
+    "trait": [
+      "I love a good puzzle or mystery.",
+      "I'm a pack rat who never throws anything away.",
+      "Fame is more important to me than money.",
+      "I have no qualms about stealing from the dead.",
+      "I'm happier in a dusty old tomb than I am in the centers of civilization.",
+      "Traps don't make me nervous. Idiots who trigger traps make me nervous.",
+      "I might fail, but I will never give up.",
+      "You might think I'm a scholar, but I love a good brawl. These fists were made for punching."
+    ],
+    "ideal": [
+      [
+        "Preservation",
+        "Preservation: That artifact belongs in a museum. (Good)"
+      ],
+      [
+        "Greed",
+        "Greed: I won't risk my life for nothing. I expect some kind of payment. (Any)"
+      ],
+      [
+        "Death Wish",
+        "Death Wish: Nothing is more exhilarating than a narrow escape from the jaws of death. (Chaotic)"
+      ],
+      [
+        "Dignity",
+        "Dignity: The dead and their belongings deserve to be treated with respect. (Lawful)"
+      ],
+      [
+        "Immortality",
+        "Immortality: All my exploring is part of a plan to find the secret of everlasting life. (Any)"
+      ],
+      [
+        "Danger",
+        "Danger: With every great discovery comes grave danger. The two walk hand in hand. (Any)"
+      ]
+    ],
+    "bond": [
+      "Ever since I was a child, I've heard stories about a lost city. I aim to find it, learn its secrets, and earn my place in the history books.",
+      "I want to find my mentor, who disappeared on an expedition some time ago.",
+      "I have a friendly rival. Only one of us can be the best, and I aim to prove it's me.",
+      "I won't sell an art object or other treasure that has historical significance or is one of a kind.",
+      "I'm secretly in love with the wealthy patron who sponsors my archaeological exploits.",
+      "I hope to bring prestige to a library, a museum, or a university."
+    ],
+    "flaw": [
+      "I have a secret fear of some common wild animal ― and in my work, I see them everywhere.",
+      "I can't leave a room without searching it for secret doors.",
+      "When I'm not exploring dungeons or ruins, I get jittery and impatient.",
+      "I have no time for friends or family. I spend every waking moment thinking about and preparing for my next expedition.",
+      "When given the choice of going left or right, I always go left.",
+      "I can't sleep except in total darkness."
+    ],
+    "extra": [
+      "Select a Signature Item",
+      "10-foot pole",
+      "Crowbar",
+      "Hat",
+      "Hooded lantern",
+      "Medallion",
+      "Shovel",
+      "Sledgehammer",
+      "Whip"
+    ],
+    "toolProfs": [
+      [
+        "Cartographer or navigator tools",
+        1
+      ]
+    ],
+    "languageProfs": [
+      1
+    ]
+  },
+  {
+    "_key": "house agent (L)",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*agent)(?=.*house)(?=.*(noble|cannith)).*$",
+      "flags": "i"
+    },
+    "name": "Agent of House Cannith (L)",
+    "source": [
+      [
+        "LEGACYBG",
+        1
+      ]
+    ],
+    "skills": [
+      "Investigation",
+      "Persuasion"
+    ],
+    "gold": 20,
+    "equipleft": [
+      [
+        "Signet ring of house Cannith",
+        "",
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ],
+      [
+        "ID papers",
+        "",
+        ""
+      ],
+      [
+        "Purse (with coins)",
+        "",
+        1
+      ]
+    ],
+    "feature": "House Connections",
+    "trait": [
+      "I never let emotion complicate work.",
+      "I'm always looking to improve efficiency.",
+      "I share trivia about my house's business (medicine, ships, warforged).",
+      "I hold myself and anyone I work with to extremely high standards.",
+      "I never forget an insult made against myself or my house.",
+      "I'm very excited and enthusiastic about everything my house does.",
+      "I'm representing my house and take great pride in my personal appearance.",
+      "I'm critical of monarchies and opposed to any restrictions on the houses."
+    ],
+    "ideal": [
+      [
+        "Common Good",
+        "Common Good: My house serves a vital function, and its prosperity will help everyone. (Good)"
+      ],
+      [
+        "Tradition",
+        "Tradition: I uphold traditions of my house and bring honor to my family. (Lawful)"
+      ],
+      [
+        "Innovation",
+        "Innovation: Abandon old traditions and find better ways to do things. (Chaotic)"
+      ],
+      [
+        "Power",
+        "Power: I want to ensure the prosperity of my house and wield its power myself. (Evil)"
+      ],
+      [
+        "Discovery",
+        "Discovery: I want to learn all I can, both for my house and for my own curiosity. (Any)"
+      ],
+      [
+        "Comfort",
+        "Comfort: I want to ensure that me and friends of mine enjoy the best things in life. (Any)"
+      ]
+    ],
+    "bond": [
+      "My house is my family, and I would do anything for my family.",
+      "I love someone from another house, but the relationship is forbidden.",
+      "Someone I love was killed by a rival faction within my house, and I will have revenge.",
+      "I don't care about the house as a whole, but I would do anything for my old mentor.",
+      "I believe my house needs to evolve to survive, and I need to lead that change.",
+      "I'm determined to impress the leaders of my house, and to become a leader myself."
+    ],
+    "flaw": [
+      "I'm overly concerned with following established procedures and protocols.",
+      "I'm obsessed with conspiracy theories and worried about secret societies and hidden demons.",
+      "I believe that my house and bloodline makes me better than everyone else.",
+      "I'm concealing a secret that could get me driven from my house.",
+      "I have strong religious beliefs that aren't widespread in my house.",
+      "I'm working for a hidden faction in my house that gives me secret assignments."
+    ],
+    "extra": [
+      "Select an House Agent Role",
+      "Acquisition",
+      "Investigation",
+      "Research & Development",
+      "Security",
+      "Intimidation",
+      "Exploration",
+      "Negotiation",
+      "Covert Operations"
+    ],
+    "toolProfs": [
+      "Alchemist's supplies",
+      "Tinker's tools"
+    ],
+    "_variants": [
+      "house agent-deneith",
+      "house agent-ghallanda",
+      "house agent-jorasco",
+      "house agent-kundarak",
+      "house agent-lyrandar",
+      "house agent-medani",
+      "house agent-orien",
+      "house agent-phiarlan",
+      "house agent-sivis",
+      "house agent-tharashk",
+      "house agent-thuranni",
+      "house agent-vadalis"
+    ]
+  },
+  {
+    "_key": "house cannith heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*cannith)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Cannith Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Dexterity, and Intelligence"
+    ],
+    "skills": [
+      "Investigation",
+      "Sleight of Hand"
+    ],
+    "toolProfs": [
+      [
+        "Artisan's Tools",
+        1
+      ]
+    ],
+    "gold": 17,
+    "equipleft": [
+      [
+        "Artisan's tools (same as proficiency)",
+        "",
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Crowbar",
+        "",
+        5
+      ],
+      [
+        "Pouches",
+        2,
+        1
+      ],
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Cannith Heir"
+  },
+  {
+    "_key": "house deneith heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*deneith)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Deneith Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Constitution, and Wisdom"
+    ],
+    "skills": [
+      "Insight",
+      "Perception"
+    ],
+    "toolProfs": [
+      [
+        "Gaming Set",
+        1
+      ]
+    ],
+    "gold": 1,
+    "equipleft": [
+      [
+        "Gaming set (same as proficiency)",
+        "",
+        ""
+      ],
+      [
+        "Healer's kit",
+        "",
+        3
+      ]
+    ],
+    "equipright": [
+      [
+        "Spear",
+        "",
+        3
+      ],
+      [
+        "Shortbow",
+        "",
+        2
+      ],
+      [
+        "Arrows",
+        20,
+        0.05
+      ],
+      [
+        "Quiver",
+        "",
+        1
+      ],
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Deneith Heir"
+  },
+  {
+    "_key": "house ghallanda heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*ghallanda)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Ghallanda Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "Insight",
+      "Persuasion"
+    ],
+    "toolProfs": [
+      [
+        "Cook's Utensils"
+      ]
+    ],
+    "gold": 26,
+    "equipleft": [
+      [
+        "Cook's utensils",
+        "",
+        8
+      ],
+      [
+        "Iron pot",
+        "",
+        10
+      ],
+      [
+        "Oil, flasks of",
+        5,
+        1
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ],
+      [
+        "Perfume",
+        "",
+        ""
+      ]
+    ],
+    "feature": "House Ghallanda Heir"
+  },
+  {
+    "_key": "house jorasco heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*jorasco)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Jorasco Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Constitution, and Wisdom"
+    ],
+    "skills": [
+      "Medicine",
+      "Stealth"
+    ],
+    "toolProfs": [
+      [
+        "Herbalism Kit"
+      ]
+    ],
+    "gold": 25,
+    "equipleft": [
+      [
+        "Herbalism kit",
+        "",
+        3
+      ],
+      [
+        "Healer's kit",
+        "",
+        3
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Jorasco Heir"
+  },
+  {
+    "_key": "house kundarak heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*kundarak)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Kundarak Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Constitution, and Intelligence"
+    ],
+    "skills": [
+      "Arcana",
+      "Investigation"
+    ],
+    "toolProfs": [
+      [
+        "Thieves' Tools"
+      ]
+    ],
+    "gold": 10,
+    "equipleft": [
+      [
+        "Thieves' Tools",
+        "",
+        1
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Kundarak Heir"
+  },
+  {
+    "_key": "house lyrandar heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*lyrandar)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Lyrandar Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Strength, Dexterity, and Charisma"
+    ],
+    "skills": [
+      "Acrobatics",
+      "Nature"
+    ],
+    "toolProfs": [
+      [
+        "Navigator's Tools"
+      ]
+    ],
+    "gold": 10,
+    "equipleft": [
+      [
+        "Navigator's Tools",
+        "",
+        2
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Lyrandar Heir"
+  },
+  {
+    "_key": "house medani heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*medani)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Medani Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Intelligence, and Wisdom"
+    ],
+    "skills": [
+      "Insight",
+      "Investigation"
+    ],
+    "toolProfs": [
+      [
+        "Disguise Kit"
+      ]
+    ],
+    "gold": 10,
+    "equipleft": [
+      [
+        "Disguise kit",
+        "",
+        3
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Medani Heir"
+  },
+  {
+    "_key": "house orien heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*orien)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Orien Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Constitution, and Intelligence"
+    ],
+    "skills": [
+      "Acrobatics",
+      "Athletics"
+    ],
+    "toolProfs": [
+      [
+        "Cartographer's Tools"
+      ]
+    ],
+    "gold": 18,
+    "equipleft": [
+      [
+        "Cartographer's tools",
+        "",
+        6
+      ],
+      [
+        "Map",
+        "",
+        ""
+      ],
+      [
+        "Map or scroll case",
+        "",
+        1
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Orien Heir"
+  },
+  {
+    "_key": "house phiarlan heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*phiarlan)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Phiarlan Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "Deception",
+      "Stealth"
+    ],
+    "toolProfs": [
+      [
+        "Disguise Kit"
+      ]
+    ],
+    "gold": 10,
+    "equipleft": [
+      [
+        "Disguise kit",
+        "",
+        3
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Phiarlan Heir"
+  },
+  {
+    "_key": "house sivis heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*sivis)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Sivis Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Intelligence, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "History",
+      "Perception"
+    ],
+    "toolProfs": [
+      [
+        "Calligrapher's Supplies"
+      ]
+    ],
+    "gold": 8,
+    "equipleft": [
+      [
+        "Calligrapher's supplies",
+        "",
+        5
+      ],
+      [
+        "Ink",
+        "",
+        ""
+      ],
+      [
+        "Ink pens",
+        5,
+        ""
+      ],
+      [
+        "Paper, sheets of",
+        30,
+        ""
+      ],
+      [
+        "Parchment, sheets of",
+        9,
+        ""
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Sivis Heir"
+  },
+  {
+    "_key": "house tharashk heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*tharashk)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Tharashk Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Constitution, Intelligence, and Wisdom"
+    ],
+    "skills": [
+      "Perception",
+      "Survival"
+    ],
+    "toolProfs": [
+      [
+        "Gaming Set",
+        1
+      ]
+    ],
+    "gold": 2,
+    "equipleft": [
+      [
+        "Gaming set (same as proficiency)",
+        "",
+        ""
+      ],
+      [
+        "Climber's kit",
+        "",
+        12
+      ],
+      [
+        "Hunting trap",
+        "",
+        25
+      ],
+      [
+        "Manacles",
+        "",
+        6
+      ]
+    ],
+    "equipright": [
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Tharashk Heir"
+  },
+  {
+    "_key": "house thuranni heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*thuranni)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Thuranni Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Dexterity, Intelligence, and Charisma"
+    ],
+    "skills": [
+      "Performance",
+      "Stealth"
+    ],
+    "toolProfs": [
+      [
+        "Musical Instrument",
+        1
+      ]
+    ],
+    "gold": 13,
+    "equipleft": [
+      [
+        "Musical instrument (same as proficiency)",
+        "",
+        ""
+      ],
+      [
+        "Climber's kit",
+        "",
+        12
+      ],
+      [
+        "Hunting trap",
+        "",
+        25
+      ],
+      [
+        "Manacles",
+        "",
+        6
+      ]
+    ],
+    "equipright": [
+      [
+        "Costume",
+        "",
+        4
+      ],
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Thuranni Heir"
+  },
+  {
+    "_key": "house vadalis heir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*vadalis)(?=.*heir).*$",
+      "flags": "i"
+    },
+    "name": "House Vadalis Heir",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Constitution, Wisdom, and Charisma"
+    ],
+    "skills": [
+      "Animal Handling",
+      "Nature"
+    ],
+    "toolProfs": [
+      [
+        "Herbalism Kit"
+      ]
+    ],
+    "gold": 29,
+    "equipleft": [
+      [
+        "Herbalism kit",
+        "",
+        3
+      ]
+    ],
+    "equipright": [
+      [
+        "Net",
+        "",
+        3
+      ],
+      [
+        "Fine clothes",
+        "",
+        6
+      ]
+    ],
+    "feature": "House Vadalis Heir"
+  },
+  {
+    "_key": "inquisitive",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*inquisitive).*$",
+      "flags": "i"
+    },
+    "name": "Inquisitive",
+    "source": [
+      [
+        "E:FA",
+        0
+      ]
+    ],
+    "scorestxt": [
+      "+2 and +1 -or- +1 to each from Constitution, Intelligence, and Charisma"
+    ],
+    "skills": [
+      "Insight",
+      "Investigation"
+    ],
+    "toolProfs": [
+      [
+        "Thieves' Tools"
+      ]
+    ],
+    "gold": 10,
+    "equipleft": [
+      [
+        "Thieves' Tools",
+        "",
+        1
+      ],
+      [
+        "Bullseye lantern",
+        "",
+        2
+      ],
+      [
+        "Oil, flasks of",
+        10,
+        1
+      ]
+    ],
+    "equipright": [
+      [
+        "Crowbar",
+        "",
+        4
+      ],
+      [
+        "Traveler's clothes",
+        "",
+        4
+      ]
+    ],
+    "feature": "Inquisitive"
   }
 ]
