@@ -1,0 +1,350 @@
+[
+  {
+    "_key": "familiar",
+    "name": "Find Familiar",
+    "nameTooltip": "the Find Familiar spell",
+    "nameOrigin": "1st-level conjuration [ritual] spell",
+    "nameMenu": "Familiar (Find Familiar spell)",
+    "source": [
+      [
+        "P24",
+        272
+      ]
+    ],
+    "includeCheck": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea, iCreaCR) {\r\n        return objCrea.type.toLowerCase() === \"beast\" && objCrea.isSummon !== true && iCreaCR == 0 ? true : false;\r\n    }"
+    },
+    "action": [
+      [
+        "action",
+        "Familiar (dismiss/reappear)"
+      ],
+      [
+        "bonus action",
+        "Use familiar's senses"
+      ]
+    ],
+    "notes": [
+      {
+        "name": "Summon a spirit that serves as a familiar",
+        "description": "appearing in an unoccupied space within 10 ft\n   It assumes a chosen form (can change at every casting): Bat, Cat, Frog, Hawk, Lizard, Octopus, Owl, Rat, Raven, Spider, Weasel, or another Beast that has a Challenge Rating of 0.\n   It has the chosen form's statistics, but its type changes from beast to celestial, fey, or fiend\n   When the familiar drops to 0 hit points, it disappears, leaving behind no physical form\n   It reappears when I cast this spell again (in a new form if so desired)",
+        "joinString": ", "
+      },
+      {
+        "name": "The familiar acts independently of me",
+        "description": "but it always obeys my commands\n   In combat, it rolls its own initiative and acts on its own turn, but it can't attack",
+        "joinString": ", "
+      },
+      {
+        "name": "While it is within 100 ft of me",
+        "description": "I can communicate with it telepathically",
+        "joinString": ", "
+      },
+      {
+        "name": "As a bonus action, I see/hear what it does",
+        "description": " (but not with my senses) until the start of my next turn",
+        "joinString": ""
+      },
+      {
+        "name": "As a magic action, I can temporarily dismiss it",
+        "description": "having it disappear into a pocket dimension",
+        "joinString": ", "
+      },
+      {
+        "name": "As a magic action, while it is temporarily dismissed",
+        "description": "I can cause it to reappear within 30 ft",
+        "joinString": ", "
+      },
+      {
+        "name": "I can't have more than one familiar bonded at a time",
+        "description": "As a magic action, I can dismiss it forever",
+        "joinString": "; "
+      },
+      {
+        "name": "When I cast a spell with a range of touch",
+        "description": "my familiar can deliver the spell\n   It must be within 100 ft of me and it must use its reaction to deliver the spell when I cast it\n   It acts as if it cast the spell, but it can use my modifiers for any attack rolls the spell requires",
+        "joinString": ", "
+      }
+    ],
+    "attributesAdd": {
+      "header": "Familiar",
+      "features": [
+        {
+          "name": "Find Familiar",
+          "description": "If dropped to 0 HP, the familiar disappears, leaving behind no physical form. The familiar must obey all commands of its master."
+        }
+      ]
+    }
+  },
+  {
+    "_key": "pact_of_the_chain",
+    "name": "Pact of the Chain",
+    "nameTooltip": "Warlock (Pact of the Chain)",
+    "nameOrigin": "variant of the Find Familiar 1st-level conjuration [ritual] spell",
+    "nameMenu": "Pact of the Chain familiar (Warlock feature)",
+    "source": [
+      [
+        "P24",
+        157
+      ]
+    ],
+    "includeCheck": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea, iCreaCR, bIsAL) {\r\n        // return true if to be included, or a string to add a note to the menu option\r\n        return !objCrea.companion ? false : objCrea.companion.indexOf(\"familiar\") !== -1 ? true : bIsAL && objCrea.companion.indexOf(\"familiar_not_al\") !== -1 ? \" (if DM approves)\" : false;\r\n    }"
+    },
+    "action": [
+      [
+        "action",
+        "Familiar (dismiss/reappear)"
+      ],
+      [
+        "bonus action",
+        "Use familiar's senses"
+      ]
+    ],
+    "attributesAdd": {
+      "header": "Familiar",
+      "features": [
+        {
+          "name": "Pact of the Chain",
+          "description": "If dropped to 0 HP, the familiar disappears, leaving behind no physical form. The familiar must obey all commands of its master."
+        }
+      ]
+    },
+    "attributesChange": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea) {\r\n        if (objCrea.type.toLowerCase() === \"beast\") {\r\n            objCrea.type = [\"Celestial\", \"Fey\", \"Fiend\"];\r\n            objCrea.subtype = \"\";\r\n        }\r\n    }"
+    }
+  },
+  {
+    "_key": "mount",
+    "name": "Find Steed",
+    "nameTooltip": "the Find Steed spell",
+    "nameOrigin": "2nd-level conjuration spell",
+    "nameMenu": "Steed (Find Steed spell)",
+    "source": [
+      [
+        "P24",
+        272
+      ]
+    ],
+    "action": [
+      [
+        "action",
+        "Find Steed (dismiss)"
+      ]
+    ],
+    "notes": [
+      {
+        "name": "Summon an otherworldly being that appears as a loyal steed",
+        "description": "appearing in an unoccupied space within 30 ft\n   The steed resembles a Large, ridable animal of my choice, such as a horse, a camel, a dire wolf, or an elk\n   The steed has the statistics of the otherworldly steed, choose its type celestial, fey, or fiend\n   When the steed drops to 0 hit points, it disappears, leaving behind no physical form",
+        "joinString": ", "
+      },
+      {
+        "name": "The steed serves me as a mount",
+        "description": "I have a bond with it that allows us to fight as a seamless unit",
+        "joinString": ". "
+      },
+      {
+        "name": "While my steed is within 1 mile of me",
+        "description": "I can communicate with it telepathically",
+        "joinString": ", "
+      },
+      {
+        "name": "Casting this spell again",
+        "description": "can summon the same steed, or a different one",
+        "joinString": " "
+      },
+      {
+        "name": "I can't have more than one steed bonded at a time",
+        "description": "As an action, I can release it from its bond",
+        "joinString": "; "
+      }
+    ],
+    "attributesAdd": {
+      "header": "Mount",
+      "features": [
+        {
+          "name": "Find Steed",
+          "description": "If dropped to 0 HP, the steed disappears, leaving behind no physical form."
+        }
+      ]
+    }
+  },
+  {
+    "_key": "companion",
+    "name": "Ranger's Companion",
+    "nameTooltip": "Beast Master: Ranger's Companion",
+    "nameOrigin": "Beast Master 3",
+    "nameMenu": "Ranger's Companion (Beast Master feature)",
+    "source": [
+      [
+        "P24",
+        122
+      ]
+    ],
+    "action": [
+      [
+        "bonus action",
+        "Ranger's Companion (command)"
+      ]
+    ],
+    "notes": [
+      {
+        "name": "If the beast has died within the **last**hour,",
+        "description": "I can take a Magic action to touch it and expend a spell slot.\n   The beast returns to life after 1 minute with all its Hit Points restored.",
+        "joinString": ", "
+      },
+      {
+        "name": "The beast adds my Proficiency Bonus",
+        "description": "any ability check or saving throw the beast makes",
+        "joinString": " "
+      },
+      {
+        "name": "The beast's hit point maximum equals",
+        "description": "five times my ranger level",
+        "joinString": " "
+      },
+      {
+        "name": "In Combat",
+        "description": "The beast acts during my turn. It can move and use its Reaction on its own.\n   As a Bonus Action, I can command the beast to use an action in its statblock or another standard action \n   I can sacrifice one of my attacks when I take the Attack action to command the beast to take the Beast's Strike action.\n   If I don't command it to take another action, it takes the Dodge action instead.\n   If I'm Incapacitated, the beast acts on its own without limits.",
+        "joinString": ":\n   "
+      },
+      {
+        "name": "Exceptional Training (Beast Master 7, P24 123)",
+        "description": "The beast's attacks can deal Force damage or its normal damage type\n   When I command my beast to take an action, I can also have it Dash/Disengage/Dodge/Help as a bonus action.",
+        "joinString": "\n   ",
+        "minlevel": 7,
+        "eval": {
+          "_type": "function",
+          "body": "function(prefix, lvl) {\r\n            for (var i = 1; i <= 3; i++) {\r\n                if (!What(prefix + \"Comp.Use.Attack.\" + i + \".Weapon Selection\")) continue;\r\n                var sDescrFld = prefix + \"Comp.Use.Attack.\" + i + \".Description\";\r\n                if (!/(,|;)? ?can deal force damage or its normal damage type/i.test(What(sDescrFld))) {\r\n                    AddString(sDescrFld, \"Can deal Force damage or its normal damage type\", \"; \");\r\n                }\r\n            }\r\n        }"
+        },
+        "removeeval": {
+          "_type": "function",
+          "body": "function(prefix, lvl) {\r\n            for (var i = 1; i <= 3; i++) {\r\n                var sDescrFld = prefix + \"Comp.Use.Attack.\" + i + \".Description\";\r\n                var sDescr = What(sDescrFld);\r\n                var rCaM = /(,|;)? ?counts as magical/i;\r\n                if (rCaM.test(sDescr)) Value(sDescrFld, sDescr.replace(rCaM, ''));\r\n            }\r\n        }"
+        }
+      },
+      {
+        "name": "Bestial Fury (Beast Master 11, P24 123)",
+        "description": "The beast can make two attacks (or multiattack) when I command it to take an Attack action, In addition, the first time each turn it hits a creature affected by my Hunter's Mark spell, it deals extra Force damage equal to the bonus damage of that spell.",
+        "joinString": "\n   ",
+        "minlevel": 11,
+        "eval": {
+          "_type": "function",
+          "body": "function(prefix, lvl) {\r\n            Value(prefix + \"Comp.Use.Attack.perAction\", 2);\r\n        }"
+        },
+        "removeeval": {
+          "_type": "function",
+          "body": "function(prefix, lvl) {\r\n            Value(prefix + \"Comp.Use.Attack.perAction\", 1);\r\n        }"
+        }
+      },
+      {
+        "name": "Share Spells (Beast Master 15, P24 123)",
+        "description": "When I cast a spell on myself, I can have it also affect my primal companion if it is within 30 ft of me",
+        "joinString": "\n   ",
+        "minlevel": 15
+      }
+    ],
+    "attributesAdd": {
+      "header": "Companion",
+      "minlevelLinked": [
+        "ranger"
+      ],
+      "attacksAction": 1
+    },
+    "attributesChange": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea) {\r\n        // Change multiattack trait/feature/action to level 11 feature\r\n        [\"traits\", \"features\", \"actions\"].forEach(function(n) {\r\n            if (!objCrea[n]) return;\r\n            for (var i = 0; i < objCrea[n].length; i++) {\r\n                var oN = objCrea[n][i];\r\n                if (oN.name && /multiattack/i.test(oN.name)) {\r\n                    objCrea[n][i].minlevel = 11;\r\n                }\r\n            }\r\n        });\r\n    }"
+    }
+  },
+  {
+    "_key": "spell_creatures",
+    "name": "Spell Creatures",
+    "nameMenu": "Spell Creatures (Creatures Created/Summoned by a Spell)",
+    "nameOrigin": "Spell Creatures Created by spell effects of conjuration or transmutation spells",
+    "source": [
+      [
+        "P24",
+        234
+      ]
+    ],
+    "attributesChange": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea) {\r\n        // Check for spell attribute before attempting to access it.\r\n        if (!CreatureList[sCrea].spell) return;\r\n        // Access the spell attribute holding the spell name from the original CreatureOptions object\r\n        // Find all casters of that spell\r\n        var casters = isSpellUsed(CreatureList[sCrea].spell);\r\n        // Used to store an array where oScore[0] is the class and oScore[1] is the attack modifier w/ bonuses\r\n        var oScore = undefined;\r\n\r\n        // Loop through all casters\r\n        for (var caster of casters) {\r\n            // Ensure it's from a class and calcSpellScores is present.\r\n            if (CurrentSpells[caster].refType !== \"class\" || !CurrentSpells[caster].calcSpellScores) continue;\r\n\r\n            // The total attack modifier w/ bonuses if any\r\n            var oAtkMod = CurrentSpells[caster].calcSpellScores.attack;\r\n\r\n            // Check if oScore is empty or if the current attack modifier is higher\r\n            if (oScore === undefined || oAtkMod > oScore[1]) {\r\n                oScore = [caster, oAtkMod]; // Store the class and ability\r\n            }\r\n        }\r\n\r\n        if (oScore === undefined) return; // Return if no score found\r\n\r\n        // Update attacks with the highest class ability\r\n        for (var i = 0; i < objCrea.attacks.length; i++) {\r\n            var oAtk = objCrea.attacks[i];\r\n            oAtk.useSpellMod = oScore[0]; // Set the highest class\r\n        }\r\n    }"
+    },
+    "notes": [
+      {
+        "name": "Creature Recalculation",
+        "description": "If I update my spellcasting mod, or are multiclassing, and my secondary class has a higher spellcasting mod, I will need to reselect this companion to update its attack to hit.",
+        "joinString": ", "
+      }
+    ]
+  },
+  {
+    "_key": "steed",
+    "name": "Find Greater Steed",
+    "nameTooltip": "the Find Greater Steed spell",
+    "nameOrigin": "4th-level conjuration spell",
+    "nameMenu": "Greater steed (Find Greater Steed spell)",
+    "source": [
+      [
+        "X",
+        156
+      ]
+    ],
+    "action": [
+      [
+        "action",
+        "Find Greater Steed (dismiss)"
+      ]
+    ],
+    "attributesAdd": {
+      "header": "Mount",
+      "type": [
+        "Celestial",
+        "Fey",
+        "Fiend"
+      ],
+      "subtype": "",
+      "features": [
+        {
+          "name": "Find Greater Steed",
+          "description": "If dropped to 0 HP, the steed disappears, leaving behind no physical form."
+        }
+      ],
+      "languages": "understands one language its master speaks (master's choice)"
+    },
+    "attributesChange": {
+      "_type": "function",
+      "body": "function(sCrea, objCrea) {\r\n\t\tif (objCrea.scores[3] < 6) objCrea.scores[3] = 6;\r\n\t}"
+    },
+    "notes": [
+      {
+        "name": "Summon an otherworldly being that appears as a loyal steed",
+        "description": "appearing in an unoccupied space within 30 ft\n   The steed resembles a Large, ridable animal of my choice, such as a horse, a camel, a dire wolf, or an elk\n   The steed has the statistics of the otherworldly steed, choose its type celestial, fey, or fiend\n   When the steed drops to 0 hit points, it disappears, leaving behind no physical form",
+        "joinString": ", "
+      },
+      {
+        "name": "The steed serves me as a mount",
+        "description": "I have a bond with it that allows us to fight as a seamless unit",
+        "joinString": ". "
+      },
+      {
+        "name": "While my steed is within 1 mile of me",
+        "description": "I can communicate with it telepathically",
+        "joinString": ", "
+      },
+      {
+        "name": "Casting this spell again",
+        "description": "can summon the same steed, or a different one",
+        "joinString": " "
+      },
+      {
+        "name": "I can't have more than one steed bonded at a time",
+        "description": "As an action, I can release it from its bond",
+        "joinString": "; "
+      }
+    ]
+  }
+]

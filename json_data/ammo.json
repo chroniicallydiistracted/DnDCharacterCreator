@@ -1,0 +1,353 @@
+[
+  {
+    "_key": "arrows",
+    "name": "Arrows",
+    "infoname": "Arrows [1 gp]",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "icon": "Arrows",
+    "amount": 20,
+    "weight": 0.05
+  },
+  {
+    "_key": "bolts",
+    "name": "Bolts",
+    "infoname": "Bolts [1 gp]",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "icon": "Arrows",
+    "invName": "Crossbow bolts",
+    "weight": 0.075
+  },
+  {
+    "_key": "renaissance bullet",
+    "name": "Bullets, Renaissance",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "weight": 0.1,
+    "icon": "Bullets",
+    "invName": "Bullets, renaissance",
+    "alternatives": [
+      {
+        "_type": "RegExp",
+        "source": "^(?=.*bullet)(?=.*renaissance).*$",
+        "flags": "i"
+      }
+    ]
+  },
+  {
+    "_key": "bullets, sling",
+    "name": "Bullets, Sling",
+    "infoname": "Bullets, Sling [4 cp]",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "icon": "Arrows",
+    "invName": "Sling bullets",
+    "weight": 0.075
+  },
+  {
+    "_key": "needles",
+    "name": "Needles",
+    "infoname": "Needles [1 gp]",
+    "source": [
+      [
+        "P24",
+        222
+      ]
+    ],
+    "invName": "Blowgun needles",
+    "amount": 50,
+    "weight": 0.02
+  },
+  {
+    "_key": "dagger",
+    "name": "Daggers",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 1,
+    "icon": "Daggers"
+  },
+  {
+    "_key": "dart",
+    "name": "Darts",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 0.25,
+    "icon": "Arrows"
+  },
+  {
+    "_key": "flask",
+    "name": "Flasks (1 pint)",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 1,
+    "icon": "Flasks"
+  },
+  {
+    "_key": "handaxe",
+    "name": "Handaxes",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 2,
+    "icon": "Axes",
+    "alternatives": [
+      "Axe"
+    ]
+  },
+  {
+    "_key": "javelin",
+    "name": "Javelins",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 2,
+    "icon": "Spears"
+  },
+  {
+    "_key": "light hammer",
+    "name": "Light Hammers",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 2,
+    "icon": "Hammers",
+    "alternatives": [
+      "Hammer"
+    ]
+  },
+  {
+    "_key": "spear",
+    "name": "Spears",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 3,
+    "icon": "Spears"
+  },
+  {
+    "_key": "trident",
+    "name": "Tridents",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 4,
+    "icon": "Spears"
+  },
+  {
+    "_key": "vial",
+    "name": "Vials (4 ounces)",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 0.25,
+    "icon": "Vials"
+  },
+  {
+    "_key": "alchemist fire",
+    "name": "Alchemist's Fire, flasks",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 1,
+    "icon": "Flasks",
+    "invName": "Alchemist's fire, flasks of",
+    "alternatives": [
+      {
+        "_type": "RegExp",
+        "source": "^(?=.*alchemist)(?=.*fire).*$",
+        "flags": "i"
+      }
+    ]
+  },
+  {
+    "_key": "vials of acid",
+    "name": "Vials of Acid",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 1,
+    "icon": "Vials",
+    "invName": "Acid, vials of",
+    "alternatives": [
+      {
+        "_type": "RegExp",
+        "source": "^(?=.*acid)(?=.*vial).*$",
+        "flags": "i"
+      }
+    ]
+  },
+  {
+    "_key": "holy water",
+    "name": "Holy Water, flasks",
+    "source": [
+      [
+        "P24",
+        215
+      ]
+    ],
+    "weight": 1,
+    "icon": "Flasks",
+    "invName": "Holy Water, flasks of",
+    "alternatives": [
+      {
+        "_type": "RegExp",
+        "source": "^(?=.*holy)(?=.*water).*$",
+        "flags": "i"
+      }
+    ]
+  },
+  {
+    "_key": "oil",
+    "name": "Oil, flasks",
+    "source": [
+      [
+        "SRD24",
+        98
+      ],
+      [
+        "P24",
+        227
+      ]
+    ],
+    "weight": 1,
+    "icon": "Flasks",
+    "invName": "Oil, flasks of",
+    "alternatives": [
+      {
+        "_type": "RegExp",
+        "source": "oil",
+        "flags": "i"
+      }
+    ]
+  },
+  {
+    "_key": "modern bullet",
+    "name": "Bullets, Modern",
+    "source": [
+      [
+        "D24",
+        72
+      ]
+    ],
+    "weight": 0.1,
+    "icon": "Bullets",
+    "invName": "Bullets, modern",
+    "alternatives": [
+      {
+        "_type": "RegExp",
+        "source": "^(?=.*bullet)(?=.*modern).*$",
+        "flags": "i"
+      }
+    ],
+    "defaultExcluded": true
+  },
+  {
+    "_key": "energy cell",
+    "name": "Energy Cell",
+    "source": [
+      [
+        "D24",
+        72
+      ]
+    ],
+    "weight": 0.5,
+    "icon": "Bullets",
+    "invName": "Energy Cell",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "bomb",
+    "name": "Bomb",
+    "source": [
+      [
+        "D24",
+        72
+      ]
+    ],
+    "weight": 1,
+    "icon": "Flasks",
+    "invName": "Bomb",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "dynamite stick",
+    "name": "Dynamite stick",
+    "source": [
+      [
+        "D24",
+        72
+      ]
+    ],
+    "weight": 1,
+    "icon": "Flasks",
+    "invName": "Dynamite stick",
+    "defaultExcluded": true
+  },
+  {
+    "_key": "grenade",
+    "name": "Grenade",
+    "source": [
+      [
+        "D24",
+        73
+      ]
+    ],
+    "weight": 1,
+    "icon": "Flasks",
+    "invName": "Grenade",
+    "defaultExcluded": true
+  }
+]

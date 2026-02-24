@@ -1,0 +1,1239 @@
+[
+  {
+    "_key": "dragonborn-black",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "black",
+      "flags": "i"
+    },
+    "name": "Black Dragonborn",
+    "trait": "Black Dragonborn\n• Acid Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Acid damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Acid wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
+    "dmgres": [
+      "Acid"
+    ]
+  },
+  {
+    "_key": "dragonborn-blue",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dragonborn)(?=.*blue).*$",
+      "flags": "i"
+    },
+    "name": "Blue Dragonborn",
+    "sortname": "Dragonborn, Blue",
+    "trait": "Blue Dragonborn\n• Lightning Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Lightning damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Lightning wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
+    "dmgres": [
+      "Lightning"
+    ]
+  },
+  {
+    "_key": "dragonborn-brass",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dragonborn)(?=.*brass).*$",
+      "flags": "i"
+    },
+    "name": "Brass Dragonborn",
+    "sortname": "Dragonborn, Brass",
+    "trait": "Brass Dragonborn\n• Fire Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Fire damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Fire wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
+    "dmgres": [
+      "Fire"
+    ]
+  },
+  {
+    "_key": "dragonborn-bronze",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dragonborn)(?=.*bronze).*$",
+      "flags": "i"
+    },
+    "name": "Bronze Dragonborn",
+    "sortname": "Dragonborn, Bronze",
+    "trait": "Bronze Dragonborn\n• Lightning Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Lightning damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Lightning wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
+    "dmgres": [
+      "Lightning"
+    ]
+  },
+  {
+    "_key": "dragonborn-copper",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dragonborn)(?=.*copper).*$",
+      "flags": "i"
+    },
+    "name": "Copper Dragonborn",
+    "sortname": "Dragonborn, Copper",
+    "trait": "Copper Dragonborn\n• Acid Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Acid damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Acid wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
+    "dmgres": [
+      "Acid"
+    ]
+  },
+  {
+    "_key": "dragonborn-gold",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dragonborn)(?=.*gold).*$",
+      "flags": "i"
+    },
+    "name": "Gold Dragonborn",
+    "sortname": "Dragonborn, Gold",
+    "trait": "Gold Dragonborn\n• Fire Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Fire damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Fire wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
+    "dmgres": [
+      "Fire"
+    ]
+  },
+  {
+    "_key": "dragonborn-green",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dragonborn)(?=.*green).*$",
+      "flags": "i"
+    },
+    "name": "Green Dragonborn",
+    "sortname": "Dragonborn, Green",
+    "trait": "Green Dragonborn\n• Poison Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Poison damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Poison wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
+    "dmgres": [
+      "Poison"
+    ]
+  },
+  {
+    "_key": "dragonborn-red",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dragonborn)(?=.*red).*$",
+      "flags": "i"
+    },
+    "name": "Red Dragonborn",
+    "sortname": "Dragonborn, Red",
+    "trait": "Red Dragonborn\n• Fire Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Fire damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Fire wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
+    "dmgres": [
+      "Fire"
+    ]
+  },
+  {
+    "_key": "dragonborn-silver",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dragonborn)(?=.*silver).*$",
+      "flags": "i"
+    },
+    "name": "Silver Dragonborn",
+    "sortname": "Dragonborn, Silver",
+    "trait": "Silver Dragonborn\n• Cold Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Cold damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Cold wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
+    "dmgres": [
+      "Cold"
+    ]
+  },
+  {
+    "_key": "dragonborn-white",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dragonborn)(?=.*white).*$",
+      "flags": "i"
+    },
+    "name": "White Dragonborn",
+    "sortname": "Dragonborn, White",
+    "trait": "White Dragonborn\n• Cold Breath Weapon: When I Attack on my turn, I can make one of my attacks an exhalation of magical energy (a 15-foot Cone, or a 30-foot Line 5 feet wide) (choose each time) in which each creature must make a Dex save (DC 8 + Con modifier + Prof Bonus) or take 1d10 (2d10 at level 5, 3d10 at level 11, 4d10 at level 17) Cold damage or half on a pass. I can use this Breath Weapon my Prof Bonus times per Long Rest.\n• Draconic Flight: When I reach character level 5, once per Long Rest as a Bonus Action I can sprout spectral Cold wings on my back that last for 10 min, until I retract them (no action), or I become Incapacitated, during which I have a Fly Speed equal to my Speed.",
+    "dmgres": [
+      "Cold"
+    ]
+  },
+  {
+    "_key": "elf-dark",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*elf)(?=.*dark).*$",
+      "flags": "i"
+    },
+    "name": "Dark Elf",
+    "sortname": "Drow",
+    "vision": [
+      [
+        "Darkvision",
+        120
+      ]
+    ],
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Drow Lineage",
+        "spells": [
+          "dancing lights"
+        ],
+        "selection": [
+          "dancing lights"
+        ],
+        "times": 1,
+        "firstCol": "atwill"
+      }
+    ],
+    "trait": "Drow\n• Drow Lineage: I gain the Dancing Lights cantrip. I learn Faerie Fire at level 3 & Darkness at level 5; These spells are always Prepared & I can cast them without a spell slot once each per Long Rest or use Spell Slots; Int, Wis, or Cha is my spellcasting ability. (Choose the ability with the lineage).\n• Trance: I don't need to sleep & magic can't put me to sleep. I can finish a Long Rest in 4 hours if I spend that time in a trance like meditation, during which I retain consciousness.",
+    "features": {
+      "drow lineage3": {
+        "name": "Faerie Fire",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 3 I learn the Faerie Fire spell.",
+        "spellcastingBonus": [
+          {
+            "name": "Drow Lineage",
+            "spells": [
+              "faerie fire"
+            ],
+            "selection": [
+              "faerie fire"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      },
+      "drow lineage5": {
+        "name": "Darkness",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 5 I learn the Darkness spell.",
+        "spellcastingBonus": [
+          {
+            "name": "Drow Lineage",
+            "spells": [
+              "darkness"
+            ],
+            "selection": [
+              "darkness"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "_key": "elf-high",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*elf)(?=.*high).*$",
+      "flags": "i"
+    },
+    "name": "High Elf",
+    "sortname": "High Elf",
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "High Elf Lineage",
+        "class": [
+          "wizard"
+        ],
+        "selection": [
+          "prestidigitation"
+        ],
+        "level": [
+          0,
+          0
+        ],
+        "times": 1,
+        "firstCol": "atwill"
+      }
+    ],
+    "trait": "High Elf\n• High Elf Lineage: I gain the Prestidigitation cantrip & can replace it with another from the Wizard spell list at the end of a Long Rest. I learn Detect Magic at level 3 & Misty Step at level 5; These spells are always Prepared & I can cast them without a spell slot once each per Long Rest or use Spell Slots; Int, Wis, or Cha is my spellcasting ability. (Choose the ability with the lineage).\n• Trance: I don't need to sleep & magic can't put me to sleep. I can finish a Long Rest in 4 hours if I spend that time in a trance like meditation, during which I retain consciousness.",
+    "features": {
+      "high elf lineage3": {
+        "name": "Detect Magic",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 3 I learn the Detect Magic spell.",
+        "spellcastingBonus": [
+          {
+            "name": "High Elf Lineage",
+            "spells": [
+              "detect magic"
+            ],
+            "selection": [
+              "detect magic"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      },
+      "high elf lineage5": {
+        "name": "Misty Step",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 5 I learn the Misty Step spell.",
+        "spellcastingBonus": [
+          {
+            "name": "High Elf Lineage",
+            "spells": [
+              "misty step"
+            ],
+            "selection": [
+              "misty step"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "_key": "elf-wood",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*elf)(?=.*wood).*$",
+      "flags": "i"
+    },
+    "name": "Wood Elf",
+    "sortname": "Wood Elf",
+    "speed": {
+      "walk": {
+        "spd": 35,
+        "enc": 25
+      }
+    },
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Wood Elf Lineage",
+        "spells": [
+          "druidcraft"
+        ],
+        "selection": [
+          "druidcraft"
+        ],
+        "times": 1,
+        "firstCol": "atwill"
+      }
+    ],
+    "trait": "Wood Elf\n• Wood Elf Lineage: I gain the Druidcraft cantrip. I learn Longstrider at level 3 & Pass without Trace at level 5; These spells are always Prepared & I can cast them without a spell slot once each per Long Rest or use Spell Slots; Int, Wis, or Cha is my spellcasting ability. (Choose the ability when I select the lineage)\n• Trance: I don't need to sleep & magic can't put me to sleep. I can finish a Long Rest in 4 hours if I spend that time in a trance like meditation, during which I retain consciousness.",
+    "features": {
+      "wood elf lineage3": {
+        "name": "Longstrider",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 3 I learn the Longstrider spell.",
+        "spellcastingBonus": [
+          {
+            "name": "Wood Elf Lineage",
+            "spells": [
+              "longstrider"
+            ],
+            "selection": [
+              "longstrider"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      },
+      "wood elf lineage5": {
+        "name": "Pass without Trace",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 5 I learn the Pass without Trace spell.",
+        "spellcastingBonus": [
+          {
+            "name": "Wood Elf Lineage",
+            "spells": [
+              "pass without trace"
+            ],
+            "selection": [
+              "pass without trace"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "_key": "gnome-forest",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*gnome)(?=.*forest).*$",
+      "flags": "i"
+    },
+    "name": "Forest Gnome",
+    "sortname": "Gnome, Forest",
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Forest Gnome Lineage",
+        "spells": [
+          "minor illusion"
+        ],
+        "selection": [
+          "minor illusion"
+        ],
+        "times": 1,
+        "firstCol": "atwill"
+      },
+      {
+        "name": "Forest Gnome Lineage",
+        "spells": [
+          "speak with animals"
+        ],
+        "selection": [
+          "speak with animals"
+        ],
+        "times": 1,
+        "prepared": true
+      }
+    ],
+    "trait": "Forest Gnome\n• Forest Gnome Lineage: I know the Minor Illusion cantrip. I always have Speak with Animals Prepared & can cast it without a spell slot my Prof Bonus times per Long Rest or use Spell slots.\n• Gnomish Cunning: I have Advantage on Intelligence, Wisdom, and Charisma saving throws.",
+    "features": {
+      "forest gnome lineage": {
+        "name": "Forest Gnome Lineage",
+        "minlevel": 1,
+        "limfeaname": "Speak with Animals",
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "description": "I always have the Speak with Animals spell prepared. I can cast it without a spell slot a number of times equal to my Proficiency Bonus and I regain all expended uses when I finish a Long Rest."
+      }
+    }
+  },
+  {
+    "_key": "gnome-rock",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*gnome)(?=.*rock).*$",
+      "flags": "i"
+    },
+    "name": "Rock Gnome",
+    "sortname": "Gnome, Rock",
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Rock Gnome Lineage",
+        "spells": [
+          "mending",
+          "prestidigitation"
+        ],
+        "selection": [
+          "mending",
+          "prestidigitation"
+        ],
+        "times": 2,
+        "firstCol": "atwill"
+      }
+    ],
+    "trait": "Rock Gnome\n• Rock Gnome Lineage: I know the Mending & Prestidigitation cantrips. I can create a Tiny clockwork device (AC 5, 1 HP) if I spend 10 min casting Prestidigitation; I choose (one option of) one effect, which the device produces when a creature uses a Bonus Action to activate it via touch. I can have three such devices in existence at a time, and each falls apart after 8 hours or when I dismantle it via touch as a Utilize action.\n• Gnomish Cunning: I have Advantage on Intelligence, Wisdom, and Charisma saving throws.",
+    "features": {
+      "rock gnome lineage": {
+        "name": "Clockwork Devices",
+        "minlevel": 1,
+        "usages": "3",
+        "recovery": "long rest",
+        "action": [
+          "bonus action",
+          "Clockwork Device (Use)"
+        ],
+        "description": "I know the Mending and Prestidigitation cantrips. In addition, I can spend 10 minutes casting Prestidigitation to create a Tiny clockwork device (AC 5, 1 HP), such as a toy, fire starter, or music box. When I create the device, I determine its function by choosing one effect from Prestidigitation; the device produces that effect whenever I or another creature takes a Bonus Action to activate it with a touch. If the chosen effect has options for the device when I create it. For example, if I choose the spell's ignite extinguish effect, I determine whether the device ignites or extinguishes fire; the device doesn't do both. I can have three such devices in existence at a time, and each falls apart 8 hours after its creation or when I dismantle it with a touch as a Utilize action."
+      }
+    }
+  },
+  {
+    "_key": "goliath-cloud",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*goliath)(?=.*cloud).*$",
+      "flags": "i"
+    },
+    "name": "Cloud Goliath",
+    "sortname": "Goliath, Cloud",
+    "trait": "Cloud Goliath\n• Giant Ancestry (Cloud's Jaunt (Cloud Giant)): As a Bonus Action I magically teleport up to 30 ft to an unoccupied space I can see.\n• Large Form: Starting at 5th level, once per Long Rest I can change my size to Large as a Bonus Action if I'm in a big enough space for 10 min or until I end it (no action). While Large I have Adv on Str checks and my Speed increases by 10 ft\n• Powerful Build: I count as one size larger when determining my carrying capacity.",
+    "carryingCapacity": 2,
+    "features": {
+      "cloud's jaunt": {
+        "name": "Cloud's Jaunt",
+        "limfeaname": "Cloud's Jaunt",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "action": "bonus action",
+        "description": "As a Bonus Action, I magically teleport up to 30 feet to an unoccupied space I can see."
+      },
+      "large form": {
+        "name": "Large Form",
+        "limfeaname": "Large Form",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "action": [
+          [
+            "bonus action",
+            "Large Form"
+          ]
+        ],
+        "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
+      }
+    }
+  },
+  {
+    "_key": "goliath-fire",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*goliath)(?=.*fire).*$",
+      "flags": "i"
+    },
+    "name": "Fire Goliath",
+    "sortname": "Goliath, Fire",
+    "trait": "Fire Goliath\n• Giant Ancestry (Fire's Burn (Fire Giant)): When I hit a target with an attack roll and deal damage to it I can also deal 1d10 Fire damage to that target.\n• Large Form: Starting at 5th level, once per Long Rest I can change my size to Large as a Bonus Action if I'm in a big enough space for 10 min or until I end it (no action). While Large I have Adv on Str checks and my Speed increases by 10 ft\n• Powerful Build: I count as one size larger when determining my carrying capacity.",
+    "carryingCapacity": 2,
+    "features": {
+      "fire's burn": {
+        "name": "Fire's Burn",
+        "limfeaname": "Fire's Burn",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "action": [
+          [
+            "action",
+            "Fire's Burn (When I hit a target w/ Atk Roll)"
+          ]
+        ],
+        "description": "When I hit a target with an attack roll and deal damage to it, I can also deal 1d10 Fire damage to that target."
+      },
+      "large form": {
+        "name": "Large Form",
+        "limfeaname": "Large Form",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "action": [
+          [
+            "bonus action",
+            "Large Form"
+          ]
+        ],
+        "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
+      }
+    }
+  },
+  {
+    "_key": "goliath-frost",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*goliath)(?=.*frost).*$",
+      "flags": "i"
+    },
+    "name": "Frost Goliath",
+    "sortname": "Goliath, Frost",
+    "trait": "Frost Goliath\n• Giant Ancestry (Frost's Chill (Frost Giant)): When I hit a target with an attack roll and deal damage I can also deal 1d6 Cold damage & reduce its Speed by 10 ft until the start of my next turn.\n• Large Form: Starting at 5th level, once per Long Rest I can change my size to Large as a Bonus Action if I'm in a big enough space for 10 min or until I end it (no action). While Large I have Adv on Str checks and my Speed increases by 10 ft\n• Powerful Build: I count as one size larger when determining my carrying capacity.",
+    "carryingCapacity": 2,
+    "features": {
+      "frost's chill": {
+        "name": "Frost's Chill",
+        "limfeaname": "Frost's Chill",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "action": [
+          [
+            "action",
+            "Frost's Chill(When I hit a target w/ Atk Roll)"
+          ]
+        ],
+        "description": "When I hit a target with an attack roll and deal damage to it, I can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of my next turn."
+      },
+      "large form": {
+        "name": "Large Form",
+        "limfeaname": "Large Form",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "action": [
+          [
+            "bonus action",
+            "Large Form"
+          ]
+        ],
+        "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
+      }
+    }
+  },
+  {
+    "_key": "goliath-hill",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*goliath)(?=.*hill).*$",
+      "flags": "i"
+    },
+    "name": "Hill Goliath",
+    "sortname": "Goliath, Hill",
+    "trait": "Hill Goliath\n• Giant Ancestry (Hill's Tumble (Hill Giant)): When I hit a Large or smaller creature with an Attack Roll and deal damage I can also inflict Prone.\n• Large Form: Starting at 5th level, once per Long Rest I can change my size to Large as a Bonus Action if I'm in a big enough space for 10 min or until I end it (no action). While Large I have Adv on Str checks and my Speed increases by 10 ft\n• Powerful Build: I count as one size larger when determining my carrying capacity.",
+    "carryingCapacity": 2,
+    "features": {
+      "hill's tumble": {
+        "name": "Hill's Tumble",
+        "limfeaname": "Hill's Tumble",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "action": [
+          [
+            "action",
+            "Hill's Tumble (When I hit Large or smaller crea w/ atk roll)"
+          ]
+        ],
+        "description": "When I hit a Large or smaller creature with an Attack Roll and deal damage to it, I can give that target the Prone condition."
+      },
+      "large form": {
+        "name": "Large Form",
+        "limfeaname": "Large Form",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "action": [
+          [
+            "bonus action",
+            "Large Form"
+          ]
+        ],
+        "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
+      }
+    }
+  },
+  {
+    "_key": "goliath-stone",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*goliath)(?=.*stone).*$",
+      "flags": "i"
+    },
+    "name": "Stone Goliath",
+    "sortname": "Goliath, Stone",
+    "trait": "Stone Goliath\n• Giant Ancestry (Stone's Endurance (Stone Giant)): As a Reaction when I take damage I can reduce it by 1d12 + Con mod.\n• Large Form: Starting at 5th level, once per Long Rest I can change my size to Large as a Bonus Action if I'm in a big enough space for 10 min or until I end it (no action). While Large I have Adv on Str checks and my Speed increases by 10 ft\n• Powerful Build: I count as one size larger when determining my carrying capacity.",
+    "carryingCapacity": 2,
+    "features": {
+      "stone's endurance": {
+        "name": "Stone's Endurance",
+        "limfeaname": "Stone's Endurance",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "action": [
+          [
+            "reaction",
+            "Stone's Endurance (When I take Dmg)"
+          ]
+        ],
+        "description": "When I take damage, I can take a Reaction to roll 1d12. Add my Constitution modifier to the number rolled and reduce the damage by that total."
+      },
+      "large form": {
+        "name": "Large Form",
+        "limfeaname": "Large Form",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "action": [
+          [
+            "bonus action",
+            "Large Form"
+          ]
+        ],
+        "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
+      }
+    }
+  },
+  {
+    "_key": "goliath-storm",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*goliath)(?=.*storm).*$",
+      "flags": "i"
+    },
+    "name": "Storm Goliath",
+    "sortname": "Goliath, Storm",
+    "trait": "Storm Goliath\n• Giant Ancestry (Storm's Thunder (Storm Giant)): When I take damage from a creature within 60 ft of me, I can take a Reaction to deal 1d8 Thunder damage to it.\n• Large Form: Starting at 5th level, once per Long Rest I can change my size to Large as a Bonus Action if I'm in a big enough space for 10 min or until I end it (no action). While Large I have Adv on Str checks and my Speed increases by 10 ft\n• Powerful Build: I count as one size larger when determining my carrying capacity.",
+    "carryingCapacity": 2,
+    "features": {
+      "storm's thunder": {
+        "name": "Storm's Thunder",
+        "limfeaname": "Storm's Thunder",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "action": [
+          [
+            "reaction",
+            "Storm's Thunder (When taking Dmg from Crea W/I 60 ft)"
+          ]
+        ],
+        "description": "When I take damage from a creature within 60 feet of me, I can take a Reaction to deal 1d8 Thunder damage to that creature."
+      },
+      "large form": {
+        "name": "Large Form",
+        "limfeaname": "Large Form",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "action": [
+          [
+            "bonus action",
+            "Large Form"
+          ]
+        ],
+        "description": "Starting at 5th level, I can change my size to Large as Bonus Action if I'm in a big enough space. This transformation lasts for 10 minutes or until I end it (no action required). For that duration, I have Advantage on Strength checks, and my Speed increases by 10 feet. Once I use this trait, I can't use it again until I finish a Long Rest."
+      }
+    }
+  },
+  {
+    "_key": "tiefling-abyssal",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*tiefling)(?=.*abyssal).*$",
+      "flags": "i"
+    },
+    "name": "Abyssal Tiefling",
+    "sortname": "Tiefling, Abyssal",
+    "plural": "Tieflings",
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "dmgres": [
+      "Poison"
+    ],
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Abyssal Lineage",
+        "spells": [
+          "thaumaturgy",
+          "poison spray"
+        ],
+        "selection": [
+          "thaumaturgy",
+          "poison spray"
+        ],
+        "times": 2,
+        "firstCol": "atwill"
+      }
+    ],
+    "trait": "Abyssal Tiefling\n• Fiendish Legacy: I gain the Poison Spray cantrip. I learn Ray of Sickness at level 3 & Hold Person at level 5; These spells are always Prepared & I can cast them once each without a spell slot per Long Rest, or use Spell Slots; Int, Wis, or Cha is my spellcasting ability (choose the ability with the legacy).\n• Otherworldly Presence: I know the Thaumaturgy cantrip; It uses the same spellcasting ability as Fiendish Legacy.",
+    "features": {
+      "abyssal lineage3": {
+        "name": "Ray of Sickness",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 3 I learn the Ray of Sickness spell.",
+        "spellcastingBonus": [
+          {
+            "name": "Abyssal Lineage",
+            "spells": [
+              "ray of sickness"
+            ],
+            "selection": [
+              "ray of sickness"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      },
+      "abyssal lineage5": {
+        "name": "Hold Person",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 5 I learn the Hold Person spell.",
+        "spellcastingBonus": [
+          {
+            "name": "Abyssal Lineage",
+            "spells": [
+              "hold person"
+            ],
+            "selection": [
+              "hold person"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "_key": "tiefling-chthonic",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*tiefling)(?=.*chthonic).*$",
+      "flags": "i"
+    },
+    "name": "Chthonic Tiefling",
+    "sortname": "Tiefling, Chthonic",
+    "plural": "Tieflings",
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "dmgres": [
+      "Necrotic"
+    ],
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Chthonic Lineage",
+        "spells": [
+          "thaumaturgy",
+          "chill touch"
+        ],
+        "selection": [
+          "thaumaturgy",
+          "chill touch"
+        ],
+        "times": 2,
+        "firstCol": "atwill"
+      }
+    ],
+    "trait": "Chthonic Tiefling\n• Fiendish Legacy: I gain the Chill Touch cantrip. I learn False Life at level 3 & Ray of Enfeeblement at level 5; These spells are always Prepared & I can cast them once each without a spell slot per Long Rest, or use Spell Slots; Int, Wis, or Cha is my spellcasting ability (choose the ability with the legacy).\n• Otherworldly Presence: I know the Thaumaturgy cantrip; It uses the same spellcasting ability as Fiendish Legacy.",
+    "features": {
+      "chthonic lineage3": {
+        "name": "False Life",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 3 I learn the False Life spell.",
+        "spellcastingBonus": [
+          {
+            "name": "Chthonic Lineage",
+            "spells": [
+              "false life"
+            ],
+            "selection": [
+              "false life"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      },
+      "chthonic lineage5": {
+        "name": "Ray of Enfeeblement",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 5 I learn the Ray of Enfeeblement spell.",
+        "spellcastingBonus": [
+          {
+            "name": "Chthonic Lineage",
+            "spells": [
+              "ray of enfeeblement"
+            ],
+            "selection": [
+              "ray of enfeeblement"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "_key": "tiefling-infernal",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*tiefling)(?=.*infernal).*$",
+      "flags": "i"
+    },
+    "name": "Infernal Tiefling",
+    "sortname": "Tiefling, Infernal",
+    "plural": "Tieflings",
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "dmgres": [
+      "Fire"
+    ],
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Infernal Lineage",
+        "spells": [
+          "thaumaturgy",
+          "fire bolt"
+        ],
+        "selection": [
+          "thaumaturgy",
+          "fire bolt"
+        ],
+        "times": 2,
+        "firstCol": "atwill"
+      }
+    ],
+    "trait": "Infernal Tiefling\n• Fiendish Legacy: I gain the Fire Bolt cantrip. I learn Hellish Rebuke at level 3, & Darkness at level 5; These spells are always Prepared & I can cast them once each without a spell slot per Long Rest or use Spell Slots; Int, Wis, or Cha is my spellcasting ability (choose the ability with the legacy).\n• Otherworldly Presence: I know the Thaumaturgy cantrip; It uses the same spellcasting ability as Fiendish Legacy.",
+    "features": {
+      "infernal lineage3": {
+        "name": "Hellish Rebuke",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 3 I learn the Hellish Rebuke spell.",
+        "spellcastingBonus": [
+          {
+            "name": "Infernal Lineage",
+            "spells": [
+              "hellish rebuke"
+            ],
+            "selection": [
+              "hellish rebuke"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      },
+      "infernal lineage5": {
+        "name": "Darkness",
+        "minlevel": 5,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 5 I learn the Darkness spell.",
+        "spellcastingBonus": [
+          {
+            "name": "Infernal Lineage",
+            "spells": [
+              "darkness"
+            ],
+            "selection": [
+              "darkness"
+            ],
+            "times": 1,
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "_key": "draconblood dragonborn-black",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "black",
+      "flags": "i"
+    },
+    "name": "Black draconblood dragonborn",
+    "trait": "Black draconblood dragonborn (+2 Intelligence, +1 Charisma)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "acid",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "black"
+  },
+  {
+    "_key": "draconblood dragonborn-blue",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "blue",
+      "flags": "i"
+    },
+    "name": "Blue draconblood dragonborn",
+    "trait": "Blue draconblood dragonborn (+2 Intelligence, +1 Charisma)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "lightning",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "blue"
+  },
+  {
+    "_key": "draconblood dragonborn-brass",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "brass",
+      "flags": "i"
+    },
+    "name": "Brass draconblood dragonborn",
+    "trait": "Brass draconblood dragonborn (+2 Intelligence, +1 Charisma)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "fire",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "brass"
+  },
+  {
+    "_key": "draconblood dragonborn-bronze",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "bronze",
+      "flags": "i"
+    },
+    "name": "Bronze draconblood dragonborn",
+    "trait": "Bronze draconblood dragonborn (+2 Intelligence, +1 Charisma)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "lightning",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "bronze"
+  },
+  {
+    "_key": "draconblood dragonborn-copper",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "copper",
+      "flags": "i"
+    },
+    "name": "Copper draconblood dragonborn",
+    "trait": "Copper draconblood dragonborn (+2 Intelligence, +1 Charisma)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "acid",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "copper"
+  },
+  {
+    "_key": "draconblood dragonborn-gold",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "gold",
+      "flags": "i"
+    },
+    "name": "Gold draconblood dragonborn",
+    "trait": "Gold draconblood dragonborn (+2 Intelligence, +1 Charisma)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "fire",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "gold"
+  },
+  {
+    "_key": "draconblood dragonborn-green",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "green",
+      "flags": "i"
+    },
+    "name": "Green draconblood dragonborn",
+    "trait": "Green draconblood dragonborn (+2 Intelligence, +1 Charisma)Poison Breath Weapon: As an action once per short rest, I can deal 2d6 poison damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "poison",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "green"
+  },
+  {
+    "_key": "draconblood dragonborn-red",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "red",
+      "flags": "i"
+    },
+    "name": "Red draconblood dragonborn",
+    "trait": "Red draconblood dragonborn (+2 Intelligence, +1 Charisma)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "fire",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "red"
+  },
+  {
+    "_key": "draconblood dragonborn-silver",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "silver",
+      "flags": "i"
+    },
+    "name": "Silver draconblood dragonborn",
+    "trait": "Silver draconblood dragonborn (+2 Intelligence, +1 Charisma)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "cold",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "silver"
+  },
+  {
+    "_key": "draconblood dragonborn-white",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "white",
+      "flags": "i"
+    },
+    "name": "White draconblood dragonborn",
+    "trait": "White draconblood dragonborn (+2 Intelligence, +1 Charisma)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "breathDmgType": "cold",
+    "_parentRace": "draconblood dragonborn",
+    "_variantKey": "white"
+  },
+  {
+    "_key": "ravenite dragonborn-black",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "black",
+      "flags": "i"
+    },
+    "name": "Black ravenite dragonborn",
+    "trait": "Black ravenite dragonborn (+2 Strength, +1 Constitution)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "acid",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "black"
+  },
+  {
+    "_key": "ravenite dragonborn-blue",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "blue",
+      "flags": "i"
+    },
+    "name": "Blue ravenite dragonborn",
+    "trait": "Blue ravenite dragonborn (+2 Strength, +1 Constitution)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "lightning",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "blue"
+  },
+  {
+    "_key": "ravenite dragonborn-brass",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "brass",
+      "flags": "i"
+    },
+    "name": "Brass ravenite dragonborn",
+    "trait": "Brass ravenite dragonborn (+2 Strength, +1 Constitution)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "fire",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "brass"
+  },
+  {
+    "_key": "ravenite dragonborn-bronze",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "bronze",
+      "flags": "i"
+    },
+    "name": "Bronze ravenite dragonborn",
+    "trait": "Bronze ravenite dragonborn (+2 Strength, +1 Constitution)Lightning Breath Weapon: As an action once per short rest, I can deal 2d6 lightning damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "lightning",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "bronze"
+  },
+  {
+    "_key": "ravenite dragonborn-copper",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "copper",
+      "flags": "i"
+    },
+    "name": "Copper ravenite dragonborn",
+    "trait": "Copper ravenite dragonborn (+2 Strength, +1 Constitution)Acid Breath Weapon: As an action once per short rest, I can deal 2d6 acid damage to all in a 5-ft by 30-ft line, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "acid",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "copper"
+  },
+  {
+    "_key": "ravenite dragonborn-gold",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "gold",
+      "flags": "i"
+    },
+    "name": "Gold ravenite dragonborn",
+    "trait": "Gold ravenite dragonborn (+2 Strength, +1 Constitution)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "fire",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "gold"
+  },
+  {
+    "_key": "ravenite dragonborn-green",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "green",
+      "flags": "i"
+    },
+    "name": "Green ravenite dragonborn",
+    "trait": "Green ravenite dragonborn (+2 Strength, +1 Constitution)Poison Breath Weapon: As an action once per short rest, I can deal 2d6 poison damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "poison",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "green"
+  },
+  {
+    "_key": "ravenite dragonborn-red",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "red",
+      "flags": "i"
+    },
+    "name": "Red ravenite dragonborn",
+    "trait": "Red ravenite dragonborn (+2 Strength, +1 Constitution)Fire Breath Weapon: As an action once per short rest, I can deal 2d6 fire damage to all in a 15-ft cone, Dex save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "fire",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "red"
+  },
+  {
+    "_key": "ravenite dragonborn-silver",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "silver",
+      "flags": "i"
+    },
+    "name": "Silver ravenite dragonborn",
+    "trait": "Silver ravenite dragonborn (+2 Strength, +1 Constitution)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "cold",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "silver"
+  },
+  {
+    "_key": "ravenite dragonborn-white",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "white",
+      "flags": "i"
+    },
+    "name": "White ravenite dragonborn",
+    "trait": "White ravenite dragonborn (+2 Strength, +1 Constitution)Cold Breath Weapon: As an action once per short rest, I can deal 2d6 cold damage to all in a 15-ft cone, Con save halves (DC 8 + Con mod + Prof Bonus).\nThis damage increases to 3d6 at level 6, 4d6 at level 11, and 5d6 at level 16.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "breathDmgType": "cold",
+    "_parentRace": "ravenite dragonborn",
+    "_variantKey": "white"
+  }
+]

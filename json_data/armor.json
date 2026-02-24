@@ -1,0 +1,295 @@
+[
+  {
+    "_key": "unarmored",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "(unarmou?red|naked|nothing|bare|no.?armou?r)",
+      "flags": "i"
+    },
+    "name": "Unarmored",
+    "source": [
+      [
+        "SRD24",
+        177
+      ],
+      [
+        "P24",
+        361
+      ]
+    ],
+    "ac": 10,
+    "addMod": true,
+    "list": "firstlist"
+  },
+  {
+    "_key": "mage armor",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(mage|magic))(?=.*armou?r).*$",
+      "flags": "i"
+    },
+    "name": "Mage armor",
+    "source": [
+      [
+        "SRD24",
+        145
+      ],
+      [
+        "P24",
+        293
+      ]
+    ],
+    "ac": 13,
+    "list": "magic",
+    "affectsWildShape": true
+  },
+  {
+    "_key": "padded",
+    "name": "Padded",
+    "invName": "Padded armor",
+    "infoname": "Padded Armor [5 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*(plate|hide))(?=.*(padding|padded)).*$",
+      "flags": "i"
+    },
+    "ac": 11,
+    "type": "light",
+    "stealthdis": true,
+    "weight": 8
+  },
+  {
+    "_key": "leather",
+    "name": "Leather",
+    "invName": "Leather armor",
+    "infoname": "Leather Armor [10 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*(padding|padded|studded|studs))(?=.*leather).*$",
+      "flags": "i"
+    },
+    "ac": 11,
+    "type": "light",
+    "stealthdis": false,
+    "weight": 10
+  },
+  {
+    "_key": "studded leather",
+    "name": "Studded leather",
+    "invName": "Studded leather armor",
+    "infoname": "Studded Leather Armor [45 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(studded|studs))(?=.*leather).*$",
+      "flags": "i"
+    },
+    "ac": 12,
+    "type": "light",
+    "stealthdis": false,
+    "weight": 13
+  },
+  {
+    "_key": "hide",
+    "name": "Hide",
+    "invName": "Hide armor",
+    "infoname": "Hide Armor [10 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*(dragon|draconic|molten bronze))(?=.*(hide|skin)).*$",
+      "flags": "i"
+    },
+    "ac": 12,
+    "type": "medium",
+    "stealthdis": false,
+    "weight": 12
+  },
+  {
+    "_key": "chain shirt",
+    "name": "Chain shirt",
+    "infoname": "Chain Shirt [50 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*chain)(?=.*shirt).*$",
+      "flags": "i"
+    },
+    "ac": 13,
+    "type": "medium",
+    "stealthdis": false,
+    "weight": 20
+  },
+  {
+    "_key": "scale mail",
+    "name": "Scale mail",
+    "infoname": "Scale Mail [50 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*scale)(?=.*mail).*$",
+      "flags": "i"
+    },
+    "ac": 14,
+    "type": "medium",
+    "stealthdis": true,
+    "weight": 45
+  },
+  {
+    "_key": "breastplate",
+    "name": "Breastplate",
+    "infoname": "Breastplate [400 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*breast)(?=.*plate).*$",
+      "flags": "i"
+    },
+    "ac": 14,
+    "type": "medium",
+    "stealthdis": false,
+    "weight": 20
+  },
+  {
+    "_key": "half plate",
+    "name": "Half Plate",
+    "infoname": "Half Plate [750 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*half)(?=.*plate).*$",
+      "flags": "i"
+    },
+    "ac": 15,
+    "type": "medium",
+    "stealthdis": true,
+    "weight": 40
+  },
+  {
+    "_key": "ring mail",
+    "name": "Ring Mail",
+    "infoname": "Ring Mail [30 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*ring)(?=.*mail).*$",
+      "flags": "i"
+    },
+    "ac": 14,
+    "type": "heavy",
+    "stealthdis": true,
+    "weight": 40
+  },
+  {
+    "_key": "chain mail",
+    "name": "Chain Mail",
+    "infoname": "Chain Mail [75 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*(scale|plate|ring|shirt))(?=.*chain)(?=.*mail).*$",
+      "flags": "i"
+    },
+    "ac": 16,
+    "type": "heavy",
+    "stealthdis": true,
+    "weight": 55,
+    "strReq": 13
+  },
+  {
+    "_key": "splint",
+    "name": "Splint",
+    "invName": "Splint armor",
+    "infoname": "Splint Armor [200 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*splint).*$",
+      "flags": "i"
+    },
+    "ac": 17,
+    "type": "heavy",
+    "stealthdis": true,
+    "weight": 60,
+    "strReq": 15
+  },
+  {
+    "_key": "plate",
+    "name": "Plate",
+    "invName": "Plate armor",
+    "infoname": "Plate Armor [1500 gp]",
+    "source": [
+      [
+        "P24",
+        219
+      ]
+    ],
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*(half|breast))(?=.*plate).*$",
+      "flags": "i"
+    },
+    "ac": 18,
+    "type": "heavy",
+    "stealthdis": true,
+    "weight": 65,
+    "strReq": 15
+  }
+]

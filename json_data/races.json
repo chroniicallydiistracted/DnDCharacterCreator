@@ -1,0 +1,3085 @@
+[
+  {
+    "_key": "aasimar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "aasimar",
+      "flags": "i"
+    },
+    "name": "Aasimar",
+    "sortname": "Aasimar",
+    "source": [
+      [
+        "P24",
+        186
+      ]
+    ],
+    "plural": "Aasimar",
+    "size": [
+      3,
+      4
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "dmgres": [
+      "Necrotic",
+      "Radiant"
+    ],
+    "age": " reach maturity their in late teens and live about 160 years",
+    "height": " are about 2-4 or 4-7 feet tall",
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "minlevel": 1,
+        "limfeaname": "Healing Hands",
+        "usages": 1,
+        "recovery": "long rest",
+        "action": "action",
+        "description": "As a Magic action, I touch a creature and roll a number of d4s equal to my Proficiency Bonus. The creature regains a number of Hit Points equal to the total rolled. Once I use this trait, I can't use it again until I finish a Long Rest."
+      },
+      "celestial revelation": {
+        "name": "Celestial Revelation",
+        "limfeaname": "Celestial Revelation",
+        "minlevel": 3,
+        "usages": 1,
+        "recovery": "long rest",
+        "action": [
+          [
+            "bonus action",
+            "Celestial Revelation"
+          ]
+        ],
+        "description": "When I reach character level 3, I can transform as a Bonus Action using one of the options below (See Notes Page) (choose the option each time I transform). That transformation lasts for 1 minute or until I end it (no action required). Once I transform, I can't do so again until I finish a Long Rest. Once on each of my turns before the transformation ends, I can deal extra damage to one target when I deal damage to it with an attack or a spell. The extra damage equals my Proficiency Bonus, and the extra damage's type is either Necrotic for Necrotic Shroud or Radiant for Heavenly Wings and Inner Radiance.",
+        "toNotesPage": [
+          {
+            "name": "Celestial Revelation",
+            "note": [
+              "Heavenly Wings : Two spectral wings sprout from my back temporarily. Until the transformation ends, I have a Fly Speed equal to my Speed.",
+              "Inner Radiance : Searing light temporarily radiates from my eyes and mouth. For the duration, I shed Bright Light in a 10-foot radius and Dim Light for an additional 10 feet, and at the end of each of my turns, each creature within 10 feet of me takes Radiant damage equal to my Proficiency Bonus",
+              "Necrotic Shroud : My eyes briefly become pools of darkness, and flightless wings sprout from my back temporarily. Creatures other than my allies within 10 feet of me must succeed on a Charisma saving throw (DC 8 plus my Charisma modifier and Proficiency Bonus) or have the Frightened condition until the end of my next turn"
+            ]
+          }
+        ]
+      }
+    },
+    "spellcastingAbility": 6,
+    "spellcastingBonus": [
+      {
+        "name": "Light Bearer",
+        "spells": [
+          "light"
+        ],
+        "selection": [
+          "light"
+        ],
+        "times": 1
+      }
+    ],
+    "trait": "Aasimar\n• Healing Hands: Once per Long Rest as a Magic action I can touch a creature & restore my Prof Bonus d4s HP.\n• Light Bearer: I know the Light cantrip. Charisma is my spellcasting ability for it.\n• Celestial Revelation: Once per Long Rest as a Bonus Action I can transform for 1 min or until I end it. (no action) (choose an option each time) (See Notes Page)",
+    "replaces": [
+      "fallen aasimar",
+      "protector aasimar",
+      "scourge aasimar",
+      "multiverse aasimar"
+    ]
+  },
+  {
+    "_key": "dragonborn",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "dragonborn",
+      "flags": "i"
+    },
+    "name": "Dragonborn",
+    "source": [
+      [
+        "P24",
+        187
+      ]
+    ],
+    "plural": "Dragonborn",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "weaponOptions": [
+      {
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "^(?=.*breath)(?=.*weapon).*$",
+          "flags": "i"
+        },
+        "name": "Breath weapon",
+        "source": [
+          [
+            "P24",
+            187
+          ]
+        ],
+        "ability": 3,
+        "type": "Special",
+        "damage": [
+          1,
+          10,
+          "fire"
+        ],
+        "range": "15-ft cone/30-ft line",
+        "description": "Hits all in area; Dex save, success - half damage; Usable Prof Bonus per long Rest",
+        "abilitytodamage": false,
+        "dc": true,
+        "dbBreathWeapon": true,
+        "selectNow": true,
+        "isAlwaysProf": true
+      }
+    ],
+    "age": " reach maturity in late teens and live about 80 years",
+    "height": " are about 5 - 7 feet tall",
+    "heightMetric": " are about 1,5 - 2,1 meters tall",
+    "trait": "Dragonborn\n• Draconic Ancestry: Use 'Racial Options' above to choose a dragon progenitor, affecting my Breath Weapon, Damage Resistance trait, & appearance.",
+    "features": {
+      "draconic ancestry": {
+        "name": "Draconic Ancestry",
+        "limfeaname": "Breath Weapon",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "additional": [
+          "1d10",
+          "1d10",
+          "1d10",
+          "1d10",
+          "2d10",
+          "2d10",
+          "2d10",
+          "2d10",
+          "2d10",
+          "2d10",
+          "3d10",
+          "3d10",
+          "3d10",
+          "3d10",
+          "3d10",
+          "3d10",
+          "4d10",
+          "4d10",
+          "4d10",
+          "4d10"
+        ],
+        "recovery": "long rest",
+        "action": [
+          [
+            "action"
+          ]
+        ],
+        "calcChanges": {
+          "atkAdd": [
+            {
+              "_type": "function",
+              "body": "function(fields, v) {\r\n                        if (v.theWea.dbBreathWeapon && CurrentRace.known === 'dragonborn') {\r\n                            fields.Damage_Die = (CurrentRace.level < 5 ? 1 : CurrentRace.level < 11 ? 2 : CurrentRace.level < 17 ? 3 : 4) + 'd10';\r\n                            if (CurrentRace.variant) {\r\n                                fields.Damage_Type = CurrentRace.dmgres[0];\r\n                            }\r\n                        }\r\n                    }"
+            },
+            "",
+            1
+          ]
+        }
+      },
+      "draconic flight": {
+        "name": "Draconic Flight",
+        "source": [
+          [
+            "P24",
+            187
+          ]
+        ],
+        "minlevel": 5,
+        "action": [
+          "bonus action"
+        ],
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I reach character level 5, I can channel draconic magic to give myself temporary flight. As a Bonus Action, I sprout spectral wings on my back that last for 10 minutes or until I retract the wings (no action required) or have the incapacitated condition. During that time I have a Fly Speed equal to my Speed. My wings appear to be made of the same energy as my Breath Weapon. Once I use this trait, I can't use it again until I finish a Long Rest"
+      }
+    },
+    "variants": [
+      "black",
+      "blue",
+      "brass",
+      "bronze",
+      "copper",
+      "gold",
+      "green",
+      "red",
+      "silver",
+      "white"
+    ]
+  },
+  {
+    "_key": "dwarf",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*dwarf).*$",
+      "flags": "i"
+    },
+    "name": "Dwarf",
+    "sortname": "Dwarf",
+    "source": [
+      [
+        "P24",
+        188
+      ]
+    ],
+    "plural": "Dwarves",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        120
+      ],
+      [
+        "Tremorsense",
+        60
+      ]
+    ],
+    "savetxt": {
+      "adv_vs": [
+        "avoiding or ending the Poisoned condition"
+      ]
+    },
+    "dmgres": [
+      "Poison"
+    ],
+    "age": " reach maturity in early 20s and live about 350 years",
+    "height": " are about 4-5 feet tall",
+    "calcChanges": {
+      "hp": {
+        "_type": "function",
+        "body": "function(totalHD) {\r\n            return [totalHD, \"Dwarven Toughness\"];\r\n        }"
+      }
+    },
+    "features": {
+      "stonecunning": {
+        "name": "Stonecunning",
+        "limfeaname": "Stonecunning",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "action": [
+          [
+            "bonus action",
+            "Tremorsense"
+          ]
+        ],
+        "description": "As a Bonus Action, I gain Tremorsense with a range of 60 feet for 10 minutes. I must be on a stone surface or touching a stone surface to use this Tremorsense. The stone can be natural or worked. I can use this Bonus Action a number of times equal to my Proficiency Bonus, and I regain all expended uses when I finish a Long Rest."
+      }
+    },
+    "trait": "Dwarf\n• Dwarven Toughness: I add 1 to my max HP every level, including 1.\n• Stonecunning: As a Bonus Action I gain Tremorsense with a range of 60 feet for 10 min when on or touching natural or worked stone. I can use this my Prof Bonus times per Long Rest.",
+    "replaces": [
+      "hill dwarf",
+      "mountain dwarf"
+    ]
+  },
+  {
+    "_key": "elf",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*elf).*$",
+      "flags": "i"
+    },
+    "name": "Elf",
+    "sortname": "Elf",
+    "source": [
+      [
+        "P24",
+        190
+      ]
+    ],
+    "plural": "Elves",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "savetxt": {
+      "adv_vs": [
+        "avoiding or ending the Charmed condition"
+      ]
+    },
+    "skillstxt": "Choose one between Insight, Perception, or Survival",
+    "age": " reach maturity in early 20s and live about 750 years",
+    "height": " are about 5-6 feet tall",
+    "trait": "Elf\n• Elven Lineage: Use 'Racial Options' above to choose a lineage that grants me supernatural abilities. Int, Wis, or Cha is my spellcasting ability for spells I cast with this trait. (Choose the ability with the lineage)\n• Trance: I don't need to sleep, and magic can't put me to sleep. I can finish a Long Rest in 4 hours if I spend those hours in a trance-like meditation, during which I retain consciousness",
+    "variants": [
+      "dark",
+      "high",
+      "wood"
+    ],
+    "replaces": [
+      "dark elf",
+      "high elf",
+      "wood elf"
+    ]
+  },
+  {
+    "_key": "gnome",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*gnome).*$",
+      "flags": "i"
+    },
+    "name": "Gnome",
+    "sortname": "Gnome",
+    "source": [
+      [
+        "P24",
+        191
+      ]
+    ],
+    "plural": "Gnomes",
+    "size": 4,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "savetxt": {
+      "text": [
+        "Adv. on Int, Wis, and Cha Saves; "
+      ]
+    },
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "age": " reach maturity in early 20s and live about 425 years",
+    "height": " are about 3-4 feet tall",
+    "trait": "Gnome\n• Gnomish Lineage: Use 'Racial Options' above to choose a lineage. I can choose Int, Wis, or Cha as my spellcasting ability for spells I cast with this trait (choose the ability with the lineage).\n• Gnomish Cunning: I have Advantage on Intelligence, Wisdom, and Charisma saving throws.",
+    "variants": [
+      "forest",
+      "rock"
+    ],
+    "replaces": [
+      "forest gnome",
+      "rock gnome"
+    ]
+  },
+  {
+    "_key": "goliath",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*goliath).*$",
+      "flags": "i"
+    },
+    "name": "Goliath",
+    "sortname": "Goliath",
+    "source": [
+      [
+        "P24",
+        192
+      ]
+    ],
+    "plural": "Goliaths",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 35,
+        "enc": 25
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "savetxt": {
+      "text": [
+        "Adv. on Ability Checks vs. ending the Grappled condition; "
+      ]
+    },
+    "age": " reach maturity in late teens and live about 80 years",
+    "height": " are about 7-8 feet tall",
+    "trait": "Goliath\n• Large Form: Starting at 5th level, once per Long Rest I can change my size to Large as a Bonus Action if I'm in a big enough space for 10 min or until I end it (no action). While Large I have Adv on Str checks and my Speed increases by 10 ft\n• Powerful Build: I count as one size larger when determining my carrying capacity.",
+    "carryingCapacity": 2,
+    "variants": [
+      "cloud",
+      "fire",
+      "frost",
+      "hill",
+      "stone",
+      "storm"
+    ],
+    "replaces": [
+      "goliath",
+      "multiverse goliath"
+    ]
+  },
+  {
+    "_key": "halfling",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*halfling).*$",
+      "flags": "i"
+    },
+    "name": "Halfling",
+    "sortname": "Halfling",
+    "source": [
+      [
+        "P24",
+        193
+      ]
+    ],
+    "plural": "Halflings",
+    "size": 4,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "savetxt": {
+      "adv_vs": [
+        "avoiding or ending the Frightened condition"
+      ]
+    },
+    "age": " reach maturity in late teens and live about 150 years",
+    "height": " are about 2-3 feet tall",
+    "trait": "Halfling\n• Halfling Nimbleness: I can move through the space of any creature larger than me but can't stop in the same space.\n• Luck: When I roll a 1 on a D20 Test, I can reroll & must use the new roll.\n• Naturally Stealthy: I can take the Hide action even when I am obscured only by a creature that is at least one size larger than me.",
+    "replaces": [
+      "lightfoot halfling",
+      "stout halfling"
+    ]
+  },
+  {
+    "_key": "human",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*human).*$",
+      "flags": "i"
+    },
+    "name": "Human",
+    "sortname": "Human",
+    "source": [
+      [
+        "P24",
+        194
+      ]
+    ],
+    "plural": "Humans",
+    "size": [
+      3,
+      4
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "skillstxt": "Choose any one skill",
+    "age": " reach maturity in late teens and live about 80 years",
+    "height": " are about 2-4 or 4-7 feet tall",
+    "trait": "Human\n• Resourceful: I gain Heroic Inspiration when I finish a Long Rest.\n• Versatile : I gain an Origin feat of my choice.",
+    "eval": {
+      "_type": "function",
+      "body": "function() {\r\n        AddString('Feat Note 1', 'Human bonus feat', '; ');\r\n    }"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function() {\r\n        RemoveString('Feat Note 1', 'Human bonus feat');\r\n    }"
+    },
+    "replaces": [
+      "human"
+    ]
+  },
+  {
+    "_key": "orc",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*orc).*$",
+      "flags": "i"
+    },
+    "name": "Orc",
+    "sortname": "Orc",
+    "source": [
+      [
+        "P24",
+        195
+      ]
+    ],
+    "plural": "Orcs",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        120
+      ]
+    ],
+    "age": " reach maturity in late teens and live about 80 years",
+    "height": " are about 6-7 feet tall",
+    "trait": "Orc\n• Adrenaline Rush: I can Dash as a Bonus Action and I gain my Prof Bonus Temp HP when I do. I can use this my Prof Bonus times per Rest.\n• Relentless Endurance: Once per Long Rest when I am reduced to 0 Hit Points but not killed outright, I can drop to 1 Hit Point instead.",
+    "features": {
+      "adrenaline rush": {
+        "name": "Adrenaline Rush",
+        "limfeaname": "Adrenaline Rush",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "short rest",
+        "action": [
+          [
+            "bonus action",
+            "Dash"
+          ]
+        ],
+        "description": "I can take the Dash action as a Bonus Action. When I do so, I gain a number of Temporary Hit Points equal to my Proficiency Bonus. I can use this trait a number of times equal to my Proficiency Bonus, and I regain all expended uses when I finish a Short or Long Rest."
+      },
+      "relentless endurance": {
+        "name": "Relentless Endurance",
+        "limfeaname": "Relentless Endurance",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "long rest",
+        "description": "When I am reduced to 0 Hit Points but not killed outright, I can drop to 1 Hit Point instead. Once I use this trait, I can't do so again until I finish a Long Rest."
+      }
+    },
+    "replaces": [
+      "multiverse orc",
+      "orc"
+    ]
+  },
+  {
+    "_key": "tiefling",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*tiefling).*$",
+      "flags": "i"
+    },
+    "name": "Tiefling",
+    "sortname": "Tiefling",
+    "source": [
+      [
+        "P24",
+        197
+      ]
+    ],
+    "plural": "Tieflings",
+    "size": [
+      3,
+      4
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      2
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "age": " reach maturity in late teens and live about 80 years",
+    "height": " are about 3-4 feet tall if small or 4-7 feet tall if medium",
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Otherworldly Presence",
+        "spells": [
+          "thaumaturgy"
+        ],
+        "selection": [
+          "thaumaturgy"
+        ],
+        "times": 1,
+        "firstCol": "atwill"
+      }
+    ],
+    "trait": "Tiefling\n• Fiendish Legacy: Use 'Racial Options' above to choose a legacy & spellcasting ability. I can choose Int, Wis, or Cha as my spellcasting ability for spells I cast with this trait (choose the ability with the legacy).\n• Otherworldly Presence: I know the Thaumaturgy cantrip; It uses the same spellcasting ability as Fiendish Legacy.",
+    "variants": [
+      "abyssal",
+      "chthonic",
+      "infernal"
+    ],
+    "replaces": [
+      "tiefling"
+    ]
+  },
+  {
+    "_key": "pallid elf",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*half)((?=.*\\b(elfs?|elves|elvish|elven)\\b)(?=.*\\b(pallid|pale)\\b)).*$",
+      "flags": "i"
+    },
+    "name": "Pallid Elf",
+    "sortname": "Elf, Pallid",
+    "source": [
+      [
+        "W",
+        163
+      ]
+    ],
+    "plural": "Pallid Elves",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Elvish"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ],
+      [
+        "Adv. on Int (Investigation) and Wis (Insight) checks",
+        ""
+      ]
+    ],
+    "savetxt": {
+      "text": [
+        "Magic can't put me to sleep"
+      ],
+      "adv_vs": [
+        "charmed"
+      ]
+    },
+    "skills": [
+      "Perception"
+    ],
+    "advantages": [
+      [
+        "Insight",
+        true
+      ],
+      [
+        "Investigation",
+        true
+      ]
+    ],
+    "age": " typically claim adulthood around age 100 and can live to be 750 years old",
+    "height": " range from under 5 to over 6 feet tall (4'6\" + 2d10\")",
+    "weight": " weigh around 110 lb (90 + 2d10 × 1d4 lb)",
+    "heightMetric": " range from under 1,5 to 1,7 metres tall (137 + 5d10 cm)",
+    "weightMetric": " weigh around 50 kg (40 + 5d10 × 2d4 / 10 kg)",
+    "scores": [
+      0,
+      2,
+      0,
+      0,
+      1,
+      0
+    ],
+    "trait": "Pallid Elf (+2 Dexterity, +1 Wisdom)\nTrance: Elves don't need to sleep, but meditate semiconsciously, for 4 hours a day. This gives the same benefit as a human gets from 8 hours of sleep (long rest takes only 4 hours).\nIncisive Sense: I have advantage on Intelligence (Investigation) and Wisdom (Insight) checks.\nBlessing of the Moonweaver: I know the Light cantrip. At 3rd level, I can cast Sleep once per long rest. At 5th level, I can also cast Invisibility on myself once per long rest. Spells cast using this trait require no material components and use Wisdom as spellcasting ability.",
+    "spellcastingAbility": 5,
+    "spellcastingBonus": [
+      {
+        "name": "Blessing of the Moonweaver (level 1)",
+        "spells": [
+          "light"
+        ],
+        "selection": [
+          "light"
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "spellChanges": {
+      "light": {
+        "components": "V",
+        "compMaterial": "",
+        "changes": "Using Blessing of the Moonweaver, I can cast Light without requiring a material component."
+      }
+    },
+    "features": {
+      "sleep": {
+        "name": "Blessing of the Moonweaver (level 3)",
+        "minlevel": 3,
+        "spellcastingBonus": [
+          {
+            "name": "Blessing of the Moonweaver (level 3)",
+            "spells": [
+              "sleep"
+            ],
+            "selection": [
+              "sleep"
+            ],
+            "firstCol": "oncelr"
+          }
+        ],
+        "spellChanges": {
+          "sleep": {
+            "components": "V,S",
+            "compMaterial": "",
+            "changes": "Using Blessing of the Moonweaver, I can cast Sleep once per long rest without requiring a material component."
+          }
+        }
+      },
+      "invisibility": {
+        "name": "Blessing of the Moonweaver (level 5)",
+        "minlevel": 5,
+        "spellcastingBonus": [
+          {
+            "name": "Blessing of the Moonweaver (level 5)",
+            "spells": [
+              "invisibility"
+            ],
+            "selection": [
+              "invisibility"
+            ],
+            "firstCol": "oncelr"
+          }
+        ],
+        "spellChanges": {
+          "invisibility": {
+            "range": "Self",
+            "components": "V,S",
+            "compMaterial": "",
+            "description": "Me and my worn/carried invisible until I attack or cast; Can't cast this spell in direct sunlight",
+            "changes": "Using Blessing of the Moonweaver, I can cast Invisibility once per long rest without requiring a material component, but only on myself."
+          }
+        }
+      }
+    }
+  },
+  {
+    "_key": "lotusden halfling",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*\\b(halflings?|hobbits?)\\b)(?=.*lotusden).*$",
+      "flags": "i"
+    },
+    "name": "Lotusden Halfling",
+    "sortname": "Halfling, Lotusden",
+    "source": [
+      [
+        "W",
+        164
+      ]
+    ],
+    "plural": "Lotusden Halflings",
+    "size": 4,
+    "speed": {
+      "walk": {
+        "spd": 25,
+        "enc": 15
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Halfling"
+    ],
+    "savetxt": {
+      "adv_vs": [
+        "frightened"
+      ]
+    },
+    "age": " reach adulthood at age 20 and live around 150 years",
+    "height": " average about 3 feet tall (2'7\" + 2d4\")",
+    "weight": " weigh around 40 lb (35 + 2d4 lb)",
+    "heightMetric": " average about 90 cm tall (80 + 5d4)",
+    "weightMetric": " weigh around 18 kg (16 + 5d4 / 10 kg)",
+    "scores": [
+      0,
+      2,
+      0,
+      0,
+      1,
+      0
+    ],
+    "trait": "Lotusden Halfling (+2 Dexterity, +1 Wisdom)\nChild of the Wood: I know the Druidcraft cantrip, at 3rd level: Entangle, at 5th level: Spike Growth. I can use both spells once per long rest and without material components. Wisdom is my spellcasting ability. |Lucky: When I roll a 1 on an attack roll, ability check, or saving throw, I can reroll the die and must use the new roll. |Halfling Nimbleness: I can move through the space of any creature that is of a size larger than me. |Timberwalk: Disadv. on checks to track me. I require no extra movement for difficult terrain of nonmagical plants.",
+    "spellcastingAbility": 5,
+    "spellcastingBonus": [
+      {
+        "name": "Child of the Wood (level 1)",
+        "spells": [
+          "druidcraft"
+        ],
+        "selection": [
+          "druidcraft"
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "features": {
+      "entangle": {
+        "name": "Child of the Wood (level 3)",
+        "minlevel": 3,
+        "spellcastingBonus": [
+          {
+            "name": "Child of the Wood (level 3)",
+            "spells": [
+              "entangle"
+            ],
+            "selection": [
+              "entangle"
+            ],
+            "firstCol": "oncelr"
+          }
+        ]
+      },
+      "spike growth": {
+        "name": "Child of the Wood (level 5)",
+        "minlevel": 5,
+        "spellcastingBonus": [
+          {
+            "name": "Child of the Wood (level 5)",
+            "spells": [
+              "spike growth"
+            ],
+            "selection": [
+              "spike growth"
+            ],
+            "firstCol": "oncelr"
+          }
+        ],
+        "spellChanges": {
+          "spike growth": {
+            "components": "V,S",
+            "compMaterial": "",
+            "changes": "Using Child of the Wood, I can cast Spike Growth once per long rest without requiring a material component."
+          }
+        }
+      }
+    }
+  },
+  {
+    "_key": "draconblood dragonborn",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "draconblood",
+      "flags": "i"
+    },
+    "name": "Draconblood Dragonborn",
+    "sortname": "Dragonborn, Draconblood",
+    "source": [
+      [
+        "W",
+        168
+      ]
+    ],
+    "plural": "Draconblood Dragonborn",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Draconic"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "weaponOptions": [
+      {
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "^(?=.*breath)(?=.*weapon).*$",
+          "flags": "i"
+        },
+        "name": "Breath weapon",
+        "source": [
+          [
+            "W",
+            168
+          ]
+        ],
+        "ability": 3,
+        "type": "Natural",
+        "damage": [
+          2,
+          6,
+          "fire"
+        ],
+        "range": "15-ft cone",
+        "description": "Hits all in area; Dex save, success - half damage; Usable only once per short rest",
+        "abilitytodamage": false,
+        "dc": true,
+        "dbBreathWeapon": true,
+        "selectNow": true
+      }
+    ],
+    "age": " reach adulthood by 15 and live around 80 years",
+    "height": " stand well over 6 feet tall (5'6\" + 2d8\")",
+    "weight": " weigh around 240 lb (175 + 2d8 × 2d6 lb)",
+    "heightMetric": " stand well over 1,8 metres tall (170 + 5d8 cm)",
+    "weightMetric": " weigh around 110 kg (80 + 5d8 × 4d6 / 10 kg)",
+    "scores": [
+      0,
+      0,
+      0,
+      2,
+      0,
+      1
+    ],
+    "trait": "Draconblood Dragonborn (+2 Intelligence, +1 Charisma)Draconic Ancestry: Choose one type of dragon using the \"Racial Options\" button. I gain a breath weapon as determined by the dragon type chosen.\n   Forceful Presence: Once per short rest, I can give myself adv. on an Intimidation or Persuasion check.",
+    "features": {
+      "draconic ancestry": {
+        "name": "Draconic Ancestry",
+        "limfeaname": "Breath Weapon",
+        "minlevel": 1,
+        "usages": 1,
+        "additional": [
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "5d6",
+          "5d6",
+          "5d6",
+          "5d6",
+          "5d6"
+        ],
+        "recovery": "short rest",
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ],
+        "calcChanges": {
+          "atkAdd": [
+            {
+              "_type": "function",
+              "body": "function (fields, v) {\r\n\t\t\t\t\tif (v.theWea.dbBreathWeapon && (/dragonborn/i).test(CurrentRace.known)) {\r\n\t\t\t\t\t\tfields.Damage_Die = (CurrentRace.level < 6 ? 2 : CurrentRace.level < 11 ? 3 : CurrentRace.level < 16 ? 4 : 5) + 'd6';\r\n\t\t\t\t\t\tif (CurrentRace.variant) {\r\n\t\t\t\t\t\t\tfields.Damage_Type = CurrentRace.breathDmgType;\r\n\t\t\t\t\t\t\tfields.Description = fields.Description.replace(/(dex|con) save/i, ((/cold|poison/i).test(CurrentRace.breathDmgType) ? 'Con' : 'Dex') + ' save');\r\n\t\t\t\t\t\t\tfields.Range = (/black|blue|brass|bronze|copper/i).test(CurrentRace.variant) ? '5-ft \\xD7 30-ft line' : '15-ft cone';\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t}"
+            },
+            "",
+            1
+          ]
+        }
+      },
+      "forceful presence": {
+        "name": "Forceful Presence",
+        "source": [
+          [
+            "W",
+            168
+          ]
+        ],
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "short rest"
+      }
+    },
+    "variants": [
+      "draconblood dragonborn-black",
+      "draconblood dragonborn-blue",
+      "draconblood dragonborn-brass",
+      "draconblood dragonborn-bronze",
+      "draconblood dragonborn-copper",
+      "draconblood dragonborn-gold",
+      "draconblood dragonborn-green",
+      "draconblood dragonborn-red",
+      "draconblood dragonborn-silver",
+      "draconblood dragonborn-white"
+    ]
+  },
+  {
+    "_key": "ravenite dragonborn",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "ravenite",
+      "flags": "i"
+    },
+    "name": "Ravenite Dragonborn",
+    "sortname": "Dragonborn, Ravenite",
+    "source": [
+      [
+        "W",
+        169
+      ]
+    ],
+    "plural": "Ravenite Dragonborn",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Draconic"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "weaponOptions": [
+      {
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "^(?=.*breath)(?=.*weapon).*$",
+          "flags": "i"
+        },
+        "name": "Breath weapon",
+        "source": [
+          [
+            "W",
+            168
+          ]
+        ],
+        "ability": 3,
+        "type": "Natural",
+        "damage": [
+          2,
+          6,
+          "fire"
+        ],
+        "range": "15-ft cone",
+        "description": "Hits all in area; Dex save, success - half damage; Usable only once per short rest",
+        "abilitytodamage": false,
+        "dc": true,
+        "dbBreathWeapon": true,
+        "selectNow": true
+      }
+    ],
+    "age": " reach adulthood by 15 and live around 80 years",
+    "height": " stand well over 6 feet tall (5'6\" + 2d8\")",
+    "weight": " weigh around 240 lb (175 + 2d8 × 2d6 lb)",
+    "heightMetric": " stand well over 1,8 metres tall (170 + 5d8 cm)",
+    "weightMetric": " weigh around 110 kg (80 + 5d8 × 4d6 / 10 kg)",
+    "scores": [
+      2,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "trait": "Ravenite Dragonborn (+2 Strength, +1 Constitution)Draconic Ancestry: Choose one type of dragon using the \"Racial Options\" button. I gain a breath weapon as determined by the dragon type chosen.\n   Vengeful Assault: As a reaction when I take damage from a creature in range of a weapon that I'm holding, I can use the weapon to make an attack against the creature. I can do this once per short rest.",
+    "features": {
+      "draconic ancestry": {
+        "name": "Draconic Ancestry",
+        "limfeaname": "Breath Weapon",
+        "minlevel": 1,
+        "usages": 1,
+        "additional": [
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "5d6",
+          "5d6",
+          "5d6",
+          "5d6",
+          "5d6"
+        ],
+        "recovery": "short rest",
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ],
+        "calcChanges": {
+          "atkAdd": [
+            {
+              "_type": "function",
+              "body": "function (fields, v) {\r\n\t\t\t\t\tif (v.theWea.dbBreathWeapon && (/dragonborn/i).test(CurrentRace.known)) {\r\n\t\t\t\t\t\tfields.Damage_Die = (CurrentRace.level < 6 ? 2 : CurrentRace.level < 11 ? 3 : CurrentRace.level < 16 ? 4 : 5) + 'd6';\r\n\t\t\t\t\t\tif (CurrentRace.variant) {\r\n\t\t\t\t\t\t\tfields.Damage_Type = CurrentRace.breathDmgType;\r\n\t\t\t\t\t\t\tfields.Description = fields.Description.replace(/(dex|con) save/i, ((/cold|poison/i).test(CurrentRace.breathDmgType) ? 'Con' : 'Dex') + ' save');\r\n\t\t\t\t\t\t\tfields.Range = (/black|blue|brass|bronze|copper/i).test(CurrentRace.variant) ? '5-ft \\xD7 30-ft line' : '15-ft cone';\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t}"
+            },
+            "",
+            1
+          ]
+        }
+      },
+      "vengeful assault": {
+        "name": "Vengeful Assault",
+        "source": [
+          [
+            "W",
+            168
+          ]
+        ],
+        "minlevel": 1,
+        "usages": 1,
+        "action": [
+          [
+            "reaction",
+            ""
+          ]
+        ],
+        "recovery": "short rest"
+      }
+    },
+    "variants": [
+      "ravenite dragonborn-black",
+      "ravenite dragonborn-blue",
+      "ravenite dragonborn-brass",
+      "ravenite dragonborn-bronze",
+      "ravenite dragonborn-copper",
+      "ravenite dragonborn-gold",
+      "ravenite dragonborn-green",
+      "ravenite dragonborn-red",
+      "ravenite dragonborn-silver",
+      "ravenite dragonborn-white"
+    ]
+  },
+  {
+    "_key": "fallen aasimar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^((?=.*aasimar)|((?=.*planetouched)(?=.*(celestial|angel))))(?=.*fallen).*$",
+      "flags": "i"
+    },
+    "name": "Fallen Aasimar",
+    "source": [
+      [
+        "V",
+        104
+      ],
+      [
+        "W",
+        168
+      ]
+    ],
+    "plural": "Fallen Aasimar",
+    "sortname": "Aasimar, Fallen",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Celestial"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "dmgres": [
+      "Necrotic",
+      "Radiant"
+    ],
+    "age": " reach adulthood in their late teens and live around 160 years",
+    "height": " range from barely 5 to well over 6 feet tall (4'8\" + 2d10\")",
+    "weight": " weigh around 165 lb (110 + 2d10 × 2d4 lb)",
+    "heightMetric": " range from barely 1,5 to well over 1,8 metres tall (145 + 5d10 cm)",
+    "weightMetric": " weigh around 75 kg (50 + 5d10 × 4d4 / 10 kg)",
+    "scores": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      2
+    ],
+    "trait": "Fallen Aasimar (+1 Strength, +2 Charisma) Light Bearer: I know the Light cantrip.\nHealing Hands: As an action, once per long rest, I can touch to heal for my level in HP.\nNecrotic Shroud: Once per long rest when I'm 3rd level, I can use an action to transform, causing all within 10 ft of me to make a Charisma saving throw (DC 8 + Cha mod + Prof Bonus) or be frightened of me until the end of my next turn. This lasts for 1 minute or until I end it as a bonus action. Once on my turn I can have one of my attacks or spells deals my level in extra necrotic damage to one target.",
+    "abilitySave": 6,
+    "spellcastingAbility": 6,
+    "spellcastingBonus": [
+      {
+        "name": "Light Bearer",
+        "spells": [
+          "light"
+        ],
+        "selection": [
+          "light"
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "usages": 1,
+        "minlevel": 1,
+        "recovery": "long rest",
+        "additional": [
+          "1 HP",
+          "2 HP",
+          "3 HP",
+          "4 HP",
+          "5 HP",
+          "6 HP",
+          "7 HP",
+          "8 HP",
+          "9 HP",
+          "10 HP",
+          "11 HP",
+          "12 HP",
+          "13 HP",
+          "14 HP",
+          "15 HP",
+          "16 HP",
+          "17 HP",
+          "18 HP",
+          "19 HP",
+          "20 HP"
+        ],
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      },
+      "necrotic shroud": {
+        "name": "Necrotic Shroud",
+        "usages": 1,
+        "minlevel": 3,
+        "recovery": "long rest",
+        "additional": [
+          "",
+          "",
+          "+3 damage",
+          "+4 damage",
+          "+5 damage",
+          "+6 damage",
+          "+7 damage",
+          "+8 damage",
+          "+9 damage",
+          "+10 damage",
+          "+11 damage",
+          "+12 damage",
+          "+13 damage",
+          "+14 damage",
+          "+15 damage",
+          "+16 damage",
+          "+17 damage",
+          "+18 damage",
+          "+19 damage",
+          "+20 damage"
+        ],
+        "action": [
+          [
+            "action",
+            " (start)"
+          ],
+          [
+            "bonus action",
+            " (end)"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "_key": "protector aasimar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^((?=.*aasimar)|((?=.*planetouched)(?=.*(celestial|angel))))(?=.*protector).*$",
+      "flags": "i"
+    },
+    "name": "Protector Aasimar",
+    "source": [
+      [
+        "V",
+        104
+      ],
+      [
+        "W",
+        167
+      ]
+    ],
+    "plural": "Protector Aasimar",
+    "sortname": "Aasimar, Protector",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Celestial"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "dmgres": [
+      "Necrotic",
+      "Radiant"
+    ],
+    "age": " reach adulthood in their late teens and live around 160 years",
+    "height": " range from barely 5 to well over 6 feet tall (4'8\" + 2d10\")",
+    "weight": " weigh around 165 lb (110 + 2d10 × 2d4 lb)",
+    "heightMetric": " range from barely 1,5 to well over 1,8 metres tall (145 + 5d10 cm)",
+    "weightMetric": " weigh around 75 kg (50 + 5d10 × 4d4 / 10 kg)",
+    "scores": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      2
+    ],
+    "trait": "Protector Aasimar (+1 Wisdom, +2 Charisma)\nLight Bearer: I know the Light cantrip.\nHealing Hands: As an action, once per long rest, I can touch to heal for my level in HP.\nRadiant Soul: Once per long rest when I'm 3rd level, I can use an action to transform, gaining glimmer in my eyes and two incorporeal wings. For 1 minute or until I end it as a bonus action, I have 30 feet fly speed; once on my turn I can have one of my attacks or spells deal my level in extra radiant damage to one target.",
+    "spellcastingAbility": 6,
+    "spellcastingBonus": [
+      {
+        "name": "Light Bearer",
+        "spells": [
+          "light"
+        ],
+        "selection": [
+          "light"
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "usages": 1,
+        "minlevel": 1,
+        "recovery": "long rest",
+        "additional": [
+          "1 HP",
+          "2 HP",
+          "3 HP",
+          "4 HP",
+          "5 HP",
+          "6 HP",
+          "7 HP",
+          "8 HP",
+          "9 HP",
+          "10 HP",
+          "11 HP",
+          "12 HP",
+          "13 HP",
+          "14 HP",
+          "15 HP",
+          "16 HP",
+          "17 HP",
+          "18 HP",
+          "19 HP",
+          "20 HP"
+        ],
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      },
+      "radiant soul": {
+        "name": "Radiant Soul",
+        "usages": 1,
+        "minlevel": 3,
+        "recovery": "long rest",
+        "additional": [
+          "",
+          "",
+          "+3 damage",
+          "+4 damage",
+          "+5 damage",
+          "+6 damage",
+          "+7 damage",
+          "+8 damage",
+          "+9 damage",
+          "+10 damage",
+          "+11 damage",
+          "+12 damage",
+          "+13 damage",
+          "+14 damage",
+          "+15 damage",
+          "+16 damage",
+          "+17 damage",
+          "+18 damage",
+          "+19 damage",
+          "+20 damage"
+        ],
+        "action": [
+          [
+            "action",
+            " (start)"
+          ],
+          [
+            "bonus action",
+            " (end)"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "_key": "scourge aasimar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^((?=.*aasimar)|((?=.*planetouched)(?=.*(celestial|angel))))(?=.*scourge).*$",
+      "flags": "i"
+    },
+    "name": "Scourge Aasimar",
+    "source": [
+      [
+        "V",
+        104
+      ],
+      [
+        "W",
+        167
+      ]
+    ],
+    "plural": "Scourge Aasimar",
+    "sortname": "Aasimar, Scourge",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Celestial"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "dmgres": [
+      "Necrotic",
+      "Radiant"
+    ],
+    "age": " reach adulthood in their late teens and live around 160 years",
+    "height": " range from barely 5 to well over 6 feet tall (4'8\" + 2d10\")",
+    "weight": " weigh around 165 lb (110 + 2d10 × 2d4 lb)",
+    "heightMetric": " range from barely 1,5 to well over 1,8 metres tall (145 + 5d10 cm)",
+    "weightMetric": " weigh around 75 kg (50 + 5d10 × 4d4 / 10 kg)",
+    "scores": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      2
+    ],
+    "trait": "Scourge Aasimar (+1 Constitution, +2 Charisma) Light Bearer: I know the Light cantrip.\nHealing Hands: As an action, once per long rest, I can touch to heal for my level in HP.\nRadiant Consumption: Once per long rest when I'm 3rd level, I can use an action to radiate bright light in 10-ft radius and dim light for another 10-ft, for 1 minute or until I end it as a bonus action. Once on my turn my attack or spell deals my level in extra radiant damage to one target, and at the end of my turns all creatures within 10 ft of me, including myself, take half my level in radiant damage.",
+    "spellcastingAbility": 6,
+    "spellcastingBonus": [
+      {
+        "name": "Light Bearer",
+        "spells": [
+          "light"
+        ],
+        "selection": [
+          "light"
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "features": {
+      "healing hands": {
+        "name": "Healing Hands",
+        "usages": 1,
+        "minlevel": 1,
+        "recovery": "long rest",
+        "additional": [
+          "1 HP",
+          "2 HP",
+          "3 HP",
+          "4 HP",
+          "5 HP",
+          "6 HP",
+          "7 HP",
+          "8 HP",
+          "9 HP",
+          "10 HP",
+          "11 HP",
+          "12 HP",
+          "13 HP",
+          "14 HP",
+          "15 HP",
+          "16 HP",
+          "17 HP",
+          "18 HP",
+          "19 HP",
+          "20 HP"
+        ],
+        "action": [
+          [
+            "action",
+            ""
+          ]
+        ]
+      },
+      "radiant consumption": {
+        "name": "Radiant Consumption",
+        "usages": 1,
+        "minlevel": 3,
+        "recovery": "long rest",
+        "additional": [
+          "",
+          "",
+          "2/3 damage",
+          "2/4 damage",
+          "3/5 damage",
+          "3/6 damage",
+          "4/7 damage",
+          "4/8 damage",
+          "5/9 damage",
+          "5/10 damage",
+          "6/11 damage",
+          "6/12 damage",
+          "7/13 damage",
+          "7/14 damage",
+          "8/15 damage",
+          "8/16 damage",
+          "9/17 damage",
+          "9/18 damage",
+          "10/19 damage",
+          "10/20 damage"
+        ],
+        "action": [
+          [
+            "action",
+            " (start)"
+          ],
+          [
+            "bonus action",
+            " (end)"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "_key": "bugbear",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "bugbear",
+      "flags": "i"
+    },
+    "name": "Bugbear",
+    "source": [
+      [
+        "V",
+        119
+      ],
+      [
+        "E:RLW",
+        25
+      ],
+      [
+        "W",
+        174
+      ]
+    ],
+    "plural": "Bugbears",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Goblin"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "skills": [
+      "Stealth"
+    ],
+    "age": " reach adulthood at age 16 and live up to 80 years",
+    "height": " are between 6 and 8 feet tall (6'0\" + 2d12\")",
+    "weight": " weigh between 250 and 350 lb (200 + 2d12 × 2d6 lb)",
+    "heightMetric": " are between 1,9 and 2,4 metres tall (185 + 5d12 cm)",
+    "weightMetric": " weigh between 115 and 160 kg (90 + 5d12 × 4d6 / 10 kg)",
+    "scores": [
+      2,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "features": {
+      "surprise attack": {
+        "name": "Surprise Attack",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "Combat",
+        "additional": "2d6"
+      }
+    },
+    "trait": "Bugbear (+2 Strength, +1 Dexterity)\nPowerful Build: I count as one size larger when determining my carrying capacity and the weight I can push, drag, or lift.\nLong-Limbed: I have an additional 5 feet reach with melee attacks that I make on my turn.\nSurprise Attack: If I hit a surprised creature on my first turn in combat, that attack deals an extra 2d6 damage. I can do this only once per combat.",
+    "carryingCapacity": 2
+  },
+  {
+    "_key": "firbolg",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "firbolg",
+      "flags": "i"
+    },
+    "name": "Firbolg",
+    "source": [
+      [
+        "V",
+        106
+      ],
+      [
+        "W",
+        170
+      ]
+    ],
+    "plural": "Firbolg",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Elvish",
+      "Giant",
+      "Speech of Beast and Leaf"
+    ],
+    "age": " reach adulthood around 30 and can live for 500 years",
+    "height": " are between 6 and half and 8 feet tall (6'2\" + 2d12\")",
+    "weight": " weigh between 240 and 300 lb (175 + 2d12 × 2d6 lb)",
+    "heightMetric": " are between 2 and 2,5 metres tall (190 + 5d12 cm)",
+    "weightMetric": " weigh between 110 and 135 kg (80 + 5d12 × 4d6 / 10 kg)",
+    "scores": [
+      1,
+      0,
+      0,
+      0,
+      2,
+      0
+    ],
+    "trait": "Firbolg (+1 Strength, +2 Wisdom) Hidden Step: Once per short rest, as a bonus action, I turn invisible until the start of my next turn as per the invisibility spell.\nPowerful Build: I count as one size larger for the weight I can carry.\nFirbolg Magic: I can cast the Detect Magic and Disguise Self spells each once per short rest. With Disguise Self I can seem up to 3 feet shorter. Wisdom is my ability for these spells.\nSpeech of Beast and Leaf: I can make my words understood, in a limited manner, by beasts and plants. I have advantage on Charisma checks to influence them.",
+    "spellcastingAbility": 5,
+    "features": {
+      "firbolg magic (detect magic)": {
+        "name": "Firbolg Magic",
+        "minlevel": 1,
+        "spellcastingBonus": [
+          {
+            "name": "Firbolg Magic",
+            "spells": [
+              "detect magic",
+              "disguise self"
+            ],
+            "selection": [
+              "detect magic",
+              "disguise self"
+            ],
+            "firstCol": "oncesr",
+            "times": 2
+          }
+        ],
+        "spellChanges": {
+          "disguise self": {
+            "description": "Alter appearance, up to 3ft shorter/taller; Int(Investigation) check vs. spell DC to determine disguise",
+            "changes": "Using Firbolg Magic, I can cast Disguise Self once per short rest to also seem up to 3 feet shorter or taller."
+          }
+        }
+      },
+      "hidden step": {
+        "name": "Hidden Step",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "short rest",
+        "action": [
+          [
+            "bonus action",
+            ""
+          ]
+        ]
+      }
+    },
+    "carryingCapacity": 2
+  },
+  {
+    "_key": "goblin",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*\\bgoblins?\\b)(?!.*(hobgoblin|bugbear)).*$",
+      "flags": "i"
+    },
+    "name": "Goblin",
+    "source": [
+      [
+        "V",
+        119
+      ],
+      [
+        "G",
+        17
+      ],
+      [
+        "E:RLW",
+        26
+      ],
+      [
+        "W",
+        174
+      ]
+    ],
+    "plural": "Goblins",
+    "size": 4,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Goblin"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "age": " reach adulthood at age 8 and live up to 60 years",
+    "height": " are between 3 and a half and 4 feet tall (3'5\" + 2d4\")",
+    "weight": " weigh between 40 and 70 lb (35 + 2d4 × 1 lb)",
+    "heightMetric": " are between 100 and 120 cm tall (100 + 5d4 cm)",
+    "weightMetric": " weigh between 20 and 30 kg (17 + 5d4 × 2 / 10 kg)",
+    "scores": [
+      0,
+      2,
+      1,
+      0,
+      0,
+      0
+    ],
+    "features": {
+      "fury of the small": {
+        "name": "Fury of the Small",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "short rest",
+        "additional": [
+          "+1 damage",
+          "+2 damage",
+          "+3 damage",
+          "+4 damage",
+          "+5 damage",
+          "+6 damage",
+          "+7 damage",
+          "+8 damage",
+          "+9 damage",
+          "+10 damage",
+          "+11 damage",
+          "+12 damage",
+          "+13 damage",
+          "+14 damage",
+          "+15 damage",
+          "+16 damage",
+          "+17 damage",
+          "+18 damage",
+          "+19 damage",
+          "+20 damage"
+        ]
+      }
+    },
+    "action": [
+      [
+        "bonus action",
+        "Nimble Escape (disengage/hide)"
+      ]
+    ],
+    "trait": "Goblin (+2 Dexterity, +1 Constitution)\n • Fury of the Small: Once per short rest, when I damage a creature of a size category larger than mine with an attack or a spell, I can have it take extra damage equal to my level.\n • Nimble Escape: As a bonus action, I can take the Disengage or Hide action."
+  },
+  {
+    "_key": "hobgoblin",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "hobgoblin",
+      "flags": "i"
+    },
+    "name": "Hobgoblin",
+    "source": [
+      [
+        "V",
+        119
+      ],
+      [
+        "E:RLW",
+        26
+      ],
+      [
+        "W",
+        175
+      ]
+    ],
+    "plural": "Hobgoblins",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Goblin"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "armorProfs": [
+      true,
+      false,
+      false,
+      false
+    ],
+    "age": " reach adulthood in their late teens and live less than 100 years",
+    "height": " range from barely 5 to well over 6 feet tall (4'8\" + 2d10\")",
+    "weight": " weigh between 150 and 200 lb (110 + 2d10 × 2d4 lb)",
+    "heightMetric": " range from barely 1,5 to well over 1,8 metres tall (145 + 5d10 cm)",
+    "weightMetric": " weigh between 70 and 90 kg (50 + 5d10 × 4d4 / 10 kg)",
+    "scores": [
+      0,
+      0,
+      2,
+      1,
+      0,
+      0
+    ],
+    "features": {
+      "saving face": {
+        "name": "Saving Face",
+        "minlevel": 1,
+        "usages": 1,
+        "recovery": "short rest"
+      }
+    },
+    "trait": "Hobgoblin (+2 Constitution, +1 Intelligence)\n\nMartial Training: I am proficient with two martial weapons of my choice and light armor.\n\nSaving Face: Once per short rest, when I miss an attack roll or fail an ability check or a saving throw, I can gain a bonus to the roll equal to the number of allies I can see within 30 ft of me (max +5)."
+  },
+  {
+    "_key": "kenku",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "kenku",
+      "flags": "i"
+    },
+    "name": "Kenku",
+    "source": [
+      [
+        "V",
+        109
+      ],
+      [
+        "W",
+        177
+      ]
+    ],
+    "plural": "Kenku",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "skillstxt": "Choose two from Acrobatics, Deception, Stealth, and Sleight of Hand",
+    "languageProfs": [
+      "Common",
+      "Auran"
+    ],
+    "age": " reach maturity at about 12 years old and can live to 60",
+    "height": " are around 5 feet tall (4'4\" + 2d8\")",
+    "weight": " weigh between 90 and 120 lb (70 + 2d8 × 1d4 lb)",
+    "heightMetric": " are around 1,5 metres tall (135 + 5d8 cm)",
+    "weightMetric": " weigh between 40 and 55 kg (35 + 5d8 × 2d4 / 10 kg)",
+    "scores": [
+      0,
+      2,
+      0,
+      0,
+      1,
+      0
+    ],
+    "trait": "Kenku (+2 Dexterity, +1 Wisdom)\n • Expert Forgery: Kenku can duplicate other creatures' handwriting and craftwork. I have advantage on all checks made to produce forgeries or duplicates of existing objects.\n • Mimicry: I can mimic any sounds I have heard, including voices, but can otherwise not speak. Creatures hearing these sounds can determine they are imitations with a successful Wisdom (Insight) check opposed by my Charisma (Deception)."
+  },
+  {
+    "_key": "aarakocra",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "aarakocra",
+      "flags": "i"
+    },
+    "name": "Aarakocra",
+    "source": [
+      [
+        "E",
+        5
+      ],
+      [
+        "W",
+        166
+      ]
+    ],
+    "plural": "Aarakocra",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 25,
+        "enc": 15
+      },
+      "fly": {
+        "spd": 50,
+        "enc": 0
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Aarakocra",
+      "Auran"
+    ],
+    "weaponOptions": [
+      {
+        "baseWeapon": "unarmed strike",
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "talon",
+          "flags": "i"
+        },
+        "name": "Talons",
+        "source": [
+          [
+            "E",
+            5
+          ],
+          [
+            "W",
+            166
+          ]
+        ],
+        "damage": [
+          1,
+          4,
+          "slashing"
+        ],
+        "selectNow": true
+      }
+    ],
+    "age": " reach maturity by age 3 and live about 30 years",
+    "height": " are about 5 feet tall",
+    "weight": " weigh between 80 and 100 lb",
+    "heightMetric": " are about 1,5 metres tall",
+    "weightMetric": " weigh between 36 and 45 kg",
+    "scores": [
+      0,
+      2,
+      0,
+      0,
+      1,
+      0
+    ],
+    "trait": "Aarakocra (+2 Dexterity, +1 Wisdom)\n\nFlight: I have a flying speed of 50 feet. To use this speed, I can't be wearing medium or heavy armor.\n\nTalons: My unarmed strikes deal 1d4 slashing damage on a hit."
+  },
+  {
+    "_key": "air genasi",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(genasi|planetouched))(?=.*\\bairs?\\b).*$",
+      "flags": "i"
+    },
+    "name": "Air genasi",
+    "sortname": "Genasi, Air",
+    "source": [
+      [
+        "E",
+        9
+      ],
+      [
+        "W",
+        172
+      ]
+    ],
+    "plural": "Air genasi",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Primordial"
+    ],
+    "age": " reach adulthood in their late teens and live up to 120 years",
+    "height": " range from barely 5 to well over 6 feet tall (4'8\" + 2d10\")",
+    "weight": " weigh around 165 lb (110 + 2d10 × 2d4 lb)",
+    "heightMetric": " range from barely 1,5 to well over 1,8 metres tall (145 + 5d10 cm)",
+    "weightMetric": " weigh around 75 lb (50 + 5d10 × 4d4 / 10 kg)",
+    "scores": [
+      0,
+      1,
+      2,
+      0,
+      0,
+      0
+    ],
+    "trait": "Air Genasi (+1 Dexterity, +2 Constitution)\n\nUnending Breath: I can hold my breath indefinitely while I am not incapacitated.\n\nMingle with the Wind: I can cast the Levitate spell once with this trait, requiring no material components, and I regain the ability to cast it this way when I finish a long rest. Constitution is my spellcasting ability for this spell.",
+    "spellcastingAbility": 3,
+    "features": {
+      "levitate": {
+        "name": "Mingle with the Wind",
+        "minlevel": 1,
+        "spellcastingBonus": [
+          {
+            "name": "Mingle with the Wind",
+            "spells": [
+              "levitate"
+            ],
+            "selection": [
+              "levitate"
+            ],
+            "firstCol": "oncelr"
+          }
+        ],
+        "spellChanges": {
+          "levitate": {
+            "components": "V,S",
+            "compMaterial": "",
+            "changes": "Using Mingle with the Wind, I can cast Levitate once per long rest without requiring material components."
+          }
+        }
+      }
+    }
+  },
+  {
+    "_key": "earth genasi",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(genasi|planetouched))(?=.*\\bearths?\\b).*$",
+      "flags": "i"
+    },
+    "name": "Earth genasi",
+    "sortname": "Genasi, Earth",
+    "source": [
+      [
+        "E",
+        9
+      ],
+      [
+        "W",
+        172
+      ]
+    ],
+    "plural": "Earth genasi",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Primordial"
+    ],
+    "age": " reach adulthood in their late teens and live up to 120 years",
+    "height": " range from barely 5 to well over 6 feet tall (4'8\" + 2d10\")",
+    "weight": " weigh around 165 lb (110 + 2d10 × 2d4 lb)",
+    "heightMetric": " range from barely 1,5 to well over 1,8 metres tall (145 + 5d10 cm)",
+    "weightMetric": " weigh around 75 lb (50 + 5d10 × 4d4 / 10 kg)",
+    "scores": [
+      1,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    "trait": "Earth Genasi (+1 Strength, +2 Constitution)\nEarth Walk: I can move across difficult terrain made of earth or stone without expending extra movement.\nMerge with Stone: I can cast the Pass without Trace spell once with this trait, requiring no material components, and I regain the ability to cast it this way when I finish a long rest. Constitution is my spellcasting ability for this spell.",
+    "spellcastingAbility": 3,
+    "features": {
+      "pass without trace": {
+        "name": "Merge with Stone",
+        "minlevel": 1,
+        "spellcastingBonus": [
+          {
+            "name": "Merge with Stone",
+            "spells": [
+              "pass without trace"
+            ],
+            "selection": [
+              "pass without trace"
+            ],
+            "firstCol": "oncelr"
+          }
+        ],
+        "spellChanges": {
+          "pass without trace": {
+            "components": "V,S",
+            "compMaterial": "",
+            "changes": "Using Merge with Stone, I can cast Pass without Trace once per long rest without requiring material components."
+          }
+        }
+      }
+    }
+  },
+  {
+    "_key": "fire genasi",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(genasi|planetouched))(?=.*\\bfires?\\b).*$",
+      "flags": "i"
+    },
+    "name": "Fire genasi",
+    "sortname": "Genasi, Fire",
+    "source": [
+      [
+        "E",
+        9
+      ],
+      [
+        "W",
+        172
+      ]
+    ],
+    "plural": "Fire genasi",
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Primordial"
+    ],
+    "dmgres": [
+      "Fire"
+    ],
+    "age": " reach adulthood in their late teens and live up to 120 years",
+    "height": " range from barely 5 to well over 6 feet tall (4'8\" + 2d10\")",
+    "weight": " weigh around 165 lb (110 + 2d10 × 2d4 lb)",
+    "heightMetric": " range from barely 1,5 to well over 1,8 metres tall (145 + 5d10 cm)",
+    "weightMetric": " weigh around 75 lb (50 + 5d10 × 4d4 / 10 kg)",
+    "scores": [
+      0,
+      0,
+      2,
+      1,
+      0,
+      0
+    ],
+    "trait": "Fire Genasi (+2 Constitution, +1 Intelligence)\n\nReach to the Blaze:\n   I know the Produce Flame cantrip.\n   Once I reach 3rd level, I can cast the Burning Hands spell once as a 1st-level spell.\n   I regain the ability to cast it this way when I finish a long rest.\n   Constitution is my spellcasting ability for these spells.",
+    "spellcastingAbility": 3,
+    "spellcastingBonus": [
+      {
+        "name": "Reach to the Blaze (level 1)",
+        "spells": [
+          "produce flame"
+        ],
+        "selection": [
+          "produce flame"
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "features": {
+      "burning hands": {
+        "name": "Reach to the Blaze (level 3)",
+        "minlevel": 3,
+        "spellcastingBonus": [
+          {
+            "name": "Reach to the Blaze (level 3)",
+            "spells": [
+              "burning hands"
+            ],
+            "selection": [
+              "burning hands"
+            ],
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "_key": "water genasi",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*(genasi|planetouched))(?=.*\\bwaters?\\b).*$",
+      "flags": "i"
+    },
+    "name": "Water genasi",
+    "sortname": "Genasi, Water",
+    "source": [
+      [
+        "E",
+        10
+      ],
+      [
+        "W",
+        172
+      ]
+    ],
+    "plural": "Water genasi",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "swim": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Primordial"
+    ],
+    "dmgres": [
+      "Acid"
+    ],
+    "age": " reach adulthood in their late teens and live up to 120 years",
+    "height": " range from barely 5 to well over 6 feet tall (4'8\" + 2d10\")",
+    "weight": " weigh around 165 lb (110 + 2d10 × 2d4 lb)",
+    "heightMetric": " range from barely 1,5 to well over 1,8 metres tall (145 + 5d10 cm)",
+    "weightMetric": " weigh around 75 lb (50 + 5d10 × 4d4 / 10 kg)",
+    "scores": [
+      0,
+      0,
+      2,
+      0,
+      1,
+      0
+    ],
+    "trait": "Water Genasi (+2 Constitution, +1 Wisdom)\nAmphibious: I can breathe air and water.\nSwim: I have a swimming speed of 30 feet.\nCall to the Wave: I know the Shape Water cantrip.\n   When I reach 3rd level, I can cast the Create or Destroy Water spell as a 2nd-level spell once with this trait, and I regain the ability to cast it this way when I finish a long rest.\n   Constitution is my spellcasting ability for these spells.",
+    "spellcastingAbility": 3,
+    "spellcastingBonus": [
+      {
+        "name": "Call to the Wave (level 1)",
+        "spells": [
+          "shape water"
+        ],
+        "selection": [
+          "shape water"
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "features": {
+      "create or destroy water": {
+        "name": "Call to the Wave (level 3)",
+        "minlevel": 3,
+        "spellcastingBonus": [
+          {
+            "name": "Call to the Wave (level 3)",
+            "spells": [
+              "create or destroy water"
+            ],
+            "selection": [
+              "create or destroy water"
+            ],
+            "firstCol": "oncelr"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "_key": "sea elf",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?!.*half)((?=.*\\b(elfs?|elves|elvish|elven)\\b)(?=.*\\b(seas?|oceans?|water)\\b)).*$",
+      "flags": "i"
+    },
+    "name": "Sea elf",
+    "sortname": "Elf, Sea",
+    "source": [
+      [
+        "MToF",
+        62
+      ],
+      [
+        "W",
+        163
+      ],
+      [
+        "UA:ES",
+        1
+      ]
+    ],
+    "plural": "Sea elves",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "swim": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "weaponProfs": [
+      false,
+      false,
+      [
+        "spear",
+        "trident",
+        "light crossbow",
+        "net"
+      ]
+    ],
+    "languageProfs": [
+      "Common",
+      "Elvish",
+      "Aquan",
+      "Friend of the Sea"
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "savetxt": {
+      "text": [
+        "Magic can't put me to sleep"
+      ],
+      "adv_vs": [
+        "charmed"
+      ]
+    },
+    "skills": [
+      "Perception"
+    ],
+    "age": " typically claim adulthood around age 100 and can live to be 750 years old",
+    "height": " range from under 5 to almost 6 feet tall (4'6\" + 2d8\")",
+    "weight": " weigh around 115 lb (90 + 2d8 × 1d4 lb)",
+    "heightMetric": " range from under 1,5 to almost 1,8 metres tall (140 + 5d8 cm)",
+    "weightMetric": " weigh around 52 kg (40 + 5d8 × 2d4 / 10 kg)",
+    "scores": [
+      0,
+      2,
+      1,
+      0,
+      0,
+      0
+    ],
+    "trait": "Sea Elf (+2 Dexterity, +1 Constitution)Trance: Elves don't need to sleep, but meditate semiconsciously, for 4 hours a day. While meditating, I can dream after a fashion. After resting in this way, I gain the same benefit that a human does from 8 hours of sleep, thus needing only 4 hours for a long rest.\n   Child of the Sea. I have 30 ft swimming speed and can breathe air and water.\n   Friend of the Sea: Through sounds and gestures, I can communicate simple ideas with any beast that has an inborn swimming speed."
+  },
+  {
+    "_key": "tortle",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "tortle",
+      "flags": "i"
+    },
+    "name": "Tortle",
+    "source": [
+      [
+        "TP",
+        4
+      ],
+      [
+        "W",
+        181
+      ]
+    ],
+    "plural": "Tortles",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "languageProfs": [
+      "Common",
+      "Aquan"
+    ],
+    "skills": [
+      "Survival"
+    ],
+    "armorOptions": [
+      {
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "^(?=.*tortle)(?=.*shell).*$",
+          "flags": "i"
+        },
+        "name": "Tortle's Shell",
+        "source": [
+          [
+            "TP",
+            4
+          ],
+          [
+            "W",
+            181
+          ]
+        ],
+        "ac": 17,
+        "dex": -10,
+        "selectNow": true
+      }
+    ],
+    "weaponOptions": [
+      {
+        "baseWeapon": "unarmed strike",
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "^(?=.*tortle)(?=.*\\bclaws?\\b).*$",
+          "flags": "i"
+        },
+        "name": "Tortle's Claws",
+        "source": [
+          [
+            "TP",
+            4
+          ],
+          [
+            "W",
+            181
+          ]
+        ],
+        "damage": [
+          1,
+          4,
+          "slashing"
+        ],
+        "selectNow": true
+      }
+    ],
+    "age": " reach adulthood by the age of 15 and live an average of 50 years",
+    "height": " stand between 5 and 6 feet tall (4'10\" + 2d8\")",
+    "weight": " weigh around 450 lb (400 + 2d8 × 2d4 lb)",
+    "heightMetric": " stand between 1,5 and 1,8 metres tall (150 + 5d8 cm)",
+    "weightMetric": " weigh around 190 kg (180 + 5d8 × 4d4 / 10 kg)",
+    "scores": [
+      2,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    "action": [
+      [
+        "action",
+        "Shell Defense (start)"
+      ],
+      [
+        "bonus action",
+        "Shell Defense (end)"
+      ]
+    ],
+    "trait": "Tortle (+2 Strength, +1 Wisdom)\n • Claws: My unarmed strikes with my claws deal 1d4 slashing damage.\n • Hold Breath: I can hold my breath for up to 1 hour at a time.\n • Natural Armor: I have a base AC of 17, but I can't add my Dex to it or wear armor.\n • Shell Defense: As an action, I can withdraw into my shell and gain +4 AC and adv. on Str and Con saves, but I count as prone, have speed 0, have disadv. on Dex saves, and can't take reactions. The only action I can take is a bonus action to emerge from the shell."
+  },
+  {
+    "_key": "dhampir",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "dhampir",
+      "flags": "i"
+    },
+    "name": "Dhampir",
+    "source": [
+      [
+        "VRGtR",
+        17
+      ]
+    ],
+    "plural": "Dhampirs",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 35,
+        "enc": 25
+      }
+    },
+    "scoresGeneric": true,
+    "trait": "Dhampir\t• Deathless Nature: I don't need to breathe.\n • Spider Climb: Climbing speed equal to walking speed. At 3rd level, I can move up, down, and across vertical surfaces and upside down along ceilings, while leaving my hands free.\n • Vampiric Bite: Uses Constitution and has adv. on the attack roll if I'm at or below half HP. My Proficiency Bonus per long rest, when I hit a creature other than a construct or undead, I can empower myself. I either regain HP or gain a bonus on my next ability check or attack roll. The bonus is equal to the piercing damage dealt.",
+    "features": {
+      "spider climb": {
+        "name": "Spider Climb",
+        "minlevel": 1,
+        "speed": {
+          "climb": {
+            "spd": "walk",
+            "enc": "walk"
+          }
+        }
+      }
+    },
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "weaponOptions": [
+      {
+        "regExpSearch": {
+          "_type": "RegExp",
+          "source": "^(?=.*vampiric)(?=.*bite).*$",
+          "flags": "i"
+        },
+        "name": "Vampiric Bite",
+        "source": [
+          [
+            "VRGtR",
+            17
+          ]
+        ],
+        "ability": 3,
+        "type": "Simple",
+        "damage": [
+          1,
+          4,
+          "piercing"
+        ],
+        "range": "Melee",
+        "description": "Adv. while at or below half HP; Can empower myself on hit",
+        "isAlwaysProf": true,
+        "abilitytodamage": true,
+        "monkweapon": true,
+        "selectNow": true
+      }
+    ],
+    "extraLimitedFeatures": [
+      {
+        "name": "Vampiric Bite",
+        "additional": "empower myself",
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus')",
+        "recovery": "long rest"
+      }
+    ],
+    "useFromPreviousRace": {
+      "message": "If you replace a race with the Dhampir lineage, you can keep the following elements of that race:its size,\n   • any skill proficiencies you gained from it,\n   • any climbing, flying, or swimming speed you gained from it, and\n   • any languages it knows.\n\nIf you don't keep any of those elements or you choose this lineage at character creation, you instead:are size Medium or Small (your choice),\n   • gain proficiency in two skills of your choice, and\n   • can speak, read, and write Common and one other language that you and your DM agree is appropriate.",
+      "defaultTraits": {
+        "size": [
+          3,
+          4
+        ],
+        "skillstxt": "Choose any two skills"
+      },
+      "gainTraits": [
+        "size",
+        "age",
+        "height",
+        "weight",
+        "heightMetric",
+        "weightMetric",
+        "languageProfs",
+        "skillstxt",
+        "skills",
+        "speed.climb",
+        "speed.fly",
+        "speed.swim"
+      ],
+      "updateName": "prefix"
+    }
+  },
+  {
+    "_key": "hexblood",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "hexblood",
+      "flags": "i"
+    },
+    "name": "Hexblood",
+    "source": [
+      [
+        "VRGtR",
+        18
+      ]
+    ],
+    "plural": "Hexbloods",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "scoresGeneric": true,
+    "trait": "Hexblood\t• Fey: My creature type is fey, rather than humanoid.\n • Eerie Token: As a bonus action once per long rest, I can harmlessly remove a lock of my hair, one of my nails or teeth and imbue this token with magic until I finish a long rest. While the token is imbued in this way, I can telepathically speak to a creature holding it or see and hear around it. See the Notes page for more information.\n • Hex Magic: I known Disguise Self and Hex. I can cast each spell once per long rest without using a spell slot, or by using a spell slot as normal.",
+    "toNotesPage": [
+      {
+        "name": "Hexblood's Eerie Token",
+        "note": [
+          "As a bonus action, I can harmlessly remove a lock of my hair, one of my nails, or one of my teeth. This token is imbued with magic until I finish a long rest. While the token is imbued in this way, I can take these actions:\n• Telepathic Message",
+          "As an action, I can send a telepathic message to the creature holding or carrying the token, as long as I'm within 10 miles of it. The message can contain up to twenty-five words.\n• Remote Viewing",
+          "If I'm within 10 miles of the token, I can enter a trance as an action. The trance lasts for 1 minute, but it ends early if I dismiss it (no action required) or I'm incapacitated. During this trance, I can see and hear from the token as if I were located where it is. While I'm using my senses at the token's location, I'm blinded and deafened in regard to my own surroundings. When the trance ends, the token is harmlessly destroyed.",
+          "\nOnce I create a token using this feature, I can't do so again until I finish a long rest, at which point my missing part regrows."
+        ]
+      }
+    ],
+    "vision": [
+      [
+        "Darkvision",
+        60
+      ]
+    ],
+    "action": [
+      [
+        "bonus action",
+        "Eerie Token (create)"
+      ],
+      [
+        "action",
+        "Eerie Token (use)"
+      ]
+    ],
+    "extraLimitedFeatures": [
+      {
+        "name": "Eerie Token",
+        "usages": 1,
+        "recovery": "long rest"
+      }
+    ],
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "features": {
+      "hex magic": {
+        "name": "Hex Magic",
+        "minlevel": 1,
+        "spellcastingBonus": [
+          {
+            "name": "Hex Magic",
+            "spells": [
+              "disguise self",
+              "hex"
+            ],
+            "selection": [
+              "disguise self",
+              "hex"
+            ],
+            "firstCol": "oncelr+markedbox",
+            "times": 2,
+            "allowUpCasting": true
+          }
+        ]
+      }
+    },
+    "useFromPreviousRace": {
+      "message": "If you replace a race with the Hexblood lineage, you can keep the following elements of that race:its size,\n   • any skill proficiencies you gained from it,\n   • any climbing, flying, or swimming speed you gained from it, and\n   • any languages it knows.\n\nIf you don't keep any of those elements or you choose this lineage at character creation, you instead:are size Medium or Small (your choice),\n   • gain proficiency in two skills of your choice, and\n   • can speak, read, and write Common and one other language that you and your DM agree is appropriate.",
+      "defaultTraits": {
+        "size": [
+          3,
+          4
+        ],
+        "skillstxt": "Choose any two skills"
+      },
+      "gainTraits": [
+        "size",
+        "age",
+        "height",
+        "weight",
+        "heightMetric",
+        "weightMetric",
+        "languageProfs",
+        "skillstxt",
+        "skills",
+        "speed.climb",
+        "speed.fly",
+        "speed.swim"
+      ],
+      "updateName": "prefix"
+    }
+  },
+  {
+    "_key": "reborn",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "reborn",
+      "flags": "i"
+    },
+    "name": "Reborn",
+    "source": [
+      [
+        "VRGtR",
+        21
+      ]
+    ],
+    "plural": "Reborns",
+    "size": 3,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "scoresGeneric": true,
+    "trait": "Reborn\n • Deathless Nature: I don't need to sleep, eat, drink, or breathe. I have adv. on saves vs. disease, poison, and death saves. I have resistance to poison damage. Magic can't put me to sleep and I can finish a long rest in 4 hours if I spend it in an inactive, motionless state.\n • Knowledge from a Past Life: When I make an ability check that uses a skill, I can add +1d6 to the roll after seeing the d20 result. I can do this a number of times equal to my Proficiency Bonus and regain all expended uses when I finish a long rest.",
+    "dmgres": [
+      "Poison"
+    ],
+    "savetxt": {
+      "text": [
+        "Magic can't put me to sleep"
+      ],
+      "adv_vs": [
+        "disease",
+        "poison",
+        "death saves"
+      ]
+    },
+    "extraLimitedFeatures": [
+      {
+        "name": "Knowledge from a Past Life",
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus')",
+        "recovery": "long rest"
+      }
+    ],
+    "useFromPreviousRace": {
+      "message": "If you replace a race with the Reborn lineage, you can keep the following elements of that race:its size,\n   • any skill proficiencies you gained from it,\n   • any climbing, flying, or swimming speed you gained from it, and\n   • any languages it knows.\n\nIf you don't keep any of those elements or you choose this lineage at character creation, you instead:are size Medium or Small (your choice),\n   • gain proficiency in two skills of your choice, and\n   • can speak, read, and write Common and one other language that you and your DM agree is appropriate.",
+      "defaultTraits": {
+        "size": [
+          3,
+          4
+        ],
+        "skillstxt": "Choose any two skills"
+      },
+      "gainTraits": [
+        "size",
+        "age",
+        "height",
+        "weight",
+        "heightMetric",
+        "weightMetric",
+        "languageProfs",
+        "skillstxt",
+        "skills",
+        "speed.climb",
+        "speed.fly",
+        "speed.swim"
+      ],
+      "updateName": "suffix"
+    }
+  },
+  {
+    "_key": "fairy",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "fairy",
+      "flags": "i"
+    },
+    "name": "Fairy",
+    "source": [
+      [
+        "WBtW",
+        12
+      ],
+      [
+        "MotM",
+        14
+      ]
+    ],
+    "plural": "Fairies",
+    "size": 4,
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      },
+      "fly": {
+        "spd": "walk",
+        "enc": 0
+      }
+    },
+    "scoresGeneric": true,
+    "spellcastingAbility": [
+      4,
+      5,
+      6
+    ],
+    "spellcastingBonus": [
+      {
+        "name": "Fairy Magic",
+        "spells": [
+          "druidcraft"
+        ],
+        "selection": [
+          "druidcraft"
+        ]
+      }
+    ],
+    "features": {
+      "fairy magic (level 3)": {
+        "name": "Fairy Magic (level 3)",
+        "minlevel": 3,
+        "spellcastingBonus": [
+          {
+            "name": "Fairy Magic (level 3)",
+            "spells": [
+              "faerie fire"
+            ],
+            "selection": [
+              "faerie fire"
+            ],
+            "firstCol": "oncelr",
+            "allowUpCasting": true
+          }
+        ],
+        "extraLimitedFeatures": [
+          {
+            "name": "Faerie Fire",
+            "usages": 1,
+            "recovery": "long rest",
+            "altResource": "SS 1+"
+          }
+        ]
+      },
+      "fairy magic (level 5)": {
+        "name": "Fairy Magic (level 5)",
+        "minlevel": 5,
+        "spellcastingBonus": [
+          {
+            "name": "Fairy Magic (level 5)",
+            "spells": [
+              "enlarge/reduce"
+            ],
+            "selection": [
+              "enlarge/reduce"
+            ],
+            "firstCol": "oncelr",
+            "allowUpCasting": true
+          }
+        ],
+        "extraLimitedFeatures": [
+          {
+            "name": "Enlarge/Reduce",
+            "usages": 1,
+            "recovery": "long rest",
+            "altResource": "SS 2+"
+          }
+        ]
+      }
+    },
+    "trait": "Fairy (creature type is fey, rather than humanoid)\n • Flight: I have a flying speed equal to my walking speed. To use this speed, I can't be wearing medium or heavy armor.\n • Fairy Magic: I know the Druidcraft cantrip. At 3rd level, I can cast Faerie Fire. At 5th level, I can cast Enlarge/Reduce. I can cast each spell without using a spell slot once per long rest, as well as by using spell slots as normal. Intelligence, Wisdom, or Charisma is my spellcasting ability for these (one-time choice)."
+  },
+  {
+    "_key": "harengon",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "harengon",
+      "flags": "i"
+    },
+    "name": "Harengon",
+    "source": [
+      [
+        "WBtW",
+        13
+      ],
+      [
+        "MotM",
+        22
+      ]
+    ],
+    "plural": "Harengons",
+    "size": [
+      3,
+      4
+    ],
+    "speed": {
+      "walk": {
+        "spd": 30,
+        "enc": 20
+      }
+    },
+    "skills": [
+      "Perception"
+    ],
+    "addMod": [
+      {
+        "type": "skill",
+        "field": "Init",
+        "mod": "Prof",
+        "text": "I can add my proficiency bonus to my initiative rolls."
+      }
+    ],
+    "scoresGeneric": true,
+    "action": [
+      [
+        "reaction",
+        "Lucky Footwork"
+      ],
+      [
+        "bonus action",
+        "Rabbit Hop"
+      ]
+    ],
+    "features": {
+      "rabbit hop": {
+        "name": "Rabbit Hop",
+        "minlevel": 1,
+        "usages": "Proficiency bonus per ",
+        "usagescalc": "event.value = How('Proficiency Bonus');",
+        "recovery": "long rest",
+        "additional": [
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "15 ft",
+          "15 ft",
+          "15 ft",
+          "15 ft",
+          "20 ft",
+          "20 ft",
+          "20 ft",
+          "20 ft",
+          "25 ft",
+          "25 ft",
+          "25 ft",
+          "25 ft",
+          "30 ft",
+          "30 ft",
+          "30 ft",
+          "30 ft"
+        ]
+      }
+    },
+    "trait": "Harengon\n • Hare-Trigger: I can add my proficiency bonus to my initiative rolls.\n • Leporine Senses: I have proficiency in the Perception skill.\n • Lucky Footwork: As a reaction when I fail a Dexterity saving throw, I can add +1d4 to the result, potentially making it a success. I can't do this if I'm prone or my speed is 0.\n • Rabbit Hop: As a bonus action if my speed isn't 0, I can jump 5 ft times my Prof Bonus without provoking opportunity attacks. I can do this my Prof Bonus times per long rest."
+  }
+]

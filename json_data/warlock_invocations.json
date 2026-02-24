@@ -1,0 +1,426 @@
+[
+  {
+    "_key": "aspect_of_the_moon_(prereq:_pact_of_the_tome)",
+    "name": "Aspect of the Moon",
+    "description": "\n   I don't need sleep nor can be forced to by any means; I can rest while doing light activity",
+    "source": [
+      [
+        "X",
+        56
+      ],
+      [
+        "UA:RCO",
+        5
+      ]
+    ],
+    "submenu": "[improves Pact of the Tome]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the tome'; }"
+    },
+    "savetxt": {
+      "text": [
+        "Nothing can force me to sleep"
+      ]
+    },
+    "_displayName": "Aspect of the Moon (prereq: Pact of the Tome)"
+  },
+  {
+    "_key": "cloak_of_flies_(prereq:_level_5_warlock)",
+    "name": "Cloak of Flies",
+    "description": "As a bonus action, I can surround myself with a 5-ft radius magical aura of buzzing flies\n   It lasts until I'm incapacitated or dismiss it as a bonus action; Total cover block the aura\n   The aura grants me adv. on Cha (Intimidation), but disadv. on all other Cha checks\n   Creatures starting their turn in the aura take my Cha mod (min 0) in poison damage",
+    "source": [
+      [
+        "X",
+        56
+      ],
+      [
+        "UA:RCO",
+        5
+      ]
+    ],
+    "submenu": "[warlock level  5+]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return classes.known.warlock.level >= 5; }"
+    },
+    "recovery": "short rest",
+    "usages": 1,
+    "action": [
+      [
+        "bonus action",
+        " (start/stop)"
+      ]
+    ],
+    "_displayName": "Cloak of Flies (prereq: level 5 warlock)"
+  },
+  {
+    "_key": "eldritch_smite_(prereq:_level_5_warlock,_pact_of_the_blade)",
+    "name": "Eldritch Smite",
+    "description": "Once per turn when I hit a creature with my pact weapon, I can empower the strike\n   By expending a warlock spell slot, the creature takes extra damage and is knocked prone\n   It takes 1d8 force damage and another 1d8 force damage per level of the spell slot\n   The target is only knocked prone if it is Huge or smaller",
+    "source": [
+      [
+        "X",
+        56
+      ]
+    ],
+    "submenu": "[improves Pact of the Blade]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return classes.known.warlock.level >= 5 && GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the blade'; }"
+    },
+    "_displayName": "Eldritch Smite (prereq: level 5 warlock, Pact of the Blade)"
+  },
+  {
+    "_key": "ghostly_gaze_(prereq:_level_7_warlock)",
+    "name": "Ghostly Gaze",
+    "description": "As an action, I can gain darkvision, and the ability to see through solid objects, out to 30 ft\n   Objects appear ghostly to me; This lasts up to 1 minute, while I'm concentrating on this",
+    "source": [
+      [
+        "X",
+        56
+      ]
+    ],
+    "submenu": "[warlock level  7+]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return classes.known.warlock.level >= 7; }"
+    },
+    "recovery": "short rest",
+    "usages": 1,
+    "action": [
+      [
+        "action",
+        ""
+      ]
+    ],
+    "_displayName": "Ghostly Gaze (prereq: level 7 warlock)"
+  },
+  {
+    "_key": "gift_of_the_depths_(prereq:_level_5_warlock)",
+    "name": "Gift of the Depths",
+    "description": "I can breathe underwater and I have a swim speed equal to my walking speed\n   Once per long rest, I can cast Water Breathing without using a spell slot (PHB 287)",
+    "source": [
+      [
+        "X",
+        57
+      ],
+      [
+        "UA:RCO",
+        6
+      ]
+    ],
+    "submenu": "[warlock level  5+]",
+    "spellcastingBonus": [
+      {
+        "name": "Gift of the Depths",
+        "spells": [
+          "water breathing"
+        ],
+        "selection": [
+          "water breathing"
+        ],
+        "firstCol": "oncelr"
+      }
+    ],
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return classes.known.warlock.level >= 5; }"
+    },
+    "speed": {
+      "swim": {
+        "spd": "walk",
+        "enc": "walk"
+      }
+    },
+    "_displayName": "Gift of the Depths (prereq: level 5 warlock)"
+  },
+  {
+    "_key": "gift_of_the_ever-living_ones_(prereq:_pact_of_the_chain)",
+    "name": "Gift of the Ever-Living Ones",
+    "description": "\n   When I regain HP while my familiar is within 100 ft, I regain the max the dice can roll",
+    "source": [
+      [
+        "X",
+        57
+      ],
+      [
+        "UA:RCO",
+        6
+      ]
+    ],
+    "submenu": "[improves Pact of the Chain]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the chain'; }"
+    },
+    "_displayName": "Gift of the Ever-Living Ones (prereq: Pact of the Chain)"
+  },
+  {
+    "_key": "grasp_of_hadar_(prereq:_eldritch_blast_cantrip)",
+    "name": "Grasp of Hadar",
+    "description": "Once per turn when my Eldritch Blast hits a creature, I can move it 10 ft closer to me",
+    "source": [
+      [
+        "X",
+        57
+      ],
+      [
+        "UA:RCO",
+        6
+      ]
+    ],
+    "submenu": "[improves Eldritch Blast]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return v.hasEldritchBlast; }"
+    },
+    "calcChanges": {
+      "atkAdd": [
+        {
+          "_type": "function",
+          "body": "function (fields, v) {\r\n\t\t\t\tif (v.baseWeaponName == 'eldritch blast') fields.Description += '; Target moved 10 ft to me';\r\n\t\t\t}"
+        },
+        "When I hit a creature with my Eldritch Blast cantrip once or more times in a turn, I can move it in a straight line 10 ft closer to me."
+      ]
+    },
+    "_displayName": "Grasp of Hadar (prereq: Eldritch Blast cantrip)"
+  },
+  {
+    "_key": "improved_pact_weapon_(prereq:_pact_of_the_blade)",
+    "name": "Improved Pact Weapon",
+    "description": "I can use any pact weapon I create as my spellcasting focus for warlock spells\n   Any pact weapon I create is a +1 magic weapon, if it isn't already a +1 magic weapon\n   I can now also conjure a shortbow, longbow, or light or heavy crossbow as my pact weapon",
+    "source": [
+      [
+        "X",
+        57
+      ]
+    ],
+    "submenu": "[improves Pact of the Blade]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return GetFeatureChoice('class', 'warlock', 'pact boon') == 'pact of the blade'; }"
+    },
+    "calcChanges": {
+      "atkCalc": [
+        {
+          "_type": "function",
+          "body": "function (fields, v, output) {\r\n\t\t\t\tif ((/^(shortbow|longbow|light crossbow|heavy crossbow)$/).test(v.baseWeaponName) && (/\\bpact\\b/i).test(v.WeaponTextName)) {\r\n\t\t\t\t\tv.pactWeapon = true;\r\n\t\t\t\t}\r\n\t\t\t\t// Test if this is a pact weapon, has no + bonus from somewhere else, and doesn't already have a improved pact weapon bonus\r\n\t\t\t\tif (v.pactWeapon && !output.magic) {\r\n\t\t\t\t\tvar bContinue = true;\r\n\t\t\t\t\t// Now test if this isn't a weaponOptions addition with a static + bonus set to the modifier fields\r\n\t\t\t\t\tif (v.theWea.isMagicWeapon && v.theWea.modifiers) {\r\n\t\t\t\t\t\t// Test the first two modifiers to see if both offer a +1 or more. Returns `true` if one contains no numbers or is less than the improved pact weapon bonus\r\n\t\t\t\t\t\tvar bContinue = v.theWea.modifiers.slice(0, 2).some(function (n) {\r\n\t\t\t\t\t\t\tif (!n || !/\\d/.test(n)) {\r\n\t\t\t\t\t\t\t\tvar nmbr = 0;\r\n\t\t\t\t\t\t\t} else if (isNaN(n)) {\r\n\t\t\t\t\t\t\t\tvar nmbr = n.match(/(^|\\+|-)\\d+\\b/g);\r\n\t\t\t\t\t\t\t\tnmbr = !nmbr ? 0 : nmbr.reduce(function(a, b) {return Number(a) + Number(b)});\r\n\t\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\t\tvar nmbr = Number(n);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\treturn nmbr < 1;\r\n\t\t\t\t\t\t});\r\n\t\t\t\t\t}\r\n\t\t\t\t\t// if the continue boolean wasn't set to false, we can proceed\r\n\t\t\t\t\tif (bContinue) {\r\n\t\t\t\t\t\tv.pactMag = 1;\r\n\t\t\t\t\t\toutput.magic = 1;\r\n\t\t\t\t\t}\r\n\t\t\t\t};\r\n\t\t\t}"
+        },
+        "If I include the word 'Pact' in a the name of a melee weapon, shortbow, longbow, light crossbow, or heavy crossbow, it will be treated as my Pact Weapon.\n • If my Pact Weapon doesn't already include a magical bonus in its name and is not a magic weapon with at least a +1 bonus, the calculation will add +1 to its To Hit and Damage.",
+        290
+      ],
+      "atkAdd": [
+        {
+          "_type": "function",
+          "body": "function (fields, v) {\r\n\t\t\t\tif ((/^(shortbow|longbow|light crossbow|heavy crossbow)$/).test(v.baseWeaponName) && (/\\bpact\\b/i).test(v.WeaponTextName)) {\r\n\t\t\t\t\tv.pactWeapon = true;\r\n\t\t\t\t};\r\n\t\t\t}"
+        },
+        "",
+        90
+      ]
+    },
+    "_displayName": "Improved Pact Weapon (prereq: Pact of the Blade)"
+  },
+  {
+    "_key": "lance_of_lethargy_(prereq:_eldritch_blast_cantrip)",
+    "name": "Lance of Lethargy",
+    "description": "Once per turn when my Eldritch Blast hits a creature, I can reduce its speed by 10 ft\n   This speed reduction lasts until the end of my next turn",
+    "source": [
+      [
+        "X",
+        57
+      ]
+    ],
+    "submenu": "[improves Eldritch Blast]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return v.hasEldritchBlast; }"
+    },
+    "calcChanges": {
+      "atkAdd": [
+        {
+          "_type": "function",
+          "body": "function (fields, v) {\r\n\t\t\t\tif (v.baseWeaponName == 'eldritch blast') fields.Description += '; 1 target -10 ft speed';\r\n\t\t\t}"
+        },
+        "Once on each of my turns when I hit a creature with my Eldritch Blast cantrip, I can reduce its speed by 10 ft until the end of my next turn."
+      ]
+    },
+    "_displayName": "Lance of Lethargy (prereq: Eldritch Blast cantrip)"
+  },
+  {
+    "_key": "maddening_hex_(prereq:_level_5_warlock,_hex_spell_or_warlock_feature_that_curses)",
+    "name": "Maddening Hex",
+    "description": "As a bonus action, I cause pain around a target hexed by me that I can see within 30 ft\n   It and any of my choice I can see in 5 ft of it take my Cha mod (min 1) in psychic damage\n   The Hex spell and all of my warlock features that curse are considered a hex for this",
+    "source": [
+      [
+        "X",
+        57
+      ]
+    ],
+    "submenu": "[improves Hex spell or warlock feature that curses]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return classes.known.warlock.level >= 5 && (isSpellUsed('hex', true) || (/hexblade/).test(classes.known.warlock.subclass)); }"
+    },
+    "action": [
+      [
+        "bonus action",
+        ""
+      ]
+    ],
+    "_displayName": "Maddening Hex (prereq: level 5 warlock, Hex spell or warlock feature that curses)"
+  },
+  {
+    "_key": "relentless_hex_(prereq:_level_7_warlock,_hex_spell_or_warlock_feature_that_curses)",
+    "name": "Relentless Hex",
+    "description": "As a bonus action, I can teleport to a target hexed by me that I can see within 30 ft\n   I teleport up to 30 ft to an unoccupied space that I can see within 5 ft of the target",
+    "source": [
+      [
+        "X",
+        57
+      ]
+    ],
+    "submenu": "[improves Hex spell or warlock feature that curses]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return classes.known.warlock.level >= 7 && (isSpellUsed('hex', true) || (/hexblade/).test(classes.known.warlock.subclass)); }"
+    },
+    "action": [
+      [
+        "bonus action",
+        ""
+      ]
+    ],
+    "_displayName": "Relentless Hex (prereq: level 7 warlock, Hex spell or warlock feature that curses)"
+  },
+  {
+    "_key": "shroud_of_shadow_(prereq:_level_15_warlock)",
+    "name": "Shroud of Shadow",
+    "description": "\n   I can cast Invisibility at will, without using spell slots (PHB 254)",
+    "source": [
+      [
+        "X",
+        57
+      ],
+      [
+        "UA:RCO",
+        6
+      ]
+    ],
+    "submenu": "[warlock level 15+]",
+    "spellcastingBonus": [
+      {
+        "name": "Shroud of Shadow",
+        "spells": [
+          "invisibility"
+        ],
+        "selection": [
+          "invisibility"
+        ],
+        "firstCol": "atwill"
+      }
+    ],
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return classes.known.warlock.level >= 15; }"
+    },
+    "spellChanges": {
+      "invisibility": {
+        "description": "1 crea invisible; attacking/casting makes the crea visible; anything worn/carried also invisible",
+        "changes": "With the Shroud of Shadow invocation I can cast Invisibility at will, but when I do so I am unable to cast it using a higher level spell slot."
+      }
+    },
+    "_displayName": "Shroud of Shadow (prereq: level 15 warlock)"
+  },
+  {
+    "_key": "tomb_of_levistus_(prereq:_level_5_warlock)",
+    "name": "Tomb of Levistus",
+    "description": "As a reaction when I take damage, I can entomb myself in ice until the end of my turn\n   During, I get 10 temp. HP per warlock level, which I use to absorb the triggering damage\n   After, till the ice is gone, I also get vulnerability to fire, 0 speed, and am incapacitated",
+    "source": [
+      [
+        "X",
+        57
+      ],
+      [
+        "UA:RCO",
+        6
+      ]
+    ],
+    "submenu": "[warlock level  5+]",
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return classes.known.warlock.level >= 5; }"
+    },
+    "recovery": "short rest",
+    "usages": 1,
+    "action": [
+      [
+        "reaction",
+        ""
+      ]
+    ],
+    "additional": [
+      "10 temp HP",
+      "20 temp HP",
+      "30 temp HP",
+      "40 temp HP",
+      "50 temp HP",
+      "60 temp HP",
+      "70 temp HP",
+      "80 temp HP",
+      "90 temp HP",
+      "100 temp HP",
+      "110 temp HP",
+      "120 temp HP",
+      "130 temp HP",
+      "140 temp HP",
+      "150 temp HP",
+      "160 temp HP",
+      "170 temp HP",
+      "180 temp HP",
+      "190 temp HP",
+      "200 temp HP"
+    ],
+    "_displayName": "Tomb of Levistus (prereq: level 5 warlock)"
+  },
+  {
+    "_key": "trickster's_escape_(prereq:_level_7_warlock)",
+    "name": "Trickster's Escape",
+    "description": "\n   Once per long rest, I can cast Freedom of Movement on myself without using a spell slot",
+    "source": [
+      [
+        "X",
+        57
+      ],
+      [
+        "UA:RCO",
+        7
+      ]
+    ],
+    "submenu": "[warlock level  7+]",
+    "spellcastingBonus": [
+      {
+        "name": "Trickster's Escape",
+        "spells": [
+          "freedom of movement"
+        ],
+        "selection": [
+          "freedom of movement"
+        ],
+        "firstCol": "oncelr"
+      }
+    ],
+    "prereqeval": {
+      "_type": "function",
+      "body": "function(v) { return classes.known.warlock.level >= 7; }"
+    },
+    "spellChanges": {
+      "freedom of movement": {
+        "range": "Self",
+        "description": "Magic can't reduce my speed, paralyze or restrain me; I can use 5 ft to escape nonmagical restrains",
+        "changes": "With the Trickster's Escape invocation I can cast Freedom of Movement, but only on myself."
+      }
+    },
+    "_displayName": "Trickster's Escape (prereq: level 7 warlock)"
+  }
+]

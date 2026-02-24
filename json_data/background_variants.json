@@ -1,0 +1,95 @@
+[
+  {
+    "_key": "acolyte-luxonborn",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "luxonborn",
+      "flags": "i"
+    },
+    "name": "Luxonborn",
+    "source": [
+      [
+        "W",
+        203
+      ]
+    ],
+    "_parentBackground": "acolyte",
+    "_variantKey": "luxonborn"
+  },
+  {
+    "_key": "criminal-myriad operative",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*myriad)(?=.*operative).*$",
+      "flags": "i"
+    },
+    "name": "Myriad Operative",
+    "source": [
+      [
+        "W",
+        203
+      ]
+    ],
+    "extra": "",
+    "_parentBackground": "criminal",
+    "_variantKey": "myriad operative"
+  },
+  {
+    "_key": "sailor-revelry pirate",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*revelry)(?=.*pirate).*$",
+      "flags": "i"
+    },
+    "name": "Revelry Pirate",
+    "source": [
+      [
+        "W",
+        203
+      ]
+    ],
+    "_parentBackground": "sailor",
+    "_variantKey": "revelry pirate"
+  },
+  {
+    "_key": "sage-cobalt scholar",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*cobalt)(?=.*scholar).*$",
+      "flags": "i"
+    },
+    "name": "Cobalt Scholar",
+    "source": [
+      [
+        "W",
+        203
+      ]
+    ],
+    "extra": [
+      "Select Specific Role",
+      "Rank-and-file",
+      "Expositors",
+      "Archivists"
+    ],
+    "_parentBackground": "sage",
+    "_variantKey": "cobalt scholar"
+  },
+  {
+    "_key": "criminal-augen trust",
+    "regExpSearch": {
+      "_type": "RegExp",
+      "source": "^(?=.*augen)(?=.*trust).*$",
+      "flags": "i"
+    },
+    "name": "Augen Trust",
+    "source": [
+      [
+        "W",
+        203
+      ]
+    ],
+    "extra": "",
+    "_parentBackground": "criminal",
+    "_variantKey": "augen trust"
+  }
+]

@@ -1,0 +1,514 @@
+[
+  {
+    "_key": "alchemist's supplies",
+    "infoname": "Alchemist's Supplies [50 gp]",
+    "name": "Alchemist's Supplies",
+    "amount": "",
+    "weight": 8,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        220
+      ]
+    ]
+  },
+  {
+    "_key": "brewer's supplies",
+    "infoname": "Brewer's Supplies [20 gp]",
+    "name": "Brewer's Supplies",
+    "amount": "",
+    "weight": 9,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        220
+      ]
+    ]
+  },
+  {
+    "_key": "calligrapher's supplies",
+    "infoname": "Calligrapher's Supplies [10 gp]",
+    "name": "Calligrapher's Supplies",
+    "amount": "",
+    "weight": 5,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        220
+      ]
+    ]
+  },
+  {
+    "_key": "carpenter's tools",
+    "infoname": "Carpenter's Tools [8 gp]",
+    "name": "Carpenter's Tools",
+    "amount": "",
+    "weight": 6,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        220
+      ]
+    ]
+  },
+  {
+    "_key": "cartographer's tools",
+    "infoname": "Cartographer's Tools [15 gp]",
+    "name": "Cartographer's Tools",
+    "amount": "",
+    "weight": 6,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        220
+      ]
+    ]
+  },
+  {
+    "_key": "cobbler's tools",
+    "infoname": "Cobbler's tools [5 gp]",
+    "name": "Cobbler's Tools",
+    "amount": "",
+    "weight": 5,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        220
+      ]
+    ]
+  },
+  {
+    "_key": "cook's utensils",
+    "infoname": "Cook's Utensils [1 gp]",
+    "name": "Cook's Utensils",
+    "amount": "",
+    "weight": 8,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        220
+      ]
+    ]
+  },
+  {
+    "_key": "glassblower's tools",
+    "infoname": "Glassblower's Tools [30 gp]",
+    "name": "Glassblower's Tools",
+    "amount": "",
+    "weight": 5,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        220
+      ]
+    ]
+  },
+  {
+    "_key": "jeweler's tools",
+    "infoname": "Jeweler's Tools [20 gp]",
+    "name": "Jeweler's Tools",
+    "amount": "",
+    "weight": 2,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        220
+      ]
+    ]
+  },
+  {
+    "_key": "leatherworker's tools",
+    "infoname": "Leatherworker's Tools [5 gp]",
+    "name": "Leatherworker's tools",
+    "amount": "",
+    "weight": 5,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        220
+      ]
+    ]
+  },
+  {
+    "_key": "mason's tools",
+    "infoname": "Mason's Tools [10 gp]",
+    "name": "Mason's Tools",
+    "amount": "",
+    "weight": 8,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "painter's supplies",
+    "infoname": "Painter's Supplies [10 gp]",
+    "name": "Painter's Supplies",
+    "amount": "",
+    "weight": 5,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "potter's tools",
+    "infoname": "Potter's Tools [10 gp]",
+    "name": "Potter's Tools",
+    "amount": "",
+    "weight": 3,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "smith's tools",
+    "infoname": "Smith's Tools [20 gp]",
+    "name": "Smith's Tools",
+    "amount": "",
+    "weight": 8,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "tinker's tools",
+    "infoname": "Tinker's Tools [50 gp]",
+    "name": "Tinker's Tools",
+    "amount": "",
+    "weight": 10,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "weaver's tools",
+    "infoname": "Weaver's Tools [1 gp]",
+    "name": "Weaver's Tools",
+    "amount": "",
+    "weight": 5,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "woodcarver's tools",
+    "infoname": "Woodcarver's Tools [1 gp]",
+    "name": "Woodcarver's Tools",
+    "amount": "",
+    "weight": 5,
+    "type": "artisan's tools",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "disguise kit",
+    "infoname": "Disguise Kit [25 gp]",
+    "name": "Disguise Kit",
+    "amount": "",
+    "weight": 3,
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "forgery kit",
+    "infoname": "Forgery Kit [15 gp]",
+    "name": "Forgery Kit",
+    "amount": "",
+    "weight": 5,
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "dice",
+    "infoname": "Dice [1 sp]",
+    "name": "Dice",
+    "amount": "",
+    "weight": "",
+    "type": "gaming set",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "dragonchess",
+    "infoname": "Dragonchess [1 gp]",
+    "name": "Dragonchess",
+    "amount": "",
+    "weight": "",
+    "type": "gaming set",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "playing cards",
+    "infoname": "Playing Cards [5 sp]",
+    "name": "Playing Cards",
+    "amount": "",
+    "weight": "",
+    "type": "gaming set",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "three-dragon ante",
+    "infoname": "Three-Dragon Ante [1 gp]",
+    "name": "Three-Dragon Ante",
+    "amount": "",
+    "weight": "",
+    "type": "gaming set",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "herbalism kit",
+    "infoname": "Herbalism Kit [5 gp]",
+    "name": "Herbalism Kit",
+    "amount": "",
+    "weight": 3,
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "bagpipes",
+    "infoname": "Bagpipes [30 gp]",
+    "name": "Bagpipes",
+    "amount": "",
+    "weight": 6,
+    "type": "musical instrument",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "drum",
+    "infoname": "Drum [6 gp]",
+    "name": "Drum",
+    "amount": "",
+    "weight": 3,
+    "type": "musical instrument",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "dulcimer",
+    "infoname": "Dulcimer [25 gp]",
+    "name": "Dulcimer",
+    "amount": "",
+    "weight": 10,
+    "type": "musical instrument",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "flute",
+    "infoname": "Flute [2 gp]",
+    "name": "Flute",
+    "amount": "",
+    "weight": 1,
+    "type": "musical instrument",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "horn",
+    "infoname": "Horn [3 gp]",
+    "name": "Horn",
+    "amount": "",
+    "weight": 2,
+    "type": "musical instrument",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "lute",
+    "infoname": "Lute [35 gp]",
+    "name": "Lute",
+    "amount": "",
+    "weight": 2,
+    "type": "musical instrument",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "lyre",
+    "infoname": "Lyre [30 gp]",
+    "name": "Lyre",
+    "amount": "",
+    "weight": 2,
+    "type": "musical instrument",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "pan flute",
+    "infoname": "Pan Flute [12 gp]",
+    "name": "Pan Flute",
+    "amount": "",
+    "weight": 2,
+    "type": "musical instrument",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "shawm",
+    "infoname": "Shawm [2 gp]",
+    "name": "Shawm",
+    "amount": "",
+    "weight": 1,
+    "type": "musical instrument",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "viol",
+    "infoname": "Viol [30 gp]",
+    "name": "Viol",
+    "amount": "",
+    "weight": 1,
+    "type": "musical instrument",
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "navigator's tools",
+    "infoname": "Navigator's Tools [25 gp]",
+    "name": "Navigator's Tools",
+    "amount": "",
+    "weight": 2,
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "poisoner's kit",
+    "infoname": "Poisoner's Kit [50 gp]",
+    "name": "Poisoner's Kit",
+    "amount": "",
+    "weight": 2,
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  },
+  {
+    "_key": "thieves' tools",
+    "infoname": "Thieves' Tools [25 gp]",
+    "name": "Thieves' Tools",
+    "amount": "",
+    "weight": 1,
+    "source": [
+      [
+        "P24",
+        221
+      ]
+    ]
+  }
+]
