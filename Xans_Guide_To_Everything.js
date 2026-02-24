@@ -5465,3 +5465,4 @@ MagicItemsList["wand of smiles"] = {
 	usages : 3,
 	recovery : "dawn"
 }
+
