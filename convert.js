@@ -808,7 +808,7 @@ const manifest = {
       name:                 "Display name",
       nameAlt:              "(optional) Alternative name forms",
       source:               "[[sourceAbbr, page], ...]",
-      size:                 "Size code: 0=Tiny,1=Small,2=Large,3=Medium,4=Small,5=Tiny",
+      size:                 "Size code: 0=Gargantuan,1=Huge,2=Large,3=Medium,4=Small,5=Tiny",
       type:                 "Creature type string",
       alignment:            "Alignment string",
       ac:                   "Armor Class number",
