@@ -62,7 +62,7 @@ MagicItemsList["hat of vortexes"] = {
 	action : [["action", ""]],
 }
 MagicItemsList["magen handbell"] = {
-	name : "Magen Handbill", 
+	name : "Magen Handbell", 
 	source : [["NF", ""]],
 	type : "wondrous item",
 	rarity : "rare",
@@ -82,7 +82,7 @@ MagicItemsList["mask of changed appearance"] = {
 	rarity : "common",
 	magicItemTable : "?",
 	description : "This jeweled mask has 3 charges, 1d3 regained at dawn. As Magic action, use 1 charge to alter my face for 1 hr. I can’t look like another person, but can smooth or deepen wrinkles, whiten teeth, hide or increase bags under my eyes, & other minor cosmetic changes. While my face is changed, the mask is Invisible. If use last charge, 5% chance (1 on d20) mask explodes into sweet powder.",
-	descriptionFull : "This jeweled mask has 3 charges. As a Magic action, you can expend 1 charge and change your face’s appearance. You can’t make yourself look like a different person, but you can smooth or deepen your wrinkles, whiten your teeth, hide or accentuate bags under your eyes, or perform other minor cosmetic changes. While your appearance is changed, the mask has the Invisible condition. Your changed appearance lasts 1 hour.\n   " + toUni("Regaining Charges") + ". The mask regains 1d3 expended charges daily at dawn. If you expend the last charge, roll 1d20. On a 1, the mask explodes in a harmless cloud of sweet-swelling powder and is destroyed.",
+	descriptionFull : "This jeweled mask has 3 charges. As a Magic action, you can expend 1 charge and change your face’s appearance. You can’t make yourself look like a different person, but you can smooth or deepen your wrinkles, whiten your teeth, hide or accentuate bags under your eyes, or perform other minor cosmetic changes. While your appearance is changed, the mask has the Invisible condition. Your changed appearance lasts 1 hour.\n   " + toUni("Regaining Charges") + ". The mask regains 1d3 expended charges daily at dawn. If you expend the last charge, roll 1d20. On a 1, the mask explodes in a harmless cloud of sweet-smelling powder and is destroyed.",
 	usages : 3,
 	recovery : "dawn",
 	additional : "regains 1d3",
@@ -237,7 +237,7 @@ MagicItemsList["harper pin"] = {
 	type : "wondrous item",
 	magicItemTable : "?",
 	attunement : true,
-	description : "This battleaxe's handle is carved with leaves and vines. It deals an extra 1d8 slashing damage against ordinary plants and plant creatures. When a creature of non-good alignment makes an attack with it, it sprouts thorns, dealing 1 magical piercing damage to the wielder after the attack is made.",
+	description : "When I attune to this pin, I choose a Harper persona (alignment & creature type). While worn, I register as that persona when targeted by magic to determine my creature type, alignment, or location. The type of pin determines its rarity and effects.",
 	descriptionFull : "When you attune to this pin, choose a Harper persona (see the Forgotten Realms: Heroes of Faerûn for examples), including an alignment and a creature type. While wearing this pin, you register as that persona when targeted by magic to determine your creature type, alignment, or location.\n   The type of pin determines its rarity and effects.\n   " + toUni("Silver Harper Pin") + ". When you attune to this pin, you can devise a general line of thought of 25 words or fewer. While you wear this pin, a creature that reads your thoughts detects your preprogrammed line of thought instead. A creature that takes the Study action while reading your thoughts makes a DC 13 Intelligence (Investigation) check. On a successful check, it becomes aware that the detected thoughts are preprogrammed.\n   " + toUni("Gold Harper Pin") + ". While wearing this pin, you can cast the Nondetection spell on yourself. The duration of this spell is permanent until you disable the effect (no action required), you remove the pin, or you are no longer attuned to the pin.",
 	choices : ["Silver","Gold"],
 	"silver" : {
@@ -392,7 +392,7 @@ CreatureList["flying wonder"] = {
 MagicItemsList["windskiff"] = {
 	name : "Windskiff",
 	source : [["FR:AiF", ""]],
-	type : "wonderous item",
+	type : "wondrous item",
 	rarity : "rare",
 	magicItemTable : "?",
 	description : "This jewelry has 3 charges, regained at dawn. As Magic action, 1 charge to transform into a Medium-size personal vehicle: AC 12, HP 30, Speed 40 ft. The vehicle hovers a few inches off the surface and can glide, moving 5 ft horizontally for every 1 ft it descends. The Windskiff and its riders take no falling damage.",

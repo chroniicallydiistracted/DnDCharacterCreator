@@ -2945,7 +2945,7 @@ MagicItemsList["windskiff"] = {
     source: [
         ["FRHoF", 133]
     ],
-    type: "wonderous item",
+    type: "wondrous item",
     rarity: "rare",
     magicItemTable: "?",
     description: "This jewelry has 3 charges, regained at dawn. As Magic action, 1 charge to transform into a Medium-size personal vehicle: AC 12, HP 30, Speed 40 ft. The vehicle hovers a few inches off the surface and can glide, moving 5 ft horizontally for every 1 ft it descends. The Windskiff and its riders take no falling damage.",
@@ -2978,7 +2978,7 @@ MagicItemsList["mechanical wonder (domestic)"] = {
     source: [
         ["FRHoF", 134]
     ],
-    type: "wonderous item",
+    type: "wondrous item",
     rarity: "uncommon",
     magicItemTable: "?",
     description: "Bipedal construct that uses the Domestic Wonder stat block. It is an ally to me and my allies. In combat it shares my Initiative count, but takes its turn immediately after mine. It obeys my verbal command (no action needed). It takes the Dodge action if I don't issue a command. The wonder is destroyed when reduced to 0 HP.",
