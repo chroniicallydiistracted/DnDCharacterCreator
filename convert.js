@@ -650,7 +650,7 @@ const manifest = {
       name:                 "Display name",
       source:               "[[sourceAbbr, page], ...]",
       plural:               "Plural form",
-      size:                 "Size code: 1=Tiny,2=Large,3=Medium,4=Small",
+      size:                 "Size code: 1=Tiny,2=Small,3=Medium,4=Large,5=Huge,6=Gargantuan",
       speed:                "{ walk:{spd,enc}, fly:{spd,enc}, swim:{spd,enc}, ... }",
       scores:               "Array[6] of ability score bonuses [Str,Dex,Con,Int,Wis,Cha]",
       scoresGeneric:        "(optional) true = player chooses where to assign bonuses",
