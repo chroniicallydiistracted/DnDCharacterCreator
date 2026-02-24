@@ -8868,6 +8868,5635 @@
     ]
   },
   {
+    "_key": "allosaurus",
+    "name": "Allosaurus",
+    "source": [
+      "M24",
+      348
+    ],
+    "size": 2,
+    "type": "Beast",
+    "subtype": "Dinosaur",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 51,
+    "hd": [
+      6,
+      10
+    ],
+    "speed": "60 ft",
+    "proficiencyBonus": 2,
+    "challengeRating": 2,
+    "scores": [
+      19,
+      13,
+      17,
+      2,
+      12,
+      5
+    ],
+    "senses": "",
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          2,
+          10,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      },
+      {
+        "name": "Claws",
+        "ability": 1,
+        "damage": [
+          1,
+          8,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "See Claws Trait."
+      }
+    ],
+    "skills": {
+      "perception": 5
+    },
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "languages": "",
+    "traits": [
+      {
+        "name": "Claws",
+        "description": "if the target is a Large or smaller creature and the allosaurus moved 30+ feet straight toward it immediately before the hit, the target has the Prone condition, and the allosaurus can make one Bite attack against it."
+      }
+    ]
+  },
+  {
+    "_key": "ankylosaurus",
+    "name": "Ankylosaurus",
+    "source": [
+      "M24",
+      348
+    ],
+    "size": 1,
+    "type": "Beast",
+    "subtype": "Dinosaur",
+    "alignment": "Unaligned",
+    "ac": 15,
+    "hp": 68,
+    "hd": [
+      8,
+      12
+    ],
+    "speed": "30 ft",
+    "proficiencyBonus": 2,
+    "challengeRating": 3,
+    "scores": [
+      19,
+      11,
+      15,
+      2,
+      12,
+      5
+    ],
+    "saves": [
+      6,
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "senses": "",
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Tail",
+        "ability": 1,
+        "damage": [
+          1,
+          10,
+          "bludgeoning"
+        ],
+        "range": "Melee (10 ft)",
+        "description": "If target hit is Huge or smaller it falls prone."
+      }
+    ],
+    "skills": {},
+    "damage_vulnerabilities": "",
+    "damage_resistances": "",
+    "damage_immunities": "",
+    "condition_immunities": "",
+    "languages": "",
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The ankylosaurus makes two Tail attacks."
+      }
+    ]
+  },
+  {
+    "_key": "pteranodon",
+    "name": "Pteranodon",
+    "source": [
+      "M24",
+      367
+    ],
+    "size": 3,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 13,
+    "hd": [
+      3,
+      8
+    ],
+    "speed": "10 ft, Fly 60 ft",
+    "scores": [
+      12,
+      15,
+      10,
+      2,
+      9,
+      5
+    ],
+    "saves": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "skills": {
+      "perception": 1
+    },
+    "damage_resistances": "Cold",
+    "senses": "Darkvision 60 ft",
+    "languages": "",
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "traits": [
+      {
+        "name": "Flyby",
+        "description": "The pteranodon doesn't provoke an Opportunity Attack when it flies out of an enemy's reach."
+      }
+    ],
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "_key": "faerie dragon",
+    "name": "Faerie Dragon",
+    "nameAlt": [
+      "Dragon, Faerie"
+    ],
+    "source": [
+      [
+        "M",
+        133
+      ]
+    ],
+    "size": 5,
+    "type": "Dragon",
+    "alignment": "Chaotic Good",
+    "ac": 15,
+    "hp": 14,
+    "hd": [
+      4,
+      4
+    ],
+    "speed": "10 ft, fly 60 ft",
+    "scores": [
+      3,
+      20,
+      13,
+      14,
+      12,
+      16
+    ],
+    "skills": {
+      "arcana": 4,
+      "perception": 3,
+      "stealth": 7
+    },
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 13,
+    "languages": "Draconic, Sylvan",
+    "challengeRating": "1",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          "",
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "",
+        "abilitytodamage": false
+      },
+      {
+        "name": "Euphoria Breath (Recharge 5-6)",
+        "ability": 3,
+        "damage": [
+          "Wis save",
+          "",
+          "Euphoria"
+        ],
+        "range": "5 ft",
+        "description": "For 1 min, target rolls d6 at turn start: 1-4 move random (no actions), 5-6 save again (no actions/move)",
+        "dc": true,
+        "abilitytodamage": false,
+        "tooltip": "The dragon exhales a puff of euphoria gas at one creature within 5 feet of it. The target must succeed on a DC 11 Wisdom saving throw, or for 1 minute, the target can't take reactions and must roll a d6 at the start of each of its turns to determine its behavior during the turn: 1-4 - the target takes no action or bonus action and uses all its movment to move in a random direction. 5-6 - the target doesn't move, and the only thing it can do on its turn is make a DC 11 Wisdom saving throw, ending the effect on itself on a success."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Superior Invisibility",
+        "description": "As a bonus action, the dragon can magically turn invisible until its concentration ends (as with a spell). Anything it wears or carries is invisible with it."
+      },
+      {
+        "name": "Limited Telepathy",
+        "description": "Using telepathy, the dragon can magically communicate with any other faerie dragon within 60 feet of it."
+      },
+      {
+        "name": "Magic Resistance",
+        "description": "The dragon has advantage on saves against spells and magical effects."
+      },
+      {
+        "name": "Euphoria Breath (Recharge 5-6)",
+        "description": "Exhale a puff of euphoria gas at a creature within 5 ft. It must succeed on a DC 11 Wisdom save, or for 1 minute, it can't take reactions and must roll a d6 at the start of each of its turns:\n 1-4 - No action or bonus action, using all movment to move in a random direction.\n 5-6 - The target does nothing except attempt another save to try end the effect on itself."
+      }
+    ],
+    "features": [
+      {
+        "name": "Innate Spellcasting",
+        "description": "Cast spells using Charisma (save DC 13), requiring no material components. The spells it knows depends on its age (and stack):\n Red: 1/day - Dancing Lights, Mage Hand, Minor Illusion\n Orange (6-10 years): 1/day - Color Spray\n Yellow (11-20 years): 1/day - Mirror Image\n Green (21-30 years): 1/day - Suggestion\n Blue (31-40 years): 1/day - Major Image\n Indigo (41-50 years): 1/day - Hallucinatory Terrain\n Violet (51+ years): 1/day - Polymorph"
+      }
+    ]
+  },
+  {
+    "_key": "crawling claw",
+    "name": "Crawling Claw",
+    "source": [
+      [
+        "M",
+        44
+      ]
+    ],
+    "size": 5,
+    "type": "Undead",
+    "companion": "familiar_not_al",
+    "alignment": "Neutral Evil",
+    "ac": 12,
+    "hp": 2,
+    "hd": [
+      1,
+      4
+    ],
+    "speed": "20 ft, climb 20 ft",
+    "scores": [
+      13,
+      14,
+      11,
+      5,
+      10,
+      4
+    ],
+    "senses": "Blindsight 30 ft (blind beyond this radius)",
+    "damage_immunities": "poison",
+    "condition_immunities": "charmed, exhaustion, poisoned",
+    "passivePerception": 10,
+    "languages": "understands Common but can't speak",
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Claw",
+        "ability": 1,
+        "damage": [
+          1,
+          4,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Does bludgeoning or slashing damage (claw's choice)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Turn Immunity",
+        "description": "The claw is immune to effects that turn undead."
+      }
+    ]
+  },
+  {
+    "_key": "peryton",
+    "name": "Peryton",
+    "source": [
+      [
+        "M24",
+        238
+      ]
+    ],
+    "size": 3,
+    "type": "Monstrosity",
+    "companion": "steed",
+    "alignment": "Chaotic Evil",
+    "ac": 13,
+    "hp": 33,
+    "hd": [
+      6,
+      8
+    ],
+    "speed": "20 ft, fly 60 ft",
+    "scores": [
+      16,
+      12,
+      13,
+      9,
+      12,
+      10
+    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 3
+    },
+    "senses": "",
+    "languages": "understands Common and Elvish, but can't speak",
+    "challengeRating": 2,
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Gore",
+        "ability": 1,
+        "damage": [
+          1,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "+2d8 if moves 30+ ft straight toward target"
+      },
+      {
+        "name": "Talons",
+        "ability": 1,
+        "damage": [
+          2,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If target dies by attack, peryton removes target's heart"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The peryton makes one gore attack and one talon attack."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Flyby",
+        "description": "The peryton doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      }
+    ]
+  },
+  {
+    "_key": "needle blight",
+    "name": "Needle Blight",
+    "nameAlt": [
+      "Blight, Needle"
+    ],
+    "source": [
+      [
+        "M",
+        32
+      ]
+    ],
+    "size": 3,
+    "type": "Plant",
+    "alignment": "Neutral Evil",
+    "ac": 12,
+    "hp": 11,
+    "hd": [
+      2,
+      8
+    ],
+    "speed": "30 ft",
+    "scores": [
+      12,
+      12,
+      13,
+      4,
+      8,
+      3
+    ],
+    "condition_immunities": "blinded, deafened",
+    "senses": "Blindsight 60 ft (blind beyond this radius).",
+    "passivePerception": 9,
+    "languages": "understands Common but can't speak",
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Claws",
+        "ability": 2,
+        "damage": [
+          2,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      },
+      {
+        "name": "Needles",
+        "ability": 2,
+        "damage": [
+          2,
+          6,
+          "piercing"
+        ],
+        "range": "30/60 ft",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "_key": "twig blight",
+    "name": "Twig Blight",
+    "nameAlt": [
+      "Blight, Twig"
+    ],
+    "source": [
+      [
+        "M",
+        32
+      ]
+    ],
+    "size": 4,
+    "type": "Plant",
+    "alignment": "Neutral Evil",
+    "ac": 13,
+    "hp": 4,
+    "hd": [
+      1,
+      6
+    ],
+    "speed": "20 ft",
+    "scores": [
+      6,
+      13,
+      12,
+      4,
+      8,
+      3
+    ],
+    "damage_vulnerabilities": "fire",
+    "condition_immunities": "blinded, deafened",
+    "senses": "Blindsight 60 ft (blind beyond this radius).",
+    "passivePerception": 9,
+    "languages": "understands Common but can't speak",
+    "challengeRating": "1/8",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Claws",
+        "ability": 2,
+        "damage": [
+          1,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "False Appearance",
+        "description": "While the blight remains motionless, it is indistinguishable from a dead shrub."
+      }
+    ]
+  },
+  {
+    "_key": "vine blight",
+    "name": "Vine Blight",
+    "nameAlt": [
+      "Blight, Vine"
+    ],
+    "source": [
+      [
+        "M",
+        32
+      ]
+    ],
+    "size": 3,
+    "type": "Plant",
+    "alignment": "Neutral Evil",
+    "ac": 12,
+    "hp": 26,
+    "hd": [
+      4,
+      8
+    ],
+    "speed": "10 ft",
+    "scores": [
+      15,
+      8,
+      14,
+      5,
+      10,
+      3
+    ],
+    "skills": {
+      "stealth": 1
+    },
+    "condition_immunities": "blinded, deafened",
+    "senses": "Blindsight 60 ft (blind beyond this radius).",
+    "passivePerception": 9,
+    "languages": "Common",
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Constrict",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "bludgeoning"
+        ],
+        "range": "Melee (10 ft)",
+        "description": "Large or smaller target is grappled and restrained (escape DC 12); Can't use constrict again until grapple ends"
+      }
+    ],
+    "traits": [
+      {
+        "name": "False Appearance",
+        "description": "While the blight remains motionless, it is indistinguishable from a tangle of vines."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Entangling Plants (Recharge 5-6)",
+        "description": "As an action, grasping roots and vines sprout in a 15-ft radius centered on the blight, withering away after 1 minute. For the duration, that area is difficult terrain for nonplant creatures. In addition, each creature of the blight's choice in that area when the plants appear must succeed on a DC 12 Strength saving throw or become restrained. A creature can use its action to make a DC 12 Strength check, freeing it self or another entangled creature within reach on a success."
+      }
+    ],
+    "wildshapeString": "Blindsight 60 ft (blind beyond)| Immune to blinded, deafened| Entangling Plants (Recharge 5-6): As an action, 15-ft radius is difficult terrain for nonplant creatures, for 1 minute. Chosen creatures in it must make a DC 12 Str save or become restrained. A creature can use its action to make a DC 12 Str check to free itself or another within reach| False Appearance: While motionless, it's indistinguishable from a tangle of vines."
+  },
+  {
+    "_key": "gas spore",
+    "name": "Gas Spore",
+    "source": [
+      [
+        "M",
+        138
+      ]
+    ],
+    "size": 2,
+    "type": "Plant",
+    "alignment": "Unaligned",
+    "ac": 5,
+    "hp": 1,
+    "hd": [
+      1,
+      10
+    ],
+    "speed": "fly 10 ft (hover)",
+    "scores": [
+      5,
+      1,
+      3,
+      1,
+      1,
+      1
+    ],
+    "condition_immunities": "blinded, deafened, frightened",
+    "senses": "Blindsight 30 ft (blind beyond this radius).",
+    "passivePerception": 5,
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Touch",
+        "ability": 1,
+        "damage": [
+          1,
+          "",
+          "poison"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "DC 10 Con save or infected with Death Burst disease, see traits",
+        "modifiers": [
+          1,
+          ""
+        ],
+        "abilitytodamage": false
+      }
+    ],
+    "traits": [
+      {
+        "name": "Death Burst",
+        "description": "The gas spore explodes when it drops to 0 hit points. Each creature within 20 feet of it must succeed on a DC 15 Constitution saving throw or take 10 (3d6) poison damage and become infected with a disease on a failed save. Creatures immune to the poisoned condition are immune to this disease.\n   Spores invade an infected creature's system, killing the creature in a number of hours equal to 1d12+the creature's Constitution score, unless the disease is removed. In half that time, the creature becomes poisoned for the rest of the duration. After the creature dies, it sprouts 2d4 Tiny gas spores that grow to full size in 7 days."
+      },
+      {
+        "name": "Eerie Resemblance",
+        "description": "The gas spore resembles a beholder. A creature that can see the gas spore can discern its true nature with a successful DC 15 Intelligence (Nature) check."
+      }
+    ],
+    "wildshapeString": "Blindsight 30 ft (blind beyond)| Immune to: blinded, deafened, frightened| Distinguishable form a beholder only with a DC 15 Int (Nature) check| When at 0 HP, explodes: all within 20 ft DC 15 Con save or 3d6 poison damage and infected with disease| The disease kills a creature in 1d12+it's Con score of hours. In half that, it becomes poisoned for the remainder. When dies, sprouts 2d4 Tiny gas spores that grow to full size in 7 days."
+  },
+  {
+    "_key": "cave badger",
+    "name": "Cave Badger",
+    "nameAlt": [
+      "Badger, Cave"
+    ],
+    "source": [
+      [
+        "OotA",
+        96
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 13,
+    "hd": [
+      2,
+      8
+    ],
+    "speed": "30 ft, burrow 15 ft",
+    "scores": [
+      13,
+      10,
+      15,
+      2,
+      12,
+      5
+    ],
+    "senses": "Darkvision 30 ft, Tremorsense 60 ft; Adv. on Wis (Perception) checks using smell",
+    "passivePerception": 11,
+    "languages": "",
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One bite and one claws attack as an Attack action"
+      },
+      {
+        "name": "Claws",
+        "ability": 1,
+        "damage": [
+          2,
+          4,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One claws and one bite attack as an Attack action"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The badger makes two attacks: one with its bite and one with its claws."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Keen Smell",
+        "description": "The badger has advantage on Wisdom (Perception) checks that rely on smell."
+      }
+    ]
+  },
+  {
+    "_key": "steeder, female",
+    "name": "Female Steeder",
+    "nameAlt": [
+      "Steeder, Female",
+      "Steeder"
+    ],
+    "source": [
+      [
+        "OotA",
+        231
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 14,
+    "hp": 30,
+    "hd": [
+      4,
+      10
+    ],
+    "speed": "30 ft, climb 30 ft",
+    "scores": [
+      15,
+      16,
+      14,
+      2,
+      10,
+      3
+    ],
+    "skills": {
+      "stealth": 7
+    },
+    "senses": "Darkvision 120 ft",
+    "passivePerception": 10,
+    "challengeRating": "1",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Target also takes 2d8 acid damage, half on a DC 12 Constitution saving throw"
+      },
+      {
+        "name": "Sticky Leg",
+        "ability": 2,
+        "damage": [
+          "―",
+          "",
+          "Grappled"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Medium or smaller is stuck to the steeder's leg and grappled (escape DC 12); Can't use again until grapple ends",
+        "abilitytodamage": false
+      }
+    ],
+    "traits": [
+      {
+        "name": "Spider Climb",
+        "description": "The steeder can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      },
+      {
+        "name": "Leap",
+        "description": "The steeder can expend all its movement on its turn to jump up to 90 ft vertically or horizontally, provided that its speed is at least 30 feet."
+      }
+    ]
+  },
+  {
+    "_key": "steeder, male",
+    "name": "Male Steeder",
+    "nameAlt": [
+      "Steeder, Male"
+    ],
+    "source": [
+      [
+        "OotA",
+        231
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 13,
+    "hd": [
+      2,
+      8
+    ],
+    "speed": "30 ft, climb 30 ft",
+    "scores": [
+      15,
+      12,
+      14,
+      2,
+      10,
+      3
+    ],
+    "skills": {
+      "stealth": 5
+    },
+    "senses": "Darkvision 120 ft",
+    "passivePerception": 10,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Target also takes 1d8 acid damage, half on a DC 12 Constitution saving throw"
+      },
+      {
+        "name": "Sticky Leg",
+        "ability": 1,
+        "damage": [
+          "―",
+          "",
+          "Grappled"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Small or smaller is stuck to the steeder's leg and grappled (escape DC 12); Can't use again until grapple ends",
+        "abilitytodamage": false
+      }
+    ],
+    "traits": [
+      {
+        "name": "Spider Climb",
+        "description": "The steeder can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      },
+      {
+        "name": "Leap",
+        "description": "The steeder can expend all its movement on its turn to jump up to 60 ft vertically or horizontally, provided that its speed is at least 30 feet."
+      }
+    ]
+  },
+  {
+    "_key": "ice spider",
+    "name": "Ice Spider",
+    "nameAlt": [
+      "Spider, Ice"
+    ],
+    "source": [
+      [
+        "SKT",
+        127
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 14,
+    "hp": 26,
+    "hd": [
+      4,
+      10
+    ],
+    "speed": "30 ft, climb 30 ft",
+    "scores": [
+      14,
+      16,
+      12,
+      2,
+      11,
+      4
+    ],
+    "skills": {
+      "stealth": 7
+    },
+    "senses": "Blindsight 10 ft; Darkvision 60 ft",
+    "passivePerception": 10,
+    "languages": "",
+    "challengeRating": "1",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Target also takes 2d8 poison damage, half on a DC 11 Constitution saving throw"
+      },
+      {
+        "name": "Icy Web (Recharge 5-6)",
+        "ability": 2,
+        "damage": [
+          "―",
+          "",
+          "Restrained"
+        ],
+        "range": "30/60 ft",
+        "description": "Target can escape as an action with a DC 12 Strength check, or by destroying the webbing (AC 10; 5 HP)",
+        "modifiers": [
+          "",
+          "",
+          false
+        ],
+        "tooltip": "On a hit, the target is restrained by webbing and takes 1 cold damage at the start of each of its turns. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to poison and psychic damage)."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Bite",
+        "description": "If the poison damage from the spider's bite attack reduces the target to 0 HP, the target is stable but poisoned for 1 hour, even after regaining HP, and is paralyzed while poisoned in this way."
+      },
+      {
+        "name": "Spider Climb",
+        "description": "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
+      },
+      {
+        "name": "Web Sense",
+        "description": "While in contact with a web, the spider knows the exact location of any other creature in contact with the same web."
+      },
+      {
+        "name": "Web Walker",
+        "description": "The spider ignores movement restrictions caused by webbing."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Icy Web (Recharge 5-6)",
+        "description": "See attack. On a hit, the target is restrained by webbing and takes 1 cold damage at the start of each of its turns. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage)."
+      }
+    ],
+    "wildshapeString": "Blindsight 10 ft; Darkvision 60 ft| If the bite's poison damage reduces the target to 0 HP, the target is stable but poisoned and paralyzed for 1 hour, even after regaining HP| Spider Climb: climb difficult surfaces, including upside down, without an ability check| Web Sense: knows the exact location of any other creature in contact with the same web| Web Walker: ignores movement restrictions from webbing"
+  },
+  {
+    "_key": "sheep",
+    "name": "Sheep",
+    "source": [
+      [
+        "SKT",
+        142
+      ]
+    ],
+    "size": 4,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 10,
+    "hp": 3,
+    "hd": [
+      1,
+      6
+    ],
+    "speed": "30 ft",
+    "scores": [
+      12,
+      10,
+      11,
+      2,
+      10,
+      5
+    ],
+    "senses": "",
+    "passivePerception": 10,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 0,
+    "attacks": [],
+    "traits": [
+      {
+        "name": "Sure-Footed",
+        "description": "The sheep has advantage on Strength and Dexterity saving throws made against effects that would knock it prone."
+      }
+    ]
+  },
+  {
+    "_key": "pig",
+    "name": "Pig",
+    "source": [
+      [
+        "SKT",
+        143
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 10,
+    "hp": 5,
+    "hd": [
+      1,
+      8
+    ],
+    "speed": "30 ft",
+    "scores": [
+      13,
+      11,
+      12,
+      2,
+      9,
+      5
+    ],
+    "senses": "",
+    "passivePerception": 9,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 0,
+    "attacks": []
+  },
+  {
+    "_key": "hulking crab",
+    "name": "Hulking Crab",
+    "nameAlt": [
+      "Crab, Hulking"
+    ],
+    "source": [
+      [
+        "SKT",
+        240
+      ]
+    ],
+    "size": 1,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 17,
+    "hp": 76,
+    "hd": [
+      8,
+      12
+    ],
+    "speed": "20 ft, swim 30 ft",
+    "scores": [
+      19,
+      8,
+      16,
+      3,
+      11,
+      3
+    ],
+    "skills": {
+      "stealth": 2
+    },
+    "senses": "Blindsight 30 ft",
+    "passivePerception": 10,
+    "challengeRating": "5",
+    "proficiencyBonus": 3,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Claws",
+        "ability": 2,
+        "damage": [
+          1,
+          "",
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "",
+        "modifiers": [
+          -4,
+          ""
+        ],
+        "abilitytodamage": false
+      }
+    ],
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "The hulking crab can breate air and water."
+      },
+      {
+        "name": "Shell Camouflage",
+        "description": "While the hulking crab remains motionless with its eyestalks and pincers tucked close to its body, it resembles a natural formation or a pile of detritus. A creature within 30 feet of it can discern its true nature with a DC 15 Intelligence (Nature) check."
+      }
+    ]
+  },
+  {
+    "_key": "tressym",
+    "name": "Tressym",
+    "source": [
+      [
+        "SKT",
+        242
+      ]
+    ],
+    "size": 5,
+    "type": "Beast",
+    "companion": "familiar_not_al",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 5,
+    "hd": [
+      2,
+      4
+    ],
+    "speed": "40 ft, climb 30 ft, fly 40 ft",
+    "scores": [
+      3,
+      15,
+      10,
+      11,
+      12,
+      12
+    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 4
+    },
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "Darkvision 60 ft; Adv. on Wis (Perception) checks using smell",
+    "passivePerception": 15,
+    "languages": "understands Common but can't speak",
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Claws",
+        "ability": 2,
+        "damage": [
+          1,
+          "",
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "",
+        "modifiers": [
+          -4,
+          ""
+        ],
+        "abilitytodamage": false
+      }
+    ],
+    "traits": [
+      {
+        "name": "Detect Invisibility",
+        "description": "Within 60 feet of the tressym, magical invisibility fails to conceal anything from the tressym's sight."
+      },
+      {
+        "name": "Keen Smell",
+        "description": "The tressym has advantage on Wisdom (Perception) checks that rely on smell."
+      },
+      {
+        "name": "Poison Sense",
+        "description": "The tressym can detect whether a substance is poisonous by taste, touch, or smell."
+      }
+    ],
+    "wildshapeString": "◆ Languages: understands Common but can't speak.\n◆ Senses: Darkvision 60 ft; Advantage on Wisdom (Perception) checks that rely on smell.\n◆ Detect Invisibility: Magical invisibility fails to conceal anything from sight, out to 60 ft.\n◆ Immune to: poison damage, poisoned condition.\n◆ Poison Sense: Detect whether a substance is poisonous by taste, touch, or smell."
+  },
+  {
+    "_key": "aurochs",
+    "name": "Aurochs",
+    "source": [
+      [
+        "V",
+        207
+      ],
+      [
+        "MotM",
+        71
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "subtype": "cattle",
+    "alignment": "Unaligned",
+    "ac": 11,
+    "hp": 38,
+    "hd": [
+      4,
+      10
+    ],
+    "speed": "50 ft",
+    "scores": [
+      20,
+      10,
+      19,
+      2,
+      12,
+      5
+    ],
+    "senses": "",
+    "passivePerception": 11,
+    "challengeRating": "2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Gore",
+        "ability": 1,
+        "damage": [
+          2,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after moving 20 ft straight in the same round, see Charge trait"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Charge",
+        "description": "If the aurochs moves at least 20 ft straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. A targeted creature must succeed on a DC 15 Strength saving throw or be knocked prone."
+      }
+    ]
+  },
+  {
+    "_key": "cow",
+    "name": "Cow",
+    "source": [
+      [
+        "V",
+        207
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "subtype": "cattle",
+    "alignment": "Unaligned",
+    "ac": 10,
+    "hp": 15,
+    "hd": [
+      2,
+      10
+    ],
+    "speed": "30 ft",
+    "scores": [
+      18,
+      10,
+      12,
+      2,
+      10,
+      4
+    ],
+    "senses": "",
+    "passivePerception": 10,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Gore",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after moving 20 ft straight in the same round, deals extra 2d6 damage (Charge)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Charge",
+        "description": "If the cow moves at least 20 ft straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 7 (2d6) piercing damage."
+      }
+    ]
+  },
+  {
+    "_key": "ox",
+    "name": "Ox",
+    "source": [
+      [
+        "V",
+        208
+      ],
+      [
+        "MotM",
+        72
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "subtype": "cattle",
+    "alignment": "Unaligned",
+    "ac": 10,
+    "hp": 15,
+    "hd": [
+      2,
+      10
+    ],
+    "speed": "30 ft",
+    "scores": [
+      18,
+      10,
+      12,
+      2,
+      10,
+      4
+    ],
+    "senses": "",
+    "passivePerception": 10,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Gore",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after moving 20 ft straight in the same round, deals extra 2d6 damage (Charge)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Charge",
+        "description": "If the ox moves at least 20 ft straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 7 (2d6) piercing damage."
+      },
+      {
+        "name": "Beast of Burden",
+        "description": "The oxen is considered to be a Huge animal for the purpose of determining its carrying capacity."
+      }
+    ]
+  },
+  {
+    "_key": "deep rothe",
+    "name": "Deep Rothé",
+    "nameAlt": [
+      "Rothé, Deep"
+    ],
+    "source": [
+      [
+        "V",
+        208
+      ],
+      [
+        "MotM",
+        71
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "subtype": "cattle",
+    "alignment": "Unaligned",
+    "ac": 10,
+    "hp": 13,
+    "hd": [
+      2,
+      8
+    ],
+    "speed": "30 ft",
+    "scores": [
+      18,
+      10,
+      12,
+      2,
+      10,
+      4
+    ],
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 10,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Gore",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after moving 20 ft straight in the same round, deals extra 2d6 damage (Charge)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Charge",
+        "description": "If the rothé moves at least 20 ft straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 7 (2d6) piercing damage."
+      },
+      {
+        "name": "Dancing Lights",
+        "description": "The rothé casts dancing lights, requiring no spell components and using Wisdom as the spellcasting ability."
+      }
+    ]
+  },
+  {
+    "_key": "rothe",
+    "name": "Rothé",
+    "source": [
+      [
+        "V",
+        208
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "subtype": "cattle",
+    "alignment": "Unaligned",
+    "ac": 10,
+    "hp": 15,
+    "hd": [
+      2,
+      10
+    ],
+    "speed": "30 ft",
+    "scores": [
+      18,
+      10,
+      12,
+      2,
+      10,
+      4
+    ],
+    "senses": "Darkvision 30 ft",
+    "passivePerception": 10,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Gore",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after moving 20 ft straight in the same round, deals extra 2d6 damage (Charge)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Charge",
+        "description": "If the rothé moves at least 20 ft straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 7 (2d6) piercing damage."
+      }
+    ]
+  },
+  {
+    "_key": "stench kow",
+    "name": "Stench Kow",
+    "source": [
+      [
+        "V",
+        208
+      ],
+      [
+        "MotM",
+        72
+      ]
+    ],
+    "size": 2,
+    "type": "Fiend",
+    "subtype": "cattle",
+    "alignment": "Unaligned",
+    "ac": 10,
+    "hp": 15,
+    "hd": [
+      2,
+      10
+    ],
+    "speed": "30 ft",
+    "scores": [
+      18,
+      10,
+      12,
+      2,
+      10,
+      4
+    ],
+    "damage_resistances": "cold, fire, and poison damage",
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 10,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Gore",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after moving 20 ft straight in the same round, deals extra 2d6 damage (Charge)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Charge",
+        "description": "If the stench kow moves at least 20 ft straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 7 (2d6) piercing damage."
+      },
+      {
+        "name": "Stench",
+        "description": "Any creature other than a stench kow starting its turn within 5 ft of a stench kow must make a DC 12 Constitution saving throw or be poisoned until the start of the creature's next turn. On a successful saving throw, the creature is immune to the stench of all stench kows for 1 hour."
+      }
+    ],
+    "wildshapeString": "Darkvision 60 ft | Resistant to: cold, fire, poison | Charge: If the stench kow moves at least 20 ft straight toward a target and then hits it with a gore attack on the same turn, it deals extra 2d6 piercing damage | Stench: Any creature starting its turn within 5 ft of a stench kow must make a DC 12 Con save or be poisoned until the start of the its next turn. On a success, it is immune to the stench of all stench kows for 1 hour"
+  },
+  {
+    "_key": "dolphin",
+    "name": "Dolphin",
+    "source": [
+      [
+        "V",
+        208
+      ],
+      [
+        "MotM",
+        97
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 11,
+    "hd": [
+      2,
+      8
+    ],
+    "speed": "swim 60 ft",
+    "scores": [
+      14,
+      13,
+      13,
+      6,
+      12,
+      7
+    ],
+    "skills": {
+      "perception": 3
+    },
+    "senses": "Blindsight 60 ft",
+    "passivePerception": 13,
+    "challengeRating": "1/8",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Slam",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after moving 30 ft straight in the same round, deals extra 1d6 damage (Charge)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Charge",
+        "description": "If the dolphin moves at least 30 ft straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 3 (1d6) bludgeoning damage."
+      },
+      {
+        "name": "Hold Breath",
+        "description": "The dolphin can hold its breath for 20 minutes."
+      }
+    ]
+  },
+  {
+    "_key": "cranium rat",
+    "name": "Cranium Rat",
+    "nameAlt": [
+      "Rat, Cranium"
+    ],
+    "source": [
+      [
+        "V",
+        133
+      ],
+      [
+        "MotM",
+        83
+      ]
+    ],
+    "size": 5,
+    "type": "Aberration",
+    "companion": "familiar_not_al",
+    "alignment": "Lawful Evil",
+    "ac": 12,
+    "hp": 2,
+    "hd": [
+      1,
+      4
+    ],
+    "speed": "30 ft",
+    "scores": [
+      2,
+      14,
+      10,
+      4,
+      11,
+      8
+    ],
+    "senses": "Darkvision 30 ft",
+    "passivePerception": 10,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          "",
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "",
+        "abilitytodamage": false
+      }
+    ],
+    "traits": [
+      {
+        "name": "Illumination",
+        "description": "As a bonus action, the cranium rat can shed dim light from its brain in a 5-foot radius or extinguish the light."
+      },
+      {
+        "name": "Telepathic Shroud",
+        "description": "The cranium rat is immune to any effect that would sense its emotions or read its thoughts, as well as to all divination spells."
+      }
+    ]
+  },
+  {
+    "_key": "brontosaurus",
+    "name": "Brontosaurus",
+    "source": [
+      [
+        "V",
+        139
+      ],
+      [
+        "ToA",
+        215
+      ],
+      [
+        "MotM",
+        95
+      ]
+    ],
+    "size": 0,
+    "type": "Beast",
+    "subtype": "dinosaur",
+    "alignment": "Unaligned",
+    "ac": 15,
+    "hp": 121,
+    "hd": [
+      9,
+      20
+    ],
+    "speed": "30 ft",
+    "scores": [
+      21,
+      9,
+      17,
+      2,
+      10,
+      7
+    ],
+    "saves": [
+      "",
+      "",
+      6,
+      "",
+      "",
+      ""
+    ],
+    "senses": "",
+    "passivePerception": 10,
+    "challengeRating": "5",
+    "proficiencyBonus": 3,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Stomp",
+        "ability": 1,
+        "damage": [
+          5,
+          8,
+          "bludgeoning"
+        ],
+        "range": "Melee (20 ft)",
+        "description": "Target must succeed on a DC 14 Strength saving throw or be knocked prone"
+      },
+      {
+        "name": "Tail",
+        "ability": 1,
+        "damage": [
+          6,
+          8,
+          "bludgeoning"
+        ],
+        "range": "Melee (20 ft)",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "_key": "deinonychus",
+    "name": "Deinonychus",
+    "source": [
+      [
+        "V",
+        139
+      ],
+      [
+        "ToA",
+        217
+      ],
+      [
+        "MotM",
+        95
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "subtype": "dinosaur",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 26,
+    "hd": [
+      4,
+      8
+    ],
+    "speed": "40 ft",
+    "scores": [
+      15,
+      15,
+      14,
+      4,
+      12,
+      6
+    ],
+    "skills": {
+      "perception": 3
+    },
+    "senses": "",
+    "passivePerception": 13,
+    "challengeRating": "1",
+    "proficiencyBonus": 2,
+    "attacksAction": 3,
+    "attacks": [
+      {
+        "name": "Claw",
+        "ability": 1,
+        "damage": [
+          1,
+          8,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Two claw and one bite as one Attack action; If used after moving 20 ft straight in the same round, see Pounce trait"
+      },
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Two claw and one bite as one Attack action (also, see Pounce trait)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Multiattack",
+        "description": "The deinonychus makes three attacks: two with its claws and one with its bite."
+      },
+      {
+        "name": "Pounce",
+        "description": "If the deinonychus moves at least 20 ft straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the deinonychus can make one bite attack against it as a bonus action."
+      }
+    ]
+  },
+  {
+    "_key": "dimetrodon",
+    "name": "Dimetrodon",
+    "source": [
+      [
+        "V",
+        139
+      ],
+      [
+        "ToA",
+        217
+      ],
+      [
+        "MotM",
+        95
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "subtype": "dinosaur",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 19,
+    "hd": [
+      3,
+      8
+    ],
+    "speed": "30 ft, swim 20 ft",
+    "scores": [
+      14,
+      10,
+      15,
+      2,
+      10,
+      5
+    ],
+    "skills": {
+      "perception": 2
+    },
+    "senses": "",
+    "passivePerception": 12,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "_key": "hadrosaurus",
+    "name": "Hadrosaurus",
+    "source": [
+      [
+        "V",
+        140
+      ],
+      [
+        "ToA",
+        224
+      ],
+      [
+        "MotM",
+        96
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "subtype": "dinosaur",
+    "alignment": "Unaligned",
+    "ac": 11,
+    "hp": 19,
+    "hd": [
+      3,
+      10
+    ],
+    "speed": "40 ft",
+    "scores": [
+      15,
+      10,
+      13,
+      2,
+      10,
+      5
+    ],
+    "skills": {
+      "perception": 2
+    },
+    "senses": "",
+    "passivePerception": 12,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Tail",
+        "ability": 1,
+        "damage": [
+          1,
+          10,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "_key": "quetzalcoatlus",
+    "name": "Quetzalcoatlus",
+    "source": [
+      [
+        "V",
+        140
+      ],
+      [
+        "ToA",
+        230
+      ],
+      [
+        "MotM",
+        96
+      ]
+    ],
+    "size": 1,
+    "type": "Beast",
+    "subtype": "dinosaur",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 30,
+    "hd": [
+      4,
+      12
+    ],
+    "speed": "10 ft, fly 80 ft",
+    "scores": [
+      15,
+      13,
+      13,
+      2,
+      10,
+      5
+    ],
+    "skills": {
+      "perception": 2
+    },
+    "senses": "",
+    "passivePerception": 12,
+    "challengeRating": "2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          3,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (10 ft)",
+        "description": "If used after diving 30 ft towards a target, the attack deals 3d6 extra damage (Dive Attack)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Dive Attack",
+        "description": "If the quetzalcoatlus is flying and dives at least 30 ft toward a creature and then hits it with a bite attack, the attack deals an extra 10 (3d6) damage to the target."
+      },
+      {
+        "name": "Flyby",
+        "description": "The quetzalcoatlus doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      }
+    ]
+  },
+  {
+    "_key": "stegosaurus",
+    "name": "Stegosaurus",
+    "source": [
+      [
+        "V",
+        140
+      ],
+      [
+        "ToA",
+        231
+      ],
+      [
+        "MotM",
+        96
+      ]
+    ],
+    "size": 1,
+    "type": "Beast",
+    "subtype": "dinosaur",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 76,
+    "hd": [
+      8,
+      12
+    ],
+    "speed": "40 ft",
+    "scores": [
+      20,
+      9,
+      17,
+      2,
+      11,
+      5
+    ],
+    "senses": "",
+    "passivePerception": 10,
+    "challengeRating": "4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          6,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (10 ft)",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "_key": "velociraptor",
+    "name": "Velociraptor",
+    "source": [
+      [
+        "V",
+        140
+      ],
+      [
+        "ToA",
+        235
+      ],
+      [
+        "MotM",
+        96
+      ]
+    ],
+    "size": 5,
+    "type": "Beast",
+    "subtype": "dinosaur",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 10,
+    "hd": [
+      3,
+      4
+    ],
+    "speed": "30 ft",
+    "scores": [
+      6,
+      14,
+      13,
+      4,
+      12,
+      6
+    ],
+    "skills": {
+      "perception": 3
+    },
+    "senses": "",
+    "passivePerception": 13,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One bite and one claw attack as an Attack action"
+      },
+      {
+        "name": "Claw",
+        "ability": 2,
+        "damage": [
+          1,
+          4,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One bite and one claw attack as an Attack action"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The velociraptor makes two attacks: one with its bite and one with its claws."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "The velociraptor has advantage on an attack roll against a creature if at least one of the velociraptor's allies is within 5 ft of the creature and the ally isn't incapacitated."
+      }
+    ]
+  },
+  {
+    "_key": "gazer",
+    "name": "Gazer",
+    "source": [
+      [
+        "V",
+        126
+      ],
+      [
+        "MotM",
+        134
+      ]
+    ],
+    "size": 5,
+    "type": "Aberration",
+    "subtype": "Beholder",
+    "companion": "familiar_not_al",
+    "alignment": "Neutral Evil",
+    "ac": 13,
+    "hp": 13,
+    "hd": [
+      3,
+      4
+    ],
+    "speed": "0 ft, fly 30 ft",
+    "scores": [
+      3,
+      17,
+      14,
+      3,
+      10,
+      7
+    ],
+    "saves": [
+      "",
+      "",
+      "",
+      "",
+      2,
+      ""
+    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 5
+    },
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 14,
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          "",
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      },
+      {
+        "name": "Eye Rays",
+        "ability": 3,
+        "damage": [
+          "Special",
+          "",
+          ""
+        ],
+        "range": "60 ft",
+        "description": "Shoot two randomly determined different rays as one action; Each ray has its own target; See traits",
+        "dc": true,
+        "abilitytodamage": false
+      }
+    ],
+    "traits": [
+      {
+        "name": "Aggressive",
+        "description": "As a bonus action, the gazer moves its speed toward an enemy that it can see."
+      },
+      {
+        "name": "Mimicry",
+        "description": "The gazer can mimic simple speech it has heard, in any language. Any who hear this can tell it is an imitation with a successful DC 10 Wis (Insight) check."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Eye Rays",
+        "description": "1. Dazing Ray: Wisdom saving throw or charmed until the start of the gazer's next turn. While charmed, half speed and disadv. on attacks.\n2. Fear Ray: Wisdom saving throw or frightened until the start of the gazer's next turn.\n3. Frost Ray: Target must make a Dexterity saving throw or 10 (3d6) cold damage.\n4. Telekinetic Ray: Medium or smaller creature, Strength saving throw or be moved up to 30 ft away from the gazer. If it is an unattended Tiny object, the gazer moves it up to 30 ft in any direction. It can exert fine control on objects this way."
+      }
+    ],
+    "variant": [
+      {
+        "name": "Variant: Familiar",
+        "description": "The gazer can serve another creature as a familiar, forming a telepathic bond with its willing master, provided that the master is at least a 3rd-level spellcaster. While the two are bonded, the master can sense what the gazer senses as long as they are within 1 mile of each other. If its master causes it physical harm, the gazer will end its service as a familiar, breaking the telepathic bond."
+      }
+    ]
+  },
+  {
+    "_key": "giant crayfish",
+    "name": "Giant Crayfish",
+    "nameAlt": [
+      "Crayfish, Giant"
+    ],
+    "source": [
+      [
+        "TftYP",
+        235
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 15,
+    "hp": 45,
+    "hd": [
+      7,
+      10
+    ],
+    "speed": "30 ft, swim 30 ft",
+    "scores": [
+      15,
+      13,
+      13,
+      1,
+      9,
+      3
+    ],
+    "skills": {
+      "stealth": 3
+    },
+    "senses": "Blindsight 30 ft",
+    "passivePerception": 9,
+    "challengeRating": "2",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Claw",
+        "ability": 1,
+        "damage": [
+          1,
+          10,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Target grappled on hit (escape DC 12); 2 claw attacks as Attack action, if not grappling with claw"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "The giant crayfish can breathe air and water."
+      }
+    ]
+  },
+  {
+    "_key": "giant ice toad",
+    "name": "Giant Ice Toad",
+    "nameAlt": [
+      "Toad, Giant Ice"
+    ],
+    "source": [
+      [
+        "TftYP",
+        235
+      ]
+    ],
+    "size": 2,
+    "type": "Monstrosity",
+    "alignment": "Unaligned",
+    "ac": 14,
+    "hp": 52,
+    "hd": [
+      7,
+      10
+    ],
+    "speed": "30 ft",
+    "scores": [
+      16,
+      13,
+      14,
+      8,
+      10,
+      6
+    ],
+    "damage_immunities": "cold",
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 10,
+    "languages": "Ice Toad",
+    "challengeRating": "3",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Target is grappled and restrained (escape DC 13); Can't use bite again until grapple ends"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "The toad can breathe air and water"
+      },
+      {
+        "name": "Cold Aura",
+        "description": "A creature that starts its turn within 10 feet of the toad takes 5 (1d10) cold damage."
+      },
+      {
+        "name": "Standing Leap",
+        "description": "The toad's long jump is up to 20 ft and its high jump is up to 10 ft, with or without a running start."
+      }
+    ],
+    "features": [
+      {
+        "name": "Swallow",
+        "description": "The toad can make a bite attack against a Medium or smaller target it is grappling. If it hits, the target takes bite damage, is swallowed, and the grapple ends. The swallowed target is blinded and restrained, it has total cover against attacks and other effects outside the toad, and it takes 10 (3d6) acid damage and 11 (2d6) cold damage at the start of each of the toad's turns. The toad can have only one target swallowed at a time.\nIf the toad dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 5 feet of movement, exiting prone."
+      }
+    ],
+    "wildshapeString": "Darkvision 60 ft| Cold Aura: Any within 5 ft at start of their turn take 1d10 cold damage| Amphibious: breathe air and water| Standing Leap: long jump 20 ft and high jump 10 ft, regardless of start| Swallow: if bite attack hits Medium or smaller being grappling, it takes bite damageand is swallowed: blinded, restrained, total cover, takes 3d6 acid and 2d6 cold damage at the start of each of the toad's turns; Only 1 swallowed at a time."
+  },
+  {
+    "_key": "giant lightning eel",
+    "name": "Giant Lightning Eel",
+    "nameAlt": [
+      "Eel, Giant Lightning"
+    ],
+    "source": [
+      [
+        "TftYP",
+        236
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 42,
+    "hd": [
+      5,
+      10
+    ],
+    "speed": "5 ft, swim 30 ft",
+    "scores": [
+      11,
+      17,
+      16,
+      2,
+      12,
+      3
+    ],
+    "damage_resistances": "lightning",
+    "senses": "Blindsight 60 ft",
+    "passivePerception": 11,
+    "challengeRating": "3",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "+1d8 lightning damage on a hit; Two bite attacks as an Attack action"
+      },
+      {
+        "name": "Lightning Jolt (Recharge 5-6)",
+        "ability": 3,
+        "damage": [
+          3,
+          8,
+          "lightning"
+        ],
+        "range": "Out/in 5/15 ft",
+        "dc": true,
+        "description": "Out water: 5 ft, 1 crea; In water: all in 15 ft; Con save: fail― stunned until eel's next turn end, success― half damage",
+        "modifiers": [
+          -1,
+          ""
+        ],
+        "abilitytodamage": false,
+        "tooltip": "One creature the eel touches within 5 feet of it outside water, or each creature within 15 feet of it in a body of water, must make a DC 12 Constitution saving throw. On failed save, a target takes 13 (3d8) lightning damage. If the target takes any of this damage, the target is stunned until the end of the eel's next turn. On a successful save, a target takes half as much damage and isn't stunned"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "The eel can breathe only underwater."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The eel makes two bite attacks."
+      },
+      {
+        "name": "Lightning Jolt (Recharge 5-6)",
+        "description": "See Attack. One creature the eel touches within 5 feet of it outside water, or each creature within 15 feet of it in a body of water, must make a DC 12 Constitution saving throw. On failed save, a target takes 13 (3d8) lightning damage. If the target takes any of this damage, the target is stunned until the end of the eel's next turn. On a successful save, a target takes half as much damage and isn't stunned"
+      }
+    ]
+  },
+  {
+    "_key": "giant subterranean lizard",
+    "name": "Giant Subterranean Lizard",
+    "nameAlt": [
+      "Lizard, Giant Subterranean"
+    ],
+    "source": [
+      [
+        "TftYP",
+        236
+      ]
+    ],
+    "size": 1,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 14,
+    "hp": 66,
+    "hd": [
+      7,
+      12
+    ],
+    "speed": "30 ft, swim 50 ft",
+    "scores": [
+      21,
+      9,
+      17,
+      2,
+      10,
+      7
+    ],
+    "skills": {
+      "stealth": 3
+    },
+    "senses": "",
+    "passivePerception": 10,
+    "challengeRating": "4",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          2,
+          10,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "1 bite & 1 tail attack as Attack action; Target grappled & restrained (escape DC 15); Can't use bite until grapple ends"
+      },
+      {
+        "name": "Tail",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "bludgeoning"
+        ],
+        "range": "Melee (10 ft)",
+        "description": "1 bite & 1 tail attack as Attack action; Target DC 15 Str save or knocked prone"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Swallow",
+        "description": "The lizard can make one bite attack against a Medium or smaller target it is grappling. If the attack hits, the target takes bite damage, is swallowed, and the grapple ends. The swallowed target is blinded and restrained, it has total cover against attacks and other effects outside the lizard, and it takes 10 (3d6) acid damage at the start of each of the lizard's turns. The lizard can have only one target swallowed at a time.\nIf the lizard dies, a swallowed creature is no longer restrained by it and can escape from the corpse using 10 feet of movement, exiting prone."
+      }
+    ],
+    "wildshapeString": "◆ Swallow: If a bite attack hits a Small or smaller target that is currently being grappled by the lizard, the target is swallowed, ending the grapple. While swallowed, it is blinded, restrained, has total cover, and takes 3d4 acid damage at the start of each of the lizard's turns; The lizard can have only 1 swallowed at a time. If the lizard dies, the swallowed creature is no longer restrained and can escape using 10 ft movement."
+  },
+  {
+    "_key": "almiraj",
+    "name": "Almiraj",
+    "source": [
+      [
+        "ToA",
+        211
+      ]
+    ],
+    "size": 4,
+    "type": "Beast",
+    "companion": "familiar_not_al",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 3,
+    "hd": [
+      1,
+      6
+    ],
+    "speed": "50 ft",
+    "scores": [
+      2,
+      16,
+      10,
+      2,
+      14,
+      10
+    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 5
+    },
+    "senses": "Darkvision 30 ft; Adv. on Wis (Perception) checks using hearing/sight",
+    "passivePerception": 14,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Horn",
+        "ability": 2,
+        "damage": [
+          1,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Keen Senses",
+        "description": "The almiraj has advantage on Wisdom (Perception) checks that rely on hearing or sight."
+      }
+    ]
+  },
+  {
+    "_key": "flying monkey",
+    "name": "Flying Monkey",
+    "nameAlt": [
+      "Monkey, Flying"
+    ],
+    "source": [
+      [
+        "ToA",
+        220
+      ]
+    ],
+    "size": 4,
+    "type": "Beast",
+    "companion": "familiar_not_al",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 3,
+    "hd": [
+      1,
+      6
+    ],
+    "speed": "30 ft, climb 20 ft, fly 30 ft",
+    "scores": [
+      8,
+      14,
+      11,
+      5,
+      12,
+      6
+    ],
+    "senses": "",
+    "passivePerception": 11,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "The flying monkey has advantage on an attack roll against a creature if at least one of the monkey's allies is within 5 ft of the creature and the ally isn't incapacitated."
+      }
+    ]
+  },
+  {
+    "_key": "giant snapping turtle",
+    "name": "Giant Snapping Turtle",
+    "nameAlt": [
+      "Turtle, Giant Snapping"
+    ],
+    "source": [
+      [
+        "ToA",
+        222
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 17,
+    "hp": 75,
+    "hd": [
+      10,
+      10
+    ],
+    "speed": "30 ft, swim 40 ft",
+    "scores": [
+      19,
+      10,
+      14,
+      2,
+      12,
+      5
+    ],
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 11,
+    "challengeRating": "3",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          4,
+          6,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "The turtle can breathe air and water."
+      },
+      {
+        "name": "Stable",
+        "description": "Whenever an effect knocks the turtle prone, it can make a DC 10 Constitution saving throw to avoid being knocked prone. A prone turtle is upside down. To stand up, it must succeed on a DC 10 Dexterity check on its turn and then use all its movement for that turn. While prone, the turtle's AC becomes 12."
+      }
+    ]
+  },
+  {
+    "_key": "jaculi",
+    "name": "Jaculi",
+    "source": [
+      [
+        "ToA",
+        225
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 14,
+    "hp": 16,
+    "hd": [
+      3,
+      10
+    ],
+    "speed": "30 ft, climb 20 ft",
+    "scores": [
+      15,
+      14,
+      11,
+      2,
+      8,
+      3
+    ],
+    "skills": {
+      "athletics": 4,
+      "perception": 1,
+      "stealth": 4
+    },
+    "senses": "Blindsight 30 ft; Adv. on Wis (Perception) checks using smell",
+    "passivePerception": 11,
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after at least 10 ft jump, adv. on to hit and extra 2d6 damage, see Spring trait"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Spring",
+        "description": "The jaculi springs up to 30 feet in a straight line and makes a bite attack against a target within its reach. This attack has advantage if the jaculi springs at least 10 feet. If the attack hits, the bite deals an extra 7 (2d6) piercing damage."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Camouflage",
+        "description": "The jaculi has advantage on Dexterity (Stealth) checks made to hide."
+      },
+      {
+        "name": "Keen Smell",
+        "description": "The jaculi has advantage on Wisdom (Perception) checks that rely on smell."
+      }
+    ],
+    "wildshapeString": "◆ Senses: Blindsight 30 ft.\n◆ Camouflage: advantage on Dexterity (Stealth) checks made to hide.\n◆ Keen Smell: advantage on Wisdom (Perception) checks that rely on smell.\n◆ Spring: 30 ft in a straight line and make a bite attack. Advantage on the attack roll if springing at least 10 ft. It deals an extra 7 (2d6) piercing damage on a hit."
+  },
+  {
+    "_key": "tiny servant",
+    "name": "Tiny Servant",
+    "source": [
+      [
+        "X",
+        169
+      ]
+    ],
+    "size": 5,
+    "type": "Construct",
+    "alignment": "Unaligned",
+    "ac": 15,
+    "hp": 10,
+    "hd": [
+      4,
+      4
+    ],
+    "speed": "30 ft, climb 30 ft",
+    "scores": [
+      4,
+      16,
+      10,
+      2,
+      10,
+      1
+    ],
+    "damage_immunities": "poison, psychic",
+    "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned",
+    "senses": "Blindsight 60 ft (blind beyond this radius)",
+    "passivePerception": 10,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Slam",
+        "ability": 2,
+        "damage": [
+          1,
+          4,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "_key": "fish",
+    "name": "Fish",
+    "source": [
+      [
+        "GoS",
+        215
+      ]
+    ],
+    "size": 5,
+    "type": "Beast",
+    "companion": "familiar",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 1,
+    "hd": [
+      1,
+      4
+    ],
+    "speed": "swim 40 ft",
+    "scores": [
+      2,
+      16,
+      9,
+      1,
+      7,
+      2
+    ],
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 8,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [],
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "The fish can breathe only underwater."
+      }
+    ]
+  },
+  {
+    "_key": "giant white moray eel",
+    "name": "Giant White Moray Eel",
+    "nameAlt": [
+      "Eel, Giant White Moray"
+    ],
+    "source": [
+      [
+        "GoS",
+        216
+      ]
+    ],
+    "size": 1,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 60,
+    "hd": [
+      8,
+      12
+    ],
+    "speed": "swim 40 ft",
+    "scores": [
+      19,
+      14,
+      12,
+      1,
+      10,
+      3
+    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 4
+    },
+    "senses": "Blindsight 10 ft",
+    "passivePerception": 12,
+    "challengeRating": "2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (10 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "The eel can breathe only underwater."
+      }
+    ]
+  },
+  {
+    "_key": "giant coral snake",
+    "name": "Giant Coral Snake",
+    "nameAlt": [
+      "Snake, Giant Coral"
+    ],
+    "source": [
+      [
+        "GoS",
+        236
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 90,
+    "hd": [
+      12,
+      10
+    ],
+    "speed": "30 ft, swim 30 ft",
+    "scores": [
+      12,
+      16,
+      14,
+      2,
+      10,
+      3
+    ],
+    "skills": {
+      "perception": 2
+    },
+    "senses": "Blindsight 10 ft",
+    "passivePerception": 12,
+    "challengeRating": "4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          2,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Target DC 12 Con save or stunned until end of its next turn and short-term madness for 10 min"
+      }
+    ]
+  },
+  {
+    "_key": "giant sea eel",
+    "name": "Giant Sea Eel",
+    "nameAlt": [
+      "Eel, Giant Sea"
+    ],
+    "source": [
+      [
+        "GoS",
+        237
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 14,
+    "hp": 19,
+    "hd": [
+      3,
+      10
+    ],
+    "speed": "swim 40 ft",
+    "scores": [
+      11,
+      14,
+      12,
+      2,
+      10,
+      7
+    ],
+    "saves": [
+      "",
+      4,
+      "",
+      "",
+      "",
+      ""
+    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 4
+    },
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 12,
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          2,
+          10,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "The eel can breathe only underwater."
+      }
+    ]
+  },
+  {
+    "_key": "abyssal chicken",
+    "name": "Abyssal Chicken",
+    "nameAlt": [
+      "Chicken, Abyssal"
+    ],
+    "source": [
+      [
+        "DiA",
+        97
+      ]
+    ],
+    "size": 5,
+    "type": "Fiend",
+    "subtype": "demon",
+    "companion": "familiar_not_al",
+    "alignment": "Chaotic Evil",
+    "ac": 13,
+    "hp": 10,
+    "hd": [
+      3,
+      4
+    ],
+    "speed": "30 ft, fly 30 ft",
+    "scores": [
+      6,
+      14,
+      13,
+      4,
+      9,
+      5
+    ],
+    "damage_resistances": "cold, fire, lightning",
+    "damage_immunities": "poison",
+    "condition_immunities": "blinded, poisoned",
+    "senses": "Blindsight 30 ft (blind beyond this radius)",
+    "passivePerception": 9,
+    "languages": "understands Abyssal but can't speak",
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One bite and one claws attack as an Attack action"
+      },
+      {
+        "name": "Claws",
+        "ability": 2,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One claws and one bite attack as an Attack action"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The abyssal chicken makes two attacks: one with its bite and one with its claws."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Bad Flier",
+        "description": "The abyssal chicken falls at the end of a turn if it's airborne and the only thing holding it aloft is its flying speed."
+      }
+    ]
+  },
+  {
+    "_key": "clawfoot",
+    "name": "Clawfoot",
+    "source": [
+      [
+        "E:RLW",
+        289
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 19,
+    "hd": [
+      3,
+      8
+    ],
+    "speed": "40 ft",
+    "scores": [
+      12,
+      16,
+      14,
+      4,
+      12,
+      6
+    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 5
+    },
+    "senses": "",
+    "passivePerception": 13,
+    "challengeRating": "1",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Both bite & claws attack as Attack action"
+      },
+      {
+        "name": "Claws",
+        "ability": 2,
+        "damage": [
+          1,
+          8,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after moving 20 ft straight in the same round, see Pounce trait; Both bite & claws attack as Attack action"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "The clawfoot has advantage on an attack roll against a creature if at least one of the clawfoot's allies is within 5 ft of the creature and the ally isn't incapacitated."
+      },
+      {
+        "name": "Pounce",
+        "description": "If the clawfoot moves at least 20 ft straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 11 Strength saving throw or be knocked prone. If the target is prone, the clawfoot can make one bite attack against it as a bonus action."
+      },
+      {
+        "name": "Multiattack",
+        "description": "The clawfoot makes two attacks: one with its bite and one with its claws."
+      }
+    ]
+  },
+  {
+    "_key": "fastieth",
+    "name": "Fastieth",
+    "source": [
+      [
+        "E:RLW",
+        289
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 14,
+    "hp": 9,
+    "hd": [
+      2,
+      8
+    ],
+    "speed": "50 ft",
+    "scores": [
+      12,
+      18,
+      10,
+      4,
+      11,
+      4
+    ],
+    "senses": "",
+    "passivePerception": 10,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Quickness (Recharge 5-6)",
+        "description": "The fastieth can take the Dodge action as a bonus action."
+      }
+    ]
+  },
+  {
+    "_key": "valenar hawk",
+    "name": "Valenar Hawk",
+    "source": [
+      [
+        "E:RLW",
+        312
+      ]
+    ],
+    "size": 5,
+    "type": "Fey",
+    "alignment": "Neutral",
+    "ac": 14,
+    "hp": 10,
+    "hd": [
+      4,
+      4
+    ],
+    "speed": "10 ft, fly 60 ft",
+    "scores": [
+      8,
+      18,
+      10,
+      9,
+      16,
+      11
+    ],
+    "skills": {
+      "perception": 5
+    },
+    "senses": "Adv. on Wis (Perception) checks using sight",
+    "passivePerception": 15,
+    "languages": "understands Common, Elvish, and Sylvan but can't speak",
+    "challengeRating": "1/8",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Talons",
+        "ability": 2,
+        "damage": [
+          1,
+          4,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Keen Sight",
+        "description": "The hawk has advantage on Wisdom (Perception) checks that rely on sight."
+      },
+      {
+        "name": "Bonding",
+        "description": "The hawk can magically bond with one creature it can see, immediately after spending at least 1 hour observing that creature while within 30 ft of it. The bond lasts until the hawk bonds with a different creature or until the bonded creature dies. While bonded, the hawk and the bonded creature can communicate telepathically with each other at a distance of up to 100 ft."
+      }
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(e,a){AddString(e+\"Cnote.Left\",ERftLW_Valenar_Ancestral_Traits,!0)}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(e,a){RemoveString(e+\"Cnote.Left\",ERftLW_Valenar_Ancestral_Traits,!0)}"
+    }
+  },
+  {
+    "_key": "valenar hound",
+    "name": "Valenar Hound",
+    "source": [
+      [
+        "E:RLW",
+        312
+      ]
+    ],
+    "size": 3,
+    "type": "Fey",
+    "alignment": "Neutral",
+    "ac": 14,
+    "hp": 19,
+    "hd": [
+      3,
+      8
+    ],
+    "speed": "40 ft",
+    "scores": [
+      17,
+      15,
+      14,
+      10,
+      15,
+      11
+    ],
+    "skills": {
+      "perception": 4
+    },
+    "senses": "Adv. on Wis (Perception) checks using hearing/smell",
+    "passivePerception": 14,
+    "languages": "understands Common, Elvish, and Sylvan but can't speak",
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Target must succeed on a DC 13 Strength saving throw or be knocked prone"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Keen Hearing and Smell",
+        "description": "The hound has advantage on Wisdom (Perception) checks that rely on hearing or smell."
+      },
+      {
+        "name": "Bonding",
+        "description": "The hound can magically bond with one creature it can see, immediately after spending at least 1 hour observing that creature while within 30 ft of it. The bond lasts until the hound bonds with a different creature or until the bonded creature dies. While bonded, the hound and the bonded creature can communicate telepathically with each other at a distance of up to 100 ft."
+      }
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(e,a){AddString(e+\"Cnote.Left\",ERftLW_Valenar_Ancestral_Traits,!0)}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(e,a){RemoveString(e+\"Cnote.Left\",ERftLW_Valenar_Ancestral_Traits,!0)}"
+    }
+  },
+  {
+    "_key": "valenar steed",
+    "name": "Valenar Steed",
+    "source": [
+      [
+        "E:RLW",
+        313
+      ]
+    ],
+    "size": 2,
+    "type": "Fey",
+    "alignment": "Neutral",
+    "ac": 13,
+    "hp": 22,
+    "hd": [
+      3,
+      10
+    ],
+    "speed": "60 ft",
+    "scores": [
+      14,
+      16,
+      14,
+      10,
+      15,
+      11
+    ],
+    "skills": {
+      "perception": 4
+    },
+    "passivePerception": 14,
+    "languages": "understands Common, Elvish, and Sylvan but can't speak",
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Hooves",
+        "ability": 2,
+        "damage": [
+          2,
+          6,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Bonding",
+        "description": "The steed can magically bond with one creature it can see, immediately after spending at least 1 hour observing that creature while within 30 ft of it. The bond lasts until the steed bonds with a different creature or until the bonded creature dies. While bonded, the steed and the bonded creature can communicate telepathically with each other at a distance of up to 100 ft."
+      }
+    ],
+    "eval": {
+      "_type": "function",
+      "body": "function(e,a){AddString(e+\"Cnote.Left\",ERftLW_Valenar_Ancestral_Traits,!0)}"
+    },
+    "removeeval": {
+      "_type": "function",
+      "body": "function(e,a){RemoveString(e+\"Cnote.Left\",ERftLW_Valenar_Ancestral_Traits,!0)}"
+    }
+  },
+  {
+    "_key": "moorbounder",
+    "name": "Moorbounder",
+    "source": [
+      [
+        "W",
+        295
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 30,
+    "hd": [
+      4,
+      10
+    ],
+    "speed": "70 ft",
+    "scores": [
+      18,
+      14,
+      14,
+      2,
+      13,
+      5
+    ],
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 11,
+    "challengeRating": "1",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Claws",
+        "ability": 1,
+        "damage": [
+          4,
+          4,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Standing Leap",
+        "description": "The moorbounder's long jump is up to 40 ft and its high jump is up to 20 ft, with or without a running start."
+      }
+    ]
+  },
+  {
+    "_key": "bristled moorbounder",
+    "name": "Bristled Moorbounder",
+    "source": [
+      [
+        "W",
+        295
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 15,
+    "hp": 52,
+    "hd": [
+      7,
+      10
+    ],
+    "speed": "70 ft",
+    "scores": [
+      18,
+      14,
+      14,
+      2,
+      13,
+      5
+    ],
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 11,
+    "challengeRating": "3",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Blades",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One blades and one claws attack as an Attack action"
+      },
+      {
+        "name": "Claws",
+        "ability": 1,
+        "damage": [
+          4,
+          4,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One blades and one claws attack as an Attack action"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The moorbounder makes two attacks: one with its blades and one with its claws."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Bladed Hide",
+        "description": "At the start of each of its turns, the moorbounder deals 2d4 piercing damage to any creature grappling it."
+      },
+      {
+        "name": "Standing Leap",
+        "description": "The moorbounder's long jump is up to 40 ft and its high jump is up to 20 ft, with or without a running start."
+      }
+    ]
+  },
+  {
+    "_key": "anvilwrought raptor",
+    "name": "Anvilwrought Raptor",
+    "source": [
+      [
+        "MOT",
+        209
+      ]
+    ],
+    "size": 5,
+    "type": "Construct",
+    "companion": "familiar_not_al",
+    "alignment": "Unaligned",
+    "ac": 14,
+    "hp": 18,
+    "hd": [
+      4,
+      4
+    ],
+    "speed": "10 ft, fly 60 ft",
+    "scores": [
+      12,
+      16,
+      14,
+      3,
+      14,
+      1
+    ],
+    "skills": {
+      "perception": 4
+    },
+    "damage_immunities": "fire, poison",
+    "condition_immunities": "charmed, exhaustion, paralyzed, petrified, poisoned",
+    "senses": "Darkvision 120 ft; Adv. on Wis (Perception) checks using sight",
+    "passivePerception": 14,
+    "languages": "understands one language of its creator but can't speak",
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Beak",
+        "ability": 2,
+        "damage": [
+          1,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Two beak attacks as one Attack action"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Keen Sight",
+        "description": "The raptor has advantage on Wisdom (Perception) checks that rely on sight."
+      },
+      {
+        "name": "Recorded Mimicry",
+        "description": "The raptor can mimic any sound, including voices, it has heard in the last 24 hours. A creature that hears the sounds can tell they are imitations with a successful DC 12 Wisdom (Insight) check."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The raptor makes two attacks with its beak."
+      }
+    ],
+    "variant": [
+      {
+        "name": "Variant: Familiar",
+        "description": "The anvilwrought can serve another creature as a familiar, forming a magical, telepathic bond with its willing master. While the two are bonded, the master can sense what the anvilwrought senses, as long as they are within 1 mile of each other."
+      }
+    ]
+  },
+  {
+    "_key": "awakened white moose",
+    "name": "Awakened White Moose",
+    "nameAlt": [
+      "Moose, Awakened White"
+    ],
+    "source": [
+      [
+        "RotF",
+        82
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Neutral Evil",
+    "ac": 11,
+    "hp": 68,
+    "hd": [
+      8,
+      10
+    ],
+    "speed": "40 ft",
+    "scores": [
+      19,
+      11,
+      16,
+      10,
+      12,
+      6
+    ],
+    "senses": "",
+    "passivePerception": 11,
+    "languages": "Druidic",
+    "challengeRating": "3",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Antlers",
+        "ability": 1,
+        "damage": [
+          2,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after moving 20 ft straight in the same round, see Charge trait"
+      },
+      {
+        "name": "Hooves",
+        "ability": 1,
+        "damage": [
+          2,
+          4,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One antlers and one hooves attack as an Attack action"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Charge",
+        "description": "If the moose moves at least 20 ft straight toward a target and then hits it with an antlers attack on the same turn, the target takes an extra 9 (2d8) bludgeoning damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone."
+      },
+      {
+        "name": "Sure-Footed",
+        "description": "The moose has advantage on Strength and Dexterity saving throws made against effects that would knock it prone."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The moose makes two attacks: one with its antlers and one with its hooves."
+      }
+    ],
+    "wildshapeString": "◆ Multiattack: Makes two attacks: one with its antlers and one with its hooves.\n◆ Charge: After moving 20 ft straight toward a target and then hitting it with an antlers attack on the same turn, the target takes an extra 2d8 bludgeoning damage and must make a DC 14 Str save or be knocked prone.\n◆ Sure-Footed: Advantage on Str and Dex saves against effects that would knock it prone."
+  },
+  {
+    "_key": "fox",
+    "name": "Fox",
+    "companion": "familiar_not_al",
+    "source": [
+      [
+        "RotF",
+        288
+      ]
+    ],
+    "size": 5,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 2,
+    "hd": [
+      1,
+      4
+    ],
+    "speed": "30 ft, burrow 5 ft",
+    "scores": [
+      2,
+      16,
+      11,
+      3,
+      12,
+      6
+    ],
+    "skills": {
+      "perception": 3,
+      "stealth": 5
+    },
+    "senses": "Darkvision 60 ft; Adv. on Wis (Perception) checks using hearing",
+    "passivePerception": 13,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          "",
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "",
+        "abilitytodamage": false
+      }
+    ],
+    "traits": [
+      {
+        "name": "Keen Hearing",
+        "description": "The fox has advantage on Wisdom (Perception) checks that rely on hearing."
+      }
+    ]
+  },
+  {
+    "_key": "hare",
+    "name": "Hare",
+    "source": [
+      [
+        "RotF",
+        294
+      ]
+    ],
+    "companion": "familiar_not_al",
+    "size": 5,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 1,
+    "hd": [
+      1,
+      4
+    ],
+    "speed": "20 ft, burrow 5 ft",
+    "scores": [
+      1,
+      17,
+      9,
+      2,
+      11,
+      4
+    ],
+    "skills": {
+      "perception": 2,
+      "stealth": 5
+    },
+    "senses": "",
+    "passivePerception": 12,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 0,
+    "attacks": [],
+    "traits": [
+      {
+        "name": "Escape",
+        "description": "The hare can take the Dash, Disengage, or Hide action as a bonus action on each of its turns."
+      }
+    ]
+  },
+  {
+    "_key": "knucklehead trout",
+    "name": "Knucklehead Trout",
+    "source": [
+      [
+        "RotF",
+        295
+      ]
+    ],
+    "size": 4,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 7,
+    "hd": [
+      2,
+      6
+    ],
+    "speed": "0 ft, swim 30 ft",
+    "scores": [
+      14,
+      14,
+      11,
+      1,
+      6,
+      1
+    ],
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 8,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      },
+      {
+        "name": "Tail",
+        "ability": 1,
+        "damage": [
+          1,
+          4,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Water Breathing",
+        "description": "The trout can breathe only underwater."
+      }
+    ]
+  },
+  {
+    "_key": "mountain goat",
+    "name": "Mountain Goat",
+    "nameAlt": [
+      "Goat, Mountain"
+    ],
+    "source": [
+      [
+        "RotF",
+        304
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 11,
+    "hp": 13,
+    "hd": [
+      2,
+      8
+    ],
+    "speed": "40 ft, climb 30 ft",
+    "scores": [
+      14,
+      12,
+      14,
+      2,
+      10,
+      5
+    ],
+    "senses": "",
+    "passivePerception": 10,
+    "challengeRating": "1/8",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Ram",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "If used after moving 20 ft straight in the same round, see Charge trait"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Charge",
+        "description": "If the goat moves at least 20 ft straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 3 (1d6) bludgeoning damage. If the target is a creature, it must succeed on a DC 12 Strength saving throw or be knocked prone."
+      },
+      {
+        "name": "Sure-Footed",
+        "description": "The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone."
+      }
+    ],
+    "wildshapeString": "◆ Charge: After moving 20 ft straight toward a target and then hitting it with a ram attack on the same turn, the target takes an extra 1d6 bludgeoning damage and must make a DC 12 Strength save or be knocked prone.\n◆ Sure-Footed: Advantage on Strength and Dexterity saves against effects that would knock it prone."
+  },
+  {
+    "_key": "seal",
+    "name": "Seal",
+    "source": [
+      [
+        "RotF",
+        308
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 11,
+    "hp": 9,
+    "hd": [
+      2,
+      8
+    ],
+    "speed": "20 ft, swim 40 ft",
+    "scores": [
+      10,
+      12,
+      11,
+      3,
+      12,
+      5
+    ],
+    "senses": "Darkvision 60 ft; Adv. on Wis (Perception) checks using smell",
+    "passivePerception": 11,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          "",
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "",
+        "abilitytodamage": false
+      }
+    ],
+    "traits": [
+      {
+        "name": "Hold Breath",
+        "description": "The seal can hold its breath for 15 minutes."
+      },
+      {
+        "name": "Keen Smell",
+        "description": "The seal has advantage on Wisdom (Perception) checks that rely on smell."
+      }
+    ]
+  },
+  {
+    "_key": "sperm whale",
+    "name": "Sperm Whale",
+    "nameAlt": [
+      "Whale, Sperm"
+    ],
+    "source": [
+      [
+        "RotF",
+        309
+      ]
+    ],
+    "size": 0,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 189,
+    "hd": [
+      14,
+      20
+    ],
+    "speed": "0 ft, swim 60 ft",
+    "scores": [
+      26,
+      8,
+      17,
+      3,
+      12,
+      5
+    ],
+    "senses": "Blindsight 120 ft; Adv. on Wis (Perception) checks using hearing",
+    "passivePerception": 11,
+    "challengeRating": "8",
+    "proficiencyBonus": 3,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          3,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "1 bite & 1 tail attack as Attack action; See Swallow feature",
+        "tooltip": "If the target is a Large or smaller creature, it must succeed on a DC 14 Dexterity saving throw or be swallowed by the whale. A swallowed creature has total cover against attacks and other effects outside the whale, and it takes 3 (1d6) acid damage at the start of each of the whale's turns. If the whale takes 30 damage or more on a single turn from a creature inside it, the whale must succeed on a DC 16 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 feet of the whale. If the whale dies, a swallowed creature can escape from the corpse by using 20 feet of movement, exiting prone."
+      },
+      {
+        "name": "Tail",
+        "ability": 1,
+        "damage": [
+          3,
+          6,
+          "bludgeoning"
+        ],
+        "range": "Melee (15 ft)",
+        "description": "1 bite & 1 tail attack as Attack action; Double damage vs. objects",
+        "tooltip": "If the target is an object, the tail attack deal 6d6 + twice the Strength modifier bludgeoning damage."
+      }
+    ],
+    "features": [
+      {
+        "name": "Swallow",
+        "description": "A Large or smaller creature hit by the whale's bite attack must make a DC 14 Dexterity saving throw or be swallowed whole. A swallowed creature has total cover against attacks and other effects outside the whale, and it takes 3 (1d6) acid damage at the start of each of the whale's turns. If the whale takes 30 damage or more on a single turn from a creature inside it, the whale must succeed on a DC 16 Constitution saving throw at the end of that turn or regurgitate all swallowed creatures, which fall prone in a space within 10 ft of the whale. If the whale dies, a swallowed creature can escape from the corpse by using 20 ft of movement, exiting prone."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Echolocation",
+        "description": "The whale can't use its blindsight while deafened."
+      },
+      {
+        "name": "Hold Breath",
+        "description": "The whale can hold its breath for 90 minutes."
+      },
+      {
+        "name": "Keen Hearing",
+        "description": "The whale has advantage on Wisdom (Perception) checks that rely on hearing."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The whale makes two attacks: one with its bite and one with its tail."
+      }
+    ],
+    "wildshapeString": "◆ Senses: Blindsight 120 ft (unless deafened); Adv. on Wis (Perception) checks using hearing.\n◆ Hold Breath: Can hold its breath for 90 minutes.\n◆ Swallow: Large or smaller hit with bite DC 14 Dex save or swallowed. Swallowed: total cover from outside whale, 1d6 acid damage at start of each turn. If whale takes 30 or more damage in a turn from inside, it DC 16 Con save or spit out creature prone in 10 ft at end of turn."
+  },
+  {
+    "_key": "walrus",
+    "name": "Walrus",
+    "source": [
+      [
+        "RotF",
+        312
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 9,
+    "hp": 22,
+    "hd": [
+      3,
+      10
+    ],
+    "speed": "20 ft, swim 40 ft",
+    "scores": [
+      15,
+      9,
+      14,
+      3,
+      11,
+      4
+    ],
+    "senses": "",
+    "passivePerception": 10,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Tusks",
+        "ability": 1,
+        "damage": [
+          2,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Hold Breath",
+        "description": "The walrus can hold its breath for 10 minutes."
+      }
+    ]
+  },
+  {
+    "_key": "giant walrus",
+    "name": "Giant Walrus",
+    "nameAlt": [
+      "Walrus, Giant"
+    ],
+    "source": [
+      [
+        "RotF",
+        312
+      ]
+    ],
+    "size": 1,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 9,
+    "hp": 85,
+    "hd": [
+      9,
+      12
+    ],
+    "speed": "20 ft, swim 40 ft",
+    "scores": [
+      22,
+      9,
+      16,
+      3,
+      11,
+      4
+    ],
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 10,
+    "challengeRating": "4",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Body Flop",
+        "ability": 1,
+        "damage": [
+          2,
+          8,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One body flop and one tusks attack as an Attack action"
+      },
+      {
+        "name": "Tusks",
+        "ability": 1,
+        "damage": [
+          3,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One body flop and one tusks attack as an Attack action"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Hold Breath",
+        "description": "The walrus can hold its breath for 30 minutes."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The walrus makes two attacks: one with its body flop and one with its tusks."
+      }
+    ]
+  },
+  {
+    "_key": "demos magen",
+    "name": "Demos Magen",
+    "nameAlt": [
+      "Magen, Demos"
+    ],
+    "source": [
+      [
+        "RotF",
+        300
+      ]
+    ],
+    "size": 3,
+    "type": "Construct",
+    "alignment": "Unaligned",
+    "ac": 16,
+    "hp": 51,
+    "hd": [
+      6,
+      8
+    ],
+    "speed": "30 ft",
+    "scores": [
+      14,
+      14,
+      18,
+      10,
+      10,
+      7
+    ],
+    "senses": "",
+    "damage_immunities": "poison",
+    "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
+    "passivePerception": 10,
+    "languages": "understands the languages of its creator but can't speak",
+    "challengeRating": "2",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Greatsword",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Two greatsword attacks as an Attack action"
+      },
+      {
+        "name": "Light Crossbow",
+        "ability": 2,
+        "damage": [
+          1,
+          8,
+          "piercing"
+        ],
+        "range": "80/320 ft",
+        "description": ""
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The magen makes two melee attacks."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Fiery End",
+        "description": "If the magen dies, its body disintegrates in a harmless burst of fire and smoke, leaving behind anything it was wearing or carrying."
+      },
+      {
+        "name": "Magic Resistance",
+        "description": "The magen has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Unusual Nature",
+        "description": "The magen doesn't require air, food, drink, or sleep."
+      }
+    ],
+    "features": [
+      {
+        "name": "Magical Servants",
+        "description": "Magen make ideal servants. At creation, each is instilled with an instinct to protect itself and its creator, and it follows its creator's instructions without hesitation. When its taks is complete, a magen stands immobile and silent until its creator gives it new orders."
+      }
+    ]
+  },
+  {
+    "_key": "galvan magen",
+    "name": "Galvan Magen",
+    "nameAlt": [
+      "Magen, Galvan"
+    ],
+    "source": [
+      [
+        "RotF",
+        301
+      ]
+    ],
+    "size": 3,
+    "type": "Construct",
+    "alignment": "Unaligned",
+    "ac": 14,
+    "hp": 68,
+    "hd": [
+      8,
+      8
+    ],
+    "speed": "30 ft, fly 30 ft (hover)",
+    "scores": [
+      10,
+      18,
+      18,
+      12,
+      10,
+      7
+    ],
+    "senses": "",
+    "damage_immunities": "lightning, poison",
+    "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
+    "passivePerception": 10,
+    "languages": "understands the languages of its creator but can't speak",
+    "challengeRating": "3",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Shocking Touch",
+        "ability": 2,
+        "damage": [
+          1,
+          6,
+          "lightning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Two shocking touch attacks as an Attack action; Adv. if target wears metal armor"
+      },
+      {
+        "name": "Static Discharge (Recharge 5-6)",
+        "ability": 3,
+        "damage": [
+          4,
+          10,
+          "lightning"
+        ],
+        "range": "5-ft × 30-ft line",
+        "description": "Hits all in area; Dex save, success― half damage; Disadv. if wearing metal armor",
+        "abilitytodamage": false,
+        "dc": true,
+        "tooltip": "The magen discharges a lightning bolt in a 60-foot line that is 5 feet wide. Each creature in that line must make a DC 14 Dexterity saving throw (with disadvantage if the creature is wearing armor made of metal), taking 22 (4d10) lightning damage on a failed save, or half as much damage on a successful one."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Fiery End",
+        "description": "If the magen dies, its body disintegrates in a harmless burst of fire and smoke, leaving behind anything it was wearing or carrying."
+      },
+      {
+        "name": "Magic Resistance",
+        "description": "The magen has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Unusual Nature",
+        "description": "The magen doesn't require air, food, drink, or sleep."
+      }
+    ],
+    "features": [
+      {
+        "name": "Magical Servants",
+        "description": "Magen make ideal servants. At creation, each is instilled with an instinct to protect itself and its creator, and it follows its creator's instructions without hesitation. When its taks is complete, a magen stands immobile and silent until its creator gives it new orders."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The magen makes two Shocking Touch attacks."
+      },
+      {
+        "name": "Static Discharge (Recharge 5-6)",
+        "description": "See Attack. The magen discharges a lightning bolt in a 60-ft line that is 5 ft wide. Each creature in that line must make a DC 14 Dexterity saving throw (with disadvantage if the creature is wearing armor made of metal), taking 4d12 lightning damage on a failed save, or half as much damage on a successful one."
+      }
+    ]
+  },
+  {
+    "_key": "hypnos magen",
+    "name": "Hypnos Magen",
+    "nameAlt": [
+      "Magen, Hypnos"
+    ],
+    "source": [
+      [
+        "RotF",
+        301
+      ]
+    ],
+    "size": 3,
+    "type": "Construct",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 34,
+    "hd": [
+      4,
+      8
+    ],
+    "speed": "30 ft",
+    "scores": [
+      10,
+      14,
+      18,
+      14,
+      10,
+      7
+    ],
+    "senses": "",
+    "damage_immunities": "poison",
+    "condition_immunities": "charmed, exhaustion, frightened, paralyzed, poisoned",
+    "passivePerception": 10,
+    "languages": "telepathy 30 ft, understands the languages of its creator but can't speak",
+    "challengeRating": "1",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Psychic Lash",
+        "ability": 4,
+        "damage": [
+          2,
+          10,
+          "psychic"
+        ],
+        "range": "60 ft",
+        "description": "One creature in sight; Wis save: success― no damage",
+        "abilitytodamage": false,
+        "dc": true
+      }
+    ],
+    "traits": [
+      {
+        "name": "Fiery End",
+        "description": "If the magen dies, its body disintegrates in a harmless burst of fire and smoke, leaving behind anything it was wearing or carrying."
+      },
+      {
+        "name": "Magic Resistance",
+        "description": "The magen has advantage on saving throws against spells and other magical effects."
+      },
+      {
+        "name": "Unusual Nature",
+        "description": "The magen doesn't require air, food, drink, or sleep."
+      }
+    ],
+    "features": [
+      {
+        "name": "Magical Servants",
+        "description": "Magen make ideal servants. At creation, each is instilled with an instinct to protect itself and its creator, and it follows its creator's instructions without hesitation. When its taks is complete, a magen stands immobile and silent until its creator gives it new orders."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Suggestion",
+        "description": "The magen casts the Suggestion spell (save DC 12), requiring no material components. The target must be a creature that the magen can communicate with telepathically. If it succeeds on its saving throw, the target is immune to this magen's suggestion spell for the next 24 hours. The magen's spellcasting ability is Intelligence."
+      }
+    ]
+  },
+  {
+    "_key": "giant swan",
+    "name": "Giant Swan",
+    "nameAlt": [
+      "Swan, Giant"
+    ],
+    "source": [
+      [
+        "WBtW",
+        38
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Neutral Good",
+    "ac": 13,
+    "hp": 26,
+    "hd": [
+      4,
+      10
+    ],
+    "speed": "10 ft, fly 80 ft",
+    "scores": [
+      16,
+      17,
+      13,
+      8,
+      14,
+      10
+    ],
+    "skills": {
+      "perception": 4
+    },
+    "senses": "Adv. on Wis (Perception) checks using sight",
+    "passivePerception": 14,
+    "languages": "Common and Auran",
+    "challengeRating": "1",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Beak",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Two beak attack as an Attack action"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The swan makes two beak attacks."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Keen Sight",
+        "description": "The swan has advantage on Wisdom (Perception) checks that rely on sight."
+      }
+    ]
+  },
+  {
+    "_key": "giant dragonfly",
+    "name": "Giant Dragonfly",
+    "nameAlt": [
+      "Dragonfly, Giant"
+    ],
+    "source": [
+      [
+        "WBtW",
+        234
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 16,
+    "hp": 22,
+    "hd": [
+      4,
+      10
+    ],
+    "speed": "10 ft, fly 60 ft",
+    "scores": [
+      15,
+      18,
+      11,
+      3,
+      10,
+      3
+    ],
+    "passivePerception": 10,
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Drone",
+        "description": "When it beats its wings, the dragonfly emits a loud droning sound that can be heard out to a range of 120 ft."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Uncanny Dodge",
+        "description": "As a reaction, the dragonfly can halve the damage it takes from an attack made against it, provided it can see the attacker."
+      }
+    ]
+  },
+  {
+    "_key": "giant snail",
+    "name": "Giant Snail",
+    "nameAlt": [
+      "Snail, Giant"
+    ],
+    "source": [
+      [
+        "WBtW",
+        234
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 11,
+    "hp": 22,
+    "hd": [
+      4,
+      10
+    ],
+    "speed": "10 ft, climb 10 ft",
+    "scores": [
+      15,
+      3,
+      11,
+      3,
+      10,
+      3
+    ],
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 10,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Slam",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Salt Osmosis",
+        "description": "Whenever the snail starts its turn in contact with a pound or more of salt, it takes 1d4 necrotic damage. Using an action to sprinkle a pound of salt on the snail deals 1d4 necrotic damage to it immediately and another 1d4 necrotic damage to it at the start of its next turn (after which the salt rubs off), provided the snail has not withdrawn into its shell."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Shell Defense",
+        "description": "As an action, the snail withdraws into its shell, gaining a +4 bonus to its AC until it emerges. It can emerge from its shell as a bonus action on its turn."
+      }
+    ]
+  },
+  {
+    "_key": "giant canary",
+    "name": "Giant Canary",
+    "nameAlt": [
+      "Canary, Giant"
+    ],
+    "source": [
+      [
+        "FToD",
+        23
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 26,
+    "hd": [
+      4,
+      10
+    ],
+    "speed": "30 ft, fly 60 ft",
+    "scores": [
+      10,
+      14,
+      12,
+      2,
+      10,
+      6
+    ],
+    "damage_immunities": "poison, psychic",
+    "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned",
+    "senses": "Blindsight 60 ft (blind beyond this radius)",
+    "passivePerception": 10,
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Peck",
+        "ability": 2,
+        "damage": [
+          1,
+          10,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "_key": "dragonnel",
+    "name": "Dragonnel",
+    "source": [
+      [
+        "FToD",
+        190
+      ]
+    ],
+    "size": 2,
+    "type": "Dragon",
+    "companion": [
+      "steed_not_al"
+    ],
+    "alignment": "Neutral",
+    "ac": 13,
+    "hp": 58,
+    "hd": [
+      9,
+      10
+    ],
+    "speed": "30 ft, fly 60 ft",
+    "scores": [
+      16,
+      15,
+      12,
+      8,
+      13,
+      10
+    ],
+    "skills": {
+      "perception": 3
+    },
+    "senses": "Blindsight 30 ft; Darkvision 120 ft",
+    "passivePerception": 13,
+    "languages": "understands Draconic and Common but can't speak",
+    "challengeRating": "2",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Rend",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Two rend attacks as Attack action"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "The dragonnel makes two Rend attacks."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Flyby",
+        "description": "The dragonnel doesn't provoke an opportunity attack when it flies out of an enemy's reach."
+      }
+    ]
+  },
+  {
+    "_key": "art elemental mascot",
+    "name": "Art Elemental Mascot",
+    "nameAlt": [
+      "Mascot, Art Elemental"
+    ],
+    "source": [
+      [
+        "SCC",
+        185
+      ]
+    ],
+    "size": 4,
+    "type": "Elemental",
+    "companion": "strixhaven_mascot",
+    "alignment": "Neutral",
+    "ac": 11,
+    "hp": 18,
+    "hd": [
+      4,
+      6
+    ],
+    "speed": "30 ft",
+    "scores": [
+      6,
+      13,
+      12,
+      8,
+      11,
+      15
+    ],
+    "skills": {
+      "performance": 4
+    },
+    "damage_resistances": "cold, fire",
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "",
+    "passivePerception": 10,
+    "languages": "understands the languages of its creator but can't speak",
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Joyful Flare",
+        "ability": 2,
+        "damage": [
+          2,
+          4,
+          "fire"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      },
+      {
+        "name": "Melancholic Bolt",
+        "ability": 2,
+        "damage": [
+          2,
+          4,
+          "cold"
+        ],
+        "range": "30 ft",
+        "description": ""
+      }
+    ],
+    "actions": [
+      {
+        "name": "Captivating Artistry (1/Day)",
+        "description": "As an action, the elemental can target one creature it can see within 30 ft of itself. The target must succeed on a DC 12 Charisma saving throw or be charmed for 1 minute. The charmed target can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Death Burst",
+        "description": "When the elemental dies, it explodes in a burst of colored light. Each creature within 5 ft of the elemental must succeed on a DC 11 Constitution saving throw or be blinded for 1 minute. A blinded creature can repeat the save at the end of each of its turns, ending the effect on itself on a success."
+      }
+    ]
+  },
+  {
+    "_key": "fractal mascot",
+    "name": "Fractal Mascot",
+    "nameAlt": [
+      "Mascot, Fractal"
+    ],
+    "source": [
+      [
+        "SCC",
+        192
+      ]
+    ],
+    "size": 4,
+    "type": "Construct",
+    "companion": "strixhaven_mascot",
+    "alignment": "Neutral",
+    "ac": 12,
+    "hp": 27,
+    "hd": [
+      6,
+      6
+    ],
+    "speed": "30 ft",
+    "scores": [
+      12,
+      14,
+      13,
+      7,
+      10,
+      5
+    ],
+    "damage_immunities": "poison",
+    "condition_immunities": "poisoned",
+    "senses": "",
+    "passivePerception": 10,
+    "languages": "understands the languages of its creator but can't speak",
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Quantum Strike",
+        "ability": 1,
+        "damage": [
+          1,
+          4,
+          "force"
+        ],
+        "range": "30 ft",
+        "description": "+1d4 damage if the fractal is Medium or bigger"
+      }
+    ],
+    "actions": [
+      {
+        "name": "Augment (bonus action)",
+        "description": "The fractal can increase its size by one category as a bonus action. While the fractal is Medium or bigger, it makes Strength checks and Strength saving throws with advantage. The fractal can become no larger than Huge via this bonus action."
+      },
+      {
+        "name": "Diminish (bonus action)",
+        "description": "The fractal can decreases its size by one category as a bonus action. While the fractal is Tiny, it makes attack rolls, Dexterity checks, and Dexterity saving throws with advantage. The fractal can become no smaller than 1 ft in height via this bonus action."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Relative Density",
+        "description": "The fractal can move through creatures and objects as if they were difficult terrain. It takes 1d10 force damage if it ends its turn inside an object."
+      }
+    ]
+  },
+  {
+    "_key": "inkling mascot",
+    "name": "Inkling Mascot",
+    "nameAlt": [
+      "Mascot, Inkling"
+    ],
+    "source": [
+      [
+        "SCC",
+        195
+      ]
+    ],
+    "size": 5,
+    "type": "Ooze",
+    "companion": "strixhaven_mascot",
+    "alignment": "Neutral",
+    "ac": 13,
+    "hp": 18,
+    "hd": [
+      4,
+      4
+    ],
+    "speed": "10 ft, fly 30 ft (hover)",
+    "scores": [
+      10,
+      16,
+      14,
+      6,
+      7,
+      11
+    ],
+    "skills": {
+      "stealth": 5
+    },
+    "damage_immunities": "psychic",
+    "condition_immunities": "blinded, charmed, deafened, exhaustion, prone",
+    "senses": "Blindsight 60 ft",
+    "passivePerception": 8,
+    "languages": "understands the languages of its creator but can't speak",
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Blot",
+        "ability": 2,
+        "damage": [
+          1,
+          4,
+          "psychic"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "actions": [
+      {
+        "name": "Ink Spray (1/Day)",
+        "description": "As an action, the inkling can spray viscous ink at one creature within 15 ft of itself. The target must succeed on a DC 12 Constitution saving throw or be blinded until the end of the inkling's next turn."
+      },
+      {
+        "name": "Shadow Stealth (bonus action)",
+        "description": "While in dim light or darkness, the inkling can take the Hide action as a bonus action."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Amorphous",
+        "description": "The inkling can move through a space as narrow as 1 inch wide without squeezing."
+      }
+    ]
+  },
+  {
+    "_key": "pest mascot",
+    "name": "Pest Mascot",
+    "nameAlt": [
+      "Mascot, Pest"
+    ],
+    "source": [
+      [
+        "SCC",
+        203
+      ]
+    ],
+    "size": 5,
+    "type": "Monstrosity",
+    "companion": "strixhaven_mascot",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 22,
+    "hd": [
+      4,
+      4
+    ],
+    "speed": "30 ft",
+    "scores": [
+      11,
+      14,
+      17,
+      5,
+      13,
+      4
+    ],
+    "skills": {
+      "perception": 3
+    },
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 13,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "traits": [
+      {
+        "name": "Regeneration",
+        "description": "The pest regains 5 hit points at the start of its turn if it has at least 1 hit point. If it takes fire damage, this trait doesn't function at the start of the pest's next turn."
+      },
+      {
+        "name": "Spiny Hide",
+        "description": "At the start of each of its turns, the pest deals 1d4 piercing damage to any creature grappling it or that it is grappling."
+      }
+    ]
+  },
+  {
+    "_key": "spirit statue mascot",
+    "name": "Spirit Statue Mascot",
+    "nameAlt": [
+      "Mascot, Spirit Statue"
+    ],
+    "source": [
+      [
+        "SCC",
+        216
+      ]
+    ],
+    "size": 3,
+    "type": "Construct",
+    "companion": "strixhaven_mascot",
+    "alignment": "Any alignment",
+    "ac": 14,
+    "hp": 26,
+    "hd": [
+      4,
+      8
+    ],
+    "speed": "30 ft",
+    "scores": [
+      14,
+      9,
+      15,
+      12,
+      13,
+      8
+    ],
+    "skills": {
+      "arcana": 5,
+      "history": 5,
+      "perception": 3
+    },
+    "senses": "",
+    "passivePerception": 13,
+    "languages": "any languages it knew in life",
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Slam",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)",
+        "description": ""
+      }
+    ],
+    "actions": [
+      {
+        "name": "Counsel of the Past (2/Day)",
+        "description": "The spirit statue touches one creature. Once within the next 10 minutes, that creature can roll a d4 and add the number rolled to one ability check of its choice, immediately after rolling the d20."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Death Burst",
+        "description": "When the spirit statue is reduced to 0 hit points, the statue crumbles, and the spirit returns to the afterlife in a burst of ghostly white flame. Each creature within 5 ft of it must succeed on a DC 12 Constitution saving throw or take 1d6 radiant damage."
+      }
+    ]
+  },
+  {
+    "_key": "young horizonback tortoise",
+    "name": "Young Horizonback Tortoise",
+    "nameAlt": [
+      "Tortoise, Young Horizonback"
+    ],
+    "source": [
+      [
+        "CotN",
+        26
+      ]
+    ],
+    "size": 1,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 15,
+    "hp": 68,
+    "hd": [
+      8,
+      12
+    ],
+    "speed": "30 ft",
+    "scores": [
+      19,
+      11,
+      15,
+      2,
+      12,
+      5
+    ],
+    "senses": "",
+    "passivePerception": 11,
+    "languages": "understands Goblin but can't speak",
+    "challengeRating": "3",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          4,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (10 ft)",
+        "description": "Target must succeed on a DC 14 Strength saving throw or be knocked prone",
+        "modifiers": [
+          1,
+          ""
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "The tortoise can breathe air and water."
+      }
+    ]
+  },
+  {
+    "_key": "space eel",
+    "name": "Space Eel",
+    "nameAlt": [
+      "Eel, Space"
+    ],
+    "source": [
+      [
+        "S:AiS",
+        55
+      ]
+    ],
+    "size": 4,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 14,
+    "hp": 7,
+    "hd": [
+      2,
+      6
+    ],
+    "speed": "10 ft, fly 30 ft",
+    "scores": [
+      12,
+      18,
+      11,
+      1,
+      10,
+      1
+    ],
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 10,
+    "challengeRating": "1/2",
+    "proficiencyBonus": 2,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Attaches on hit; While attached, auto-damage at turn start, but can't make bite attacks",
+        "tooltip": "On a hit, the eel attaches to the target. While attached, the eel can't make bite attacks. Instead, the target takes 4 (1d6 + 1) piercing damage at the start of each of the eel's turns. The eel can detach itself as a bonus action. A creature, including the target, can use its action to detach the eel."
+      },
+      {
+        "name": "Tail Spine",
+        "ability": 1,
+        "damage": [
+          1,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Target DC 10 Con save or poisoned and paralyzed for 1 min (can save as each turn ends)",
+        "tooltip": "The target must succeed on a DC 10 Constitution saving throw or be poisoned for 1 minute. Until this poison ends, the target is paralyzed. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Unusual Nature",
+        "description": "The eel doesn't require air."
+      }
+    ],
+    "actions": [
+      {
+        "name": "Multiattack",
+        "description": "If it isn't attached to a creature, the eel makes one bite attack and one tail spine attack."
+      },
+      {
+        "name": "Attach",
+        "description": "If the eel hits with its bite attack, it attaches to the target. While attached, the eel can't make bite attacks. Instead, the target takes 4 (1d6 + 1) piercing damage at the start of each of the eel's turns. The eel can detach itself as a bonus action. A creature, including the target, can use its action to detach the eel."
+      },
+      {
+        "name": "Tail Spine",
+        "description": "If the eel hits with its tail spine, the target must succeed on a DC 10 Constitution saving throw or be poisoned for 1 minute. Until this poison ends, the target is paralyzed. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      }
+    ],
+    "wildshapeString": "◆ Senses: Darkvision 60 ft\n◆ Unusual Nature: The eel doesn't require air.\n◆ Multiattack: If it isn't attached to a creature, the eel makes one bite attack and one tail spine attack.\n◆ Bite: Attaches to the target hit by its bite attack, dealing bite damage at the start of each turn. The eel can detach itself as a bonus action. A creature, including the target, can use its action to detach the eel."
+  },
+  {
+    "_key": "space guppy",
+    "name": "Space Guppy",
+    "nameAlt": [
+      "Guppy, Space"
+    ],
+    "source": [
+      [
+        "S:AiS",
+        55
+      ]
+    ],
+    "size": 4,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 3,
+    "hd": [
+      1,
+      6
+    ],
+    "speed": "0 ft, fly 30 ft",
+    "scores": [
+      3,
+      16,
+      10,
+      1,
+      10,
+      1
+    ],
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 10,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "ability": 2,
+        "damage": [
+          1,
+          "",
+          "bludgeoning"
+        ],
+        "range": "Melee (5 ft)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Air Envelope",
+        "description": "If it has at least 1 hit point, the guppy can generate an air envelope around itself when in a vacuum. This air envelope can sustain the guppy and one other Tiny creature in its space indefinitely."
+      },
+      {
+        "name": "Flyby",
+        "description": "The guppy doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      }
+    ]
+  },
+  {
+    "_key": "giant space hamster",
+    "name": "Giant Space Hamster",
+    "nameAlt": [
+      "Hamster, Giant Space"
+    ],
+    "source": [
+      [
+        "S:AiS",
+        56
+      ]
+    ],
+    "size": 2,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 11,
+    "hp": 22,
+    "hd": [
+      4,
+      10
+    ],
+    "speed": "30 ft, burrow 10 ft",
+    "scores": [
+      14,
+      12,
+      10,
+      2,
+      12,
+      4
+    ],
+    "senses": "",
+    "passivePerception": 11,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          2,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)"
+      }
+    ]
+  },
+  {
+    "_key": "space mollymawk",
+    "name": "Space Mollymawk",
+    "nameAlt": [
+      "Mollymawk, Space"
+    ],
+    "source": [
+      [
+        "S:AiS",
+        57
+      ]
+    ],
+    "size": 4,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 12,
+    "hp": 3,
+    "hd": [
+      1,
+      6
+    ],
+    "speed": "10 ft, fly 50 ft",
+    "scores": [
+      6,
+      14,
+      11,
+      3,
+      12,
+      3
+    ],
+    "skills": {
+      "perception": 5
+    },
+    "senses": "",
+    "passivePerception": 15,
+    "challengeRating": "0",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 2,
+        "damage": [
+          1,
+          4,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Flyby",
+        "description": "The mollymawk doesn't provoke opportunity attacks when it flies out of an enemy's reach."
+      },
+      {
+        "name": "Hold Breath",
+        "description": "The mollymawk can hold its breath for 15 minutes."
+      }
+    ]
+  },
+  {
+    "_key": "space swine",
+    "name": "Space Swine",
+    "nameAlt": [
+      "Swine, Space"
+    ],
+    "source": [
+      [
+        "S:AiS",
+        57
+      ]
+    ],
+    "size": 3,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 11,
+    "hp": 22,
+    "hd": [
+      4,
+      8
+    ],
+    "speed": "40 ft, fly 40 ft",
+    "scores": [
+      14,
+      12,
+      10,
+      2,
+      12,
+      4
+    ],
+    "skills": {
+      "perception": 4,
+      "survival": 4
+    },
+    "senses": "",
+    "passivePerception": 14,
+    "challengeRating": "1/4",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Barding",
+        "description": "Space swine that are trained for battle are typically outfitted with half-plate barding and are referred to as death squealers. This barding gives them an AC of 16."
+      }
+    ],
+    "wildshapeString": " "
+  },
+  {
+    "_key": "spotted lion",
+    "name": "Spotted Lion",
+    "nameAlt": [
+      "Lion, Spotted"
+    ],
+    "source": [
+      [
+        "GotG",
+        177
+      ]
+    ],
+    "size": 1,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 15,
+    "hp": 66,
+    "hd": [
+      7,
+      12
+    ],
+    "speed": "60 ft",
+    "scores": [
+      23,
+      14,
+      17,
+      5,
+      13,
+      10
+    ],
+    "skills": {
+      "perception": 5,
+      "stealth": 6
+    },
+    "senses": "Darkvision 60 ft",
+    "passivePerception": 15,
+    "challengeRating": "3",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Rend",
+        "ability": 1,
+        "damage": [
+          2,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (10 ft)",
+        "description": "Bonus action on prone target; If used after 20 ft straight move, see Pounce trait",
+        "tooltip": "If the lion moved at least 20 ft straight toward the target immediately before hitting it, the target must succeed on a DC 16 Strength saving throw or have the prone condition. If the target has the prone condition, the lion can make another Rend attack against it as a bonus action."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Pack Tactics",
+        "description": "The lion has advantage on an attack roll against a creature if at least one of the lion's allies is within 5 feet of the target and the ally doesn't have the incapacitated condition."
+      },
+      {
+        "name": "Pounce",
+        "description": "If the lion moved at least 20 ft straight toward the target immediately before hitting it, the target must succeed on a DC 16 Strength saving throw or have the prone condition. If the target has the prone condition, the lion can make another Rend attack against it as a bonus action."
+      }
+    ],
+    "wildshapeString": "◆ Senses: Darkvision 60 ft\n◆ Pack Tactics: advantage on attack rolls if at least one capable ally is within 5 ft of the target.\n◆ Pounce: If moved 20 ft straight to the target before hitting it, the target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target has the prone condition, the lion can make another Rend attack against it as a bonus action."
+  },
+  {
+    "_key": "titanothere",
+    "name": "Titanothere",
+    "source": [
+      [
+        "GotG",
+        185
+      ]
+    ],
+    "size": 1,
+    "type": "Beast",
+    "alignment": "Unaligned",
+    "ac": 16,
+    "hp": 136,
+    "hd": [
+      13,
+      12
+    ],
+    "speed": "50 ft",
+    "scores": [
+      25,
+      10,
+      19,
+      2,
+      12,
+      6
+    ],
+    "senses": "",
+    "passivePerception": 11,
+    "challengeRating": "5",
+    "proficiencyBonus": 3,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Stomp",
+        "ability": 1,
+        "damage": [
+          2,
+          8,
+          "piercing"
+        ],
+        "range": "Melee (10 ft)",
+        "description": "If used after moving 20 ft straight in the same round, see Charge trait",
+        "tooltip": "If the titanothere moved at least 20 feet straight toward the target immediately before hitting it, the target takes an extra 13 (3d8) bludgeoning damage, and if the target is a creature, it must succeed on a DC 18 Strength saving throw or be knocked prone."
+      }
+    ],
+    "traits": [
+      {
+        "name": "Beast of Burden",
+        "description": "The titanothere is considered to be one size larger for the purpose of determining its carrying capacity."
+      },
+      {
+        "name": "Charge",
+        "description": "If the titanothere moved at least 20 feet straight toward the target immediately before hitting it, the target takes an extra 13 (3d8) bludgeoning damage, and if the target is a creature, it must succeed on a DC 18 Strength saving throw or be knocked prone."
+      }
+    ]
+  },
+  {
     "_key": "giant seahorse",
     "name": "Giant Seahorse",
     "source": [
@@ -17133,187 +22762,6 @@
     ]
   },
   {
-    "_key": "tiny servant",
-    "name": "Tiny Servant",
-    "source": [
-      [
-        "X",
-        169
-      ]
-    ],
-    "size": 5,
-    "type": "Construct",
-    "alignment": "Unaligned",
-    "ac": 15,
-    "hp": 10,
-    "hd": [
-      4,
-      4
-    ],
-    "speed": "30 ft, climb 30 ft",
-    "scores": [
-      4,
-      16,
-      10,
-      2,
-      10,
-      1
-    ],
-    "damage_immunities": "poison, psychic",
-    "condition_immunities": "blinded, charmed, deafened, exhaustion, frightened, paralyzed, petrified, poisoned",
-    "senses": "Blindsight 60 ft (blind beyond this radius)",
-    "passivePerception": 10,
-    "challengeRating": "0",
-    "proficiencyBonus": 2,
-    "attacksAction": 1,
-    "attacks": [
-      {
-        "name": "Slam",
-        "ability": 2,
-        "damage": [
-          1,
-          4,
-          "bludgeoning"
-        ],
-        "range": "Melee (5 ft)",
-        "description": ""
-      }
-    ]
-  },
-  {
-    "_key": "allosaurus",
-    "name": "Allosaurus",
-    "source": [
-      "M24",
-      348
-    ],
-    "size": 2,
-    "type": "Beast",
-    "subtype": "Dinosaur",
-    "alignment": "Unaligned",
-    "ac": 13,
-    "hp": 51,
-    "hd": [
-      6,
-      10
-    ],
-    "speed": "60 ft",
-    "proficiencyBonus": 2,
-    "challengeRating": 2,
-    "scores": [
-      19,
-      13,
-      17,
-      2,
-      12,
-      5
-    ],
-    "senses": "",
-    "attacksAction": 1,
-    "attacks": [
-      {
-        "name": "Bite",
-        "ability": 1,
-        "damage": [
-          2,
-          10,
-          "piercing"
-        ],
-        "range": "Melee (5 ft)",
-        "description": ""
-      },
-      {
-        "name": "Claws",
-        "ability": 1,
-        "damage": [
-          1,
-          8,
-          "slashing"
-        ],
-        "range": "Melee (5 ft)",
-        "description": "See Claws Trait."
-      }
-    ],
-    "skills": {
-      "perception": 5
-    },
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
-    "damage_immunities": "",
-    "condition_immunities": "",
-    "languages": "",
-    "traits": [
-      {
-        "name": "Claws",
-        "description": "if the target is a Large or smaller creature and the allosaurus moved 30+ feet straight toward it immediately before the hit, the target has the Prone condition, and the allosaurus can make one Bite attack against it."
-      }
-    ]
-  },
-  {
-    "_key": "ankylosaurus",
-    "name": "Ankylosaurus",
-    "source": [
-      "M24",
-      348
-    ],
-    "size": 1,
-    "type": "Beast",
-    "subtype": "Dinosaur",
-    "alignment": "Unaligned",
-    "ac": 15,
-    "hp": 68,
-    "hd": [
-      8,
-      12
-    ],
-    "speed": "30 ft",
-    "proficiencyBonus": 2,
-    "challengeRating": 3,
-    "scores": [
-      19,
-      11,
-      15,
-      2,
-      12,
-      5
-    ],
-    "saves": [
-      6,
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "senses": "",
-    "attacksAction": 2,
-    "attacks": [
-      {
-        "name": "Tail",
-        "ability": 1,
-        "damage": [
-          1,
-          10,
-          "bludgeoning"
-        ],
-        "range": "Melee (10 ft)",
-        "description": "If target hit is Huge or smaller it falls prone."
-      }
-    ],
-    "skills": {},
-    "damage_vulnerabilities": "",
-    "damage_resistances": "",
-    "damage_immunities": "",
-    "condition_immunities": "",
-    "languages": "",
-    "actions": [
-      {
-        "name": "Multiattack",
-        "description": "The ankylosaurus makes two Tail attacks."
-      }
-    ]
-  },
-  {
     "_key": "archelon",
     "name": "Archelon",
     "source": [
@@ -17585,80 +23033,6 @@
     ]
   },
   {
-    "_key": "peryton",
-    "name": "Peryton",
-    "source": [
-      [
-        "M24",
-        238
-      ]
-    ],
-    "size": 3,
-    "type": "Monstrosity",
-    "companion": "steed",
-    "alignment": "Chaotic Evil",
-    "ac": 13,
-    "hp": 33,
-    "hd": [
-      6,
-      8
-    ],
-    "speed": "20 ft, fly 60 ft",
-    "scores": [
-      16,
-      12,
-      13,
-      9,
-      12,
-      10
-    ],
-    "skills": {
-      "perception": 5,
-      "stealth": 3
-    },
-    "senses": "",
-    "languages": "understands Common and Elvish, but can't speak",
-    "challengeRating": 2,
-    "proficiencyBonus": 2,
-    "attacksAction": 2,
-    "attacks": [
-      {
-        "name": "Gore",
-        "ability": 1,
-        "damage": [
-          1,
-          8,
-          "piercing"
-        ],
-        "range": "Melee (5 ft)",
-        "description": "+2d8 if moves 30+ ft straight toward target"
-      },
-      {
-        "name": "Talons",
-        "ability": 1,
-        "damage": [
-          2,
-          4,
-          "piercing"
-        ],
-        "range": "Melee (5 ft)",
-        "description": "If target dies by attack, peryton removes target's heart"
-      }
-    ],
-    "actions": [
-      {
-        "name": "Multiattack",
-        "description": "The peryton makes one gore attack and one talon attack."
-      }
-    ],
-    "traits": [
-      {
-        "name": "Flyby",
-        "description": "The peryton doesn't provoke an opportunity attack when it flies out of an enemy's reach."
-      }
-    ]
-  },
-  {
     "_key": "piranha",
     "name": "Piranha",
     "source": [
@@ -17719,68 +23093,6 @@
     ]
   },
   {
-    "_key": "pteranodon",
-    "name": "Pteranodon",
-    "source": [
-      "M24",
-      367
-    ],
-    "size": 3,
-    "type": "Beast",
-    "alignment": "Unaligned",
-    "ac": 13,
-    "hp": 13,
-    "hd": [
-      3,
-      8
-    ],
-    "speed": "10 ft, Fly 60 ft",
-    "scores": [
-      12,
-      15,
-      10,
-      2,
-      9,
-      5
-    ],
-    "saves": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "skills": {
-      "perception": 1
-    },
-    "damage_resistances": "Cold",
-    "senses": "Darkvision 60 ft",
-    "languages": "",
-    "challengeRating": "1/4",
-    "proficiencyBonus": 2,
-    "attacksAction": 1,
-    "traits": [
-      {
-        "name": "Flyby",
-        "description": "The pteranodon doesn't provoke an Opportunity Attack when it flies out of an enemy's reach."
-      }
-    ],
-    "attacks": [
-      {
-        "name": "Bite",
-        "ability": 2,
-        "damage": [
-          1,
-          8,
-          "piercing"
-        ],
-        "range": "Melee (5 ft)",
-        "description": ""
-      }
-    ]
-  },
-  {
     "_key": "seahorse",
     "name": "Seahorse",
     "source": [
@@ -17832,317 +23144,6 @@
       {
         "name": "Bubble Dash",
         "description": "While underwater, the seahorse moves up to its Swim Speed without provoking Opportunity Attacks."
-      }
-    ]
-  },
-  {
-    "_key": "moorbounder",
-    "name": "Moorbounder",
-    "source": [
-      [
-        "W",
-        295
-      ]
-    ],
-    "size": 2,
-    "type": "Beast",
-    "alignment": "Unaligned",
-    "ac": 13,
-    "hp": 30,
-    "hd": [
-      4,
-      10
-    ],
-    "speed": "70 ft",
-    "scores": [
-      18,
-      14,
-      14,
-      2,
-      13,
-      5
-    ],
-    "senses": "Darkvision 60 ft",
-    "passivePerception": 11,
-    "challengeRating": "1",
-    "proficiencyBonus": 2,
-    "attacksAction": 1,
-    "attacks": [
-      {
-        "name": "Claws",
-        "ability": 1,
-        "damage": [
-          4,
-          4,
-          "slashing"
-        ],
-        "range": "Melee (5 ft)",
-        "description": ""
-      }
-    ],
-    "traits": [
-      {
-        "name": "Standing Leap",
-        "description": "The moorbounder's long jump is up to 40 ft and its high jump is up to 20 ft, with or without a running start."
-      }
-    ]
-  },
-  {
-    "_key": "bristled moorbounder",
-    "name": "Bristled Moorbounder",
-    "source": [
-      [
-        "W",
-        295
-      ]
-    ],
-    "size": 2,
-    "type": "Beast",
-    "alignment": "Unaligned",
-    "ac": 15,
-    "hp": 52,
-    "hd": [
-      7,
-      10
-    ],
-    "speed": "70 ft",
-    "scores": [
-      18,
-      14,
-      14,
-      2,
-      13,
-      5
-    ],
-    "senses": "Darkvision 60 ft",
-    "passivePerception": 11,
-    "challengeRating": "3",
-    "proficiencyBonus": 2,
-    "attacksAction": 2,
-    "attacks": [
-      {
-        "name": "Blades",
-        "ability": 1,
-        "damage": [
-          2,
-          6,
-          "slashing"
-        ],
-        "range": "Melee (5 ft)",
-        "description": "One blades and one claws attack as an Attack action"
-      },
-      {
-        "name": "Claws",
-        "ability": 1,
-        "damage": [
-          4,
-          4,
-          "slashing"
-        ],
-        "range": "Melee (5 ft)",
-        "description": "One blades and one claws attack as an Attack action"
-      }
-    ],
-    "actions": [
-      {
-        "name": "Multiattack",
-        "description": "The moorbounder makes two attacks: one with its blades and one with its claws."
-      }
-    ],
-    "traits": [
-      {
-        "name": "Bladed Hide",
-        "description": "At the start of each of its turns, the moorbounder deals 2d4 piercing damage to any creature grappling it."
-      },
-      {
-        "name": "Standing Leap",
-        "description": "The moorbounder's long jump is up to 40 ft and its high jump is up to 20 ft, with or without a running start."
-      }
-    ]
-  },
-  {
-    "_key": "giant swan",
-    "name": "Giant Swan",
-    "nameAlt": [
-      "Swan, Giant"
-    ],
-    "source": [
-      [
-        "WBtW",
-        38
-      ]
-    ],
-    "size": 2,
-    "type": "Beast",
-    "alignment": "Neutral Good",
-    "ac": 13,
-    "hp": 26,
-    "hd": [
-      4,
-      10
-    ],
-    "speed": "10 ft, fly 80 ft",
-    "scores": [
-      16,
-      17,
-      13,
-      8,
-      14,
-      10
-    ],
-    "skills": {
-      "perception": 4
-    },
-    "senses": "Adv. on Wis (Perception) checks using sight",
-    "passivePerception": 14,
-    "languages": "Common and Auran",
-    "challengeRating": "1",
-    "proficiencyBonus": 2,
-    "attacksAction": 2,
-    "attacks": [
-      {
-        "name": "Beak",
-        "ability": 1,
-        "damage": [
-          1,
-          6,
-          "piercing"
-        ],
-        "range": "Melee (5 ft)",
-        "description": "Two beak attack as an Attack action"
-      }
-    ],
-    "actions": [
-      {
-        "name": "Multiattack",
-        "description": "The swan makes two beak attacks."
-      }
-    ],
-    "traits": [
-      {
-        "name": "Keen Sight",
-        "description": "The swan has advantage on Wisdom (Perception) checks that rely on sight."
-      }
-    ]
-  },
-  {
-    "_key": "giant dragonfly",
-    "name": "Giant Dragonfly",
-    "nameAlt": [
-      "Dragonfly, Giant"
-    ],
-    "source": [
-      [
-        "WBtW",
-        234
-      ]
-    ],
-    "size": 2,
-    "type": "Beast",
-    "alignment": "Unaligned",
-    "ac": 16,
-    "hp": 22,
-    "hd": [
-      4,
-      10
-    ],
-    "speed": "10 ft, fly 60 ft",
-    "scores": [
-      15,
-      18,
-      11,
-      3,
-      10,
-      3
-    ],
-    "passivePerception": 10,
-    "challengeRating": "1/2",
-    "proficiencyBonus": 2,
-    "attacksAction": 1,
-    "attacks": [
-      {
-        "name": "Bite",
-        "ability": 2,
-        "damage": [
-          1,
-          6,
-          "piercing"
-        ],
-        "range": "Melee (5 ft)",
-        "description": ""
-      }
-    ],
-    "traits": [
-      {
-        "name": "Drone",
-        "description": "When it beats its wings, the dragonfly emits a loud droning sound that can be heard out to a range of 120 ft."
-      }
-    ],
-    "actions": [
-      {
-        "name": "Uncanny Dodge",
-        "description": "As a reaction, the dragonfly can halve the damage it takes from an attack made against it, provided it can see the attacker."
-      }
-    ]
-  },
-  {
-    "_key": "giant snail",
-    "name": "Giant Snail",
-    "nameAlt": [
-      "Snail, Giant"
-    ],
-    "source": [
-      [
-        "WBtW",
-        234
-      ]
-    ],
-    "size": 2,
-    "type": "Beast",
-    "alignment": "Unaligned",
-    "ac": 11,
-    "hp": 22,
-    "hd": [
-      4,
-      10
-    ],
-    "speed": "10 ft, climb 10 ft",
-    "scores": [
-      15,
-      3,
-      11,
-      3,
-      10,
-      3
-    ],
-    "senses": "Darkvision 60 ft",
-    "passivePerception": 10,
-    "challengeRating": "1/4",
-    "proficiencyBonus": 2,
-    "attacksAction": 1,
-    "attacks": [
-      {
-        "name": "Slam",
-        "ability": 1,
-        "damage": [
-          1,
-          6,
-          "bludgeoning"
-        ],
-        "range": "Melee (5 ft)",
-        "description": ""
-      }
-    ],
-    "traits": [
-      {
-        "name": "Salt Osmosis",
-        "description": "Whenever the snail starts its turn in contact with a pound or more of salt, it takes 1d4 necrotic damage. Using an action to sprinkle a pound of salt on the snail deals 1d4 necrotic damage to it immediately and another 1d4 necrotic damage to it at the start of its next turn (after which the salt rubs off), provided the snail has not withdrawn into its shell."
-      }
-    ],
-    "actions": [
-      {
-        "name": "Shell Defense",
-        "description": "As an action, the snail withdraws into its shell, gaining a +4 bonus to its AC until it emerges. It can emerge from its shell as a bonus action on its turn."
       }
     ]
   }

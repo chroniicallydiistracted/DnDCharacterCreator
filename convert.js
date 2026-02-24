@@ -35,7 +35,7 @@ function serialize(value, _seen, depth) {
 
   if (value === null || value === undefined) return value;
   if (typeof value === 'boolean') return value;
-  if (typeof value === 'string')  return value;
+  if (typeof value === 'string')  return value.replace(/\u00a0/g, ' ');
   if (typeof value === 'number') {
     if (!isFinite(value) || isNaN(value)) return null;
     return value;
@@ -99,6 +99,7 @@ const PacksList             = {};
 const MagicItemsList        = {};
 const CreatureList          = {};
 const CompanionList         = {};
+const PsionicsList          = {};
 
 // ─────────────────────────────────────────────────────────────────────────────
 // MPMB API STUBS
@@ -118,6 +119,12 @@ function desc(arr, separator) {
 
 /** String appended to spell descriptions for upcast rules */
 const AtHigherLevels = '\n   At Higher Levels. ';
+
+/**
+ * PsychicFocus — section-header separator used in UA Mystic psionic discipline
+ * descriptions, parallel to how AtHigherLevels is used in spell descriptions.
+ */
+var PsychicFocus = '\n   Psychic Focus. ';
 
 /** toUni() — in MPMB renders underlined text in the PDF; we just pass through */
 function toUni(str) { return String(str || ''); }
@@ -315,6 +322,81 @@ function newObj(obj) {
 var CurrentUpdates = { types: [] };
 
 /**
+ * sheetVersion — numeric form of the MPMB sheet version (major*1e6 + minor*1e3 + patch).
+ * All_WizOfTheCoast+UnearthedArc.js requires >= 13002003 (v13.2.3); set to that
+ * exact value so the version guard passes without throwing.
+ */
+var sheetVersion = 13002003;
+
+/**
+ * CurrentVars — MPMB character-state bag used for dynamic calculations.
+ * Properties accessed by the WotC aggregation file are stubbed here so the
+ * file can load without throwing; the values are never used during extraction.
+ */
+var CurrentVars = {
+  manual:              {},
+  extraArmour:         {},
+  CoA_Corruption:      0,
+  sidekickDialogShown: false,
+  sidekickHD:          [],
+};
+
+/**
+ * Current* state objects — MPMB stores active character state in these globals.
+ * Stubbed as empty objects so property accesses inside function bodies don't
+ * throw at file-load time; none of these functions are ever called during data
+ * extraction.
+ */
+var CurrentRace       = { known: '', variant: '', level: 0, dmgres: [] };
+var CurrentClasses    = {};
+var CurrentProfs      = { weapon: { otherWep: [], staveWep: [] }, armor: {}, tool: {}, save: {}, skill: {} };
+var CurrentArmour     = { known: '' };
+var CurrentWeapons    = { known: [] };
+var CurrentSpells     = {};
+var CurrentMagicItems = {};
+var CurrentFeats      = { known: [] };
+var CurrentCompRace   = {};
+var CurrentBackground = { known: '' };
+
+/**
+ * Add* helper stubs — MPMB API calls that mutate the live PDF character sheet.
+ * For data-extraction purposes these are no-ops; the actual content they would
+ * add is already captured by the direct-assignment writes to the container
+ * objects (ClassList, FeatsList, etc.) earlier in the same source file.
+ */
+function AddFightingStyle()          {}
+function AddFeat()                   {}
+function AddFeature()                {}
+function AddMagicItem()              {}
+function AddString()                 {}
+function AddToInv()                  {}
+function AddToModFld()               {}
+function AddTooltip()                {}
+function AddWarlockPactBoon()        {}
+function AddWeapon()                 {}
+function SetProf()                   {}
+function Checkbox()                  { return false; }
+function CreateClassFeatureVariant() {}
+function CreateSpellList()           {}
+
+/**
+ * isArray — MPMB uses a bare isArray() shorthand (not Array.isArray).
+ * Delegate to the standard implementation.
+ */
+function isArray(v) { return Array.isArray(v); }
+
+/**
+ * app — AcroJS PDF application object; stubbed as a minimal object so code
+ * that calls app.alert() or reads app.fromPDFCoords() doesn't throw.
+ */
+var app = {
+  alert:         function() {},
+  response:      function() { return null; },
+  fromPDFCoords: function() { return 0; },
+  runtimeHighlight: false,
+};
+
+/**
  * FieldNumbers — MPMB form field count constants referenced inside calcChanges
  * function bodies. The functions are never called during extraction so only
  * the object needs to exist to prevent reference errors.
@@ -433,12 +515,12 @@ const sandbox = {
   RaceList, RaceSubList, BackgroundList, BackgroundFeatureList,
   FeatsList, WeaponsList, ArmourList, AmmoList,
   ToolsList, GearList, PacksList, MagicItemsList,
-  CreatureList, CompanionList,
+  CreatureList, CompanionList, PsionicsList,
 
   // ── MPMB API ─────────────────────────────────────────────────────────────
   AddSubClass, RequiredSheetVersion,
   desc, toUni, tDoc, sourceCategories,
-  AtHigherLevels, levels, typePF: false, typeA4: false,
+  AtHigherLevels, PsychicFocus, levels, typePF: false, typeA4: false,
   CurrentSources,
   SetWeaponsdropdown, SetAmmosdropdown,
   How, What, Value, show, hide, processActions, tDoc_text,
@@ -448,7 +530,14 @@ const sandbox = {
   AddRacialVariant, ConvertToMetric,
   RunFunctionAtEnd, GenericClassFeatures,
   FeatureChoicesList, AddFeatureChoice,
-  addEvals, newObj, CurrentUpdates, FieldNumbers,
+  addEvals, newObj, CurrentUpdates, FieldNumbers, sheetVersion,
+  CurrentVars, CurrentRace, CurrentClasses, CurrentProfs, CurrentArmour,
+  CurrentWeapons, CurrentSpells, CurrentMagicItems, CurrentFeats,
+  CurrentCompRace, CurrentBackground,
+  AddFightingStyle, AddFeat, AddFeature, AddMagicItem, AddString,
+  AddToInv, AddToModFld, AddTooltip, AddWarlockPactBoon, AddWeapon,
+  SetProf, Checkbox, app,
+  CreateClassFeatureVariant, CreateSpellList, isArray,
   WarlockInvocationsList, AddWarlockInvocation,
   BackgroundVariantsList, AddBackgroundVariant,
 
@@ -514,7 +603,7 @@ function runBatch(fileList) {
       runStats[entry.file] = 'ok';
     } catch (err) {
       console.log('✗');
-      console.error('    └─ ' + err.message);
+      console.error("    └─ " + (err.stack || err.message));
       runStats[entry.file] = err.message;
     }
   }
@@ -635,7 +724,152 @@ console.log('── Phase 1: SRD (Systems Reference Document) ──────
 runBatch(SRD_FILES);
 mergeSRDBase();
 
-console.log('── Phase 2: Primary source books ────────────────────────────────────');
+// ─────────────────────────────────────────────────────────────────────────────
+// Phase 2: All WotC + Unearthed Arcana
+//
+//   This massive aggregation file (~3.8 MB minified) covers ~51 source books
+//   using direct dot-notation writes (ClassList.foo = {...}, etc.) and ~223
+//   AddSubClass / ~69 AddRacialVariant calls.
+//
+//   It runs AFTER the SRD (Phase 1) and BEFORE the curated individual book
+//   files (Phase 3).  Running it here means:
+//     • It operates on SRD-format data it was authored for (no compat issues).
+//     • Phase 3 individual books apply last and remain authoritative on
+//       anything they cover.
+//
+//   Duplicate-check logic (snapshot → run → report, no restoration needed):
+//     1. Snapshot all container key sets right after the SRD merge.
+//     2. Run the file (it freely overwrites SRD entries and adds new ones).
+//     3. Report: keys already in SRD = "srd_updated"; new keys = "new_entries".
+//        All_WotC's versions replace SRD's; Phase 3 then overrides both.
+// ─────────────────────────────────────────────────────────────────────────────
+console.log('── Phase 2: All WotC + Unearthed Arcana ─────────────────────────────');
+
+/** All containers that All_WotC writes to (directly or via helper functions). */
+var WOTC_TRACKED = [
+  { name: 'SourceList',            obj: SourceList            },
+  { name: 'ClassList',             obj: ClassList             },
+  { name: 'ClassSubList',          obj: ClassSubList          },
+  { name: 'SpellsList',            obj: SpellsList            },
+  { name: 'RaceList',              obj: RaceList              },
+  { name: 'RaceSubList',           obj: RaceSubList           },
+  { name: 'BackgroundList',        obj: BackgroundList        },
+  { name: 'BackgroundFeatureList', obj: BackgroundFeatureList },
+  { name: 'FeatsList',             obj: FeatsList             },
+  { name: 'WeaponsList',           obj: WeaponsList           },
+  { name: 'ArmourList',            obj: ArmourList            },
+  { name: 'AmmoList',              obj: AmmoList              },
+  { name: 'ToolsList',             obj: ToolsList             },
+  { name: 'GearList',              obj: GearList              },
+  { name: 'PacksList',             obj: PacksList             },
+  { name: 'MagicItemsList',        obj: MagicItemsList        },
+  { name: 'CreatureList',          obj: CreatureList          },
+  { name: 'CompanionList',         obj: CompanionList         },
+  { name: 'WarlockInvocationsList',obj: WarlockInvocationsList},
+  { name: 'BackgroundVariantsList',obj: BackgroundVariantsList},
+  { name: 'PsionicsList',          obj: PsionicsList          },
+];
+
+// 1. Snapshot key sets after the SRD merge (baseline for duplicate reporting)
+var preWotcKeys = {};
+WOTC_TRACKED.forEach(function(c) {
+  preWotcKeys[c.name] = new Set(Object.keys(c.obj));
+});
+
+// 1b. Extend the VM-internal RegExp.prototype so All_WotC code can call
+//     .replace() and .indexOf() on regExpSearch values that were stored as
+//     actual RegExp objects by the SRD files.  We access the VM's own RegExp
+//     prototype via a regex literal (not via the sandbox's host-realm RegExp).
+//     Both methods delegate to the pattern source string; the returned strings
+//     are stored back into regExpSearch, which is fine for JSON extraction.
+//     Object.defineProperty keeps the new methods non-enumerable, matching
+//     the behaviour of built-in prototype methods and preventing surprises in
+//     for…in loops or Object.keys() reflection on RegExp instances.
+vm.runInContext(
+  '(function() {' +
+  '  var _p = Object.getPrototypeOf(/x/);' +
+  '  Object.defineProperty(_p, "replace", {' +
+  '    value: function() {' +
+  '      return String.prototype.replace.apply(this.source, arguments);' +
+  '    }, enumerable: false, configurable: true, writable: true' +
+  '  });' +
+  '  Object.defineProperty(_p, "indexOf", {' +
+  '    value: function() {' +
+  '      return String.prototype.indexOf.apply(this.source, arguments);' +
+  '    }, enumerable: false, configurable: true, writable: true' +
+  '  });' +
+  '}());',
+  sandbox
+);
+
+// 2. Run the file
+var wotcReport = {
+  new_entries:     {},
+  srd_updated:     {},
+  total_new:       0,
+  total_srd_updated: 0,
+};
+const wotcFile = 'All_WizOfTheCoast+UnearthedArc.js';
+process.stdout.write('  Processing ' + wotcFile + ' ... ');
+const wotcT0 = Date.now();
+try {
+  let wotcCode = fs.readFileSync(path.join(__dirname, wotcFile), 'utf8');
+
+  // ── Pre-run patches ──────────────────────────────────────────────────────
+  // BoMT.to1stPerson() replace callback: the capture group `n` corresponds to
+  // the optional pattern ( \(.*?\))? and can be `undefined` when no parenthetical
+  // source citation follows a >>text<<. marker.  Guard both uses with (n||"").
+  //
+  // The target string is matched with a regex so we can assert exactly one hit.
+  // A count of 0 means the upstream file changed formatting; failing fast here
+  // produces a clear diagnostic instead of a cryptic runtime error later.
+  const BOMT_PATCH_RE = /t\.toUpperCase\(\)\+n\.toLowerCase\(\)\+"\\n   ":a\+t\+n\+": "/g;
+  const patchMatches = wotcCode.match(BOMT_PATCH_RE);
+  if (!patchMatches || patchMatches.length !== 1) {
+    throw new Error(
+      'Pre-run patch: expected exactly 1 match for BoMT.to1stPerson() target, ' +
+      'found ' + (patchMatches ? patchMatches.length : 0) + '. ' +
+      'The upstream file may have changed; review the patch in convert.js.'
+    );
+  }
+  wotcCode = wotcCode.replace(
+    BOMT_PATCH_RE,
+    't.toUpperCase()+(n||"").toLowerCase()+"\\n   ":a+t+(n||"")+": "'
+  );
+
+  vm.runInContext(wotcCode, sandbox, { filename: wotcFile, timeout: 120000 });
+  console.log('✓  (' + (Date.now() - wotcT0) + 'ms)');
+  runStats[wotcFile] = 'ok';
+} catch (err) {
+  console.log('✗');
+  const col = err.stack && err.stack.match(/:2:(\d+)/);
+  console.error('    └─ ' + err.message + (col ? ' (col ' + col[1] + ')' : ''));
+  runStats[wotcFile] = err.message;
+}
+
+// 3. Report new entries vs SRD-updates (no restoration — All_WotC wins over SRD)
+WOTC_TRACKED.forEach(function(c) {
+  var srdKeys  = preWotcKeys[c.name];
+  var newCount = 0, updCount = 0;
+  Object.keys(c.obj).forEach(function(k) {
+    if (srdKeys.has(k)) updCount++;
+    else                newCount++;
+  });
+  if (newCount > 0) wotcReport.new_entries[c.name]  = newCount;
+  if (updCount > 0) wotcReport.srd_updated[c.name]  = updCount;
+  wotcReport.total_new         += newCount;
+  wotcReport.total_srd_updated += updCount;
+});
+
+console.log(
+  '  ── All WotC: +' + wotcReport.total_new + ' new entries, ' +
+  wotcReport.total_srd_updated + ' SRD entries updated\n'
+);
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Phase 3: Primary source books (final authority — override All_WotC + SRD)
+// ─────────────────────────────────────────────────────────────────────────────
+console.log('── Phase 3: Primary source books ────────────────────────────────────');
 runBatch(FILES);
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -684,12 +918,14 @@ writeJSON('creatures.json',            listToArray(CreatureList));
 writeJSON('companions.json',            listToArray(CompanionList));
 writeJSON('warlock_invocations.json',  listToArray(WarlockInvocationsList));
 writeJSON('background_variants.json',  listToArray(BackgroundVariantsList));
+writeJSON('psionics.json',             listToArray(PsionicsList));
 
 // ── Manifest ─────────────────────────────────────────────────────────────────
 const manifest = {
   generated: new Date().toISOString(),
   converter_version: '1.0.0',
   source_files: runStats,
+  wotc_duplicate_report: wotcReport,
   entry_counts: {
     sources:              Object.keys(SourceList).length,
     classes:              Object.keys(ClassList).length,
@@ -711,6 +947,7 @@ const manifest = {
     companions:             Object.keys(CompanionList).length,
     warlock_invocations:    Object.keys(WarlockInvocationsList).length,
     background_variants:    Object.keys(BackgroundVariantsList).length,
+    psionics:               Object.keys(PsionicsList).length,
   },
   /**
    * JSON field reference for the companion web app.

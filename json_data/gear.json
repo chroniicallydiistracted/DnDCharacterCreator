@@ -773,6 +773,87 @@
     "weight": 1
   },
   {
+    "_key": "rain catcher",
+    "infoname": "Rain catcher [1 gp]",
+    "name": "Rain catcher",
+    "source": [
+      [
+        "ToA",
+        32
+      ]
+    ],
+    "amount": 1,
+    "weight": 5
+  },
+  {
+    "_key": "insect repellent salve",
+    "infoname": "Salve (vial) [5 sp]",
+    "name": "Insect Repellent Salve, applications of",
+    "source": [
+      [
+        "ToA",
+        32
+      ]
+    ],
+    "amount": 20,
+    "weight": "",
+    "type": "insect repellent"
+  },
+  {
+    "_key": "insect repellent incense",
+    "infoname": "Incense (block) [1 gp]",
+    "name": "Insect Repellent Incense, blocks of",
+    "source": [
+      [
+        "ToA",
+        32
+      ]
+    ],
+    "amount": 1,
+    "weight": "",
+    "type": "insect repellent"
+  },
+  {
+    "_key": "cold weather",
+    "infoname": "Cold Weather [10 gp]",
+    "name": "Cold weather clothes",
+    "source": [
+      [
+        "RotF",
+        20
+      ]
+    ],
+    "amount": "",
+    "weight": 5,
+    "type": "clothes"
+  },
+  {
+    "_key": "crampons (2)",
+    "infoname": "Crampons (2) [2 gp]",
+    "name": "Crampons",
+    "source": [
+      [
+        "RotF",
+        20
+      ]
+    ],
+    "amount": 2,
+    "weight": 0.125
+  },
+  {
+    "_key": "snowshoes",
+    "infoname": "Snowshoes [2 gp]",
+    "name": "Snowshoes",
+    "source": [
+      [
+        "RotF",
+        20
+      ]
+    ],
+    "amount": "",
+    "weight": 4
+  },
+  {
     "_key": "acid",
     "infoname": "Acid [25 gp]",
     "name": "Acid",
