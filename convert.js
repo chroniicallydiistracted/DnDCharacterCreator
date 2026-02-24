@@ -898,6 +898,7 @@ runBatch(FILES);
 const EXPANDED_FILES = [
   // ── New standalone content (no dependencies) ─────────────────────────────
   { file: 'ExpandedScripts/AdventuresInFearun.js',       desc: 'FR:AiF / NF – magic items & creatures'                         },
+  { file: 'ExpandedScripts/All_WotC_UA_ADDONS',          desc: 'WotC addon – blessings, epic boons, charms, artifacts, creatures; updates telekinetic feat + wizard cantrip formulas' },
 
   // ── FR subclasses: base UA → official FRHoF expansion ────────────────────
   { file: 'ExpandedScripts/RealmsSubclass.js',           desc: 'UA2025 Realms – 8 FR base subclasses (parent)'                 },

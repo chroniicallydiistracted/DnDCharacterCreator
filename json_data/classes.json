@@ -9477,7 +9477,51 @@
           "10 levels of spell slots",
           "10 levels of spell slots"
         ],
-        "description": "On a Short Rest, I can recover spell slots up to a combined level equal to no more than half my Wizard level (round up) up to & including Level 5. I can do this once per Long Rest."
+        "description": "On a Short Rest, I can recover spell slots up to a combined level equal to no more than half my Wizard level (round up) up to & including Level 5. I can do this once per Long Rest.",
+        "_optionalChoices": [
+          {
+            "_choiceName": "Wizard Cantrip Formulas",
+            "_optional": true,
+            "_optionalCategory": "Optional 3rd-level wizard features",
+            "name": "Wizard Cantrip Formulas",
+            "extraname": "Optional Wizard 3",
+            "source": [
+              [
+                "T",
+                76
+              ]
+            ],
+            "description": "I have scribed arcane formulas in my spellbook with which I formulate cantrips in my mind\n   Whenever I finish a long rest, I can use this to change a wizard cantrip I know for another",
+            "prereqeval": {
+              "_type": "function",
+              "body": "function (v) { return classes.known.wizard.level >= 3 ? true : \"skip\"; }"
+            },
+            "usages": 1,
+            "recovery": "long rest",
+            "calcChanges": {
+              "spellList": [
+                {
+                  "_type": "function",
+                  "body": "function(spList, spName, spType) {\r\n\t\t\t\t// Remove the already known cantrips, from any source except magic items\r\n\t\t\t\tif (spName === 'wizard cantrip formulas') {\r\n\t\t\t\t\tvar allSpellsKnown = [];\r\n\t\t\t\t\tfor (var sCast in CurrentSpells) {\r\n\t\t\t\t\t\tif (sCast.refType === \"item\") continue;\r\n\t\t\t\t\t\tvar oCast = CurrentSpells[sCast];\r\n\t\t\t\t\t\tif (oCast.selectCa) allSpellsKnown = allSpellsKnown.concat(oCast.selectCa);\r\n\t\t\t\t\t\tif (oCast.selectBo) allSpellsKnown = allSpellsKnown.concat(oCast.selectBo);\r\n\t\t\t\t\t}\r\n\t\t\t\t\tvar knownCantrips = OrderSpells(allSpellsKnown, \"single\", false, false, 0);\r\n\t\t\t\t\tif (!spList.notspells) spList.notspells = [];\r\n\t\t\t\t\tspList.notspells = spList.notspells.concat(knownCantrips);\r\n\t\t\t\t}\r\n\t\t\t}"
+                }
+              ],
+              "spellAdd": [
+                {
+                  "_type": "function",
+                  "body": "function (spellKey, spellObj, spName, isDuplicate) {\r\n\t\t\t\tif (spName == 'wizard cantrip formulas') {\r\n\t\t\t\t\tspellObj.firstCol = \"\";\r\n\t\t\t\t};\r\n\t\t\t}"
+                }
+              ]
+            },
+            "eval": {
+              "_type": "function",
+              "body": "function () {\r\n\t\tCurrentSpells['wizard cantrip formulas'] = {\r\n\t\t\tname : 'Wizard Cantrip Formulas (item)',\r\n\t\t\tability : \"wizard\",\r\n\t\t\tlist : { 'class' : 'wizard', level : [0, 0] },\r\n\t\t\tknown : { cantrips : 0, spells : 'list' },\r\n\t\t\tbonus : {\r\n\t\t\t\tbon1 : {\r\n\t\t\t\t\tname : 'Just select \"Full List\"',\r\n\t\t\t\t\tspells : []\r\n\t\t\t\t},\r\n\t\t\t\tbon2 : {\r\n\t\t\t\t\tname : 'on the bottom left',\r\n\t\t\t\t\tspells : []\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\ttypeList : 4,\r\n\t\t\trefType : \"option\",\r\n\t\t\tallowUpCasting : true,\r\n\t\t\tfirstCol : \"\"\r\n\t\t};\r\n\t\tSetStringifieds('spells'); CurrentUpdates.types.push('spells');\r\n\t}"
+            },
+            "removeeval": {
+              "_type": "function",
+              "body": "function () {\r\n\t\tdelete CurrentSpells['wizard cantrip formulas'];\r\n\t\tSetStringifieds('spells'); CurrentUpdates.types.push('spells');\r\n\t}"
+            }
+          }
+        ]
       },
       "scholar": {
         "name": "Scholar",

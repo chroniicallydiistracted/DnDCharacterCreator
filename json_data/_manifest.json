@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-24T21:39:30.558Z",
+  "generated": "2026-02-24T23:03:56.273Z",
   "converter_version": "1.0.0",
   "source_files": {
     "SRD/ListsSpells.js": "ok",
@@ -20,6 +20,7 @@
     "Van_Richten_Guide2Ravenloft.js": "ok",
     "Wild_Beyond_the_Witch.js": "ok",
     "ExpandedScripts/AdventuresInFearun.js": "ok",
+    "ExpandedScripts/All_WotC_UA_ADDONS": "ok",
     "ExpandedScripts/RealmsSubclass.js": "ok",
     "ExpandedScripts/HeroesOfFearun.js": "ok",
     "ExpandedScripts/ThePsion.js": "ok",
@@ -77,7 +78,7 @@
     "total_srd_updated": 976
   },
   "entry_counts": {
-    "sources": 137,
+    "sources": 138,
     "classes": 22,
     "subclasses": 313,
     "spells": 1000,
@@ -85,15 +86,15 @@
     "race_variants": 127,
     "backgrounds": 132,
     "background_features": 164,
-    "feats": 305,
+    "feats": 307,
     "weapons": 106,
     "armor": 15,
     "ammo": 28,
     "tools": 44,
     "gear": 144,
     "packs": 8,
-    "magic_items": 877,
-    "creatures": 354,
+    "magic_items": 887,
+    "creatures": 359,
     "companions": 11,
     "warlock_invocations": 61,
     "background_variants": 45,

@@ -23385,6 +23385,364 @@
     ]
   },
   {
+    "_key": "berserker",
+    "name": "Berserker",
+    "source": [
+      [
+        "SRD",
+        392
+      ],
+      [
+        "M",
+        344
+      ]
+    ],
+    "size": 3,
+    "type": "Humanoid",
+    "alignment": "any chaotic alignment",
+    "ac": 13,
+    "hp": 67,
+    "hd": [
+      9,
+      8
+    ],
+    "speed": "30 ft",
+    "scores": [
+      16,
+      12,
+      17,
+      9,
+      11,
+      9
+    ],
+    "senses": "",
+    "passivePerception": 10,
+    "languages": "any one language (usually Common)",
+    "challengeRating": "2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Greataxe",
+        "ability": 1,
+        "damage": [
+          1,
+          12,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Heavy, two-handed"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Reckless",
+        "description": "At the start of its turn, the berserker can gain advantage on all melee weapon attack rolls during that turn, but attack rolls against it have advantage until the start of its next turn."
+      }
+    ]
+  },
+  {
+    "_key": "wyvern",
+    "name": "Wyvern",
+    "source": [
+      [
+        "SRD",
+        319
+      ],
+      [
+        "M",
+        303
+      ]
+    ],
+    "size": 2,
+    "type": "Dragon",
+    "companion": "race",
+    "alignment": "Unaligned",
+    "ac": 13,
+    "hp": 110,
+    "hd": [
+      13,
+      10
+    ],
+    "speed": "20 ft, fly 80 ft",
+    "scores": [
+      18,
+      15,
+      16,
+      2,
+      13,
+      8
+    ],
+    "skills": {
+      "perception": 4
+    },
+    "passivePerception": 14,
+    "challengeRating": "6",
+    "proficiencyBonus": 3,
+    "attacksAction": 2,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (10 ft)",
+        "description": "One bite and one stinger attack as an Attack action"
+      },
+      {
+        "name": "Claws",
+        "ability": 1,
+        "damage": [
+          2,
+          8,
+          "slashing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "One claw and one bite or stinger attack as an Attack action, if the Wyvern is flying"
+      },
+      {
+        "name": "Stinger",
+        "ability": 1,
+        "damage": [
+          2,
+          6,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)",
+        "description": "Target also takes 7d6 poison damage, half on a DC 15 Constitution saving throw"
+      }
+    ]
+  },
+  {
+    "_key": "bronze dragon wyrmling",
+    "name": "Bronze Dragon Wyrmling",
+    "source": [
+      [
+        "M",
+        109
+      ]
+    ],
+    "size": 3,
+    "type": "Dragon",
+    "subtype": "",
+    "alignment": "Lawful Good",
+    "ac": 17,
+    "hp": 32,
+    "hd": [
+      5,
+      8
+    ],
+    "speed": "30 ft,\nfly 60 ft,\nswim 30 ft",
+    "scores": [
+      17,
+      10,
+      15,
+      12,
+      11,
+      15
+    ],
+    "saves": [
+      "",
+      2,
+      4,
+      "",
+      2,
+      4
+    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 2
+    },
+    "damage_immunities": "lightning",
+    "senses": "Blindsight 10 ft; Darkvision 60 ft",
+    "passivePerception": 14,
+    "languages": "Draconic",
+    "challengeRating": "2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          10,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Amphibious",
+        "description": "The dragon can breathe air and water."
+      },
+      {
+        "name": "Breath Weapons (Recharge 5-6)",
+        "description": "The dragon uses one of the following breath weapons."
+      },
+      {
+        "name": "Lightning Breath",
+        "description": "The dragon exhales lightning in a 40-foot line that is 5 feet wide. Each creature in that line must make a DC 12 Dexterity saving throw, taking 16 (3d10) lightning damage on a failed save, or half as much damage on a successful one."
+      },
+      {
+        "name": "Repulsion Breath",
+        "description": "The dragon exhales repulsion energy in a 30-foot cone. Each creature in that area must succeed on a DC 12 Strength saving throw. On a failed save, the creature is pushed 30 feet away from the dragon."
+      }
+    ]
+  },
+  {
+    "_key": "copper dragon wyrmling",
+    "name": "Copper Dragon Wyrmling",
+    "source": [
+      [
+        "M",
+        111
+      ]
+    ],
+    "size": 3,
+    "type": "Dragon",
+    "subtype": "",
+    "alignment": "Chaotic Good",
+    "ac": 16,
+    "hp": 22,
+    "hd": [
+      4,
+      8
+    ],
+    "speed": "30 ft,\nclimb 30 ft,\nfly 60 ft",
+    "scores": [
+      15,
+      12,
+      13,
+      14,
+      11,
+      13
+    ],
+    "saves": [
+      "",
+      3,
+      3,
+      "",
+      2,
+      3
+    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 3
+    },
+    "damage_immunities": "acid",
+    "senses": "Blindsight 10 ft; Darkvision 60 ft",
+    "passivePerception": 14,
+    "languages": "Draconic",
+    "challengeRating": "1",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          10,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Breath Weapons (Recharge 5-6)",
+        "description": "The dragon uses one of the following breath weapons."
+      },
+      {
+        "name": "Acid Breath",
+        "description": "The dragon exhales acid in a 20-foot line that is 5 feet wide. Each creature in that line must make a DC 11 Dexterity saving throw, taking 18 (4d8) acid damage on a failed save, or half as much damage on a successful one."
+      },
+      {
+        "name": "Slowing Breath",
+        "description": "The dragon exhales gas in a 15-foot cone. Each creature in that area must succeed on a DC 11 Constitution saving throw. On a failed save, the creature can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the creature can use either an action or a bonus action on its turn, but not both. These effects last for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself with a successful save."
+      }
+    ]
+  },
+  {
+    "_key": "silver dragon wyrmling",
+    "name": "Silver Dragon Wyrmling",
+    "source": [
+      [
+        "M",
+        118
+      ]
+    ],
+    "size": 3,
+    "type": "Dragon",
+    "subtype": "",
+    "alignment": "Lawful Good",
+    "ac": 17,
+    "hp": 45,
+    "hd": [
+      6,
+      8
+    ],
+    "speed": "30 ft,\nfly 60 ft",
+    "scores": [
+      19,
+      10,
+      17,
+      12,
+      11,
+      15
+    ],
+    "saves": [
+      "",
+      2,
+      5,
+      "",
+      2,
+      4
+    ],
+    "skills": {
+      "perception": 4,
+      "stealth": 2
+    },
+    "damage_immunities": "cold",
+    "senses": "Blindsight 10 ft; Darkvision 60 ft",
+    "passivePerception": 14,
+    "languages": "Draconic",
+    "challengeRating": "2",
+    "proficiencyBonus": 2,
+    "attacksAction": 1,
+    "attacks": [
+      {
+        "name": "Bite",
+        "ability": 1,
+        "damage": [
+          1,
+          10,
+          "piercing"
+        ],
+        "range": "Melee (5 ft)"
+      }
+    ],
+    "traits": [
+      {
+        "name": "Breath Weapons (Recharge 5-6)",
+        "description": "The dragon uses one of the following breath weapons."
+      },
+      {
+        "name": "Cold Breath",
+        "description": "The dragon exhales an icy blast in a 15-foot cone. Each creature in that area must make a DC 13 Constitution saving throw, taking 18 (4d8) cold damage on a failed save, or half as much damage on a successful one."
+      },
+      {
+        "name": "Paralyzing Breath",
+        "description": "The dragon exhales paralyzing gas in a 15-foot cone. Each creature in that area must succeed on a DC 13 Constitution saving throw or be paralyzed for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+      }
+    ]
+  },
+  {
     "_key": "domestic wonder",
     "name": "Domestic Wonder",
     "source": [
