@@ -37,8 +37,7 @@
 5th Edition character creation and management application. It is a faithful
 digital reimplementation of the
 [MPMB Character Sheet PDF](https://flapkan.com/mpmb/charsheet) (v13.2.3+241220)
-— a 7-page PDF containing 1,518 form fields and 3,631 JavaScript event
-handlers.
+— a 7-page PDF containing 1,518 form fields and 3,631 JavaScript event handlers.
 
 ### Core Goals
 
@@ -48,9 +47,9 @@ handlers.
    directories as raw JavaScript modules from the original sheet.
 
 2. **D&D fantasy immersion.** The UI uses a parchment-and-gold aesthetic with
-   Cinzel/EB Garamond typography, ornamental dividers, and a dark-fantasy
-   colour palette. This is not a spreadsheet — it is a digital character sheet
-   that feels like it belongs on a game table.
+   Cinzel/EB Garamond typography, ornamental dividers, and a dark-fantasy colour
+   palette. This is not a spreadsheet — it is a digital character sheet that
+   feels like it belongs on a game table.
 
 3. **Offline-first, zero-backend.** All data is shipped as static JSON. All
    persistence uses `localStorage`. There is no server, no login, no network
@@ -118,12 +117,12 @@ handlers.
 
 ### Routing (React Router v7)
 
-| Route           | Page            | Purpose                              |
-| --------------- | --------------- | ------------------------------------ |
-| `/`             | `HomePage`      | Character roster, import/export, search |
-| `/builder`      | `BuilderPage`   | 8-step creation wizard               |
-| `/sheet/:id`    | `SheetPage`     | Live character sheet + management    |
-| `*`             | Redirect to `/` | Catch-all                            |
+| Route        | Page            | Purpose                                 |
+| ------------ | --------------- | --------------------------------------- |
+| `/`          | `HomePage`      | Character roster, import/export, search |
+| `/builder`   | `BuilderPage`   | 8-step creation wizard                  |
+| `/sheet/:id` | `SheetPage`     | Live character sheet + management       |
+| `*`          | Redirect to `/` | Catch-all                               |
 
 ### Component Hierarchy
 
@@ -157,31 +156,31 @@ App (BrowserRouter)
 
 ### Runtime Dependencies
 
-| Package                     | Version | Purpose                                           |
-| --------------------------- | ------- | ------------------------------------------------- |
-| `react`                     | 19.2    | UI framework                                      |
-| `react-dom`                 | 19.2    | DOM renderer                                      |
-| `react-router-dom`          | 7.13    | Client-side routing                               |
-| `zustand`                   | 5.0     | State management (character + UI stores)           |
-| `immer`                     | 11.1    | Immutable state updates (Zustand middleware)       |
-| `three`                     | 0.183   | 3D rendering for dice roller                      |
-| `@dimforge/rapier3d-compat` | 0.19    | WASM physics engine for dice simulation            |
-| `@types/three`              | 0.183   | Three.js type definitions                         |
+| Package                     | Version | Purpose                                      |
+| --------------------------- | ------- | -------------------------------------------- |
+| `react`                     | 19.2    | UI framework                                 |
+| `react-dom`                 | 19.2    | DOM renderer                                 |
+| `react-router-dom`          | 7.13    | Client-side routing                          |
+| `zustand`                   | 5.0     | State management (character + UI stores)     |
+| `immer`                     | 11.1    | Immutable state updates (Zustand middleware) |
+| `three`                     | 0.183   | 3D rendering for dice roller                 |
+| `@dimforge/rapier3d-compat` | 0.19    | WASM physics engine for dice simulation      |
+| `@types/three`              | 0.183   | Three.js type definitions                    |
 
 ### Dev Dependencies
 
-| Package                      | Version | Purpose                          |
-| ---------------------------- | ------- | -------------------------------- |
-| `vite`                       | 7.3     | Build tool & dev server          |
-| `@vitejs/plugin-react`       | 5.1     | React JSX transform + HMR       |
-| `typescript`                 | 5.9     | Type checking                    |
-| `tailwindcss`                | 3.4     | Utility-first CSS framework      |
-| `postcss`                    | 8.5     | CSS processing pipeline          |
-| `autoprefixer`               | 10.4    | Browser prefix injection         |
-| `eslint`                     | 9.39    | Code linting                     |
-| `typescript-eslint`          | 8.48    | TypeScript ESLint rules          |
-| `eslint-plugin-react-hooks`  | 7.0     | React Hooks lint rules           |
-| `eslint-plugin-react-refresh`| 0.4     | React Refresh lint rules         |
+| Package                       | Version | Purpose                     |
+| ----------------------------- | ------- | --------------------------- |
+| `vite`                        | 7.3     | Build tool & dev server     |
+| `@vitejs/plugin-react`        | 5.1     | React JSX transform + HMR   |
+| `typescript`                  | 5.9     | Type checking               |
+| `tailwindcss`                 | 3.4     | Utility-first CSS framework |
+| `postcss`                     | 8.5     | CSS processing pipeline     |
+| `autoprefixer`                | 10.4    | Browser prefix injection    |
+| `eslint`                      | 9.39    | Code linting                |
+| `typescript-eslint`           | 8.48    | TypeScript ESLint rules     |
+| `eslint-plugin-react-hooks`   | 7.0     | React Hooks lint rules      |
+| `eslint-plugin-react-refresh` | 0.4     | React Refresh lint rules    |
 
 ### Key Technical Decisions
 
@@ -238,6 +237,7 @@ summary report.
 #### `_manifest.json` (367 lines)
 
 Generated alongside the JSON files. Contains:
+
 - Conversion timestamp and version
 - Source file processing status (all should be `"ok"`)
 - Duplicate/merge report (new entries vs SRD-updated entries)
@@ -273,34 +273,34 @@ DataService.getEngineDataBundle()    → EngineDataBundle
 
 ### JSON Data Categories (22 files)
 
-| File                       | Entries | TypeScript Type          |
-| -------------------------- | ------- | ------------------------ |
-| `classes.json`             | 22      | `DndClass`               |
-| `subclasses.json`          | 313     | `DndSubclass`            |
-| `spells.json`              | 1,000   | `DndSpell`               |
-| `races.json`               | 226     | `DndRace`                |
-| `race_variants.json`       | 127     | `DndRaceVariant`         |
-| `backgrounds.json`         | 132     | `DndBackground`          |
-| `background_features.json` | 164     | `DndBackgroundFeature`   |
-| `background_variants.json` | 45      | (untyped — raw objects)  |
-| `feats.json`               | 307     | `DndFeat`                |
-| `weapons.json`             | 106     | `DndWeapon`              |
-| `armor.json`               | 15      | `DndArmor`               |
-| `ammo.json`                | 28      | (typed as `unknown[]`)   |
-| `tools.json`               | 44      | (typed as `unknown[]`)   |
-| `gear.json`                | 144     | `DndGear`                |
-| `packs.json`               | 8       | `DndPack`                |
-| `magic_items.json`         | 887     | `DndMagicItem`           |
-| `creatures.json`           | 359     | (typed as `unknown[]`)   |
-| `companions.json`          | 11      | (typed as `unknown[]`)   |
-| `warlock_invocations.json` | 61      | `DndWarlockInvocation`   |
-| `psionics.json`            | 231     | (typed as `unknown[]`)   |
-| `sources.json`             | 138     | `DndSource`              |
+| File                       | Entries | TypeScript Type         |
+| -------------------------- | ------- | ----------------------- |
+| `classes.json`             | 22      | `DndClass`              |
+| `subclasses.json`          | 313     | `DndSubclass`           |
+| `spells.json`              | 1,000   | `DndSpell`              |
+| `races.json`               | 226     | `DndRace`               |
+| `race_variants.json`       | 127     | `DndRaceVariant`        |
+| `backgrounds.json`         | 132     | `DndBackground`         |
+| `background_features.json` | 164     | `DndBackgroundFeature`  |
+| `background_variants.json` | 45      | (untyped — raw objects) |
+| `feats.json`               | 307     | `DndFeat`               |
+| `weapons.json`             | 106     | `DndWeapon`             |
+| `armor.json`               | 15      | `DndArmor`              |
+| `ammo.json`                | 28      | (typed as `unknown[]`)  |
+| `tools.json`               | 44      | (typed as `unknown[]`)  |
+| `gear.json`                | 144     | `DndGear`               |
+| `packs.json`               | 8       | `DndPack`               |
+| `magic_items.json`         | 887     | `DndMagicItem`          |
+| `creatures.json`           | 359     | (typed as `unknown[]`)  |
+| `companions.json`          | 11      | (typed as `unknown[]`)  |
+| `warlock_invocations.json` | 61      | `DndWarlockInvocation`  |
+| `psionics.json`            | 231     | (typed as `unknown[]`)  |
+| `sources.json`             | 138     | `DndSource`             |
 
 > **Note:** `ammo`, `tools`, `psionics`, `companions`, and `creatures` are
-> loaded as `unknown[]` — they have schema documentation in `_manifest.json`
-> but lack TypeScript interface definitions. Adding proper types for these is
-> a planned improvement.
+> loaded as `unknown[]` — they have schema documentation in `_manifest.json` but
+> lack TypeScript interface definitions. Adding proper types for these is a
+> planned improvement.
 
 ---
 
@@ -311,10 +311,11 @@ The full feature-by-feature audit lives in `IMPLEMENTATION_PLAN.md`. Summary:
 ### Completed (~125 features)
 
 **Character Builder (8-step wizard):**
+
 - Race selection with 226 races, 127 variants, fixed + flexible ASI, traits,
   languages, tool/weapon/armor proficiencies
-- Class selection with 22 classes, 313 subclasses, starting level 1-20,
-  fighting styles, multiclass prerequisites
+- Class selection with 22 classes, 313 subclasses, starting level 1-20, fighting
+  styles, multiclass prerequisites
 - Background selection with 132 backgrounds, 45 variants, skill/tool/language
   proficiencies, equipment, gold, personality traits
 - Ability scores via Standard Array, Point Buy (27-point), or Manual entry;
@@ -329,12 +330,13 @@ The full feature-by-feature audit lives in `IMPLEMENTATION_PLAN.md`. Summary:
   currency initialised, create + save
 
 **Character Sheet:**
+
 - Core stats panel: 6 ability scores + modifiers, proficiency bonus, all 18
   skills with proficiency/expertise dots, 6 saving throws, 3 passive scores,
   Jack of All Trades, Remarkable Athlete, Reliable Talent
 - Combat header: HP/temp HP click-to-edit, AC (all armor types + Unarmored
-  Defense), initiative, speed, hit dice tracker, death saves (3/3),
-  XP progress bar, inspiration toggle
+  Defense), initiative, speed, hit dice tracker, death saves (3/3), XP progress
+  bar, inspiration toggle
 - Conditions tracker (14 D&D conditions with mechanical effects)
 - Exhaustion tracker (levels 1-6 with speed/HP/check penalties)
 - Attacks panel: full weapon attack management with auto-calculated to-hit and
@@ -342,15 +344,16 @@ The full feature-by-feature audit lives in `IMPLEMENTATION_PLAN.md`. Summary:
 - Spells panel: spell slot tracker, concentration toggle + banner, prepared
   spell toggling, Warlock Pact Magic, multiclass combined slots, ritual/school
   badges, cantrip damage scaling
-- Equipment panel: inventory list, armor equip picker, shield toggle, magic
-  item browser (887 items), currency tracker (cp/sp/ep/gp/pp), carrying
-  capacity, attunement slots (max 3)
-- Features panel: class/subclass/race/background/feat features, resource
-  tracker dots (usage + recovery), short/long rest labels
-- Notes panel: personality traits, backstory, allies, treasure, languages,
-  tool proficiencies
+- Equipment panel: inventory list, armor equip picker, shield toggle, magic item
+  browser (887 items), currency tracker (cp/sp/ep/gp/pp), carrying capacity,
+  attunement slots (max 3)
+- Features panel: class/subclass/race/background/feat features, resource tracker
+  dots (usage + recovery), short/long rest labels
+- Notes panel: personality traits, backstory, allies, treasure, languages, tool
+  proficiencies
 
 **Level-Up Wizard:**
+
 - Class level-up + multiclass add with prerequisite enforcement
 - HP allocation (average/max/roll), ASI/feat selection, subclass unlock
 - New spells for casters, eldritch invocations for warlocks
@@ -360,26 +363,27 @@ The full feature-by-feature audit lives in `IMPLEMENTATION_PLAN.md`. Summary:
 **Short Rest / Long Rest:** Hit dice expenditure, resource recovery, slot
 recovery, Pact Magic recharge, exhaustion decrement.
 
-**Import/Export:** JSON export/import, character duplicate, roster search/filter.
+**Import/Export:** JSON export/import, character duplicate, roster
+search/filter.
 
 **3D Dice Roller:** Physics-based rolling with d4, d6, d8, d10, d12, d20, d100
 (d10+d10); expression parser (`2d6+5`); quick-roll buttons; tray containment.
 
-**Derived Stats Calculator:** All MPMB formulas faithfully implemented —
-ability modifiers, proficiency bonus, saving throws, skill bonuses, passives,
-max HP, AC (all variants), spell slots (standard + Warlock + multiclass),
-spell save DC, spell attack bonus, attacks per action, cantrip die scaling,
-carrying capacity, condition/exhaustion effects.
+**Derived Stats Calculator:** All MPMB formulas faithfully implemented — ability
+modifiers, proficiency bonus, saving throws, skill bonuses, passives, max HP, AC
+(all variants), spell slots (standard + Warlock + multiclass), spell save DC,
+spell attack bonus, attacks per action, cantrip die scaling, carrying capacity,
+condition/exhaustion effects.
 
 ### Remaining (~5 features, optional/low-priority)
 
-| Feature                              | Priority |
-| ------------------------------------ | -------- |
-| Print / shareable character view     | Future   |
-| Spell point variant rule             | Optional |
-| 78 magic items with non-standard rarity (cosmetic fix) | Low |
-| Proper TypeScript types for ammo/tools/psionics/companions/creatures | Low |
-| Source filter pills fully wired to UI store | Low |
+| Feature                                                              | Priority |
+| -------------------------------------------------------------------- | -------- |
+| Print / shareable character view                                     | Future   |
+| Spell point variant rule                                             | Optional |
+| 78 magic items with non-standard rarity (cosmetic fix)               | Low      |
+| Proper TypeScript types for ammo/tools/psionics/companions/creatures | Low      |
+| Source filter pills fully wired to UI store                          | Low      |
 
 ---
 
@@ -480,17 +484,17 @@ carrying capacity, condition/exhaustion effects.
 interface Character {
   id: string;
   name: string;
-  race: string;                        // Race key
-  raceVariant?: string;                // Race variant key
-  background: string;                  // Background key
-  classes: CharacterClass[];           // Multiclass support
-  abilityScores: [n, n, n, n, n, n];  // [Str, Dex, Con, Int, Wis, Cha]
+  race: string; // Race key
+  raceVariant?: string; // Race variant key
+  background: string; // Background key
+  classes: CharacterClass[]; // Multiclass support
+  abilityScores: [n, n, n, n, n, n]; // [Str, Dex, Con, Int, Wis, Cha]
   skills: Skill[];
   expertise: Skill[];
   chosenCantrips: string[];
   chosenSpells: string[];
   equipment: EquipmentItem[];
-  currency: { cp, sp, ep, gp, pp };
+  currency: { cp; sp; ep; gp; pp };
   currentHp: number;
   tempHp: number;
   hitDiceUsed: Record<string, number>;
@@ -513,8 +517,8 @@ interface Character {
 `currentStep`, `visitedSteps: Set<number>`, and all partial selections that
 eventually compile into a `Character` at Step 8.
 
-**`LevelUpDraft`** — Tracks choices during the level-up flow: class to level,
-HP method, ASI allocations, feat choice, new spells, etc.
+**`LevelUpDraft`** — Tracks choices during the level-up flow: class to level, HP
+method, ASI allocations, feat choice, new spells, etc.
 
 **`DerivedStats`** — Computed display-only values. Never persisted. Always
 recalculated from `Character` + `EngineDataBundle`.
@@ -537,8 +541,8 @@ Rich type system for the character engine: `CalcChangesRegistry`,
 - **NEVER change the `Character` interface shape without updating ALL
   consumers** — this includes `character.store.ts`, `character.repository.ts`,
   `character.calculator.ts`, `character.engine.ts`, `useCharacterEngine.ts`,
-  `CharacterSheet.tsx`, `LevelUpWizard.tsx`, `Step8_Review.tsx`, and every
-  panel component.
+  `CharacterSheet.tsx`, `LevelUpWizard.tsx`, `Step8_Review.tsx`, and every panel
+  component.
 - **NEVER change data type interfaces without verifying consistency with the
   actual JSON data files** in `json_data/` and `app/public/data/`.
 - TypeScript strict mode is ON. Zero type errors is the baseline. A build that
@@ -553,6 +557,7 @@ Rich type system for the character engine: `CalcChangesRegistry`,
 The app uses two Zustand stores:
 
 **`useCharacterStore`** (character.store.ts):
+
 - Uses `immer` middleware with `enableMapSet()` for `Set`/`Map` support
 - Holds `draft: BuilderDraft` (wizard state) and
   `levelUpDraft: LevelUpDraft | null`
@@ -560,6 +565,7 @@ The app uses two Zustand stores:
 - Exported pure functions: `resolveFinalScores()`, `stepIsComplete()`
 
 **`useUiStore`** (ui.store.ts):
+
 - Plain Zustand (no immer)
 - Holds `activeSourceFilters`, `searchText`, `modal`, `sheetTab`, `previewKey`
 
@@ -567,9 +573,10 @@ The app uses two Zustand stores:
 
 - **NEVER introduce a new state management library.** Zustand + Immer is the
   pattern. Period.
-- State mutations in `useCharacterStore` MUST go through Immer's `set(state =>
-  { ... })` pattern. Direct mutation of state objects outside of Immer
-  producers will cause bugs.
+- State mutations in `useCharacterStore` MUST go through Immer's
+  `set(state =>
+  { ... })` pattern. Direct mutation of state objects outside of
+  Immer producers will cause bugs.
 - The `Character` object stored in localStorage is the ground truth. Derived
   values are computed via `computeDerivedStats()` and the `CharacterEngine` —
   they are NEVER stored.
@@ -586,27 +593,27 @@ are presentation-only — they call services, they do not implement game rules.
 
 ### Service Responsibilities
 
-| Service                    | Responsibility                                            |
-| -------------------------- | --------------------------------------------------------- |
-| `data.service.ts`          | Load, cache, and query JSON data files. Format source references. |
-| `character.calculator.ts`  | Pure math: ability modifiers, proficiency bonus, spell slots, AC, HP, cantrip die, carrying capacity. NO side effects. |
+| Service                    | Responsibility                                                                                                                                                         |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data.service.ts`          | Load, cache, and query JSON data files. Format source references.                                                                                                      |
+| `character.calculator.ts`  | Pure math: ability modifiers, proficiency bonus, spell slots, AC, HP, cantrip die, carrying capacity. NO side effects.                                                 |
 | `character.engine.ts`      | Full MPMB-mirror engine. Resolves all class/race/background features into proficiencies, resources, actions, calcChanges hooks. This is the heart of rules processing. |
-| `feature.processor.ts`     | Processes individual feature attribute blocks into proficiency/action/resource entries. Called by the engine. |
-| `calcChanges.evaluator.ts` | Evaluates MPMB `calcChanges` hooks (atkCalc, spellCalc, hp) using a sandboxed context that mimics MPMB's global state. |
-| `prereq.evaluator.ts`      | Evaluates `prereqeval` functions for feats and invocations by building a mock MPMB global context (`CurrentStats`, `classes.known`, etc.). |
-| `skill.parser.ts`          | Parses MPMB's `skillstxt` and `scorestxt` formatted strings into structured data. |
-| `character.repository.ts`  | CRUD operations over `localStorage`. JSON import/export. Character ID generation. |
-| `useCharacterEngine.ts`    | React hook that instantiates + memoises the `CharacterEngine` for a given character and data bundle. Exposes computed results to components. |
+| `feature.processor.ts`     | Processes individual feature attribute blocks into proficiency/action/resource entries. Called by the engine.                                                          |
+| `calcChanges.evaluator.ts` | Evaluates MPMB `calcChanges` hooks (atkCalc, spellCalc, hp) using a sandboxed context that mimics MPMB's global state.                                                 |
+| `prereq.evaluator.ts`      | Evaluates `prereqeval` functions for feats and invocations by building a mock MPMB global context (`CurrentStats`, `classes.known`, etc.).                             |
+| `skill.parser.ts`          | Parses MPMB's `skillstxt` and `scorestxt` formatted strings into structured data.                                                                                      |
+| `character.repository.ts`  | CRUD operations over `localStorage`. JSON import/export. Character ID generation.                                                                                      |
+| `useCharacterEngine.ts`    | React hook that instantiates + memoises the `CharacterEngine` for a given character and data bundle. Exposes computed results to components.                           |
 
 ### Rules for Agents
 
 - **Game rule logic belongs in services, NOT in components.** If you find
   yourself writing D&D math inside a `.tsx` file, you are in the wrong layer.
-- `character.calculator.ts` is for pure computation functions (no state, no
-  side effects). The engine (`character.engine.ts`) is for stateful resolution
-  that processes the full character.
-- `DataService` uses lazy-loading with an in-memory cache. Data is fetched
-  once on first access. Do not modify this pattern.
+- `character.calculator.ts` is for pure computation functions (no state, no side
+  effects). The engine (`character.engine.ts`) is for stateful resolution that
+  processes the full character.
+- `DataService` uses lazy-loading with an in-memory cache. Data is fetched once
+  on first access. Do not modify this pattern.
 - When adding new calculators, follow the existing function signature patterns:
   pure inputs → pure outputs, no closures over mutable state.
 
@@ -618,30 +625,30 @@ are presentation-only — they call services, they do not implement game rules.
 
 8 reusable components with consistent API:
 
-| Component   | Purpose                                              |
-| ----------- | ---------------------------------------------------- |
-| `Badge`     | Coloured label pill (gold/crimson/stone/green/blue)  |
-| `Button`    | 4 variants × 3 sizes + disabled/loading states       |
-| `Card`      | Parchment-textured card with header/footer slots     |
-| `Divider`   | Gold ornamental divider with optional label          |
-| `Input`     | Input + Textarea with parchment styling              |
-| `Modal`     | Escapable overlay modal with 5 sizes (sm → full)     |
-| `Spinner`   | Gold SVG spinner for loading states                  |
-| `Tooltip`   | Hover tooltip (top/bottom/left/right positioning)    |
+| Component | Purpose                                             |
+| --------- | --------------------------------------------------- |
+| `Badge`   | Coloured label pill (gold/crimson/stone/green/blue) |
+| `Button`  | 4 variants × 3 sizes + disabled/loading states      |
+| `Card`    | Parchment-textured card with header/footer slots    |
+| `Divider` | Gold ornamental divider with optional label         |
+| `Input`   | Input + Textarea with parchment styling             |
+| `Modal`   | Escapable overlay modal with 5 sizes (sm → full)    |
+| `Spinner` | Gold SVG spinner for loading states                 |
+| `Tooltip` | Hover tooltip (top/bottom/left/right positioning)   |
 
 All are barrel-exported from `components/ui/index.ts`.
 
 ### Rules for Agents
 
-- **Use existing UI primitives.** Do not create new button/modal/card
-  components when `Button`, `Modal`, `Card` already exist.
+- **Use existing UI primitives.** Do not create new button/modal/card components
+  when `Button`, `Modal`, `Card` already exist.
 - **Maintain the D&D fantasy aesthetic.** All new UI must use the established
   colour palette (parchment, gold, crimson, stone, leather, dark-ink) and
   typography (Cinzel for headings, EB Garamond for body).
 - **Components are presentation-only.** They receive data via props and call
   callbacks. They do not fetch data or compute game rules.
-- New reusable primitives go in `components/ui/`. Page-specific components go
-  in their relevant directory (`builder/`, `sheet/`, `dice/`, etc.).
+- New reusable primitives go in `components/ui/`. Page-specific components go in
+  their relevant directory (`builder/`, `sheet/`, `dice/`, etc.).
 - Import UI primitives from `../ui` (the barrel export), not from individual
   files.
 
@@ -654,12 +661,15 @@ All are barrel-exported from `components/ui/index.ts`.
 The theme is defined in `tailwind.config.js` with D&D fantasy extensions:
 
 **Colours:**
-- `parchment` (warm cream), `aged-paper` (darker parchment), `page-bg` (deep brown)
+
+- `parchment` (warm cream), `aged-paper` (darker parchment), `page-bg` (deep
+  brown)
 - `dark-ink` (near-black text), `gold` (accent + interactive)
 - `crimson` (danger/important), `stone` (neutral/muted), `leather` (warm brown)
 - `shadow` (overlay/depth)
 
 **Typography:**
+
 - `font-display`: Cinzel (serif display font — headings, labels)
 - `font-body`: EB Garamond (serif body font — descriptions, text)
 
@@ -685,7 +695,7 @@ The theme is defined in `tailwind.config.js` with D&D fantasy extensions:
 - **Do not add new fonts.** The typography is Cinzel + EB Garamond. These were
   chosen for their D&D aesthetic and are loaded via Google Fonts.
 - **Tailwind utility classes are the primary styling mechanism.** Inline styles
-  should only be used for dynamic values (e.g., `style={{ width: `${pct}%` }}`).
+  should only be used for dynamic values (e.g., `style={{ width:`${pct}%`}}`).
   Custom CSS goes in `globals.css` only when Tailwind cannot express it.
 
 ---
@@ -698,12 +708,15 @@ The theme is defined in `tailwind.config.js` with D&D fantasy extensions:
 engine exposed as a React component via `forwardRef`.
 
 **Key constants:**
-- `TRAY_SIZE = 100` (cm), `TRAY_WALL_HEIGHT = 32`, `TRAY_CONTAINMENT_HEIGHT = 90`
+
+- `TRAY_SIZE = 100` (cm), `TRAY_WALL_HEIGHT = 32`,
+  `TRAY_CONTAINMENT_HEIGHT = 90`
 - `SETTLE_FRAMES_REQUIRED = 60` (physics steps at 240 Hz)
 - `MAX_ROLL_TIME_MS = 15,000` (timeout fallback)
 - Gravity: `981 cm/s²`, physics timestep: `1/240`
 
 **Geometry:**
+
 - d4: Tetrahedron (vertex-style reading — top vertex determines value)
 - d6: Box geometry (cube)
 - d8: Octahedron
@@ -722,8 +735,9 @@ after settling determines the rolled value.
 `d100`, signed dice, and modifier terms.
 
 **Integration:**
-- `DicePanel.tsx` wraps `DiceRoller` in a `Modal` with quick-roll buttons and
-  an expression input.
+
+- `DicePanel.tsx` wraps `DiceRoller` in a `Modal` with quick-roll buttons and an
+  expression input.
 - `CharacterSheet.tsx` toggles `DicePanel` visibility via local state.
 - `DiceRoller` exposes `roll(expression)` via `useImperativeHandle`.
 - Readiness is communicated via `onReadyChange(ready: boolean)` callback.
@@ -736,8 +750,8 @@ after settling determines the rolled value.
 - **Do not change physics constants without testing.** The throw feel (spawn
   height, horizontal/vertical velocity ranges, torque ranges) was tuned to
   provide satisfying rolls that settle within the tray.
-- Three.js and Rapier3D-compat are the graphics/physics stack. Do not swap
-  these for alternatives.
+- Three.js and Rapier3D-compat are the graphics/physics stack. Do not swap these
+  for alternatives.
 
 ---
 
@@ -755,16 +769,19 @@ npm run preview  # Preview production build
 ### Build Validation
 
 A passing build (`npm run build`) means:
+
 1. TypeScript compilation passes with zero errors (`tsc -b`)
 2. Vite bundles all modules successfully
-3. No unused imports/variables (enforced by `noUnusedLocals`, `noUnusedParameters`)
+3. No unused imports/variables (enforced by `noUnusedLocals`,
+   `noUnusedParameters`)
 
 ### Rules for Agents
 
 - **Every change MUST pass `npm run build` before being considered complete.**
   This is non-negotiable.
 - The working directory for all `npm` commands is `app/` (not the repo root).
-- `tsc -b` must produce zero errors. Zero warnings is preferred but not blocking.
+- `tsc -b` must produce zero errors. Zero warnings is preferred but not
+  blocking.
 - If a build fails, the agent MUST fix the failure before proceeding to any
   other task. Never leave the codebase in a broken build state.
 
@@ -794,8 +811,8 @@ Read the file. Every time.
 
 ### 14.2 — Absolute Task Completion (NEVER SKIP, NEVER SHORTCUT)
 
-**The agent MUST NOT skip any uncompleted task.** This directive is absolute
-and overrides any time pressure, context length concern, or other consideration.
+**The agent MUST NOT skip any uncompleted task.** This directive is absolute and
+overrides any time pressure, context length concern, or other consideration.
 
 Specifically:
 
@@ -816,13 +833,13 @@ Specifically:
   you must then immediately handle that edge case.
 
 - **NEVER say "I'll leave this for later" or "this can be done as a follow-up"
-  for work that was part of the current task.** If it was requested, it must
-  be delivered. In full. Now.
+  for work that was part of the current task.** If it was requested, it must be
+  delivered. In full. Now.
 
 - **NEVER produce partial implementations.** If a feature requires changes to
   types, services, stores, and components, ALL of those layers must be updated
-  in the same task. A type definition without a consumer, or a service without
-  a caller, is incomplete.
+  in the same task. A type definition without a consumer, or a service without a
+  caller, is incomplete.
 
 - **If a task is too large to complete in one pass, break it into subtasks and
   complete each subtask fully before moving to the next.** Use the todo list
@@ -833,14 +850,15 @@ Specifically:
 
 Every change must be tested. The minimum testing bar is:
 
-1. **Build verification:** `npm run build` passes (zero TS errors, Vite bundles).
+1. **Build verification:** `npm run build` passes (zero TS errors, Vite
+   bundles).
 2. **Lint check:** No new ESLint errors introduced.
 3. **Manual inspection:** For UI changes, verify the component renders correctly
    by reading the rendered output or running a dev server.
 4. **Edge case validation:** For calculation/logic changes, trace through at
    least 2-3 representative inputs including boundary cases.
-5. **Regression check:** Verify that related features still work — e.g., if
-   you change `character.calculator.ts`, verify that `StatsPanel`, `AttacksPanel`,
+5. **Regression check:** Verify that related features still work — e.g., if you
+   change `character.calculator.ts`, verify that `StatsPanel`, `AttacksPanel`,
    `SpellsPanel`, and `CharacterSheet` still receive correct values.
 
 For significant features, the agent SHOULD run an automated browser smoke test
@@ -853,15 +871,16 @@ The agent MUST maintain the existing architectural patterns:
 - **Type safety first.** TypeScript strict mode. No `any` unless interfacing
   with genuinely untyped external APIs (and even then, add a proper wrapper).
 - **Services compute, components display.** Game rules and D&D math belong in
-  `services/`. UI rendering belongs in `components/`. This separation is absolute.
+  `services/`. UI rendering belongs in `components/`. This separation is
+  absolute.
 - **Zustand + Immer for state.** No introducing new state management patterns.
 - **Tailwind for styling.** No CSS-in-JS, no styled-components, no emotion.
   Custom CSS goes in `globals.css` only when Tailwind cannot express it.
 - **Existing UI primitives.** Use `Badge`, `Button`, `Card`, `Divider`, `Input`,
   `Modal`, `Spinner`, `Tooltip` from `components/ui/`. Don't reinvent them.
-- **Data flows down, events flow up.** Props for data, callbacks for events.
-  No prop drilling deeper than 2 levels — if a deeply nested component needs
-  data, use the store or a context.
+- **Data flows down, events flow up.** Props for data, callbacks for events. No
+  prop drilling deeper than 2 levels — if a deeply nested component needs data,
+  use the store or a context.
 
 ### 14.5 — MPMB Fidelity
 
@@ -870,11 +889,11 @@ This app mirrors the MPMB Character Sheet. When implementing features:
 - **Consult the original MPMB source files** (`SRD/`, `ExpandedScripts/`, root
   `.js` files) for reference on how specific calculations or automations work.
 - **Match the MPMB formulas exactly.** `floor((score - 10) / 2)` for ability
-  modifiers. The multiclass spell slot table. The proficiency bonus list. The
-  AC formulas. These are not approximations — they are the D&D 5e rules.
+  modifiers. The multiclass spell slot table. The proficiency bonus list. The AC
+  formulas. These are not approximations — they are the D&D 5e rules.
 - **Preserve data fidelity.** The JSON data was carefully extracted from MPMB
-  source files. Do not hand-edit JSON data files. If data corrections are needed,
-  fix them in `convert.js` and re-run the pipeline.
+  source files. Do not hand-edit JSON data files. If data corrections are
+  needed, fix them in `convert.js` and re-run the pipeline.
 
 ### 14.6 — No Destructive Actions Without Explicit Instruction
 
@@ -891,8 +910,8 @@ This app mirrors the MPMB Character Sheet. When implementing features:
 
 - When proposing changes, describe WHAT will be changed and WHY.
 - When a change touches multiple files, list all affected files upfront.
-- When encountering ambiguity in requirements, choose the interpretation that
-  is most consistent with D&D 5e rules and the existing codebase patterns.
+- When encountering ambiguity in requirements, choose the interpretation that is
+  most consistent with D&D 5e rules and the existing codebase patterns.
 - If a requested change would break existing functionality, flag the conflict
   and propose an alternative approach.
 - Do not report completion until the work is actually complete and verified.
@@ -909,8 +928,8 @@ both runtime and dev dependencies.
 
 - **Prefer well-maintained, widely-used packages.** Check that the package has
   recent releases and a healthy number of weekly downloads.
-- **Runtime dependencies** (`dependencies` in package.json) must be justified
-  — they affect bundle size. Only add what is genuinely needed.
+- **Runtime dependencies** (`dependencies` in package.json) must be justified —
+  they affect bundle size. Only add what is genuinely needed.
 - **Dev dependencies** (`devDependencies`) for testing, linting, building, or
   code generation are freely acceptable.
 - **After installing a new dependency**, verify the build still passes and that
@@ -919,12 +938,13 @@ both runtime and dev dependencies.
   description — what does it provide that wasn't available before?
 - **Do not install packages that duplicate existing functionality.** For
   example, do not install Lodash when the needed utility is a one-liner.
-- **Permitted package managers:** `npm` (the project uses npm — do not switch
-  to yarn, pnpm, or bun without explicit instruction).
+- **Permitted package managers:** `npm` (the project uses npm — do not switch to
+  yarn, pnpm, or bun without explicit instruction).
 
 ### Currently Installed (Reference)
 
 See Section 3 (Technology Stack) for the complete list. Key points:
+
 - React/React-DOM 19.2 (do not downgrade)
 - Three.js 0.183 + Rapier3D 0.19 (do not swap for alternatives)
 - Zustand 5 + Immer 11 (do not add Redux/MobX/Jotai/Recoil)
@@ -979,48 +999,48 @@ These items are not yet implemented and represent the known backlog:
 
 ### Near-term
 
-| Feature | Description | Affected Files |
-| ------- | ----------- | -------------- |
-| Print / shareable view | Generate a printable character sheet layout | New component, possibly `components/sheet/PrintView.tsx` |
-| Source filter wiring | Connect FilterBar source pills to `useUiStore.activeSourceFilters` and filter entity browsers | `FilterBar.tsx`, `EntityBrowser.tsx`, `useUiStore` |
-| Proper types for remaining data | Add TypeScript interfaces for `ammo`, `tools`, `psionics`, `companions`, `creatures` | `types/data.ts`, `data.service.ts` |
+| Feature                         | Description                                                                                   | Affected Files                                           |
+| ------------------------------- | --------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Print / shareable view          | Generate a printable character sheet layout                                                   | New component, possibly `components/sheet/PrintView.tsx` |
+| Source filter wiring            | Connect FilterBar source pills to `useUiStore.activeSourceFilters` and filter entity browsers | `FilterBar.tsx`, `EntityBrowser.tsx`, `useUiStore`       |
+| Proper types for remaining data | Add TypeScript interfaces for `ammo`, `tools`, `psionics`, `companions`, `creatures`          | `types/data.ts`, `data.service.ts`                       |
 
 ### Optional / Low Priority
 
-| Feature | Description |
-| ------- | ----------- |
-| Spell point variant | Alternative to spell slots (DMG variant rule) |
-| Magic item rarity normalisation | Fix 78 items with non-standard rarity strings |
-| Formal test suite | Vitest unit tests + Playwright E2E tests |
-| PWA / offline support | Service worker for full offline capability |
-| Character sharing | URL-based character sharing (encode to URL or hosted JSON) |
+| Feature                         | Description                                                |
+| ------------------------------- | ---------------------------------------------------------- |
+| Spell point variant             | Alternative to spell slots (DMG variant rule)              |
+| Magic item rarity normalisation | Fix 78 items with non-standard rarity strings              |
+| Formal test suite               | Vitest unit tests + Playwright E2E tests                   |
+| PWA / offline support           | Service worker for full offline capability                 |
+| Character sharing               | URL-based character sharing (encode to URL or hosted JSON) |
 
 ### Aspirational (Not Committed)
 
-| Feature | Description |
-| ------- | ----------- |
-| Companion / familiar sheet | Use `companions.json` + `creatures.json` data |
-| Encounter builder | Use `creatures.json` for DM encounter planning |
-| PDF export | Generate a filled MPMB-compatible PDF |
-| Campaign notes | Long-form session notes tied to a character |
+| Feature                    | Description                                    |
+| -------------------------- | ---------------------------------------------- |
+| Companion / familiar sheet | Use `companions.json` + `creatures.json` data  |
+| Encounter builder          | Use `creatures.json` for DM encounter planning |
+| PDF export                 | Generate a filled MPMB-compatible PDF          |
+| Campaign notes             | Long-form session notes tied to a character    |
 
 ---
 
 ## Appendix A: Quick Reference — File to Edit for Common Tasks
 
-| Task | Primary File(s) |
-| ---- | --------------- |
-| Change a D&D calculation | `services/character.calculator.ts` |
-| Add a new derived stat | `types/character.ts` (DerivedStats) → `services/character.calculator.ts` → consuming panel |
-| Add a new character field | `types/character.ts` (Character) → `store/character.store.ts` → `services/character.repository.ts` → consuming components |
-| Add a new builder step | `types/character.ts` (BuilderDraft) → `store/character.store.ts` → new `components/builder/steps/StepN_*.tsx` → `BuilderWizard.tsx` |
-| Add a new sheet panel tab | New `components/sheet/panels/*.tsx` → `CharacterSheet.tsx` (tab list + render) |
-| Add a new UI primitive | `components/ui/*.tsx` → `components/ui/index.ts` (barrel export) |
-| Fix a data issue | `convert.js` → re-run → copy to `app/public/data/` |
-| Add a new data type | `types/data.ts` → `services/data.service.ts` → consuming service/component |
-| Modify the dice roller | `components/dice/DiceRoller.tsx` (physics/geometry) or `DicePanel.tsx` (UI wrapper) |
-| Change the colour theme | `tailwind.config.js` → `styles/globals.css` if needed |
-| Add feature processing | `services/feature.processor.ts` → `services/character.engine.ts` → consuming panel |
+| Task                      | Primary File(s)                                                                                                                     |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Change a D&D calculation  | `services/character.calculator.ts`                                                                                                  |
+| Add a new derived stat    | `types/character.ts` (DerivedStats) → `services/character.calculator.ts` → consuming panel                                          |
+| Add a new character field | `types/character.ts` (Character) → `store/character.store.ts` → `services/character.repository.ts` → consuming components           |
+| Add a new builder step    | `types/character.ts` (BuilderDraft) → `store/character.store.ts` → new `components/builder/steps/StepN_*.tsx` → `BuilderWizard.tsx` |
+| Add a new sheet panel tab | New `components/sheet/panels/*.tsx` → `CharacterSheet.tsx` (tab list + render)                                                      |
+| Add a new UI primitive    | `components/ui/*.tsx` → `components/ui/index.ts` (barrel export)                                                                    |
+| Fix a data issue          | `convert.js` → re-run → copy to `app/public/data/`                                                                                  |
+| Add a new data type       | `types/data.ts` → `services/data.service.ts` → consuming service/component                                                          |
+| Modify the dice roller    | `components/dice/DiceRoller.tsx` (physics/geometry) or `DicePanel.tsx` (UI wrapper)                                                 |
+| Change the colour theme   | `tailwind.config.js` → `styles/globals.css` if needed                                                                               |
+| Add feature processing    | `services/feature.processor.ts` → `services/character.engine.ts` → consuming panel                                                  |
 
 ## Appendix B: D&D 5e Rules Quick Reference
 
@@ -1050,5 +1070,5 @@ Warlock Pact Slots  = separate table, short-rest recovery
 
 ---
 
-_Last updated: 2026-02-26_
-_This file is authoritative for all AI Coding Agents operating on this repository._
+_Last updated: 2026-02-26_ _This file is authoritative for all AI Coding Agents
+operating on this repository._
