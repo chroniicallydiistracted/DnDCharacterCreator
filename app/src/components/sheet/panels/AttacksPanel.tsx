@@ -54,13 +54,21 @@ function calcDamage(entry: AttackEntry, char: Character): string {
 
   // Fighting Style: Dueling grants +2 to melee damage (one weapon, no off-hand)
   const styles = getFightingStyles(char);
-  const duelingBonus = (entry.attackType === 'melee' && styles.includes('dueling')) ? 2 : 0;
+  const duelingBonus = (entry.attackType === 'melee' && !entry.isOffHand && styles.includes('dueling')) ? 2 : 0;
+  
+  // Two-Weapon Fighting style: off-hand attacks add ability modifier
+  const hasTwoWeaponFighting = styles.includes('two-weapon fighting');
 
   let modBonus = 0;
   if (entry.abilityUsed === 'spellcasting') {
     // spells: don't add ability bonus to damage by default
   } else if (entry.abilityUsed && ABILITY_IDX[entry.abilityUsed] !== undefined) {
-    modBonus = abilityMod(char.abilityScores[ABILITY_IDX[entry.abilityUsed]]);
+    // Off-hand attacks don't add ability modifier unless you have Two-Weapon Fighting style
+    if (entry.isOffHand && !hasTwoWeaponFighting) {
+      modBonus = 0;
+    } else {
+      modBonus = abilityMod(char.abilityScores[ABILITY_IDX[entry.abilityUsed]]);
+    }
   }
 
   const total = modBonus + magic + duelingBonus;
@@ -126,6 +134,10 @@ export function AttacksPanel({ char, derived, onUpdate }: Props) {
   // Sneak Attack (Rogue)
   const rogueEntry  = char.classes.find(cc => cc.classKey === 'rogue');
   const sneakDice   = rogueEntry ? (SNEAK_ATTACK_DICE[rogueEntry.level - 1] ?? 0) : 0;
+
+  // Improved Divine Smite (Paladin L11+) - adds 1d8 radiant to all melee weapon hits
+  const paladinEntry = char.classes.find(cc => cc.classKey === 'paladin');
+  const hasImprovedDivineSmite = paladinEntry && paladinEntry.level >= 11;
 
   // Active fighting style indicators
   const fightingStyles = getFightingStyles(char);
@@ -203,6 +215,15 @@ export function AttacksPanel({ char, derived, onUpdate }: Props) {
           <span className="text-xs font-display text-gold uppercase tracking-wider flex-shrink-0">Sneak Attack</span>
           <span className="font-display text-dark-ink text-sm">{sneakDice}d6</span>
           <span className="text-[10px] font-body text-stone italic">Once per turn · advantage or ally adjacent to target</span>
+        </div>
+      )}
+
+      {/* Improved Divine Smite panel — Paladin L11+ */}
+      {hasImprovedDivineSmite && (
+        <div className="surface-parchment rounded border border-gold/30 px-3 py-2 flex items-center gap-3">
+          <span className="text-xs font-display text-gold uppercase tracking-wider flex-shrink-0">Improved Divine Smite</span>
+          <span className="font-display text-dark-ink text-sm">+1d8 radiant</span>
+          <span className="text-[10px] font-body text-stone italic">Automatically added to all melee weapon attacks</span>
         </div>
       )}
 
@@ -321,7 +342,7 @@ export function AttacksPanel({ char, derived, onUpdate }: Props) {
                       className="mt-0.5 w-full text-sm font-body bg-parchment border border-gold/30 rounded px-2 py-1 text-dark-ink focus:outline-none focus:border-gold"
                     />
                   </div>
-                  <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center gap-4 mt-1">
                     <label className="flex items-center gap-1.5 cursor-pointer">
                       <input
                         type="checkbox"
@@ -330,6 +351,15 @@ export function AttacksPanel({ char, derived, onUpdate }: Props) {
                         className="w-3 h-3"
                       />
                       <span className="text-[10px] font-display text-stone">Proficient (+{derived.proficiencyBonus})</span>
+                    </label>
+                    <label className="flex items-center gap-1.5 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={editEntry.isOffHand === true}
+                        onChange={e => setEditEntry({ ...editEntry, isOffHand: e.target.checked })}
+                        className="w-3 h-3"
+                      />
+                      <span className="text-[10px] font-display text-stone">Off-Hand (Bonus Action)</span>
                     </label>
                     <div className="ml-auto flex gap-2">
                       <button onClick={cancelEdit} className="px-3 py-1 text-xs font-display text-stone border border-stone/30 rounded hover:border-gold/50 transition-colors">
@@ -351,10 +381,18 @@ export function AttacksPanel({ char, derived, onUpdate }: Props) {
               >
                 <div className="grid grid-cols-[1fr_5rem_5rem_6rem_1fr_3rem] gap-2 px-3 py-2 items-center">
                   <div>
-                    <div className="font-display text-sm text-dark-ink">{entry.name || '(Unnamed)'}</div>
+                    <div className="font-display text-sm text-dark-ink flex items-center gap-1.5">
+                      {entry.name || '(Unnamed)'}
+                      {entry.isOffHand && (
+                        <span className="text-[8px] font-display uppercase tracking-wider text-gold bg-gold/10 border border-gold/30 rounded px-1 py-0.5">
+                          Off-Hand
+                        </span>
+                      )}
+                    </div>
                     <div className="text-[9px] font-display uppercase tracking-wider text-stone">
                       {entry.attackType}
                       {entry.abilityUsed && ` · ${entry.abilityUsed}`}
+                      {entry.isOffHand && ` · Bonus Action`}
                     </div>
                   </div>
                   <div className="text-center font-display text-gold text-sm">

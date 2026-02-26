@@ -60,6 +60,17 @@ export function StatsPanel({ char, derived }: Props) {
             );
           })}
         </div>
+        {/* Saving throw advantages from race/feats */}
+        {char.saveAdvantages && char.saveAdvantages.length > 0 && (
+          <div className="mt-2 px-2 py-1.5 bg-green-900/10 border border-green-700/30 rounded">
+            <div className="text-[9px] font-display uppercase tracking-wider text-green-600 mb-1">Advantage on Saves vs</div>
+            <div className="text-xs font-body text-green-700">
+              {char.saveAdvantages.map((adv, i) => (
+                <span key={i}>{i > 0 ? ', ' : ''}{adv}</span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Skills */}

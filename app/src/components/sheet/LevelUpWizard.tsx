@@ -48,7 +48,41 @@ const EXPERTISE_GAINS: Record<string, [number, number][]> = {
   bard:  [[2, 3], [2, 10]],
 };
 
-type LevelUpStep = 'class' | 'features' | 'subclass' | 'asi' | 'hp' | 'spells' | 'invocations' | 'fightingStyle' | 'expertise' | 'confirm';
+/** Ranger (2014 PHB) favored enemy choices */
+const RANGER_FAVORED_ENEMIES = [
+  'Aberrations', 'Beasts', 'Celestials', 'Constructs', 'Dragons',
+  'Elementals', 'Fey', 'Fiends', 'Giants', 'Monstrosities',
+  'Oozes', 'Plants', 'Undead', 'Two Races of Humanoids',
+];
+
+/** Ranger (2014 PHB) favored terrain choices */
+const RANGER_FAVORED_TERRAINS = [
+  'Arctic', 'Coast', 'Desert', 'Forest', 'Grassland', 'Mountain', 'Swamp', 'Underdark',
+];
+
+/** Levels at which 2014 Ranger gains additional favored enemies */
+const FAVORED_ENEMY_LEVELS = [1, 6, 14];
+
+/** Levels at which 2014 Ranger gains additional favored terrains */
+const FAVORED_TERRAIN_LEVELS = [1, 6, 10];
+
+type LevelUpStep = 'class' | 'features' | 'subclass' | 'asi' | 'hp' | 'spells' | 'invocations' | 'fightingStyle' | 'expertise' | 'languageTool' | 'rangerChoices' | 'confirm';
+
+/** Common language options in D&D 5e */
+const COMMON_LANGUAGES = [
+  'Common', 'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin', 'Halfling', 'Orc',
+  'Abyssal', 'Celestial', 'Draconic', 'Deep Speech', 'Infernal', 'Primordial', 'Sylvan', 'Undercommon',
+];
+
+/** Common tool proficiency options */
+const COMMON_TOOLS = [
+  "Alchemist's Supplies", "Brewer's Supplies", "Calligrapher's Supplies", "Carpenter's Tools",
+  "Cartographer's Tools", "Cobbler's Tools", "Cook's Utensils", "Disguise Kit", "Forgery Kit",
+  "Gaming Set", "Glassblower's Tools", "Herbalism Kit", "Jeweler's Tools", "Land Vehicles",
+  "Leatherworker's Tools", "Mason's Tools", "Navigator's Tools", "Painter's Supplies",
+  "Poisoner's Kit", "Potter's Tools", "Smith's Tools", "Thieves' Tools", "Tinker's Tools",
+  "Water Vehicles", "Weaver's Tools", "Woodcarver's Tools",
+];
 
 interface Props {
   char: Character;
@@ -85,6 +119,10 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
   const [invocationSearch, setInvocationSearch] = useState('');
   const [chosenFightingStyle, setChosenFightingStyle] = useState('');
   const [newExpertise, setNewExpertise]       = useState<Skill[]>([]);
+  const [newLanguages, setNewLanguages]       = useState<string[]>([]);
+  const [newToolProfs, setNewToolProfs]       = useState<string[]>([]);
+  const [newFavoredEnemy, setNewFavoredEnemy] = useState<string>('');
+  const [newFavoredTerrain, setNewFavoredTerrain] = useState<string>('');
 
   const existingEntry  = char.classes.find(c => c.classKey === targetClassKey);
   const newClassLevel  = (existingEntry?.level ?? 0) + 1;
@@ -134,6 +172,40 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
   const alreadyExpert = new Set(char.expertise);
   const expertisePool = proficientSkills.filter(s => !alreadyExpert.has(s));
 
+  // Language/Tool proficiency step - check if features at this level grant language or tool choices
+  // Features can have languageProfs (number = choose N) or toolProfs
+  const featuresAtThisLevel = cls ? Object.values(cls.features ?? {}).filter(f => f.minlevel === newClassLevel) : [];
+  // Count language choices from features (number type means "choose N languages")
+  const languageChoices = featuresAtThisLevel.reduce((sum, f) => {
+    const lp = (f as unknown as { languageProfs?: number | string[] }).languageProfs;
+    if (typeof lp === 'number') return sum + lp;
+    return sum;
+  }, 0);
+  // Count tool proficiency choices from features
+  const toolChoices = featuresAtThisLevel.reduce((sum, f) => {
+    const tp = (f as unknown as { toolProfs?: (string | [string, number])[] }).toolProfs;
+    if (Array.isArray(tp)) {
+      return sum + tp.filter(t => Array.isArray(t) && typeof t[1] === 'number').reduce((s, t) => s + (t[1] as number), 0);
+    }
+    return sum;
+  }, 0);
+  const needsLanguageToolStep = languageChoices > 0 || toolChoices > 0;
+  const alreadyKnownLanguages = new Set(char.languages ?? []);
+  const alreadyKnownTools = new Set(char.toolProficiencies ?? []);
+  const availableLanguages = COMMON_LANGUAGES.filter(l => !alreadyKnownLanguages.has(l));
+  const availableTools = COMMON_TOOLS.filter(t => !alreadyKnownTools.has(t));
+
+  // Ranger (2014 PHB) Favored Enemy / Natural Explorer step
+  // Note: Only applies to ranger_2014, not the 2024 Ranger
+  const isRanger2014 = targetClassKey === 'ranger_2014';
+  const gainsNewFavoredEnemy = isRanger2014 && FAVORED_ENEMY_LEVELS.includes(newClassLevel);
+  const gainsNewFavoredTerrain = isRanger2014 && FAVORED_TERRAIN_LEVELS.includes(newClassLevel);
+  const needsRangerChoicesStep = gainsNewFavoredEnemy || gainsNewFavoredTerrain;
+  const existingFavoredEnemies = new Set(char.favoredEnemies ?? []);
+  const existingFavoredTerrains = new Set(char.favoredTerrains ?? []);
+  const availableFavoredEnemies = RANGER_FAVORED_ENEMIES.filter(e => !existingFavoredEnemies.has(e));
+  const availableFavoredTerrains = RANGER_FAVORED_TERRAINS.filter(t => !existingFavoredTerrains.has(t));
+
   // Decide which steps are needed
   const steps: LevelUpStep[] = ['class', 'features'];
   if (atSubclassLvl && !existingEntry?.subclassKey) steps.push('subclass');
@@ -141,6 +213,8 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
   steps.push('hp');
   if (needsFightingStyleStep) steps.push('fightingStyle');
   if (needsExpertiseStep) steps.push('expertise');
+  if (needsLanguageToolStep) steps.push('languageTool');
+  if (needsRangerChoicesStep) steps.push('rangerChoices');
   if (needsSpellStep) steps.push('spells');
   if (needsInvocationStep) steps.push('invocations');
   steps.push('confirm');
@@ -215,6 +289,10 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
       chosenSpells:      [...char.chosenSpells,   ...newSpells],
       chosenInvocations: [...(char.chosenInvocations ?? []), ...newInvocations],
       expertise:         newExpertise.length > 0 ? [...char.expertise, ...newExpertise] : char.expertise,
+      languages:         newLanguages.length > 0 ? [...(char.languages ?? []), ...newLanguages] : char.languages,
+      toolProficiencies: newToolProfs.length > 0 ? [...(char.toolProficiencies ?? []), ...newToolProfs] : char.toolProficiencies,
+      favoredEnemies:    newFavoredEnemy ? [...(char.favoredEnemies ?? []), newFavoredEnemy] : char.favoredEnemies,
+      favoredTerrains:   newFavoredTerrain ? [...(char.favoredTerrains ?? []), newFavoredTerrain] : char.favoredTerrains,
       currentHp:         (char.currentHp ?? 0) + Math.max(1, hpGain),
       updatedAt:         new Date().toISOString(),
     });
@@ -680,6 +758,165 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
           </div>
         )}
 
+        {/* ── Step: Language/Tool Proficiencies ──────────────── */}
+        {step === 'languageTool' && (
+          <div className="space-y-4">
+            <p className="text-sm font-body text-stone">
+              Your class features grant you additional proficiencies:
+            </p>
+            
+            {/* Language selection */}
+            {languageChoices > 0 && (
+              <div className="space-y-2">
+                <div className="text-[10px] font-display uppercase tracking-wider text-gold">
+                  Languages — Choose {languageChoices}
+                </div>
+                <div className="text-[10px] font-display text-stone">
+                  Selected: {newLanguages.length} / {languageChoices}
+                </div>
+                <div className="grid grid-cols-3 gap-1.5 max-h-48 overflow-y-auto pr-1">
+                  {availableLanguages.map(lang => {
+                    const selected = newLanguages.includes(lang);
+                    const disabled = !selected && newLanguages.length >= languageChoices;
+                    return (
+                      <button
+                        key={lang}
+                        onClick={() => {
+                          if (disabled) return;
+                          setNewLanguages(prev =>
+                            prev.includes(lang) ? prev.filter(l => l !== lang) : [...prev, lang]
+                          );
+                        }}
+                        disabled={disabled}
+                        className={`text-left px-2 py-1 rounded border text-xs transition-all
+                          ${selected
+                            ? 'border-gold bg-gold/20 text-dark-ink'
+                            : 'border-gold/20 bg-aged-paper/40 text-stone hover:border-gold/40 disabled:opacity-40 disabled:cursor-not-allowed'}`}
+                      >
+                        {lang}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Tool proficiency selection */}
+            {toolChoices > 0 && (
+              <div className="space-y-2">
+                <div className="text-[10px] font-display uppercase tracking-wider text-gold">
+                  Tool Proficiencies — Choose {toolChoices}
+                </div>
+                <div className="text-[10px] font-display text-stone">
+                  Selected: {newToolProfs.length} / {toolChoices}
+                </div>
+                <div className="grid grid-cols-2 gap-1.5 max-h-48 overflow-y-auto pr-1">
+                  {availableTools.map(tool => {
+                    const selected = newToolProfs.includes(tool);
+                    const disabled = !selected && newToolProfs.length >= toolChoices;
+                    return (
+                      <button
+                        key={tool}
+                        onClick={() => {
+                          if (disabled) return;
+                          setNewToolProfs(prev =>
+                            prev.includes(tool) ? prev.filter(t => t !== tool) : [...prev, tool]
+                          );
+                        }}
+                        disabled={disabled}
+                        className={`text-left px-2 py-1 rounded border text-xs transition-all
+                          ${selected
+                            ? 'border-gold bg-gold/20 text-dark-ink'
+                            : 'border-gold/20 bg-aged-paper/40 text-stone hover:border-gold/40 disabled:opacity-40 disabled:cursor-not-allowed'}`}
+                      >
+                        {tool}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ── Step: Ranger Favored Enemy / Natural Explorer ──── */}
+        {step === 'rangerChoices' && (
+          <div className="space-y-4">
+            <p className="text-sm font-body text-stone">
+              Choose your Rangers favored options for this level.
+            </p>
+            
+            {/* Favored Enemy selection */}
+            {gainsNewFavoredEnemy && (
+              <div className="space-y-2">
+                <div className="text-[10px] font-display uppercase tracking-wider text-gold">
+                  Favored Enemy — Choose 1
+                </div>
+                <p className="text-xs text-stone/70 font-body">
+                  You have advantage on Survival checks to track and Intelligence checks to recall info about these creatures.
+                  You also learn one language spoken by your favored enemy.
+                </p>
+                <div className="grid grid-cols-2 gap-1.5 max-h-48 overflow-y-auto pr-1">
+                  {availableFavoredEnemies.map(enemy => {
+                    const selected = newFavoredEnemy === enemy;
+                    return (
+                      <button
+                        key={enemy}
+                        onClick={() => setNewFavoredEnemy(selected ? '' : enemy)}
+                        className={`text-left px-2 py-1.5 rounded border text-xs transition-all
+                          ${selected
+                            ? 'border-gold bg-gold/20 text-dark-ink'
+                            : 'border-gold/20 bg-aged-paper/40 text-stone hover:border-gold/40'}`}
+                      >
+                        {enemy}
+                      </button>
+                    );
+                  })}
+                </div>
+                {existingFavoredEnemies.size > 0 && (
+                  <div className="text-xs text-stone/70 font-body mt-2">
+                    Already chosen: {[...existingFavoredEnemies].join(', ')}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Favored Terrain selection */}
+            {gainsNewFavoredTerrain && (
+              <div className="space-y-2">
+                <div className="text-[10px] font-display uppercase tracking-wider text-gold">
+                  Natural Explorer — Choose Favored Terrain
+                </div>
+                <p className="text-xs text-stone/70 font-body">
+                  You are particularly familiar with this type of environment. Your skill, proficiency, and expertise shine in this terrain.
+                </p>
+                <div className="grid grid-cols-2 gap-1.5 max-h-48 overflow-y-auto pr-1">
+                  {availableFavoredTerrains.map(terrain => {
+                    const selected = newFavoredTerrain === terrain;
+                    return (
+                      <button
+                        key={terrain}
+                        onClick={() => setNewFavoredTerrain(selected ? '' : terrain)}
+                        className={`text-left px-2 py-1.5 rounded border text-xs transition-all
+                          ${selected
+                            ? 'border-gold bg-gold/20 text-dark-ink'
+                            : 'border-gold/20 bg-aged-paper/40 text-stone hover:border-gold/40'}`}
+                      >
+                        {terrain}
+                      </button>
+                    );
+                  })}
+                </div>
+                {existingFavoredTerrains.size > 0 && (
+                  <div className="text-xs text-stone/70 font-body mt-2">
+                    Already chosen: {[...existingFavoredTerrains].join(', ')}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
         {/* ── Step: Eldritch Invocations ──────────────────────── */}
         {step === 'invocations' && (
           <div className="space-y-3">
@@ -800,7 +1037,8 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
                 (step === 'class' && !targetClassKey) ||
                 (step === 'subclass' && atSubclassLvl && !chosenSubclass) ||
                 (step === 'fightingStyle' && !chosenFightingStyle) ||
-                (step === 'expertise' && newExpertise.length < newExpertiseCount && expertisePool.length >= newExpertiseCount)
+                (step === 'expertise' && newExpertise.length < newExpertiseCount && expertisePool.length >= newExpertiseCount) ||
+                (step === 'languageTool' && ((languageChoices > 0 && newLanguages.length < languageChoices) || (toolChoices > 0 && newToolProfs.length < toolChoices)))
               }
             >
               Next →

@@ -20,6 +20,7 @@ const defaultDraft = (): BuilderDraft => ({
   levelAsi: [...EMPTY_SCORES],
   chosenFightingStyle: null,
   background: null,
+  backgroundVariant: null,
   abilityScoreMethod: 'standard-array',
   baseScores: [15, 14, 13, 12, 10, 8],
   raceAsi: [...EMPTY_SCORES],
@@ -47,6 +48,7 @@ interface CharacterState {
   setRace: (key: string | null, variant?: string | null) => void;
   setClass: (key: string | null) => void;
   setBackground: (key: string | null) => void;
+  setBackgroundVariant: (key: string | null) => void;
   setStartingLevel: (level: number) => void;
   setStartingSubclass: (key: string | null) => void;
   setLevelAsi: (asi: AbilityScores) => void;
@@ -115,8 +117,13 @@ export const useCharacterStore = create<CharacterState>()(
 
     setBackground: (key) => set(s => {
       s.draft.background = key;
+      s.draft.backgroundVariant = null;
       s.draft.backgroundAsi = [...EMPTY_SCORES];
       s.draft.backgroundAsiChoice = null;
+    }),
+
+    setBackgroundVariant: (key) => set(s => {
+      s.draft.backgroundVariant = key;
     }),
 
     setAbilityScoreMethod: (method) => set(s => {

@@ -18547,7 +18547,8 @@
       "subclassfeature1.1": {
         "name": "Implement of Peace",
         "description": "\n   I gain proficiency in the Insight, Performance, or Persuasion skill (my choice)",
-        "skillstxt": "Choose one from: Insight, Performance, or Persuasion"
+        "skillstxt": "Choose one from: Insight, Performance, or Persuasion",
+        "minlevel": 1
       },
       "subclassfeature2": {
         "name": "Channel Divinity: Balm of Peace",

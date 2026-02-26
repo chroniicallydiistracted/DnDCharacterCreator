@@ -12171,7 +12171,8 @@
     "save": "Con",
     "description": "100-ft long 5-ft wide all 8d8+1d8/SL Force dmg, save half; all in 10 ft of line save or dmg & pull to it",
     "descriptionShorter": "100-ft long 5-ft wide all 8d8+1d8/SL Force dmg, save half; all in 10 ft of it save or dmg & pulled",
-    "descriptionFull": "You manifest a ravine of gravitational energy in a line originating from you that is 100 feet long and 5 feet wide. Each creature in that line must make a Constitution saving throw, taking 8d8 force damage on a failed save, or half as much damage on a successful one.\n   Each creature within 10 feet of the line but not in it must succeed on a Constitution saving throw or take 8d8 force damage and be pulled toward the line until the creature is in its area.\n   At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, the damage increases by 1d8 for each slot level above 6th."
+    "descriptionFull": "You manifest a ravine of gravitational energy in a line originating from you that is 100 feet long and 5 feet wide. Each creature in that line must make a Constitution saving throw, taking 8d8 force damage on a failed save, or half as much damage on a successful one.\n   Each creature within 10 feet of the line but not in it must succeed on a Constitution saving throw or take 8d8 force damage and be pulled toward the line until the creature is in its area.\n   At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, the damage increases by 1d8 for each slot level above 6th.",
+    "classes": []
   },
   {
     "_key": "tether essence",
@@ -24030,7 +24031,8 @@
     "duration": "Conc, 1 min",
     "save": "Dex",
     "description": "1-4 spheres; bns a move all 30 ft; 1st crea in 5 ft save or Lightning dmg (1:4d12, 2:5d4, 3:2d6, 4:2d4)",
-    "descriptionFull": "You can expend 2 charges from the Ring of Shooting Stars as a Magic action to create one to four 3-foot-diameter spheres of lightning. The more spheres you create, the less powerful each sphere is individually.\n   Each sphere appears in an unoccupied space you can see within 120 feet of you. The spheres last as long as you concentrate (as if concentrating on a spell), up to 1 minute. Each sphere sheds dim light in a 30-foot radius.\n   As a Bonus action, you can move each sphere up to 30 feet, but no farther than 120 feet away from you. When a creature other than you comes within 5 feet of a sphere, the sphere discharges lightning at that creature and disappears. That creature must make a DC 15 Dexterity saving throw. On a failed save, the creature takes lightning damage based on the number of spheres you created (1 sphere = 4d12, 2 spheres = 5d4, 3 spheres = 2d6, 4 sphere = 2d4)."
+    "descriptionFull": "You can expend 2 charges from the Ring of Shooting Stars as a Magic action to create one to four 3-foot-diameter spheres of lightning. The more spheres you create, the less powerful each sphere is individually.\n   Each sphere appears in an unoccupied space you can see within 120 feet of you. The spheres last as long as you concentrate (as if concentrating on a spell), up to 1 minute. Each sphere sheds dim light in a 30-foot radius.\n   As a Bonus action, you can move each sphere up to 30 feet, but no farther than 120 feet away from you. When a creature other than you comes within 5 feet of a sphere, the sphere discharges lightning at that creature and disappears. That creature must make a DC 15 Dexterity saving throw. On a failed save, the creature takes lightning damage based on the number of spheres you created (1 sphere = 4d12, 2 spheres = 5d4, 3 spheres = 2d6, 4 sphere = 2d4).",
+    "classes": []
   },
   {
     "_key": "shooting stars",
@@ -24044,7 +24046,8 @@
     "save": "Dex",
     "duration": "Instantaneous",
     "description": "15ft cube in range per expended charge; all crea in cube Dex save or 5d4 Radiant damage, save halves",
-    "descriptionFull": "You can expend 1 to 3 charges from the ring of shooting starts as an action. For every charge you expend, you launch a glowing mote of light from the ring at a point you can see within 60 feet of you. Each creature within a 15-foot cube originating from that point is showered in sparks and must make a DC 15 Dexterity saving throw, taking 5d4 fire damage on a failed save, or half as much damage on a successful one."
+    "descriptionFull": "You can expend 1 to 3 charges from the ring of shooting starts as an action. For every charge you expend, you launch a glowing mote of light from the ring at a point you can see within 60 feet of you. Each creature within a 15-foot cube originating from that point is showered in sparks and must make a DC 15 Dexterity saving throw, taking 5d4 fire damage on a failed save, or half as much damage on a successful one.",
+    "classes": []
   },
   {
     "_key": "alustriel's mooncloak",

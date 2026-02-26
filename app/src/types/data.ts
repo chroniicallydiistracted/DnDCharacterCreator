@@ -53,7 +53,8 @@ export interface DndClass {
   skillstxt: { primary?: string; secondary?: string };
   armorProfs: { primary: boolean[]; secondary?: boolean[] };
   weaponProfs: { primary: boolean[]; secondary?: boolean[] };
-  toolProfs?: (string | [string, string])[];
+  /** Tool proficiencies: primary (first class) / secondary (multiclass). Format: [name, count] or [[specific tools]] */
+  toolProfs?: { primary?: (string | string[] | [string, number])[]; secondary?: (string | string[] | [string, number])[] };
   equipment?: string;
   subclasses: [string, string[]];
   attacks: number[];
@@ -105,6 +106,12 @@ export interface DndRace {
   dmgres?: (string | [string, string])[];
   savetxt?: { text?: string[]; adv_vs?: string[] };
   advantages?: [string, boolean][];
+  /** Tool proficiencies - array of [name, choiceCount?] or string names */
+  toolProfs?: (string | [string, number])[];
+  /** Weapon proficiencies - [simple, martial, specificWeapons?] */
+  weaponProfs?: [boolean, boolean, string[]?];
+  /** Armor proficiencies - [light, medium, heavy, shields] */
+  armorProfs?: [boolean, boolean, boolean, boolean];
   [key: string]: MpmbValue;
 }
 

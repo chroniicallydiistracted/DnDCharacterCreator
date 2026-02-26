@@ -14,6 +14,23 @@ const CLASS_ICONS: Record<string, string> = {
   warlock:'👁️', wizard:'📚', artificer:'⚙️', psion:'🧠', mystic:'🔭',
 };
 
+/** Parse class tool proficiencies into readable strings */
+function parseClassToolProfs(toolProfs?: { primary?: (string | string[] | [string, number])[] }): string[] {
+  if (!toolProfs?.primary?.length) return [];
+  return toolProfs.primary.map(t => {
+    if (typeof t === 'string') return t;
+    if (Array.isArray(t)) {
+      // [[specific tools]] or [name, count]
+      if (t.length === 2 && typeof t[1] === 'number') {
+        return `${t[0]} (choose ${t[1]})`;
+      }
+      // Array of specific tool names
+      return t.filter(Boolean).join(', ');
+    }
+    return '';
+  }).filter(Boolean);
+}
+
 function ArmorProf({ profs }: { profs: boolean[] }) {
   const labels = ['Light','Medium','Heavy','Shields'];
   return (
@@ -60,6 +77,12 @@ function ClassDetail({ cls }: { cls: DndClass }) {
           <div className="text-[9px] font-display uppercase tracking-wider text-stone mb-1">Skills</div>
           <div className="font-body text-dark-ink text-[11px]">{cls.skillstxt?.primary}</div>
         </div>
+        {parseClassToolProfs(cls.toolProfs).length > 0 && (
+          <div className="col-span-2">
+            <div className="text-[9px] font-display uppercase tracking-wider text-stone mb-1">Tool Proficiencies</div>
+            <div className="font-body text-dark-ink text-[11px]">{parseClassToolProfs(cls.toolProfs).join(', ')}</div>
+          </div>
+        )}
       </div>
 
       {level1Features.length > 0 && (

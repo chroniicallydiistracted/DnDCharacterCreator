@@ -104,6 +104,57 @@ const DataService = {
     if (!cls) return false;
     return 'spellcasting' in cls.features || classKey === 'artificer';
   },
+
+  /** Load all data needed for the CharacterEngine */
+  async getEngineDataBundle(): Promise<{
+    classes: DndClass[];
+    subclasses: DndSubclass[];
+    races: DndRace[];
+    raceVariants: DndRaceVariant[];
+    backgrounds: DndBackground[];
+    spells: DndSpell[];
+    feats: DndFeat[];
+    weapons: DndWeapon[];
+    armor: DndArmor[];
+    magicItems: DndMagicItem[];
+  }> {
+    const [
+      classes,
+      subclasses,
+      races,
+      raceVariants,
+      backgrounds,
+      spells,
+      feats,
+      weapons,
+      armor,
+      magicItems,
+    ] = await Promise.all([
+      load('classes'),
+      load('subclasses'),
+      load('races'),
+      load('race_variants'),
+      load('backgrounds'),
+      load('spells'),
+      load('feats'),
+      load('weapons'),
+      load('armor'),
+      load('magic_items'),
+    ]);
+
+    return {
+      classes,
+      subclasses,
+      races,
+      raceVariants,
+      backgrounds,
+      spells,
+      feats,
+      weapons,
+      armor,
+      magicItems,
+    };
+  },
 };
 
 export default DataService;

@@ -66,6 +66,7 @@ export interface AttackEntry {
   damageFormula?: string;       // e.g. "1d6+3"
   damageType?: string;          // e.g. "slashing"
   notes?: string;
+  isOffHand?: boolean;          // off-hand attack (Two-Weapon Fighting)
 }
 
 export interface CharacterDetails {
@@ -135,8 +136,11 @@ export interface Character {
   attacks?: AttackEntry[];             // attacks panel entries
   languages?: string[];               // known languages
   toolProficiencies?: string[];        // tool proficiencies
+  saveAdvantages?: string[];           // advantage on saves vs certain conditions/effects (from race/feats)
   attuned?: string[];                  // names of attuned magic items (max 3)
   feats?: string[];                    // feat _keys chosen via ASI/feat trades
+  favoredEnemies?: string[];           // Ranger favored enemies (2014 PHB)
+  favoredTerrains?: string[];          // Ranger favored terrains (Natural Explorer)
   createdAt: string;
   updatedAt: string;
 }
@@ -160,6 +164,7 @@ export interface BuilderDraft {
 
   // Step 3 – Background
   background: string | null;
+  backgroundVariant: string | null;    // variant within chosen background
 
   // Step 4 – Ability Scores
   abilityScoreMethod: 'standard-array' | 'point-buy' | 'manual';

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import type { DndRace, DndRaceVariant } from '../../../types/data';
 import DataService from '../../../services/data.service';
 import { useCharacterStore } from '../../../store/character.store';
@@ -9,7 +9,42 @@ import { Divider }       from '../../ui/Divider';
 import { Badge }         from '../../ui/Badge';
 import { ABILITY_ABBR, ABILITY_NAMES, type AbilityScores } from '../../../types/character';
 
+/** Convert race.scores array to AbilityScores tuple, or all zeros if not present */
+function parseRaceScores(scores?: number[]): AbilityScores {
+  if (!scores || scores.length < 6) return [0, 0, 0, 0, 0, 0];
+  return [scores[0], scores[1], scores[2], scores[3], scores[4], scores[5]] as AbilityScores;
+}
+
 const SIZE_LABELS: Record<number, string> = { 3: 'Medium', 4: 'Small', 5: 'Tiny', 2: 'Large' };
+const ARMOR_LABELS = ['Light', 'Medium', 'Heavy', 'Shields'];
+
+/** Parse racial tool proficiencies into readable strings */
+function parseToolProfs(toolProfs?: (string | [string, number])[]): string[] {
+  if (!toolProfs?.length) return [];
+  return toolProfs.map(t => {
+    if (typeof t === 'string') return t;
+    // [name, 1] means "choose one from this category"
+    return t[1] === 1 ? `${t[0]} (choose 1)` : t[0];
+  });
+}
+
+/** Parse racial weapon proficiencies into readable strings */
+function parseWeaponProfs(weaponProfs?: [boolean, boolean, string[]?]): string[] {
+  if (!weaponProfs) return [];
+  const result: string[] = [];
+  if (weaponProfs[0]) result.push('Simple weapons');
+  if (weaponProfs[1]) result.push('Martial weapons');
+  if (weaponProfs[2]?.length) {
+    result.push(...weaponProfs[2].map(w => w.charAt(0).toUpperCase() + w.slice(1)));
+  }
+  return result;
+}
+
+/** Parse racial armor proficiencies into readable strings */
+function parseArmorProfs(armorProfs?: [boolean, boolean, boolean, boolean]): string[] {
+  if (!armorProfs) return [];
+  return armorProfs.map((has, i) => has ? ARMOR_LABELS[i] : null).filter((v): v is string => v !== null);
+}
 
 function raceBadges(race: DndRace) {
   const badges: { label: string; color?: 'gold' | 'stone' | 'crimson' | 'green' | 'blue' }[] = [];
@@ -18,7 +53,18 @@ function raceBadges(race: DndRace) {
   const walk = race.speed?.walk?.spd;
   if (walk) badges.push({ label: `${walk} ft`, color: 'stone' });
   if (race.vision?.length) badges.push({ label: race.vision[0][0], color: 'blue' });
-  if (race.scoresGeneric) badges.push({ label: '+2/+1 ASI', color: 'green' });
+  // Show ASI type badge
+  if (race.scoresGeneric) {
+    badges.push({ label: '+2/+1 ASI', color: 'green' });
+  } else if (race.scores?.some(v => v !== 0)) {
+    // Format fixed ASI as compact string (e.g., "+2 STR, +1 CON")
+    const asiParts = race.scores
+      .map((v, i) => v !== 0 ? `+${v} ${ABILITY_ABBR[i]}` : null)
+      .filter(Boolean);
+    if (asiParts.length > 0) {
+      badges.push({ label: asiParts.join(', '), color: 'green' });
+    }
+  }
   return badges;
 }
 
@@ -28,6 +74,12 @@ function RaceDetail({ race, variants, selectedVariant, onVariant }: {
   selectedVariant: string | null;
   onVariant: (key: string | null) => void;
 }) {
+  const toolProfs = parseToolProfs(race.toolProfs as (string | [string, number])[] | undefined);
+  const weaponProfs = parseWeaponProfs(race.weaponProfs as [boolean, boolean, string[]?] | undefined);
+  const armorProfs = parseArmorProfs(race.armorProfs as [boolean, boolean, boolean, boolean] | undefined);
+  const savingAdvantages = race.savetxt?.adv_vs;
+  const dmgResistances = race.dmgres?.map(r => typeof r === 'string' ? r : r[0]) ?? [];
+
   return (
     <div className="space-y-3">
       <div>
@@ -41,6 +93,54 @@ function RaceDetail({ race, variants, selectedVariant, onVariant }: {
         {race.vision?.length ? <Stat label={race.vision[0][0]} value={`${race.vision[0][1]} ft`} /> : null}
         {race.languageProfs?.length ? <Stat label="Languages" value={race.languageProfs.filter(l => typeof l === 'string').join(', ')} /> : null}
       </div>
+
+      {/* Proficiencies Section */}
+      {(weaponProfs.length > 0 || armorProfs.length > 0 || toolProfs.length > 0) && (
+        <>
+          <Divider label="Proficiencies" />
+          <div className="space-y-2 text-xs font-body">
+            {weaponProfs.length > 0 && (
+              <div>
+                <span className="text-[9px] font-display uppercase tracking-wider text-stone">Weapons: </span>
+                <span className="text-dark-ink">{weaponProfs.join(', ')}</span>
+              </div>
+            )}
+            {armorProfs.length > 0 && (
+              <div>
+                <span className="text-[9px] font-display uppercase tracking-wider text-stone">Armor: </span>
+                <span className="text-dark-ink">{armorProfs.join(', ')}</span>
+              </div>
+            )}
+            {toolProfs.length > 0 && (
+              <div>
+                <span className="text-[9px] font-display uppercase tracking-wider text-stone">Tools: </span>
+                <span className="text-dark-ink">{toolProfs.join(', ')}</span>
+              </div>
+            )}
+          </div>
+        </>
+      )}
+
+      {/* Resistances & Saving Throw Advantages */}
+      {(dmgResistances.length > 0 || savingAdvantages?.length) && (
+        <>
+          <Divider label="Defenses" />
+          <div className="space-y-2 text-xs font-body">
+            {dmgResistances.length > 0 && (
+              <div>
+                <span className="text-[9px] font-display uppercase tracking-wider text-stone">Resistance: </span>
+                <span className="text-crimson">{dmgResistances.join(', ')}</span>
+              </div>
+            )}
+            {savingAdvantages?.length && (
+              <div>
+                <span className="text-[9px] font-display uppercase tracking-wider text-stone">Save Advantage: </span>
+                <span className="text-green-600">{savingAdvantages.join(', ')}</span>
+              </div>
+            )}
+          </div>
+        </>
+      )}
 
       {/* Variants (e.g., Dragonborn colour) */}
       {variants.length > 0 && (
@@ -156,7 +256,7 @@ export function Step1Race() {
   const [races,    setRaces]    = useState<DndRace[]>([]);
   const [variants, setVariants] = useState<DndRaceVariant[]>([]);
   const [loading,  setLoading]  = useState(true);
-  const { draft, setRace, setRaceAsiGeneric } = useCharacterStore();
+  const { draft, setRace, setRaceAsi, setRaceAsiGeneric } = useCharacterStore();
 
   useEffect(() => {
     Promise.all([DataService.getRaces(), DataService.getRaceVariants()])
@@ -174,6 +274,15 @@ export function Step1Race() {
     return variants.filter(v => v._key.startsWith(raceKey + '-'));
   }
 
+  /** Select a race and apply its fixed ASI scores if present */
+  const handleSelectRace = useCallback((race: DndRace, variantKey?: string | null) => {
+    setRace(race._key, variantKey ?? null);
+    // Apply fixed race ASI scores (for races without scoresGeneric)
+    if (!race.scoresGeneric && race.scores) {
+      setRaceAsi(parseRaceScores(race.scores));
+    }
+  }, [setRace, setRaceAsi]);
+
   return (
     <div className="space-y-4">
       {/* Heading */}
@@ -189,7 +298,7 @@ export function Step1Race() {
         items={playerRaces}
         loading={loading}
         selectedKey={draft.race}
-        onSelect={race => setRace(race._key, draft.raceVariant)}
+        onSelect={race => handleSelectRace(race, draft.raceVariant)}
         getKey={r => r._key}
         getName={r => r.name}
         filterFn={(r, q) => r.name.toLowerCase().includes(q) || (r.trait ?? '').toLowerCase().includes(q)}
@@ -211,7 +320,7 @@ export function Step1Race() {
               race={race}
               variants={variantsFor(race._key)}
               selectedVariant={draft.raceVariant}
-              onVariant={vKey => setRace(race._key, vKey)}
+              onVariant={vKey => handleSelectRace(race, vKey)}
             />
             {race.scoresGeneric && draft.race === race._key && (
               <>

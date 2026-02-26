@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { Character, Condition } from '../../types/character';
-import type { DndArmor, DndClass } from '../../types/data';
+import type { DndArmor, DndClass, DndSubclass, DndRace, DndRaceVariant, DndBackground, DndSpell, DndFeat, DndWeapon, DndMagicItem } from '../../types/data';
 import { ALL_CONDITIONS } from '../../types/character';
 import { computeDerivedStats, resolveMaxUses, abilityMod } from '../../services/character.calculator';
 import { characterRepository } from '../../services/character.repository';
+import { useCharacterEngine } from '../../services/useCharacterEngine';
 import { StatsPanel }     from './panels/StatsPanel';
 import { FeaturesPanel }  from './panels/FeaturesPanel';
 import { SpellsPanel }    from './panels/SpellsPanel';
@@ -13,6 +14,7 @@ import { AttacksPanel }   from './panels/AttacksPanel';
 import { NotesPanel }     from './panels/NotesPanel';
 import { LevelUpWizard }  from './LevelUpWizard';
 import { Button }         from '../ui/Button';
+import { DicePanel }      from '../dice';
 import DataService from '../../services/data.service';
 
 type SheetTab = 'features' | 'attacks' | 'spells' | 'equipment' | 'notes';
@@ -79,12 +81,75 @@ export function CharacterSheet({ character: initial }: Props) {
   const [allArmor, setAllArmor]     = useState<DndArmor[]>([]);
   const [allClasses, setAllClasses] = useState<DndClass[]>([]);
 
+  // Full data bundle for the character engine
+  const [dataBundle, setDataBundle] = useState<{
+    classes: DndClass[];
+    subclasses: DndSubclass[];
+    races: DndRace[];
+    raceVariants: DndRaceVariant[];
+    backgrounds: DndBackground[];
+    spells: DndSpell[];
+    feats: DndFeat[];
+    weapons: DndWeapon[];
+    armor: DndArmor[];
+    magicItems: DndMagicItem[];
+  } | null>(null);
+
+  // Dice roller state
+  const [showDiceRoller, setShowDiceRoller] = useState(false);
+  const [diceExpression, _setDiceExpression] = useState('1d20');
+  void _setDiceExpression; // Will be used when attacks trigger rolls
+  const [diceLabel, setDiceLabel] = useState<string | undefined>();
+
   useEffect(() => {
+    // Load basic data for backward compatibility
     DataService.getArmor().then(setAllArmor);
     DataService.getClasses().then(setAllClasses);
+    
+    // Load full data bundle for engine
+    DataService.getEngineDataBundle().then(setDataBundle);
   }, []);
 
-  const derived = computeDerivedStats(char, allArmor.length ? allArmor : undefined, allClasses.length ? allClasses : undefined);
+  // Use the character engine for advanced calculations
+  const { 
+    engine, 
+    isReady: engineReady,
+    activeFeatures: _activeFeatures,
+    resources: _resources,
+    actions: _actions,
+    calculateAttack: _calculateAttack,
+    calculateHp,
+    calculateAc,
+    getSpellStats: _getSpellStats,
+    shortRest: _engineShortRest,
+    longRest: _engineLongRest,
+  } = useCharacterEngine(char, dataBundle);
+
+  // Silence unused vars (will be used progressively as panels are enhanced)
+  void _activeFeatures; void _resources; void _actions; void _calculateAttack; void _getSpellStats; void _engineShortRest; void _engineLongRest;
+
+  // Use engine-computed values when available, fall back to legacy computation
+  const derived = useMemo(() => {
+    const legacy = computeDerivedStats(char, allArmor.length ? allArmor : undefined, allClasses.length ? allClasses : undefined);
+    
+    // If engine is ready, enhance with engine-computed values
+    if (engineReady && engine && calculateHp && calculateAc) {
+      const hpResult = calculateHp();
+      const acResult = calculateAc(
+        allArmor.find(a => a._key === char.equippedArmorKey) ?? null,
+        !!char.hasShield
+      );
+      
+      return {
+        ...legacy,
+        maxHp: hpResult.totalHp,
+        ac: acResult.ac,
+        // Keep other legacy values for now, can progressively enhance
+      };
+    }
+    
+    return legacy;
+  }, [char, allArmor, allClasses, engineReady, engine, calculateHp, calculateAc]);
 
   // Load display names
   useEffect(() => {
@@ -295,6 +360,9 @@ export function CharacterSheet({ character: initial }: Props) {
             <div className="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
               <Button variant="secondary" size="sm" onClick={() => navigate('/')}>
                 ← Roster
+              </Button>
+              <Button variant="secondary" size="sm" onClick={() => setShowDiceRoller(true)} title="Dice Roller">
+                🎲 Roll
               </Button>
               <Button variant="secondary" size="sm" onClick={doShortRest} title="Short Rest">
                 ☽ Short Rest
@@ -680,6 +748,17 @@ export function CharacterSheet({ character: initial }: Props) {
           onCancel={() => setLevelUp(false)}
         />
       )}
+
+      {/* Dice Roller modal */}
+      <DicePanel
+        isOpen={showDiceRoller}
+        onClose={() => {
+          setShowDiceRoller(false);
+          setDiceLabel(undefined);
+        }}
+        initialExpression={diceExpression}
+        label={diceLabel}
+      />
     </div>
   );
 }

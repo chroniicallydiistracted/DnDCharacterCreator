@@ -19,7 +19,8 @@
     ],
     "ac": 10,
     "addMod": true,
-    "list": "firstlist"
+    "list": "firstlist",
+    "type": "none"
   },
   {
     "_key": "mage armor",
@@ -41,7 +42,8 @@
     ],
     "ac": 13,
     "list": "magic",
-    "affectsWildShape": true
+    "affectsWildShape": true,
+    "type": "none"
   },
   {
     "_key": "padded",
@@ -307,6 +309,7 @@
       ]
     ],
     "ac": 14,
-    "list": "magic"
+    "list": "magic",
+    "type": "none"
   }
 ]

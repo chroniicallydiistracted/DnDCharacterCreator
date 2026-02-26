@@ -2792,7 +2792,8 @@
       "Studied an eldritch tome",
       "Formerly possessed by a fiend",
       "Avenged a murder"
-    ]
+    ],
+    "skills": []
   },
   {
     "_key": "black fist double agent",
@@ -6720,7 +6721,8 @@
       "Tracking supernatural phenomena",
       "Tried to expose mysterious cabal",
       "Investigate unsolved crimes"
-    ]
+    ],
+    "skills": []
   },
   {
     "_key": "feylost",

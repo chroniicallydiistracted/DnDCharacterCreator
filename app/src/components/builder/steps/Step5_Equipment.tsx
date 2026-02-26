@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { DndClass, DndBackground, DndPack } from '../../../types/data';
+import type { DndClass, DndBackground, DndPack, DndWeapon } from '../../../types/data';
 import type { EquipmentItem } from '../../../types/character';
 import DataService from '../../../services/data.service';
 import { useCharacterStore } from '../../../store/character.store';
@@ -10,7 +10,10 @@ export function Step5Equipment() {
   const [cls,    setCls]    = useState<DndClass | null>(null);
   const [bg,     setBg]     = useState<DndBackground | null>(null);
   const [packs,  setPacks]  = useState<DndPack[]>([]);
+  const [weapons, setWeapons] = useState<DndWeapon[]>([]);
   const [loading,setLoading]= useState(true);
+  const [showWeaponBrowser, setShowWeaponBrowser] = useState(false);
+  const [weaponSearch, setWeaponSearch] = useState('');
   const { draft, setChosenPack, setUseStartingGold, setCustomEquipment } = useCharacterStore();
 
   // Custom item form state
@@ -23,10 +26,12 @@ export function Step5Equipment() {
       DataService.getClasses(),
       DataService.getBackgrounds(),
       DataService.getPacks(),
-    ]).then(([classes, backgrounds, p]) => {
+      DataService.getWeapons(),
+    ]).then(([classes, backgrounds, p, w]) => {
       setCls(classes.find(c => c._key === draft.classKey) ?? null);
       setBg(backgrounds.find(b => b._key === draft.background) ?? null);
       setPacks(p);
+      setWeapons(w);
     }).finally(() => setLoading(false));
   }, [draft.classKey, draft.background]);
 
@@ -56,6 +61,37 @@ export function Step5Equipment() {
       draft.customEquipment.map((item, i) => i === idx ? { ...item, quantity: qty } : item)
     );
   }
+
+  /** Add a weapon from the browser */
+  function addWeapon(weapon: DndWeapon) {
+    // Check if weapon is already in equipment
+    if (draft.customEquipment.some(e => e.name.toLowerCase() === weapon.name.toLowerCase())) {
+      // Just increment quantity
+      setCustomEquipment(
+        draft.customEquipment.map(e =>
+          e.name.toLowerCase() === weapon.name.toLowerCase()
+            ? { ...e, quantity: e.quantity + 1 }
+            : e
+        )
+      );
+    } else {
+      const item: EquipmentItem = {
+        name: weapon.name,
+        quantity: 1,
+        weight: typeof weapon.weight === 'number' ? weapon.weight : undefined,
+        source: 'class',
+      };
+      setCustomEquipment([...draft.customEquipment, item]);
+    }
+    setShowWeaponBrowser(false);
+  }
+
+  // Filter weapons for browser
+  const filteredWeapons = weapons.filter(w =>
+    !weaponSearch ||
+    w.name.toLowerCase().includes(weaponSearch.toLowerCase()) ||
+    (w.list && w.list.toLowerCase().includes(weaponSearch.toLowerCase()))
+  );
 
   return (
     <div className="space-y-6">
@@ -250,6 +286,79 @@ export function Step5Equipment() {
             </button>
           </div>
         </div>
+      </section>
+
+      {/* ── Weapon Browser ───────────────────────────────────────────────────── */}
+      <Divider label="Weapon Browser" />
+      <section className="space-y-3">
+        <p className="text-xs text-stone font-body">
+          Browse and add weapons to your starting equipment. Use this to pick your starting weapon
+          choices such as a martial weapon, simple weapon, or specific weapon types.
+        </p>
+        <button
+          onClick={() => setShowWeaponBrowser(!showWeaponBrowser)}
+          className="
+            px-4 py-2 rounded bg-gold/20 border border-gold text-gold
+            font-display text-xs uppercase tracking-wider
+            hover:bg-gold/30 transition-colors
+          "
+        >
+          {showWeaponBrowser ? 'Hide Weapons' : 'Browse Weapons'}
+        </button>
+
+        {showWeaponBrowser && (
+          <div className="space-y-3">
+            {/* Search */}
+            <input
+              type="text"
+              value={weaponSearch}
+              onChange={e => setWeaponSearch(e.target.value)}
+              placeholder="Search weapons..."
+              className="
+                w-full text-sm font-body bg-parchment border border-gold/30 rounded
+                px-3 py-2 text-dark-ink placeholder:text-stone/50
+                focus:outline-none focus:border-gold
+              "
+            />
+
+            {/* Weapons grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-h-80 overflow-y-auto surface-panel p-2 rounded">
+              {filteredWeapons.map((w, i) => (
+                <div
+                  key={i}
+                  className="
+                    surface-parchment rounded p-2 space-y-1
+                    border border-gold/20 hover:border-gold/50
+                    cursor-pointer transition-colors
+                  "
+                  onClick={() => addWeapon(w)}
+                >
+                  <div className="font-display text-sm text-dark-ink truncate">{w.name}</div>
+                  <div className="flex flex-wrap gap-1">
+                    {w.list && (
+                      <Badge color={w.list.toLowerCase().includes('simple') ? 'stone' : 'gold'}>
+                        {w.list}
+                      </Badge>
+                    )}
+                    {w.type && (
+                      <Badge color="stone">{w.type}</Badge>
+                    )}
+                  </div>
+                  {w.damage && (
+                    <div className="text-xs text-stone font-body">
+                      {w.damage}
+                    </div>
+                  )}
+                </div>
+              ))}
+              {filteredWeapons.length === 0 && (
+                <div className="col-span-full text-center text-stone text-sm py-4">
+                  No weapons match your search.
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </section>
     </div>
   );

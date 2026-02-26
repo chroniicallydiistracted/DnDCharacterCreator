@@ -143,7 +143,7 @@ export function Step8Review() {
       const raceLangs = race?.languageProfs?.filter((l): l is string => typeof l === 'string') ?? [];
       const bgLangs   = bg?.languageProfs?.filter((l): l is string => typeof l === 'string') ?? [];
 
-      // Tool proficiencies from background
+      // Tool proficiencies from race, background, and class
       function extractToolNames(profs: (string | unknown)[] | undefined): string[] {
         if (!profs) return [];
         return profs.flatMap(entry => {
@@ -152,7 +152,8 @@ export function Step8Review() {
           return [];
         });
       }
-      const bgTools  = extractToolNames(bg?.toolProfs as (string | unknown)[] | undefined);
+      const raceTools = extractToolNames(race?.toolProfs as (string | unknown)[] | undefined);
+      const bgTools   = extractToolNames(bg?.toolProfs as (string | unknown)[] | undefined);
       // Class toolProfs data is {primary: [...], secondary: [...]} despite the type definition
       const clsToolsRaw = (cls?.toolProfs as unknown as { primary?: unknown[] } | undefined);
       const clsTools = extractToolNames(clsToolsRaw?.primary as (string | unknown)[] | undefined);
@@ -186,7 +187,8 @@ export function Step8Review() {
         chosenInvocations:   draft.chosenInvocations.length > 0 ? draft.chosenInvocations : undefined,
         feats:               draft.chosenFeats.length > 0 ? draft.chosenFeats : undefined,
         languages:           [...new Set([...raceLangs, ...bgLangs])],
-        toolProficiencies:   [...new Set([...bgTools, ...clsTools])],
+        toolProficiencies:   [...new Set([...raceTools, ...bgTools, ...clsTools])],
+        saveAdvantages:      race?.savetxt?.adv_vs?.length ? [...race.savetxt.adv_vs] : undefined,
         createdAt:           now,
         updatedAt:           now,
       };
