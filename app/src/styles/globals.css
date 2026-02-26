@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { font-size: 16px; }
+
+  body {
+    @apply bg-page-bg text-dark-ink font-body;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  /* Custom scrollbar — leather-toned */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { @apply bg-page-bg; }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-leather rounded;
+    border: 2px solid #1E1509;
+  }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-leather-light; }
+}
+
+@layer components {
+  /* Ornamental gold divider */
+  .divider-gold {
+    @apply relative flex items-center my-4;
+  }
+  .divider-gold::before,
+  .divider-gold::after {
+    content: '';
+    @apply flex-1 border-t border-gold/40;
+  }
+  .divider-gold > span {
+    @apply px-3 text-gold text-xs font-display tracking-widest uppercase;
+  }
+
+  /* Parchment card surface */
+  .surface-parchment {
+    background-image: theme('backgroundImage.parchment-texture');
+    @apply shadow-card;
+  }
+
+  /* Ability score box */
+  .ability-box {
+    @apply flex flex-col items-center justify-center
+           w-16 h-20 rounded
+           border-2 border-gold/50
+           bg-parchment shadow-parchment
+           select-none cursor-default;
+  }
+  .ability-box .score {
+    @apply text-2xl font-display font-bold text-dark-ink leading-none;
+  }
+  .ability-box .modifier {
+    @apply text-sm font-display font-semibold text-crimson leading-none mt-1;
+  }
+  .ability-box .label {
+    @apply text-[9px] font-display uppercase tracking-widest text-stone mt-1;
+  }
+
+  /* Proficiency dot */
+  .prof-dot {
+    @apply inline-block w-3 h-3 rounded-full border-2 border-gold/60
+           bg-transparent transition-colors duration-150;
+  }
+  .prof-dot.filled  { @apply bg-gold border-gold; }
+  .prof-dot.expert  { @apply bg-crimson border-crimson; }
+
+  /* Step tab (wizard navigation) */
+  .step-tab {
+    @apply flex flex-col items-center gap-1 px-3 py-2
+           font-display text-xs uppercase tracking-wider
+           text-stone/60 border-b-2 border-transparent
+           transition-all duration-200 cursor-pointer;
+  }
+  .step-tab.active {
+    @apply text-gold border-gold;
+  }
+  .step-tab.visited {
+    @apply text-stone border-stone/30;
+  }
+  .step-tab.active .step-num {
+    @apply bg-gold text-shadow;
+  }
+  .step-tab .step-num {
+    @apply w-6 h-6 rounded-full flex items-center justify-center
+           text-[10px] font-bold bg-stone/20 text-stone;
+  }
+
+  /* Spell school pill */
+  .school-pill {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-[10px]
+           font-display uppercase tracking-wider border;
+  }
+
+  /* Ritual / concentration badges */
+  .badge-ritual { @apply school-pill bg-gold/10 border-gold/30 text-gold-dark; }
+  .badge-conc   { @apply school-pill bg-crimson/10 border-crimson/30 text-crimson; }
+}
+
+@layer utilities {
+  .text-shadow { text-shadow: 0 1px 2px rgba(13,6,0,0.5); }
+  .glow-gold   { box-shadow: 0 0 12px rgba(201,168,71,0.4); }
+  .glow-crimson{ box-shadow: 0 0 12px rgba(107,14,26,0.5); }
+  .border-ornate {
+    border-image: linear-gradient(90deg, transparent, #C9A847, transparent) 1;
+  }
+  /* Hide scrollbar while keeping scroll functionality */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}

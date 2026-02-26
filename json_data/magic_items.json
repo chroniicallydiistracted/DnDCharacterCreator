@@ -16776,7 +16776,7 @@
       ]
     ],
     "type": "weapon (any ammunition)",
-    "rarity": "unknown",
+    "rarity": "uncommon",
     "description": "Whenever a ammunition made or coated with adamantine hits an object, the hit is a critical hit. The adamantine version of ten pieces of ammunition costs 500 gp more than the normal version, whether the ammunition is made of the metal or coated with it.",
     "descriptionFull": "Ammunition made of or coated with adamantine is unusually effective when used to break objects. Whenever a piece of adamantine ammunition hits an object, the hit is a critical hit.\n   The adamantine version of ten pieces of ammunition costs 500 gp more than the normal version, whether the ammunition is made of the metal or coated with it.",
     "allowDuplicates": true,
@@ -16807,7 +16807,7 @@
       ]
     ],
     "type": "weapon (any melee)",
-    "rarity": "unknown",
+    "rarity": "uncommon",
     "description": "Whenever a weapon made or coated with adamantine hits an object, the hit is a critical hit. The adamantine version of a melee weapon costs 500 gp more than the normal version, whether the weapon is made of the metal or coated with it.",
     "descriptionFull": "Melee weapons made of or coated with adamantine are unusually effective when used to break objects. Whenever an adamantine weapon hits an object, the hit is a critical hit.\n   The adamantine version of a melee weapon costs 500 gp more than the normal version, whether the weapon is made of the metal or coated with it.",
     "allowDuplicates": true,

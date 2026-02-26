@@ -93,7 +93,8 @@
         "recovery": "long rest",
         "description": "As a Bonus Action, cause creatures in a 30-foot radius to make a Wisdom save (DC 8 + Strength mod + Proficiency). On failure, they are Frightened for 1 minute, repeating the save at each turn's end. Regain use after a Long Rest or by expending a Rage use."
       }
-    }
+    },
+    "_parentClass": "barbarian"
   },
   {
     "_key": "bard-college of lore",
@@ -981,7 +982,8 @@
         "minlevel": 18,
         "description": "I roll with Advantage on Death Saves and 18-19 counts as a critical success\n   At the start of my turn, if I'm not above half or at 0 HP, I regain 5 + Con mod HP"
       }
-    }
+    },
+    "_parentClass": "fighter"
   },
   {
     "_key": "monk-way of the open hand",
@@ -1358,7 +1360,8 @@
         ],
         "description": "When I take damage, I can take a Reaction to give myself Resistance to that damage and any other damage of the same type until the end of the current turn."
       }
-    }
+    },
+    "_parentClass": "ranger"
   },
   {
     "_key": "rogue-thief",
@@ -1440,7 +1443,8 @@
         "minlevel": 17,
         "description": "I can take two turns during the first round of any combat at my normal Initiative and my second turn at my Initiative - 10."
       }
-    }
+    },
+    "_parentClass": "rogue"
   },
   {
     "_key": "sorcerer-draconic bloodline",
@@ -1911,7 +1915,8 @@
           "wall of fire legacy"
         ]
       }
-    }
+    },
+    "_parentClass": "warlock"
   },
   {
     "_key": "wizard-evocation",
@@ -4163,7 +4168,8 @@
         "minlevel": 15,
         "description": "When I use a maneuver, I can roll 1d8 once per turn instead of spending a SD"
       }
-    }
+    },
+    "_parentClass": "fighter"
   },
   {
     "_key": "fighter-eldritch knight",
@@ -4328,7 +4334,8 @@
         "minlevel": 18,
         "description": "When I use my Attack action on my turn, I can replace two of my attacks with a\n   level 1 or 2 Wizard spell with the casting time of an action."
       }
-    }
+    },
+    "_parentClass": "fighter"
   },
   {
     "_key": "monk-way of the four elements",
@@ -5382,7 +5389,8 @@
         "minlevel": 15,
         "description": "When I cast a spell on myself, I can have it also affect my Primal Companion, if within 30 ft"
       }
-    }
+    },
+    "_parentClass": "ranger"
   },
   {
     "_key": "rogue-arcane trickster",
@@ -5558,7 +5566,8 @@
         "minlevel": 17,
         "description": "Once per long rest as a reaction I can force a creature to make an Int save (my spell save DC) after it casts a spell that targets me.\n   On a failed save the spell is negated and stolen if it's level 1+ and of a level I can cast.\n   I have it prepared and the creature can't cast it for the next 8 hours."
       }
-    }
+    },
+    "_parentClass": "rogue"
   },
   {
     "_key": "rogue-assassin",
@@ -5645,7 +5654,8 @@
         "additional": "DC 8 + Dex + Prof",
         "description": "When I hit with my Sneak Attack on the first round of combat, the target must succeed on a Con save or take double damage."
       }
-    }
+    },
+    "_parentClass": "rogue"
   },
   {
     "_key": "sorcerer-wild magic",
@@ -5731,7 +5741,8 @@
         "recovery": "long rest",
         "description": "Once per Long Rest, after I cast a Sorcerer spell with a spell slot, I can choose an effect from the WMS table (except the final row). If it involves a roll I must make it."
       }
-    }
+    },
+    "_parentClass": "sorcerer"
   },
   {
     "_key": "warlock-the archfey",
@@ -5956,7 +5967,8 @@
           "sleep legacy"
         ]
       }
-    }
+    },
+    "_parentClass": "warlock"
   },
   {
     "_key": "warlock-the great old one",
@@ -6140,7 +6152,8 @@
           "telekinesis legacy"
         ]
       }
-    }
+    },
+    "_parentClass": "warlock"
   },
   {
     "_key": "wizard-abjuration",
@@ -6644,7 +6657,8 @@
         "recovery": "long rest",
         "altResource": "SS 5+"
       }
-    }
+    },
+    "_parentClass": "wizard"
   },
   {
     "_key": "wizard-divination",
@@ -7190,7 +7204,8 @@
           }
         ]
       }
-    }
+    },
+    "_parentClass": "wizard"
   },
   {
     "_key": "wizard-illusion",
@@ -7683,7 +7698,8 @@
           ]
         ]
       }
-    }
+    },
+    "_parentClass": "wizard"
   },
   {
     "_key": "wizard-transmutation",
@@ -8081,7 +8097,8 @@
         "recovery": "long rest",
         "altResource": "SS 5+"
       }
-    }
+    },
+    "_parentClass": "wizard"
   },
   {
     "_key": "cleric-death domain",
@@ -12093,7 +12110,8 @@
           ]
         ]
       }
-    }
+    },
+    "_parentClass": "fighter"
   },
   {
     "_key": "fighter-cavalier",
@@ -14311,7 +14329,8 @@
           ]
         }
       }
-    }
+    },
+    "_parentClass": "warlock"
   },
   {
     "_key": "wizard-war magic",
@@ -15142,7 +15161,8 @@
           ]
         }
       }
-    }
+    },
+    "_parentClass": "artificer"
   },
   {
     "_key": "artificer-artillerist",
@@ -15445,7 +15465,8 @@
         "minlevel": 15,
         "description": " [cannons grant half cover in 10 ft to allies]I can now have two cannons at the same time and activate both with one bonus action\n   I can create 2 eldritch cannons with the same action (still only one with a spell slot)"
       }
-    }
+    },
+    "_parentClass": "artificer"
   },
   {
     "_key": "artificer-battle smith",
@@ -15782,7 +15803,8 @@
         "minlevel": 15,
         "description": "My defender's Deflect Attack now deals its attacker 1d4 + my Int mod Force damage\n   My Arcane Jolt damage/healing increases to 4d6; My steel defender gains +2 AC"
       }
-    }
+    },
+    "_parentClass": "artificer"
   },
   {
     "_key": "fighter-echo knight",
@@ -17949,7 +17971,8 @@
           }
         ]
       }
-    }
+    },
+    "_parentClass": "artificer"
   },
   {
     "_key": "barbarian-path of the beast",
@@ -19600,7 +19623,8 @@
         ],
         "description": "I can cast Telekinesis, without spell slots/components, with Int spellcasting ability\n   While concentrating on this spell, as a Bonus Action, I can make one weapon attack\n   1 free use per long rest unless I spend a PsiD to restore my use"
       }
-    }
+    },
+    "_parentClass": "fighter"
   },
   {
     "_key": "fighter-rune knight",
@@ -20894,7 +20918,8 @@
           "summon fey legacy"
         ]
       }
-    }
+    },
+    "_parentClass": "ranger"
   },
   {
     "_key": "ranger-swarmkeeper",
@@ -21336,7 +21361,8 @@
         "altResource": "3 PsiD",
         "description": "When I deal Sneak Attack damage to a creature with my Psychic Blades I can force it to make a Wis save (DC 8 + Dex mod + Prof Bonus). On a fail, it's Stunned for 1 min. It repeats the save at the end of each of its turns, ending it on a pass.\n   I can spend 3 Psionic Energy Die (no action) to restore it. It returns after a Long Rest."
       }
-    }
+    },
+    "_parentClass": "rogue"
   },
   {
     "_key": "sorcerer-aberrant mind",
@@ -55131,7 +55157,8 @@
           }
         ]
       }
-    }
+    },
+    "_parentClass": "cleric"
   },
   {
     "_key": "fighter-arcane archer_2014",

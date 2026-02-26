@@ -24021,7 +24021,7 @@
   {
     "_key": "lightning spheres",
     "name": "Lightning Spheres",
-    "level": "2",
+    "level": 2,
     "school": "Conj",
     "time": "1 a",
     "range": "120 ft",
@@ -24035,7 +24035,7 @@
   {
     "_key": "shooting stars",
     "name": "Shooting Stars",
-    "level": "0",
+    "level": 0,
     "school": "Evoc",
     "time": "1 a",
     "range": "60 ft",
