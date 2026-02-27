@@ -16,7 +16,7 @@ interface UiState {
   closeModal: () => void;
 
   // Sheet active tab
-  sheetTab: 'features' | 'spells' | 'equipment' | 'notes';
+  sheetTab: 'features' | 'attacks' | 'spells' | 'equipment' | 'notes';
   setSheetTab: (tab: UiState['sheetTab']) => void;
 
   // Preview entity

@@ -68,17 +68,8 @@ export function parseBackgroundAsi(scorestxt: string[] | undefined): BackgroundA
       });
     }
 
-    // Fallback: if we only got one option from parsing, offer both +2/+1 and +1/+1/+1
-    if (results.length === 0 && mentioned.length >= 2) {
-      results.push(
-        { label: '+2 / +1', bonuses: [{ ability: 'choose', value: 2 }, { ability: 'choose', value: 1 }], playerChooses: true },
-        { label: '+1 to each', bonuses: mentioned.map(a => ({ ability: a, value: 1 })), playerChooses: false },
-      );
-    }
+    // If no options were parsed, return empty — do not fabricate default distributions
   }
 
-  return results.length ? results : [
-    { label: '+2 / +1 (choose abilities)', bonuses: [{ ability: 'choose', value: 2 }, { ability: 'choose', value: 1 }], playerChooses: true },
-    { label: '+1 / +1 / +1 (choose abilities)', bonuses: [{ ability: 'choose', value: 1 }, { ability: 'choose', value: 1 }, { ability: 'choose', value: 1 }], playerChooses: true },
-  ];
+  return results;
 }

@@ -15,10 +15,13 @@ export function SheetPage() {
 
   useEffect(() => {
     if (!id) { setNotFound(true); return; }
+    let cancelled = false;
     characterRepository.get(id).then(c => {
+      if (cancelled) return;
       if (c) setChar(c);
       else   setNotFound(true);
     });
+    return () => { cancelled = true; };
   }, [id]);
 
   if (notFound) {

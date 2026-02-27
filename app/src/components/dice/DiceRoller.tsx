@@ -277,6 +277,247 @@ const FACE_LAYOUTS: Record<number, FaceLayoutEntry[]> = (() => {
   return layouts as Record<number, FaceLayoutEntry[]>;
 })();
 
+// ─── Face Label Utilities ────────────────────────────────────────────────────
+
+/** Label size per die type (relative to face size) */
+const LABEL_SIZES: Record<number, number> = {
+  4: 3.2,
+  6: 3.2,
+  8: 2.6,
+  10: 2.0,
+  12: 2.2,
+  20: 1.8,
+};
+
+const LABEL_OFFSET = 0.08;
+
+/** Compute face centroid positions and normals from geometry */
+function computeFaceCentroids(geometry: THREE.BufferGeometry): { center: THREE.Vector3; normal: THREE.Vector3 }[] {
+  const nonIndexed = geometry.clone().toNonIndexed();
+  const positions = nonIndexed.attributes.position.array as ArrayLike<number>;
+  const faceGroups = new Map<string, { vertices: THREE.Vector3[]; normal: THREE.Vector3 }>();
+
+  const a = new THREE.Vector3();
+  const b = new THREE.Vector3();
+  const c = new THREE.Vector3();
+  const ab = new THREE.Vector3();
+  const cb = new THREE.Vector3();
+  const normal = new THREE.Vector3();
+  const centroid = new THREE.Vector3();
+
+  for (let i = 0; i < positions.length; i += 9) {
+    a.set(positions[i], positions[i + 1], positions[i + 2]);
+    b.set(positions[i + 3], positions[i + 4], positions[i + 5]);
+    c.set(positions[i + 6], positions[i + 7], positions[i + 8]);
+
+    ab.subVectors(a, b);
+    cb.subVectors(c, b);
+    normal.copy(cb).cross(ab).normalize();
+
+    centroid.copy(a).add(b).add(c).multiplyScalar(1 / 3);
+    if (normal.dot(centroid) < 0) normal.negate();
+
+    const key = `${round(normal.x)},${round(normal.y)},${round(normal.z)}`;
+    if (!faceGroups.has(key)) {
+      faceGroups.set(key, { vertices: [], normal: normal.clone() });
+    }
+    faceGroups.get(key)!.vertices.push(a.clone(), b.clone(), c.clone());
+  }
+
+  const result: { center: THREE.Vector3; normal: THREE.Vector3 }[] = [];
+  for (const [, group] of faceGroups) {
+    const avg = new THREE.Vector3();
+    for (const v of group.vertices) avg.add(v);
+    avg.divideScalar(group.vertices.length);
+    result.push({ center: avg, normal: group.normal.clone().normalize() });
+  }
+
+  nonIndexed.dispose();
+  return result;
+}
+
+/** Module-level texture cache for numbered face labels */
+const _numberTextureCache = new Map<string, THREE.CanvasTexture>();
+
+/** Create a canvas texture with a die number rendered on it */
+function createNumberTexture(text: string, textColor = '#ffffff', bgColor = 'rgba(0,0,0,0.3)'): THREE.CanvasTexture {
+  const cacheKey = `${text}|${textColor}|${bgColor}`;
+  const cached = _numberTextureCache.get(cacheKey);
+  if (cached) return cached;
+
+  const size = 128;
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d')!;
+
+  ctx.clearRect(0, 0, size, size);
+
+  // Circular inset background
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2, size * 0.4, 0, Math.PI * 2);
+  ctx.fillStyle = bgColor;
+  ctx.fill();
+
+  // Number text with serif font
+  const fontSize = text.length > 1 ? 52 : 66;
+  ctx.font = `bold ${fontSize}px 'Cinzel', Georgia, serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillStyle = textColor;
+  ctx.shadowColor = 'rgba(0,0,0,0.6)';
+  ctx.shadowBlur = 4;
+  ctx.fillText(text, size / 2, size / 2 + 2);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.needsUpdate = true;
+  _numberTextureCache.set(cacheKey, texture);
+  return texture;
+}
+
+/** Create a procedural felt texture for the tray floor */
+function createFeltTexture(): THREE.CanvasTexture {
+  const size = 512;
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d')!;
+
+  // Base green felt color
+  ctx.fillStyle = '#2d5a27';
+  ctx.fillRect(0, 0, size, size);
+
+  // Add fine noise for felt fiber texture
+  const imageData = ctx.getImageData(0, 0, size, size);
+  const data = imageData.data;
+  for (let i = 0; i < data.length; i += 4) {
+    const noise = (Math.random() - 0.5) * 18;
+    data[i]     = Math.max(0, Math.min(255, data[i] + noise));
+    data[i + 1] = Math.max(0, Math.min(255, data[i + 1] + noise));
+    data[i + 2] = Math.max(0, Math.min(255, data[i + 2] + noise));
+  }
+  ctx.putImageData(imageData, 0, 0);
+
+  // Subtle cross-hatch for woven felt look
+  ctx.globalAlpha = 0.04;
+  ctx.strokeStyle = '#1a3a18';
+  ctx.lineWidth = 1;
+  for (let y = 0; y < size; y += 3) {
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(size, y + (Math.random() - 0.5) * 2);
+    ctx.stroke();
+  }
+  ctx.globalAlpha = 1;
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+  texture.repeat.set(3, 3);
+  return texture;
+}
+
+/** Create a procedural wood grain texture for tray walls */
+function createWoodTexture(): THREE.CanvasTexture {
+  const width = 512;
+  const height = 256;
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d')!;
+
+  // Base dark walnut
+  ctx.fillStyle = '#5d4037';
+  ctx.fillRect(0, 0, width, height);
+
+  // Wood grain lines
+  for (let i = 0; i < 60; i++) {
+    const y = Math.random() * height;
+    const thickness = 0.5 + Math.random() * 2;
+    const alpha = 0.06 + Math.random() * 0.12;
+    ctx.strokeStyle = `rgba(30, 20, 10, ${alpha})`;
+    ctx.lineWidth = thickness;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    for (let x = 0; x < width; x += 15) {
+      ctx.lineTo(x, y + (Math.random() - 0.5) * 3);
+    }
+    ctx.stroke();
+  }
+
+  // Lighter grain highlights
+  for (let i = 0; i < 20; i++) {
+    const y = Math.random() * height;
+    ctx.strokeStyle = `rgba(120, 90, 60, ${0.04 + Math.random() * 0.06})`;
+    ctx.lineWidth = 0.5 + Math.random();
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    for (let x = 0; x < width; x += 20) {
+      ctx.lineTo(x, y + (Math.random() - 0.5) * 2);
+    }
+    ctx.stroke();
+  }
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+  return texture;
+}
+
+/** Add number labels to each face of a die mesh */
+function addFaceLabels(
+  dieMesh: THREE.Mesh,
+  sides: number,
+  faceLayout: FaceLayoutEntry[],
+  isPercentileTens = false,
+): void {
+  const centroids = computeFaceCentroids(dieMesh.geometry);
+  const labelSize = LABEL_SIZES[sides] ?? 2.0;
+
+  for (const face of faceLayout) {
+    // Find the centroid whose normal best matches this face layout normal
+    let best = centroids[0];
+    let bestDot = -Infinity;
+    for (const c of centroids) {
+      const dot = c.normal.dot(face.normal);
+      if (dot > bestDot) {
+        bestDot = dot;
+        best = c;
+      }
+    }
+
+    // Determine display text for this face
+    let displayText: string;
+    if (isPercentileTens) {
+      const v = face.value * 10;
+      displayText = v === 0 || v === 100 ? '00' : String(v);
+    } else if (sides === 10) {
+      displayText = String(face.value === 10 ? 0 : face.value);
+    } else {
+      displayText = String(face.value);
+    }
+
+    // Create textured label plane
+    const texture = createNumberTexture(displayText);
+    const planeMat = new THREE.MeshBasicMaterial({
+      map: texture,
+      transparent: true,
+      depthWrite: false,
+      side: THREE.DoubleSide,
+    });
+    const planeGeo = new THREE.PlaneGeometry(labelSize, labelSize);
+    const labelMesh = new THREE.Mesh(planeGeo, planeMat);
+
+    // Position at face centroid, offset slightly outward to prevent z-fighting
+    const offset = best.normal.clone().multiplyScalar(LABEL_OFFSET);
+    labelMesh.position.copy(best.center).add(offset);
+
+    // Orient the plane to face outward along the face normal
+    const target = best.center.clone().add(best.normal);
+    labelMesh.lookAt(target);
+
+    dieMesh.add(labelMesh);
+  }
+}
+
 // ─── Random Utilities ────────────────────────────────────────────────────────
 
 function secureRandom(): number {
@@ -466,7 +707,22 @@ export const DiceRoller = forwardRef<DiceRollerRef, DiceRollerProps>(function Di
       const rimLight = new THREE.DirectionalLight(0xffffff, 0.3);
       rimLight.position.set(0, 20, -80);
       scene.add(rimLight);
-      
+
+      // Environment map for realistic dice reflections (warm golden tones)
+      const pmremGenerator = new THREE.PMREMGenerator(renderer);
+      pmremGenerator.compileEquirectangularShader();
+      const envScene = new THREE.Scene();
+      envScene.background = new THREE.Color(0x1a1a2e);
+      const envLight1 = new THREE.PointLight(0xffd700, 100, 200);
+      envLight1.position.set(50, 80, 50);
+      envScene.add(envLight1);
+      const envLight2 = new THREE.PointLight(0xc49b52, 60, 200);
+      envLight2.position.set(-40, 60, -40);
+      envScene.add(envLight2);
+      const envRT = pmremGenerator.fromScene(envScene, 0.04);
+      scene.environment = envRT.texture;
+      pmremGenerator.dispose();
+
       // Physics world - use object syntax for initialization
       const world = new RAPIER.World({ x: GRAVITY.x, y: GRAVITY.y, z: GRAVITY.z });
       world.timestep = PHYSICS_STEP;
@@ -597,7 +853,18 @@ export const DiceRoller = forwardRef<DiceRollerRef, DiceRollerProps>(function Di
         controlsRef.current = null;
       }, 0);
     };
-  }, [width, height, onReadyChange]);
+  }, [onReadyChange]);
+
+  // Resize handler — only updates camera and renderer; no scene teardown
+  useEffect(() => {
+    const camera = cameraRef.current;
+    const renderer = rendererRef.current;
+    if (camera && renderer) {
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    }
+  }, [width, height]);
 
   // Create dice tray colliders
   function createDiceTray(scene: THREE.Scene, world: RAPIER.World) {
@@ -605,11 +872,13 @@ export const DiceRoller = forwardRef<DiceRollerRef, DiceRollerProps>(function Di
     const wallHeight = TRAY_WALL_HEIGHT;
     const wallThickness = TRAY_WALL_THICKNESS;
     
-    // Floor (felt) - high quality with texture-like appearance
+    // Floor (felt) - procedural felt texture
     const floorGeo = new THREE.BoxGeometry(traySize, TRAY_FLOOR_THICKNESS, traySize, 4, 1, 4);
+    const feltTexture = createFeltTexture();
     const floorMat = new THREE.MeshStandardMaterial({
+      map: feltTexture,
       color: 0x2d5a27,
-      roughness: 0.92,
+      roughness: 0.95,
       metalness: 0,
     });
     const floor = new THREE.Mesh(floorGeo, floorMat);
@@ -622,11 +891,13 @@ export const DiceRoller = forwardRef<DiceRollerRef, DiceRollerProps>(function Di
       .setRestitution(FELT_RESTITUTION);
     world.createCollider(floorDesc);
     
-    // Walls (wood) - richer material
+    // Walls (wood) - procedural wood grain material
+    const woodTexture = createWoodTexture();
     const wallMat = new THREE.MeshStandardMaterial({
+      map: woodTexture,
       color: 0x5d4037,
-      roughness: 0.6,
-      metalness: 0.15,
+      roughness: 0.55,
+      metalness: 0.12,
     });
     
     const wallPositions = [
@@ -736,7 +1007,23 @@ export const DiceRoller = forwardRef<DiceRollerRef, DiceRollerProps>(function Di
     } catch {
       // Older API may not support enableCcd; safe to ignore.
     }
-    
+
+    // Add face number labels
+    const effectiveSides = sides === 100 ? 10 : sides;
+    const faceLayout = FACE_LAYOUTS[effectiveSides];
+    if (faceLayout) {
+      addFaceLabels(mesh, effectiveSides, faceLayout, isPercentileTens);
+    }
+
+    // Edge highlight for visual clarity between faces
+    const edgesGeo = new THREE.EdgesGeometry(geometry, 15);
+    const edgesMat = new THREE.LineBasicMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.12,
+    });
+    mesh.add(new THREE.LineSegments(edgesGeo, edgesMat));
+
     return { mesh, body, sides, sign: 1 };
   }
 
@@ -745,14 +1032,34 @@ export const DiceRoller = forwardRef<DiceRollerRef, DiceRollerProps>(function Di
     const sides = die.sides === 100 ? 10 : die.sides;
     const faceLayout = FACE_LAYOUTS[sides];
     if (!faceLayout) throw new Error(`No face layout for d${sides}`);
-    
+
     const rotation = die.body.rotation();
     const quat = new THREE.Quaternion(rotation.x, rotation.y, rotation.z, rotation.w);
     const upWorld = new THREE.Vector3(0, 1, 0);
-    
+
+    if (die.sides === 4) {
+      // D4: find the BOTTOM face (normal most opposed to world-up).
+      // A tetrahedron's 3 upper faces all share nearly identical upward dot
+      // products (~1/3 each), making the "most upward" selection unreliable.
+      // The bottom face is always unambiguous (dot ≈ −1). Its value equals
+      // the standard D4 apex-vertex reading.
+      let bottomValue = faceLayout[0]?.value ?? 1;
+      let worstDot = Infinity;
+      for (const face of faceLayout) {
+        const normal = face.normal.clone().applyQuaternion(quat);
+        const dot = normal.dot(upWorld);
+        if (dot < worstDot) {
+          worstDot = dot;
+          bottomValue = face.value;
+        }
+      }
+      return bottomValue;
+    }
+
+    // All other dice: face whose normal points most upward is the top face
     let value = faceLayout[0]?.value ?? 1;
     let bestDot = -Infinity;
-    
+
     for (const face of faceLayout) {
       const normal = face.normal.clone().applyQuaternion(quat);
       const dot = normal.dot(upWorld);
@@ -762,19 +1069,13 @@ export const DiceRoller = forwardRef<DiceRollerRef, DiceRollerProps>(function Di
       }
     }
 
-    // D4 shows the result at top vertex; convert from up-facing face value.
-    if (die.sides === 4) {
-      value = 5 - value;
-    }
-    
     // For d10, 0 represents 10
     if (die.sides === 10 && value === 0) value = 10;
     if (die.sides === 100 && die.isPercentileTens) {
-      // Tens die: 0 = "00" (which is 100 for calc purposes)
       value *= 10;
       if (value === 0) value = 100;
     }
-    
+
     return value;
   }
 
@@ -805,6 +1106,21 @@ export const DiceRoller = forwardRef<DiceRollerRef, DiceRollerProps>(function Di
     
     for (const d of diceRef.current) {
       try {
+        // Dispose child meshes (face labels, edge highlights)
+        d.mesh.traverse(child => {
+          if (child === d.mesh) return;
+          if (child instanceof THREE.Mesh) {
+            child.geometry.dispose();
+            if (child.material instanceof THREE.Material) {
+              const mat = child.material as THREE.MeshBasicMaterial;
+              mat.map?.dispose();
+              mat.dispose();
+            }
+          } else if (child instanceof THREE.LineSegments) {
+            child.geometry.dispose();
+            (child.material as THREE.Material).dispose();
+          }
+        });
         scene.remove(d.mesh);
         d.mesh.geometry.dispose();
         (d.mesh.material as THREE.Material).dispose();
@@ -1094,18 +1410,9 @@ export const DiceRoller = forwardRef<DiceRollerRef, DiceRollerProps>(function Di
         style={{ width, height, borderRadius: '8px', overflow: 'hidden' }}
       />
       <div
-        className="dice-roller-result"
-        style={{
-          marginTop: '8px',
-          padding: '8px 12px',
-          backgroundColor: 'rgba(0,0,0,0.3)',
-          borderRadius: '4px',
-          fontFamily: 'monospace',
-          fontSize: '13px',
-          whiteSpace: 'pre-line',
-          minHeight: '60px',
-          color: isRolling ? '#ffd700' : '#fff',
-        }}
+        className={`mt-2 px-3 py-2 bg-dark-ink/30 rounded font-mono text-[13px] whitespace-pre-line min-h-[60px] ${
+          isRolling ? 'text-gold' : 'text-parchment'
+        }`}
       >
         {result}
       </div>

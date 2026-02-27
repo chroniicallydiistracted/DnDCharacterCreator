@@ -44,6 +44,7 @@ function NavLink({ to, active, children }: { to: string; active: boolean; childr
   return (
     <Link
       to={to}
+      aria-current={active ? 'page' : undefined}
       className={`
         px-4 py-1.5 rounded font-display text-xs uppercase tracking-wider
         transition-all duration-150

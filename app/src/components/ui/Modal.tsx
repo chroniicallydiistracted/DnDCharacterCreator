@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useId } from 'react';
+import { createPortal } from 'react-dom';
 
 interface ModalProps {
   open?: boolean;           // defaults to true — omit when parent controls mounting
@@ -17,16 +18,57 @@ const sizeClasses = {
 };
 
 export function Modal({ open = true, onClose, title, children, size = 'md' }: ModalProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const titleId = useId();
+
+  // Escape key handler
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     if (open) document.addEventListener('keydown', handler);
     return () => document.removeEventListener('keydown', handler);
   }, [open, onClose]);
 
+  // Body scroll lock
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, [open]);
+
+  // Focus trap: focus first focusable element on mount, trap Tab key
+  useEffect(() => {
+    if (!open || !dialogRef.current) return;
+    const dialog = dialogRef.current;
+    const focusable = dialog.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length > 0) focusable[0].focus();
+
+    function trapFocus(e: KeyboardEvent) {
+      if (e.key !== 'Tab' || focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+    dialog.addEventListener('keydown', trapFocus);
+    return () => dialog.removeEventListener('keydown', trapFocus);
+  }, [open]);
+
   if (!open) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+  return createPortal(
+    <div
+      ref={dialogRef}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={title ? titleId : undefined}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+    >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-shadow/80 backdrop-blur-sm" onClick={onClose} />
 
@@ -49,7 +91,7 @@ export function Modal({ open = true, onClose, title, children, size = 'md' }: Mo
               px-6 py-4
               bg-leather/90 border-b border-gold/40
             ">
-              <h2 className="font-display text-display-sm text-gold text-shadow">{title}</h2>
+              <h2 id={titleId} className="font-display text-display-sm text-gold text-shadow">{title}</h2>
               <button
                 onClick={onClose}
                 className="text-stone hover:text-gold transition-colors w-8 h-8 flex items-center justify-center rounded hover:bg-gold/10"
@@ -66,6 +108,7 @@ export function Modal({ open = true, onClose, title, children, size = 'md' }: Mo
         {/* Bottom ornament */}
         <div className="h-2 bg-gradient-to-r from-transparent via-gold to-transparent" />
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

@@ -193,8 +193,8 @@ function SubclassPicker({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    DataService.getSubclasses()
-      .then(all => setSubs(all.filter(s => s._parentClass === classKey)))
+    DataService.getSubclassesForClass(classKey)
+      .then(setSubs)
       .finally(() => setLoading(false));
   }, [classKey]);
 
@@ -327,7 +327,6 @@ export function Step2Class() {
         selectedKey={draft.classKey}
         onSelect={cls => setClass(cls._key)}
         getKey={c => c._key}
-        getName={c => c.name}
         filterFn={(c, q) => c.name.toLowerCase().includes(q) ||
           c.skillstxt?.primary?.toLowerCase().includes(q) || false}
         placeholder="Search classes…"
@@ -360,6 +359,10 @@ export function Step2Class() {
               // Reset subclass if level drops below unlock threshold
               if (lvl < (SUBCLASS_LEVEL[classKey] ?? SUBCLASS_LEVEL.default)) {
                 setStartingSubclass(null);
+              }
+              // Reset fighting style if level drops below fighting style threshold
+              if (lvl < fightingStyleLevel) {
+                setChosenFightingStyle(null);
               }
             }}
           />

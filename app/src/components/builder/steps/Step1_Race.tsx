@@ -300,7 +300,6 @@ export function Step1Race() {
         selectedKey={draft.race}
         onSelect={race => handleSelectRace(race, draft.raceVariant)}
         getKey={r => r._key}
-        getName={r => r.name}
         filterFn={(r, q) => r.name.toLowerCase().includes(q) || (r.trait ?? '').toLowerCase().includes(q)}
         placeholder="Search races…"
         columns={3}

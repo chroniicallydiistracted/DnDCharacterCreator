@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 
 interface TooltipProps {
   content: React.ReactNode;
@@ -15,15 +15,23 @@ const sideClasses = {
 
 export function Tooltip({ content, children, side = 'top' }: TooltipProps) {
   const [show, setShow] = useState(false);
+  const tooltipId = useId();
+
   return (
     <span
       className="relative inline-flex"
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
+      onFocus={() => setShow(true)}
+      onBlur={() => setShow(false)}
+      aria-describedby={show ? tooltipId : undefined}
     >
       {children}
       {show && (
-        <span className={`
+        <span
+          id={tooltipId}
+          role="tooltip"
+          className={`
           absolute z-50 ${sideClasses[side]}
           w-max max-w-xs
           px-3 py-2 rounded

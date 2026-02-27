@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -7,11 +7,14 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ReactNode;
 }
 
-export function Input({ label, hint, error, icon, className = '', ...props }: InputProps) {
+export function Input({ label, hint, error, icon, className = '', id: userProvidedId, ...props }: InputProps) {
+  const autoId = useId();
+  const id = userProvidedId ?? autoId;
+
   return (
     <div className="flex flex-col gap-1">
       {label && (
-        <label className="text-xs font-display uppercase tracking-wider text-stone">
+        <label htmlFor={id} className="text-xs font-display uppercase tracking-wider text-stone">
           {label}
         </label>
       )}
@@ -22,6 +25,7 @@ export function Input({ label, hint, error, icon, className = '', ...props }: In
           </span>
         )}
         <input
+          id={id}
           className={`
             w-full px-3 py-2 rounded
             bg-aged-paper border-2
@@ -46,15 +50,19 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
   hint?: string;
 }
 
-export function Textarea({ label, hint, className = '', ...props }: TextareaProps) {
+export function Textarea({ label, hint, className = '', id: userProvidedId, ...props }: TextareaProps) {
+  const autoId = useId();
+  const id = userProvidedId ?? autoId;
+
   return (
     <div className="flex flex-col gap-1">
       {label && (
-        <label className="text-xs font-display uppercase tracking-wider text-stone">
+        <label htmlFor={id} className="text-xs font-display uppercase tracking-wider text-stone">
           {label}
         </label>
       )}
       <textarea
+        id={id}
         className={`
           w-full px-3 py-2 rounded
           bg-aged-paper border-2 border-gold/40

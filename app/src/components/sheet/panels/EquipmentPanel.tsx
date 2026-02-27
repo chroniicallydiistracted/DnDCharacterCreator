@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { Character, EquipmentItem, Currency, DerivedStats } from '../../../types/character';
 import type { DndArmor, DndMagicItem } from '../../../types/data';
 import DataService from '../../../services/data.service';
@@ -23,7 +23,7 @@ const CURRENCY_LABELS: { key: keyof Currency; label: string; color: string }[] =
 // Max attuned items in D&D 5e
 const MAX_ATTUNED = 3;
 
-export function EquipmentPanel({ char, derived, onUpdate }: Props) {
+export const EquipmentPanel = React.memo(function EquipmentPanel({ char, derived, onUpdate }: Props) {
   const [editing, setEditing]           = useState(false);
   const [newItem, setNewItem]           = useState('');
   const [newQty, setNewQty]             = useState('1');
@@ -43,7 +43,7 @@ export function EquipmentPanel({ char, derived, onUpdate }: Props) {
   }, [showArmorPicker, allArmor.length]);
 
   const currency = char.currency ?? DEFAULT_CURRENCY;
-  const attuned  = char.attuned ?? [];
+  const attuned: number[]  = (char.attuned ?? []) as number[];
 
   const totalWeight = char.equipment.reduce((sum, item) => {
     return sum + (item.weight ?? 0) * item.quantity;
@@ -86,7 +86,14 @@ export function EquipmentPanel({ char, derived, onUpdate }: Props) {
   }
 
   function removeItem(idx: number) {
-    onUpdate({ equipment: char.equipment.filter((_, i) => i !== idx) });
+    // When removing an item, also update attunement indices
+    const updatedAttuned = attuned
+      .filter(i => i !== idx)           // remove attunement for the deleted item
+      .map(i => (i > idx ? i - 1 : i)); // shift down indices above the removed item
+    onUpdate({
+      equipment: char.equipment.filter((_, i) => i !== idx),
+      attuned: updatedAttuned.length > 0 ? updatedAttuned : undefined,
+    });
   }
 
   function equipArmor(key: string | undefined) {
@@ -100,16 +107,17 @@ export function EquipmentPanel({ char, derived, onUpdate }: Props) {
       quantity: 1,
       weight: item.weight,
       source: 'custom' as const,
+      requiresAttunement: !!item.attunement,
     }];
     onUpdate({ equipment: updated });
     setMagicBrowser(false);
   }
 
-  function toggleAttuned(name: string) {
-    if (attuned.includes(name)) {
-      onUpdate({ attuned: attuned.filter(a => a !== name) });
+  function toggleAttuned(equipIdx: number) {
+    if (attuned.includes(equipIdx)) {
+      onUpdate({ attuned: attuned.filter(i => i !== equipIdx) });
     } else if (attuned.length < MAX_ATTUNED) {
-      onUpdate({ attuned: [...attuned, name] });
+      onUpdate({ attuned: [...attuned, equipIdx] });
     }
   }
 
@@ -164,12 +172,6 @@ export function EquipmentPanel({ char, derived, onUpdate }: Props) {
             </div>
           ))}
         </div>
-        {/* Legacy gold field */}
-        {char.gold > 0 && (
-          <div className="mt-2 pt-2 border-t border-gold/10 text-[10px] font-body text-stone/60">
-            Starting gold: {char.gold} gp (add to GP above)
-          </div>
-        )}
       </div>
 
       {/* Armor & Shield */}
@@ -227,17 +229,21 @@ export function EquipmentPanel({ char, derived, onUpdate }: Props) {
           <div className="text-[10px] font-body text-stone/50 italic">No items attuned</div>
         ) : (
           <div className="space-y-1">
-            {attuned.map((name, i) => (
-              <div key={i} className="flex items-center justify-between">
-                <span className="text-xs font-body text-dark-ink">{name}</span>
+            {attuned.map((equipIdx) => {
+              const item = char.equipment[equipIdx];
+              const itemName = item?.name ?? '(unknown)';
+              return (
+              <div key={equipIdx} className="flex items-center justify-between">
+                <span className="text-xs font-body text-dark-ink">{itemName}</span>
                 <button
-                  onClick={() => toggleAttuned(name)}
+                  onClick={() => toggleAttuned(equipIdx)}
                   className="text-[9px] text-stone/50 hover:text-crimson transition-colors font-display uppercase tracking-wider"
                 >
                   Remove
                 </button>
               </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>
@@ -277,7 +283,7 @@ export function EquipmentPanel({ char, derived, onUpdate }: Props) {
             <div className="surface-parchment rounded divide-y divide-gold/10">
               {items.map((item, idx) => {
                 const globalIdx = char.equipment.indexOf(item);
-                const isAttuned = attuned.includes(item.name);
+                const isAttuned = attuned.includes(globalIdx);
                 return (
                   <div key={idx} className="flex items-center gap-2 px-3 py-2">
                     <span className="flex-1 text-sm font-body text-dark-ink">{item.name}</span>
@@ -286,7 +292,7 @@ export function EquipmentPanel({ char, derived, onUpdate }: Props) {
                     )}
                     {/* Attunement toggle */}
                     <button
-                      onClick={() => toggleAttuned(item.name)}
+                      onClick={() => toggleAttuned(globalIdx)}
                       title={isAttuned ? 'Attuned (click to remove)' : attuned.length >= MAX_ATTUNED ? 'Max 3 attuned items' : 'Attune to this item'}
                       disabled={!isAttuned && attuned.length >= MAX_ATTUNED}
                       className={`text-[9px] font-display uppercase tracking-wider transition-colors px-1 ${
@@ -388,7 +394,7 @@ export function EquipmentPanel({ char, derived, onUpdate }: Props) {
       )}
     </div>
   );
-}
+});
 
 // ─── Armor Picker Modal ───────────────────────────────────────────────────────
 function ArmorPickerModal({

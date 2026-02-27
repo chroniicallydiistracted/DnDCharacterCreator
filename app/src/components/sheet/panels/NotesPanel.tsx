@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import type { Character, CharacterDetails } from '../../../types/character';
 
 interface Props {
@@ -100,7 +100,7 @@ function TagList({
   );
 }
 
-export function NotesPanel({ char, onUpdate }: Props) {
+export const NotesPanel = React.memo(function NotesPanel({ char, onUpdate }: Props) {
   function handleChange(key: keyof CharacterDetails, value: string) {
     onUpdate({ details: { ...char.details, [key]: value } });
   }
@@ -142,4 +142,4 @@ export function NotesPanel({ char, onUpdate }: Props) {
       ))}
     </div>
   );
-}
+});

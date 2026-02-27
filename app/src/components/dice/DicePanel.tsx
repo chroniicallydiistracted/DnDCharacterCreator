@@ -4,7 +4,7 @@
  * Provides a modal interface for rolling dice with common D&D dice presets.
  */
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import { DiceRoller, type DiceRollerRef, type DiceRollResult } from './DiceRoller';
 import { Button } from '../ui/Button';
 import { Modal } from '../ui/Modal';
@@ -68,22 +68,7 @@ export function DicePanel({
     setExpression(initialExpression);
   }, [initialExpression]);
 
-  // Auto-roll when modal opens with autoRoll flag
-  useEffect(() => {
-    if (isOpen && autoRoll && initialExpression && isReady && !didAutoRollRef.current) {
-      didAutoRollRef.current = true;
-      const timer = setTimeout(() => {
-        doRoll(initialExpression);
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-    if (!isOpen) {
-      didAutoRollRef.current = false;
-      setIsReady(false);
-    }
-  }, [isOpen, autoRoll, initialExpression, isReady]);
-
-  const doRoll = async (expr?: string) => {
+  const doRoll = useCallback(async (expr?: string) => {
     const target = expr ?? expression;
     if (!target || !rollerRef.current || isRolling || !isReady) return;
 
@@ -97,7 +82,22 @@ export function DicePanel({
     } finally {
       setIsRolling(false);
     }
-  };
+  }, [expression, isRolling, isReady, onRollComplete, label]);
+
+  // Auto-roll when modal opens with autoRoll flag
+  useEffect(() => {
+    if (isOpen && autoRoll && initialExpression && isReady && !didAutoRollRef.current) {
+      didAutoRollRef.current = true;
+      const timer = setTimeout(() => {
+        doRoll(initialExpression);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+    if (!isOpen) {
+      didAutoRollRef.current = false;
+      setIsReady(false);
+    }
+  }, [isOpen, autoRoll, initialExpression, isReady, doRoll]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
@@ -171,11 +171,11 @@ export function DicePanel({
 
         {/* Last Result Summary */}
         {lastResult && (
-          <div className="mt-2 p-3 bg-slate-800/50 rounded-lg text-center">
-            <div className="text-2xl font-bold text-primary-400">
+          <div className="mt-2 p-3 bg-dark-ink/40 rounded-lg text-center border border-gold/20">
+            <div className="text-2xl font-bold font-display text-gold">
               {lastResult.total}
             </div>
-            <div className="text-xs text-slate-400 mt-1">
+            <div className="text-xs font-body text-stone mt-1">
               {lastResult.breakdown.join(' + ')}
               {lastResult.modifier !== 0 && (
                 <span> {lastResult.modifier >= 0 ? '+' : ''}{lastResult.modifier}</span>

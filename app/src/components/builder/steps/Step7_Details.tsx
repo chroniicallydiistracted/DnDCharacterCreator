@@ -97,6 +97,7 @@ export function Step7Details() {
         <Input label="Weight" value={det.weight ?? ''} onChange={e => setDetails({ weight: e.target.value })} placeholder="e.g. 180 lb" />
         <Input label="Eyes"   value={det.eyes ?? ''}   onChange={e => setDetails({ eyes: e.target.value })} placeholder="e.g. Blue" />
         <Input label="Hair"   value={det.hair ?? ''}   onChange={e => setDetails({ hair: e.target.value })} placeholder="e.g. Black" />
+        <Input label="Skin"   value={det.skin ?? ''}   onChange={e => setDetails({ skin: e.target.value })} placeholder="e.g. Tanned" />
       </div>
 
       <Textarea
@@ -122,7 +123,7 @@ export function Step7Details() {
         <div className="flex items-end justify-between mb-1">
           <span className="text-xs font-display uppercase tracking-wider text-stone">Ideal</span>
           {bg?.ideal?.length && (
-            <RandomButton label="Random" onPick={() => setDetails({ ideals: randomFrom(bg.ideal?.map(([,t]) => t)) })} />
+            <RandomButton label="Random" onPick={() => setDetails({ ideals: randomFrom(bg.ideal?.map(entry => Array.isArray(entry) ? entry[1] ?? entry[0] : String(entry))) })} />
           )}
         </div>
         <Textarea value={det.ideals ?? ''} onChange={e => setDetails({ ideals: e.target.value })} placeholder="What principle does your character believe in?" />

@@ -1,9 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { characterRepository, generateId, downloadCharacterJson, importCharacterJson } from '../services/character.repository';
 import { computeDerivedStats } from '../services/character.calculator';
 import DataService from '../services/data.service';
 import type { Character } from '../types/character';
+import type { DndArmor, DndClass } from '../types/data';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
@@ -18,16 +19,24 @@ export function HomePage() {
   const [deleteId, setDeleteId]     = useState<string | null>(null);
   const [classNames, setClassNames] = useState<Record<string, string>>({});
   const [raceNames, setRaceNames]   = useState<Record<string, string>>({});
+  const [allArmor, setAllArmor]     = useState<DndArmor[]>([]);
+  const [allClasses, setAllClasses] = useState<DndClass[]>([]);
   const [search, setSearch]         = useState('');
   const [importError, setImportError] = useState<string | null>(null);
+  const [fetchError, setFetchError]   = useState<string | null>(null);
 
   useEffect(() => {
+    let cancelled = false;
     Promise.all([
       characterRepository.list(),
       DataService.getClasses(),
       DataService.getRaces(),
-    ]).then(([chars, classes, races]) => {
+      DataService.getArmor(),
+    ]).then(([chars, classes, races, armor]) => {
+      if (cancelled) return;
       setCharacters(chars);
+      setAllClasses(classes);
+      setAllArmor(armor);
       const cn: Record<string, string> = {};
       classes.forEach(c => { cn[c._key] = c.name; });
       setClassNames(cn);
@@ -35,7 +44,12 @@ export function HomePage() {
       races.forEach(r => { rn[r._key] = r.name; });
       setRaceNames(rn);
       setLoading(false);
+    }).catch(err => {
+      if (cancelled) return;
+      setFetchError(err instanceof Error ? err.message : 'Failed to load data.');
+      setLoading(false);
     });
+    return () => { cancelled = true; };
   }, []);
 
   async function handleDelete(id: string) {
@@ -47,7 +61,7 @@ export function HomePage() {
   async function handleDuplicate(char: Character) {
     const now = new Date().toISOString();
     const copy: Character = {
-      ...char,
+      ...structuredClone(char),
       id:        generateId(),
       name:      `${char.name} (Copy)`,
       createdAt: now,
@@ -78,20 +92,40 @@ export function HomePage() {
       .join(' / ');
   }
 
-  const filtered = characters.filter(c => {
+  const filtered = useMemo(() => characters.filter(c => {
     if (!search.trim()) return true;
     const q = search.toLowerCase();
     const name = c.name.toLowerCase();
     const race = (raceNames[c.race] ?? c.race).toLowerCase();
     const cls  = c.classes.map(cc => (classNames[cc.classKey] ?? cc.classKey).toLowerCase()).join(' ');
     return name.includes(q) || race.includes(q) || cls.includes(q);
-  });
+  }), [characters, search, raceNames, classNames]);
+
+  // Pre-compute derived stats for all filtered characters (avoids re-calc on each render)
+  const derivedMap = useMemo(() => {
+    const map = new Map<string, ReturnType<typeof computeDerivedStats>>();
+    for (const c of filtered) {
+      map.set(c.id, computeDerivedStats(c, allArmor.length ? allArmor : undefined, allClasses.length ? allClasses : undefined));
+    }
+    return map;
+  }, [filtered, allArmor, allClasses]);
 
   if (loading) {
     return (
       <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center">
         <div className="font-display text-stone uppercase tracking-wider text-xs animate-pulse">
           Loading roster…
+        </div>
+      </div>
+    );
+  }
+
+  if (fetchError) {
+    return (
+      <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center">
+        <div className="text-center space-y-2">
+          <div className="font-display text-crimson uppercase tracking-wider text-sm">Failed to load</div>
+          <p className="font-body text-stone text-xs">{fetchError}</p>
         </div>
       </div>
     );
@@ -142,6 +176,7 @@ export function HomePage() {
         <div>
           <input
             type="text"
+            aria-label="Search characters"
             placeholder="Search by name, race, or class…"
             value={search}
             onChange={e => setSearch(e.target.value)}
@@ -169,7 +204,7 @@ export function HomePage() {
       ) : (
         <div className="space-y-3">
           {filtered.map(char => {
-            const derived = computeDerivedStats(char);
+            const derived = derivedMap.get(char.id)!;
             const hp      = char.currentHp ?? derived.maxHp;
             const hpPct   = derived.maxHp > 0 ? (hp / derived.maxHp) * 100 : 0;
 

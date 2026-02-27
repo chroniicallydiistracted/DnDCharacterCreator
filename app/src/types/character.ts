@@ -44,6 +44,7 @@ export interface EquipmentItem {
   quantity: number;
   weight?: number;
   source?: 'class' | 'background' | 'pack' | 'custom';
+  requiresAttunement?: boolean;
 }
 
 export interface Currency {
@@ -95,6 +96,7 @@ export interface CharacterClass {
   subclassKey: string | null;
   hpPerLevel: number[];           // HP gained at each level in this class (length = level)
   fightingStyle?: string;         // chosen fighting style name (if applicable)
+  additionalFightingStyles?: string[]; // extra fighting styles (e.g. Fighter L10)
   expertiseSkills?: Skill[];      // expertise skills for this class
 }
 
@@ -113,8 +115,7 @@ export interface Character {
   chosenCantrips: string[];            // spell _keys
   chosenSpells: string[];              // spell _keys
   equipment: EquipmentItem[];
-  gold: number;
-  currency?: Currency;                 // detailed currency tracker (cp/sp/ep/gp/pp)
+  currency: Currency;                   // detailed currency tracker (cp/sp/ep/gp/pp)
   details: CharacterDetails;
   currentHp?: number;                  // for the sheet tracker
   tempHp?: number;
@@ -137,7 +138,7 @@ export interface Character {
   languages?: string[];               // known languages
   toolProficiencies?: string[];        // tool proficiencies
   saveAdvantages?: string[];           // advantage on saves vs certain conditions/effects (from race/feats)
-  attuned?: string[];                  // names of attuned magic items (max 3)
+  attuned?: number[];                  // equipment indices of attuned magic items (max 3)
   feats?: string[];                    // feat _keys chosen via ASI/feat trades
   favoredEnemies?: string[];           // Ranger favored enemies (2014 PHB)
   favoredTerrains?: string[];          // Ranger favored terrains (Natural Explorer)
@@ -216,6 +217,7 @@ export interface DerivedStats {
   proficiencyBonus: number;
   abilityModifiers: AbilityScores;
   savingThrows: Record<string, number>;
+  saveProficiencies: string[];           // save keys (e.g., 'Str', 'Con') where character is proficient
   skillBonuses: Record<Skill, number>;
   passivePerception: number;
   passiveInvestigation: number;

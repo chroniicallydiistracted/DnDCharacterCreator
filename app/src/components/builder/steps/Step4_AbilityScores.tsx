@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useCharacterStore, resolveFinalScores } from '../../../store/character.store';
 import { abilityMod, isAsiLevel, EXPERTISE_CLASSES } from '../../../services/character.calculator';
 import { parseBackgroundAsi, parseSkillChoice } from '../../../services/skill.parser';
 import type { BackgroundAsiOption } from '../../../services/skill.parser';
 import { ABILITY_NAMES, ABILITY_ABBR, ALL_SKILLS, type AbilityScores, type Skill } from '../../../types/character';
+import type { Character } from '../../../types/character';
 import type { DndBackground, DndClass, DndFeat } from '../../../types/data';
 import DataService from '../../../services/data.service';
+import { evaluatePrereq } from '../../../services/prereq.evaluator';
 import { Divider } from '../../ui/Divider';
 
 const STANDARD_ARRAY: AbilityScores = [15, 14, 13, 12, 10, 8];
@@ -352,10 +354,12 @@ function LevelFeatPanel({
   asiCount,
   chosenFeats,
   onChange,
+  draftCharacter,
 }: {
   asiCount: number;
   chosenFeats: string[];
   onChange: (keys: string[]) => void;
+  draftCharacter: Character;
 }) {
   const [feats, setFeats] = useState<DndFeat[]>([]);
   const [search, setSearch] = useState('');
@@ -366,6 +370,18 @@ function LevelFeatPanel({
   }, []);
 
   const maxFeats = asiCount;
+
+  // Evaluate prerequisites for each feat
+  const featEligibility = useMemo(() => {
+    const map = new Map<string, boolean>();
+    for (const feat of feats) {
+      // Use prereqeval from the data (accessed via index signature)
+      const prereqeval = feat['prereqeval'];
+      map.set(feat._key, evaluatePrereq(prereqeval, draftCharacter));
+    }
+    return map;
+  }, [feats, draftCharacter]);
+
   const filtered = feats.filter(f =>
     !search || f.name.toLowerCase().includes(search.toLowerCase()) ||
     (f.description?.toLowerCase().includes(search.toLowerCase()) ?? false)
@@ -402,7 +418,8 @@ function LevelFeatPanel({
       <div className="max-h-48 overflow-y-auto space-y-1 pr-1">
         {filtered.map(feat => {
           const selected = chosenFeats.includes(feat._key);
-          const disabled = !selected && chosenFeats.length >= maxFeats;
+          const meetsPrereq = featEligibility.get(feat._key) ?? true;
+          const disabled = !selected && (chosenFeats.length >= maxFeats || !meetsPrereq);
           return (
             <button
               key={feat._key}
@@ -412,12 +429,17 @@ function LevelFeatPanel({
                 w-full text-left px-3 py-2 rounded border text-xs transition-colors
                 ${selected
                   ? 'bg-gold/20 border-gold text-dark-ink'
-                  : 'border-gold/20 text-stone hover:border-gold/40 hover:text-dark-ink disabled:opacity-40 disabled:cursor-not-allowed'}
+                  : !meetsPrereq
+                    ? 'border-crimson/30 text-stone/40 cursor-not-allowed opacity-50'
+                    : 'border-gold/20 text-stone hover:border-gold/40 hover:text-dark-ink disabled:opacity-40 disabled:cursor-not-allowed'}
               `}
             >
               <div className="font-display text-sm">{feat.name}</div>
-              {feat.prereqs && (
-                <div className="text-[10px] font-display text-stone/70 mt-0.5">Prereq: {feat.prereqs}</div>
+              {(feat.prerequisite || feat.prereqs) && (
+                <div className={`text-[10px] font-display mt-0.5 ${!meetsPrereq ? 'text-crimson' : 'text-stone/70'}`}>
+                  Prereq: {feat.prerequisite ?? feat.prereqs}
+                  {!meetsPrereq && ' ✗'}
+                </div>
               )}
             </button>
           );
@@ -495,6 +517,19 @@ export function Step4AbilityScores() {
   const [cls, setCls] = useState<DndClass | null>(null);
   const finalScores = resolveFinalScores(draft);
 
+  // Build a partial Character for feat prerequisite evaluation
+  const draftCharacterForPrereq = useMemo<Character>(() => ({
+    id: 'draft', name: draft.name || 'Draft', race: draft.race ?? '',
+    raceVariant: draft.raceVariant ?? null,
+    classes: draft.classKey ? [{ classKey: draft.classKey, level: draft.startingLevel, subclassKey: draft.startingSubclassKey, hpPerLevel: [] }] : [],
+    totalLevel: draft.startingLevel, background: draft.background ?? '',
+    abilityScores: finalScores, abilityScoreMethod: draft.abilityScoreMethod,
+    skills: draft.chosenSkills, expertise: draft.chosenExpertise,
+    chosenCantrips: draft.chosenCantrips, chosenSpells: draft.chosenSpells,
+    equipment: [], currency: { cp: 0, sp: 0, ep: 0, gp: 0, pp: 0 }, details: { alignment: '' },
+    createdAt: '', updatedAt: '',
+  }), [draft.race, draft.raceVariant, draft.classKey, draft.startingLevel, draft.startingSubclassKey, draft.background, finalScores, draft.abilityScoreMethod, draft.chosenSkills, draft.chosenExpertise, draft.chosenCantrips, draft.chosenSpells, draft.name]);
+
   // Load background + class data
   useEffect(() => {
     if (!draft.background) { setBg(null); return; }
@@ -559,7 +594,7 @@ export function Step4AbilityScores() {
       {/* Method panel */}
       <div>
         {draft.abilityScoreMethod === 'standard-array' && (
-          <StandardArrayPanel scores={draft.baseScores} setScores={setBaseScores} />
+          <StandardArrayPanel key="standard-array" scores={draft.baseScores} setScores={setBaseScores} />
         )}
         {draft.abilityScoreMethod === 'point-buy' && (
           <PointBuyPanel scores={draft.baseScores} setScores={setBaseScores} />
@@ -597,7 +632,7 @@ export function Step4AbilityScores() {
             count={skillChoice.count}
             options={skillChoice.options.length ? skillChoice.options : [...ALL_SKILLS]}
             selected={draft.chosenSkills}
-            excluded={bgSkills.filter(s => skillChoice.options.includes(s))}
+            excluded={bgSkills}
             label={cls.skillstxt?.primary ?? `Choose ${skillChoice.count} skills`}
             onChange={setChosenSkills}
           />
@@ -648,6 +683,7 @@ export function Step4AbilityScores() {
               <LevelFeatPanel
                 asiCount={asiCount}
                 chosenFeats={draft.chosenFeats}
+                draftCharacter={draftCharacterForPrereq}
                 onChange={keys => {
                   setChosenFeats(keys);
                   // Reset levelAsi points if we now have fewer ASI events

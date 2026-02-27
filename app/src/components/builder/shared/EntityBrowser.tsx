@@ -10,7 +10,6 @@ interface EntityBrowserProps<T> {
   selectedKey?: string | null;
   onSelect: (item: T) => void;
   getKey:     (item: T) => string;
-  getName:    (item: T) => string;
   filterFn:   (item: T, query: string) => boolean;
   renderCard: (item: T, selected: boolean, onClick: () => void) => React.ReactNode;
   renderDetail?: (item: T) => React.ReactNode;
@@ -66,8 +65,12 @@ export function EntityBrowser<T>({
               return (
                 <div key={key}>
                   {renderCard(item, isSel, () => {
-                    setActiveKey(isActive ? null : key);
-                    onSelect(item);
+                    if (isActive) {
+                      setActiveKey(null); // collapse only, don't fire onSelect
+                    } else {
+                      setActiveKey(key);
+                      onSelect(item);
+                    }
                   })}
                 </div>
               );

@@ -157,11 +157,19 @@ export interface DndBackgroundVariant {
   _key: string;
   name: string;
   _parentBackground?: string;
+  _variantKey?: string;
   equipleft?: [string, string | number, string | number][];
   equipright?: [string, string | number, string | number][];
   feature?: string;
   toolProfs?: (string | [string, string | number])[];
+  languageProfs?: (string | number)[];
+  skills?: string[];
+  skillstxt?: string;
+  gold?: number;
+  lifestyle?: string;
   extra?: string[];
+  source?: [string, number][];
+  regExpSearch?: SerializedRegExp;
 }
 
 // ─── Spell ────────────────────────────────────────────────────────────────────
@@ -280,4 +288,118 @@ export interface DndWarlockInvocation {
   usages?: number;
   recovery?: string;
   action?: ([string] | [string, string])[];
+}
+
+// ─── Ammo ─────────────────────────────────────────────────────────────────────
+export interface DndAmmo {
+  _key: string;
+  name: string;
+  source: [string, number][];
+  weight?: number;
+  icon?: string;
+  infoname?: string;
+  invName?: string;
+  amount?: number;
+  alternatives?: string[];
+  defaultExcluded?: boolean;
+}
+
+// ─── Tool ─────────────────────────────────────────────────────────────────────
+export interface DndTool {
+  _key: string;
+  name: string;
+  source?: [string, number][];
+  weight?: number;
+  type?: string;
+  infoname?: string;
+  amount?: number;
+}
+
+// ─── Psionic ──────────────────────────────────────────────────────────────────
+export interface DndPsionic {
+  _key: string;
+  name: string;
+  nameShort?: string;
+  classes?: string[];
+  source: [string, number][];
+  psionic?: boolean;
+  level?: number;
+  school?: string;
+  time?: string;
+  timeFull?: string;
+  range?: string;
+  duration?: string;
+  components?: string;
+  save?: string;
+  description?: string;
+  descriptionFull?: string;
+  descriptionCantripDie?: string;
+  descriptionMetric?: string;
+  dependencies?: string[];
+  firstCol?: string;
+}
+
+// ─── Companion ────────────────────────────────────────────────────────────────
+export interface DndCompanion {
+  _key: string;
+  name: string;
+  nameTooltip?: string;
+  nameOrigin?: string;
+  nameMenu?: string;
+  source: [string, number][];
+  includeCheck?: MpmbValue;
+  action?: ([string] | [string, string])[];
+  notes?: string;
+  attributesAdd?: MpmbValue;
+  attributesChange?: MpmbValue;
+  eval?: MpmbValue;
+  changeeval?: MpmbValue;
+}
+
+// ─── Creature ─────────────────────────────────────────────────────────────────
+export interface DndCreature {
+  _key: string;
+  name: string;
+  nameAlt?: string[];
+  source: [string, number][];
+  size?: number;
+  type?: string;
+  subtype?: string;
+  alignment?: string;
+  ac?: number;
+  hp?: number;
+  hd?: number[];
+  hdLinked?: string[];
+  speed?: string;
+  scores?: number[];
+  saves?: string;
+  skills?: string;
+  damage_resistances?: string;
+  damage_immunities?: string;
+  damage_vulnerabilities?: string;
+  condition_immunities?: string;
+  senses?: string;
+  languages?: string;
+  challengeRating?: string;
+  proficiencyBonus?: number;
+  proficiencyBonusLinked?: boolean;
+  attacksAction?: number;
+  attacks?: MpmbValue[];
+  traits?: MpmbValue[];
+  actions?: MpmbValue[];
+  features?: MpmbValue[];
+  notes?: string;
+  header?: string;
+  companion?: string;
+  companionApply?: string;
+  passivePerception?: number;
+  wildshapeString?: string;
+  variant?: string[];
+  isSummon?: boolean;
+  spell?: MpmbValue;
+  addMod?: MpmbValue[];
+  calcChanges?: MpmbValue;
+  eval?: MpmbValue;
+  removeeval?: MpmbValue;
+  regExpSearch?: MpmbValue;
 }

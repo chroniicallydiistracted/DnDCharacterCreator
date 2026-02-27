@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Character, DerivedStats } from '../../../types/character';
 import { ABILITY_ABBR, ABILITY_NAMES, ALL_SKILLS, SKILL_ABILITY } from '../../../types/character';
 
@@ -8,7 +9,7 @@ interface Props {
 
 const SAVE_ABBR = ['Str', 'Dex', 'Con', 'Int', 'Wis', 'Cha'];
 
-export function StatsPanel({ char, derived }: Props) {
+export const StatsPanel = React.memo(function StatsPanel({ char, derived }: Props) {
   const mods = derived.abilityModifiers;
 
   return (
@@ -48,7 +49,7 @@ export function StatsPanel({ char, derived }: Props) {
         <div className="surface-parchment rounded divide-y divide-gold/10">
           {SAVE_ABBR.map((abbr, i) => {
             const val = derived.savingThrows[abbr] ?? mods[i];
-            const hasProf = (derived.savingThrows[abbr] ?? mods[i]) > mods[i];
+            const hasProf = derived.saveProficiencies.includes(abbr);
             return (
               <div key={abbr} className="flex items-center gap-2 px-3 py-1.5">
                 <div className={`w-2 h-2 rounded-full flex-shrink-0 ${hasProf ? 'bg-gold' : 'bg-gold/30'}`} />
@@ -124,7 +125,7 @@ export function StatsPanel({ char, derived }: Props) {
       </div>
     </div>
   );
-}
+});
 
 function ProfDot({ prof }: { prof: 'none' | 'proficient' | 'expertise' }) {
   return (

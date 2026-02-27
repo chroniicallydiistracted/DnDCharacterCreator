@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spinner } from './Spinner';
 
 type Variant = 'primary' | 'secondary' | 'ghost' | 'danger';
 type Size    = 'sm' | 'md' | 'lg';
@@ -54,7 +55,7 @@ const sizeClasses: Record<Size, string> = {
   lg:  'px-7 py-3 text-base gap-2.5',
 };
 
-export function Button({
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button({
   variant = 'primary',
   size    = 'md',
   loading = false,
@@ -64,9 +65,10 @@ export function Button({
   className = '',
   disabled,
   ...props
-}: ButtonProps) {
+}, ref) {
   return (
     <button
+      ref={ref}
       className={`
         inline-flex items-center justify-center
         rounded transition-all duration-150
@@ -78,14 +80,9 @@ export function Button({
       disabled={disabled || loading}
       {...props}
     >
-      {loading ? (
-        <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
-          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
-        </svg>
-      ) : icon}
+      {loading ? <Spinner size="sm" /> : icon}
       {children}
       {!loading && iconRight}
     </button>
   );
-}
+});

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import type { Character, AbilityScores, Skill } from '../../types/character';
 import type { DndClass, DndSubclass, DndSpell, DndFeat, DndWarlockInvocation } from '../../types/data';
 import DataService from '../../services/data.service';
-import { isAsiLevel, SUBCLASS_LEVEL, abilityMod, meetsMulticlassPrereq, MULTICLASS_PREREQS } from '../../services/character.calculator';
+import { isAsiLevel, SUBCLASS_LEVEL, abilityMod, meetsMulticlassPrereq, MULTICLASS_PREREQS, maxSpellLevelForClass } from '../../services/character.calculator';
 import { ABILITY_ABBR, ALL_SKILLS } from '../../types/character';
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
@@ -158,8 +158,15 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
   // Fighting Style step
   const fightingStylesForClass = FIGHTING_STYLES_BY_CLASS[targetClassKey] ?? [];
   const styleGainLevels = FIGHTING_STYLE_GAINS[targetClassKey] ?? [];
-  const gainsNewFightingStyle = styleGainLevels.includes(newClassLevel) && !existingEntry?.fightingStyle;
-  const needsFightingStyleStep = gainsNewFightingStyle && fightingStylesForClass.length > 0;
+  // Allow gaining a new fighting style if this level grants one (e.g., Fighter 1 AND Fighter 10)
+  const gainsNewFightingStyle = styleGainLevels.includes(newClassLevel);
+  // Filter out already-chosen styles so the character can't pick duplicates
+  const existingStyles = new Set<string>([
+    ...(existingEntry?.fightingStyle ? [existingEntry.fightingStyle] : []),
+    ...(existingEntry?.additionalFightingStyles ?? []),
+  ]);
+  const availableFightingStyles = fightingStylesForClass.filter(s => !existingStyles.has(s));
+  const needsFightingStyleStep = gainsNewFightingStyle && availableFightingStyles.length > 0;
 
   // Expertise step
   const expertiseGains = EXPERTISE_GAINS[targetClassKey] ?? [];
@@ -195,11 +202,10 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
   const availableLanguages = COMMON_LANGUAGES.filter(l => !alreadyKnownLanguages.has(l));
   const availableTools = COMMON_TOOLS.filter(t => !alreadyKnownTools.has(t));
 
-  // Ranger (2014 PHB) Favored Enemy / Natural Explorer step
-  // Note: Only applies to ranger_2014, not the 2024 Ranger
-  const isRanger2014 = targetClassKey === 'ranger_2014';
-  const gainsNewFavoredEnemy = isRanger2014 && FAVORED_ENEMY_LEVELS.includes(newClassLevel);
-  const gainsNewFavoredTerrain = isRanger2014 && FAVORED_TERRAIN_LEVELS.includes(newClassLevel);
+  // Ranger Favored Enemy / Natural Explorer step
+  const isRanger = targetClassKey === 'ranger';
+  const gainsNewFavoredEnemy = isRanger && FAVORED_ENEMY_LEVELS.includes(newClassLevel);
+  const gainsNewFavoredTerrain = isRanger && FAVORED_TERRAIN_LEVELS.includes(newClassLevel);
   const needsRangerChoicesStep = gainsNewFavoredEnemy || gainsNewFavoredTerrain;
   const existingFavoredEnemies = new Set(char.favoredEnemies ?? []);
   const existingFavoredTerrains = new Set(char.favoredTerrains ?? []);
@@ -258,7 +264,7 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
   }
 
   function rollHitDie(): number {
-    return Math.floor(Math.random() * hd) + 1 + conMod;
+    return Math.max(1, Math.floor(Math.random() * hd) + 1 + conMod);
   }
 
   function handleConfirm() {
@@ -268,23 +274,34 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
       ? [...char.classes, { classKey: targetClassKey, level: 1, subclassKey: chosenSubclass || null, hpPerLevel: [Math.max(1, hpGain)], fightingStyle: chosenFightingStyle || undefined }]
       : char.classes.map(cc => {
           if (cc.classKey !== targetClassKey) return cc;
+          // If already has a fighting style, store new one in additionalFightingStyles
+          const updatedAdditionalStyles = (chosenFightingStyle && cc.fightingStyle)
+            ? [...(cc.additionalFightingStyles ?? []), chosenFightingStyle]
+            : cc.additionalFightingStyles;
           return {
             ...cc,
             level: cc.level + 1,
             subclassKey: chosenSubclass || cc.subclassKey,
             hpPerLevel: [...cc.hpPerLevel, Math.max(1, hpGain)],
             fightingStyle: chosenFightingStyle || cc.fightingStyle,
+            additionalFightingStyles: updatedAdditionalStyles,
           };
         });
 
     let updatedScores = [...char.abilityScores] as AbilityScores;
     if (atAsiLevel && asiMode === 'asi') updatedScores = asiScores;
 
+    // If feat chosen, append to character feats
+    const updatedFeats = (atAsiLevel && asiMode === 'feat' && chosenFeat)
+      ? [...(char.feats ?? []), chosenFeat]
+      : (char.feats ?? []);
+
     onComplete({
       ...char,
       classes:           updatedClasses,
       totalLevel:        updatedClasses.reduce((s, c) => s + c.level, 0),
       abilityScores:     updatedScores,
+      feats:             updatedFeats,
       chosenCantrips:    [...char.chosenCantrips, ...newCantrips],
       chosenSpells:      [...char.chosenSpells,   ...newSpells],
       chosenInvocations: [...(char.chosenInvocations ?? []), ...newInvocations],
@@ -305,7 +322,7 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
     (spellSearch === '' || s.name.toLowerCase().includes(spellSearch.toLowerCase()))
   );
   const filteredSpells = classSpells.filter(s =>
-    s.level > 0 && s.level <= Math.ceil(newClassLevel / 2) && !alreadyKnown.has(s._key) &&
+    s.level > 0 && s.level <= maxSpellLevelForClass(targetClassKey, existingEntry?.subclassKey ?? chosenSubclass, newClassLevel) && !alreadyKnown.has(s._key) &&
     (spellSearch === '' || s.name.toLowerCase().includes(spellSearch.toLowerCase()))
   );
 
@@ -418,7 +435,10 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
                   {allClasses
                     .filter(c => !char.classes.some(cc => cc.classKey === c._key))
                     .map(c => {
-                      const meetsReq = meetsMulticlassPrereq(c._key, char.abilityScores);
+                      const meetsTargetReq = meetsMulticlassPrereq(c._key, char.abilityScores);
+                      // D&D 5e also requires meeting prerequisites for EACH existing class
+                      const meetsSourceReqs = char.classes.every(cc => meetsMulticlassPrereq(cc.classKey, char.abilityScores));
+                      const meetsReq = meetsTargetReq && meetsSourceReqs;
                       const req = MULTICLASS_PREREQS[c._key];
                       const reqText = req
                         ? Object.entries(req).map(([ab, min]) => `${ab} ${min}+`).join(', ')
@@ -703,7 +723,7 @@ export function LevelUpWizard({ char, onComplete, onCancel }: Props) {
               Choose your Fighting Style for <strong>{cls?.name ?? targetClassKey}</strong>:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-64 overflow-y-auto pr-1">
-              {fightingStylesForClass.map(style => (
+              {availableFightingStyles.map(style => (
                 <button
                   key={style}
                   onClick={() => setChosenFightingStyle(style)}

@@ -14,7 +14,7 @@
  * - Spellcasting bonuses
  */
 
-import type { Character, Skill } from '../types/character';
+import type { Character, Skill, AbilityScores } from '../types/character';
 import type {
   ClassFeature, DndClass, DndSubclass, DndRace, DndBackground, DndFeat,
   MpmbValue
@@ -30,6 +30,7 @@ import type {
   RecoveryType,
 } from '../types/engine';
 import { registerCalcChanges, unregisterCalcChanges } from './calcChanges.evaluator';
+import { abilityMod, profBonus } from './character.calculator';
 
 // ─── Create Empty Trackers ───────────────────────────────────────────────────
 
@@ -200,7 +201,7 @@ export function processFeatureAttributes(
     
     // ─── Limited Uses ──────────────────────────────────────────────────────
     if ('usages' in feature && feature.usages !== undefined) {
-      processUsages(feature, sourceName, sourceType, level, ctx.resources, true);
+      processUsages(feature, sourceName, sourceType, level, ctx.resources, ctx.character.abilityScores, ctx.character.totalLevel, true);
     }
     
     // ─── CalcChanges ───────────────────────────────────────────────────────
@@ -510,12 +511,14 @@ function processUsages(
   sourceType: 'class' | 'subclass' | 'race' | 'background' | 'feat' | 'item',
   level: number,
   resources: Map<string, TrackedResource>,
+  abilityScores: AbilityScores,
+  totalLevel: number,
   addIt: boolean
 ): void {
   const resourceKey = `${sourceType}|${sourceName}|${feature.name}`;
   
   if (addIt) {
-    const maxUses = resolveUsages(feature.usages, level);
+    const maxUses = resolveUsages(feature.usages, level, abilityScores, totalLevel);
     const recovery = parseRecovery(feature.recovery);
     
     resources.set(resourceKey, {
@@ -561,9 +564,21 @@ function parseRecovery(recovery: string | undefined): RecoveryType {
   return 'special';
 }
 
+/** Ability name → index in AbilityScores tuple [Str, Dex, Con, Int, Wis, Cha] */
+const ABILITY_INDEX: Record<string, number> = {
+  str: 0, strength: 0,
+  dex: 1, dexterity: 1,
+  con: 2, constitution: 2,
+  int: 3, intelligence: 3,
+  wis: 4, wisdom: 4,
+  cha: 5, charisma: 5,
+};
+
 function resolveUsages(
   usages: number | number[] | string | undefined,
-  level: number
+  level: number,
+  abilityScores: AbilityScores,
+  totalLevel: number
 ): number | null {
   if (usages === undefined) return null;
   if (typeof usages === 'number') return usages;
@@ -571,7 +586,42 @@ function resolveUsages(
     const idx = Math.min(level, usages.length) - 1;
     return usages[idx] ?? null;
   }
-  // String usages (e.g., "Wisdom modifier") need runtime evaluation
+
+  // String usages — parse ability modifier, proficiency bonus, or numeric strings
+  const s = usages.toLowerCase().trim();
+
+  // Pure numeric string (e.g. "3")
+  const num = Number(s);
+  if (!isNaN(num) && s !== '') return num;
+
+  // Multiplier prefix, e.g. "2× Int mod per "
+  let multiplier = 1;
+  const multMatch = s.match(/^(\d+)\s*[×x]\s*/);
+  if (multMatch) {
+    multiplier = parseInt(multMatch[1], 10);
+  }
+  const rest = multMatch ? s.slice(multMatch[0].length) : s;
+
+  // Ability modifier patterns: "Wisdom modifier per ", "Wis mod per "
+  for (const [key, index] of Object.entries(ABILITY_INDEX)) {
+    if (rest.startsWith(key)) {
+      const mod = abilityMod(abilityScores[index]);
+      return Math.max(1, mod * multiplier);
+    }
+  }
+
+  // Proficiency bonus patterns
+  if (rest.includes('half proficiency') || rest.includes('half prof')) {
+    return Math.max(1, Math.ceil(profBonus(totalLevel) / 2) * multiplier);
+  }
+  if (rest.includes('proficiency') || rest.includes('prof b') || rest.includes('prof bonus')) {
+    // "Proficiency Bonus × 2 per " — check for trailing multiplier too
+    const trailingMult = rest.match(/[×x]\s*(\d+)/);
+    const pbMult = trailingMult ? parseInt(trailingMult[1], 10) : 1;
+    return Math.max(1, profBonus(totalLevel) * multiplier * pbMult);
+  }
+
+  // Unresolvable string (dice expressions, special text) — store formula, show null
   return null;
 }
 

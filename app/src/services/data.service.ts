@@ -1,4 +1,4 @@
-import type { DndClass, DndSubclass, DndRace, DndRaceVariant, DndBackground, DndBackgroundFeature, DndBackgroundVariant, DndSpell, DndFeat, DndWeapon, DndArmor, DndPack, DndGear, DndSource, DndMagicItem, DndWarlockInvocation } from '../types/data';
+import type { DndClass, DndSubclass, DndRace, DndRaceVariant, DndBackground, DndBackgroundFeature, DndBackgroundVariant, DndSpell, DndFeat, DndWeapon, DndArmor, DndPack, DndGear, DndSource, DndMagicItem, DndWarlockInvocation, DndAmmo, DndTool, DndPsionic, DndCompanion, DndCreature } from '../types/data';
 
 type DataKey =
   | 'classes' | 'subclasses' | 'races' | 'race_variants'
@@ -19,16 +19,16 @@ type DataMap = {
   feats:                DndFeat[];
   weapons:              DndWeapon[];
   armor:                DndArmor[];
-  ammo:                 unknown[];
-  tools:                unknown[];
+  ammo:                 DndAmmo[];
+  tools:                DndTool[];
   gear:                 DndGear[];
   packs:                DndPack[];
   magic_items:          DndMagicItem[];
   sources:              DndSource[];
   warlock_invocations:  DndWarlockInvocation[];
-  psionics:             unknown[];
-  companions:           unknown[];
-  creatures:            unknown[];
+  psionics:             DndPsionic[];
+  companions:           DndCompanion[];
+  creatures:            DndCreature[];
 };
 
 const cache = new Map<DataKey, unknown>();

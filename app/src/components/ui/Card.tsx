@@ -12,9 +12,20 @@ interface CardProps {
 
 export function Card({ children, className = '', onClick, selected, hoverable, header, footer }: CardProps) {
   const interactive = onClick || hoverable;
+
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if (onClick && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      onClick();
+    }
+  }
+
   return (
     <div
       onClick={onClick}
+      onKeyDown={onClick ? handleKeyDown : undefined}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
       className={`
         rounded border-2 overflow-hidden
         bg-parchment-texture surface-parchment

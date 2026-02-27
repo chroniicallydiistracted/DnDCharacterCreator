@@ -95,7 +95,9 @@ function computeSpellSlots(char: Character): number[] {
       warlockLevel = cc.level;
       continue;
     }
-    const tier = CASTER_TIERS[cc.classKey] ?? 0;
+    // Check class key first, then subclass key (for third-casters like Eldritch Knight / Arcane Trickster)
+    const tier = CASTER_TIERS[cc.classKey]
+      ?? (cc.subclassKey ? (CASTER_TIERS[cc.subclassKey] ?? 0) : 0);
     combinedLevel += Math.floor(cc.level * tier);
   }
 
@@ -119,6 +121,39 @@ const CASTING_ABILITY: Record<string, number> = {
   bard: 5, cleric: 4, druid: 4, sorcerer: 5, warlock: 5, wizard: 3,
   artificer: 3, paladin: 5, ranger: 4, psion: 3,
 };
+
+/**
+ * Compute the maximum spell level accessible for a class at a given class level.
+ * Full casters: ceil(level / 2), capped at 9
+ * Half casters (paladin, ranger, artificer): ceil(level / 4) + (level >= 2 ? 0 : -1), up to 5
+ * Third casters (eldritch knight, arcane trickster): ceil(level / 7) up to 4
+ * Warlock: uses Pact Magic table
+ */
+export function maxSpellLevelForClass(classKey: string, subclassKey: string | null | undefined, classLevel: number): number {
+  // Warlock uses Pact Magic table
+  if (classKey === 'warlock') {
+    if (classLevel <= 0) return 0;
+    const PACT_LEVELS = [1,1,2,2,3,3,4,4,5,5,5,5,5,5,5,5,5,5,5,5];
+    return PACT_LEVELS[Math.min(classLevel, 20) - 1];
+  }
+
+  // Determine caster tier
+  const tier = CASTER_TIERS[classKey]
+    ?? (subclassKey ? (CASTER_TIERS[subclassKey] ?? 0) : 0);
+
+  if (tier <= 0) return 0;
+
+  // Compute effective caster level
+  const casterLevel = Math.floor(classLevel * tier);
+  if (casterLevel <= 0) return 0;
+
+  // Use the multiclass slot table to find max spell level with slots
+  const row = MULTICLASS_SLOTS[Math.min(casterLevel, 20)];
+  for (let i = row.length - 1; i >= 0; i--) {
+    if (row[i] > 0) return i + 1;
+  }
+  return 0;
+}
 
 // ─── Multiclass prerequisite ability scores ───────────────────────────────────
 export const MULTICLASS_PREREQS: Record<string, Partial<Record<string, number>>> = {
@@ -238,6 +273,8 @@ export function computeDerivedStats(
   char: Character,
   allArmor?: DndArmor[],
   allClasses?: DndClass[],
+  /** Skill names (lowercase) that have advantage — from engine proficiencies.advantages */
+  skillAdvantages?: Set<string>,
 ): DerivedStats {
   const scores = char.abilityScores;
   const mods   = scores.map(abilityMod) as AbilityScores;
@@ -249,8 +286,11 @@ export function computeDerivedStats(
     (CLASS_SAVES[cc.classKey] ?? []).forEach(s => allClassSaves.add(s));
   }
   const savingThrows: Record<string, number> = {};
+  const saveProficiencies: string[] = [];
   ['Str','Dex','Con','Int','Wis','Cha'].forEach((s, i) => {
-    savingThrows[s] = mods[i] + (allClassSaves.has(s) ? pb : 0);
+    const isProf = allClassSaves.has(s);
+    savingThrows[s] = mods[i] + (isProf ? pb : 0);
+    if (isProf) saveProficiencies.push(s);
   });
 
   // Determine special abilities from class levels
@@ -358,14 +398,25 @@ export function computeDerivedStats(
   // Carrying capacity = STR score × 15
   const carryingCapacity = scores[0] * 15;
 
+  // Passive scores: 10 + skill bonus + 5 for advantage, −5 for disadvantage (PHB p.175)
+  // Advantage sources: engine proficiencies.advantages map (e.g. Observant feat, racial traits)
+  // Disadvantage sources: conditions (Poisoned) or exhaustion L1+
+  function passiveBonus(skill: string): number {
+    const hasAdvantage = skillAdvantages?.has(skill.toLowerCase()) ?? false;
+    const advBonus = hasAdvantage ? 5 : 0;
+    const disadvBonus = disadvantageOnChecks ? -5 : 0;
+    return advBonus + disadvBonus;
+  }
+
   return {
     proficiencyBonus:      pb,
     abilityModifiers:      mods,
     savingThrows,
+    saveProficiencies,
     skillBonuses,
-    passivePerception:     10 + skillBonuses.Perception,
-    passiveInvestigation:  10 + skillBonuses.Investigation,
-    passiveInsight:        10 + skillBonuses.Insight,
+    passivePerception:     10 + skillBonuses.Perception + passiveBonus('perception'),
+    passiveInvestigation:  10 + skillBonuses.Investigation + passiveBonus('investigation'),
+    passiveInsight:        10 + skillBonuses.Insight + passiveBonus('insight'),
     maxHp:                 effectiveMaxHp,
     currentHp:             char.currentHp ?? effectiveMaxHp,
     initiative:            mods[1],

@@ -114,23 +114,36 @@ export function CharacterSheet({ character: initial }: Props) {
   const { 
     engine, 
     isReady: engineReady,
-    activeFeatures: _activeFeatures,
-    resources: _resources,
-    actions: _actions,
-    calculateAttack: _calculateAttack,
+    warnings: engineWarnings,
+    activeFeatures: engineFeatures,
+    resources: engineResources,
+    actions: engineActions,
+    calculateAttack: engineCalculateAttack,
     calculateHp,
     calculateAc,
-    getSpellStats: _getSpellStats,
-    shortRest: _engineShortRest,
-    longRest: _engineLongRest,
+    getSpellStats: engineGetSpellStats,
+    shortRest: engineShortRest,
+    longRest: engineLongRest,
   } = useCharacterEngine(char, dataBundle);
 
-  // Silence unused vars (will be used progressively as panels are enhanced)
-  void _activeFeatures; void _resources; void _actions; void _calculateAttack; void _getSpellStats; void _engineShortRest; void _engineLongRest;
+  // Extract skill advantage set from engine proficiency tracker
+  const skillAdvantages = useMemo<Set<string>>(() => {
+    if (!engine) return new Set();
+    const adv = new Set<string>();
+    for (const key of engine.proficiencies.advantages.keys()) {
+      adv.add(key.toLowerCase());
+    }
+    return adv;
+  }, [engine]);
 
   // Use engine-computed values when available, fall back to legacy computation
   const derived = useMemo(() => {
-    const legacy = computeDerivedStats(char, allArmor.length ? allArmor : undefined, allClasses.length ? allClasses : undefined);
+    const legacy = computeDerivedStats(
+      char,
+      allArmor.length ? allArmor : undefined,
+      allClasses.length ? allClasses : undefined,
+      skillAdvantages.size > 0 ? skillAdvantages : undefined,
+    );
     
     // If engine is ready, enhance with engine-computed values
     if (engineReady && engine && calculateHp && calculateAc) {
@@ -144,12 +157,11 @@ export function CharacterSheet({ character: initial }: Props) {
         ...legacy,
         maxHp: hpResult.totalHp,
         ac: acResult.ac,
-        // Keep other legacy values for now, can progressively enhance
       };
     }
     
     return legacy;
-  }, [char, allArmor, allClasses, engineReady, engine, calculateHp, calculateAc]);
+  }, [char, allArmor, allClasses, engineReady, engine, calculateHp, calculateAc, skillAdvantages]);
 
   // Load display names
   useEffect(() => {
@@ -179,10 +191,27 @@ export function CharacterSheet({ character: initial }: Props) {
   }
 
   function adjustHp(delta: number) {
-    setChar(prev => ({
-      ...prev,
-      currentHp: Math.min(derived.maxHp, Math.max(0, (prev.currentHp ?? derived.maxHp) + delta)),
-    }));
+    setChar(prev => {
+      const currentHp = prev.currentHp ?? derived.maxHp;
+      const tempHp = prev.tempHp ?? 0;
+
+      if (delta < 0) {
+        // Damage: temp HP absorbs first (PHB p.198)
+        const damage = Math.abs(delta);
+        const tempAbsorbed = Math.min(tempHp, damage);
+        const remainingDamage = damage - tempAbsorbed;
+        return {
+          ...prev,
+          tempHp: tempHp - tempAbsorbed,
+          currentHp: Math.max(0, currentHp - remainingDamage),
+        };
+      }
+      // Healing: only affects real HP
+      return {
+        ...prev,
+        currentHp: Math.min(derived.maxHp, currentHp + delta),
+      };
+    });
   }
 
   function commitHpInput() {
@@ -268,13 +297,20 @@ export function CharacterSheet({ character: initial }: Props) {
     }
 
     // Warlock pact magic slots reset on short rest
+    // Only restore pact slot count, not all slots at that level (multiclass safety)
     const warlockEntry = char.classes.find(cc => cc.classKey === 'warlock');
     let updatedSlotsUsed = char.slotsUsed ? [...char.slotsUsed] : Array(10).fill(0);
     if (warlockEntry && warlockEntry.level > 0) {
       const PACT_LEVELS = [1,1,2,2,3,3,4,4,5,5,5,5,5,5,5,5,5,5,5,5];
+      const PACT_SLOTS  = [1,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4];
       const pactLevel = PACT_LEVELS[Math.min(warlockEntry.level, 20) - 1];
-      updatedSlotsUsed[pactLevel] = 0;
+      const pactCount = PACT_SLOTS[Math.min(warlockEntry.level, 20) - 1];
+      // Reduce usage at pact level by pact slot count (don't go below 0)
+      updatedSlotsUsed[pactLevel] = Math.max(0, updatedSlotsUsed[pactLevel] - pactCount);
     }
+
+    // Also notify engine so its internal resource tracker stays in sync
+    engineShortRest();
 
     setChar(prev => ({ ...prev, featureUses: updatedUses, slotsUsed: updatedSlotsUsed }));
   }
@@ -299,6 +335,9 @@ export function CharacterSheet({ character: initial }: Props) {
       const restore = Math.max(1, Math.ceil(cc.level / 2));
       return Math.max(0, used - restore);
     });
+
+    // Also notify engine so its internal resource tracker stays in sync
+    engineLongRest();
 
     setChar(prev => ({
       ...prev,
@@ -697,6 +736,15 @@ export function CharacterSheet({ character: initial }: Props) {
         </div>
       </div>
 
+      {/* Engine warnings */}
+      {engineWarnings.length > 0 && (
+        <div className="max-w-5xl mx-auto w-full px-4 pt-2">
+          <div className="bg-crimson/10 border border-crimson/30 rounded px-3 py-2 text-xs font-body text-crimson space-y-0.5">
+            {engineWarnings.map((w, i) => <div key={i}>⚠ {w}</div>)}
+          </div>
+        </div>
+      )}
+
       {/* ── Body ────────────────────────────────────────────── */}
       <div className="flex-1 max-w-5xl mx-auto w-full px-4 py-4">
         <div className="flex gap-4 h-full">
@@ -730,9 +778,9 @@ export function CharacterSheet({ character: initial }: Props) {
 
             {/* Panel content */}
             <div className="flex-1 overflow-y-auto animate-fade-in">
-              {tab === 'features'  && <FeaturesPanel char={char} onUpdate={updateChar} />}
-              {tab === 'attacks'   && <AttacksPanel char={char} derived={derived} onUpdate={updateChar} />}
-              {tab === 'spells'    && <SpellsPanel char={char} derived={derived} onUpdate={updateChar} />}
+              {tab === 'features'  && <FeaturesPanel char={char} onUpdate={updateChar} engineResources={engineResources} engineFeatures={engineFeatures} engineActions={engineActions} />}
+              {tab === 'attacks'   && <AttacksPanel char={char} derived={derived} onUpdate={updateChar} engineCalculateAttack={engineCalculateAttack} />}
+              {tab === 'spells'    && <SpellsPanel char={char} derived={derived} onUpdate={updateChar} engineGetSpellStats={engineGetSpellStats} />}
               {tab === 'equipment' && <EquipmentPanel char={char} derived={derived} onUpdate={updateChar} />}
               {tab === 'notes'     && <NotesPanel char={char} onUpdate={updateChar} />}
             </div>

@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { Character } from '../../../types/character';
 import type { ClassFeature, DndBackgroundFeature, DndFeat } from '../../../types/data';
+import type { TrackedResource, ActiveFeature, TrackedAction } from '../../../types/engine';
 import DataService from '../../../services/data.service';
 import { resolveMaxUses } from '../../../services/character.calculator';
 import { Spinner } from '../../ui/Spinner';
@@ -9,6 +10,12 @@ import { Divider } from '../../ui/Divider';
 interface Props {
   char: Character;
   onUpdate: (updates: Partial<Character>) => void;
+  /** Engine-resolved resources with calcChanges-adjusted max uses */
+  engineResources?: TrackedResource[];
+  /** Engine-resolved active features for supplementary descriptions */
+  engineFeatures?: ActiveFeature[];
+  /** Engine-resolved available actions */
+  engineActions?: TrackedAction[];
 }
 
 interface FeatureGroup {
@@ -27,7 +34,7 @@ function recoveryLabel(recovery: string | string[] | undefined): string {
   return 'long rest';
 }
 
-export function FeaturesPanel({ char, onUpdate }: Props) {
+export const FeaturesPanel = React.memo(function FeaturesPanel({ char, onUpdate, engineResources, engineFeatures, engineActions }: Props) {
   const [loading, setLoading] = useState(true);
   const [groups, setGroups]   = useState<FeatureGroup[]>([]);
   const [open, setOpen]       = useState<Set<string>>(new Set());
@@ -166,6 +173,8 @@ export function FeaturesPanel({ char, onUpdate }: Props) {
     : druidLevel >= 4 ? 'No fly speed'
     : druidLevel >= 2 ? 'No swim speed, no fly speed'
     : '';
+  const wildShapeUses = druidLevel >= 20 ? '∞' : '2';
+  const wildShapeRecovery = druidLevel >= 20 ? 'unlimited' : 'short rest';
 
   if (loading) return <div className="flex justify-center py-8"><Spinner /></div>;
 
@@ -177,7 +186,7 @@ export function FeaturesPanel({ char, onUpdate }: Props) {
           <span className="text-xs font-display text-gold uppercase tracking-wider flex-shrink-0">Wild Shape</span>
           <span className="font-display text-dark-ink text-sm">Max CR {wildShapeCR}</span>
           <span className="text-[10px] font-body text-stone italic">{wildShapeNote}</span>
-          <span className="ml-auto text-[9px] font-display text-stone uppercase tracking-wider">2×/short rest</span>
+          <span className="ml-auto text-[9px] font-display text-stone uppercase tracking-wider">{wildShapeUses}×/{wildShapeRecovery}</span>
         </div>
       )}
 
@@ -285,9 +294,10 @@ export function FeaturesPanel({ char, onUpdate }: Props) {
               const isOpen = open.has(key);
               const desc   = feature.descriptionFull ?? feature.description ?? '';
 
-              // Resource tracker
+              // Resource tracker — prefer engine-resolved max uses when available
               const featureKey = `${group.classKey}|${name}`;
-              const maxUses    = resolveMaxUses(feature.usages, group.classLevel);
+              const engineRes  = engineResources?.find(r => r.id === featureKey);
+              const maxUses    = engineRes?.maxUses ?? resolveMaxUses(feature.usages, group.classLevel);
               const remaining  = maxUses != null
                 ? (char.featureUses?.[featureKey] ?? maxUses)
                 : null;
@@ -358,6 +368,34 @@ export function FeaturesPanel({ char, onUpdate }: Props) {
                       <p className="text-xs font-body text-dark-ink leading-relaxed whitespace-pre-wrap">
                         {desc}
                       </p>
+                      {/* Engine-resolved additional text from calcChanges hooks */}
+                      {(() => {
+                        const engineFeat = engineFeatures?.find(f => f.key === featureKey);
+                        if (engineFeat?.additional) {
+                          return (
+                            <p className="text-[10px] font-body text-gold italic mt-1">
+                              {engineFeat.additional}
+                            </p>
+                          );
+                        }
+                        return null;
+                      })()}
+                      {/* Engine-resolved actions for this feature */}
+                      {(() => {
+                        const relatedActions = engineActions?.filter(a => a.source === name || a.usesResource === featureKey);
+                        if (relatedActions && relatedActions.length > 0) {
+                          return (
+                            <div className="flex flex-wrap gap-1 mt-1">
+                              {relatedActions.map((a, ai) => (
+                                <span key={ai} className="text-[9px] font-display uppercase tracking-wider text-gold bg-gold/10 border border-gold/30 rounded px-1.5 py-0.5">
+                                  {a.type}: {a.name}
+                                </span>
+                              ))}
+                            </div>
+                          );
+                        }
+                        return null;
+                      })()}
                     </div>
                   )}
                 </div>
@@ -374,4 +412,4 @@ export function FeaturesPanel({ char, onUpdate }: Props) {
       )}
     </div>
   );
-}
+})

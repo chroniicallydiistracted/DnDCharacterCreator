@@ -7,24 +7,17 @@ import { useCharacterStore, resolveFinalScores } from '../../../store/character.
 import { computeDerivedStats, abilityMod } from '../../../services/character.calculator';
 import { ABILITY_ABBR } from '../../../types/character';
 import type { Character, CharacterClass } from '../../../types/character';
-import type { DndClass, DndRace, DndBackground, DndPack } from '../../../types/data';
+import type { DndClass, DndRace, DndBackground, DndBackgroundVariant, DndPack } from '../../../types/data';
 import { Button } from '../../ui/Button';
 import { Divider } from '../../ui/Divider';
 import { Badge } from '../../ui/Badge';
 import { Spinner } from '../../ui/Spinner';
 
-const HIT_DICE: Record<string, number> = {
-  barbarian: 12, fighter: 10, paladin: 10, ranger: 10,
-  bard: 8, cleric: 8, druid: 8, monk: 8, rogue: 8, warlock: 8,
-  artificer: 8, sorcerer: 6, wizard: 6,
-};
-
 /** Build the hpPerLevel array for levels 1 through startingLevel. */
-function buildHpPerLevel(classKey: string, startingLevel: number, conMod: number): number[] {
-  const hd = HIT_DICE[classKey] ?? 8;
-  const avgPerLevel = Math.floor(hd / 2) + 1 + conMod;
+function buildHpPerLevel(hitDie: number, startingLevel: number, conMod: number): number[] {
+  const avgPerLevel = Math.floor(hitDie / 2) + 1 + conMod;
   return Array.from({ length: startingLevel }, (_, i) =>
-    i === 0 ? Math.max(1, hd + conMod) : Math.max(1, avgPerLevel)
+    i === 0 ? Math.max(1, hitDie + conMod) : Math.max(1, avgPerLevel)
   );
 }
 
@@ -33,10 +26,12 @@ export function Step8Review() {
   const { draft, resetDraft } = useCharacterStore();
   const [loading, setLoading]   = useState(true);
   const [saving, setSaving]     = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
   const [race, setRace]         = useState<DndRace | null>(null);
   const [cls, setCls]           = useState<DndClass | null>(null);
   const [bg, setBg]             = useState<DndBackground | null>(null);
   const [pack, setPack]         = useState<DndPack | null>(null);
+  const [bgVariant, setBgVariant]    = useState<DndBackgroundVariant | null>(null);
   const [spellNames, setSpellNames] = useState<Record<string, string>>({});
   const [subclassName, setSubclassName] = useState<string | null>(null);
 
@@ -50,11 +45,13 @@ export function Step8Review() {
       draft.chosenPackKey ? DataService.getPacks().then(all => all.find(p => p._key === draft.chosenPackKey) ?? null) : null,
       needSpells ? DataService.getSpells() : Promise.resolve([]),
       draft.startingSubclassKey ? DataService.getSubclasses().then(all => all.find(s => s._key === draft.startingSubclassKey) ?? null) : Promise.resolve(null),
-    ]).then(([r, c, b, p, spells, sub]) => {
+      draft.backgroundVariant ? DataService.getBackgroundVariants().then(all => all.find(v => v._key === draft.backgroundVariant) ?? null) : Promise.resolve(null),
+    ]).then(([r, c, b, p, spells, sub, bv]) => {
       setRace(r ?? null);
       setCls(c ?? null);
       setBg(b ?? null);
       setPack(p ?? null);
+      setBgVariant((bv as DndBackgroundVariant | null) ?? null);
       setSubclassName((sub as { subname?: string } | null)?.subname ?? null);
       if (Array.isArray(spells) && spells.length > 0) {
         const names: Record<string, string> = {};
@@ -63,13 +60,13 @@ export function Step8Review() {
       }
       setLoading(false);
     });
-  }, [draft.race, draft.classKey, draft.background, draft.chosenPackKey, draft.chosenCantrips.length, draft.chosenSpells.length, draft.startingSubclassKey]);
+  }, [draft.race, draft.classKey, draft.background, draft.chosenPackKey, draft.chosenCantrips.length, draft.chosenSpells.length, draft.startingSubclassKey, draft.backgroundVariant]);
 
   const finalScores   = resolveFinalScores(draft);
   const conMod        = abilityMod(finalScores[2]);
-  const hd            = HIT_DICE[draft.classKey ?? ''] ?? 8;
+  const hd            = cls?.die ?? 8;
   const startingLevel = draft.startingLevel;
-  const hpPerLevel    = buildHpPerLevel(draft.classKey ?? 'fighter', startingLevel, conMod);
+  const hpPerLevel    = buildHpPerLevel(hd, startingLevel, conMod);
   const totalHp       = hpPerLevel.reduce((sum, hp) => sum + hp, 0);
 
   const previewChar: Character = {
@@ -87,7 +84,7 @@ export function Step8Review() {
     chosenCantrips: draft.chosenCantrips,
     chosenSpells:   draft.chosenSpells,
     equipment:      draft.customEquipment,
-    gold:           bg?.gold ?? 0,
+    currency:       { cp: 0, sp: 0, ep: 0, gp: bg?.gold ?? 0, pp: 0 },
     details:        { alignment: '', ...draft.details },
     createdAt: '', updatedAt: '',
   };
@@ -105,8 +102,9 @@ export function Step8Review() {
       };
 
       // Build equipment list from pack + background + custom
+      // If useStartingGold is true, skip class/pack equipment and give starting gold instead
       const allEquipment: EquipmentItem[] = [];
-      if (pack) {
+      if (!draft.useStartingGold && pack) {
         for (const [name, qty, weight] of pack.items) {
           allEquipment.push({
             name: String(name),
@@ -128,9 +126,13 @@ export function Step8Review() {
         allEquipment.push({ ...item, source: 'custom' });
       }
 
+      // Starting gold: background gold only (class starting gold is replaced by equipment)
+      const totalStartingGold = bg?.gold ?? 0;
+
       // Merge background skills + chosen class skills (deduplicated)
-      const bgSkills = (bg?.skills ?? []) as Skill[];
-      const allSkills = Array.from(new Set([...bgSkills, ...draft.chosenSkills]));
+      // If a background variant overrides skills, use variant's; otherwise fall back to parent bg
+      const effectiveBgSkills = (bgVariant?.skills ?? bg?.skills ?? []) as Skill[];
+      const allSkills = Array.from(new Set([...effectiveBgSkills, ...draft.chosenSkills]));
 
       // Class entry with fighting style if applicable
       const classEntryWithStyle: CharacterClass = {
@@ -153,7 +155,9 @@ export function Step8Review() {
         });
       }
       const raceTools = extractToolNames(race?.toolProfs as (string | unknown)[] | undefined);
-      const bgTools   = extractToolNames(bg?.toolProfs as (string | unknown)[] | undefined);
+      // If a background variant is selected and it overrides toolProfs, use variant's toolProfs
+      const effectiveBgToolProfs = bgVariant?.toolProfs ?? bg?.toolProfs;
+      const bgTools   = extractToolNames(effectiveBgToolProfs as (string | unknown)[] | undefined);
       // Class toolProfs data is {primary: [...], secondary: [...]} despite the type definition
       const clsToolsRaw = (cls?.toolProfs as unknown as { primary?: unknown[] } | undefined);
       const clsTools = extractToolNames(clsToolsRaw?.primary as (string | unknown)[] | undefined);
@@ -173,12 +177,11 @@ export function Step8Review() {
         chosenCantrips:      draft.chosenCantrips,
         chosenSpells:        draft.chosenSpells,
         equipment:           allEquipment,
-        gold:                bg?.gold ?? 0,
-        currency:            { cp: 0, sp: 0, ep: 0, gp: bg?.gold ?? 0, pp: 0 },
+        currency:            { cp: 0, sp: 0, ep: 0, gp: totalStartingGold, pp: 0 },
         details:             { alignment: '', ...draft.details },
         currentHp:           totalHp,
         tempHp:              0,
-        hitDiceUsed:         [0],
+        hitDiceUsed:         [classEntryWithStyle].map(() => 0),
         slotsUsed:           [0,0,0,0,0,0,0,0,0,0],
         deathSaveSuccesses:  0,
         deathSaveFailures:   0,
@@ -197,6 +200,7 @@ export function Step8Review() {
       navigate(`/sheet/${char.id}`);
     } catch (e) {
       console.error(e);
+      setSaveError(e instanceof Error ? e.message : 'Failed to save character. Please try again.');
       setSaving(false);
     }
   }
@@ -294,7 +298,7 @@ export function Step8Review() {
             {draft.chosenSpells.length > 0 && (
               <div>
                 <div className="text-[10px] font-display uppercase tracking-wider text-stone mb-2">
-                  Prepared Spells ({draft.chosenSpells.length})
+                  {cls?.spellcastingKnown?.prepared ? 'Prepared' : 'Known'} Spells ({draft.chosenSpells.length})
                 </div>
                 <div className="flex flex-wrap gap-1">
                   {draft.chosenSpells.map(k => (
@@ -448,6 +452,11 @@ export function Step8Review() {
       })()}
 
       {/* Begin Adventure */}
+      {saveError && (
+        <div className="text-center text-sm font-body text-crimson border border-crimson/30 rounded px-3 py-2 bg-crimson/5">
+          {saveError}
+        </div>
+      )}
       <div className="flex justify-center pt-6 pb-4">
         <Button
           variant="primary"

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { DndSpell, DndClass, DndWarlockInvocation } from '../../../types/data';
 import DataService from '../../../services/data.service';
+import { maxSpellLevelForClass } from '../../../services/character.calculator';
 import { useCharacterStore } from '../../../store/character.store';
 import { SpellBrowser } from '../shared/SpellBrowser';
 import { Divider } from '../../ui/Divider';
@@ -68,7 +69,8 @@ export function Step6Spells() {
   }
 
   const cantrips = spells.filter(s => s.level === 0);
-  const lvl1Plus = spells.filter(s => s.level > 0 && s.level <= Math.ceil(startingLevel / 2));
+  const maxLevel = maxSpellLevelForClass(classKey, draft.startingSubclassKey, startingLevel);
+  const lvl1Plus = spells.filter(s => s.level > 0 && s.level <= maxLevel);
 
   // Read spell counts from class data using startingLevel as index, fall back to level 1
   const levelIdx      = Math.max(0, startingLevel - 1);

@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { Character, DerivedStats } from '../../../types/character';
 import type { DndSpell, DndClass } from '../../../types/data';
 import DataService from '../../../services/data.service';
+import { abilityMod } from '../../../services/character.calculator';
 import { Badge } from '../../ui/Badge';
 import { Spinner } from '../../ui/Spinner';
 
@@ -9,9 +10,11 @@ interface Props {
   char: Character;
   derived: DerivedStats;
   onUpdate: (updates: Partial<Character>) => void;
+  /** Engine-computed spell save DC, attack bonus, ability — includes calcChanges hooks */
+  engineGetSpellStats?: ((className: string) => { dc: number; attack: number; ability: number } | null) | null;
 }
 
-export function SpellsPanel({ char, derived, onUpdate }: Props) {
+export const SpellsPanel = React.memo(function SpellsPanel({ char, derived, onUpdate, engineGetSpellStats }: Props) {
   const [loading, setLoading]   = useState(true);
   const [spells, setSpells]     = useState<DndSpell[]>([]);
   const [cls, setCls]           = useState<DndClass | null>(null);
@@ -35,11 +38,27 @@ export function SpellsPanel({ char, derived, onUpdate }: Props) {
     });
   }, [char.chosenCantrips, char.chosenSpells, char.classes]);
 
+  // Determine if character has warlock pact magic for visual distinction
+  const hasWarlockPact = char.classes.some(cc => cc.classKey === 'warlock');
+
   const hasSpells = derived.spellSlots.some((n, i) => i > 0 && n > 0);
 
   // Determine if this is a prepared caster (wizard, cleric, druid, paladin, artificer)
   // prepared === true or prepared field absent but class is a full caster with prep
   const isPreparedCaster = cls?.spellcastingKnown?.prepared === true;
+
+  // Max prepared spells = casting ability mod + class level (min 1)
+  // Half-casters (paladin, artificer) use half their class level (rounded down, min 1)
+  const HALF_CASTER_PREPPERS = ['paladin', 'artificer'];
+  const primaryClassKey = char.classes[0]?.classKey ?? '';
+  const primaryClassLevel = char.classes[0]?.level ?? 0;
+  const casterLevelForPrep = HALF_CASTER_PREPPERS.includes(primaryClassKey)
+    ? Math.max(1, Math.floor(primaryClassLevel / 2))
+    : primaryClassLevel;
+  const castingAbilityIdx = derived.spellcastingAbility;
+  const maxPrepared = isPreparedCaster && castingAbilityIdx != null
+    ? Math.max(1, abilityMod(char.abilityScores[castingAbilityIdx]) + casterLevelForPrep)
+    : Infinity;
 
   const preparedSpells = char.preparedSpells ?? [];
 
@@ -53,16 +72,18 @@ export function SpellsPanel({ char, derived, onUpdate }: Props) {
     onUpdate({ slotsUsed: Array(10).fill(0) });
   }
 
-  function toggleConcentration(spellName: string) {
-    if (char.concentratingOn === spellName) {
+  function toggleConcentration(spellKey: string) {
+    if (char.concentratingOn === spellKey) {
       onUpdate({ concentratingOn: undefined });
     } else {
-      onUpdate({ concentratingOn: spellName });
+      onUpdate({ concentratingOn: spellKey });
     }
   }
 
   function togglePrepared(spellKey: string) {
-    const next = preparedSpells.includes(spellKey)
+    const alreadyPrepared = preparedSpells.includes(spellKey);
+    if (!alreadyPrepared && preparedSpells.length >= maxPrepared) return; // at cap
+    const next = alreadyPrepared
       ? preparedSpells.filter(k => k !== spellKey)
       : [...preparedSpells, spellKey];
     onUpdate({ preparedSpells: next });
@@ -82,38 +103,46 @@ export function SpellsPanel({ char, derived, onUpdate }: Props) {
   const prepared = spells.filter(s => s.level > 0);
   const anyUsed  = slotsUsed.some(n => n > 0);
 
+  // Prefer engine-computed spell stats (includes calcChanges hooks) over legacy derived
+  const engineStats = engineGetSpellStats ? engineGetSpellStats(primaryClassKey) : null;
+  const displaySpellDc      = engineStats?.dc ?? derived.spellSaveDc;
+  const displaySpellAttack  = engineStats?.attack ?? derived.spellAttackBonus;
+  const displaySpellAbility = engineStats?.ability ?? derived.spellcastingAbility;
+
   return (
     <div className="space-y-4">
       {/* Casting stats */}
-      {derived.spellcastingAbility != null && (
+      {displaySpellAbility != null && (
         <div className="surface-parchment rounded p-3 flex gap-4 text-center">
           <div className="flex-1">
             <div className="text-[9px] font-display uppercase tracking-wider text-stone">Save DC</div>
-            <div className="font-display text-dark-ink text-lg">{derived.spellSaveDc ?? '—'}</div>
+            <div className="font-display text-dark-ink text-lg">{displaySpellDc ?? '—'}</div>
           </div>
           <div className="w-px bg-gold/20" />
           <div className="flex-1">
             <div className="text-[9px] font-display uppercase tracking-wider text-stone">Attack</div>
             <div className="font-display text-dark-ink text-lg">
-              {derived.spellAttackBonus != null ? (derived.spellAttackBonus >= 0 ? '+' : '') + derived.spellAttackBonus : '—'}
+              {displaySpellAttack != null ? (displaySpellAttack >= 0 ? '+' : '') + displaySpellAttack : '—'}
             </div>
           </div>
           <div className="w-px bg-gold/20" />
           <div className="flex-1">
             <div className="text-[9px] font-display uppercase tracking-wider text-stone">Ability</div>
             <div className="font-display text-dark-ink text-lg uppercase">
-              {['STR','DEX','CON','INT','WIS','CHA'][derived.spellcastingAbility]}
+              {['STR','DEX','CON','INT','WIS','CHA'][displaySpellAbility]}
             </div>
           </div>
         </div>
       )}
 
       {/* Concentration indicator */}
-      {char.concentratingOn && (
+      {char.concentratingOn && (() => {
+        const concSpell = spells.find(s => s._key === char.concentratingOn);
+        return (
         <div className="surface-parchment rounded border border-crimson/40 p-3 flex items-center justify-between">
           <div>
             <div className="text-[9px] font-display uppercase tracking-wider text-crimson">Concentrating On</div>
-            <div className="font-body text-sm text-dark-ink italic mt-0.5">{char.concentratingOn}</div>
+            <div className="font-body text-sm text-dark-ink italic mt-0.5">{concSpell?.name ?? char.concentratingOn}</div>
           </div>
           <button
             onClick={() => onUpdate({ concentratingOn: undefined })}
@@ -122,13 +151,17 @@ export function SpellsPanel({ char, derived, onUpdate }: Props) {
             End ✕
           </button>
         </div>
-      )}
+        );
+      })()}
 
       {/* Spell slots */}
       {hasSpells && (
         <div>
           <div className="flex items-center justify-between mb-2">
             <div className="text-[10px] font-display uppercase tracking-wider text-stone">Spell Slots</div>
+            {hasWarlockPact && (
+              <Badge color="crimson">Pact Magic (short rest)</Badge>
+            )}
             {anyUsed && (
               <button
                 onClick={resetSlots}
@@ -185,8 +218,8 @@ export function SpellsPanel({ char, derived, onUpdate }: Props) {
                 spell={spell}
                 expanded={expanded === spell._key}
                 onExpand={() => setExpanded(expanded === spell._key ? null : spell._key)}
-                isConcentrating={char.concentratingOn === spell.name}
-                onToggleConcentration={() => toggleConcentration(spell.name)}
+                isConcentrating={char.concentratingOn === spell._key}
+                onToggleConcentration={() => toggleConcentration(spell._key)}
                 showPrepToggle={false}
                 isPrepared={false}
                 onTogglePrepared={() => {}}
@@ -201,7 +234,7 @@ export function SpellsPanel({ char, derived, onUpdate }: Props) {
         <div>
           <div className="flex items-center justify-between mb-2">
             <div className="text-[10px] font-display uppercase tracking-wider text-stone">
-              {isPreparedCaster ? `Prepared Spells (${preparedSpells.length}/${prepared.length})` : `Spells Known (${prepared.length})`}
+              {isPreparedCaster ? `Prepared Spells (${preparedSpells.length}/${maxPrepared === Infinity ? '∞' : maxPrepared})` : `Spells Known (${prepared.length})`}
             </div>
             {isPreparedCaster && (
               <div className="text-[9px] text-stone/60 font-display uppercase tracking-wider">
@@ -216,8 +249,8 @@ export function SpellsPanel({ char, derived, onUpdate }: Props) {
                 spell={spell}
                 expanded={expanded === spell._key}
                 onExpand={() => setExpanded(expanded === spell._key ? null : spell._key)}
-                isConcentrating={char.concentratingOn === spell.name}
-                onToggleConcentration={() => toggleConcentration(spell.name)}
+                isConcentrating={char.concentratingOn === spell._key}
+                onToggleConcentration={() => toggleConcentration(spell._key)}
                 showPrepToggle={isPreparedCaster}
                 isPrepared={preparedSpells.includes(spell._key)}
                 onTogglePrepared={() => togglePrepared(spell._key)}
@@ -228,7 +261,7 @@ export function SpellsPanel({ char, derived, onUpdate }: Props) {
       )}
     </div>
   );
-}
+});
 
 function SpellRow({
   spell, expanded, onExpand,

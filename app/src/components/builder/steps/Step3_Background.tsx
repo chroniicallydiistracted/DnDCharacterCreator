@@ -125,7 +125,11 @@ export function Step3Background() {
 
   function getFeature(bg: DndBackground) {
     if (!bg.feature) return undefined;
-    return features.find(f => f._key.toLowerCase() === bg.feature?.toLowerCase() ||
+    // Prefer exact key match first
+    const exact = features.find(f => f._key.toLowerCase() === bg.feature?.toLowerCase());
+    if (exact) return exact;
+    // Fall back to fuzzy match only if exact fails (matches first word)
+    return features.find(f =>
       f._key.toLowerCase().includes(bg.feature?.toLowerCase().split(' ')[0] ?? ''));
   }
 
@@ -156,7 +160,6 @@ export function Step3Background() {
         selectedKey={draft.background}
         onSelect={handleSelectBackground}
         getKey={b => b._key}
-        getName={b => b.name}
         filterFn={(b, q) => b.name.toLowerCase().includes(q) ||
           (b.skills ?? []).some(s => s.toLowerCase().includes(q))}
         placeholder="Search backgrounds…"

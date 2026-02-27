@@ -7,7 +7,7 @@ interface FilterBarProps {
 }
 
 export function FilterBar({ context, placeholder = 'Search…', sourceGroups }: FilterBarProps) {
-  const { searchText, setSearchText } = useUiStore();
+  const { searchText, setSearchText, activeSourceFilters, toggleSourceFilter } = useUiStore();
   const text = searchText[context] ?? '';
 
   return (
@@ -36,17 +36,26 @@ export function FilterBar({ context, placeholder = 'Search…', sourceGroups }: 
         )}
       </div>
 
-      {/* Source pills (placeholder — wired to store when needed) */}
+      {/* Source filter pills */}
       {sourceGroups && sourceGroups.length > 0 && (
         <div className="flex items-center gap-1 flex-wrap">
           <span className="text-[10px] font-display uppercase tracking-wider text-stone">Sources:</span>
-          {sourceGroups.map(g => (
-            <button key={g} className="
-              px-2 py-0.5 rounded text-[10px] font-display uppercase tracking-wider
-              border border-gold/30 text-stone hover:border-gold/60 hover:text-gold
-              transition-colors duration-150
-            ">{g}</button>
-          ))}
+          {sourceGroups.map(g => {
+            const isActive = activeSourceFilters.includes(g);
+            return (
+              <button
+                key={g}
+                onClick={() => toggleSourceFilter(g)}
+                className={`
+                  px-2 py-0.5 rounded text-[10px] font-display uppercase tracking-wider
+                  border transition-colors duration-150
+                  ${isActive
+                    ? 'border-gold bg-gold/20 text-gold'
+                    : 'border-gold/30 text-stone hover:border-gold/60 hover:text-gold'}
+                `}
+              >{g}</button>
+            );
+          })}
         </div>
       )}
     </div>

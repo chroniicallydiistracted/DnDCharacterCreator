@@ -1,14 +1,25 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { Character, AttackEntry, DerivedStats } from '../../../types/character';
 import type { DndWeapon } from '../../../types/data';
 import { abilityMod } from '../../../services/character.calculator';
 import DataService from '../../../services/data.service';
 import { Spinner } from '../../ui/Spinner';
 
+/** Engine's calculateAttack function signature */
+type EngineCalculateAttack = (attack: AttackEntry, weapon: DndWeapon | null) => {
+  toHit: number;
+  damage: string;
+  damageType: string;
+  attackStr: string;
+  notes: string[];
+};
+
 interface Props {
   char: Character;
   derived: DerivedStats;
   onUpdate: (updates: Partial<Character>) => void;
+  /** Engine attack calculator with calcChanges hooks applied */
+  engineCalculateAttack?: EngineCalculateAttack | null;
 }
 
 const ABILITY_OPTS = ['STR', 'DEX', 'INT', 'WIS', 'CHA', 'spellcasting'] as const;
@@ -21,7 +32,12 @@ const SNEAK_ATTACK_DICE = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10];
 
 /** Extract all fighting style names from all classes */
 function getFightingStyles(char: Character): string[] {
-  return char.classes.flatMap(cc => cc.fightingStyle ? [cc.fightingStyle.toLowerCase()] : []);
+  return char.classes.flatMap(cc => {
+    const styles: string[] = [];
+    if (cc.fightingStyle) styles.push(cc.fightingStyle.toLowerCase());
+    if (cc.additionalFightingStyles) styles.push(...cc.additionalFightingStyles.map(s => s.toLowerCase()));
+    return styles;
+  });
 }
 
 /** Compute the to-hit bonus for an attack entry */
@@ -33,15 +49,22 @@ function calcToHit(entry: AttackEntry, char: Character, derived: DerivedStats): 
   const profBonus = entry.proficient !== false ? pb : 0;
   const magic  = entry.magicBonus ?? 0;
 
-  // Fighting Style: Archery grants +2 to ranged attack rolls
+  // Fighting Style: Archery grants +2 to ranged weapon attack rolls only (PHB p.72)
   const styles = getFightingStyles(char);
-  const archeryBonus = (entry.attackType === 'ranged' && styles.includes('archery')) ? 2 : 0;
+  const archeryBonus = (entry.attackType === 'ranged' && entry.abilityUsed !== 'spellcasting' && styles.includes('archery')) ? 2 : 0;
 
   let abilityBonus = 0;
   if (entry.abilityUsed === 'spellcasting') {
     return (derived.spellAttackBonus ?? 0) + magic + archeryBonus;
   } else if (entry.abilityUsed && ABILITY_IDX[entry.abilityUsed] !== undefined) {
-    abilityBonus = abilityMod(char.abilityScores[ABILITY_IDX[entry.abilityUsed]]);
+    // Finesse weapons: use whichever of STR or DEX gives a higher modifier
+    if (entry.abilityUsed === 'STR' && entry.notes?.toLowerCase().includes('finesse')) {
+      const strMod = abilityMod(char.abilityScores[ABILITY_IDX['STR']]);
+      const dexMod = abilityMod(char.abilityScores[ABILITY_IDX['DEX']]);
+      abilityBonus = Math.max(strMod, dexMod);
+    } else {
+      abilityBonus = abilityMod(char.abilityScores[ABILITY_IDX[entry.abilityUsed]]);
+    }
   }
 
   return abilityBonus + profBonus + magic + archeryBonus;
@@ -66,19 +89,25 @@ function calcDamage(entry: AttackEntry, char: Character): string {
     // Off-hand attacks don't add ability modifier unless you have Two-Weapon Fighting style
     if (entry.isOffHand && !hasTwoWeaponFighting) {
       modBonus = 0;
+    } else if (entry.abilityUsed === 'STR' && entry.notes?.toLowerCase().includes('finesse')) {
+      // Finesse weapons: use whichever of STR or DEX gives a higher modifier
+      const strMod = abilityMod(char.abilityScores[ABILITY_IDX['STR']]);
+      const dexMod = abilityMod(char.abilityScores[ABILITY_IDX['DEX']]);
+      modBonus = Math.max(strMod, dexMod);
     } else {
       modBonus = abilityMod(char.abilityScores[ABILITY_IDX[entry.abilityUsed]]);
     }
   }
 
   const total = modBonus + magic + duelingBonus;
-  // If formula already has a modifier (e.g. "1d6+3"), show as-is with magic bonus on top
-  // If it's just dice (e.g. "1d6"), add ability mod
+  // Always add ability mod + bonuses on top of the formula.
+  // If formula already has a modifier (e.g. "1d6+3"), strip it and add total.
+  // If it's just dice (e.g. "1d6"), append total.
   const hasPlus = /[+\-]\d+$/.test(entry.damageFormula);
   if (hasPlus) {
     const base = entry.damageFormula.replace(/([+\-]\d+)$/, '');
     const existing = parseInt(entry.damageFormula.replace(/.*([+\-]\d+)$/, '$1'));
-    const finalMod = (existing || 0) + magic;
+    const finalMod = (existing || 0) + total;
     return finalMod !== 0 ? `${base}${finalMod >= 0 ? '+' : ''}${finalMod}` : base;
   }
   return total !== 0 ? `${entry.damageFormula}${total >= 0 ? '+' : ''}${total}` : entry.damageFormula;
@@ -104,7 +133,10 @@ function newAttack(): AttackEntry {
 
 // ─── Weapon quick-add from weapons.json ───────────────────────────────────────
 function weaponToAttack(w: DndWeapon): AttackEntry {
-  // MPMB ability: 1=STR, 2=DEX (finesse/ranged), 3=STR or DEX finesse
+  // MPMB ability: 1=STR, 2=DEX, 3=STR or DEX (finesse)
+  // For finesse (ability===3), we set abilityUsed to 'STR' and mark notes with 'finesse'
+  // so that calcToHit/calcDamage can resolve to max(STR, DEX) at runtime.
+  const isFinesse = w.ability === 3;
   const abilityUsed: AbilityOpt = w.list === 'ranged' ? 'DEX' : w.ability === 2 ? 'DEX' : 'STR';
   const [count, die, dmgType] = w.damage;
   const formula = die && typeof die === 'number' ? `${count}d${die}` : '';
@@ -119,11 +151,13 @@ function weaponToAttack(w: DndWeapon): AttackEntry {
     magicBonus: 0,
     damageFormula: formula,
     damageType: String(dmgType ?? ''),
-    notes: w.description ?? '',
+    notes: isFinesse
+      ? (w.description ? `Finesse. ${w.description}` : 'Finesse')
+      : (w.description ?? ''),
   };
 }
 
-export function AttacksPanel({ char, derived, onUpdate }: Props) {
+export const AttacksPanel = React.memo(function AttacksPanel({ char, derived, onUpdate, engineCalculateAttack }: Props) {
   const [weapons, setWeapons]     = useState<DndWeapon[]>([]);
   const [showBrowser, setBrowser] = useState(false);
   const [editId, setEditId]       = useState<string | null>(null);
@@ -263,8 +297,12 @@ export function AttacksPanel({ char, derived, onUpdate }: Props) {
 
           {attacks.map(entry => {
             const isEditing = editId === entry.id && editEntry;
-            const toHit     = calcToHit(entry, char, derived);
-            const damage    = calcDamage(entry, char);
+            // Prefer engine-computed attack values (includes calcChanges hooks)
+            const engineResult = engineCalculateAttack
+              ? engineCalculateAttack(entry, weapons.find(w => w._key === entry.weaponKey) ?? null)
+              : null;
+            const toHit  = engineResult ? engineResult.toHit : calcToHit(entry, char, derived);
+            const damage = engineResult ? engineResult.damage : calcDamage(entry, char);
 
             if (isEditing && editEntry) {
               return (
@@ -503,4 +541,4 @@ export function AttacksPanel({ char, derived, onUpdate }: Props) {
       )}
     </div>
   );
-}
+})
